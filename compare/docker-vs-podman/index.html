@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docker vs Podman (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison ">
+  <link rel="canonical" href="https://zhsks311.github.io/devtools-radar/compare/docker-vs-podman/">
+  <meta property="og:title" content="Docker vs Podman — 2026 teardown">
+  <meta property="og:description" content="Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison ">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://zhsks311.github.io/devtools-radar/compare/docker-vs-podman/">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker vs Podman: a 2026 engineering teardown",
+  "description": "Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison is not daemon versus daemonless but which company may run the free one.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://zhsks311.github.io/devtools-radar/compare/docker-vs-podman/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What happens if a Docker invoice is unpaid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An unpaid invoice starts a 15-day grace period."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Docker Desktop free for our open-source work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is free for non-commercial open source, education and personal use. Commercial use beyond the small-business tier needs a Pro, Team or Business subscription, open source or not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can CI reach the Podman API over TCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The man page recommends against exposing the socket over TCP without mutual TLS and suggests SSH forwarding instead. The service supports only one listening socket, and the rootful default is unix:///run/podman/podman.sock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Podman Desktop work on a locked-down network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Podman Desktop's vendor lists VPN/proxy support and air-gapped installation options. Check which of those network and installation options matches your environment's restrictions."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://zhsks311.github.io/devtools-radar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Docker vs Podman",
+      "item": "https://zhsks311.github.io/devtools-radar/compare/docker-vs-podman/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root {
+  --bg: #090d16;
+  --surface: #121826;
+  --surface-raised: #182234;
+  --border: #222f46;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary: #38bdf8;
+  --primary-glow: rgba(56, 189, 248, 0.15);
+  --accent: #10b981;
+  --warn: #f59e0b;
+  --danger: #f43f5e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+  background: rgba(9, 13, 22, 0.88);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
+.logo span { color: var(--primary); }
+.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
+.nav-link:hover { color: var(--primary); }
+.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
+.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
+.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
+h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
+h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
+p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
+ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
+li { margin-bottom: 0.4rem; font-size: 0.98rem; }
+li > code, p > code { font-size: 0.86em; }
+strong { color: #fff; font-weight: 640; }
+a { color: var(--primary); }
+blockquote {
+  border-left: 3px solid var(--primary);
+  background: rgba(56, 189, 248, 0.05);
+  padding: 0.9rem 1.2rem;
+  margin: 1.3rem 0;
+  color: #cbd5e1;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.97rem;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
+.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
+.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
+tr:last-child td { border-bottom: none; }
+td code { color: var(--primary); }
+.btn {
+  display: inline-block;
+  padding: 0.72rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-decoration: none;
+  transition: all 0.18s;
+  text-align: center;
+}
+.btn-primary { background: var(--primary); color: #04121b; }
+.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.18s, transform 0.18s;
+}
+a.card { display: block; text-decoration: none; }
+a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
+.verdict-box {
+  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
+  border: 1px solid #1e3a5f;
+  border-left: 3px solid var(--primary);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
+.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
+@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
+.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
+.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
+.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
+.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
+pre {
+  background: #0b1120;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #9dd7f5;
+  margin: 1rem 0 1.2rem;
+  tab-size: 2;
+}
+pre code { color: inherit; background: none; padding: 0; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(56, 189, 248, 0.09);
+  color: #9dd7f5;
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.87em;
+}
+.migration-box {
+  background: #121e33;
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0;
+}
+.migration-box strong { color: #fff; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+.faq-a { color: var(--text-muted); font-size: 0.94rem; }
+.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+.cost-row:last-child { border-bottom: none; }
+.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
+.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
+.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
+.matrix-pick { color: var(--primary); font-weight: 600; }
+.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
+.updated-note {
+  font-size: 0.8rem; color: var(--text-muted);
+  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
+}
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
+.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
+.toc ol { margin: 0 0 0 1.1rem; }
+.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
+.toc a { color: #cbd5e1; text-decoration: none; }
+.toc a:hover { color: var(--primary); }
+footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="../../" class="nav-link">← All teardowns</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">Containers & Runtime</span>
+      <span class="badge badge-gray">Docker vs Podman</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>4 min read</span>
+    </div>
+
+    <h1>Docker vs Podman</h1>
+    <p class="lead"><p>Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison is not daemon versus daemonless but which company may run the free one.</p></p>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p><p>Pick Podman if your company sits under both free-use limits and you can fund the port, or if you are past them and want per-seat × headcount off the budget. Pick Docker if SSO, SCIM and Image Access Management have to arrive in one contract, or if Build Cloud minutes belong on the same invoice as the desktop.</p></p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">Docker licenses the desktop; Podman has no paid tier</a></li><li><a href="#s2">Commercial Desktop seats become paid at 250 employees or $10 million revenue</a></li><li><a href="#s3">Docker&#x27;s money buys meters, and each meter is its own decision</a></li><li><a href="#s4">Who should not pick Podman: teams without socket ownership</a></li><li><a href="#s5">Who should not pick Docker: government expecting free Desktop</a></li><li><a href="#s6">Who should pay Docker, and who should fund the port?</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>Key metric comparison</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Docker <span class="badge badge-blue">Licensed desktop</span></th>
+            <th>Podman <span class="badge badge-green">No paid tier</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Docker Engine (Moby) plus the Docker Desktop app</td><td>Podman 6.1.4 runtime with Podman Desktop 1.30.5</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Personal $0 · Pro $9 · Team $15 per user/month · Business quote-only</td><td>Free · Apache 2.0 · enterprise support through the Red Hat build</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>Yes for Engine and Moby; Desktop carries the subscription agreement</strong></td><td>Yes — a local process, not a service</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes</td><td>Socket-activated API with one listening socket (--time default 5 s)</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>Hardened Images free for developers, from $5k/repo in production</td><td>GPU acceleration in Podman Desktop (vendor claim)</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium: Compose and image tooling are standard, the desktop is licensed</td><td>Low: Apache 2.0, OCI and Compose compatible</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://www.docker.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Docker →</a></td>
+            <td><a href="https://podman.io/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Podman →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. Docker licenses the desktop; Podman has no paid tier</h2>
+      <p>For teams paying for Docker Desktop, or about to. Docker's November 2026 pricing and licence terms distinguish the engine from the desktop:</p>
+<blockquote><p><strong>Docker:</strong> the engine is open source; the desktop is a licensed product. <strong>Podman:</strong> the runtime has no daemon; the desktop uses Apache License 2.0.</p></blockquote>
+<ul><li>Docker Engine and Moby stay open source; Docker Desktop uses the Docker Subscription Service Agreement.</li><li>Podman 6.1.4 and Podman Desktop 1.30.5 use Apache License 2.0 with no paid tier.</li></ul>
+<blockquote><p>Choose paid Docker Desktop for its plan controls; choose Podman when eliminating licence fees justifies Docker-only API rewrites and socket-security responsibility.</p></blockquote>
+
+      <h2 id="s2">2. Commercial Desktop seats become paid at 250 employees or $10 million revenue</h2>
+      <p>Docker Desktop is free while a company has <strong>fewer than 250 employees AND less than $10 million</strong> in annual revenue. Both must hold. Government entities pay at any size.</p>
+<div class="table-wrapper"><table><thead><tr><th>Commercial company</th><th>Docker Desktop bill</th></tr></thead><tbody><tr><td>249 employees, under $10M annual revenue</td><td>$0</td></tr><tr><td>250 employees or $10M+ annual revenue; 200 users choosing Team</td><td>200 × $15 = $3,000/month; $3,000 × 12 = $36,000/year</td></tr></tbody></table></div>
+<p>The software did not change between those rows.</p>
+<div class="table-wrapper"><table><thead><tr><th>Plan</th><th>USD/user/month</th><th>Adds</th></tr></thead><tbody><tr><td>Personal</td><td>$0</td><td>—</td></tr><tr><td>Pro</td><td>$9</td><td>commercial Desktop use, Build Cloud, unlimited private repos</td></tr><tr><td>Team</td><td>$15</td><td>audit logs, role-based access control</td></tr><tr><td>Business</td><td>Contact us for pricing</td><td>SSO, SCIM, Hardened Docker Desktop, Image Access Management</td></tr></tbody></table></div>
+<p>Business publishes no per-seat price. Docker Team's flat $15 per user/month charges for seats, not container usage.</p>
+
+      <h2 id="s3">3. Docker&#x27;s money buys meters, and each meter is its own decision</h2>
+      <p>Past the seat, paid plans attach meters, at Docker's prices:</p>
+<div class="table-wrapper"><table><thead><tr><th>Item</th><th>Price</th><th>Decision it forces</th></tr></thead><tbody><tr><td>Build Cloud</td><td>base minutes per plan</td><td>Do builds fit the allocation?</td></tr><tr><td>Testcontainers Cloud</td><td>$3/100 min prepaid, $4/100 on demand</td><td>Steady enough to prepay?</td></tr><tr><td>Docker Hardened Images</td><td>free for developers; production with compliance support starts at $5k/repo</td><td>How many repos ship?</td></tr><tr><td>Docker Offload</td><td>licences on Team and Business</td><td>Worth the sales call it requires?</td></tr></tbody></table></div>
+<p>At 4,000 Testcontainers minutes a month: 4,000 ÷ 100 = 40 blocks, so 40 × $4 = $160 on demand or 40 × $3 = $120 prepaid.</p>
+<ul><li>DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.</li><li>Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period.</li></ul>
+
+      <h2 id="s4">4. Who should not pick Podman: teams without socket ownership</h2>
+      <p>Podman's licence bill is $0. Its <code>podman system service</code> provides Docker v1.40 compatibility beside the native Libpod API. Socket-activated by systemd, it exits after 5 idle seconds by default.</p>
+<p>With a rootless API service already listening:</p>
+<pre><code class="language-bash">export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock</code></pre>
+<p>Check required API calls and rewrite Docker-only handlers. The command is unavailable directly on macOS or Windows; <code>--time 0</code> disables inactivity timeout.</p>
+<p>The man page warns:</p>
+<blockquote><p>"the API grants full access to all Podman functionality, and thus allows arbitrary code execution as the user running the API, with no ability to limit or audit this access"</p></blockquote>
+<p>Rootless narrows whose account is exposed; it does not make the socket safe to share.</p>
+<ul><li>Skip Podman if required API calls are unsupported or nobody owns socket permissions.</li><li>Avoid TCP exposure without mutual TLS; the man page suggests SSH forwarding instead.</li></ul>
+
+      <h2 id="s5">5. Who should not pick Docker: government expecting free Desktop</h2>
+      <p>Podman Desktop is free, Apache 2.0 and, in its own words, "trusted as part of the CNCF". It runs on Linux, macOS and Windows. Red Hat sells enterprise support as a build, the Red Hat Build of Podman Desktop, not as a licence tier.</p>
+<ul><li>Docker Business includes SOC 2, SSO and SCIM, plus Hardened Docker Desktop and Image Access Management.</li><li>Podman Desktop's enterprise path is that Red Hat build: support and long-term maintenance, not a licence tier.</li></ul>
+<p>Skip Docker if you are a government entity counting on the free tier; it never applied.</p>
+
+      <h2 id="s6">6. Who should pay Docker, and who should fund the port?</h2>
+      <ul><li>Choose Docker Business for SSO, SCIM or Image Access Management; choose Team when audit logs and role-based access control meet your governance needs.</li><li>Choose Podman below both free-tier limits if you can fund Docker-only API changes and own socket access before crossing either limit. So should a large org that wants per-seat × headcount off the budget and can staff the port.</li><li>For 25 developers, Podman costs $0 in licence fees plus the port: Docker-only handler rewrites and socket security.</li></ul>
+<p>Business gates SSO, SCIM and Image Access Management; every plan carries Build Cloud minutes.</p>
+<p>Check today:</p>
+<ol><li>Headcount and revenue against 250 and $10M. Both limits, not either.</li><li>Which CI jobs call the Docker API, and at what version.</li><li>Who can open the socket on your build hosts.</li></ol>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">Commercial company below $10 million annual revenue, moving from 249 to 250 employees; 200 Desktop users choosing Team</div>
+          <div class="cost-formula">Previously $0 under both free-tier limits; 200 developers × $15 Team = $3,000/month; $3,000 × 12 = $36,000/year</div>
+          <div class="cost-result">$36,000/year, previously $0</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">25 developers: Team vs Pro</div>
+          <div class="cost-formula">25 developers on Team: 25 × $15 = $375/month; $375 × 12 = $4,500/year. Pro: 25 × $9 = $225/month; $225 × 12 = $2,700/year</div>
+          <div class="cost-result">$4,500/year vs $2,700/year; Pro drops org audit logs and RBAC</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Testcontainers Cloud at 4,000 minutes/month</div>
+          <div class="cost-formula">4,000 ÷ 100 = 40 blocks; 40 × $4 = $160/month on demand; 40 × $3 = $120/month prepaid</div>
+          <div class="cost-result">$160/month vs $120/month</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Docker Hardened Images production with compliance support, 12 repositories</div>
+          <div class="cost-formula">12 × $5,000 (starting price) = $60,000/year</div>
+          <div class="cost-result">$60,000/year floor, before Business seats; enterprise DHI is quote-only and required for end-of-life software security</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Commercial company with fewer than 250 employees AND less than $10 million annual revenue; team can fund Docker-only API changes and own socket security before growth</td><td class="matrix-pick">Podman</td><td>Choose Podman to avoid future Desktop seat fees when the port is funded and socket access has an owner; keeping free Desktop is also available below both limits.</td></tr><tr><td>Commercial company at 249 employees, below $10 million annual revenue, hiring toward 250; a funded Podman port can finish before crossing the boundary</td><td class="matrix-pick">Podman, ported before the boundary</td><td>Employee 250 bills every commercial Desktop seat at once, so the port or the budget line has to exist before the hire, not after.</td></tr><tr><td>Commercial company with fewer than 250 employees and annual revenue of $10 million or more requires audit logs and role-based access control</td><td class="matrix-pick">Docker Team</td><td>The free tier needs both limits to hold, and the revenue test has already failed. Team adds the required audit logs and role-based access control.</td></tr><tr><td>Government entity of any size with a feasible, staffed Docker-only API port and named socket owner; Business controls are not required</td><td class="matrix-pick">Podman</td><td>Docker Desktop's free tier never covers government, while Podman has no seat to license.</td></tr><tr><td>The identity team requires SSO, SCIM and Image Access Management</td><td class="matrix-pick">Docker Business</td><td>Those are documented Business plan gates; request pricing because the page publishes no per-seat figure.</td></tr><tr><td>Large org wants the seat line deleted; its platform team owns CI sockets and can fund Docker-only API rewrites</td><td class="matrix-pick">Podman</td><td>Licence fees become $0; the funded rewrites and socket-access responsibility stay with the platform team.</td></tr><tr><td>Committed Testcontainers Cloud usage of 4,000 runtime minutes per month</td><td class="matrix-pick">Testcontainers Cloud pre-purchase</td><td>4,000 ÷ 100 = 40 blocks; 40 × $3 = $120/month prepaid versus 40 × $4 = $160/month on demand. Choose pre-purchase for this committed usage.</td></tr><tr><td>Mid-term on an annual Docker Team or Business plan with every seat assigned; a funded Podman migration is planned</td><td class="matrix-pick">Prepare the Podman port before renewal</td><td>Only unused seats can be removed and a cancelled plan refunds nothing, so plan the port against the renewal date. Paid access continues through the paid cycle; cancellation cannot pause the plan.</td></tr></tbody>
+      </table></div>
+
+    <h2>Same task, two SDKs</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Docker</span>
+        <pre><code># The engine is open source; Docker Desktop is the licensed surface.
+$ docker run --rm -v &quot;$PWD&quot;:/app -w /app node:24 npm ci
+# Here it breaks: past 250 employees or $10M revenue, every
+# commercial Desktop seat must be on Pro, Team or Business.
+$ docker buildx bake --set &quot;*.cache-from=type=registry&quot;</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Podman</span>
+        <pre><code># No daemon to start: each command is a process that runs and exits.
+$ podman run --rm -v &quot;$PWD&quot;:/app -w /app node:24 npm ci
+# Docker tooling can use the compatibility socket:
+$ systemctl --user start podman.socket
+$ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
+# Here it breaks: that socket is full access as your user, so
+# never bind it to TCP without mutual TLS.</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Docker</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Desktop stays free under 250 employees AND $10M revenue, plus personal, education and non-commercial OSS</li><li>A flat per-user rate with monthly or annual billing, and seats can be removed when people leave</li><li>Team adds audit logs and RBAC; Business adds SSO, SCIM, Hardened Desktop and Image Access Management</li><li>Build Cloud minutes and Testcontainers Cloud arrive on the same contract</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>Free use is a company-size test: cross either limit and every commercial seat is paid at once</li><li>Government entities pay for Docker Desktop regardless of size</li><li>Production Hardened Images start at $5k per repository, which dwarfs seat revenue for a small team</li><li>Business pricing is quote-only, so the biggest line item is the one you cannot see</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Podman</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>No daemon and no seat: containers run as the invoking user and nothing idles in the background</li><li>Docker v1.40 compatibility layer, so DOCKER_HOST moves most CLI and Compose tooling</li><li>Podman Desktop is CNCF-hosted, Apache 2.0 and vendor-neutral, with Kubernetes and Compose extensions</li><li>Enterprise support exists without a licence tier: Red Hat sells a supported build</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>The API socket is arbitrary code execution as that user, with no way to limit or audit it (Podman's man page)</li><li>Docker-only API surface still needs rewriting, and the compatibility layer is Docker v1.40</li><li>The service command is unavailable where Podman runs directly on a Windows or macOS host</li><li>There is no vendor to call unless you buy the Red Hat build</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p>Moving to Podman is one environment variable for CLI and Compose tooling plus two work items: handlers that use Docker-only API surface, and a decision about who may open the socket on each build host. Moving back is the same variable unset, which is why teams often keep both — Docker for the licensed platform services, Podman on machines that only need a runtime.</p></div>
+      </div>
+
+    <h2 id="faq">Questions that change the decision</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">What happens if a Docker invoice is unpaid?</div>
+          <div class="faq-a">An unpaid invoice starts a 15-day grace period.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is Docker Desktop free for our open-source work?</div>
+          <div class="faq-a">It is free for non-commercial open source, education and personal use. Commercial use beyond the small-business tier needs a Pro, Team or Business subscription, open source or not.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can CI reach the Podman API over TCP?</div>
+          <div class="faq-a">The man page recommends against exposing the socket over TCP without mutual TLS and suggests SSH forwarding instead. The service supports only one listening socket, and the rootful default is unix:///run/podman/podman.sock.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Does Podman Desktop work on a locked-down network?</div>
+          <div class="faq-a">Podman Desktop's vendor lists VPN/proxy support and air-gapped installation options. Check which of those network and installation options matches your environment's restrictions.</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://www.docker.com/pricing/" rel="noopener nofollow" target="_blank">https://www.docker.com/pricing/</a><br><a href="https://docs.docker.com/subscription-billing/desktop-license/" rel="noopener nofollow" target="_blank">https://docs.docker.com/subscription-billing/desktop-license/</a><br><a href="https://docs.docker.com/subscription-billing/plans/docker/" rel="noopener nofollow" target="_blank">https://docs.docker.com/subscription-billing/plans/docker/</a><br><a href="https://podman.io/" rel="noopener nofollow" target="_blank">https://podman.io/</a><br><a href="https://podman-desktop.io/" rel="noopener nofollow" target="_blank">https://podman-desktop.io/</a><br><a href="https://docs.podman.io/en/latest/markdown/podman-system-service.1.html" rel="noopener nofollow" target="_blank">https://docs.podman.io/en/latest/markdown/podman-system-service.1.html</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../bun-vs-node/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Bun vs Node.js</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Open-source engine, licensed surface, and two bills measured in labour.</p>
+          </a>
+          <a class="card" href="../clerk-vs-auth0/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Clerk vs Auth0</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The other per-seat bill: identity, priced by the people who show up.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://www.docker.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Docker →</a>
+      <a href="https://podman.io/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Podman →</a>
+    </div>
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. This market reprices often — if a number below looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Independent developer analysis. No paid placement, no affiliate ranking.</p>
+    </div>
+  </footer>
+</body>
+</html>
