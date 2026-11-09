@@ -547,7 +547,7 @@ def generate_comparison_html(item):
       <h2 id="migration">Migration path</h2>
       <div class="migration-box">
         <strong>What switching actually takes</strong>
-        <p style="margin-top:0.5rem; margin-bottom:0;">{md_to_html(item['migration_guide'])}</p>
+        <div style="margin-top:0.5rem;">{md_to_html(item['migration_guide'])}</div>
       </div>"""
 
     related = item.get("related", [])

@@ -459,7 +459,7 @@ export default {
       <h2 id="migration">Migration path</h2>
       <div class="migration-box">
         <strong>What switching actually takes</strong>
-        <p style="margin-top:0.5rem; margin-bottom:0;"><p>Moving from Vercel to Pages means rewriting handlers for the Workers runtime, not flipping a setting: no Node defaults, and anything importing fs or net needs the compatibility flag. Move the static build first (it costs nothing to serve), measure the handlers' CPU per request against the 30-second default and 5-minute cap, then check your largest asset against 25 MiB and your build against the 20-minute timeout. Going the other way, port back to Node and expect the transfer line to reappear the first month traffic passes 1 TB.</p></p>
+        <div style="margin-top:0.5rem;"><p>Moving from Vercel to Pages means rewriting handlers for the Workers runtime, not flipping a setting: no Node defaults, and anything importing fs or net needs the compatibility flag. Move the static build first (it costs nothing to serve), measure the handlers' CPU per request against the 30-second default and 5-minute cap, then check your largest asset against 25 MiB and your build against the 20-minute timeout. Going the other way, port back to Node and expect the transfer line to reappear the first month traffic passes 1 TB.</p></div>
       </div>
 
     <h2 id="faq">Questions that change the decision</h2>
