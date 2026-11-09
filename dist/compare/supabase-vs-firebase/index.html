@@ -26,6 +26,22 @@
         "@type": "Answer",
         "text": "Yes, Supabase is 100% open-source and provides official Docker Compose configurations to run the full BaaS stack on any Linux server."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Supabase handle connection pooling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Supabase includes Supavisor (an open-source Postgres connection pooler) by default, allowing millions of serverless and edge function connections without exhausting database max_connections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Supabase have offline data synchronization like Firebase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While Supabase offers real-time websockets (CDC), native offline-first local cache synchronization is more mature in Firebase's client SDKs. Supabase developers typically pair it with local stores like WatermelonDB or PowerSync."
+      }
     }
   ]
 }
@@ -34,6 +50,7 @@
 :root {
   --bg: #090d16;
   --surface: #121826;
+  --surface-raised: #182234;
   --border: #222f46;
   --text: #e2e8f0;
   --text-muted: #94a3b8;
@@ -47,18 +64,22 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   padding: 0;
   margin: 0;
 }
-.container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+.container { max-width: 920px; margin: 0 auto; padding: 2rem 1.5rem; }
 header {
   border-bottom: 1px solid var(--border);
   padding: 1.25rem 0;
-  margin-bottom: 2.5rem;
+  background: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header-inner {
-  max-width: 960px;
+  max-width: 920px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
@@ -70,9 +91,14 @@ header {
 .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
 .badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
 .badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
-h1 { font-size: 2.25rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; color: #fff; }
-.lead { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem; }
-.table-wrapper { overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+h1 { font-size: 2.25rem; font-weight: 800; line-height: 1.25; margin: 1rem 0; color: #fff; }
+h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+h3 { font-size: 1.2rem; font-weight: 600; color: #fff; margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
+.lead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
+.meta-row { display: flex; align-items: center; gap: 1rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+.table-wrapper { overflow-x: auto; margin: 1.5rem 0 2rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
 table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
 th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
 th { background: #162032; color: #fff; font-weight: 600; }
@@ -105,11 +131,35 @@ tr:last-child td { border-bottom: none; }
   border: 1px solid #1e3a5f;
   border-radius: 12px;
   padding: 1.75rem;
-  margin: 2.5rem 0;
+  margin: 1.5rem 0 2.5rem;
+}
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
+.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.25rem; }
+.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.25rem; }
+.pros-box ul, .cons-box ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+.pros-box li, .cons-box li { font-size: 0.9rem; margin-bottom: 0.4rem; color: #cbd5e1; }
+pre {
+  background: #0d121d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  color: #38bdf8;
+  margin: 1rem 0;
+}
+.migration-box {
+  background: #121e33;
+  border-left: 4px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
 }
 .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
 .faq-q { font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
-.faq-a { color: var(--text-muted); }
+.faq-a { color: var(--text-muted); font-size: 0.95rem; }
 footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
 </style>
 </head>
@@ -122,16 +172,21 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4re
   </header>
 
   <main class="container">
-    <span class="badge badge-blue">Backend & Database</span>
-    <h1 style="margin-top:0.75rem;">Supabase vs Firebase (2026)</h1>
-    <p class="lead">An objective, architectural breakdown for developers deciding between Supabase and Firebase.</p>
-
-    <div class="verdict-box">
-      <h3 style="color:#fff; margin-bottom:0.5rem; font-size:1.15rem;">🎯 Executive Verdict</h3>
-      <p style="color:var(--text); line-height:1.6;">Choose Supabase if you need complex relational data, vector search for AI, or freedom from vendor lock-in. Choose Firebase if you have simple mobile document trees and heavy Google Cloud ecosystem integration.</p>
+    <div class="meta-row">
+      <span class="badge badge-blue">Backend & Database</span>
+      <span>• Updated November 2026</span>
+      <span>• 7 min read</span>
     </div>
 
-    <h2 style="color:#fff; margin: 2rem 0 1rem;">1. Key Metric Comparison</h2>
+    <h1>Supabase vs Firebase (2026 Developer Benchmark)</h1>
+    <p class="lead">An objective, architectural breakdown for engineering teams deciding between Supabase and Firebase.</p>
+
+    <div class="verdict-box">
+      <h3 style="color:#fff; margin-top:0; font-size:1.15rem;">🎯 Executive Verdict</h3>
+      <p style="color:var(--text); line-height:1.6; margin-bottom:0;">Choose Supabase if you value PostgreSQL, want AI vector search without extra infrastructure, and demand predictable monthly hosting costs. Choose Firebase if you are building an offline-first mobile app and rely heavily on Google Cloud and Crashlytics.</p>
+    </div>
+
+    <h2>1. Key Metric Comparison</h2>
     <div class="table-wrapper">
       <table>
         <thead>
@@ -149,7 +204,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4re
           </tr>
           <tr>
             <td><strong>Pricing & Free Tier</strong></td>
-            <td>Free tier (2 DBs) / $25 Pro Plan (Free)</td>
+            <td>Free tier (2 DBs) / $25 Pro Plan</td>
             <td>Free Spark tier / Blaze (Pay-per-op)</td>
           </tr>
           <tr>
@@ -173,15 +228,81 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4re
             <td><span style="color:var(--danger); font-weight:600;">High (Proprietary Rules & SDK)</span></td>
           </tr>
           <tr>
-            <td><strong>Official Link</strong></td>
-            <td><a href="https://supabase.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.85rem;">Visit Supabase →</a></td>
-            <td><a href="https://firebase.google.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.85rem;">Visit Firebase →</a></td>
+            <td><strong>Official Action</strong></td>
+            <td><a href="https://supabase.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.4rem 0.85rem; font-size:0.85rem;">Try Supabase →</a></td>
+            <td><a href="https://firebase.google.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-outline" style="padding:0.4rem 0.85rem; font-size:0.85rem;">Try Firebase →</a></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h2 style="color:#fff; margin: 3rem 0 1rem;">2. Frequently Asked Questions</h2>
+    <h2>2. Side-by-Side Code & SDK Experience</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.5rem;">Supabase Code Sample</span>
+        <pre><code>// Supabase: Querying with Row Level Security & Relations
+const { data, error } = await supabase
+  .from('posts')
+  .select('id, title, comments(id, content, user_id)')
+  .eq('published', true)
+  .order('created_at', { ascending: false });</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.5rem;">Firebase Code Sample</span>
+        <pre><code>// Firebase: Querying documents without native JOIN
+const q = query(collection(db, 'posts'), where('published', '==', true));
+const querySnapshot = await getDocs(q);
+// Note: Nested comments must be fetched in separate N+1 queries</code></pre>
+      </div>
+    </div>
+
+    <h2>3. Architectural Deep Dive</h2>
+    <div style="margin: 1.5rem 0;">
+      
+        <h3>1. Data Modeling: Relational SQL vs Document NoSQL</h3>
+        <p>The fundamental divide comes down to how your application handles data relationships. **Supabase** gives you standard PostgreSQL: foreign keys, indexed JOINs, views, stored procedures, and triggers. If your app has users, teams, subscriptions, and relational entities, PostgreSQL eliminates duplicate data and guarantees ACID compliance.</p><p></p><p>In contrast, **Firebase Firestore** is a NoSQL document database. While it handles basic read-heavy mobile feeds with ease, implementing basic relational patterns (like fetching a post and its comments with author profiles) requires denormalizing data across collections or executing costly N+1 round-trip client queries.</p>
+        
+        <h3>2. AI & Vector Workloads in 2026</h3>
+        <p>Modern software almost universally demands semantic search or RAG capabilities. Supabase supports `pgvector` natively. You can store 1536-dimensional OpenAI or Claude embeddings directly in your database table alongside your application data, performing cosine distance queries (`<->`) in standard SQL.</p><p></p><p>Firebase requires configuring external Cloud Functions, Vertex AI extensions, or streaming data to Google Cloud Vector Search, adding latency, complexity, and distinct billing line items.</p>
+        
+        <h3>3. The Surprise Billing Risk: Op-Based vs Compute-Based</h3>
+        <p>Firebase charges per **document read, write, and delete**. An accidental infinite loop on the client, a bot scraping your web app, or an unexpected traffic spike on a collection of 50,000 items can rack up thousands of dollars in hours.</p><p></p><p>Supabase uses **compute-based billing**. On the $25/mo Pro tier, you get a dedicated virtual machine instance. If your traffic spikes, CPU utilization increases or requests throttle, but you will never wake up to an unbudgeted $10,000 document-read invoice.</p>
+        
+    </div>
+
+    <h2>4. Pros & Cons Analysis</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.25rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Supabase Analysis</h3>
+        <div class="pros-box" style="margin-bottom:1rem;">
+          <strong style="color:var(--accent); font-size:0.9rem;">Advantages</strong>
+          <ul><li>✓ Pure PostgreSQL with full SQL, JOINs, ACID, and triggers</li><li>✓ Built-in pgvector extension for LLM embeddings and RAG pipelines</li><li>✓ Zero vendor lock-in with 1-click Docker self-hosting</li><li>✓ Transparent compute-based pricing ($25/mo) without read/write metering spikes</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.9rem;">Limitations</strong>
+          <ul><li>✗ Connection limits require pooling (Supavisor / PgBouncer) for high serverless scale</li><li>✗ Client SDKs are younger than Firebase's 10-year ecosystem</li><li>✗ Smaller native mobile analytics/crashlytics tooling suite</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.25rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Firebase Analysis</h3>
+        <div class="pros-box" style="margin-bottom:1rem;">
+          <strong style="color:var(--accent); font-size:0.9rem;">Advantages</strong>
+          <ul><li>✓ Battle-tested offline data sync and mobile SDKs (iOS, Android, Flutter)</li><li>✓ Truly infinite horizontal scaling without managing connection limits</li><li>✓ Tight native integration with Google Cloud, Crashlytics, and BigQuery</li><li>✓ Generous free tier for hobby prototypes</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.9rem;">Limitations</strong>
+          <ul><li>✗ Firestore read/write pricing can cause catastrophic surprise bills</li><li>✗ NoSQL structure makes relational JOINs and complex filtering extremely painful</li><li>✗ Severe proprietary vendor lock-in — near-impossible to self-host</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>5. Migration Guide & Considerations</h2>
+    <div class="migration-box">
+      <strong style="color:#fff; font-size:1.05rem;">Switching Paths:</strong>
+      <p style="margin-top:0.5rem; margin-bottom:0;">Migrating from Firebase to Supabase is well-supported in 2026. Supabase provides the `firestore-to-supabase` CLI utility that maps Firestore subcollections to Postgres tables, generates relational schema migrations, and securely imports Firebase Auth users while preserving their bcrypt/scrypt password hashes.</p>
+    </div>
+
+    <h2>6. Frequently Asked Questions</h2>
     <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
       
         <div class="faq-item">
@@ -194,6 +315,22 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4re
           <div class="faq-a">Yes, Supabase is 100% open-source and provides official Docker Compose configurations to run the full BaaS stack on any Linux server.</div>
         </div>
         
+        <div class="faq-item">
+          <div class="faq-q">Q: How does Supabase handle connection pooling?</div>
+          <div class="faq-a">Supabase includes Supavisor (an open-source Postgres connection pooler) by default, allowing millions of serverless and edge function connections without exhausting database max_connections.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-q">Q: Does Supabase have offline data synchronization like Firebase?</div>
+          <div class="faq-a">While Supabase offers real-time websockets (CDC), native offline-first local cache synchronization is more mature in Firebase's client SDKs. Supabase developers typically pair it with local stores like WatermelonDB or PowerSync.</div>
+        </div>
+        
+    </div>
+
+    <div style="text-align:center; margin: 3.5rem 0 1rem;">
+      <h3 style="margin-bottom:1rem;">Ready to build?</h3>
+      <a href="https://supabase.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-primary" style="margin-right:1rem;">Start on Supabase for Free →</a>
+      <a href="https://firebase.google.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-outline">Explore Firebase →</a>
     </div>
   </main>
 

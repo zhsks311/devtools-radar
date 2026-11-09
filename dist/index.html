@@ -10,6 +10,7 @@
 :root {
   --bg: #090d16;
   --surface: #121826;
+  --surface-raised: #182234;
   --border: #222f46;
   --text: #e2e8f0;
   --text-muted: #94a3b8;
@@ -23,18 +24,22 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   padding: 0;
   margin: 0;
 }
-.container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+.container { max-width: 920px; margin: 0 auto; padding: 2rem 1.5rem; }
 header {
   border-bottom: 1px solid var(--border);
   padding: 1.25rem 0;
-  margin-bottom: 2.5rem;
+  background: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header-inner {
-  max-width: 960px;
+  max-width: 920px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
@@ -46,9 +51,14 @@ header {
 .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
 .badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
 .badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
-h1 { font-size: 2.25rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; color: #fff; }
-.lead { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem; }
-.table-wrapper { overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+h1 { font-size: 2.25rem; font-weight: 800; line-height: 1.25; margin: 1rem 0; color: #fff; }
+h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+h3 { font-size: 1.2rem; font-weight: 600; color: #fff; margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
+.lead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
+.meta-row { display: flex; align-items: center; gap: 1rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+.table-wrapper { overflow-x: auto; margin: 1.5rem 0 2rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
 table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
 th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
 th { background: #162032; color: #fff; font-weight: 600; }
@@ -81,11 +91,35 @@ tr:last-child td { border-bottom: none; }
   border: 1px solid #1e3a5f;
   border-radius: 12px;
   padding: 1.75rem;
-  margin: 2.5rem 0;
+  margin: 1.5rem 0 2.5rem;
+}
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
+.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.25rem; }
+.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.25rem; }
+.pros-box ul, .cons-box ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+.pros-box li, .cons-box li { font-size: 0.9rem; margin-bottom: 0.4rem; color: #cbd5e1; }
+pre {
+  background: #0d121d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  color: #38bdf8;
+  margin: 1rem 0;
+}
+.migration-box {
+  background: #121e33;
+  border-left: 4px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
 }
 .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
 .faq-q { font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
-.faq-a { color: var(--text-muted); }
+.faq-a { color: var(--text-muted); font-size: 0.95rem; }
 footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
 </style>
 </head>
@@ -93,15 +127,15 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4re
   <header>
     <div class="header-inner">
       <a href="./" class="logo">⚡ DevTools<span>Radar</span></a>
-      <span class="badge badge-green">Live Programmatic Directory</span>
+      <span class="badge badge-green">2026 Developer Directory</span>
     </div>
   </header>
 
   <main class="container">
-    <div style="text-align: center; max-width: 680px; margin: 2rem auto 3.5rem;">
+    <div style="text-align: center; max-width: 720px; margin: 2rem auto 3.5rem;">
       <span class="badge badge-blue" style="margin-bottom:1rem;">Programmatic Developer Intelligence</span>
       <h1>Zero-Fluff Developer Tool Comparisons</h1>
-      <p class="lead">We parse pricing tiers, cold starts, vendor lock-in risks, and API specs so you can architect with confidence without reading 40 blog posts.</p>
+      <p class="lead">We parse pricing formulas, cold starts, vendor lock-in risks, and API specs so you can architect with confidence without reading 40 biased sponsored blog posts.</p>
     </div>
 
     <div class="grid">
@@ -109,40 +143,40 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4re
         <div class="card">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem;">
             <span class="badge badge-blue">Backend & Database</span>
-            <span style="font-size:0.8rem; color:var(--text-muted);">2026 Edition</span>
+            <span style="font-size:0.8rem; color:var(--text-muted);">7 min read</span>
           </div>
-          <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem;">Supabase vs Firebase</h2>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.5;">Choose Supabase if you need complex relational data, vector search for AI, or freedom from vendor lock-in. Choose Fireba...</p>
+          <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem; border-bottom:none; padding-bottom:0;">Supabase vs Firebase</h2>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.5;">Choose Supabase if you value PostgreSQL, want AI vector search without extra infrastructure, and demand predictable monthly hostin...</p>
           <a href="./compare/supabase-vs-firebase/" class="btn btn-outline" style="width:100%; display:block;">Read In-Depth Comparison →</a>
         </div>
         
         <div class="card">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem;">
             <span class="badge badge-blue">Hosting & Edge</span>
-            <span style="font-size:0.8rem; color:var(--text-muted);">2026 Edition</span>
+            <span style="font-size:0.8rem; color:var(--text-muted);">6 min read</span>
           </div>
-          <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem;">Vercel vs Cloudflare Pages</h2>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.5;">Choose Vercel for the smoothest Next.js DX, preview deployments, and seamless team collaboration. Choose Cloudflare Page...</p>
+          <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem; border-bottom:none; padding-bottom:0;">Vercel vs Cloudflare Pages</h2>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.5;">Choose Vercel for the smoothest Next.js DX, preview deployments, and seamless team collaboration. Choose Cloudflare Pages if you w...</p>
           <a href="./compare/vercel-vs-cloudflare-pages/" class="btn btn-outline" style="width:100%; display:block;">Read In-Depth Comparison →</a>
         </div>
         
         <div class="card">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem;">
             <span class="badge badge-blue">AI Development</span>
-            <span style="font-size:0.8rem; color:var(--text-muted);">2026 Edition</span>
+            <span style="font-size:0.8rem; color:var(--text-muted);">8 min read</span>
           </div>
-          <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem;">Cursor vs GitHub Copilot</h2>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.5;">Choose Cursor if you want an AI agent that rewrites multiple files simultaneously, understands project-wide context, and...</p>
+          <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem; border-bottom:none; padding-bottom:0;">Cursor vs GitHub Copilot</h2>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.5;">Choose Cursor if you want an AI agent that rewrites multiple files simultaneously, understands project-wide context, and accepts c...</p>
           <a href="./compare/cursor-vs-github-copilot/" class="btn btn-outline" style="width:100%; display:block;">Read In-Depth Comparison →</a>
         </div>
         
         <div class="card">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem;">
             <span class="badge badge-blue">Knowledge & Notes</span>
-            <span style="font-size:0.8rem; color:var(--text-muted);">2026 Edition</span>
+            <span style="font-size:0.8rem; color:var(--text-muted);">7 min read</span>
           </div>
-          <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem;">Notion vs Obsidian</h2>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.5;">Choose Notion for team collaboration, relational database trackers, and project management. Choose Obsidian for personal...</p>
+          <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem; border-bottom:none; padding-bottom:0;">Notion vs Obsidian</h2>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.5;">Choose Notion for team collaboration, relational database trackers, and project management. Choose Obsidian for personal deep thou...</p>
           <a href="./compare/notion-vs-obsidian/" class="btn btn-outline" style="width:100%; display:block;">Read In-Depth Comparison →</a>
         </div>
         
