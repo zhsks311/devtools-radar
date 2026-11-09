@@ -324,7 +324,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2 id="s1">1. The billing unit decides what code you may write</h2>
       <p><strong>Supabase sells a machine.</strong> You rent a Postgres instance, a disk and a connection ceiling, and reads inside them are free. <strong>Firebase sells events.</strong> Every document read, write, index batch and listener update is a line on the invoice, with a daily free quota on top.</p>
 <p>What each philosophy forbids:</p>
-<ul><li><strong>Firestore forbids JOINs.</strong></li><li><strong>Supabase forbids cheap concurrency.</strong> The $10 Micro instance stops at 60 direct and 200 pooled connections. The ceiling is purchasable rather than absolute — 12,000 pooled connections at $3,730 — but you buy it per project.</li></ul>
+<ul><li><strong>Firestore forbids JOINs.</strong> A relation becomes duplicated fields or an extra round trip, and the extra reads are billed.</li><li><strong>Supabase forbids cheap concurrency.</strong> The $10 Micro instance stops at 60 direct and 200 pooled connections. The ceiling is purchasable rather than absolute — 12,000 pooled connections at $3,730 — but you buy it per project.</li></ul>
 <div class="table-wrapper"><table><thead><tr><th>Meter</th><th>Unit price</th><th>Pattern it punishes</th></tr></thead><tbody><tr><td>Firestore reads</td><td>$0.03 / 100,000</td><td>Live listeners on hot documents</td></tr><tr><td>Firestore writes</td><td>$0.09 / 100,000</td><td>Per-keystroke saves, chatty counters</td></tr><tr><td>Supabase disk</td><td>$0.125/GB over 8 GB</td><td>Keeping everything forever</td></tr><tr><td>Supabase compute</td><td>$10 to $3,730/month per project</td><td>Many connections, many projects</td></tr></tbody></table></div>
 
       <h2 id="s2">2. A listener is a meter, not a subscription</h2>
@@ -334,7 +334,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 reads = users * docs * changes_per_min * 60 * 24 * 30
 print(reads)                   # 4.32B events, zero clicks
 print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota</code></pre>
-<p>That is a gross read charge at the us-central1 rate before free-quota adjustments, and one Pro Micro project costs $25/month inside its quotas — which says nothing about whether that instance can carry the workload, only that the bill stops tracking the watching. Reconnects make it worse:</p>
+<p>That is a gross read charge at the us-central1 rate, before free-quota adjustments. One Pro Micro project costs $25/month inside its quotas — which says nothing about whether that instance can carry the load, only that the bill stops tracking the watching. Reconnects make it worse:</p>
 <ul><li>Offline persistence <strong>off</strong>: every reconnect is billed like a brand-new query.</li><li>Persistence <strong>on</strong> but disconnected for more than 30 minutes: same bill.</li></ul>
 
       <h2 id="s3">3. On Supabase the ceiling is capacity, not a per-read meter</h2>
@@ -346,7 +346,7 @@ print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota</code></pre>
 
       <h2 id="s4">4. Index entry reads are the Firestore line item nobody quotes</h2>
       <ul><li>One read per batch of up to 1,000 index entries a query reads.</li><li>A query with <strong>one</strong> range field pays nothing for index entries. Zero range fields are also exempt. Add a second range field and billing starts.</li><li><code>count()</code>, <code>sum()</code> and <code>avg()</code> bill index reads, with a 1-document-read minimum even at zero entries.</li></ul>
-<p>Firestore's own docs give the example: <code>count()</code> over 1,500 index entries bills 2 document reads. Repeated application calls repeat the charge.</p>
+<p>Firestore's own docs give the example: <code>count()</code> over 1,500 index entries bills 2 document reads.</p>
 <blockquote><p>Ten million plain reads cost $3.00 at the listed rate. The <code>count()</code> in your page header is a different bill.</p></blockquote>
 <p>Audit any query that combines two range fields before it ships.</p>
 
@@ -452,7 +452,7 @@ for (const doc of snap.docs) {
       <h2 id="migration">Migration path</h2>
       <div class="migration-box">
         <strong>What switching actually takes</strong>
-        <p style="margin-top:0.5rem; margin-bottom:0;"><p><code>supabase-community/firebase-to-supabase</code> is community tooling, not an official CLI. <code>firestore2json.js</code> exports one collection, <code>json2supabase.js</code> loads it into one table, and fields are flattened to text, numeric, boolean or jsonb — splitting nested JSON into related tables is a hook you write. Auth is the harder half: <code>firestoreusers2json</code> and <code>import_users</code> carry passwords over as SCRYPT hash parameters, and verifying a user's existing Firebase password on first login needs middleware the repo still marks work in progress. Budget the schema work, not the script.</p></p>
+        <div style="margin-top:0.5rem;"><p><code>supabase-community/firebase-to-supabase</code> is community tooling, not an official CLI. <code>firestore2json.js</code> exports one collection, <code>json2supabase.js</code> loads it into one table, and fields are flattened to text, numeric, boolean or jsonb — splitting nested JSON into related tables is a hook you write. Auth is the harder half: <code>firestoreusers2json</code> and <code>import_users</code> carry passwords over as SCRYPT hash parameters, and verifying a user's existing Firebase password on first login needs middleware the repo still marks work in progress. Budget the schema work, not the script.</p></div>
       </div>
 
     <h2 id="faq">Questions that change the decision</h2>
