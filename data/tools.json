@@ -248,7 +248,7 @@
       },
       {
         "title": "An idle await no longer chooses the winner",
-        "content": "Fluid compute, the default for new Vercel projects, bills active CPU rather than wall time, and Workers bills CPU-ms; An idle `await` burns no CPU meter on either; it does not make the whole deployment free.\n\n- Vercel Fluid compute: Active CPU starts at $0.128/vCPU-hour.\n- Vercel says provisioned memory is billed in GB-hours at less than 10% of the Active CPU rate.\n\nIn-function concurrency lets concurrent requests share one instance; Vercel claims up to 85% savings from it and up to 90% from Active CPU pricing.\n\n> Workers Paid includes 30M CPU-ms a month; Vercel bills Active CPU and provisioned memory as separate metered lines.\n\nWaiting on an external API no longer establishes a CPU-price reason to migrate; inspect transfer and request counts before touching the runtime."
+        "content": "Fluid compute, the default for new Vercel projects, bills active CPU rather than wall time, and Workers bills CPU-ms. An idle `await` burns no CPU meter on either; it does not make the whole deployment free.\n\n- Vercel Fluid compute: Active CPU starts at $0.128/vCPU-hour.\n- Vercel says provisioned memory is billed in GB-hours at less than 10% of the Active CPU rate.\n\nIn-function concurrency lets concurrent requests share one instance; Vercel claims up to 85% savings from it and up to 90% from Active CPU pricing.\n\n> Workers Paid includes 30M CPU-ms a month; Vercel bills Active CPU and provisioned memory as separate metered lines.\n\nWaiting on an external API no longer establishes a CPU-price reason to migrate; inspect transfer and request counts before touching the runtime."
       },
       {
         "title": "The penalty moved to bytes and requests",
@@ -281,7 +281,7 @@
       {
         "label": "CPU rate normalized to a million CPU-ms",
         "formula": "Vercel: starting $0.128 ÷ 3.6M CPU-ms × 1M CPU-ms ≈ $0.0356; Cloudflare: 1M billable CPU-ms × $0.02/M CPU-ms = $0.02",
-        "result": "≈ $0.0356 (Vercel starting rate, before provisioned-memory GB-hours) versus $0.02 per million CPU-ms after Cloudflare's 30M included; Vercel Pro includes no CPU"
+        "result": "≈ $0.0356 (Vercel starting rate, before provisioned-memory GB-hours) versus $0.02 per million CPU-ms after Cloudflare's 30M included; Vercel meters Active CPU and memory separately"
       },
       {
         "label": "CPU in Cloudflare's own cached example",
@@ -323,7 +323,7 @@
       {
         "situation": "CPU-heavy handlers within Workers' 5-minute CPU cap",
         "pick": "Cloudflare Pages",
-        "why": "Workers Paid charges $0.02 per million CPU-ms after 30M included, against Vercel's starting ≈ $0.0356 per million CPU-ms with no included CPU."
+        "why": "Workers Paid charges $0.02 per million CPU-ms after 30M included, against Vercel's starting ≈ $0.0356 per million CPU-ms with Active CPU and memory metered separately, per Vercel."
       },
       {
         "situation": "A Cron or Queue job that runs longer than 5 minutes",
