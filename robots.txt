@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zhsks311.github.io/devtools-radar/sitemap.xml

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notion vs Obsidian (2026 Benchmark): Which is Best?</title>
+  <meta name="description" content="In-depth developer guide comparing Notion and Obsidian. Analyze pricing formulas, database architectures, vendor lock-in, and self-hosting options.">
+  <link rel="canonical" href="https://zhsks311.github.io/devtools-radar/compare/notion-vs-obsidian/">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I backup Obsidian to GitHub?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, because Obsidian vault is just a regular folder of Markdown files, you can use git to sync it to any private repository for free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Notion slow on large databases?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notion requires active internet and can feel sluggish with thousands of database rows, whereas Obsidian loads instantly from local SSD."
+      }
+    }
+  ]
+}
+  </script>
+  <style>
+:root {
+  --bg: #090d16;
+  --surface: #121826;
+  --border: #222f46;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary: #38bdf8;
+  --primary-glow: rgba(56, 189, 248, 0.15);
+  --accent: #10b981;
+  --danger: #f43f5e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+  margin-bottom: 2.5rem;
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+.logo span { color: var(--primary); }
+.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
+.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+h1 { font-size: 2.25rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; color: #fff; }
+.lead { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem; }
+.table-wrapper { overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
+th { background: #162032; color: #fff; font-weight: 600; }
+tr:last-child td { border-bottom: none; }
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  text-align: center;
+}
+.btn-primary { background: var(--primary); color: #000; }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover { border-color: #3b82f6; transform: translateY(-2px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.verdict-box {
+  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
+  border: 1px solid #1e3a5f;
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin: 2.5rem 0;
+}
+.faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+.faq-q { font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+.faq-a { color: var(--text-muted); }
+footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="../../" style="color:var(--text-muted); text-decoration:none; font-size:0.9rem;">← All Comparisons</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <span class="badge badge-blue">Knowledge & Notes</span>
+    <h1 style="margin-top:0.75rem;">Notion vs Obsidian (2026)</h1>
+    <p class="lead">An objective, architectural breakdown for developers deciding between Notion and Obsidian.</p>
+
+    <div class="verdict-box">
+      <h3 style="color:#fff; margin-bottom:0.5rem; font-size:1.15rem;">🎯 Executive Verdict</h3>
+      <p style="color:var(--text); line-height:1.6;">Choose Notion for team collaboration, relational database trackers, and project management. Choose Obsidian for personal deep thought, complete data privacy, offline-first speed, and zero platform lock-in.</p>
+    </div>
+
+    <h2 style="color:#fff; margin: 2rem 0 1rem;">1. Key Metric Comparison</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric / Dimension</th>
+            <th>Notion <span class="badge badge-blue">Collaborative Cloud</span></th>
+            <th>Obsidian <span class="badge badge-green">Local-First Markdown</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Core Engine / Architecture</strong></td>
+            <td>Relational Databases, Formula, Rollups</td>
+            <td>Local .md Files + Frontmatter Dataview</td>
+          </tr>
+          <tr>
+            <td><strong>Pricing & Free Tier</strong></td>
+            <td>Free / $10 Plus / Team pricing (Free)</td>
+            <td>100% Free / $4 Sync / $8 Publish</td>
+          </tr>
+          <tr>
+            <td><strong>Self-Hostable</strong></td>
+            <td><strong>No (Cloud hosted SaaS)</strong></td>
+            <td>Yes (Your local drive / Git repo)</td>
+          </tr>
+          <tr>
+            <td><strong>Realtime & Concurrency</strong></td>
+            <td>Real-time collaborative editing</td>
+            <td>Local-first (Peer-to-peer sync options)</td>
+          </tr>
+          <tr>
+            <td><strong>AI & Vector Readiness</strong></td>
+            <td>Notion AI (Q&A across workspace)</td>
+            <td>Local LLM plugins, Smart Connections</td>
+          </tr>
+          <tr>
+            <td><strong>Vendor Lock-In Risk</strong></td>
+            <td><span style="color:var(--accent); font-weight:600;">Moderate (Exports to Markdown/HTML with loss)</span></td>
+            <td><span style="color:var(--danger); font-weight:600;">Zero (Pure plain-text .md files)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Official Link</strong></td>
+            <td><a href="https://notion.so/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.85rem;">Visit Notion →</a></td>
+            <td><a href="https://obsidian.md/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.85rem;">Visit Obsidian →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="color:#fff; margin: 3rem 0 1rem;">2. Frequently Asked Questions</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Q: Can I backup Obsidian to GitHub?</div>
+          <div class="faq-a">Yes, because Obsidian vault is just a regular folder of Markdown files, you can use git to sync it to any private repository for free.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-q">Q: Is Notion slow on large databases?</div>
+          <div class="faq-a">Notion requires active internet and can feel sluggish with thousands of database rows, whereas Obsidian loads instantly from local SSD.</div>
+        </div>
+        
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Independent developer analysis.</p>
+    </div>
+  </footer>
+</body>
+</html>
