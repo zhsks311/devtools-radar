@@ -329,6 +329,11 @@ def md_to_html(md):
     return "\n".join(out)
 
 
+def _plain(text):
+    """Card excerpts: strip markdown markers so the teaser reads as prose."""
+    return re.sub(r"[`*_]", "", text)
+
+
 def slugify(text):
     s = re.sub(r"[^a-zA-Z0-9\s-]", "", text).strip().lower()
     return re.sub(r"[\s-]+", "-", s)
@@ -363,7 +368,7 @@ def generate_index_html(items):
             <span style="font-size:0.78rem; color:var(--text-muted);">{reading_time(item)}</span>
           </div>
           <h2 style="font-size:1.22rem; color:#fff; margin:0 0 0.5rem; border-bottom:none; padding-bottom:0;">{a['name']} vs {b['name']}</h2>
-          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1rem; line-height:1.6;">{item.get('hook', item['verdict_summary'])[:165]}…</p>
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1rem; line-height:1.6;">{_plain(item.get('hook', item['verdict_summary']))[:175]}…</p>
           <span style="color:var(--primary); font-size:0.86rem; font-weight:600;">Read the teardown →</span>
         </a>
         """
