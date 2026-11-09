@@ -1,0 +1,158 @@
+[
+  {
+    "slug": "supabase-vs-firebase",
+    "category": "Backend & Database",
+    "tool_a": {
+      "name": "Supabase",
+      "tagline": "The Open Source Firebase Alternative",
+      "db": "PostgreSQL (Relational + pgvector)",
+      "pricing": "Free tier (2 DBs) / $25 Pro Plan",
+      "self_host": "Yes (Full Docker stack)",
+      "realtime": "Postgres Change Data Capture",
+      "ai_readiness": "Native pgvector for RAG / Embeddings",
+      "lock_in": "Zero (Standard SQL export)",
+      "badge": "Open Source",
+      "cta_url": "https://supabase.com/?utm_source=devtoolsradar"
+    },
+    "tool_b": {
+      "name": "Firebase",
+      "tagline": "Google's Mobile & Web Development BaaS",
+      "db": "Firestore (NoSQL Document Store)",
+      "pricing": "Free Spark tier / Blaze (Pay-per-op)",
+      "self_host": "No (Proprietary GCP)",
+      "realtime": "Native snapshot listeners",
+      "ai_readiness": "Extensions with Vertex AI",
+      "lock_in": "High (Proprietary Rules & SDK)",
+      "badge": "Managed Google",
+      "cta_url": "https://firebase.google.com/?utm_source=devtoolsradar"
+    },
+    "verdict_summary": "Choose Supabase if you need complex relational data, vector search for AI, or freedom from vendor lock-in. Choose Firebase if you have simple mobile document trees and heavy Google Cloud ecosystem integration.",
+    "faqs": [
+      {
+        "q": "Is Supabase pricing more predictable than Firebase?",
+        "a": "Yes. Firebase charges per document read, write, and delete, which can cause surprise bill spikes from infinite loops or viral traffic. Supabase charges predictable compute capacity ($25/mo for Pro)."
+      },
+      {
+        "q": "Can I self-host Supabase on my own VPS?",
+        "a": "Yes, Supabase is 100% open-source and provides official Docker Compose configurations to run the full BaaS stack on any Linux server."
+      }
+    ]
+  },
+  {
+    "slug": "vercel-vs-cloudflare-pages",
+    "category": "Hosting & Edge",
+    "tool_a": {
+      "name": "Vercel",
+      "tagline": "The Frontend Cloud for Next.js",
+      "db": "Serverless Functions + Edge Middleware",
+      "pricing": "Hobby Free / $20/seat Pro",
+      "self_host": "No (Tied to Vercel infrastructure)",
+      "realtime": "Edge functions & SSE",
+      "ai_readiness": "AI SDK, v0 ecosystem",
+      "lock_in": "Moderate (Next.js runs elsewhere with effort)",
+      "badge": "Next.js Native",
+      "cta_url": "https://vercel.com/?utm_source=devtoolsradar"
+    },
+    "tool_b": {
+      "name": "Cloudflare Pages",
+      "tagline": "Fast, Secure Frontend Hosting on Global Anycast Edge",
+      "db": "Cloudflare Workers + D1 (SQLite) + KV",
+      "pricing": "Free (Unlimited bandwidth) / $5 Workers Paid",
+      "self_host": "No (Cloudflare edge network)",
+      "realtime": "WebSockets / Durable Objects",
+      "ai_readiness": "Workers AI (Serverless GPUs at edge)",
+      "lock_in": "Low-Moderate (Workers runtime)",
+      "badge": "Zero Bandwidth Fee",
+      "cta_url": "https://pages.cloudflare.com/?utm_source=devtoolsradar"
+    },
+    "verdict_summary": "Choose Vercel for the smoothest Next.js DX, preview deployments, and seamless team collaboration. Choose Cloudflare Pages if you want zero bandwidth surprise bills and hyper-fast global edge distribution at fraction of the cost.",
+    "faqs": [
+      {
+        "q": "Why do developers switch from Vercel to Cloudflare Pages?",
+        "a": "The primary driver is egress bandwidth costs. Cloudflare charges $0 for bandwidth on all tiers, while Vercel charges for bandwidth overages past 1TB on Pro."
+      },
+      {
+        "q": "Does Next.js App Router work on Cloudflare Pages?",
+        "a": "Yes, via the official @cloudflare/next-on-pages adapter, although Edge Runtime limitations apply to certain Node.js native APIs."
+      }
+    ]
+  },
+  {
+    "slug": "cursor-vs-github-copilot",
+    "category": "AI Development",
+    "tool_a": {
+      "name": "Cursor",
+      "tagline": "The AI-First Code Editor Built on VS Code",
+      "db": "Full Codebase Indexing + Multi-file Agent",
+      "pricing": "Free Hobby / $20/mo Pro (Fast requests)",
+      "self_host": "No (SaaS hosted)",
+      "realtime": "Multi-file diff applying & composer",
+      "ai_readiness": "Claude 3.5 Sonnet, GPT-4o, Custom rules (.cursorrules)",
+      "lock_in": "Low (It is a fork of VS Code)",
+      "badge": "Agentic Composer",
+      "cta_url": "https://cursor.com/?utm_source=devtoolsradar"
+    },
+    "tool_b": {
+      "name": "GitHub Copilot",
+      "tagline": "The Original AI Pair Programmer",
+      "db": "Contextual Token Window (Single/Open files)",
+      "pricing": "$10/mo Individual / $19/mo Business",
+      "self_host": "No (Microsoft Azure)",
+      "realtime": "Inline ghost text completion",
+      "ai_readiness": "GPT-4o, Claude 3.5 Sonnet (Copilot Chat)",
+      "lock_in": "Zero (Runs as extension in any IDE)",
+      "badge": "Universal Plugin",
+      "cta_url": "https://github.com/features/copilot?utm_source=devtoolsradar"
+    },
+    "verdict_summary": "Choose Cursor if you want an AI agent that rewrites multiple files simultaneously, understands project-wide context, and accepts custom codebase rules. Choose Copilot if you must stay in JetBrains or standard VS Code without migrating editors.",
+    "faqs": [
+      {
+        "q": "Can I use my existing VS Code extensions in Cursor?",
+        "a": "Yes, with one click Cursor imports all your extensions, keybindings, and themes from VS Code."
+      },
+      {
+        "q": "Is Cursor Pro worth the extra $10 compared to Copilot?",
+        "a": "For active developers, yes. Cursor Composer's multi-file editing capability saves hours compared to Copilot's single-file chat window."
+      }
+    ]
+  },
+  {
+    "slug": "notion-vs-obsidian",
+    "category": "Knowledge & Notes",
+    "tool_a": {
+      "name": "Notion",
+      "tagline": "The Connected Workspace for Teams & Projects",
+      "db": "Relational Databases, Formula, Rollups",
+      "pricing": "Free / $10 Plus / Team pricing",
+      "self_host": "No (Cloud hosted SaaS)",
+      "realtime": "Real-time collaborative editing",
+      "ai_readiness": "Notion AI (Q&A across workspace)",
+      "lock_in": "Moderate (Exports to Markdown/HTML with loss)",
+      "badge": "Collaborative Cloud",
+      "cta_url": "https://notion.so/?utm_source=devtoolsradar"
+    },
+    "tool_b": {
+      "name": "Obsidian",
+      "tagline": "A Second Brain Over a Local Folder of Plain Text Markdown",
+      "db": "Local .md Files + Frontmatter Dataview",
+      "pricing": "100% Free / $4 Sync / $8 Publish",
+      "self_host": "Yes (Your local drive / Git repo)",
+      "realtime": "Local-first (Peer-to-peer sync options)",
+      "ai_readiness": "Local LLM plugins, Smart Connections",
+      "lock_in": "Zero (Pure plain-text .md files)",
+      "badge": "Local-First Markdown",
+      "cta_url": "https://obsidian.md/?utm_source=devtoolsradar"
+    },
+    "verdict_summary": "Choose Notion for team collaboration, relational database trackers, and project management. Choose Obsidian for personal deep thought, complete data privacy, offline-first speed, and zero platform lock-in.",
+    "faqs": [
+      {
+        "q": "Can I backup Obsidian to GitHub?",
+        "a": "Yes, because Obsidian vault is just a regular folder of Markdown files, you can use git to sync it to any private repository for free."
+      },
+      {
+        "q": "Is Notion slow on large databases?",
+        "a": "Notion requires active internet and can feel sluggish with thousands of database rows, whereas Obsidian loads instantly from local SSD."
+      }
+    ]
+  }
+]
