@@ -1,0 +1,117 @@
+{
+  "slug": "clerk-vs-auth0",
+  "hook": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning on a later day after signup per app, so these are not equivalent populations.",
+  "sections": [
+    {
+      "title": "Clerk and Auth0 count different people",
+      "content": "Read the unit before the price. Each vendor defines it in its own words:\n\n| Vendor | Unit | Who is counted |\n|---|---|---|\n| Clerk | Monthly Retained User (MRU) | visits at least one day after signup, per app |\n| Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |\n\nClerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.\n\n> A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.\n\nVendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0."
+    },
+    {
+      "title": "Who should not pick Auth0's paid B2C plans",
+      "content": "- Clerk forbids a limitless free tier: Hobby stops at 50,000 MRU per app with no MFA or passkeys, and one month of grace before the app stops working.\n- Clerk forbids big free organisations: 100 MRO per app, 20 members each. An MRO has at least 2 members, one of them an MRU that month.\n- Auth0 forbids paying for exactly what you use. Between tiers you are billed at the next tier up.\n- Avoid Auth0 B2C Essentials and Professional if you need enterprise connections: both list them as \"not available\". Free includes 1; custom SSO tiers require Enterprise."
+    },
+    {
+      "title": "On Auth0, the 501st user costs $35",
+      "content": "Auth0's B2C price is a staircase. You pay for the tier you land in:\n\n| B2C MAU | Essentials | Professional |\n|---|---|---|\n| 500 | $35 | $240 |\n| 1,000 | $70 | $240 |\n| 20,000 | $1,400 | $3,200 |\n| 30,000 | $2,100 | contact us |\n| 40,000 | $2,800 | not available |\n| 50,000 | $3,500 | not available |\n\nAt 500 MAU, Essentials is $35 / 500 = $0.07 per user. User 501 moves you to the 1,000 tier: $70 − $35 = $35 for one person. The $70 bill is double $35.\n\n> **The usage punished is a spike that crosses a boundary.** One launch week past a tier line bills the whole next tier. Professional has a harder cliff: $240 climbing to $3,200, then no self-serve price at all. Professional's printed prices end at 20,000 MAU for B2C and 10,000 for B2B.\n\n> Annual billing keeps the steps: yearly is 11 × monthly, so 50,000 MAU on Essentials is 11 × $3,500 = $38,500."
+    },
+    {
+      "title": "Who should not pick Clerk without budgeting add-ons",
+      "content": "Clerk Pro is $25/month, or $20/month billed annually. It includes 50,000 MRU per app, then $0.02 per MRU with volume discounts. Every plan allows unlimited applications.\n\nThe add-ons move the bill:\n\n| Add-on | Price |\n|---|---|\n| SSO connection | 1 included, then $75/mo |\n| Directory Sync | 1 included, then $75/mo from 1 January 2027 |\n| B2B Authentication: Enhanced add-on | $100/mo; $1/MRO beyond 100 included per app on all plans; removes 20-member limit |\n| Protect | 10,000 checks free, then $0.002/check; 1,000,000+ quote-only; brute-force prevention excluded |\n\n> Ten enterprise customers, one SSO connection each, cost (10 − 1) × $75 = $675/month. **From January 2027, Directory Sync for the same ten adds another (10 − 1) × $75 = $675.**\n\n> Protect at 200,000 checks is (200,000 − 10,000) × $0.002 = $380.\n\nAvoid Clerk's self-serve plans if you need a 99.99% SLA or a HIPAA BAA; both are Enterprise-only."
+    },
+    {
+      "title": "The 140x gap is correct arithmetic on two different quantities",
+      "content": "Paid-plan estimates at equal numeric inputs, not an identical population. Auth0 counts MAU; Clerk counts MRU.\n\n```python\nTIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350), (7_500, 525),\n         (10_000, 700), (20_000, 1_400), (30_000, 2_100), (40_000, 2_800), (50_000, 3_500)]\n\ndef auth0(mau):  # between tiers you pay the next tier up\n    return next((p for cap, p in TIERS if mau <= cap), None)  # breaks: >50,000 unpriced\n\ndef clerk_pro(mru):  # ignores Clerk's volume discounts\n    return 25 + max(0, mru - 50_000) * 0.02\n\nfor n in (501, 50_000, 100_000):\n    print(n, auth0(n), clerk_pro(n))\n```\n\n> At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 later-day MRU per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who came back on a later day. Not the same crowd.\n\n> At 100,000 MRU, Clerk is 50,000 × $0.02 + $25 = $1,025/month. Auth0's B2C sheet ends at 50,000: \"contact us\"."
+    },
+    {
+      "title": "Pick by who you are billed for, then check the next boundary",
+      "content": "**Choose Clerk Pro if** you need MFA, passkeys or branding removal below 50,000 MRU per app; Hobby excludes them.\n\n> For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, but Essentials and Professional allow only 10 organisations, not 200.\n\n**Choose Auth0 Professional if** you need custom database connections or cross-app SSO; it includes 12 tenants.\n\nCheck today:\n\n1. Price distinct non-internal MAU per Auth0 tenant and later-day MRU per Clerk app, with required plans and add-ons.\n2. Find your Auth0 tier and how many MAU separate you from the next one.\n3. List SSO and Directory Sync connections you will run on 1 January 2027."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "situation": "App below 50,000 MRU per app needing MFA, passkeys or branding removal",
+      "pick": "Clerk Pro",
+      "why": "Pro includes these features for $25/month; Hobby excludes them. Without a paid-feature requirement, Hobby covers 50,000 MRU per app for $0. Users who never return after day one are never billed."
+    },
+    {
+      "situation": "Side project that needs more than 3 social logins and costs nothing",
+      "pick": "Auth0 Free",
+      "why": "Auth0 Free includes unlimited social connections up to 25,000 MAU, while Clerk Hobby stops at 3 social connections."
+    },
+    {
+      "situation": "B2C usage beyond Clerk's 50,000 included MRU per app or Auth0's printed 50,000-MAU limit",
+      "pick": "Price Clerk Pro overage and request an Auth0 quote",
+      "why": "Clerk Pro lists $0.02/month per MRU beyond 50,000 included per app, with volume discounts; Auth0's printed B2C tiers end at 50,000 MAU, so higher usage needs a quote. Clerk MRU counts later-day returns per app; Auth0 MAU counts non-internal users authenticated that month per tenant."
+    },
+    {
+      "situation": "Team needing 10 dashboard seats, with 5,000 Clerk MRU and 200 qualifying MRO",
+      "pick": "Clerk Business + B2B Authentication Enhanced add-on",
+      "why": "$300 + $100 + (200 − 100) × $1 = $500/month. Each MRO needs at least 2 members, including an MRU that month. Auth0 B2B Essentials is $1,300/month at 5,000 MAU, but Essentials and Professional allow only 10 organizations, so neither serves 200 organizations. MRU counts later-day returns per app; MAU counts non-internal users authenticated that month per tenant."
+    },
+    {
+      "situation": "Existing user store you cannot migrate yet (bring your own database)",
+      "pick": "Auth0 Professional",
+      "why": "Custom database connections and cross-app SSO are Professional-and-up features on Auth0."
+    },
+    {
+      "situation": "B2C app requiring enterprise connections on a paid plan",
+      "pick": "Request Auth0 Enterprise pricing; avoid B2C Essentials and Professional",
+      "why": "B2C Essentials and Professional list enterprise connections as unavailable, while Free includes 1; custom SSO tiers require Enterprise."
+    },
+    {
+      "situation": "AI agent product that needs Token Vault and CIBA on Auth0",
+      "pick": "Auth0, plus a 50% surcharge rounded up to the dollar",
+      "why": "Auth0 for AI Agents adds 50% to the base price, rounded up to the dollar: B2B Essentials at 5,000 MAU costs $1,300 + ($1,300 × 50%) = $1,950/month."
+    },
+    {
+      "situation": "Healthcare app that needs HIPAA with a BAA",
+      "pick": "Quote Clerk Enterprise",
+      "why": "Clerk lists HIPAA with BAA only on its annual Enterprise plan. Request its custom annual quote; confirm Auth0's HIPAA and BAA eligibility separately before treating it as an alternative."
+    }
+  ],
+  "cost_math": [
+    {
+      "label": "Auth0 B2C Essentials, 50,000 MAU, annual",
+      "formula": "11 × $3,500 (yearly = 11 × monthly)",
+      "result": "$38,500/year; $38,500 / 12 = $3,208.33/month equivalent, rounded to cents; monthly billing remains $3,500/month"
+    },
+    {
+      "label": "Clerk Pro, 100,000 MRU",
+      "formula": "(100,000 − 50,000 included) × $0.02 + $25",
+      "result": "$1,025/month"
+    },
+    {
+      "label": "Auth0 B2C Essentials, the 501st user",
+      "formula": "$70 (1,000-MAU tier) − $35 (500-MAU tier)",
+      "result": "$35 for one user"
+    },
+    {
+      "label": "Clerk Business, 10 dashboard seats, 5,000 MRU and 200 qualifying MRO (at least 2 members, including an MRU that month)",
+      "formula": "$300 Business + $100 B2B add-on + (200 − 100) × $1 per MRO",
+      "result": "$500/month"
+    }
+  ],
+  "verdict_summary": "Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.",
+  "faqs": [
+    {
+      "q": "Does Auth0 have a free tier?",
+      "a": "Yes: Auth0 Free is $0 up to 25,000 MAU, with 1 tenant, 5 organizations, 1 enterprise connection and 1-day log retention. Self-service SSO and SCIM are included on it."
+    },
+    {
+      "q": "Do I need Clerk Business to offer SSO?",
+      "a": "No. Pro includes 1 SSO connection and charges $75/month for each additional connection; Business costs $300/month or $250/month billed annually and adds a SOC 2 report, 10 dashboard seats and 30-day application and admin logs."
+    },
+    {
+      "q": "How long does each vendor keep logs on the paid tiers?",
+      "a": "Auth0 keeps 5 days on Essentials, 10 on Professional and 30 on Enterprise. Clerk Pro keeps 7 days of logs and Business keeps 30."
+    },
+    {
+      "q": "What does SMS login cost on Clerk?",
+      "a": "SMS authentication is on Pro at $0.01 per SMS for the US and Canada, with international messages at market rate."
+    }
+  ],
+  "sources": [
+    "https://clerk.com/pricing",
+    "https://auth0.com/pricing"
+  ]
+}

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clerk vs Auth0 (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month p">
+  <link rel="canonical" href="https://zhsks311.github.io/devtools-radar/compare/clerk-vs-auth0/">
+  <meta property="og:title" content="Clerk vs Auth0 — 2026 teardown">
+  <meta property="og:description" content="At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month p">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://zhsks311.github.io/devtools-radar/compare/clerk-vs-auth0/">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Clerk vs Auth0: a 2026 engineering teardown",
+  "description": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning on a later day after signup per app, so these are not equivalent populations.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://zhsks311.github.io/devtools-radar/compare/clerk-vs-auth0/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Auth0 have a free tier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes: Auth0 Free is $0 up to 25,000 MAU, with 1 tenant, 5 organizations, 1 enterprise connection and 1-day log retention. Self-service SSO and SCIM are included on it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need Clerk Business to offer SSO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Pro includes 1 SSO connection and charges $75/month for each additional connection; Business costs $300/month or $250/month billed annually and adds a SOC 2 report, 10 dashboard seats and 30-day application and admin logs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does each vendor keep logs on the paid tiers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auth0 keeps 5 days on Essentials, 10 on Professional and 30 on Enterprise. Clerk Pro keeps 7 days of logs and Business keeps 30."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does SMS login cost on Clerk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SMS authentication is on Pro at $0.01 per SMS for the US and Canada, with international messages at market rate."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://zhsks311.github.io/devtools-radar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Clerk vs Auth0",
+      "item": "https://zhsks311.github.io/devtools-radar/compare/clerk-vs-auth0/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root {
+  --bg: #090d16;
+  --surface: #121826;
+  --surface-raised: #182234;
+  --border: #222f46;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary: #38bdf8;
+  --primary-glow: rgba(56, 189, 248, 0.15);
+  --accent: #10b981;
+  --warn: #f59e0b;
+  --danger: #f43f5e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+  background: rgba(9, 13, 22, 0.88);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
+.logo span { color: var(--primary); }
+.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
+.nav-link:hover { color: var(--primary); }
+.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
+.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
+.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
+h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
+h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
+p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
+ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
+li { margin-bottom: 0.4rem; font-size: 0.98rem; }
+li > code, p > code { font-size: 0.86em; }
+strong { color: #fff; font-weight: 640; }
+a { color: var(--primary); }
+blockquote {
+  border-left: 3px solid var(--primary);
+  background: rgba(56, 189, 248, 0.05);
+  padding: 0.9rem 1.2rem;
+  margin: 1.3rem 0;
+  color: #cbd5e1;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.97rem;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
+.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
+.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
+tr:last-child td { border-bottom: none; }
+td code { color: var(--primary); }
+.btn {
+  display: inline-block;
+  padding: 0.72rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-decoration: none;
+  transition: all 0.18s;
+  text-align: center;
+}
+.btn-primary { background: var(--primary); color: #04121b; }
+.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.18s, transform 0.18s;
+}
+a.card { display: block; text-decoration: none; }
+a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
+.verdict-box {
+  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
+  border: 1px solid #1e3a5f;
+  border-left: 3px solid var(--primary);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
+.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
+@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
+.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
+.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
+.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
+.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
+pre {
+  background: #0b1120;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #9dd7f5;
+  margin: 1rem 0 1.2rem;
+  tab-size: 2;
+}
+pre code { color: inherit; background: none; padding: 0; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(56, 189, 248, 0.09);
+  color: #9dd7f5;
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.87em;
+}
+.migration-box {
+  background: #121e33;
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0;
+}
+.migration-box strong { color: #fff; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+.faq-a { color: var(--text-muted); font-size: 0.94rem; }
+.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+.cost-row:last-child { border-bottom: none; }
+.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
+.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
+.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
+.matrix-pick { color: var(--primary); font-weight: 600; }
+.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
+.updated-note {
+  font-size: 0.8rem; color: var(--text-muted);
+  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
+}
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
+.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
+.toc ol { margin: 0 0 0 1.1rem; }
+.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
+.toc a { color: #cbd5e1; text-decoration: none; }
+.toc a:hover { color: var(--primary); }
+footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="../../" class="nav-link">← All teardowns</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">Identity & Auth</span>
+      <span class="badge badge-gray">Clerk vs Auth0</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+
+    <h1>Clerk vs Auth0</h1>
+    <p class="lead"><p>At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning on a later day after signup per app, so these are not equivalent populations.</p></p>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p><p>Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.</p></p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">Clerk and Auth0 count different people</a></li><li><a href="#s2">Who should not pick Auth0&#x27;s paid B2C plans</a></li><li><a href="#s3">On Auth0, the 501st user costs $35</a></li><li><a href="#s4">Who should not pick Clerk without budgeting add-ons</a></li><li><a href="#s5">The 140x gap is correct arithmetic on two different quantities</a></li><li><a href="#s6">Pick by who you are billed for, then check the next boundary</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>Key metric comparison</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Clerk <span class="badge badge-blue">Retained users</span></th>
+            <th>Auth0 <span class="badge badge-green">Tiered MAU</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Hosted auth with prebuilt UI, organisations and billing</td><td>Hosted identity platform: connections, tenants, rules</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Hobby $0 · Pro $25/mo ($20 annual) · Business $300/mo ($250 annual)</td><td>Free 25,000 MAU · Essentials from $35 · Professional from $240 · Enterprise quote</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>No (hosted service)</strong></td><td>No (hosted); private deployment is an Enterprise add-on</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>50,000 MRU included per app; sessions from 5 minutes to 10 years on paid</td><td>Tenants 1/3/12/unlimited by plan; 3 enterprise connections on B2B Essentials</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>M2M tokens and API keys with monthly verification limits</td><td>AI Agents add-on adds 50% to the base price</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium: hosted users, full data exports on every plan</td><td>High: tenants, connections and rules live inside the product</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://clerk.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Clerk →</a></td>
+            <td><a href="https://auth0.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Auth0 →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. Clerk and Auth0 count different people</h2>
+      <p>Read the unit before the price. Each vendor defines it in its own words:</p>
+<div class="table-wrapper"><table><thead><tr><th>Vendor</th><th>Unit</th><th>Who is counted</th></tr></thead><tbody><tr><td>Clerk</td><td>Monthly Retained User (MRU)</td><td>visits at least one day after signup, per app</td></tr><tr><td>Auth0</td><td>Monthly Active User (MAU)</td><td>non-internal user authenticated that month, per tenant</td></tr></tbody></table></div>
+<p>Clerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.</p>
+<blockquote><p>A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.</p></blockquote>
+<p>Vendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0.</p>
+
+      <h2 id="s2">2. Who should not pick Auth0&#x27;s paid B2C plans</h2>
+      <ul><li>Clerk forbids a limitless free tier: Hobby stops at 50,000 MRU per app with no MFA or passkeys, and one month of grace before the app stops working.</li><li>Clerk forbids big free organisations: 100 MRO per app, 20 members each. An MRO has at least 2 members, one of them an MRU that month.</li><li>Auth0 forbids paying for exactly what you use. Between tiers you are billed at the next tier up.</li><li>Avoid Auth0 B2C Essentials and Professional if you need enterprise connections: both list them as "not available". Free includes 1; custom SSO tiers require Enterprise.</li></ul>
+
+      <h2 id="s3">3. On Auth0, the 501st user costs $35</h2>
+      <p>Auth0's B2C price is a staircase. You pay for the tier you land in:</p>
+<div class="table-wrapper"><table><thead><tr><th>B2C MAU</th><th>Essentials</th><th>Professional</th></tr></thead><tbody><tr><td>500</td><td>$35</td><td>$240</td></tr><tr><td>1,000</td><td>$70</td><td>$240</td></tr><tr><td>20,000</td><td>$1,400</td><td>$3,200</td></tr><tr><td>30,000</td><td>$2,100</td><td>contact us</td></tr><tr><td>40,000</td><td>$2,800</td><td>not available</td></tr><tr><td>50,000</td><td>$3,500</td><td>not available</td></tr></tbody></table></div>
+<p>At 500 MAU, Essentials is $35 / 500 = $0.07 per user. User 501 moves you to the 1,000 tier: $70 − $35 = $35 for one person. The $70 bill is double $35.</p>
+<blockquote><p><strong>The usage punished is a spike that crosses a boundary.</strong> One launch week past a tier line bills the whole next tier. Professional has a harder cliff: $240 climbing to $3,200, then no self-serve price at all. Professional's printed prices end at 20,000 MAU for B2C and 10,000 for B2B.</p></blockquote>
+<blockquote><p>Annual billing keeps the steps: yearly is 11 × monthly, so 50,000 MAU on Essentials is 11 × $3,500 = $38,500.</p></blockquote>
+
+      <h2 id="s4">4. Who should not pick Clerk without budgeting add-ons</h2>
+      <p>Clerk Pro is $25/month, or $20/month billed annually. It includes 50,000 MRU per app, then $0.02 per MRU with volume discounts. Every plan allows unlimited applications.</p>
+<p>The add-ons move the bill:</p>
+<div class="table-wrapper"><table><thead><tr><th>Add-on</th><th>Price</th></tr></thead><tbody><tr><td>SSO connection</td><td>1 included, then $75/mo</td></tr><tr><td>Directory Sync</td><td>1 included, then $75/mo from 1 January 2027</td></tr><tr><td>B2B Authentication: Enhanced add-on</td><td>$100/mo; $1/MRO beyond 100 included per app on all plans; removes 20-member limit</td></tr><tr><td>Protect</td><td>10,000 checks free, then $0.002/check; 1,000,000+ quote-only; brute-force prevention excluded</td></tr></tbody></table></div>
+<blockquote><p>Ten enterprise customers, one SSO connection each, cost (10 − 1) × $75 = $675/month. <strong>From January 2027, Directory Sync for the same ten adds another (10 − 1) × $75 = $675.</strong></p></blockquote>
+<blockquote><p>Protect at 200,000 checks is (200,000 − 10,000) × $0.002 = $380.</p></blockquote>
+<p>Avoid Clerk's self-serve plans if you need a 99.99% SLA or a HIPAA BAA; both are Enterprise-only.</p>
+
+      <h2 id="s5">5. The 140x gap is correct arithmetic on two different quantities</h2>
+      <p>Paid-plan estimates at equal numeric inputs, not an identical population. Auth0 counts MAU; Clerk counts MRU.</p>
+<pre><code class="language-python">TIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350), (7_500, 525),
+         (10_000, 700), (20_000, 1_400), (30_000, 2_100), (40_000, 2_800), (50_000, 3_500)]
+
+def auth0(mau):  # between tiers you pay the next tier up
+    return next((p for cap, p in TIERS if mau &lt;= cap), None)  # breaks: &gt;50,000 unpriced
+
+def clerk_pro(mru):  # ignores Clerk's volume discounts
+    return 25 + max(0, mru - 50_000) * 0.02
+
+for n in (501, 50_000, 100_000):
+    print(n, auth0(n), clerk_pro(n))</code></pre>
+<blockquote><p>At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 later-day MRU per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who came back on a later day. Not the same crowd.</p></blockquote>
+<blockquote><p>At 100,000 MRU, Clerk is 50,000 × $0.02 + $25 = $1,025/month. Auth0's B2C sheet ends at 50,000: "contact us".</p></blockquote>
+
+      <h2 id="s6">6. Pick by who you are billed for, then check the next boundary</h2>
+      <p><strong>Choose Clerk Pro if</strong> you need MFA, passkeys or branding removal below 50,000 MRU per app; Hobby excludes them.</p>
+<blockquote><p>For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, but Essentials and Professional allow only 10 organisations, not 200.</p></blockquote>
+<p><strong>Choose Auth0 Professional if</strong> you need custom database connections or cross-app SSO; it includes 12 tenants.</p>
+<p>Check today:</p>
+<ol><li>Price distinct non-internal MAU per Auth0 tenant and later-day MRU per Clerk app, with required plans and add-ons.</li><li>Find your Auth0 tier and how many MAU separate you from the next one.</li><li>List SSO and Directory Sync connections you will run on 1 January 2027.</li></ol>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">Auth0 B2C Essentials, 50,000 MAU, annual</div>
+          <div class="cost-formula">11 × $3,500 (yearly = 11 × monthly)</div>
+          <div class="cost-result">$38,500/year; $38,500 / 12 = $3,208.33/month equivalent, rounded to cents; monthly billing remains $3,500/month</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Clerk Pro, 100,000 MRU</div>
+          <div class="cost-formula">(100,000 − 50,000 included) × $0.02 + $25</div>
+          <div class="cost-result">$1,025/month</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Auth0 B2C Essentials, the 501st user</div>
+          <div class="cost-formula">$70 (1,000-MAU tier) − $35 (500-MAU tier)</div>
+          <div class="cost-result">$35 for one user</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Clerk Business, 10 dashboard seats, 5,000 MRU and 200 qualifying MRO (at least 2 members, including an MRU that month)</div>
+          <div class="cost-formula">$300 Business + $100 B2B add-on + (200 − 100) × $1 per MRO</div>
+          <div class="cost-result">$500/month</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>App below 50,000 MRU per app needing MFA, passkeys or branding removal</td><td class="matrix-pick">Clerk Pro</td><td>Pro includes these features for $25/month; Hobby excludes them. Without a paid-feature requirement, Hobby covers 50,000 MRU per app for $0. Users who never return after day one are never billed.</td></tr><tr><td>Side project that needs more than 3 social logins and costs nothing</td><td class="matrix-pick">Auth0 Free</td><td>Auth0 Free includes unlimited social connections up to 25,000 MAU, while Clerk Hobby stops at 3 social connections.</td></tr><tr><td>B2C usage beyond Clerk's 50,000 included MRU per app or Auth0's printed 50,000-MAU limit</td><td class="matrix-pick">Price Clerk Pro overage and request an Auth0 quote</td><td>Clerk Pro lists $0.02/month per MRU beyond 50,000 included per app, with volume discounts; Auth0's printed B2C tiers end at 50,000 MAU, so higher usage needs a quote. Clerk MRU counts later-day returns per app; Auth0 MAU counts non-internal users authenticated that month per tenant.</td></tr><tr><td>Team needing 10 dashboard seats, with 5,000 Clerk MRU and 200 qualifying MRO</td><td class="matrix-pick">Clerk Business + B2B Authentication Enhanced add-on</td><td>$300 + $100 + (200 − 100) × $1 = $500/month. Each MRO needs at least 2 members, including an MRU that month. Auth0 B2B Essentials is $1,300/month at 5,000 MAU, but Essentials and Professional allow only 10 organizations, so neither serves 200 organizations. MRU counts later-day returns per app; MAU counts non-internal users authenticated that month per tenant.</td></tr><tr><td>Existing user store you cannot migrate yet (bring your own database)</td><td class="matrix-pick">Auth0 Professional</td><td>Custom database connections and cross-app SSO are Professional-and-up features on Auth0.</td></tr><tr><td>B2C app requiring enterprise connections on a paid plan</td><td class="matrix-pick">Request Auth0 Enterprise pricing; avoid B2C Essentials and Professional</td><td>B2C Essentials and Professional list enterprise connections as unavailable, while Free includes 1; custom SSO tiers require Enterprise.</td></tr><tr><td>AI agent product that needs Token Vault and CIBA on Auth0</td><td class="matrix-pick">Auth0, plus a 50% surcharge rounded up to the dollar</td><td>Auth0 for AI Agents adds 50% to the base price, rounded up to the dollar: B2B Essentials at 5,000 MAU costs $1,300 + ($1,300 × 50%) = $1,950/month.</td></tr><tr><td>Healthcare app that needs HIPAA with a BAA</td><td class="matrix-pick">Quote Clerk Enterprise</td><td>Clerk lists HIPAA with BAA only on its annual Enterprise plan. Request its custom annual quote; confirm Auth0's HIPAA and BAA eligibility separately before treating it as an alternative.</td></tr></tbody>
+      </table></div>
+
+    <h2>Same task, two SDKs</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Clerk</span>
+        <pre><code>// Clerk bills a retained user, not a session: the first day is free.
+const { totalCount } = await clerkClient.users.getUserList({ limit: 1 });
+// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,
+// and Hobby gives one grace month before requests stop being served.
+if (totalCount &gt; 50_000) console.warn(totalCount, &quot;MRU — check the plan&quot;);</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Auth0</span>
+        <pre><code># Auth0 prices the tier, not the user: 501 MAU bills as 1,000.
+TIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350)]
+def essentials(mau):
+    return next(p for cap, p in TIERS if mau &lt;= cap)
+print(essentials(501))  # 70, not 35
+# Here it breaks: above 50,000 B2C MAU the printed sheet ends.</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Clerk</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>50,000 MRU included on Pro, then $0.02 each — a user who never returns is never billed</li><li>Unlimited applications on every plan, including Hobby</li><li>Organisations and B2B authentication are in the same product, with 100 MRO included</li><li>Full data exports on every plan, so leaving is a data move rather than a negotiation</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>The bill hides in add-ons: SSO $75/mo each, Directory Sync $75/mo each from 1 January 2027</li><li>Hobby stops at 50,000 MRU after a one-month grace period</li><li>Protect checks meter at $0.002 after 10,000 free, so attack traffic is a billable event</li><li>Business is a $300/mo step mostly for SOC 2, seats and 30-day logs</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Auth0</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>25,000 MAU free, with 5 organisations, self-service SSO and SCIM included</li><li>B2B Essentials is $150/month for 500 MAU with unlimited organisations</li><li>Enterprise SSO connections included — 3 on Essentials, 5 on Professional — then $100/month each</li><li>Professional adds custom database connections, cross-app SSO and 12 tenants</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>Price is a step function: 501 B2C users bill at the 1,000 tier, $70 instead of $35</li><li>The B2C Professional sheet ends at 20,000 MAU; past that it is a quote or not available</li><li>Custom enterprise SSO on B2C requires Enterprise — not available on Essentials or Professional</li><li>The AI Agents add-on adds 50% to whichever tier it is applied to</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p>Clerk to Auth0 means exporting users, recreating connections and mapping organisations onto a plan that includes 5 on Free and 10 on paid tiers — well short of 200 without a higher tier. Auth0 to Clerk changes the unit: MAU becomes MRU, so the population you migrate is not the population you are billed for, and users who never return after day one vanish from the invoice.</p></div>
+      </div>
+
+    <h2 id="faq">Questions that change the decision</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Does Auth0 have a free tier?</div>
+          <div class="faq-a">Yes: Auth0 Free is $0 up to 25,000 MAU, with 1 tenant, 5 organizations, 1 enterprise connection and 1-day log retention. Self-service SSO and SCIM are included on it.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I need Clerk Business to offer SSO?</div>
+          <div class="faq-a">No. Pro includes 1 SSO connection and charges $75/month for each additional connection; Business costs $300/month or $250/month billed annually and adds a SOC 2 report, 10 dashboard seats and 30-day application and admin logs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long does each vendor keep logs on the paid tiers?</div>
+          <div class="faq-a">Auth0 keeps 5 days on Essentials, 10 on Professional and 30 on Enterprise. Clerk Pro keeps 7 days of logs and Business keeps 30.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What does SMS login cost on Clerk?</div>
+          <div class="faq-a">SMS authentication is on Pro at $0.01 per SMS for the US and Canada, with international messages at market rate.</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://clerk.com/pricing" rel="noopener nofollow" target="_blank">https://clerk.com/pricing</a><br><a href="https://auth0.com/pricing" rel="noopener nofollow" target="_blank">https://auth0.com/pricing</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../docker-vs-podman/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Docker vs Podman</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Headcount decides both bills: seats at Docker, retained users at Clerk.</p>
+          </a>
+          <a class="card" href="../supabase-vs-firebase/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Supabase vs Firebase</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The same lesson in a database: the unit you are billed on is the architecture.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://clerk.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Clerk →</a>
+      <a href="https://auth0.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Auth0 →</a>
+    </div>
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. This market reprices often — if a number below looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Independent developer analysis. No paid placement, no affiliate ranking.</p>
+    </div>
+  </footer>
+</body>
+</html>

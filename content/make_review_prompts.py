@@ -41,6 +41,11 @@ for slug in [
     "vercel-vs-cloudflare-pages",
     "cursor-vs-github-copilot",
     "notion-vs-obsidian",
+    "bun-vs-node",
+    "prisma-vs-drizzle",
+    "docker-vs-podman",
+    "clerk-vs-auth0",
+    "planetscale-vs-neon",
 ]:
     with open(os.path.join(BASE, "content", "prompts", "review-" + slug + ".md"), "w", encoding="utf-8") as f:
         f.write(TEMPLATE.format(slug=slug))

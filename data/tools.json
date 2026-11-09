@@ -730,5 +730,935 @@
         "why": "The clearest case of a free tier that expires the moment your usage pattern changes."
       }
     ]
+  },
+  {
+    "slug": "bun-vs-node",
+    "category": "Runtimes & Tooling",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "Bun's own test count says node:http passes 403 of 415 tests, and Node's own calendar says v20 died on 24 March 2026. Neither runtime charges a cent, so the bill arrives somewhere else.",
+    "tool_a": {
+      "name": "Bun",
+      "tagline": "One binary: runtime, package manager, test runner, bundler",
+      "db": "JavaScriptCore runtime, rewritten in Rust for 1.4",
+      "pricing": "Free · MIT · no paid tier",
+      "self_host": "Yes — a single executable",
+      "realtime": "Bun.serve HTTP and WebSocket server built in",
+      "ai_readiness": "Claude Code ships as a Bun executable (Bun's statement)",
+      "lock_in": "Low: MIT, npm-compatible, runs Node projects",
+      "badge": "All-in-one",
+      "cta_url": "https://bun.com/?utm_source=devtoolsradar",
+      "pros": [
+        "JavaScript, TypeScript, JSX and bundling from one executable, so no separate tsc, test runner or bundler",
+        "1,517 more Node test-suite tests pass in 1.4, and node:sqlite passes 18 of 18 by Bun's own count",
+        "Bun's own hello.js benchmark: 5.1 ms vs 27.2 ms start-up on Linux, 14.6 MB vs 44.5 MB peak memory",
+        "MIT licensed after the Anthropic acquisition, with the Node compatibility target moved to 26.3.0"
+      ],
+      "cons": [
+        "node:http passes 403 of 415 of Node's own tests, and http.Server does not extend net.Server",
+        "node:https lacks getPeerCertificate() and getCipher(), and SNICallback is unsupported",
+        "NODE_MODULE_VERSION 147 means addons built for Node 24 must be rebuilt",
+        "Bun's own memory table shows the Vite dev server at 233 MB vs 214 MB on Node"
+      ],
+      "code_example": "// One binary replaces four dev dependencies:\n// bun install, bun test, bun lint and bun fmt are the same executable.\nimport { Database } from \"bun:sqlite\";   // built in, no addon to compile\nconst db = new Database(\":memory:\");\ndb.run(\"create table t (id integer primary key, name text)\");\n// Here it breaks: a native addon built for Node 24 will not load,\n// because Bun 1.4 reports NODE_MODULE_VERSION 147."
+    },
+    "tool_b": {
+      "name": "Node.js",
+      "tagline": "The runtime with a published release calendar",
+      "db": "Node core plus the npm ecosystem",
+      "pricing": "Free · MIT · support past Maintenance LTS via OpenJS partners",
+      "self_host": "Yes — your own machines",
+      "realtime": "node:http servers, cluster workers, inspector for tracing",
+      "ai_readiness": "Type stripping on by default; no type checking",
+      "lock_in": "None: MIT, runs on every platform",
+      "badge": "Standards runtime",
+      "cta_url": "https://nodejs.org/?utm_source=devtoolsradar",
+      "pros": [
+        "A dated calendar: v26 Lithium and v24 Krypton are LTS, and LTS typically guarantees fixes for 30 months",
+        "Native addons are the default path, and ABI builds target the runtime you actually run",
+        "TypeScript type stripping runs with no build step for erasable syntax",
+        "Nothing to license, and commercial support exists through OpenJS partners after LTS ends"
+      ],
+      "cons": [
+        "Type stripping refuses enum, .tsx, parameter properties, import aliases and tsconfig paths",
+        "TypeScript inside node_modules is refused outright",
+        "Parsing requires WebAssembly, or the parser throws ERR_WEBASSEMBLY_NOT_SUPPORTED",
+        "v20 and v25 both reached end of life in 2026, so the calendar forces migrations"
+      ],
+      "code_example": "// Node 26 strips types; it does not check them or transform them.\ntype Host = string;\nconst host: Host = process.env.HOST ?? \"localhost\";\nconsole.log(`binding ${host}`);\n// Here it breaks: an enum is not erasable, so Node throws\n// ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX before your code runs.\nenum Mode { Dev, Prod }"
+    },
+    "sections": [
+      {
+        "title": "Both runtimes cost nothing, so the invoice arrives as labour",
+        "content": "Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-hours on three meters: the release calendar, the compatibility surface and the native-module ABI.\n\n> For teams maintaining a Node service: as of 10 November 2026, both runtimes have no price.\n\n- **Node:** Node publishes a release calendar; v26 Lithium, v24 Krypton and v22 Jod are LTS.\n- **Bun:** 1.4.0 (20 August 2026) combined the Rust rewrite with the compatibility-target move from 24.3.0 to 26.3.0 and native ABI 147.\n\nFor Bun 1.4, check whether your native addons have builds for `NODE_MODULE_VERSION` 147."
+      },
+      {
+        "title": "Node bills you on a date you did not choose",
+        "content": "Node's release page reads like a work schedule:\n\n| Major | Status | Key date |\n|---|---|---|\n| v27 | Alpha | first released 29 Oct 2026 |\n| v26 Lithium | LTS | first released 5 May 2026 |\n| v25 | EOL | 31 Mar 2026 |\n| v24 Krypton | LTS | first released 6 May 2025 |\n| v22 Jod | LTS | first released 24 Apr 2024 |\n| v20 Iron | EOL | 24 Mar 2026 |\n\nSupport window and release cycle:\n\n1. LTS \"typically guarantees that critical bugs will be fixed for a total of 30 months\" (Node's wording).\n2. Starting with v27, the cycle becomes annual: every major gets six months of Alpha, six of Current, then LTS.\n\nRead it as a penalty table. It punishes the team that adopts a major and forgets it: v20 lived from 17 Apr 2023 to 24 Mar 2026, about 35 months.\n\n> If production still runs Node 20, plan a move to Node 24 or 26 LTS: Node 20 reached EOL on 24 March 2026."
+      },
+      {
+        "title": "Who should not pick Node for unbuilt TypeScript",
+        "content": "Type stripping is on by default, stable since v25.2.0 / v24.12.0. Node executes erasable syntax without type checking; other syntax needs separate tooling.\n\n```ts\n// runs on Node 26 with no flags: every annotation here is erasable\ntype Host = string;\nconst host: Host = process.env.HOST ?? \"localhost\";\nconsole.log(`binding ${host}`);\n```\n\n> `enum` throws `ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX`.\n\nNode 26 also refuses:\n\n- `namespace` with runtime code, parameter properties, import aliases: same error\n- `.tsx` files\n- `paths`, because `tsconfig.json` is ignored\n- TypeScript inside `node_modules`\n- parsing without WebAssembly: `ERR_WEBASSEMBLY_NOT_SUPPORTED`\n\nThis meter punishes codebases built on enums and path aliases; for them, the build step stays."
+      },
+      {
+        "title": "Bun's own node:http count leaves 415 − 403 = 12 tests failing",
+        "content": "Bun says it plainly: \"Bun is not 100% compatible with Node.js yet.\" Bun's own 1.4 counts against the Node 26.3.0 suite:\n\n| Module | Bun 1.4 passes | Not passing |\n|---|---|---|\n| node:http | 403 / 415 | 415 − 403 = 12 |\n| node:fs | 349 / 358 | 358 − 349 = 9 |\n| node:module | 68 / 93 | 93 − 68 = 25 |\n| node:test_runner | 28 / 81 | 81 − 28 = 53 |\n| node:inspector | 22 / 110 | 110 − 22 = 88 |\n| node:sqlite | 18 / 18 | 18 − 18 = 0 |\n\nOn node:http that is 12 ÷ 415 ≈ 2.9%, the failing 3%. Bun says 1.4 made 1,517 more Node tests pass.\n\n> The ABI tax: 1.4 moved the compatibility target from 24.3.0 to 26.3.0. `NODE_MODULE_VERSION` is now 147, so native addons built for Node 24 must be rebuilt.\n\nCheck required inspector APIs; module pass counts are not application coverage."
+      },
+      {
+        "title": "Who should not pick Bun: teams requiring missing APIs",
+        "content": "Bun's compatibility docs name the gaps. Map each to a service you run:\n\n- **HTTP servers tuned for a load balancer.** `http.Server` does not extend `net.Server`, the `keepAlive` / `keepAliveInitialDelay` server options are no-ops, and `listen(handle)` is ignored. Your keep-alive tuning silently does nothing.\n- **mTLS and multi-tenant TLS.** node:https lacks `getPeerCertificate()` and `getCipher()` and does not support `SNICallback`. Retain Node if you require these APIs.\n- **Signing code.** BoringSSL-backed node:crypto lacks `ed448`, `x448`, `rsa-pss` and `dsa` keys, has no `secp256k1` curve and no `chacha20-poly1305`.\n- **APM tracing.** `async_hooks` `createHook` is a stub and async ids are always 0; correlation by async id collapses.\n- **`cluster` fleets on macOS or Windows.** HTTP load-balancing across workers only works on Linux, via `SO_REUSEPORT`.\n\n> `AsyncLocalStorage` context does not propagate into Worker/BroadcastChannel events in Bun."
+      },
+      {
+        "title": "Bun stays MIT after Anthropic's acquisition; check before migrating",
+        "content": "Anthropic acquired Bun on 2 December 2025. Claude Code ships as a Bun executable (Bun's statement), and Bun's founder wrote then: \"Today, Bun makes $0 in revenue.\" Bun stays MIT.\n\nThe acquisition changes who pays for Bun's roadmap. It does not change the licence, and it does not change the API surface you have to test.\n\nCheck today:\n\n1. List every `.node` addon in the tree and whether it has a build for `NODE_MODULE_VERSION` 147.\n2. Check required HTTP APIs, `createHook`, distinct async IDs, `getPeerCertificate` and `SNICallback` against Bun's gaps.\n3. Write down the EOL date of the Node major running in production."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "Bun 1.4 node:http compatibility gap",
+        "formula": "415 tests − 403 passing = 12 failing; 12 ÷ 415 ≈ 2.9%",
+        "result": "12 failing node:http tests, about 3% (Bun's own count; neither runtime has a price, so the unit is tests)"
+      },
+      {
+        "label": "Debug-and-test loop gap in Bun 1.4",
+        "formula": "node:inspector 110 − 22 = 88; node:test_runner 81 − 28 = 53",
+        "result": "Bun's own counts leave 88 inspector tests and 53 test-runner tests unpassed; check the APIs your debugger or test runner requires before migrating."
+      },
+      {
+        "label": "Node 20 EOL-to-LTS decision",
+        "formula": "17 Apr 2023 → 24 Mar 2026 ≈ 35 months from first release to EOL; this is not the LTS fix window",
+        "result": "Move production off EOL Node 20 to Node 24 or 26 LTS; the documented 30-month LTS fix guarantee is a separate interval."
+      },
+      {
+        "label": "Native addon rebuild tax for Bun 1.4",
+        "formula": "N native addons × 1 rebuild each for NODE_MODULE_VERSION 147 (target moved 24.3.0 → 26.3.0)",
+        "result": "Every addon built for Node 24 needs a new build before Bun 1.4 can load it"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "HTTP service considering Bun after checking required server APIs",
+        "pick": "Bun only if required APIs are supported and the service passes its checks; otherwise retain Node",
+        "why": "Bun's own node:http count is 403 / 415; check unsupported server options, http.Server inheritance and listen(handle), not just the pass count."
+      },
+      {
+        "situation": "Repo with native addons built for Node 24",
+        "pick": "Node, until every addon has a build for NODE_MODULE_VERSION 147",
+        "why": "Bun 1.4 targets Node 26.3.0, so addons built for 24 do not load until rebuilt."
+      },
+      {
+        "situation": "Production tracing agent requiring createHook or distinct async IDs",
+        "pick": "Node",
+        "why": "Keep Node if your tracing agent requires createHook or distinct async IDs: Bun documents the hook as a stub and async IDs as always 0."
+      },
+      {
+        "situation": "TLS gateway requiring getPeerCertificate() or SNICallback",
+        "pick": "Node",
+        "why": "Bun's node:https lacks getPeerCertificate() and does not support SNICallback."
+      },
+      {
+        "situation": "Signing service that needs secp256k1 or ed448 keys",
+        "pick": "Node",
+        "why": "Bun's BoringSSL-backed node:crypto has no secp256k1 curve and no ed448 key type."
+      },
+      {
+        "situation": "Still on Node 20 in production",
+        "pick": "Node 24 or 26 LTS, not a runtime switch",
+        "why": "v20 reached EOL on 24 March 2026, and an LTS move fixes that without adding Bun's compatibility gaps to the same sprint."
+      },
+      {
+        "situation": "Healthy service on Node 22 Jod with no pain points",
+        "pick": "Neither — stay put",
+        "why": "v22 is still LTS and was last updated 20 October 2026, so no date forces a move yet."
+      },
+      {
+        "situation": "Internal scripts and CLIs that currently pull in a separate test runner, linter and formatter",
+        "pick": "Bun",
+        "why": "Bun 1.4 ships bun test --parallel, bun lint, bun fmt and bun check in the same binary."
+      }
+    ],
+    "verdict_summary": "Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a native addon in your tree has no build for NODE_MODULE_VERSION 147. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.",
+    "migration_guide": "Moving to Bun starts with `bun install` reading the same package.json, but every native addon needs a build for NODE_MODULE_VERSION 147 before it loads, so the hook stampede is the first thing to schedule. Moving back is not automatic either: Bun's compatibility docs list the API gaps you will meet — getPeerCertificate(), SNICallback, async_hooks — and there is no tool that rewrites handlers around them. Run the service test suite under both runtimes before either direction, then keep the loser's addon builds around for a release or two.",
+    "faqs": [
+      {
+        "q": "Does Node 26 type-check TypeScript?",
+        "a": "No: type stripping performs no type checking, so a separate tool is still required. Decorators are a parser error, and `--experimental-transform-types` was removed in v26.0.0."
+      },
+      {
+        "q": "Is Bun faster than Node?",
+        "a": "Bun's own `hello.js` benchmark puts Linux start-up at 5.1 ms for Bun 1.4 versus 27.2 ms for Node.js 26; these are vendor measurements, not independent ones. Separately, Bun's peak-memory figures under load, with 1,000,000 requests and 64 connections, put the Vite dev server at 233 MB on Bun versus 214 MB on Node, so Bun is not lighter everywhere."
+      },
+      {
+        "q": "Can I buy support for a Node major after LTS ends?",
+        "a": "Not from the Node.js project itself. Commercial support past Maintenance LTS is sold by OpenJS Ecosystem Sustainability Program partners."
+      },
+      {
+        "q": "Does Bun's MIT licence cover everything in the binary?",
+        "a": "No: Bun statically links JavaScriptCore/WebKit, which is LGPL-2. That is why Bun's licence file spells out relinking obligations."
+      }
+    ],
+    "sources": [
+      "https://bun.com/blog/bun-v1.4",
+      "https://bun.com/blog/bun-joins-anthropic",
+      "https://bun.com/docs/runtime/nodejs-compat",
+      "https://nodejs.org/en/about/previous-releases",
+      "https://nodejs.org/api/typescript.html"
+    ],
+    "related": [
+      {
+        "slug": "docker-vs-podman",
+        "name": "Docker vs Podman",
+        "why": "Another open-source runtime where the licence sits on the developer tool, not the engine."
+      },
+      {
+        "slug": "prisma-vs-drizzle",
+        "name": "Prisma vs Drizzle",
+        "why": "Two free libraries whose maintenance now depends on a vendor with a bill attached."
+      }
+    ]
+  },
+  {
+    "slug": "prisma-vs-drizzle",
+    "category": "Data & ORM",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "Both ORMs are free, and in 2026 each arrives with a database vendor attached: Prisma sells Prisma Postgres beside its client, and PlanetScale hired Drizzle's entire core team in March. Prisma generates its client, while Drizzle keeps the schema in TypeScript without a code-generation step; neither ORM has a per-seat price.",
+    "tool_a": {
+      "name": "Prisma",
+      "tagline": "Schema-first ORM with a generated client, sold beside a database",
+      "db": "Any SQL database through driver adapters; Prisma Postgres is managed",
+      "pricing": "ORM free · Prisma Postgres Free / $10 / $49 / $129 · Compute metered",
+      "self_host": "Yes for the ORM; Prisma Postgres is managed",
+      "realtime": "Compute and Postgres scale to zero; the Accelerate cache retires 1 Dec 2026",
+      "ai_readiness": "Generated typed client over a schema contract",
+      "lock_in": "Medium: schema DSL, generated client, optional platform",
+      "badge": "Code generation",
+      "cta_url": "https://www.prisma.io/?utm_source=devtoolsradar",
+      "pros": [
+        "One schema artefact drives migrations, types and the generated client",
+        "Rust-free client in 7.x: Prisma's figures are 90% smaller output and 3x faster queries",
+        "Prisma Postgres bills operations with no per-seat charge and a hard spend limit on paid plans",
+        "Raw queries bypass the compiler from 7.3.0, and compilerBuild chooses fast or small"
+      ],
+      "cons": [
+        "output is now required on the generator, so the client no longer lands in node_modules",
+        "A third-party test measured cold start worse than the Rust engine: about 69 ms vs 236 ms",
+        "The same test saw node_modules grow from 254.1 MiB to 333.3 MiB with WASM compilers per database",
+        "Starter's $10 stops being cheaper at 5.875M operations, where Pro's $49 takes over"
+      ],
+      "code_example": "// Prisma: the schema is a separate artefact, and the client is generated from it.\ngenerator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"   // required since 7.x\n  compilerBuild = \"fast\"                   // or \"small\"\n}\n// Here it breaks: the old datasource url style is gone in 7 —\n// connection details move to prisma.config.ts."
+    },
+    "tool_b": {
+      "name": "Drizzle",
+      "tagline": "The schema is a TypeScript file; nothing is generated",
+      "db": "Postgres, MySQL, SQLite, SingleStore, MSSQL, CockroachDB",
+      "pricing": "Free: ORM, Kit, local Studio, Gateway · paid: embeddable Studio Component",
+      "self_host": "Yes — a library, not a service",
+      "realtime": "Queries run through your driver as SQL you can read",
+      "ai_readiness": "Zero dependencies and SQL-shaped output (vendor claim)",
+      "lock_in": "Low: no engine, no runtime, plain SQL",
+      "badge": "Open source",
+      "cta_url": "https://orm.drizzle.team/?utm_source=devtoolsradar",
+      "pros": [
+        "No generate step and no engine to load: the TypeScript schema is the source of truth",
+        "ORM, Kit, Studio for local development and Gateway are all free",
+        "Six dialects through standard drivers, from Postgres to CockroachDB",
+        "The relational query API emits one SQL statement (vendor claim), which suits serverless databases"
+      ],
+      "cons": [
+        "No stable 1.0: 1.0.0-rc.5 shipped 21 October 2026 with a dozen-plus breaking changes",
+        "Drizzle Studio is not open source, and the embeddable Studio Component is the paid product",
+        "PlanetScale hired the entire core team in March 2026, so maintenance sits with a database vendor",
+        "Relations are declared, not inferred: the SQL is yours to get right"
+      ],
+      "code_example": "// Drizzle: this file is the schema. No generate step, no engine to load.\nimport { pgTable, serial, varchar } from \"drizzle-orm/pg-core\";\nexport const countries = pgTable(\"countries\", {\n  id: serial().primaryKey(),\n  name: varchar({ length: 256 }),\n});\n// Here it breaks: relations are declared explicitly, so a missing join\n// is a query you wrote — not a bug the ORM hides from you."
+    },
+    "sections": [
+      {
+        "title": "Free ORMs, separate hosting bills and dependency risk",
+        "content": "If you are choosing between Prisma's generated client and Drizzle's TypeScript schema, separate the free ORM decision from database pricing and release-candidate risk.\n\n- **Prisma:** generates its Rust-free client with `prisma-client`; queries pass through a TypeScript/WebAssembly compiler and a JS driver adapter.\n- **Drizzle:** the TypeScript file is the schema, without client codegen or a schema DSL; `drizzle-kit` generates migrations.\n\n> Prisma's model forbids skipping the build: no generator run, no client. Drizzle's forbids a schema outside TypeScript, and Drizzle states its relational API \"always outputs exactly 1 SQL query\"."
+      },
+      {
+        "title": "Who should not pick Prisma: teams avoiding client generation",
+        "content": "Prisma 7.0.0 shipped 19 November 2025 with a Rust-free client: a TypeScript/WebAssembly query compiler plus a JS driver adapter.\n\n- Prisma 7.10.1 shipped 15 October 2026: generator `output` is required, replacing generation into `node_modules` by default.\n- The upgrade guide replaces the old datasource URL style with `prisma.config.ts`.\n\nPrisma's AMA of 13 February 2026 attributes \"cases where throughput is similar or slightly worse\" to database access from JavaScript instead of a multi-threaded Rust runtime.\n\n> Since 7.3.0, `$queryRaw` and `$executeRaw` skip the compiler entirely.\n\nAvoid Prisma if client generation is a blocker."
+      },
+      {
+        "title": "Who should not pick Drizzle: teams ruling out its newest RC",
+        "content": "Drizzle ORM and Kit are free and open source. It bills you in dependency risk instead.\n\n- **Newest release, not stable 1.0:** as of 10 November 2026, it is 1.0.0-rc.5.\n- 1.0.0-rc.5 shipped 21 October 2026, and its notes list a dozen-plus BREAKING changes, from postgres-js parsers to `withReplicas` default routing and the `sqlite-proxy` rework.\n- **No Studio source.** ORM and Kit are open source; Drizzle Studio is not.\n- **Employment:** In March 2026 PlanetScale hired the entire core team. Drizzle's own page: \"PlanetScale is our biggest sponsor, they hired us\".\n\nThat is a hire, not an acquisition, and the code stays open source. Still, the people choosing the next routing default are paid by a database company.\n\n> Do not adopt Drizzle 1.0.0-rc.5 if production policy forbids release candidates; this does not establish the suitability of earlier releases."
+      },
+      {
+        "title": "Prisma bundle size, warm queries and cold starts measure different things",
+        "content": "> Prisma claims 90% smaller output and 3x faster queries, from a Rust engine of roughly 14 MB (7 MB gzipped) to a compiler of about 1.6 MB (600 KB gzipped). Alex Georgiev's test, published 6 November 2026, ran two identical SQLite projects on one local machine. One developer, not a lab. For Prisma 6.19.3 versus 7.10.1 respectively, process start to first query was ~69 ms versus ~236 ms, while `node_modules` was 254.1 MiB versus 333.3 MiB.\n\n| Measure | Prisma 6.19.3 | Prisma 7.10.1 |\n|---|---|---|\n| Warm `findUnique`, 2,000 sequential calls | ~0.60 ms each | ~0.19 ms each |\n| Process start to first query | ~69 ms | ~236 ms |\n| `node_modules` | 254.1 MiB | 333.3 MiB |\n\nThe warm row backs the vendor: 0.60 ÷ 0.19 ≈ 3.1x. The cold row runs the other way, mostly in `import` and `$connect()`.\n\n- Cold-start ratio: 236 ÷ 69 ≈ 3.4x.\n- Directory growth: (333.3 − 254.1) ÷ 254.1 × 100 ≈ 31%.\n\nBundle output is not directory size; warm queries are not cold starts. This informs a Prisma upgrade, not a winner over Drizzle."
+      },
+      {
+        "title": "Prisma Postgres Starter crosses Pro at 5.875M operations",
+        "content": "Prisma Postgres bills each query as an operation and charges separately for storage overage, but has no per-seat charge.\n\n| Plan | Base | Included | Overage |\n|---|---|---|---|\n| Starter | $10 | 1M ops | $8 per million |\n| Pro | $49 | 10M ops | $2 per million |\n| Business | $129 | 50M ops | $1 per million |\n\n> With n in millions of monthly operations, $10 + $8(n - 1) = $49 gives n = 5.875, or 5.875M operations. Above that, Pro is cheaper on operation charges; its $49 base covers 10M, then each million costs $2.\n\nAt 20M operations, Starter costs $10 + 19 × $8 = $162 and Pro costs $49 + 10 × $2 = $69. That $93 monthly gap comes from moving one plan up, not from new infrastructure.\n\n- Difference: $162 − $69 = $93/month.\n\nOne line item is retiring: the Accelerate cache ends 1 December 2026. If it absorbed your reads, redo the crossover with the uncached query count."
+      },
+      {
+        "title": "Drizzle's tools are free; database and runtime set the bill",
+        "content": "Drizzle charges $0 for the ORM, Kit, Studio for local development and Gateway. Your chosen database and runtime set the infrastructure bill, not the maintainers' employer; Prisma Postgres and Prisma Compute are optional paid services beside free Prisma ORM.\n\n- Pick **Drizzle** if no client codegen matters and you accept the named RC's compatibility risk.\n- Pick **Prisma** if generated-client workflow fits; its ORM does not require Prisma Postgres.\n\nCheck before your next deploy:\n\n- If using Prisma Postgres, compare Starter and Pro operation charges, then add storage overage.\n- Time process start to first query on your own target before trusting either Prisma figure.\n- Before adopting Drizzle 1.0.0-rc.5, check its breaking changes against your application."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "Prisma Postgres Starter vs Pro crossover",
+        "formula": "For n in millions of monthly operations: $10 + $8(n - 1) = $49 → n = 1 + ($49 − $10) ÷ $8 = 5.875, or 5.875M operations/month",
+        "result": "Above 5.875M operations/month, Pro is cheaper than Starter on operation charges: $49 base covers 10M operations, then $2 per million; storage is separate"
+      },
+      {
+        "label": "20M operations/month on Pro",
+        "formula": "$49 + (20M − 10M included) × $2 per million = $49 + $20",
+        "result": "$69/month"
+      },
+      {
+        "label": "20M operations/month on Starter",
+        "formula": "$10 + (20M − 1M included) × $8 per million = $10 + 19 × $8; $162 − $69 = $93/month; $93/month = $1,116/year",
+        "result": "$162/month, $93/month (= $1,116/year) more than Pro"
+      },
+      {
+        "label": "Prisma Compute, continuous active-CPU scenario at paid rates",
+        "formula": "Assuming 0.5 active vCPU continuously and 1 GB provisioned memory for 730 hours: 0.5 × 730 × $0.064 = $23.36; 1 × 730 × $0.006 = $4.38; $23.36 + $4.38 = $27.74/month",
+        "result": "$27.74/month before request and outbound-bandwidth charges, at paid rates without deducting free allowances"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "Existing Prisma 6.19.3 deployment where cold starts dominate",
+        "pick": "Measure before upgrading to Prisma 7.10.1",
+        "why": "Alex Georgiev's local SQLite test measured about 69 ms to first query on 6.19.3 against about 236 ms on 7.10.1; this is upgrade evidence, not a Drizzle comparison."
+      },
+      {
+        "situation": "Prisma 6.19.3 application considering an upgrade for warm lookups",
+        "pick": "Measure Prisma 7.10.1 on the deployment target",
+        "why": "Alex Georgiev's local SQLite test found about 0.60 ms versus 0.19 ms per lookup across 2,000 sequential warm findUnique calls on Prisma 6.19.3 and 7.10.1 respectively; it does not establish a winner over Drizzle."
+      },
+      {
+        "situation": "Considering Drizzle 1.0.0-rc.5 under a production policy forbidding release candidates",
+        "pick": "Do not adopt this Drizzle release",
+        "why": "Drizzle's newest release on 10 November 2026 is 1.0.0-rc.5, not a stable 1.0."
+      },
+      {
+        "situation": "TypeScript-only codebase where a codegen step keeps breaking CI",
+        "pick": "Drizzle",
+        "why": "The TypeScript file is the schema, so there is no generator output to keep in sync."
+      },
+      {
+        "situation": "Need free self-hosted Studio and accept that Studio is not open source",
+        "pick": "Drizzle",
+        "why": "Drizzle Gateway is free as a Docker image or binary; Drizzle Studio itself is not open source."
+      },
+      {
+        "situation": "Need an ORM without a required adjacent hosting service",
+        "pick": "Either",
+        "why": "Prisma sells Prisma Postgres and Prisma Compute on the same pricing page, next to a free ORM. Prisma ORM does not require Prisma Postgres, and Drizzle users choose their database and runtime."
+      },
+      {
+        "situation": "Need an ORM whose maintainers no database vendor pays",
+        "pick": "Neither meets the stated requirement",
+        "why": "Prisma sells its own database and PlanetScale hired Drizzle's team, so neither option is vendor-neutral in 2026."
+      },
+      {
+        "situation": "Prisma app with hot paths already written as raw SQL",
+        "pick": "Prisma 7.3.0 or later",
+        "why": "From 7.3.0, $queryRaw and $executeRaw bypass the query compiler and go straight to the driver adapter."
+      }
+    ],
+    "verdict_summary": "Pick Drizzle if a generated client is the thing you refuse to add and you can pin 1.0.0-rc.5 having read its breaking notes. Pick Prisma if the generator is fine and you may want Prisma Postgres and Prisma Compute on the same bill, where the operation meter meets Pro at 5.875M queries; neither ORM will ever appear on an invoice.",
+    "migration_guide": "Prisma to Drizzle rewrites the data layer: every model becomes a table definition, the `prisma migrate` history becomes drizzle-kit migrations, and there is no client to generate. Drizzle to Prisma means writing one schema file that becomes the truth again, and deciding whether the generated client is committed or ignored. In both directions, the migration tooling writes SQL you review — neither one replays the other's history.",
+    "faqs": [
+      {
+        "q": "Do I have to use Prisma Postgres to use Prisma ORM?",
+        "a": "No: the ORM is free on every plan and works without Prisma Postgres. If you do try the database, its Free plan includes 200,000 operations with the spend limit fixed at $0 and no card."
+      },
+      {
+        "q": "Can I shrink the Prisma 7 query compiler?",
+        "a": "Since 7.3.0 the generator accepts `compilerBuild = \"fast\" | \"small\"`, with `fast` as the default. In Alex Georgiev's listing the SQLite compiler is 4,406,183 bytes in the fast build and 2,214,935 bytes in the small one."
+      },
+      {
+        "q": "Will long-running queries survive Prisma Postgres connection pooling?",
+        "a": "Pooled connections run in transaction mode with a 10-minute query duration limit and a 60-minute idle timeout. Pooled connection caps are 10, 100, 500 and 1,000 from Free to Business, with 10, 10, 50 and 100 direct connections."
+      },
+      {
+        "q": "Which databases can Drizzle talk to?",
+        "a": "Postgres, MySQL, SQLite, SingleStore, MSSQL and CockroachDB, through the standard drivers. Drizzle states the ORM has \"exactly 0 dependencies\"."
+      }
+    ],
+    "sources": [
+      "https://www.prisma.io/pricing",
+      "https://www.prisma.io/blog/announcing-prisma-orm-7-0-0",
+      "https://www.prisma.io/docs/guides/upgrade-prisma-orm/v7",
+      "https://orm.drizzle.team/docs/sustainability",
+      "https://github.com/drizzle-team/drizzle-orm/releases",
+      "https://www.prisma.io/changelog/2026-01-21"
+    ],
+    "related": [
+      {
+        "slug": "planetscale-vs-neon",
+        "name": "PlanetScale vs Neon",
+        "why": "Where the Drizzle team went to work, and what that database actually costs."
+      },
+      {
+        "slug": "bun-vs-node",
+        "name": "Bun vs Node.js",
+        "why": "Prisma Compute runs on Bun's Rust port — the runtime invoice, told the same way."
+      }
+    ]
+  },
+  {
+    "slug": "docker-vs-podman",
+    "category": "Containers & Runtime",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison is not daemon versus daemonless but which company may run the free one.",
+    "tool_a": {
+      "name": "Docker",
+      "tagline": "An open-source engine under a licensed desktop",
+      "db": "Docker Engine (Moby) plus the Docker Desktop app",
+      "pricing": "Personal $0 · Pro $9 · Team $15 per user/month · Business quote-only",
+      "self_host": "Yes for Engine and Moby; Desktop carries the subscription agreement",
+      "realtime": "Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes",
+      "ai_readiness": "Hardened Images free for developers, from $5k/repo in production",
+      "lock_in": "Medium: Compose and image tooling are standard, the desktop is licensed",
+      "badge": "Licensed desktop",
+      "cta_url": "https://www.docker.com/?utm_source=devtoolsradar",
+      "pros": [
+        "Desktop stays free under 250 employees AND $10M revenue, plus personal, education and non-commercial OSS",
+        "A flat per-user rate with monthly or annual billing, and seats can be removed when people leave",
+        "Team adds audit logs and RBAC; Business adds SSO, SCIM, Hardened Desktop and Image Access Management",
+        "Build Cloud minutes and Testcontainers Cloud arrive on the same contract"
+      ],
+      "cons": [
+        "Free use is a company-size test: cross either limit and every commercial seat is paid at once",
+        "Government entities pay for Docker Desktop regardless of size",
+        "Production Hardened Images start at $5k per repository, which dwarfs seat revenue for a small team",
+        "Business pricing is quote-only, so the biggest line item is the one you cannot see"
+      ],
+      "code_example": "# The engine is open source; Docker Desktop is the licensed surface.\n$ docker run --rm -v \"$PWD\":/app -w /app node:24 npm ci\n# Here it breaks: past 250 employees or $10M revenue, every\n# commercial Desktop seat must be on Pro, Team or Business.\n$ docker buildx bake --set \"*.cache-from=type=registry\""
+    },
+    "tool_b": {
+      "name": "Podman",
+      "tagline": "Daemonless rootless containers under Apache 2.0",
+      "db": "Podman 6.1.4 runtime with Podman Desktop 1.30.5",
+      "pricing": "Free · Apache 2.0 · enterprise support through the Red Hat build",
+      "self_host": "Yes — a local process, not a service",
+      "realtime": "Socket-activated API with one listening socket (--time default 5 s)",
+      "ai_readiness": "GPU acceleration in Podman Desktop (vendor claim)",
+      "lock_in": "Low: Apache 2.0, OCI and Compose compatible",
+      "badge": "No paid tier",
+      "cta_url": "https://podman.io/?utm_source=devtoolsradar",
+      "pros": [
+        "No daemon and no seat: containers run as the invoking user and nothing idles in the background",
+        "Docker v1.40 compatibility layer, so DOCKER_HOST moves most CLI and Compose tooling",
+        "Podman Desktop is CNCF-hosted, Apache 2.0 and vendor-neutral, with Kubernetes and Compose extensions",
+        "Enterprise support exists without a licence tier: Red Hat sells a supported build"
+      ],
+      "cons": [
+        "The API socket is arbitrary code execution as that user, with no way to limit or audit it (Podman's man page)",
+        "Docker-only API surface still needs rewriting, and the compatibility layer is Docker v1.40",
+        "The service command is unavailable where Podman runs directly on a Windows or macOS host",
+        "There is no vendor to call unless you buy the Red Hat build"
+      ],
+      "code_example": "# No daemon to start: each command is a process that runs and exits.\n$ podman run --rm -v \"$PWD\":/app -w /app node:24 npm ci\n# Docker tooling can use the compatibility socket:\n$ systemctl --user start podman.socket\n$ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock\n# Here it breaks: that socket is full access as your user, so\n# never bind it to TCP without mutual TLS."
+    },
+    "sections": [
+      {
+        "title": "Docker licenses the desktop; Podman has no paid tier",
+        "content": "For teams paying for Docker Desktop, or about to. Docker's November 2026 pricing and licence terms distinguish the engine from the desktop:\n\n> **Docker:** the engine is open source; the desktop is a licensed product.\n> **Podman:** the runtime has no daemon; the desktop uses Apache License 2.0.\n\n- Docker Engine and Moby stay open source; Docker Desktop uses the Docker Subscription Service Agreement.\n- Podman 6.1.4 and Podman Desktop 1.30.5 use Apache License 2.0 with no paid tier.\n\n> Choose paid Docker Desktop for its plan controls; choose Podman when eliminating licence fees justifies Docker-only API rewrites and socket-security responsibility."
+      },
+      {
+        "title": "Commercial Desktop seats become paid at 250 employees or $10 million revenue",
+        "content": "Docker Desktop is free while a company has **fewer than 250 employees AND less than $10 million** in annual revenue. Both must hold. Government entities pay at any size.\n\n| Commercial company | Docker Desktop bill |\n|---|---|\n| 249 employees, under $10M annual revenue | $0 |\n| 250 employees or $10M+ annual revenue; 200 users choosing Team | 200 × $15 = $3,000/month; $3,000 × 12 = $36,000/year |\n\nThe software did not change between those rows.\n\n| Plan | USD/user/month | Adds |\n|---|---|---|\n| Personal | $0 | — |\n| Pro | $9 | commercial Desktop use, Build Cloud, unlimited private repos |\n| Team | $15 | audit logs, role-based access control |\n| Business | Contact us for pricing | SSO, SCIM, Hardened Docker Desktop, Image Access Management |\n\nBusiness publishes no per-seat price. Docker Team's flat $15 per user/month charges for seats, not container usage."
+      },
+      {
+        "title": "Docker's money buys meters, and each meter is its own decision",
+        "content": "Past the seat, paid plans attach meters, at Docker's prices:\n\n| Item | Price | Decision it forces |\n|---|---|---|\n| Build Cloud | base minutes per plan | Do builds fit the allocation? |\n| Testcontainers Cloud | $3/100 min prepaid, $4/100 on demand | Steady enough to prepay? |\n| Docker Hardened Images | free for developers; production with compliance support starts at $5k/repo | How many repos ship? |\n| Docker Offload | licences on Team and Business | Worth the sales call it requires? |\n\nAt 4,000 Testcontainers minutes a month: 4,000 ÷ 100 = 40 blocks, so 40 × $4 = $160 on demand or 40 × $3 = $120 prepaid.\n\n- DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.\n- Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period."
+      },
+      {
+        "title": "Who should not pick Podman: teams without socket ownership",
+        "content": "Podman's licence bill is $0. Its `podman system service` provides Docker v1.40 compatibility beside the native Libpod API. Socket-activated by systemd, it exits after 5 idle seconds by default.\n\nWith a rootless API service already listening:\n\n```bash\nexport DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock\n```\n\nCheck required API calls and rewrite Docker-only handlers. The command is unavailable directly on macOS or Windows; `--time 0` disables inactivity timeout.\n\nThe man page warns:\n\n> \"the API grants full access to all Podman functionality, and thus allows arbitrary code execution as the user running the API, with no ability to limit or audit this access\"\n\nRootless narrows whose account is exposed; it does not make the socket safe to share.\n\n- Skip Podman if required API calls are unsupported or nobody owns socket permissions.\n- Avoid TCP exposure without mutual TLS; the man page suggests SSH forwarding instead."
+      },
+      {
+        "title": "Who should not pick Docker: government expecting free Desktop",
+        "content": "Podman Desktop is free, Apache 2.0 and, in its own words, \"trusted as part of the CNCF\". It runs on Linux, macOS and Windows. Red Hat sells enterprise support as a build, the Red Hat Build of Podman Desktop, not as a licence tier.\n\n- Docker Business includes SOC 2, SSO and SCIM, plus Hardened Docker Desktop and Image Access Management.\n- Podman Desktop's enterprise path is that Red Hat build: support and long-term maintenance, not a licence tier.\n\nSkip Docker if you are a government entity counting on the free tier; it never applied."
+      },
+      {
+        "title": "Who should pay Docker, and who should fund the port?",
+        "content": "- Choose Docker Business for SSO, SCIM or Image Access Management; choose Team when audit logs and role-based access control meet your governance needs.\n- Choose Podman below both free-tier limits if you can fund Docker-only API changes and own socket access before crossing either limit. So should a large org that wants per-seat × headcount off the budget and can staff the port.\n- For 25 developers, Podman costs $0 in licence fees plus the port: Docker-only handler rewrites and socket security.\n\nBusiness gates SSO, SCIM and Image Access Management; every plan carries Build Cloud minutes.\n\nCheck today:\n\n1. Headcount and revenue against 250 and $10M. Both limits, not either.\n2. Which CI jobs call the Docker API, and at what version.\n3. Who can open the socket on your build hosts."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "Commercial company below $10 million annual revenue, moving from 249 to 250 employees; 200 Desktop users choosing Team",
+        "formula": "Previously $0 under both free-tier limits; 200 developers × $15 Team = $3,000/month; $3,000 × 12 = $36,000/year",
+        "result": "$36,000/year, previously $0"
+      },
+      {
+        "label": "25 developers: Team vs Pro",
+        "formula": "25 developers on Team: 25 × $15 = $375/month; $375 × 12 = $4,500/year. Pro: 25 × $9 = $225/month; $225 × 12 = $2,700/year",
+        "result": "$4,500/year vs $2,700/year; Pro drops org audit logs and RBAC"
+      },
+      {
+        "label": "Testcontainers Cloud at 4,000 minutes/month",
+        "formula": "4,000 ÷ 100 = 40 blocks; 40 × $4 = $160/month on demand; 40 × $3 = $120/month prepaid",
+        "result": "$160/month vs $120/month"
+      },
+      {
+        "label": "Docker Hardened Images production with compliance support, 12 repositories",
+        "formula": "12 × $5,000 (starting price) = $60,000/year",
+        "result": "$60,000/year floor, before Business seats; enterprise DHI is quote-only and required for end-of-life software security"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "Commercial company with fewer than 250 employees AND less than $10 million annual revenue; team can fund Docker-only API changes and own socket security before growth",
+        "pick": "Podman",
+        "why": "Choose Podman to avoid future Desktop seat fees when the port is funded and socket access has an owner; keeping free Desktop is also available below both limits."
+      },
+      {
+        "situation": "Commercial company at 249 employees, below $10 million annual revenue, hiring toward 250; a funded Podman port can finish before crossing the boundary",
+        "pick": "Podman, ported before the boundary",
+        "why": "Employee 250 bills every commercial Desktop seat at once, so the port or the budget line has to exist before the hire, not after."
+      },
+      {
+        "situation": "Commercial company with fewer than 250 employees and annual revenue of $10 million or more requires audit logs and role-based access control",
+        "pick": "Docker Team",
+        "why": "The free tier needs both limits to hold, and the revenue test has already failed. Team adds the required audit logs and role-based access control."
+      },
+      {
+        "situation": "Government entity of any size with a feasible, staffed Docker-only API port and named socket owner; Business controls are not required",
+        "pick": "Podman",
+        "why": "Docker Desktop's free tier never covers government, while Podman has no seat to license."
+      },
+      {
+        "situation": "The identity team requires SSO, SCIM and Image Access Management",
+        "pick": "Docker Business",
+        "why": "Those are documented Business plan gates; request pricing because the page publishes no per-seat figure."
+      },
+      {
+        "situation": "Large org wants the seat line deleted; its platform team owns CI sockets and can fund Docker-only API rewrites",
+        "pick": "Podman",
+        "why": "Licence fees become $0; the funded rewrites and socket-access responsibility stay with the platform team."
+      },
+      {
+        "situation": "Committed Testcontainers Cloud usage of 4,000 runtime minutes per month",
+        "pick": "Testcontainers Cloud pre-purchase",
+        "why": "4,000 ÷ 100 = 40 blocks; 40 × $3 = $120/month prepaid versus 40 × $4 = $160/month on demand. Choose pre-purchase for this committed usage."
+      },
+      {
+        "situation": "Mid-term on an annual Docker Team or Business plan with every seat assigned; a funded Podman migration is planned",
+        "pick": "Prepare the Podman port before renewal",
+        "why": "Only unused seats can be removed and a cancelled plan refunds nothing, so plan the port against the renewal date. Paid access continues through the paid cycle; cancellation cannot pause the plan."
+      }
+    ],
+    "verdict_summary": "Pick Podman if your company sits under both free-use limits and you can fund the port, or if you are past them and want per-seat × headcount off the budget. Pick Docker if SSO, SCIM and Image Access Management have to arrive in one contract, or if Build Cloud minutes belong on the same invoice as the desktop.",
+    "migration_guide": "Moving to Podman is one environment variable for CLI and Compose tooling plus two work items: handlers that use Docker-only API surface, and a decision about who may open the socket on each build host. Moving back is the same variable unset, which is why teams often keep both — Docker for the licensed platform services, Podman on machines that only need a runtime.",
+    "faqs": [
+      {
+        "q": "What happens if a Docker invoice is unpaid?",
+        "a": "An unpaid invoice starts a 15-day grace period."
+      },
+      {
+        "q": "Is Docker Desktop free for our open-source work?",
+        "a": "It is free for non-commercial open source, education and personal use. Commercial use beyond the small-business tier needs a Pro, Team or Business subscription, open source or not."
+      },
+      {
+        "q": "Can CI reach the Podman API over TCP?",
+        "a": "The man page recommends against exposing the socket over TCP without mutual TLS and suggests SSH forwarding instead. The service supports only one listening socket, and the rootful default is unix:///run/podman/podman.sock."
+      },
+      {
+        "q": "Does Podman Desktop work on a locked-down network?",
+        "a": "Podman Desktop's vendor lists VPN/proxy support and air-gapped installation options. Check which of those network and installation options matches your environment's restrictions."
+      }
+    ],
+    "sources": [
+      "https://www.docker.com/pricing/",
+      "https://docs.docker.com/subscription-billing/desktop-license/",
+      "https://docs.docker.com/subscription-billing/plans/docker/",
+      "https://podman.io/",
+      "https://podman-desktop.io/",
+      "https://docs.podman.io/en/latest/markdown/podman-system-service.1.html"
+    ],
+    "related": [
+      {
+        "slug": "bun-vs-node",
+        "name": "Bun vs Node.js",
+        "why": "Open-source engine, licensed surface, and two bills measured in labour."
+      },
+      {
+        "slug": "clerk-vs-auth0",
+        "name": "Clerk vs Auth0",
+        "why": "The other per-seat bill: identity, priced by the people who show up."
+      }
+    ]
+  },
+  {
+    "slug": "clerk-vs-auth0",
+    "category": "Identity & Auth",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning on a later day after signup per app, so these are not equivalent populations.",
+    "tool_a": {
+      "name": "Clerk",
+      "tagline": "Authentication as a product surface, billed on retained users",
+      "db": "Hosted auth with prebuilt UI, organisations and billing",
+      "pricing": "Hobby $0 · Pro $25/mo ($20 annual) · Business $300/mo ($250 annual)",
+      "self_host": "No (hosted service)",
+      "realtime": "50,000 MRU included per app; sessions from 5 minutes to 10 years on paid",
+      "ai_readiness": "M2M tokens and API keys with monthly verification limits",
+      "lock_in": "Medium: hosted users, full data exports on every plan",
+      "badge": "Retained users",
+      "cta_url": "https://clerk.com/?utm_source=devtoolsradar",
+      "pros": [
+        "50,000 MRU included on Pro, then $0.02 each — a user who never returns is never billed",
+        "Unlimited applications on every plan, including Hobby",
+        "Organisations and B2B authentication are in the same product, with 100 MRO included",
+        "Full data exports on every plan, so leaving is a data move rather than a negotiation"
+      ],
+      "cons": [
+        "The bill hides in add-ons: SSO $75/mo each, Directory Sync $75/mo each from 1 January 2027",
+        "Hobby stops at 50,000 MRU after a one-month grace period",
+        "Protect checks meter at $0.002 after 10,000 free, so attack traffic is a billable event",
+        "Business is a $300/mo step mostly for SOC 2, seats and 30-day logs"
+      ],
+      "code_example": "// Clerk bills a retained user, not a session: the first day is free.\nconst { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\n// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,\n// and Hobby gives one grace month before requests stop being served.\nif (totalCount > 50_000) console.warn(totalCount, \"MRU — check the plan\");"
+    },
+    "tool_b": {
+      "name": "Auth0",
+      "tagline": "Identity infrastructure priced in tiers of monthly active users",
+      "db": "Hosted identity platform: connections, tenants, rules",
+      "pricing": "Free 25,000 MAU · Essentials from $35 · Professional from $240 · Enterprise quote",
+      "self_host": "No (hosted); private deployment is an Enterprise add-on",
+      "realtime": "Tenants 1/3/12/unlimited by plan; 3 enterprise connections on B2B Essentials",
+      "ai_readiness": "AI Agents add-on adds 50% to the base price",
+      "lock_in": "High: tenants, connections and rules live inside the product",
+      "badge": "Tiered MAU",
+      "cta_url": "https://auth0.com/?utm_source=devtoolsradar",
+      "pros": [
+        "25,000 MAU free, with 5 organisations, self-service SSO and SCIM included",
+        "B2B Essentials is $150/month for 500 MAU with unlimited organisations",
+        "Enterprise SSO connections included — 3 on Essentials, 5 on Professional — then $100/month each",
+        "Professional adds custom database connections, cross-app SSO and 12 tenants"
+      ],
+      "cons": [
+        "Price is a step function: 501 B2C users bill at the 1,000 tier, $70 instead of $35",
+        "The B2C Professional sheet ends at 20,000 MAU; past that it is a quote or not available",
+        "Custom enterprise SSO on B2C requires Enterprise — not available on Essentials or Professional",
+        "The AI Agents add-on adds 50% to whichever tier it is applied to"
+      ],
+      "code_example": "# Auth0 prices the tier, not the user: 501 MAU bills as 1,000.\nTIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350)]\ndef essentials(mau):\n    return next(p for cap, p in TIERS if mau <= cap)\nprint(essentials(501))  # 70, not 35\n# Here it breaks: above 50,000 B2C MAU the printed sheet ends."
+    },
+    "sections": [
+      {
+        "title": "Clerk and Auth0 count different people",
+        "content": "Read the unit before the price. Each vendor defines it in its own words:\n\n| Vendor | Unit | Who is counted |\n|---|---|---|\n| Clerk | Monthly Retained User (MRU) | visits at least one day after signup, per app |\n| Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |\n\nClerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.\n\n> A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.\n\nVendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0."
+      },
+      {
+        "title": "Who should not pick Auth0's paid B2C plans",
+        "content": "- Clerk forbids a limitless free tier: Hobby stops at 50,000 MRU per app with no MFA or passkeys, and one month of grace before the app stops working.\n- Clerk forbids big free organisations: 100 MRO per app, 20 members each. An MRO has at least 2 members, one of them an MRU that month.\n- Auth0 forbids paying for exactly what you use. Between tiers you are billed at the next tier up.\n- Avoid Auth0 B2C Essentials and Professional if you need enterprise connections: both list them as \"not available\". Free includes 1; custom SSO tiers require Enterprise."
+      },
+      {
+        "title": "On Auth0, the 501st user costs $35",
+        "content": "Auth0's B2C price is a staircase. You pay for the tier you land in:\n\n| B2C MAU | Essentials | Professional |\n|---|---|---|\n| 500 | $35 | $240 |\n| 1,000 | $70 | $240 |\n| 20,000 | $1,400 | $3,200 |\n| 30,000 | $2,100 | contact us |\n| 40,000 | $2,800 | not available |\n| 50,000 | $3,500 | not available |\n\nAt 500 MAU, Essentials is $35 / 500 = $0.07 per user. User 501 moves you to the 1,000 tier: $70 − $35 = $35 for one person. The $70 bill is double $35.\n\n> **The usage punished is a spike that crosses a boundary.** One launch week past a tier line bills the whole next tier. Professional has a harder cliff: $240 climbing to $3,200, then no self-serve price at all. Professional's printed prices end at 20,000 MAU for B2C and 10,000 for B2B.\n\n> Annual billing keeps the steps: yearly is 11 × monthly, so 50,000 MAU on Essentials is 11 × $3,500 = $38,500."
+      },
+      {
+        "title": "Who should not pick Clerk without budgeting add-ons",
+        "content": "Clerk Pro is $25/month, or $20/month billed annually. It includes 50,000 MRU per app, then $0.02 per MRU with volume discounts. Every plan allows unlimited applications.\n\nThe add-ons move the bill:\n\n| Add-on | Price |\n|---|---|\n| SSO connection | 1 included, then $75/mo |\n| Directory Sync | 1 included, then $75/mo from 1 January 2027 |\n| B2B Authentication: Enhanced add-on | $100/mo; $1/MRO beyond 100 included per app on all plans; removes 20-member limit |\n| Protect | 10,000 checks free, then $0.002/check; 1,000,000+ quote-only; brute-force prevention excluded |\n\n> Ten enterprise customers, one SSO connection each, cost (10 − 1) × $75 = $675/month. **From January 2027, Directory Sync for the same ten adds another (10 − 1) × $75 = $675.**\n\n> Protect at 200,000 checks is (200,000 − 10,000) × $0.002 = $380.\n\nAvoid Clerk's self-serve plans if you need a 99.99% SLA or a HIPAA BAA; both are Enterprise-only."
+      },
+      {
+        "title": "The 140x gap is correct arithmetic on two different quantities",
+        "content": "Paid-plan estimates at equal numeric inputs, not an identical population. Auth0 counts MAU; Clerk counts MRU.\n\n```python\nTIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350), (7_500, 525),\n         (10_000, 700), (20_000, 1_400), (30_000, 2_100), (40_000, 2_800), (50_000, 3_500)]\n\ndef auth0(mau):  # between tiers you pay the next tier up\n    return next((p for cap, p in TIERS if mau <= cap), None)  # breaks: >50,000 unpriced\n\ndef clerk_pro(mru):  # ignores Clerk's volume discounts\n    return 25 + max(0, mru - 50_000) * 0.02\n\nfor n in (501, 50_000, 100_000):\n    print(n, auth0(n), clerk_pro(n))\n```\n\n> At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 later-day MRU per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who came back on a later day. Not the same crowd.\n\n> At 100,000 MRU, Clerk is 50,000 × $0.02 + $25 = $1,025/month. Auth0's B2C sheet ends at 50,000: \"contact us\"."
+      },
+      {
+        "title": "Pick by who you are billed for, then check the next boundary",
+        "content": "**Choose Clerk Pro if** you need MFA, passkeys or branding removal below 50,000 MRU per app; Hobby excludes them.\n\n> For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, but Essentials and Professional allow only 10 organisations, not 200.\n\n**Choose Auth0 Professional if** you need custom database connections or cross-app SSO; it includes 12 tenants.\n\nCheck today:\n\n1. Price distinct non-internal MAU per Auth0 tenant and later-day MRU per Clerk app, with required plans and add-ons.\n2. Find your Auth0 tier and how many MAU separate you from the next one.\n3. List SSO and Directory Sync connections you will run on 1 January 2027."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "Auth0 B2C Essentials, 50,000 MAU, annual",
+        "formula": "11 × $3,500 (yearly = 11 × monthly)",
+        "result": "$38,500/year; $38,500 / 12 = $3,208.33/month equivalent, rounded to cents; monthly billing remains $3,500/month"
+      },
+      {
+        "label": "Clerk Pro, 100,000 MRU",
+        "formula": "(100,000 − 50,000 included) × $0.02 + $25",
+        "result": "$1,025/month"
+      },
+      {
+        "label": "Auth0 B2C Essentials, the 501st user",
+        "formula": "$70 (1,000-MAU tier) − $35 (500-MAU tier)",
+        "result": "$35 for one user"
+      },
+      {
+        "label": "Clerk Business, 10 dashboard seats, 5,000 MRU and 200 qualifying MRO (at least 2 members, including an MRU that month)",
+        "formula": "$300 Business + $100 B2B add-on + (200 − 100) × $1 per MRO",
+        "result": "$500/month"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "App below 50,000 MRU per app needing MFA, passkeys or branding removal",
+        "pick": "Clerk Pro",
+        "why": "Pro includes these features for $25/month; Hobby excludes them. Without a paid-feature requirement, Hobby covers 50,000 MRU per app for $0. Users who never return after day one are never billed."
+      },
+      {
+        "situation": "Side project that needs more than 3 social logins and costs nothing",
+        "pick": "Auth0 Free",
+        "why": "Auth0 Free includes unlimited social connections up to 25,000 MAU, while Clerk Hobby stops at 3 social connections."
+      },
+      {
+        "situation": "B2C usage beyond Clerk's 50,000 included MRU per app or Auth0's printed 50,000-MAU limit",
+        "pick": "Price Clerk Pro overage and request an Auth0 quote",
+        "why": "Clerk Pro lists $0.02/month per MRU beyond 50,000 included per app, with volume discounts; Auth0's printed B2C tiers end at 50,000 MAU, so higher usage needs a quote. Clerk MRU counts later-day returns per app; Auth0 MAU counts non-internal users authenticated that month per tenant."
+      },
+      {
+        "situation": "Team needing 10 dashboard seats, with 5,000 Clerk MRU and 200 qualifying MRO",
+        "pick": "Clerk Business + B2B Authentication Enhanced add-on",
+        "why": "$300 + $100 + (200 − 100) × $1 = $500/month. Each MRO needs at least 2 members, including an MRU that month. Auth0 B2B Essentials is $1,300/month at 5,000 MAU, but Essentials and Professional allow only 10 organizations, so neither serves 200 organizations. MRU counts later-day returns per app; MAU counts non-internal users authenticated that month per tenant."
+      },
+      {
+        "situation": "Existing user store you cannot migrate yet (bring your own database)",
+        "pick": "Auth0 Professional",
+        "why": "Custom database connections and cross-app SSO are Professional-and-up features on Auth0."
+      },
+      {
+        "situation": "B2C app requiring enterprise connections on a paid plan",
+        "pick": "Request Auth0 Enterprise pricing; avoid B2C Essentials and Professional",
+        "why": "B2C Essentials and Professional list enterprise connections as unavailable, while Free includes 1; custom SSO tiers require Enterprise."
+      },
+      {
+        "situation": "AI agent product that needs Token Vault and CIBA on Auth0",
+        "pick": "Auth0, plus a 50% surcharge rounded up to the dollar",
+        "why": "Auth0 for AI Agents adds 50% to the base price, rounded up to the dollar: B2B Essentials at 5,000 MAU costs $1,300 + ($1,300 × 50%) = $1,950/month."
+      },
+      {
+        "situation": "Healthcare app that needs HIPAA with a BAA",
+        "pick": "Quote Clerk Enterprise",
+        "why": "Clerk lists HIPAA with BAA only on its annual Enterprise plan. Request its custom annual quote; confirm Auth0's HIPAA and BAA eligibility separately before treating it as an alternative."
+      }
+    ],
+    "verdict_summary": "Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.",
+    "migration_guide": "Clerk to Auth0 means exporting users, recreating connections and mapping organisations onto a plan that includes 5 on Free and 10 on paid tiers — well short of 200 without a higher tier. Auth0 to Clerk changes the unit: MAU becomes MRU, so the population you migrate is not the population you are billed for, and users who never return after day one vanish from the invoice.",
+    "faqs": [
+      {
+        "q": "Does Auth0 have a free tier?",
+        "a": "Yes: Auth0 Free is $0 up to 25,000 MAU, with 1 tenant, 5 organizations, 1 enterprise connection and 1-day log retention. Self-service SSO and SCIM are included on it."
+      },
+      {
+        "q": "Do I need Clerk Business to offer SSO?",
+        "a": "No. Pro includes 1 SSO connection and charges $75/month for each additional connection; Business costs $300/month or $250/month billed annually and adds a SOC 2 report, 10 dashboard seats and 30-day application and admin logs."
+      },
+      {
+        "q": "How long does each vendor keep logs on the paid tiers?",
+        "a": "Auth0 keeps 5 days on Essentials, 10 on Professional and 30 on Enterprise. Clerk Pro keeps 7 days of logs and Business keeps 30."
+      },
+      {
+        "q": "What does SMS login cost on Clerk?",
+        "a": "SMS authentication is on Pro at $0.01 per SMS for the US and Canada, with international messages at market rate."
+      }
+    ],
+    "sources": [
+      "https://clerk.com/pricing",
+      "https://auth0.com/pricing"
+    ],
+    "related": [
+      {
+        "slug": "docker-vs-podman",
+        "name": "Docker vs Podman",
+        "why": "Headcount decides both bills: seats at Docker, retained users at Clerk."
+      },
+      {
+        "slug": "supabase-vs-firebase",
+        "name": "Supabase vs Firebase",
+        "why": "The same lesson in a database: the unit you are billed on is the architecture."
+      }
+    ]
+  },
+  {
+    "slug": "planetscale-vs-neon",
+    "category": "Backend & Database",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "Suspended compute costs $0 on Neon; PlanetScale's smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35/month before storage, versus $15/month for PlanetScale PS-5 HA.",
+    "tool_a": {
+      "name": "PlanetScale",
+      "tagline": "Dedicated clusters billed whether or not they are awake",
+      "db": "Postgres (single node, HA, Neki sharding) and Vitess for MySQL",
+      "pricing": "No free plan · Postgres $5/mo single node, $15/mo HA, Neki from $30/shard",
+      "self_host": "No (managed on AWS, GCP and Azure)",
+      "realtime": "3-node HA clusters; Neki shards run 1 primary and 2 replicas each",
+      "ai_readiness": "MCP and Insights in the platform (vendor description)",
+      "lock_in": "Medium: Postgres or MySQL underneath, managed control plane on top",
+      "badge": "Clusters",
+      "cta_url": "https://planetscale.com/?utm_source=devtoolsradar",
+      "pros": [
+        "A fixed cluster charge: PS-5 HA is $15/month whether the database sleeps or not",
+        "Every branch is its own cluster, so a schema change never touches production",
+        "Postgres, Neki's sharded Postgres and Vitess for MySQL on one platform",
+        "Backups included up to 2x disk size and run automatically every 12 hours"
+      ],
+      "cons": [
+        "No free plan anywhere: the cheapest database is $5/month single node",
+        "A branch is a second cluster, so 20 PS-5 HA branches bill $300/month",
+        "Storage past 10 GB per instance bills at a region rate the docs expose only through an endpoint",
+        "Neki is a platform preview, and PlanetScale says not to run production on it"
+      ],
+      "code_example": "# PlanetScale bills the cluster, prorated to the millisecond.\n# PS-5 HA = 1 primary + 2 replicas, $15/month per branch, awake or not.\n# 20 branches for pull requests: 20 x $15 = $300/month.\n# Here it breaks: a branch is not metadata, it is a second cluster,\n# so preview environments get priced like production ones."
+    },
+    "tool_b": {
+      "name": "Neon",
+      "tagline": "Postgres billed by the CU-hour it is awake, from Databricks",
+      "db": "Lakebase Postgres with branching, Data API, Functions and Object Storage",
+      "pricing": "Free plan · Launch $0.106/CU-hour · Scale $0.222/CU-hour",
+      "self_host": "No (managed, Databricks)",
+      "realtime": "Up to 10,000 pooled connections per compute; scale to zero after 5 minutes",
+      "ai_readiness": "Managed Better Auth and an AI Gateway with prepaid credits",
+      "lock_in": "Medium: Postgres underneath, but branches and services are Neon's",
+      "badge": "CU-hours",
+      "cta_url": "https://neon.com/?utm_source=devtoolsradar",
+      "pros": [
+        "Suspended compute costs $0, so a database that sleeps most of the day costs almost nothing",
+        "A permanent free plan: 100 CU-hours, 1 GB storage and 100 projects",
+        "Branches cost $1.50 a month after 10 included, which makes a preview per pull request affordable",
+        "Storage at $0.35/GB-month and 500 GB egress included per project on Launch"
+      ],
+      "cons": [
+        "An always-on 0.25 CU costs 0.25 x 730 x $0.106 = $19.35/month, above a $15 cluster",
+        "One CU running all month is $77.38 on Launch and $162.06 on Scale",
+        "Storage, instant restore, extra branches and egress are separate lines on the same invoice",
+        "Scale doubles the CU rate for the same compute shape"
+      ],
+      "code_example": "# Neon bills compute size x hours awake; suspended compute is $0.\n# Launch: $0.106 per CU-hour. 0.25 CU awake all month:\n0.25 * 730 * 0.106   # 19.35, before storage\n# Here it breaks: a health check every few minutes keeps leaving\n# the compute awake, so the invoice tracks uptime, not traffic."
+    },
+    "sections": [
+      {
+        "title": "PlanetScale rents you a machine; Neon bills the hours it is awake",
+        "content": "For Postgres with idle periods or many branches, compare billed CU-hours with dedicated clusters; existing Vitess-based MySQL still has an engine constraint.\n\n> PlanetScale: capacity is a cluster you rent. Neon: compute is CU-hours, meaning compute size × hours running on Lakebase Postgres.\n\n- PlanetScale charges for idle cluster capacity; storage, backups and egress can add charges. Each branch runs on its own separately billed dedicated cluster.\n- Neon's paid plans charge for CU-hours used, while suspended compute costs $0. Its pricing describes Lakebase Postgres as “from Databricks”.\n\nPlanetScale's docs say it plainly: there is no free plan.\n\n> Figures below are AWS us-east-1 list prices checked 10 November 2026, or arithmetic on them; nothing is benchmarked."
+      },
+      {
+        "title": "The $0 database out-bills the $15 cluster once it never sleeps",
+        "content": "The bottom of each price list:\n\n| Entry | Monthly | What you get |\n|---|---|---|\n| Neon Free | $0 | 100 CU-hours, 1 GB storage per project |\n| PlanetScale PS-5, single node | $5 | 1/16 vCPU, 512 MiB |\n| PlanetScale PS-5 HA | $15 | 1 primary + 2 replicas |\n\nNow keep a 0.25 CU Neon compute awake all month on Launch: 0.25 × 730 h = 182.5 CU-hours × $0.106 = $19.35, before storage.\n\n> Compute only: $19.35 − $15 = $4.35 more than PlanetScale's three-node cluster; capacity is not equivalent.\n\n```python\n# Awake hours/month before 0.25 CU on Neon Launch out-bills PS-5 HA.\nCU, RATE, PS5_HA = 0.25, 0.106, 15.00\nbreak_even = PS5_HA / (CU * RATE)\nprint(f\"approximately {break_even:.2f} of 730 hours\")\n# Assumes 0.25 CU runs throughout the awake hours.\n```"
+      },
+      {
+        "title": "Who should NOT pick Neon: existing Vitess-based MySQL deployments",
+        "content": "Now one CU, awake all month:\n\n| Option | Compute formula | Monthly |\n|---|---|---|\n| Neon Launch, 1 CU | 1 × 730 × $0.106 | $77.38 |\n| Neon Scale, 1 CU | 1 × 730 × $0.222 | $162.06 |\n| PlanetScale PS-80 HA | fixed cluster, arm64 | $148 |\n\nNot identical machines. A CU is about 4 GB RAM; PS-80 is listed at 1 vCPU and 8 GiB plus two replicas.\n\n- Scale's compute crossover: $148 ÷ (1 CU × $0.222/CU-hour) ≈ 666.67 h; choose PS-80 only if its capacity suits the workload.\n- Neon's own typical-cost rows answer \"how many hours?\": intermittent load (140 CU-hours + 1 GB) is $15 on Launch, high load (3,000 CU-hours + 100 GB) is $353 on Launch and $701 on Scale.\n- PlanetScale's SKU ladder answers \"which size?\", from PS-5 at $15 to PS-2560 at $4,529 HA on arm64.\n\n> Do not pick Neon if you must retain Vitess-based MySQL; Launch also lacks an uptime SLA. Compare billed CU-hours with the cluster charge before attributing savings to suspension."
+      },
+      {
+        "title": "Who should NOT pick PlanetScale: projects with a $0 budget",
+        "content": "On PlanetScale every branch runs on its own dedicated cluster, billed separately and prorated to the millisecond. On Neon Launch a branch is a line item: 10 per project included, then $1.50 per branch-month, prorated hourly.\n\n| 20 branches alive all month | Formula | Component/month |\n|---|---|---|\n| Neon Launch | 10 included + 10 × $1.50 | $15 extra-branch fees |\n| PlanetScale, PS-5 HA each | 20 × $15 | $300 cluster compute |\n\n- Add running compute and data storage on Neon; add storage, backups and transfer on PlanetScale.\n- Millisecond proration helps PlanetScale with short-lived branches: one PS-5 HA branch costs $15 ÷ 730 h ≈ $0.02 per hour.\n- Use actual branch lifetimes. Launch suspension after five minutes can be disabled.\n\nDo not pick PlanetScale for a $0 budget; every database requires a paid subscription."
+      },
+      {
+        "title": "Neki adds sharded Postgres, but its preview excludes production",
+        "content": "Neki is PlanetScale's sharded Postgres, in platform preview since 10 September 2026. PlanetScale says preview is not for production, and that \"some of those changes will be breaking\".\n\n> Apps reach it through a Neki router over the Postgres wire protocol.\n\n- No single-node configuration: the smallest arm64 shard is PS-10 at $30, 1 primary and 2 replicas across 3 availability zones.\n- Routers start at $6 (NKR-0). Production router compute = router rate × observed routers ÷ 3; the rate covers the three-router baseline, one per AZ.\n- Four PS-20 shards plus NKR-20 routers: 4 × $50 + $170 × 3 ÷ 3 = $370/month, before storage, backups and network usage."
+      },
+      {
+        "title": "Pick from measured compute, branch and data charges",
+        "content": "Choose Neon when measured CU-hours plus branch, storage and transfer charges beat PlanetScale's total. Choose PlanetScale for suitable always-on cluster compute or an existing Vitess-shaped MySQL estate.\n\nCheck this today:\n\n1. Pull last month's awake hours per Neon compute. For compute only: $15 ÷ (0.25 CU × $0.106/CU-hour) ≈ 566.04 h on Launch.\n2. Count branches alive at once and how long each lives, and price them as PlanetScale clusters before copying the habit.\n3. Check suspension configuration and billed CU-hours; add storage, backups and transfer before choosing.\n4. Do not run production workloads on Neki's platform preview; evaluate it only outside production."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "Always-on small database, Neon Launch vs PlanetScale PS-5 HA",
+        "formula": "Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106/CU-hour = $19.35/month; PlanetScale PS-5 HA: $15/month cluster compute",
+        "result": "$19.35/month vs $15/month, compute only; different capacity, with storage and other charges separate"
+      },
+      {
+        "label": "One CU all month, Neon Launch / Neon Scale vs PlanetScale PS-80 HA (arm64)",
+        "formula": "Neon Launch: 1 CU × 730 h = 730 CU-hours × $0.106/CU-hour = $77.38; Neon Scale: 730 CU-hours × $0.222/CU-hour = $162.06; PlanetScale PS-80 HA arm64: $148/month",
+        "result": "Compute only: Launch $77.38; Scale $162.06; PS-80 $148/month. Not equivalent capacity; use PS-80 only if it suits the workload."
+      },
+      {
+        "label": "20 branches alive all month",
+        "formula": "Neon Launch: 20 branches = 10 included + 10 × $1.50 = $15/month extra-branch fees; PlanetScale: 20 × $15 = $300/month (PS-5 HA each), prorated to the millisecond",
+        "result": "Neon: $15 extra-branch fees plus running compute and data storage; PlanetScale: $300 cluster compute plus storage, backups and transfer. Not total bills."
+      },
+      {
+        "label": "Neki platform preview — not production: four PS-20 shards plus routers",
+        "formula": "Neki is a platform preview, not production. Shards: 4 × $50 = $200; production router compute = router rate × observed routers ÷ 3 = $170 (NKR-20) × 3 ÷ 3 = $170; $200 + $170 = $370/month",
+        "result": "Neki is a platform preview, not production. $370/month before storage, backups and network usage."
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "Dev and test databases idle overnight, one branch per pull request",
+        "pick": "Neon Launch",
+        "why": "Suspended compute bills $0 and branches past the included 10 cost $1.50 per branch-month instead of a cluster each. Running compute, data storage and transfer remain separate."
+      },
+      {
+        "situation": "Always-on database comparing compute charges only",
+        "pick": "PlanetScale Postgres HA",
+        "why": "For compute only, 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35 on Neon Launch, versus $15 for PlanetScale PS-5 HA; storage and other charges remain separate, and capacity must suit the workload."
+      },
+      {
+        "situation": "Existing Vitess-shaped MySQL estate",
+        "pick": "PlanetScale (Vitess)",
+        "why": "Neon's pricing lists only Lakebase Postgres, so leaving Vitess would be an engine migration, not a vendor switch."
+      },
+      {
+        "situation": "Side project or prototype with a $0 budget",
+        "pick": "Neon Free",
+        "why": "PlanetScale has no free plan, while Neon Free is permanent, needs no card and includes 100 CU-hours per project."
+      },
+      {
+        "situation": "Considering Neki for production sharding",
+        "pick": "Do not use Neki",
+        "why": "Neki is a platform preview and PlanetScale says not to run production on it."
+      },
+      {
+        "situation": "Compliance-bound production (HIPAA BAA, uptime SLA) with traffic that idles for hours",
+        "pick": "Neon Scale",
+        "why": "Scale includes self-serve HIPAA with a BAA and an SLA; suspended compute costs $0, while running compute costs $0.222/CU-hour. Suspension is configurable from 1 minute to always on."
+      },
+      {
+        "situation": "Comparing one always-on Neon Scale CU with PS-80 HA compute prices",
+        "pick": "PlanetScale PS-80 HA, only if its capacity suits the workload",
+        "why": "Compute charges cross at $148 ÷ (1 CU × $0.222/CU-hour) ≈ 666.67 h; this compares prices, not equivalent workload capacity."
+      },
+      {
+        "situation": "Need Launch's compute ceiling exceeded by a fixed-size deployment",
+        "pick": "Neon Scale",
+        "why": "Launch autoscaling stops at 16 CU, while Scale offers fixed sizes up to 56 CU (224 GB RAM)."
+      }
+    ],
+    "verdict_summary": "Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it.",
+    "migration_guide": "Neon to PlanetScale gives up brevity: branches become clusters, scale-to-zero disappears and the cheapest HA Postgres is $15/month. PlanetScale to Neon restarts the clock — CU-hours accrue while the database is awake, so the setting to watch is the suspension timer rather than a cluster size, and storage plus egress move onto the same invoice. Dump and restore with pg_dump in both directions; both are Postgres underneath.",
+    "faqs": [
+      {
+        "q": "Does Neon Launch come with an uptime SLA?",
+        "a": "No; Launch has no SLA. The uptime SLA, HIPAA with a BAA, SOC 2 and ISO 27001/27701 arrive with Scale, along with private networking at $0.01/GB."
+      },
+      {
+        "q": "What does 100 GB of storage cost?",
+        "a": "On Neon Launch it is 100 × $0.35 = $35/month. PlanetScale includes 10 GB per instance and bills the rest at a region volume rate it publishes only through an endpoint, on the primary and both replicas of an HA cluster."
+      },
+      {
+        "q": "How much egress is included?",
+        "a": "Neon Launch includes 500 GB per project, then $0.10/GB. PlanetScale includes 100 GB/month on a production branch and 10 GB on development branches and PS-5 non-HA, then a region rate it does not print; ingress is free. At 1,024 GB on Neon Launch: 1,024 − 500 = 524 GB × $0.10 = $52.40/month; PlanetScale's overage rate is region-dependent and not printed."
+      },
+      {
+        "q": "When do PlanetScale backups add charges?",
+        "a": "PlanetScale runs automated backups every 12 hours and includes backup and WAL storage up to twice disk size; overage costs $0.023 per GB-month on compressed size."
+      }
+    ],
+    "sources": [
+      "https://planetscale.com/pricing",
+      "https://planetscale.com/docs/postgres/pricing",
+      "https://planetscale.com/docs/planetscale-plans",
+      "https://planetscale.com/blog/introducing-neki",
+      "https://planetscale.com/changelog/neki",
+      "https://neon.com/pricing"
+    ],
+    "related": [
+      {
+        "slug": "prisma-vs-drizzle",
+        "name": "Prisma vs Drizzle",
+        "why": "The ORM that now shares a payroll with one side of this comparison."
+      },
+      {
+        "slug": "supabase-vs-firebase",
+        "name": "Supabase vs Firebase",
+        "why": "Metered reads against a flat instance: the ancestor of this arithmetic."
+      }
+    ]
   }
 ]

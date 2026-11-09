@@ -25,4 +25,29 @@
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://zhsks311.github.io/devtools-radar/compare/bun-vs-node/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zhsks311.github.io/devtools-radar/compare/prisma-vs-drizzle/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zhsks311.github.io/devtools-radar/compare/docker-vs-podman/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zhsks311.github.io/devtools-radar/compare/clerk-vs-auth0/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zhsks311.github.io/devtools-radar/compare/planetscale-vs-neon/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

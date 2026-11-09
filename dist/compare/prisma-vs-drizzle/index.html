@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prisma vs Drizzle (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="Both ORMs are free, and in 2026 each arrives with a database vendor attached: Prisma sells Prisma Postgres beside its client, and PlanetScale hired Drizzle&#x27;s entire core team in Ma">
+  <link rel="canonical" href="https://zhsks311.github.io/devtools-radar/compare/prisma-vs-drizzle/">
+  <meta property="og:title" content="Prisma vs Drizzle — 2026 teardown">
+  <meta property="og:description" content="Both ORMs are free, and in 2026 each arrives with a database vendor attached: Prisma sells Prisma Postgres beside its client, and PlanetScale hired Drizzle&#x27;s entire core team in Ma">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://zhsks311.github.io/devtools-radar/compare/prisma-vs-drizzle/">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Prisma vs Drizzle: a 2026 engineering teardown",
+  "description": "Both ORMs are free, and in 2026 each arrives with a database vendor attached: Prisma sells Prisma Postgres beside its client, and PlanetScale hired Drizzle's entire core team in March. Prisma generates its client, while Drizzle keeps the schema in TypeScript without a code-generation step; neither ORM has a per-seat price.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://zhsks311.github.io/devtools-radar/compare/prisma-vs-drizzle/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I have to use Prisma Postgres to use Prisma ORM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No: the ORM is free on every plan and works without Prisma Postgres. If you do try the database, its Free plan includes 200,000 operations with the spend limit fixed at $0 and no card."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I shrink the Prisma 7 query compiler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Since 7.3.0 the generator accepts `compilerBuild = \"fast\" | \"small\"`, with `fast` as the default. In Alex Georgiev's listing the SQLite compiler is 4,406,183 bytes in the fast build and 2,214,935 bytes in the small one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will long-running queries survive Prisma Postgres connection pooling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pooled connections run in transaction mode with a 10-minute query duration limit and a 60-minute idle timeout. Pooled connection caps are 10, 100, 500 and 1,000 from Free to Business, with 10, 10, 50 and 100 direct connections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which databases can Drizzle talk to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Postgres, MySQL, SQLite, SingleStore, MSSQL and CockroachDB, through the standard drivers. Drizzle states the ORM has \"exactly 0 dependencies\"."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://zhsks311.github.io/devtools-radar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Prisma vs Drizzle",
+      "item": "https://zhsks311.github.io/devtools-radar/compare/prisma-vs-drizzle/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root {
+  --bg: #090d16;
+  --surface: #121826;
+  --surface-raised: #182234;
+  --border: #222f46;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary: #38bdf8;
+  --primary-glow: rgba(56, 189, 248, 0.15);
+  --accent: #10b981;
+  --warn: #f59e0b;
+  --danger: #f43f5e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+  background: rgba(9, 13, 22, 0.88);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
+.logo span { color: var(--primary); }
+.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
+.nav-link:hover { color: var(--primary); }
+.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
+.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
+.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
+h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
+h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
+p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
+ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
+li { margin-bottom: 0.4rem; font-size: 0.98rem; }
+li > code, p > code { font-size: 0.86em; }
+strong { color: #fff; font-weight: 640; }
+a { color: var(--primary); }
+blockquote {
+  border-left: 3px solid var(--primary);
+  background: rgba(56, 189, 248, 0.05);
+  padding: 0.9rem 1.2rem;
+  margin: 1.3rem 0;
+  color: #cbd5e1;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.97rem;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
+.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
+.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
+tr:last-child td { border-bottom: none; }
+td code { color: var(--primary); }
+.btn {
+  display: inline-block;
+  padding: 0.72rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-decoration: none;
+  transition: all 0.18s;
+  text-align: center;
+}
+.btn-primary { background: var(--primary); color: #04121b; }
+.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.18s, transform 0.18s;
+}
+a.card { display: block; text-decoration: none; }
+a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
+.verdict-box {
+  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
+  border: 1px solid #1e3a5f;
+  border-left: 3px solid var(--primary);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
+.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
+@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
+.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
+.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
+.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
+.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
+pre {
+  background: #0b1120;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #9dd7f5;
+  margin: 1rem 0 1.2rem;
+  tab-size: 2;
+}
+pre code { color: inherit; background: none; padding: 0; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(56, 189, 248, 0.09);
+  color: #9dd7f5;
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.87em;
+}
+.migration-box {
+  background: #121e33;
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0;
+}
+.migration-box strong { color: #fff; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+.faq-a { color: var(--text-muted); font-size: 0.94rem; }
+.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+.cost-row:last-child { border-bottom: none; }
+.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
+.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
+.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
+.matrix-pick { color: var(--primary); font-weight: 600; }
+.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
+.updated-note {
+  font-size: 0.8rem; color: var(--text-muted);
+  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
+}
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
+.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
+.toc ol { margin: 0 0 0 1.1rem; }
+.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
+.toc a { color: #cbd5e1; text-decoration: none; }
+.toc a:hover { color: var(--primary); }
+footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="../../" class="nav-link">← All teardowns</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">Data & ORM</span>
+      <span class="badge badge-gray">Prisma vs Drizzle</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+
+    <h1>Prisma vs Drizzle</h1>
+    <p class="lead"><p>Both ORMs are free, and in 2026 each arrives with a database vendor attached: Prisma sells Prisma Postgres beside its client, and PlanetScale hired Drizzle's entire core team in March. Prisma generates its client, while Drizzle keeps the schema in TypeScript without a code-generation step; neither ORM has a per-seat price.</p></p>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p><p>Pick Drizzle if a generated client is the thing you refuse to add and you can pin 1.0.0-rc.5 having read its breaking notes. Pick Prisma if the generator is fine and you may want Prisma Postgres and Prisma Compute on the same bill, where the operation meter meets Pro at 5.875M queries; neither ORM will ever appear on an invoice.</p></p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">Free ORMs, separate hosting bills and dependency risk</a></li><li><a href="#s2">Who should not pick Prisma: teams avoiding client generation</a></li><li><a href="#s3">Who should not pick Drizzle: teams ruling out its newest RC</a></li><li><a href="#s4">Prisma bundle size, warm queries and cold starts measure different things</a></li><li><a href="#s5">Prisma Postgres Starter crosses Pro at 5.875M operations</a></li><li><a href="#s6">Drizzle&#x27;s tools are free; database and runtime set the bill</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>Key metric comparison</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Prisma <span class="badge badge-blue">Code generation</span></th>
+            <th>Drizzle <span class="badge badge-green">Open source</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Any SQL database through driver adapters; Prisma Postgres is managed</td><td>Postgres, MySQL, SQLite, SingleStore, MSSQL, CockroachDB</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>ORM free · Prisma Postgres Free / $10 / $49 / $129 · Compute metered</td><td>Free: ORM, Kit, local Studio, Gateway · paid: embeddable Studio Component</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>Yes for the ORM; Prisma Postgres is managed</strong></td><td>Yes — a library, not a service</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>Compute and Postgres scale to zero; the Accelerate cache retires 1 Dec 2026</td><td>Queries run through your driver as SQL you can read</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>Generated typed client over a schema contract</td><td>Zero dependencies and SQL-shaped output (vendor claim)</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium: schema DSL, generated client, optional platform</td><td>Low: no engine, no runtime, plain SQL</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://www.prisma.io/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Prisma →</a></td>
+            <td><a href="https://orm.drizzle.team/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Drizzle →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. Free ORMs, separate hosting bills and dependency risk</h2>
+      <p>If you are choosing between Prisma's generated client and Drizzle's TypeScript schema, separate the free ORM decision from database pricing and release-candidate risk.</p>
+<ul><li><strong>Prisma:</strong> generates its Rust-free client with <code>prisma-client</code>; queries pass through a TypeScript/WebAssembly compiler and a JS driver adapter.</li><li><strong>Drizzle:</strong> the TypeScript file is the schema, without client codegen or a schema DSL; <code>drizzle-kit</code> generates migrations.</li></ul>
+<blockquote><p>Prisma's model forbids skipping the build: no generator run, no client. Drizzle's forbids a schema outside TypeScript, and Drizzle states its relational API "always outputs exactly 1 SQL query".</p></blockquote>
+
+      <h2 id="s2">2. Who should not pick Prisma: teams avoiding client generation</h2>
+      <p>Prisma 7.0.0 shipped 19 November 2025 with a Rust-free client: a TypeScript/WebAssembly query compiler plus a JS driver adapter.</p>
+<ul><li>Prisma 7.10.1 shipped 15 October 2026: generator <code>output</code> is required, replacing generation into <code>node_modules</code> by default.</li><li>The upgrade guide replaces the old datasource URL style with <code>prisma.config.ts</code>.</li></ul>
+<p>Prisma's AMA of 13 February 2026 attributes "cases where throughput is similar or slightly worse" to database access from JavaScript instead of a multi-threaded Rust runtime.</p>
+<blockquote><p>Since 7.3.0, <code>$queryRaw</code> and <code>$executeRaw</code> skip the compiler entirely.</p></blockquote>
+<p>Avoid Prisma if client generation is a blocker.</p>
+
+      <h2 id="s3">3. Who should not pick Drizzle: teams ruling out its newest RC</h2>
+      <p>Drizzle ORM and Kit are free and open source. It bills you in dependency risk instead.</p>
+<ul><li><strong>Newest release, not stable 1.0:</strong> as of 10 November 2026, it is 1.0.0-rc.5.</li><li>1.0.0-rc.5 shipped 21 October 2026, and its notes list a dozen-plus BREAKING changes, from postgres-js parsers to <code>withReplicas</code> default routing and the <code>sqlite-proxy</code> rework.</li><li><strong>No Studio source.</strong> ORM and Kit are open source; Drizzle Studio is not.</li><li><strong>Employment:</strong> In March 2026 PlanetScale hired the entire core team. Drizzle's own page: "PlanetScale is our biggest sponsor, they hired us".</li></ul>
+<p>That is a hire, not an acquisition, and the code stays open source. Still, the people choosing the next routing default are paid by a database company.</p>
+<blockquote><p>Do not adopt Drizzle 1.0.0-rc.5 if production policy forbids release candidates; this does not establish the suitability of earlier releases.</p></blockquote>
+
+      <h2 id="s4">4. Prisma bundle size, warm queries and cold starts measure different things</h2>
+      <blockquote><p>Prisma claims 90% smaller output and 3x faster queries, from a Rust engine of roughly 14 MB (7 MB gzipped) to a compiler of about 1.6 MB (600 KB gzipped). Alex Georgiev's test, published 6 November 2026, ran two identical SQLite projects on one local machine. One developer, not a lab. For Prisma 6.19.3 versus 7.10.1 respectively, process start to first query was ~69 ms versus ~236 ms, while <code>node_modules</code> was 254.1 MiB versus 333.3 MiB.</p></blockquote>
+<div class="table-wrapper"><table><thead><tr><th>Measure</th><th>Prisma 6.19.3</th><th>Prisma 7.10.1</th></tr></thead><tbody><tr><td>Warm <code>findUnique</code>, 2,000 sequential calls</td><td>~0.60 ms each</td><td>~0.19 ms each</td></tr><tr><td>Process start to first query</td><td>~69 ms</td><td>~236 ms</td></tr><tr><td><code>node_modules</code></td><td>254.1 MiB</td><td>333.3 MiB</td></tr></tbody></table></div>
+<p>The warm row backs the vendor: 0.60 ÷ 0.19 ≈ 3.1x. The cold row runs the other way, mostly in <code>import</code> and <code>$connect()</code>.</p>
+<ul><li>Cold-start ratio: 236 ÷ 69 ≈ 3.4x.</li><li>Directory growth: (333.3 − 254.1) ÷ 254.1 × 100 ≈ 31%.</li></ul>
+<p>Bundle output is not directory size; warm queries are not cold starts. This informs a Prisma upgrade, not a winner over Drizzle.</p>
+
+      <h2 id="s5">5. Prisma Postgres Starter crosses Pro at 5.875M operations</h2>
+      <p>Prisma Postgres bills each query as an operation and charges separately for storage overage, but has no per-seat charge.</p>
+<div class="table-wrapper"><table><thead><tr><th>Plan</th><th>Base</th><th>Included</th><th>Overage</th></tr></thead><tbody><tr><td>Starter</td><td>$10</td><td>1M ops</td><td>$8 per million</td></tr><tr><td>Pro</td><td>$49</td><td>10M ops</td><td>$2 per million</td></tr><tr><td>Business</td><td>$129</td><td>50M ops</td><td>$1 per million</td></tr></tbody></table></div>
+<blockquote><p>With n in millions of monthly operations, $10 + $8(n - 1) = $49 gives n = 5.875, or 5.875M operations. Above that, Pro is cheaper on operation charges; its $49 base covers 10M, then each million costs $2.</p></blockquote>
+<p>At 20M operations, Starter costs $10 + 19 × $8 = $162 and Pro costs $49 + 10 × $2 = $69. That $93 monthly gap comes from moving one plan up, not from new infrastructure.</p>
+<ul><li>Difference: $162 − $69 = $93/month.</li></ul>
+<p>One line item is retiring: the Accelerate cache ends 1 December 2026. If it absorbed your reads, redo the crossover with the uncached query count.</p>
+
+      <h2 id="s6">6. Drizzle&#x27;s tools are free; database and runtime set the bill</h2>
+      <p>Drizzle charges $0 for the ORM, Kit, Studio for local development and Gateway. Your chosen database and runtime set the infrastructure bill, not the maintainers' employer; Prisma Postgres and Prisma Compute are optional paid services beside free Prisma ORM.</p>
+<ul><li>Pick <strong>Drizzle</strong> if no client codegen matters and you accept the named RC's compatibility risk.</li><li>Pick <strong>Prisma</strong> if generated-client workflow fits; its ORM does not require Prisma Postgres.</li></ul>
+<p>Check before your next deploy:</p>
+<ul><li>If using Prisma Postgres, compare Starter and Pro operation charges, then add storage overage.</li><li>Time process start to first query on your own target before trusting either Prisma figure.</li><li>Before adopting Drizzle 1.0.0-rc.5, check its breaking changes against your application.</li></ul>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">Prisma Postgres Starter vs Pro crossover</div>
+          <div class="cost-formula">For n in millions of monthly operations: $10 + $8(n - 1) = $49 → n = 1 + ($49 − $10) ÷ $8 = 5.875, or 5.875M operations/month</div>
+          <div class="cost-result">Above 5.875M operations/month, Pro is cheaper than Starter on operation charges: $49 base covers 10M operations, then $2 per million; storage is separate</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">20M operations/month on Pro</div>
+          <div class="cost-formula">$49 + (20M − 10M included) × $2 per million = $49 + $20</div>
+          <div class="cost-result">$69/month</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">20M operations/month on Starter</div>
+          <div class="cost-formula">$10 + (20M − 1M included) × $8 per million = $10 + 19 × $8; $162 − $69 = $93/month; $93/month = $1,116/year</div>
+          <div class="cost-result">$162/month, $93/month (= $1,116/year) more than Pro</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Prisma Compute, continuous active-CPU scenario at paid rates</div>
+          <div class="cost-formula">Assuming 0.5 active vCPU continuously and 1 GB provisioned memory for 730 hours: 0.5 × 730 × $0.064 = $23.36; 1 × 730 × $0.006 = $4.38; $23.36 + $4.38 = $27.74/month</div>
+          <div class="cost-result">$27.74/month before request and outbound-bandwidth charges, at paid rates without deducting free allowances</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Existing Prisma 6.19.3 deployment where cold starts dominate</td><td class="matrix-pick">Measure before upgrading to Prisma 7.10.1</td><td>Alex Georgiev's local SQLite test measured about 69 ms to first query on 6.19.3 against about 236 ms on 7.10.1; this is upgrade evidence, not a Drizzle comparison.</td></tr><tr><td>Prisma 6.19.3 application considering an upgrade for warm lookups</td><td class="matrix-pick">Measure Prisma 7.10.1 on the deployment target</td><td>Alex Georgiev's local SQLite test found about 0.60 ms versus 0.19 ms per lookup across 2,000 sequential warm findUnique calls on Prisma 6.19.3 and 7.10.1 respectively; it does not establish a winner over Drizzle.</td></tr><tr><td>Considering Drizzle 1.0.0-rc.5 under a production policy forbidding release candidates</td><td class="matrix-pick">Do not adopt this Drizzle release</td><td>Drizzle's newest release on 10 November 2026 is 1.0.0-rc.5, not a stable 1.0.</td></tr><tr><td>TypeScript-only codebase where a codegen step keeps breaking CI</td><td class="matrix-pick">Drizzle</td><td>The TypeScript file is the schema, so there is no generator output to keep in sync.</td></tr><tr><td>Need free self-hosted Studio and accept that Studio is not open source</td><td class="matrix-pick">Drizzle</td><td>Drizzle Gateway is free as a Docker image or binary; Drizzle Studio itself is not open source.</td></tr><tr><td>Need an ORM without a required adjacent hosting service</td><td class="matrix-pick">Either</td><td>Prisma sells Prisma Postgres and Prisma Compute on the same pricing page, next to a free ORM. Prisma ORM does not require Prisma Postgres, and Drizzle users choose their database and runtime.</td></tr><tr><td>Need an ORM whose maintainers no database vendor pays</td><td class="matrix-pick">Neither meets the stated requirement</td><td>Prisma sells its own database and PlanetScale hired Drizzle's team, so neither option is vendor-neutral in 2026.</td></tr><tr><td>Prisma app with hot paths already written as raw SQL</td><td class="matrix-pick">Prisma 7.3.0 or later</td><td>From 7.3.0, $queryRaw and $executeRaw bypass the query compiler and go straight to the driver adapter.</td></tr></tbody>
+      </table></div>
+
+    <h2>Same task, two SDKs</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Prisma</span>
+        <pre><code>// Prisma: the schema is a separate artefact, and the client is generated from it.
+generator client {
+  provider = &quot;prisma-client&quot;
+  output   = &quot;../src/generated/prisma&quot;   // required since 7.x
+  compilerBuild = &quot;fast&quot;                   // or &quot;small&quot;
+}
+// Here it breaks: the old datasource url style is gone in 7 —
+// connection details move to prisma.config.ts.</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Drizzle</span>
+        <pre><code>// Drizzle: this file is the schema. No generate step, no engine to load.
+import { pgTable, serial, varchar } from &quot;drizzle-orm/pg-core&quot;;
+export const countries = pgTable(&quot;countries&quot;, {
+  id: serial().primaryKey(),
+  name: varchar({ length: 256 }),
+});
+// Here it breaks: relations are declared explicitly, so a missing join
+// is a query you wrote — not a bug the ORM hides from you.</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Prisma</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>One schema artefact drives migrations, types and the generated client</li><li>Rust-free client in 7.x: Prisma's figures are 90% smaller output and 3x faster queries</li><li>Prisma Postgres bills operations with no per-seat charge and a hard spend limit on paid plans</li><li>Raw queries bypass the compiler from 7.3.0, and compilerBuild chooses fast or small</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>output is now required on the generator, so the client no longer lands in node_modules</li><li>A third-party test measured cold start worse than the Rust engine: about 69 ms vs 236 ms</li><li>The same test saw node_modules grow from 254.1 MiB to 333.3 MiB with WASM compilers per database</li><li>Starter's $10 stops being cheaper at 5.875M operations, where Pro's $49 takes over</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Drizzle</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>No generate step and no engine to load: the TypeScript schema is the source of truth</li><li>ORM, Kit, Studio for local development and Gateway are all free</li><li>Six dialects through standard drivers, from Postgres to CockroachDB</li><li>The relational query API emits one SQL statement (vendor claim), which suits serverless databases</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>No stable 1.0: 1.0.0-rc.5 shipped 21 October 2026 with a dozen-plus breaking changes</li><li>Drizzle Studio is not open source, and the embeddable Studio Component is the paid product</li><li>PlanetScale hired the entire core team in March 2026, so maintenance sits with a database vendor</li><li>Relations are declared, not inferred: the SQL is yours to get right</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p>Prisma to Drizzle rewrites the data layer: every model becomes a table definition, the <code>prisma migrate</code> history becomes drizzle-kit migrations, and there is no client to generate. Drizzle to Prisma means writing one schema file that becomes the truth again, and deciding whether the generated client is committed or ignored. In both directions, the migration tooling writes SQL you review — neither one replays the other's history.</p></div>
+      </div>
+
+    <h2 id="faq">Questions that change the decision</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Do I have to use Prisma Postgres to use Prisma ORM?</div>
+          <div class="faq-a">No: the ORM is free on every plan and works without Prisma Postgres. If you do try the database, its Free plan includes 200,000 operations with the spend limit fixed at $0 and no card.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I shrink the Prisma 7 query compiler?</div>
+          <div class="faq-a">Since 7.3.0 the generator accepts <code>compilerBuild = "fast" | "small"</code>, with <code>fast</code> as the default. In Alex Georgiev's listing the SQLite compiler is 4,406,183 bytes in the fast build and 2,214,935 bytes in the small one.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Will long-running queries survive Prisma Postgres connection pooling?</div>
+          <div class="faq-a">Pooled connections run in transaction mode with a 10-minute query duration limit and a 60-minute idle timeout. Pooled connection caps are 10, 100, 500 and 1,000 from Free to Business, with 10, 10, 50 and 100 direct connections.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Which databases can Drizzle talk to?</div>
+          <div class="faq-a">Postgres, MySQL, SQLite, SingleStore, MSSQL and CockroachDB, through the standard drivers. Drizzle states the ORM has "exactly 0 dependencies".</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://www.prisma.io/pricing" rel="noopener nofollow" target="_blank">https://www.prisma.io/pricing</a><br><a href="https://www.prisma.io/blog/announcing-prisma-orm-7-0-0" rel="noopener nofollow" target="_blank">https://www.prisma.io/blog/announcing-prisma-orm-7-0-0</a><br><a href="https://www.prisma.io/docs/guides/upgrade-prisma-orm/v7" rel="noopener nofollow" target="_blank">https://www.prisma.io/docs/guides/upgrade-prisma-orm/v7</a><br><a href="https://orm.drizzle.team/docs/sustainability" rel="noopener nofollow" target="_blank">https://orm.drizzle.team/docs/sustainability</a><br><a href="https://github.com/drizzle-team/drizzle-orm/releases" rel="noopener nofollow" target="_blank">https://github.com/drizzle-team/drizzle-orm/releases</a><br><a href="https://www.prisma.io/changelog/2026-01-21" rel="noopener nofollow" target="_blank">https://www.prisma.io/changelog/2026-01-21</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../planetscale-vs-neon/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">PlanetScale vs Neon</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Where the Drizzle team went to work, and what that database actually costs.</p>
+          </a>
+          <a class="card" href="../bun-vs-node/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Bun vs Node.js</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Prisma Compute runs on Bun's Rust port — the runtime invoice, told the same way.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://www.prisma.io/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Prisma →</a>
+      <a href="https://orm.drizzle.team/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Drizzle →</a>
+    </div>
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. This market reprices often — if a number below looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Independent developer analysis. No paid placement, no affiliate ranking.</p>
+    </div>
+  </footer>
+</body>
+</html>

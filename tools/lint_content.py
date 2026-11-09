@@ -80,7 +80,7 @@ def lint(path):
     if problems:
         return slug, problems, {}
 
-    body = "\n".join(s["content"] for s in d["sections"])
+    body = "\n\n".join(s["content"] for s in d["sections"])
     blob = " ".join([d["hook"], d["verdict_summary"]] + [s["content"] for s in d["sections"]])
 
     low = blob.lower()

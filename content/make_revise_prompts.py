@@ -39,6 +39,81 @@ deliberately did not change.
 """
 
 EXTRA = {
+    "bun-vs-node": """Edits I require on top of the review:
+1. Keep the structural fact that both runtimes are MIT and neither has a paid tier. If the review asks
+   for "the price", refuse in the text: there is no price, and the article is about the other two
+   invoices.
+2. Keep Bun's per-module pass counts attributed to Bun, and keep both headline gaps: node:http 12
+   failing tests (415 - 403) and node:inspector 88 (110 - 22). They are the article's arithmetic.
+3. Keep the Vite dev server memory line where Bun loses (233 MB vs 214 MB). Dropping the one row the
+   vendor loses would make the piece read as a press release.
+4. Node's TypeScript section must keep both limits that surprise people: the parser needs WebAssembly
+   (ERR_WEBASSEMBLY_NOT_SUPPORTED otherwise) and TypeScript inside node_modules is refused.
+5. Do not speculate about Anthropic's motives, "enshittification", or what the acquisition "really"
+   means. State the date, that Claude Code ships as a Bun executable, that Bun stays MIT-licensed, and
+   let the reader run the check.
+6. Verdict: the first clause names the buyer, not a condition stack.""",
+
+    "prisma-vs-drizzle": """Edits I require on top of the review:
+1. Keep both sides of the cold-start evidence in one paragraph: Prisma's own 90% / 3x claim and the
+   third-party test (6.19.3 vs 7.10.1, SQLite, local machine, ~69 ms vs ~236 ms, 254.1 MiB vs
+   333.3 MiB). Do not average them or drop one.
+2. Keep the plan crossover with its formula visible: $10 + $8(n - 1) = $49 at n = 5.875M operations.
+3. "PlanetScale hired the entire Drizzle core team" stays a hire, dated March 2026. Never write
+   "acquired".
+4. Keep the Accelerate retirement date, 1 December 2026 — a meter being switched off is a decision
+   input.
+5. If the review argues that Drizzle's 1.0.0-rc.5 status is "not a cost", keep it anyway: dependency
+   risk is this article's second meter, and the rc.5 date is the evidence.
+6. Do not introduce any fee for Prisma ORM or Drizzle ORM. Both are free; the money is in the database
+   and runtime around them.""",
+
+    "docker-vs-podman": """Edits I require on top of the review:
+1. Never print a Docker Business per-seat price. The pricing page says "Contact us for pricing"; if the
+   review demands a number, the answer is that none is published, and the article says so.
+2. The free-use test is an AND: fewer than 250 employees AND less than $10 million annual revenue, and
+   government entities pay regardless. Do not let it become an OR in either direction.
+3. Keep the `podman system service` man-page warning as a direct quotation, in quotation marks: the API
+   "allows arbitrary code execution as the user running the API, with no ability to limit or audit this
+   access". It is the strongest fact in the piece.
+4. Do not add a 25-seat minimum, a reseller price, or any Docker Business figure: none is on the
+   vendor's page.
+5. Do not assert that Podman "has no SOC 2 report" or "lacks SCIM" as a fact about the project. Say
+   instead that Docker Business includes SOC 2, SSO and SCIM, and that Podman's own pages sell no
+   central admin controls — support arrives as a Red Hat build.
+6. Keep the arithmetic that shows the cliff (200 developers x $15 = $3,000/month) and the Podman
+   counter-bill ($0 in licence fees plus the port).""",
+
+    "clerk-vs-auth0": """Edits I require on top of the review:
+1. The MRU-versus-MAU caveat must sit in the same paragraph as any ratio between the two vendors. If
+   the review calls the 140x comparison misleading, fix it by keeping the caveat sentence, not by
+   deleting the comparison.
+2. Sources: the fact sheet lists exactly two URLs, the two vendor pricing pages. Two sources is
+   acceptable here; do not invent a third.
+3. Keep the step-function fact (501 B2C users on Essentials bills at $70, double the $35 for 500) and
+   the fact that the printed Professional sheet ends at 20,000 MAU for B2C and at 10,000 for B2B.
+4. Do not add product capabilities the fact sheet does not carry — no MFA factor lists, no "Actions",
+   no compliance certifications beyond SOC 2 on Business and HIPAA on Enterprise. If the philosophy
+   sentence says Auth0 sells connections, tenants and rules, either keep the word "rules" out or cut
+   it; do not introduce "actions" as a named product.
+5. Keep the small code block that prints 501 / 70, 50,000 / 3,500 / 25 and 100,000 / 1,025. It is the
+   arithmetic evidence for the whole article.""",
+
+    "planetscale-vs-neon": """Edits I require on top of the review:
+1. Keep the always-on inversion: 0.25 CU x 730 h = 182.5 CU-hours x $0.106 = $19.35/month on Neon
+   Launch against $15/month for a PlanetScale PS-5 HA cluster. It is the spine of the piece.
+2. Do not use the 1 TB egress example. If egress appears at all, it is 1,024 - 500 = 524 GB x $0.10 =
+   $52.40/month, and PlanetScale's rate is region-dependent and not printed.
+3. Neki is a platform preview, not production. Keep that sentence next to any Neki number, and keep
+   the router formula (production router compute = router rate x observed routers / 3).
+4. Keep the branch-cost contrast: 20 branches on Neon Launch = 10 included + 10 x $1.50 = $15/month,
+   against 20 PS-5 HA branches on PlanetScale = 20 x $15 = $300/month prorated to the millisecond.
+5. Neon "from Databricks" is the pricing page's own phrase. Do not add an acquisition date or a
+   purchase price.
+6. Drop the Drizzle core-team hire from this article. It is true and verified, but this sheet does not
+   source it; the Prisma vs Drizzle page carries it with its own source. Neki's preview status is the
+   only 2026 PlanetScale story this piece needs.""",
+
     "supabase-vs-firebase": """Edits I require on top of the review:
 1. Section 1 says the pool tier "tops out" — false, the ladder continues. Use the full ladder from the
    fact sheet: pooled connections run 200 on $10 Micro to 12,000 on $3,730 16XL. Keep 5-6 rows in the
