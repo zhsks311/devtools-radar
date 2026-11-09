@@ -3,9 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursor vs GitHub Copilot (2026 Benchmark): Which is Best?</title>
-  <meta name="description" content="In-depth developer guide comparing Cursor and GitHub Copilot. Analyze pricing formulas, database architectures, vendor lock-in, and self-hosting options.">
+  <title>Cursor vs GitHub Copilot (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="The $20 all-you-can-eat AI editor is gone, and its replacement is an $8 tier that only runs Grok and a $30 tier where Claude and GPT tokens bill on top. Both Cursor and GitHub Copi">
   <link rel="canonical" href="https://zhsks311.github.io/devtools-radar/compare/cursor-vs-github-copilot/">
+  <meta property="og:title" content="Cursor vs GitHub Copilot — 2026 teardown">
+  <meta property="og:description" content="The $20 all-you-can-eat AI editor is gone, and its replacement is an $8 tier that only runs Grok and a $30 tier where Claude and GPT tokens bill on top. Both Cursor and GitHub Copi">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://zhsks311.github.io/devtools-radar/compare/cursor-vs-github-copilot/">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Cursor vs GitHub Copilot: a 2026 engineering teardown",
+  "description": "The $20 all-you-can-eat AI editor is gone, and its replacement is an $8 tier that only runs Grok and a $30 tier where Claude and GPT tokens bill on top. Both Cursor and GitHub Copilot are now agent-first and credit-metered, and each one restricts its entry tier in a different place.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://zhsks311.github.io/devtools-radar/compare/cursor-vs-github-copilot/"
+}
+  </script>
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -13,27 +36,55 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I use my existing VS Code extensions in Cursor?",
+      "name": "Does Copilot require moving to a particular editor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, with one click Cursor imports all your extensions, keybindings, and themes from VS Code."
+        "text": "No. Beyond the major editors, GitHub lists Raycast, SQL Server Management Studio and GitHub Mobile among Copilot's supported surfaces."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Cursor Pro worth the extra $10 compared to Copilot?",
+      "name": "What else does Cursor Premium bundle?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For active developers, yes. Cursor Composer's multi-file editing capability saves hours compared to Copilot's single-file chat window."
+        "text": "Premium gives 4× the usage of Plus, the latest Grok models, cloud agents and automations, and Grok Bot."
       }
     },
     {
       "@type": "Question",
-      "name": "Which underlying models do they use in 2026?",
+      "name": "What do Cursor's higher individual tiers advertise?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both platforms allow switching between Claude 3.5 Sonnet and GPT-4o. However, Cursor's prompt framing, codebase indexing, and multi-file diff application make it feel significantly smarter in practice."
+        "text": "Super is $100/month for 15× Plus usage and priority model access at peak times, the same price as Copilot Max with $200 of credits. Ultra is $200/month for 50× Plus usage and earliest access to all products and models."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What distinguishes Copilot Pro+ beyond its subscription price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GitHub lists $70/month in total credits, premium models including Opus, and audit logs for Pro+."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://zhsks311.github.io/devtools-radar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cursor vs GitHub Copilot",
+      "item": "https://zhsks311.github.io/devtools-radar/compare/cursor-vs-github-copilot/"
     }
   ]
 }
@@ -49,276 +100,408 @@
   --primary: #38bdf8;
   --primary-glow: rgba(56, 189, 248, 0.15);
   --accent: #10b981;
+  --warn: #f59e0b;
   --danger: #f43f5e;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.65;
+  line-height: 1.7;
   padding: 0;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
-.container { max-width: 920px; margin: 0 auto; padding: 2rem 1.5rem; }
+.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
 header {
   border-bottom: 1px solid var(--border);
-  padding: 1.25rem 0;
-  background: rgba(9, 13, 22, 0.85);
+  padding: 1.1rem 0;
+  background: rgba(9, 13, 22, 0.88);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 .header-inner {
-  max-width: 920px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
-.logo { font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
 .logo span { color: var(--primary); }
-.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
+.nav-link:hover { color: var(--primary); }
+.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
 .badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
 .badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
 .badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
-h1 { font-size: 2.25rem; font-weight: 800; line-height: 1.25; margin: 1rem 0; color: #fff; }
-h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
-h3 { font-size: 1.2rem; font-weight: 600; color: #fff; margin: 1.5rem 0 0.5rem; }
+h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
+h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
+h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
 p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
-.lead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
-.meta-row { display: flex; align-items: center; gap: 1rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
-.table-wrapper { overflow-x: auto; margin: 1.5rem 0 2rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
-th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
-th { background: #162032; color: #fff; font-weight: 600; }
+ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
+li { margin-bottom: 0.4rem; font-size: 0.98rem; }
+li > code, p > code { font-size: 0.86em; }
+strong { color: #fff; font-weight: 640; }
+a { color: var(--primary); }
+blockquote {
+  border-left: 3px solid var(--primary);
+  background: rgba(56, 189, 248, 0.05);
+  padding: 0.9rem 1.2rem;
+  margin: 1.3rem 0;
+  color: #cbd5e1;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.97rem;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
+.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
+.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
 tr:last-child td { border-bottom: none; }
+td code { color: var(--primary); }
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.72rem 1.4rem;
   border-radius: 8px;
   font-weight: 600;
+  font-size: 0.94rem;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.18s;
   text-align: center;
 }
-.btn-primary { background: var(--primary); color: #000; }
-.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-primary { background: var(--primary); color: #04121b; }
+.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
 .btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
 .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1.75rem;
-  margin-bottom: 1.5rem;
-  transition: border-color 0.2s, transform 0.2s;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.18s, transform 0.18s;
 }
-.card:hover { border-color: #3b82f6; transform: translateY(-2px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+a.card { display: block; text-decoration: none; }
+a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
 .verdict-box {
   background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
   border: 1px solid #1e3a5f;
+  border-left: 3px solid var(--primary);
   border-radius: 12px;
-  padding: 1.75rem;
-  margin: 1.5rem 0 2.5rem;
+  padding: 1.4rem 1.5rem;
+  margin: 1.5rem 0 2rem;
 }
-.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
+.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
 @media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
-.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.25rem; }
-.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.25rem; }
-.pros-box ul, .cons-box ul { padding-left: 1.25rem; margin-top: 0.5rem; }
-.pros-box li, .cons-box li { font-size: 0.9rem; margin-bottom: 0.4rem; color: #cbd5e1; }
+.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
+.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
+.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
+.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
 pre {
-  background: #0d121d;
+  background: #0b1120;
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 1rem 1.25rem;
+  padding: 1rem 1.15rem;
   overflow-x: auto;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.85rem;
-  color: #38bdf8;
-  margin: 1rem 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #9dd7f5;
+  margin: 1rem 0 1.2rem;
+  tab-size: 2;
+}
+pre code { color: inherit; background: none; padding: 0; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(56, 189, 248, 0.09);
+  color: #9dd7f5;
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.87em;
 }
 .migration-box {
   background: #121e33;
-  border-left: 4px solid var(--primary);
+  border-left: 3px solid var(--primary);
   border-radius: 0 8px 8px 0;
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0;
 }
-.faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
-.faq-q { font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
-.faq-a { color: var(--text-muted); font-size: 0.95rem; }
-footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
+.migration-box strong { color: #fff; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+.faq-a { color: var(--text-muted); font-size: 0.94rem; }
+.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+.cost-row:last-child { border-bottom: none; }
+.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
+.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
+.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
+.matrix-pick { color: var(--primary); font-weight: 600; }
+.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
+.updated-note {
+  font-size: 0.8rem; color: var(--text-muted);
+  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
+}
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
+.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
+.toc ol { margin: 0 0 0 1.1rem; }
+.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
+.toc a { color: #cbd5e1; text-decoration: none; }
+.toc a:hover { color: var(--primary); }
+footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
 </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
       <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
-      <a href="../../" style="color:var(--text-muted); text-decoration:none; font-size:0.9rem;">← All Comparisons</a>
+      <a href="../../" class="nav-link">← All teardowns</a>
     </div>
   </header>
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">AI Development</span>
-      <span>• Updated November 2026</span>
-      <span>• 8 min read</span>
+      <span class="badge badge-blue">AI Coding</span>
+      <span class="badge badge-gray">Cursor vs GitHub Copilot</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
     </div>
 
-    <h1>Cursor vs GitHub Copilot (2026 Developer Benchmark)</h1>
-    <p class="lead">An objective, architectural breakdown for engineering teams deciding between Cursor and GitHub Copilot.</p>
+    <h1>Cursor vs GitHub Copilot</h1>
+    <p class="lead"><p>The $20 all-you-can-eat AI editor is gone, and its replacement is an $8 tier that only runs Grok and a $30 tier where Claude and GPT tokens bill on top. Both Cursor and GitHub Copilot are now agent-first and credit-metered, and each one restricts its entry tier in a different place.</p></p>
 
     <div class="verdict-box">
-      <h3 style="color:#fff; margin-top:0; font-size:1.15rem;">🎯 Executive Verdict</h3>
-      <p style="color:var(--text); line-height:1.6; margin-bottom:0;">Choose Cursor if you want an AI agent that rewrites multiple files simultaneously, understands project-wide context, and accepts custom codebase rules. Choose Copilot if you must stay in JetBrains or standard VS Code without migrating editors.</p>
+      <div class="label">Verdict</div>
+      <p><p>Teams content with Grok should choose Cursor, from $8 Plus; teams whose review runs through GitHub PRs should choose Copilot Pro at $10/user/month or above. Teams that need Claude should price Cursor Premium's $30 plus list-price tokens against Copilot Pro+'s $39 with $70 of credits.</p></p>
     </div>
 
-    <h2>1. Key Metric Comparison</h2>
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">Your editor budget now buys a different contract</a></li><li><a href="#s2">Model ownership and repository ownership impose different limits</a></li><li><a href="#s3">The meters punish different habits</a></li><li><a href="#s4">Model neutrality now needs a renewal check</a></li><li><a href="#s5">Copilot Free runs the agent; PR review costs $10</a></li><li><a href="#s6">Choose Grok commitment or repository consolidation today</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>Key metric comparison</h2>
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>Metric / Dimension</th>
-            <th>Cursor <span class="badge badge-blue">Agentic Composer</span></th>
-            <th>GitHub Copilot <span class="badge badge-green">Universal Plugin</span></th>
+            <th>Dimension</th>
+            <th>Cursor <span class="badge badge-blue">Grok-native</span></th>
+            <th>GitHub Copilot <span class="badge badge-green">Repo-native</span></th>
           </tr>
         </thead>
         <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Full-repo index + agent (Composer, Grok 4.6)</td><td>Repository context + GitHub PR surface</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Plus $8 (Grok only) · Premium $30 + third-party tokens</td><td>Free · Pro $10 ($15 credits) · Pro+ $39 ($70 credits)</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>No (SpaceXAI-hosted models)</strong></td><td>No (GitHub-hosted)</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>Cloud agents and automations from Premium</td><td>Copilot in the cloud: assign work, get a PR (Pro+)</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>Own models trained on SpaceX compute</td><td>Premium models incl. Opus on Pro+</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>High: Grok-first routing after the acquisition</td><td>Medium: one credit pool inside GitHub</td></tr>
           <tr>
-            <td><strong>Core Engine / Architecture</strong></td>
-            <td>Full Codebase Indexing + Multi-file Agent</td>
-            <td>Contextual Token Window (Single/Open files)</td>
-          </tr>
-          <tr>
-            <td><strong>Pricing & Free Tier</strong></td>
-            <td>Free Hobby / $20/mo Pro (Fast requests)</td>
-            <td>$10/mo Individual / $19/mo Business</td>
-          </tr>
-          <tr>
-            <td><strong>Self-Hostable</strong></td>
-            <td><strong>No (SaaS hosted)</strong></td>
-            <td>No (Microsoft Azure)</td>
-          </tr>
-          <tr>
-            <td><strong>Realtime & Concurrency</strong></td>
-            <td>Multi-file diff applying & composer</td>
-            <td>Inline ghost text completion</td>
-          </tr>
-          <tr>
-            <td><strong>AI & Vector Readiness</strong></td>
-            <td>Claude 3.5 Sonnet, GPT-4o, Custom rules (.cursorrules)</td>
-            <td>GPT-4o, Claude 3.5 Sonnet (Copilot Chat)</td>
-          </tr>
-          <tr>
-            <td><strong>Vendor Lock-In Risk</strong></td>
-            <td><span style="color:var(--accent); font-weight:600;">Low (It is a fork of VS Code)</span></td>
-            <td><span style="color:var(--danger); font-weight:600;">Zero (Runs as extension in any IDE)</span></td>
-          </tr>
-          <tr>
-            <td><strong>Official Action</strong></td>
-            <td><a href="https://cursor.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.4rem 0.85rem; font-size:0.85rem;">Try Cursor →</a></td>
-            <td><a href="https://github.com/features/copilot?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-outline" style="padding:0.4rem 0.85rem; font-size:0.85rem;">Try GitHub Copilot →</a></td>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://cursor.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Cursor →</a></td>
+            <td><a href="https://github.com/features/copilot?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">GitHub Copilot →</a></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h2>2. Side-by-Side Code & SDK Experience</h2>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+      <h2 id="s1">1. Your editor budget now buys a different contract</h2>
+      <p>A renewal priced on the old $20 tier now buys either $8 Plus, which is Grok-only, or $30 Premium, where Claude and GPT tokens bill at API list price on top.</p>
+<p>Two questions decide it: do you need non-Grok models, and does your review happen in GitHub PRs?</p>
+<blockquote><p>Cursor told Reuters it runs at about $2.6B annualised revenue; SpaceX bought it in an all-stock deal at a $60B valuation.</p></blockquote>
+<p>Cursor's ownership changed before this renewal decision. Cursor is now a wholly owned SpaceX subsidiary.</p>
+<ul><li>21 April 2026: SpaceX and Cursor announced a partnership with a $10B payment and a $60B acquisition option.</li><li>16 June 2026: SpaceX signed the all-stock deal at a $60B valuation.</li><li>14 August 2026: the deal closed; Cursor joined the SpaceXAI team (SpaceX absorbed xAI in February 2026) to work on Grok, Grok Build, Grok Bot, Grok API and Cursor.</li></ul>
+<blockquote><p>Cursor states its constraint was compute: “We've wanted to push our training efforts much further, but we've been bottlenecked by compute.”</p></blockquote>
+
+      <h2 id="s2">2. Model ownership and repository ownership impose different limits</h2>
+      <p>Cursor's philosophy: the model is the product, so the editor must own the model and the inference bill. Cheap access to other vendors' models is not part of the deal.</p>
+<ul><li>Cursor states that Plus offers only Grok models; Premium opens third-party access, billed separately at API list price.</li></ul>
+<p>GitHub sells the repository, so Copilot's AI lands in PRs and reviews. That forbids giving review away: Free gets agent mode and the CLI, but PR review waits for the $10 Pro tier.</p>
+<ul><li>Cursor pushes back on that line: Premium lists code hosting via Origin and AI code review via Bugbot.</li></ul>
+<p>Cursor's $8 Plus has no Claude or GPT; Copilot Free has no PR review.</p>
+
+      <h2 id="s3">3. The meters punish different habits</h2>
+      <p>Cursor's meter punishes third-party model use specifically: no plan includes those tokens, so Claude or GPT work passes through at API list price. Copilot's meter is a single credit pool per user that agent mode, review, cloud and CLI all drain.</p>
+<div class="table-wrapper"><table><thead><tr><th>Vendor's monthly offer</th><th>Usage that incurs the penalty</th></tr></thead><tbody><tr><td>Cursor: $8 Plus; $30 Premium</td><td>Plus is Grok-only; Premium adds third-party models at API list price on top</td></tr><tr><td>GitHub Copilot: $10 Pro ($15 credits); $39 Pro+ ($70 credits, Opus included); $100 Max ($200 credits)</td><td>Agent mode, review, cloud, CLI and app consume the same credit meter</td></tr></tbody></table></div>
+<p>When a Copilot seat exhausts its credits, Pro and above buy extra.</p>
+<div class="table-wrapper"><table><thead><tr><th>Buyer</th><th>Cursor</th><th>GitHub Copilot</th></tr></thead><tbody><tr><td>10 seats</td><td>Teams 10 × $30 = $300/month</td><td>Pro 10 × $10 = $100/month</td></tr><tr><td>Claude-dependent developer</td><td>Premium $30 plus metered tokens</td><td>Pro+ $39 with $70 of credits</td></tr><tr><td>Heavy user</td><td>Super $100 (15× Plus)</td><td>Max $100 ($200 credits)</td></tr></tbody></table></div>
+
+      <h2 id="s4">4. Model neutrality now needs a renewal check</h2>
+      <p>Teams that chose Cursor partly to stay model-agnostic now buy from a company whose model is Grok. Ownership changed the incentive. It does not prove that every request routes to Grok.</p>
+<blockquote><p>Cursor states that Grok 4.6, the first joint model, scores between 69.9% and 70.8% on CursorBench and 61 on the Artificial Analysis Intelligence Index.</p></blockquote>
+<p>Before renewing, replay representative repository tasks and record the separately billed third-party usage.</p>
+<ul><li>On Premium, compare the separate third-party token charge with the Claude or GPT work your team believes it ran; a near-zero charge means that work did not run on third-party models.</li><li>Do not buy Plus if non-Grok access is a requirement; test Premium's unbundled bill before committing.</li></ul>
+
+      <h2 id="s5">5. Copilot Free runs the agent; PR review costs $10</h2>
+      <p>GitHub's counter-argument is reach: Copilot runs in VS Code, Visual Studio, JetBrains, Xcode, Eclipse, Neovim, Zed and on github.com. Copilot Free already supports agent mode and the CLI, with limited usage.</p>
+<ul><li>Copilot in the cloud starts at Pro.</li><li>PR review, file diff review and custom instructions start at Pro.</li><li>Assigning work to Copilot so it creates a pull request also starts at Pro.</li></ul>
+<p>A successful CLI trial does not establish that Free can perform your review workflow.</p>
+<blockquote><p>Pro's $15 of monthly credits per user ($10 base + $5 flex) funds agent mode, code review and cloud work alike.</p></blockquote>
+<p>Try the actual handoff from assigned work to reviewed PR before migrating the team.</p>
+
+      <h2 id="s6">6. Choose Grok commitment or repository consolidation today</h2>
+      <p>Teams happy on Grok should buy Cursor; teams whose review lives in GitHub PRs should buy Copilot Pro. Cursor's $8 Plus undercuts Copilot Pro by $2, but only if Grok is enough.</p>
+<ul><li>Choose Cursor if Grok meets your workload and third-party usage is optional.</li><li>Choose GitHub Copilot if review and assigned PR work matter more than owning a separate editor workflow.</li></ul>
+<p>Moving to Copilot puts custom instructions (<code>.instructions.md</code>) and PR review behind Pro; moving to Cursor puts Claude and GPT behind list-price billing.</p>
+<blockquote><p>If you need Claude inside a known monthly allotment, Copilot Pro+ at $39 includes Opus within $70 of credits; Cursor bills third-party tokens at API list price on top of $30 Premium.</p></blockquote>
+<p>Today, list the workflows that need Claude or GPT and price them on both plans.</p>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">10-seat team</div>
+          <div class="cost-formula">Copilot Pro 10 × $10 = $100/month vs Cursor Teams 10 × $30 = $300/month</div>
+          <div class="cost-result">Cursor Teams costs 3× Copilot Pro for ten seats; Cursor lists Teams at $30+/user, so its figure can rise.</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">One Claude-dependent developer</div>
+          <div class="cost-formula">Cursor Premium $30/month plus metered tokens at API list price vs Copilot Pro+ $39/month with $70 of included credits</div>
+          <div class="cost-result">Copilot holds at $39 until the $70 of credits run out; Cursor's third-party cost has no published ceiling.</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Heavy user at $100/month</div>
+          <div class="cost-formula">Cursor Super $100 (15× Plus usage) vs Copilot Max $100 ($200 of credits)</div>
+          <div class="cost-result">Same price: Super buys 15× Plus volume with third-party tokens still billed on top; Max buys $200 of credits per user.</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Grok meets the workload and third-party access is unnecessary</td><td class="matrix-pick">Cursor</td><td>Plus's Grok-only restriction costs nothing when Grok is enough, and $8 undercuts Copilot Pro's $10.</td></tr><tr><td>Reviews and assigned PR work belong in the existing GitHub process</td><td class="matrix-pick">GitHub Copilot</td><td>Pro opens those repository-side workflows under the same credit meter.</td></tr><tr><td>A free trial must run inside JetBrains, Xcode or Neovim</td><td class="matrix-pick">GitHub Copilot</td><td>Copilot Free includes agent mode, and GitHub lists those editors among its supported surfaces.</td></tr><tr><td>Cheapest paid tier with AI PR review</td><td class="matrix-pick">GitHub Copilot Pro</td><td>PR review starts at $10/user/month on Copilot; Cursor lists Bugbot code review on the $30 Premium tier.</td></tr><tr><td>Claude-class models must fit a known monthly allotment</td><td class="matrix-pick">GitHub Copilot Pro+</td><td>Pro+ includes premium models including Opus inside $70 of monthly credits for $39, while Cursor bills third-party tokens at API list price on top.</td></tr><tr><td>An existing Cursor team requires model neutrality at renewal</td><td class="matrix-pick">Cursor Premium if the third-party bill matches the work; otherwise GitHub Copilot Pro+</td><td>Ownership now favors Grok, so the team must check the separate third-party token charge against the Claude or GPT work it ran.</td></tr><tr><td>One heavy agent user with a $100/month budget</td><td class="matrix-pick">Copilot Max if non-Grok models matter; Cursor Super if Grok suffices</td><td>Max includes $200 of credits for $100; Super gives 15× Plus usage, and any third-party tokens still bill at API list price on top.</td></tr></tbody>
+      </table></div>
+
+    <h2>Same task, two SDKs</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
-        <span class="badge badge-blue" style="margin-bottom:0.5rem;">Cursor Code Sample</span>
-        <pre><code># .cursorrules example
-You are an expert senior backend engineer at a high-growth tech startup.
-- Always write unit tests with pytest.
-- Enforce strict typing with Pydantic v2.
-- Never delete existing safety guards in run.sh.</code></pre>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Cursor</span>
+        <pre><code>// Cursor&#x27;s agent works on the open repository, so the unit of work
+// is a task, not a suggestion. The bill follows the model you route to.
+// .cursor/rules/backend.mdc — project rules apply to every agent run
+---
+description: Backend conventions
+globs: services/**/*.py
+---
+Never edit migrations by hand; generate them and review the diff.
+// Here it breaks: on Premium, requests routed to Claude or GPT are billed
+// at API list price separately from the $30 subscription — watch the invoice,
+// not just the seat count.</code></pre>
       </div>
       <div>
-        <span class="badge badge-green" style="margin-bottom:0.5rem;">GitHub Copilot Code Sample</span>
-        <pre><code>// Copilot Chat: Single-file query
-// Prompt: "Refactor this function to use async/await"
-// Result: Shows code snippet in sidebar; developer must manually paste.</code></pre>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">GitHub Copilot</span>
+        <pre><code>// Copilot&#x27;s advantage is the review surface, not the cursor.
+// .github/instructions/backend.instructions.md — applied to agent work
+---
+applyTo: &quot;**/*.py&quot;
+---
+- Generate migrations, never hand-edit them.
+- Every new endpoint needs an integration test.
+// Then assign an issue to Copilot: it opens a PR you review like any other.
+// Here it breaks: on Free, PR review, diff review and custom instructions
+// are unavailable — the agent runs, the review handoff does not.</code></pre>
       </div>
     </div>
 
-    <h2>3. Architectural Deep Dive</h2>
-    <div style="margin: 1.5rem 0;">
-      
-        <h3>1. Single-File Completion vs Multi-File Agentic Composer</h3>
-        <p>The fundamental difference between these two tools is the level of autonomy. **GitHub Copilot** operates as a smart autocomplete extension: it looks at your active file and adjacent tabs to suggest the next few lines of code.</p><p></p><p>**Cursor** is an agentic IDE. With **Cursor Composer (`Ctrl+I` / `Cmd+I`)**, it can refactor an API route in backend, update the database migration, modify the frontend client type definition, and update the test suite simultaneously across 5 distinct files in one turn.</p>
-        
-        <h3>2. Context Indexing: `@codebase` vs Open Tabs</h3>
-        <p>Cursor calculates local embeddings of your entire repository. When you ask questions or trigger refactors, it runs vector similarity search to find relevant interfaces and utility functions across thousands of files.</p><p></p><p>Copilot relies heavily on heuristic prompt injection of open tabs, which frequently causes it to hallucinate non-existent internal helper functions.</p>
-        
-    </div>
-
-    <h2>4. Pros & Cons Analysis</h2>
+    <h2>What you gain, what you give up</h2>
     <div class="pros-cons-grid">
-      <div class="card" style="padding:1.25rem;">
-        <h3 style="color:var(--primary); margin-top:0;">Cursor Analysis</h3>
-        <div class="pros-box" style="margin-bottom:1rem;">
-          <strong style="color:var(--accent); font-size:0.9rem;">Advantages</strong>
-          <ul><li>✓ Cursor Composer edits multiple files simultaneously across your codebase</li><li>✓ Deep semantic codebase indexing (`@codebase`) understands project context</li><li>✓ Supports custom prompt rules per repo via `.cursorrules`</li><li>✓ Full backward compatibility with all VS Code extensions and keybindings</li></ul>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Cursor</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Owns its models, so it optimises the whole loop rather than renting someone's API</li><li>One editor, one bill for indexing, completion, agent and cloud automation</li><li>Premium bundles cloud agents, code hosting via Origin and review via Bugbot</li><li>$8 Plus is the cheapest agentic editor entry point if Grok is enough for you</li></ul>
         </div>
         <div class="cons-box">
-          <strong style="color:var(--danger); font-size:0.9rem;">Limitations</strong>
-          <ul><li>✗ Requires using a dedicated fork rather than standard VS Code / JetBrains</li><li>✗ Privacy policy requires attention for proprietary enterprise IP (Business plan needed for zero retention)</li><li>✗ $20/mo Pro tier limits fast requests to 500/month before throttling</li></ul>
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>Every third-party model token bills at API list price on top of the subscription</li><li>Plus ($8) cannot run Claude or GPT at all</li><li>Model neutrality ended with the $60B acquisition; Grok is the default</li><li>Published benchmark numbers are the vendor's own (69.9–70.8% CursorBench)</li></ul>
         </div>
       </div>
-      <div class="card" style="padding:1.25rem;">
-        <h3 style="color:var(--accent); margin-top:0;">GitHub Copilot Analysis</h3>
-        <div class="pros-box" style="margin-bottom:1rem;">
-          <strong style="color:var(--accent); font-size:0.9rem;">Advantages</strong>
-          <ul><li>✓ Runs inside any IDE: VS Code, JetBrains (IntelliJ, PyCharm), Neovim, Visual Studio</li><li>✓ Flawless enterprise compliance, copyright indemnity, and GitHub Enterprise sync</li><li>✓ Affordable pricing ($10/month for unlimited basic completions)</li><li>✓ Tight PR and issue integration inside GitHub web UI</li></ul>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">GitHub Copilot</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Runs in VS Code, Visual Studio, JetBrains, Xcode, Eclipse, Neovim, Zed and on github.com</li><li>Free already includes agent mode and the CLI — the entry tier is usable, not a demo</li><li>One credit meter covers agent, review, cloud and CLI, so spend is predictable per seat</li><li>Review lands where the team already reviews: PRs, file diffs, assigned work</li></ul>
         </div>
         <div class="cons-box">
-          <strong style="color:var(--danger); font-size:0.9rem;">Limitations</strong>
-          <ul><li>✗ Cannot autonomously edit multiple files across directory trees</li><li>✗ Context awareness is limited primarily to currently open tabs</li><li>✗ Slower to adopt bleeding-edge agentic workflows compared to Cursor Composer</li></ul>
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>PR review, file diff review, custom instructions and cloud assignment all start at $10 Pro</li><li>Pro's $15 of credits is a budget, not an allowance you can ignore</li><li>Agent quality tracks whatever model GitHub routes you to; Opus is Pro+</li><li>You are buying into GitHub's surface — fine in GitHub, awkward outside it</li></ul>
         </div>
       </div>
     </div>
 
-    <h2>5. Migration Guide & Considerations</h2>
-    <div class="migration-box">
-      <strong style="color:#fff; font-size:1.05rem;">Switching Paths:</strong>
-      <p style="margin-top:0.5rem; margin-bottom:0;">Switching from VS Code + Copilot to Cursor takes under 2 minutes: download Cursor, launch it, click 'Import VS Code Settings', and all your extensions, themes, and keybindings are instantly cloned into Cursor.</p>
-    </div>
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <p style="margin-top:0.5rem; margin-bottom:0;"><p>Switching editors is cheap; switching billing models is not. From Cursor to Copilot: export your rules to <code>.github/instructions/*.instructions.md</code>, check that the workflows you rely on (PR review, assigned work, cloud) sit at Pro or above, and price the Claude/GPT usage you actually run against Pro+ ($39 with $70 of credits). From Copilot to Cursor: budget Premium ($30) plus the list-price third-party tokens, because nothing in the subscription covers them — and confirm that Grok is acceptable for the default path before you renew a team licence.</p></p>
+      </div>
 
-    <h2>6. Frequently Asked Questions</h2>
-    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+    <h2 id="faq">Questions that change the decision</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
       
         <div class="faq-item">
-          <div class="faq-q">Q: Can I use my existing VS Code extensions in Cursor?</div>
-          <div class="faq-a">Yes, with one click Cursor imports all your extensions, keybindings, and themes from VS Code.</div>
+          <div class="faq-q">Does Copilot require moving to a particular editor?</div>
+          <div class="faq-a">No. Beyond the major editors, GitHub lists Raycast, SQL Server Management Studio and GitHub Mobile among Copilot's supported surfaces.</div>
         </div>
-        
         <div class="faq-item">
-          <div class="faq-q">Q: Is Cursor Pro worth the extra $10 compared to Copilot?</div>
-          <div class="faq-a">For active developers, yes. Cursor Composer's multi-file editing capability saves hours compared to Copilot's single-file chat window.</div>
+          <div class="faq-q">What else does Cursor Premium bundle?</div>
+          <div class="faq-a">Premium gives 4× the usage of Plus, the latest Grok models, cloud agents and automations, and Grok Bot.</div>
         </div>
-        
         <div class="faq-item">
-          <div class="faq-q">Q: Which underlying models do they use in 2026?</div>
-          <div class="faq-a">Both platforms allow switching between Claude 3.5 Sonnet and GPT-4o. However, Cursor's prompt framing, codebase indexing, and multi-file diff application make it feel significantly smarter in practice.</div>
+          <div class="faq-q">What do Cursor's higher individual tiers advertise?</div>
+          <div class="faq-a">Super is $100/month for 15× Plus usage and priority model access at peak times, the same price as Copilot Max with $200 of credits. Ultra is $200/month for 50× Plus usage and earliest access to all products and models.</div>
         </div>
-        
+        <div class="faq-item">
+          <div class="faq-q">What distinguishes Copilot Pro+ beyond its subscription price?</div>
+          <div class="faq-a">GitHub lists $70/month in total credits, premium models including Opus, and audit logs for Pro+.</div>
+        </div>
     </div>
 
-    <div style="text-align:center; margin: 3.5rem 0 1rem;">
-      <h3 style="margin-bottom:1rem;">Ready to build?</h3>
-      <a href="https://cursor.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-primary" style="margin-right:1rem;">Start on Cursor for Free →</a>
-      <a href="https://github.com/features/copilot?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-outline">Explore GitHub Copilot →</a>
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://cursor.com/blog/joining-spacex" rel="noopener nofollow" target="_blank">https://cursor.com/blog/joining-spacex</a><br><a href="https://cursor.com/pricing" rel="noopener nofollow" target="_blank">https://cursor.com/pricing</a><br><a href="https://github.com/features/copilot/plans" rel="noopener nofollow" target="_blank">https://github.com/features/copilot/plans</a><br><a href="https://thenextweb.com/news/spacex-cursor-acquisition-official-60-billion" rel="noopener nofollow" target="_blank">https://thenextweb.com/news/spacex-cursor-acquisition-official-60-billion</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../vercel-vs-cloudflare-pages/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Vercel vs Cloudflare Pages</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Both articles start from the same question: what does this vendor count?</p>
+          </a>
+          <a class="card" href="../notion-vs-obsidian/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Notion vs Obsidian</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Agents are now sold as credits — here is the same pattern in a notes app.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://cursor.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Cursor →</a>
+      <a href="https://github.com/features/copilot?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore GitHub Copilot →</a>
+    </div>
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. This market reprices often — if a number below looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
     </div>
   </main>
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Independent developer analysis.</p>
+      <p>© 2026 DevTools Radar. Independent developer analysis. No paid placement, no affiliate ranking.</p>
     </div>
   </footer>
 </body>
