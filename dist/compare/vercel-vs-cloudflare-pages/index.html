@@ -3,9 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vercel vs Cloudflare Pages (2026 Benchmark): Which is Best?</title>
-  <meta name="description" content="In-depth developer guide comparing Vercel and Cloudflare Pages. Analyze pricing formulas, database architectures, vendor lock-in, and self-hosting options.">
+  <title>Vercel vs Cloudflare Pages (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="Both hosts now meter CPU time, so an idle `await` is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel — 3 TB">
   <link rel="canonical" href="https://zhsks311.github.io/devtools-radar/compare/vercel-vs-cloudflare-pages/">
+  <meta property="og:title" content="Vercel vs Cloudflare Pages — 2026 teardown">
+  <meta property="og:description" content="Both hosts now meter CPU time, so an idle `await` is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel — 3 TB">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://zhsks311.github.io/devtools-radar/compare/vercel-vs-cloudflare-pages/">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Vercel vs Cloudflare Pages: a 2026 engineering teardown",
+  "description": "Both hosts now meter CPU time, so an idle `await` is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel — 3 TB a month adds 2,048 GB × $0.15 = $307.20 — against CPU milliseconds on Cloudflare, where egress costs $0.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://zhsks311.github.io/devtools-radar/compare/vercel-vs-cloudflare-pages/"
+}
+  </script>
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -13,27 +36,55 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Why do developers switch from Vercel to Cloudflare Pages?",
+      "name": "What is the Workers Free execution budget?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The primary driver is egress bandwidth costs. Cloudflare charges $0 for bandwidth on all tiers, while Vercel charges for bandwidth overages past 1TB on Pro."
+        "text": "Workers Free allows 100,000 requests/day with 10 ms CPU time per invocation and no charge for duration."
       }
     },
     {
       "@type": "Question",
-      "name": "Does Next.js App Router work on Cloudflare Pages?",
+      "name": "What execution limits apply to Workers Paid?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, via the official @cloudflare/next-on-pages adapter, although Edge Runtime limitations apply to certain Node.js native APIs."
+        "text": "The default CPU limit is 30 seconds, with a maximum of 5 minutes per invocation. Cron Trigger and Queue consumer invocations allow 15 minutes."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I run serverless APIs on Cloudflare Pages?",
+      "name": "Can paid Pages sites hold more files?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, by adding a `/functions` directory in your project root, Cloudflare Pages automatically turns files into globally distributed serverless edge endpoints."
+        "text": "Paid Pages sites support 100,000 files with `PAGES_WRANGLER_MAJOR_VERSION=4`."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I make a temporary Vercel deployment without an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes: on the Hobby tier, `vercel deploy --temporary` creates a temporary deployment without an account."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://zhsks311.github.io/devtools-radar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Vercel vs Cloudflare Pages",
+      "item": "https://zhsks311.github.io/devtools-radar/compare/vercel-vs-cloudflare-pages/"
     }
   ]
 }
@@ -49,285 +100,419 @@
   --primary: #38bdf8;
   --primary-glow: rgba(56, 189, 248, 0.15);
   --accent: #10b981;
+  --warn: #f59e0b;
   --danger: #f43f5e;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.65;
+  line-height: 1.7;
   padding: 0;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
-.container { max-width: 920px; margin: 0 auto; padding: 2rem 1.5rem; }
+.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
 header {
   border-bottom: 1px solid var(--border);
-  padding: 1.25rem 0;
-  background: rgba(9, 13, 22, 0.85);
+  padding: 1.1rem 0;
+  background: rgba(9, 13, 22, 0.88);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 .header-inner {
-  max-width: 920px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
-.logo { font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
 .logo span { color: var(--primary); }
-.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
+.nav-link:hover { color: var(--primary); }
+.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
 .badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
 .badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
 .badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
-h1 { font-size: 2.25rem; font-weight: 800; line-height: 1.25; margin: 1rem 0; color: #fff; }
-h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
-h3 { font-size: 1.2rem; font-weight: 600; color: #fff; margin: 1.5rem 0 0.5rem; }
+h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
+h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
+h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
 p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
-.lead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
-.meta-row { display: flex; align-items: center; gap: 1rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
-.table-wrapper { overflow-x: auto; margin: 1.5rem 0 2rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
-th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
-th { background: #162032; color: #fff; font-weight: 600; }
+ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
+li { margin-bottom: 0.4rem; font-size: 0.98rem; }
+li > code, p > code { font-size: 0.86em; }
+strong { color: #fff; font-weight: 640; }
+a { color: var(--primary); }
+blockquote {
+  border-left: 3px solid var(--primary);
+  background: rgba(56, 189, 248, 0.05);
+  padding: 0.9rem 1.2rem;
+  margin: 1.3rem 0;
+  color: #cbd5e1;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.97rem;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
+.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
+.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
 tr:last-child td { border-bottom: none; }
+td code { color: var(--primary); }
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.72rem 1.4rem;
   border-radius: 8px;
   font-weight: 600;
+  font-size: 0.94rem;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.18s;
   text-align: center;
 }
-.btn-primary { background: var(--primary); color: #000; }
-.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-primary { background: var(--primary); color: #04121b; }
+.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
 .btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
 .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1.75rem;
-  margin-bottom: 1.5rem;
-  transition: border-color 0.2s, transform 0.2s;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.18s, transform 0.18s;
 }
-.card:hover { border-color: #3b82f6; transform: translateY(-2px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+a.card { display: block; text-decoration: none; }
+a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
 .verdict-box {
   background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
   border: 1px solid #1e3a5f;
+  border-left: 3px solid var(--primary);
   border-radius: 12px;
-  padding: 1.75rem;
-  margin: 1.5rem 0 2.5rem;
+  padding: 1.4rem 1.5rem;
+  margin: 1.5rem 0 2rem;
 }
-.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
+.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
 @media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
-.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.25rem; }
-.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.25rem; }
-.pros-box ul, .cons-box ul { padding-left: 1.25rem; margin-top: 0.5rem; }
-.pros-box li, .cons-box li { font-size: 0.9rem; margin-bottom: 0.4rem; color: #cbd5e1; }
+.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
+.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
+.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
+.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
 pre {
-  background: #0d121d;
+  background: #0b1120;
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 1rem 1.25rem;
+  padding: 1rem 1.15rem;
   overflow-x: auto;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.85rem;
-  color: #38bdf8;
-  margin: 1rem 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #9dd7f5;
+  margin: 1rem 0 1.2rem;
+  tab-size: 2;
+}
+pre code { color: inherit; background: none; padding: 0; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(56, 189, 248, 0.09);
+  color: #9dd7f5;
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.87em;
 }
 .migration-box {
   background: #121e33;
-  border-left: 4px solid var(--primary);
+  border-left: 3px solid var(--primary);
   border-radius: 0 8px 8px 0;
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0;
 }
-.faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
-.faq-q { font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
-.faq-a { color: var(--text-muted); font-size: 0.95rem; }
-footer { border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
+.migration-box strong { color: #fff; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+.faq-a { color: var(--text-muted); font-size: 0.94rem; }
+.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+.cost-row:last-child { border-bottom: none; }
+.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
+.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
+.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
+.matrix-pick { color: var(--primary); font-weight: 600; }
+.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
+.updated-note {
+  font-size: 0.8rem; color: var(--text-muted);
+  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
+}
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
+.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
+.toc ol { margin: 0 0 0 1.1rem; }
+.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
+.toc a { color: #cbd5e1; text-decoration: none; }
+.toc a:hover { color: var(--primary); }
+footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
 </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
       <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
-      <a href="../../" style="color:var(--text-muted); text-decoration:none; font-size:0.9rem;">← All Comparisons</a>
+      <a href="../../" class="nav-link">← All teardowns</a>
     </div>
   </header>
 
   <main class="container">
     <div class="meta-row">
       <span class="badge badge-blue">Hosting & Edge</span>
-      <span>• Updated November 2026</span>
-      <span>• 6 min read</span>
+      <span class="badge badge-gray">Vercel vs Cloudflare Pages</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
     </div>
 
-    <h1>Vercel vs Cloudflare Pages (2026 Developer Benchmark)</h1>
-    <p class="lead">An objective, architectural breakdown for engineering teams deciding between Vercel and Cloudflare Pages.</p>
+    <h1>Vercel vs Cloudflare Pages</h1>
+    <p class="lead"><p>Both hosts now meter CPU time, so an idle <code>await</code> is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel — 3 TB a month adds 2,048 GB × $0.15 = $307.20 — against CPU milliseconds on Cloudflare, where egress costs $0.</p></p>
 
     <div class="verdict-box">
-      <h3 style="color:#fff; margin-top:0; font-size:1.15rem;">🎯 Executive Verdict</h3>
-      <p style="color:var(--text); line-height:1.6; margin-bottom:0;">Choose Vercel for the smoothest Next.js DX, preview deployments, and seamless team collaboration. Choose Cloudflare Pages if you want zero bandwidth surprise bills and hyper-fast global edge distribution at fraction of the cost.</p>
+      <div class="label">Verdict</div>
+      <p><p>Teams whose transfer passes 1 TB or whose requests pass 10M a month should pick Cloudflare Pages if every asset fits 25 MiB: 3 TB means $307.20 of Vercel overage against $0. Teams inside Pro's 1 TB and 10M CDN requests should stay on Vercel. Teams eyeing Pages should today compare their monthly builds with its 500 / 5,000 / 20,000 limits and their largest asset with its 25 MiB ceiling.</p></p>
     </div>
 
-    <h2>1. Key Metric Comparison</h2>
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">Vercel runs your framework; Cloudflare runs your requests</a></li><li><a href="#s2">An idle await no longer chooses the winner</a></li><li><a href="#s3">The penalty moved to bytes and requests</a></li><li><a href="#s4">The asset limit can stop the deployment first</a></li><li><a href="#s5">Caching cuts Cloudflare&#x27;s CPU line; requests still bill</a></li><li><a href="#s6">Above 1 TB or 10M requests, Vercel Pro is the expensive host</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>Key metric comparison</h2>
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>Metric / Dimension</th>
-            <th>Vercel <span class="badge badge-blue">Next.js Native</span></th>
-            <th>Cloudflare Pages <span class="badge badge-green">Zero Bandwidth Fee</span></th>
+            <th>Dimension</th>
+            <th>Vercel <span class="badge badge-blue">Framework-native</span></th>
+            <th>Cloudflare Pages <span class="badge badge-green">Zero egress</span></th>
           </tr>
         </thead>
         <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Serverless functions on Fluid compute</td><td>Workers runtime + Pages static assets</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Hobby $0 · Pro $20/seat: 1 TB transfer, 10M requests</td><td>Pages free · Workers Paid from $5/account, $0 egress</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>No (Vercel infrastructure)</strong></td><td>No (Cloudflare network)</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>Streaming responses and ISR revalidation</td><td>WebSocket upgrade bills one request; messages bill nothing</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>Fluid compute targets inference and agent workloads</td><td>CPU-metered runtime; 30M CPU-ms included per month</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium: framework and platform coupling</td><td>Medium-high: Workers runtime, per-product line items</td></tr>
           <tr>
-            <td><strong>Core Engine / Architecture</strong></td>
-            <td>Serverless Functions + Edge Middleware</td>
-            <td>Cloudflare Workers + D1 (SQLite) + KV</td>
-          </tr>
-          <tr>
-            <td><strong>Pricing & Free Tier</strong></td>
-            <td>Hobby Free / $20/seat Pro</td>
-            <td>Free (Unlimited bandwidth) / $5 Workers Paid</td>
-          </tr>
-          <tr>
-            <td><strong>Self-Hostable</strong></td>
-            <td><strong>No (Tied to Vercel infrastructure)</strong></td>
-            <td>No (Cloudflare edge network)</td>
-          </tr>
-          <tr>
-            <td><strong>Realtime & Concurrency</strong></td>
-            <td>Edge functions & SSE</td>
-            <td>WebSockets / Durable Objects</td>
-          </tr>
-          <tr>
-            <td><strong>AI & Vector Readiness</strong></td>
-            <td>AI SDK, v0 ecosystem</td>
-            <td>Workers AI (Serverless GPUs at edge)</td>
-          </tr>
-          <tr>
-            <td><strong>Vendor Lock-In Risk</strong></td>
-            <td><span style="color:var(--accent); font-weight:600;">Moderate (Next.js runs elsewhere with effort)</span></td>
-            <td><span style="color:var(--danger); font-weight:600;">Low-Moderate (Workers runtime)</span></td>
-          </tr>
-          <tr>
-            <td><strong>Official Action</strong></td>
-            <td><a href="https://vercel.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.4rem 0.85rem; font-size:0.85rem;">Try Vercel →</a></td>
-            <td><a href="https://pages.cloudflare.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-outline" style="padding:0.4rem 0.85rem; font-size:0.85rem;">Try Cloudflare Pages →</a></td>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://vercel.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Vercel →</a></td>
+            <td><a href="https://pages.cloudflare.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Cloudflare Pages →</a></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h2>2. Side-by-Side Code & SDK Experience</h2>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+      <h2 id="s1">1. Vercel runs your framework; Cloudflare runs your requests</h2>
+      <p>Vercel runs your framework and bills for what it delivers. Cloudflare runs your requests and bills for what they execute.</p>
+<ul><li>Vercel: past Pro's 1 TB Fast Data Transfer and 10M CDN requests, every GB costs from $0.15 and every million requests from $2.</li><li>Cloudflare: egress costs $0, but Workers Paid charges $0.30 per million requests past 10M and $0.02 per million CPU-ms past 30M.</li></ul>
+<p>Prices are the vendors' listed rates as of 10 November 2026; Vercel's overages are starting rates, and examples credited to Cloudflare are Cloudflare's own.</p>
+<blockquote><p>At 3 TB a month the gap is $307.20 of Vercel transfer overage; at 50M requests it is $80 versus $12 of request overage.</p></blockquote>
+<p>Before moving, check each handler against Workers' listed limits: 10 ms CPU per invocation on Free, and a 30-second default with a 5-minute maximum of CPU time on Paid.</p>
+
+      <h2 id="s2">2. An idle await no longer chooses the winner</h2>
+      <p>Fluid compute, the default for new Vercel projects, bills active CPU rather than wall time, and Workers bills CPU-ms; An idle <code>await</code> burns no CPU meter on either; it does not make the whole deployment free.</p>
+<ul><li>Vercel Fluid compute: Active CPU starts at $0.128/vCPU-hour.</li><li>Vercel says provisioned memory is billed in GB-hours at less than 10% of the Active CPU rate.</li></ul>
+<p>In-function concurrency lets concurrent requests share one instance; Vercel claims up to 85% savings from it and up to 90% from Active CPU pricing.</p>
+<blockquote><p>Workers Paid includes 30M CPU-ms a month; Vercel bills Active CPU and provisioned memory as separate metered lines.</p></blockquote>
+<p>Waiting on an external API no longer establishes a CPU-price reason to migrate; inspect transfer and request counts before touching the runtime.</p>
+
+      <h2 id="s3">3. The penalty moved to bytes and requests</h2>
+      <p>Vercel penalizes byte-heavy delivery and request fan-out after allowances; Cloudflare penalizes uncached CPU work and paid requests, not egress.</p>
+<div class="table-wrapper"><table><thead><tr><th>Monthly workload</th><th>Vercel Pro</th><th>Cloudflare Workers Paid</th></tr></thead><tbody><tr><td>3 TB transfer</td><td>2,048 GB over × $0.15/GB = $307.20</td><td>$0 egress</td></tr><tr><td>50M requests, overage</td><td>40M CDN requests × $2/M = $80</td><td>40M × $0.30/M = $12</td></tr><tr><td>Same, with plan floor</td><td>$20 × 1 seat + $80 = $100</td><td>$5 + $12 = $17</td></tr><tr><td>1M CPU-ms</td><td>$0.128 ÷ 3.6M × 1M ≈ $0.0356, before memory</td><td>$0.02 after 30M included</td></tr></tbody></table></div>
+<p>The request rows apply only to requests that run a Worker; Vercel's line counts CDN requests, while Cloudflare static asset requests are free and unlimited.</p>
+<blockquote><p>Teams serving 3 TB a month or 50M Worker requests should not pick Vercel Pro: they pay $307.20 against $0, or $100 against $17 before CPU.</p></blockquote>
+
+      <h2 id="s4">4. The asset limit can stop the deployment first</h2>
+      <p>Consider a static export containing a downloadable asset larger than 25 MiB. Cloudflare Pages rejects that deployment shape on its asset ceiling; cheap transfer cannot rescue it.</p>
+<ul><li>Pages builds per month: 500 Free / 5,000 Pro / 20,000 Business, with 1 / 5 / 20 concurrent; 20,000 files per site on Free; 100 projects per account.</li><li>Pages: 20-minute build timeout; 25 MiB maximum per asset.</li></ul>
+<p>Exceeding an included traffic allowance raises a bill; exceeding an asset ceiling breaks the deployment plan. Teams whose build runs past 20 minutes should not pick Pages until the build is split, and teams deploying more than 500 times a month need Pages Pro's 5,000.</p>
+<blockquote><p>Shrink or remove every asset over 25 MiB before targeting Pages; a Vercel function that needs more than 5 minutes must be split, or checked against Workers' 5-minute CPU-time cap.</p></blockquote>
+
+      <h2 id="s5">5. Caching cuts Cloudflare&#x27;s CPU line; requests still bill</h2>
+      <p>Cloudflare charges $0 for egress, but Pages Functions still bill as Workers requests and CPU-ms. D1 and R2 carry their own line items.</p>
+<p>Cloudflare's own example uses 100M requests at 7 ms CPU each; Workers Caching at 80% hits changes the CPU bill:</p>
+<ul><li>Without caching: (100M × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $13.40.</li><li>With caching: (100M × (1 − 80%) × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $2.20.</li></ul>
+<p>Cache hits still cost a request, but no CPU in Cloudflare's example.</p>
+<blockquote><p>The request line stays at (100M − 10M) × $0.30/M = $27.00, so the cached total is $5.00 + $27.00 + $2.20 = $34.20 against $45.40 uncached.</p></blockquote>
+<p>Only count that saving for responses your app can safely reuse; a lower hit rate moves the bill back toward $45.40.</p>
+
+      <h2 id="s6">6. Above 1 TB or 10M requests, Vercel Pro is the expensive host</h2>
+      <ul><li>A team above 1 TB or 10M CDN requests a month should move to Cloudflare Pages: at 3 TB that removes $307.20 of overage.</li><li>A team whose Vercel deployment works inside both Pro allowances should stay: the bill to beat is $20 per seat plus Active CPU and memory.</li><li>A team with CPU-heavy handlers inside Workers' CPU cap should move: $0.02 per million CPU-ms beats Vercel's starting ≈ $0.0356.</li><li>A team adding seats faster than traffic pays Vercel $20 per seat against Workers Paid's $5 per-account minimum; it should move after confirming Pages Pro and Business prices.</li></ul>
+<blockquote><p>Pages allows 500 builds a month on Free, and each build must finish within 20 minutes.</p></blockquote>
+<p>Count seats at $20 each, check your longest build against Pages' 20-minute timeout and check your largest asset against 25 MiB.</p>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">Monthly transfer overage at 3 TB</div>
+          <div class="cost-formula">Vercel Pro: 2,048 GB beyond the included 1 TB × starting $0.15/GB = $307.20; Cloudflare: $0 egress by policy</div>
+          <div class="cost-result">$307.20 Vercel transfer overage versus $0 Cloudflare egress</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Monthly request charges at 50M metered requests</div>
+          <div class="cost-formula">Vercel: 40M CDN requests over × starting $2/M = $80; with one seat, $20 + $80 = $100. Cloudflare: 40M over × $0.30/M = $12; with base, $5 + $12 = $17</div>
+          <div class="cost-result">Request overage: $80 on Vercel versus $12 on Cloudflare; with plan floors, $20 × seats + $80 (= $100 for one seat) on Vercel versus $5 + $12 = $17 on Cloudflare, before CPU</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">CPU rate normalized to a million CPU-ms</div>
+          <div class="cost-formula">Vercel: starting $0.128 ÷ 3.6M CPU-ms × 1M CPU-ms ≈ $0.0356; Cloudflare: 1M billable CPU-ms × $0.02/M CPU-ms = $0.02</div>
+          <div class="cost-result">≈ $0.0356 (Vercel starting rate, before provisioned-memory GB-hours) versus $0.02 per million CPU-ms after Cloudflare's 30M included; Vercel Pro includes no CPU</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">CPU in Cloudflare's own cached example</div>
+          <div class="cost-formula">Uncached: (100M × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $13.40; cached: (100M × (1 − 80%) × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $2.20; requests: (100M − 10M) × $0.30/M = $27.00</div>
+          <div class="cost-result">In Cloudflare's example, $45.40 uncached ($5.00 + $27.00 + $13.40) versus $34.20 cached ($5.00 + $27.00 + $2.20); caching cuts only the CPU line</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Byte-heavy delivery, around 3 TB/month</td><td class="matrix-pick">Cloudflare Pages</td><td>At 3 TB/month, Vercel Pro's transfer overage is 2,048 GB × $0.15/GB = $307.20; Cloudflare charges $0 for egress.</td></tr><tr><td>Vercel deployment works, transfer ≤ 1 TB and CDN requests ≤ 10M/month</td><td class="matrix-pick">Vercel</td><td>Inside both Pro allowances Vercel's delivery overages are $0, so the bill to beat is $20 per seat plus Active CPU and memory.</td></tr><tr><td>Seats growing while traffic stays flat</td><td class="matrix-pick">Cloudflare Pages</td><td>Each Vercel Pro seat adds $20/month before traffic changes, while Workers Paid lists a $5/month minimum per account; confirm Pages Pro and Business plan prices before moving for seats.</td></tr><tr><td>A Vercel app that mostly waits on external APIs</td><td class="matrix-pick">Vercel</td><td>On Fluid compute an idle wait burns no Active CPU, but provisioned memory still bills in GB-hours at under 10% of the $0.128/vCPU-hour rate, per Vercel; confirm the project runs on Fluid compute and price that line.</td></tr><tr><td>The deployment ships an asset larger than 25 MiB that cannot be split</td><td class="matrix-pick">Vercel</td><td>Pages caps every asset at 25 MiB; check Vercel's per-asset limit before moving the file there.</td></tr><tr><td>The build runs longer than 20 minutes</td><td class="matrix-pick">Vercel</td><td>The 20-minute Pages build timeout defeats that build regardless of $0 egress.</td></tr><tr><td>CPU-heavy handlers within Workers' 5-minute CPU cap</td><td class="matrix-pick">Cloudflare Pages</td><td>Workers Paid charges $0.02 per million CPU-ms after 30M included, against Vercel's starting ≈ $0.0356 per million CPU-ms with no included CPU.</td></tr><tr><td>A Cron or Queue job that runs longer than 5 minutes</td><td class="matrix-pick">Cloudflare Workers</td><td>Vercel lists a 5-minute function duration; Workers Paid allows 15 minutes of CPU time for Cron Trigger and Queue consumer invocations.</td></tr></tbody>
+      </table></div>
+
+    <h2>Same task, two SDKs</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
-        <span class="badge badge-blue" style="margin-bottom:0.5rem;">Vercel Code Sample</span>
-        <pre><code>// vercel.json: Custom headers and serverless function limits
-{
-  "framework": "nextjs",
-  "functions": {
-    "api/edge/*.ts": {
-      "runtime": "edge",
-      "maxDuration": 30
-    }
-  }
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Vercel</span>
+        <pre><code>// Vercel: the framework&#x27;s own handler, deployed unchanged.
+export const maxDuration = 60; // seconds; the platform caps it
+export async function POST(req: Request) {
+  const { prompt } = await req.json();
+  // Active CPU bills while this code runs, not while it waits:
+  const upstream = await fetch(&#x27;https://api.example.com/v1/chat&#x27;, {
+    method: &#x27;POST&#x27;,
+    body: JSON.stringify({ prompt }),
+    headers: { &#x27;content-type&#x27;: &#x27;application/json&#x27; },
+  });
+  // Here it breaks: default duration limits kill long streams. Set maxDuration
+  // and check the platform ceiling before shipping a 5-minute job.
+  return new Response(upstream.body, { headers: { &#x27;content-type&#x27;: &#x27;text/event-stream&#x27; } });
 }</code></pre>
       </div>
       <div>
-        <span class="badge badge-green" style="margin-bottom:0.5rem;">Cloudflare Pages Code Sample</span>
-        <pre><code>// wrangler.toml: Cloudflare Pages & Workers configuration
-name = "my-frontend-app"
-pages_build_output_dir = "dist"
-[[d1_databases]]
-binding = "DB"
-database_name = "prod-db"
-database_id = "xxxx-xxxx"</code></pre>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Cloudflare Pages</span>
+        <pre><code>// Cloudflare: the Worker handler, not the framework&#x27;s.
+export default {
+  async fetch(request, env, ctx) {
+    const { prompt } = await request.json();
+    // CPU-ms bills only while this isolate executes.
+    const upstream = await fetch(&#x27;https://api.example.com/v1/chat&#x27;, {
+      method: &#x27;POST&#x27;,
+      body: JSON.stringify({ prompt }),
+      headers: { &#x27;content-type&#x27;: &#x27;application/json&#x27; },
+    });
+    // Here it breaks: no Node APIs by default. Anything importing fs, net or
+    // a native addon needs nodejs_compat, and some libraries never port.
+    return new Response(upstream.body, { headers: { &#x27;content-type&#x27;: &#x27;text/event-stream&#x27; } });
+  },
+};</code></pre>
       </div>
     </div>
 
-    <h2>3. Architectural Deep Dive</h2>
-    <div style="margin: 1.5rem 0;">
-      
-        <h3>1. Bandwidth Egress Economics: The Deciding Metric</h3>
-        <p>For web apps serving rich media, heavy client bundles, or high traffic, bandwidth pricing is the primary factor driving migrations. **Cloudflare Pages charges $0 for bandwidth on all tiers**. Even if your site goes viral on Reddit or Hacker News and streams 20TB in a week, your Cloudflare bill remains $0.</p><p></p><p>On **Vercel**, the Pro plan includes 1TB of fast data transfer. Overages past that threshold cost $40 per 100GB, which has burned many indie developers with sudden $1,000+ invoices.</p>
-        
-        <h3>2. Framework Ecosystem: Next.js vs Agnostic Static/SPA</h3>
-        <p>If you are heavily committed to Next.js (App Router, Server Actions, Incremental Static Regeneration), **Vercel** remains the native home where features work on day zero without polyfills.</p><p></p><p>However, for Astro, SvelteKit, Remix, Nuxt, or plain React/Vite SPAs, **Cloudflare Pages** is technically superior: it deploys faster, routes through Anycast edge locations, and has zero cold starts.</p>
-        
-    </div>
-
-    <h2>4. Pros & Cons Analysis</h2>
+    <h2>What you gain, what you give up</h2>
     <div class="pros-cons-grid">
-      <div class="card" style="padding:1.25rem;">
-        <h3 style="color:var(--primary); margin-top:0;">Vercel Analysis</h3>
-        <div class="pros-box" style="margin-bottom:1rem;">
-          <strong style="color:var(--accent); font-size:0.9rem;">Advantages</strong>
-          <ul><li>✓ Unbeatable developer experience and instant Git preview deployments</li><li>✓ First-class, zero-config support for all Next.js App Router features and ISR</li><li>✓ Rich ecosystem (Vercel AI SDK, Analytics, v0 integration)</li><li>✓ Intuitive team collaboration and deployment rollback workflow</li></ul>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Vercel</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Your framework deploys as written; no runtime port to a different JS environment</li><li>Fluid compute bills execution time, so an idle await on an external API costs no CPU</li><li>In-function concurrency shares one instance across concurrent requests</li><li>Per-project previews and ISR in the same product as the build pipeline</li></ul>
         </div>
         <div class="cons-box">
-          <strong style="color:var(--danger); font-size:0.9rem;">Limitations</strong>
-          <ul><li>✗ Overage pricing (especially egress bandwidth past 1TB) is notorious</li><li>✗ Seat-based pricing ($20/developer/month) scales fast for teams</li><li>✗ Serverless cold starts can impact non-edge API routes</li></ul>
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>Transfer is metered: 2 TB over the Pro allowance is 2,048 GB × $0.15 = $307.20</li><li>CDN requests bill past 10M/month at $2 per million — fan-out is expensive</li><li>Price is per seat, so a growing team raises the floor before traffic does</li><li>Active CPU is a separate metered line on top of the seat price</li></ul>
         </div>
       </div>
-      <div class="card" style="padding:1.25rem;">
-        <h3 style="color:var(--accent); margin-top:0;">Cloudflare Pages Analysis</h3>
-        <div class="pros-box" style="margin-bottom:1rem;">
-          <strong style="color:var(--accent); font-size:0.9rem;">Advantages</strong>
-          <ul><li>✓ 100% Free egress bandwidth on all tiers — zero surprise bandwidth bills</li><li>✓ Global Anycast network serving assets from 300+ cities with sub-10ms TTFB</li><li>✓ Generous $5/month Workers plan with millions of function invocations</li><li>✓ Integrated edge database (D1 SQLite), KV, and Workers AI</li></ul>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Cloudflare Pages</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Egress is free by policy: 3 TB a month costs $0 where Vercel adds $307.20</li><li>Requests after 10M cost $0.30/million, against $2/million on Vercel Pro</li><li>Static asset requests are free and unlimited; cache hits cost a request but no CPU</li><li>WebSocket messages are not billed as requests — only the upgrade is</li></ul>
         </div>
         <div class="cons-box">
-          <strong style="color:var(--danger); font-size:0.9rem;">Limitations</strong>
-          <ul><li>✗ Next.js App Router support requires adaptation (@cloudflare/next-on-pages)</li><li>✗ Edge runtime does not support certain Node.js native C++ modules</li><li>✗ Preview deployment dashboard is less polished than Vercel</li></ul>
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>Your handlers run on the Workers runtime, so the port is real work, not a config change</li><li>Hard ceilings that stop a deployment instead of billing you: 25 MiB per asset, 20-minute builds</li><li>Pages Free allows 500 builds a month and 20,000 files per site</li><li>CPU time is capped per invocation: 30 seconds default, 5 minutes maximum</li></ul>
         </div>
       </div>
     </div>
 
-    <h2>5. Migration Guide & Considerations</h2>
-    <div class="migration-box">
-      <strong style="color:#fff; font-size:1.05rem;">Switching Paths:</strong>
-      <p style="margin-top:0.5rem; margin-bottom:0;">To migrate from Vercel to Cloudflare Pages, connect your GitHub repo to Cloudflare Dashboard, set build command to your framework's static build output, and add a single `_headers` or `_redirects` file to handle custom routing rules.</p>
-    </div>
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <p style="margin-top:0.5rem; margin-bottom:0;"><p>Moving from Vercel to Pages means rewriting handlers for the Workers runtime, not flipping a setting: no Node defaults, and anything importing fs or net needs the compatibility flag. Move the static build first (it costs nothing to serve), measure the handlers' CPU per request against the 30-second default and 5-minute cap, then check your largest asset against 25 MiB and your build against the 20-minute timeout. Going the other way, port back to Node and expect the transfer line to reappear the first month traffic passes 1 TB.</p></p>
+      </div>
 
-    <h2>6. Frequently Asked Questions</h2>
-    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+    <h2 id="faq">Questions that change the decision</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
       
         <div class="faq-item">
-          <div class="faq-q">Q: Why do developers switch from Vercel to Cloudflare Pages?</div>
-          <div class="faq-a">The primary driver is egress bandwidth costs. Cloudflare charges $0 for bandwidth on all tiers, while Vercel charges for bandwidth overages past 1TB on Pro.</div>
+          <div class="faq-q">What is the Workers Free execution budget?</div>
+          <div class="faq-a">Workers Free allows 100,000 requests/day with 10 ms CPU time per invocation and no charge for duration.</div>
         </div>
-        
         <div class="faq-item">
-          <div class="faq-q">Q: Does Next.js App Router work on Cloudflare Pages?</div>
-          <div class="faq-a">Yes, via the official @cloudflare/next-on-pages adapter, although Edge Runtime limitations apply to certain Node.js native APIs.</div>
+          <div class="faq-q">What execution limits apply to Workers Paid?</div>
+          <div class="faq-a">The default CPU limit is 30 seconds, with a maximum of 5 minutes per invocation. Cron Trigger and Queue consumer invocations allow 15 minutes.</div>
         </div>
-        
         <div class="faq-item">
-          <div class="faq-q">Q: Can I run serverless APIs on Cloudflare Pages?</div>
-          <div class="faq-a">Yes, by adding a `/functions` directory in your project root, Cloudflare Pages automatically turns files into globally distributed serverless edge endpoints.</div>
+          <div class="faq-q">Can paid Pages sites hold more files?</div>
+          <div class="faq-a">Paid Pages sites support 100,000 files with <code>PAGES_WRANGLER_MAJOR_VERSION=4</code>.</div>
         </div>
-        
+        <div class="faq-item">
+          <div class="faq-q">Can I make a temporary Vercel deployment without an account?</div>
+          <div class="faq-a">Yes: on the Hobby tier, <code>vercel deploy --temporary</code> creates a temporary deployment without an account.</div>
+        </div>
     </div>
 
-    <div style="text-align:center; margin: 3.5rem 0 1rem;">
-      <h3 style="margin-bottom:1rem;">Ready to build?</h3>
-      <a href="https://vercel.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-primary" style="margin-right:1rem;">Start on Vercel for Free →</a>
-      <a href="https://pages.cloudflare.com/?utm_source=devtoolsradar" target="_blank" rel="noopener" class="btn btn-outline">Explore Cloudflare Pages →</a>
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://vercel.com/pricing" rel="noopener nofollow" target="_blank">https://vercel.com/pricing</a><br><a href="https://vercel.com/blog/introducing-active-cpu-pricing-for-fluid-compute" rel="noopener nofollow" target="_blank">https://vercel.com/blog/introducing-active-cpu-pricing-for-fluid-compute</a><br><a href="https://developers.cloudflare.com/workers/platform/pricing/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/workers/platform/pricing/</a><br><a href="https://developers.cloudflare.com/pages/platform/limits/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/pages/platform/limits/</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../supabase-vs-firebase/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Supabase vs Firebase</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Metered reads versus metered compute, with the arithmetic shown.</p>
+          </a>
+          <a class="card" href="../cursor-vs-github-copilot/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Cursor vs GitHub Copilot</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">When a vendor moves the meter to credits, the entry tier is where the cost hides.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://vercel.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Vercel →</a>
+      <a href="https://pages.cloudflare.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Cloudflare Pages →</a>
+    </div>
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. This market reprices often — if a number below looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
     </div>
   </main>
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Independent developer analysis.</p>
+      <p>© 2026 DevTools Radar. Independent developer analysis. No paid placement, no affiliate ranking.</p>
     </div>
   </footer>
 </body>

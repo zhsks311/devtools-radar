@@ -1,0 +1,120 @@
+{
+  "slug": "notion-vs-obsidian",
+  "hook": "On Notion Free, any page version older than 7 days is gone; on Business the cutoff is 90 days, and in an Obsidian vault under git there is no cutoff at all. The sticker fight is $0 versus $10, but the real one is a server with a meter against a folder with a pipe.",
+  "sections": [
+    {
+      "title": "Notion sells a server with a meter; Obsidian sells a folder with a pipe",
+      "content": "**Notion: notes are shared state on Notion's server**, and everything around it is metered. **Obsidian: notes are files on your disk**, and Obsidian states the app is free without limits, with no telemetry.\n\nWhat each philosophy forbids:\n\n- **Obsidian forbids server-side control.** No permission model, no built-in agent, no multi-user editing.\n- **Notion forbids plain-file truth.** The canonical copy lives in Notion's database, so every export is a conversion.\n- **Notion makes history a plan feature.** How far back you can roll a page depends on tier.\n\nRead both price sheets as penalty tables:\n\n| Meter | Pattern punished | Why |\n|---|---|---|\n| Notion page history | System of record | Old versions expire by tier |\n| Notion API, 180 req/min | Bulk sync | Per connection, below Business |\n| Custom Agents | Automating at volume | $10 per 1,000 credits |\n| Obsidian Sync | Multi-device, no own pipe | $4/user/month, annual |"
+    },
+    {
+      "title": "Page history is the tax nobody prices in",
+      "content": "Notion's history window decides whether it can be a system of record. Comparisons rarely mention it.\n\n| Plan | Price | Page history |\n|---|---|---|\n| Free | $0/member | 7 days |\n| Plus | $10/member/month | 30 days |\n| Business | $20/member/month | 90 days |\n\nThe pattern this punishes is the slow mistake. Someone overwrites a runbook and nobody notices for a month: on Free that version is gone, on Plus it is borderline.\n\nThe rest of Free's ceiling sits in the same place:\n\n- File uploads capped at **5 MB** (Plus raises it to 5 GB).\n- **10 external guests**.\n- A Free-plan workspace block limit that Notion announced for 2026-09-08.\n\nObsidian has no window to buy. A vault is plain files, so `git log` keeps every committed version for as long as you keep the repo."
+    },
+    {
+      "title": "Obsidian Bases ended the 'Notion has databases' argument",
+      "content": "Bases is a **core plugin**, not a community add-on. It renders database views over frontmatter properties, and the data stays in your Markdown files.\n\n- Table and Cards: 1.9\n- List and Map: 1.10 (Map needs the Maps plugin)\n- Kanban: 1.14\n\nThe `.base` file is YAML and holds only the view definition:\n\n```yaml\nfilters:\n  and:\n    - file.inFolder(\"Projects\")\n    - file.hasTag(\"active\")\nformulas:\n  ratio: '(price / age).toFixed(2)'\nviews:\n  - type: table\n    order:\n      - file.name\n      - formula.ratio\n```\n\nObsidian's own docs: \"Delete a base and your notes are untouched.\" What Bases still does not give you:\n\n- **Permissions.** Anyone with the folder sees every row.\n- **Server-side computed properties.** Formulas run in each user's app.\n- **Multi-user edit.** Shared vaults sync files; there is no built-in co-editing."
+    },
+    {
+      "title": "Notion's agent is real, and so is its meter",
+      "content": "Notion's built-in agent lives on Business at $20/member/month, next to AI Meeting Notes. Free and Plus get an AI trial only.\n\n| Notion piece | Billing, per Notion |\n|---|---|\n| Notion Agent | Business plan |\n| Custom Agents | \"Free to try, then $10 per 1,000 monthly Notion credits\" |\n| Workers | Beta: custom code for agent tools and sync |\n\nObsidian's equivalent is you, a script or a plugin. No server runs anything while your laptop sleeps.\n\nThe honest counter is that Notion's API is a queue you have to build:\n\n- **180 requests per minute per connection** on all plans except Business/Enterprise, which get 600.\n- A **per-workspace** budget shared by every connection; its `Retry-After` can exceed a minute.\n- Data-source queries capped near 3 requests/second per connection.\n\nAnd every integration is one more vendor relationship."
+    },
+    {
+      "title": "The extra $1,920 a year buys a permission model",
+      "content": "Run the 10-person team through both price sheets:\n\n```python\nteam = 10\nnotion_business = team * 20 * 12  # $20/member/month\nobsidian_sync = team * 4 * 12     # $4/user/month, billed annually\nlicences = team * 50              # optional: \"not required\"\nprint(notion_business - obsidian_sync)             # 1920\nprint(notion_business - obsidian_sync - licences)  # 1420\n```\n\nThe gap is $1,920 against Sync alone, $1,420 if you also pay the licences. It buys:\n\n- SAML SSO, granular database permissions, private teamspaces.\n- 90-day page history and the Notion Agent.\n- 600 API requests per minute instead of 180.\n\nWho should not pay it: a team whose notes are private drafts, where nobody needs to be locked out of anything. Replace Sync with git or iCloud and their bill is $0."
+    },
+    {
+      "title": "Shared state picks Notion; private thinking picks Obsidian",
+      "content": "**If your notes are shared state** that other people edit, permission and automate, Notion Business wins: those features need a server. **If they are private thinking** that occasionally gets shared, Obsidian wins: files outlive vendors.\n\nCheck these today:\n\n1. Open page history on your most important Notion page. Is its last real edit inside your plan's 7, 30 or 90 days?\n2. List every integration calling the Notion API. Do they share one connection's 180/min?\n3. Name one page someone must not see. None? Permissions are buying you nothing.\n4. On Obsidian at work, decide on the $50/user/year licence explicitly. It is optional, and that is a decision."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "situation": "Team wiki where some pages must be hidden from some members",
+      "pick": "Notion Business",
+      "why": "Granular database permissions and private teamspaces are Business features, and Obsidian has no permission model at all."
+    },
+    {
+      "situation": "Solo engineer keeping private design notes and journals",
+      "pick": "Obsidian",
+      "why": "The app is free without limits and plain files under git give history no plan can expire."
+    },
+    {
+      "situation": "Team that wants an agent doing repetitive tasks without anyone's laptop running",
+      "pick": "Notion Business",
+      "why": "Notion Agent ships on Business and Custom Agents run server-side, metered at $10 per 1,000 credits."
+    },
+    {
+      "situation": "Pipeline pushing frequent updates into Notion from several tools",
+      "pick": "Notion Business, or keep the data outside Notion",
+      "why": "Below Business each connection gets 180 requests/minute and all connections share one workspace budget."
+    },
+    {
+      "situation": "Small team on Notion Free using it as the record for policies and runbooks",
+      "pick": "Notion Plus at minimum, or move the records to Obsidian with git",
+      "why": "A 7-day page history cannot be a system of record for documents edited rarely."
+    },
+    {
+      "situation": "Notion Free team collaborating with more than 10 outside clients",
+      "pick": "Neither Free tier — pay for Notion",
+      "why": "Free caps external guests at 10, and Obsidian has no guest model beyond shared vaults."
+    },
+    {
+      "situation": "Team already happy with database views and nobody needs permissions",
+      "pick": "Obsidian with Bases",
+      "why": "Table, Cards, List, Map and Kanban views over frontmatter cover the database use case without a server."
+    },
+    {
+      "situation": "Notion team whose pages are stable, permissioned and within their history window",
+      "pick": "Neither — stay put",
+      "why": "Migration turns every page into a conversion job and buys back nothing you are missing."
+    }
+  ],
+  "cost_math": [
+    {
+      "label": "Notion Business, 10 people",
+      "formula": "10 members × $20/month × 12 months",
+      "result": "$2,400/year"
+    },
+    {
+      "label": "Notion Plus, 10 people",
+      "formula": "10 members × $10/month × 12 months",
+      "result": "$1,200/year"
+    },
+    {
+      "label": "Obsidian with Sync, 10 people",
+      "formula": "10 users × $4/month × 12 months (billed annually)",
+      "result": "$480/year"
+    },
+    {
+      "label": "Obsidian worst case: Sync plus optional commercial licences",
+      "formula": "$480 + (10 users × $50/year)",
+      "result": "$980/year"
+    }
+  ],
+  "verdict_summary": "If your notes are shared state that needs permissions, SSO and an agent running server-side, Notion Business wins at $2,400/year for 10 people. If your notes are private thinking, Obsidian wins: $0 for the app, $480/year if you want Sync, and history that only git can expire.",
+  "faqs": [
+    {
+      "q": "Is Obsidian Sync end-to-end encrypted?",
+      "a": "Yes. Obsidian lists AES-256 end-to-end encryption for Sync, and Sync comes with a 7-day no-questions refund."
+    },
+    {
+      "q": "Can a school or nonprofit pay less for Obsidian?",
+      "a": "Obsidian gives a 40% education/nonprofit discount on Sync and Publish. The commercial licence and the $25 one-time Catalyst tier are non-refundable."
+    },
+    {
+      "q": "Do I have to hand-write retry logic for Notion's 429s?",
+      "a": "Not in JavaScript: Notion's JS SDK retries for you and obeys `Retry-After`. Overloads can also come back as HTTP 529 with `service_overload`."
+    },
+    {
+      "q": "Does Notion send my workspace content to LLM providers?",
+      "a": "Zero data retention with LLM providers is listed as an Enterprise feature, alongside SCIM and audit log. Lower plans do not list it."
+    }
+  ],
+  "sources": [
+    "https://www.notion.com/pricing",
+    "https://developers.notion.com/reference/request-limits",
+    "https://obsidian.md/pricing",
+    "https://obsidian.md/help/bases",
+    "https://obsidian.md/help/bases/views"
+  ]
+}

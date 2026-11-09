@@ -24,6 +24,12 @@ Compute (billed per project, separately from the plan):
 - Medium $60 — shared, 4 GB RAM, 120 / 600
 - Large $110 — dedicated 2 vCPU, 8 GB RAM, 160 / 800
 - XL $210 — dedicated 4 vCPU, 16 GB RAM, 240 / 1,000
+- 2XL $410 — dedicated 8 vCPU, 32 GB RAM, 380 / 1,500
+- 4XL $960 — dedicated 16 vCPU, 64 GB RAM, 480 / 3,000
+- 8XL $1,870 — dedicated 32 vCPU, 128 GB RAM, 490 / 6,000
+- 12XL $2,800 — dedicated 48 vCPU, 192 GB RAM, 500 / 9,000
+- 16XL $3,730 — dedicated 64 vCPU, 256 GB RAM, 500 / 12,000
+(larger sizes exist as "contact us"; the pooler ceiling keeps climbing with price — 200 at $10 up to 12,000 at $3,730)
 
 Official billing example: "a Pro org with 2 projects on Micro compute costs: $25 (plan) + $10 (project 1)
 + $10 (project 2) − $10 (credits) = $35/month."

@@ -1,0 +1,119 @@
+{
+  "slug": "vercel-vs-cloudflare-pages",
+  "hook": "The idle-wait CPU advantage has disappeared.\nVercel and Cloudflare now meter active execution, so the deciding bill moves to transfer, requests and the work your code actually does.",
+  "sections": [
+    {
+      "title": "The philosophy still constrains the app",
+      "content": "If you operate a deployed app and are weighing a move, compare the workload's bill, not its function count.\n\n> The winner follows the inflated line item, not the cheapest invocation headline.\n\nThese are vendor-published rates verified on 2026-11-10, not benchmarks.\n\n- Vercel: the framework vendor runs your framework.\n- Cloudflare: the network vendor runs your requests.\n\nThe Vercel bargain forbids treating framework fit as an unlimited traffic budget; requests and transfer still have meters.\n\n> Cloudflare's bargain forbids treating free delivery as free execution.\n\nBuild for the Workers runtime rather than assuming the app moves unchanged; keep the runtime-specific work identifiable if you may move back."
+    },
+    {
+      "title": "An idle await no longer chooses the winner",
+      "content": "Both now meter CPU execution rather than wall time. An idle `await` burns no CPU meter on either; it does not make the whole deployment free.\n\n- Vercel Fluid compute: Active CPU starts at $0.128/vCPU-hour.\n- Vercel says provisioned memory is billed in GB-hours at less than 10% of the Active CPU rate.\n- Cloudflare Workers Paid: 30M CPU-ms/month included, then $0.02 per million CPU-ms.\n\nVercel also reuses idle waits through in-function concurrency: concurrent requests share an instance. Memory remains a separate bill.\n\n> CPU convergence is not invoice convergence.\n\nWaiting on an external API no longer establishes a CPU-price reason to migrate; inspect transfer and request counts before touching the runtime."
+    },
+    {
+      "title": "The penalty moved to bytes and requests",
+      "content": "Vercel penalizes byte-heavy delivery and request fan-out after allowances; Cloudflare penalizes uncached CPU work and paid requests, not egress. These are monthly line items at listed starting rates, not complete invoices.\n\n| Workload | Vercel Pro | Cloudflare Workers Paid |\n|---|---|---|\n| 3 TB transfer | 1 TB included; 2,048 GB over × $0.15/GB = $307.20 extra | $0 egress by policy |\n| 50M metered requests | 40M over × $2/M = $80 extra | 40M over × $0.30/M = $12; $12 + $5 base = $17 before CPU |\n| CPU unit rate | $0.128 ÷ 3.6M CPU-ms × 1M CPU-ms ≈ $0.0356/M CPU-ms | $0.02/M CPU-ms after 30M included |\n\nThe request row assumes billable requests, not free static assets. Vercel Pro has no free CPU allowance.\n\n- Vercel's $20/month per seat is outside those overages.\n- Cloudflare's $5/month minimum is per account.\n\nAdding seats raises Vercel's floor before traffic changes; multiplying bytes raises its transfer line without adding useful CPU work."
+    },
+    {
+      "title": "The asset limit can stop the deployment first",
+      "content": "Consider a static export containing a downloadable asset larger than 25 MiB. Cloudflare Pages rejects that deployment shape on its asset ceiling; cheap transfer cannot rescue it.\n\n- Pages Free: 500 builds/month, 20,000 files per site.\n- Pages: 20-minute build timeout; 25 MiB maximum per asset.\n- Vercel Pro: 10M requests and 1 TB included, then overages; functions have a 5-minute limit.\n\nThose limits are not interchangeable. Exceeding an included traffic allowance raises a bill; exceeding an asset ceiling breaks the deployment plan.\n\n> Do not choose Pages for that oversized asset unchanged.\n\nDo not choose Vercel for a function that must run beyond its duration limit unchanged, either; inventory artifacts and execution boundaries before comparing totals."
+    },
+    {
+      "title": "Free egress makes cache design your problem",
+      "content": "Cloudflare charges nothing for egress, not nothing for the app. Pages Functions are billed as Workers; D1 and R2 have separate line items whose rates are not verified here.\n\n> Budget the runtime adaptation, not just the transfer savings.\n\nCloudflare's own example uses 100M requests at 7 ms CPU each; Workers Caching at 80% hits changes the CPU bill:\n\n- Without caching: (100M × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $13.40.\n- With caching: (100M × (1 − 80%) × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $2.20.\n\nCache hits still cost a request, but no CPU in Cloudflare's example. The request line therefore survives.\n\n> These are Cloudflare's numbers, not a measured cache-hit promise.\n\nOnly count that saving for responses your app can safely reuse; adapting handlers to Workers does not establish cacheability."
+    },
+    {
+      "title": "Choose the bill your workload can control",
+      "content": "If bytes and seats dominate and the app fits Workers, Cloudflare Pages wins this comparison. If preserving the framework deployment matters more and transfer stays inside its allowance, Vercel wins on that condition—not on idle-wait CPU billing.\n\n> Neither CPU milliseconds nor build minutes disappear with free egress.\n\nFor CPU-heavy work, Cloudflare has the lower listed CPU rate, but measure execution; for long builds, check the timeout before moving. Do not migrate on a unit rate alone.\n\n- Today, separate transferred bytes from metered requests and CPU-ms.\n- Count seats, inspect build minutes and check the largest generated asset.\n- Price the inflated line, then decide whether the Workers adaptation is worth avoiding it."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "situation": "Byte-heavy delivery with handlers already suited to Workers",
+      "pick": "Cloudflare Pages",
+      "why": "Cloudflare's no-egress-charge policy removes the transfer penalty without requiring an assumed runtime fit."
+    },
+    {
+      "situation": "Framework deployment already works and transfer stays within the allowance",
+      "pick": "Vercel",
+      "why": "Keeping the working deployment avoids runtime adaptation when transfer overages are not the problem."
+    },
+    {
+      "situation": "More seats, unchanged traffic, and an app that fits Workers",
+      "pick": "Cloudflare Pages",
+      "why": "Workers Paid has a per-account minimum while Vercel Pro charges per seat."
+    },
+    {
+      "situation": "A working app mostly waits on external APIs",
+      "pick": "Neither — stay put",
+      "why": "Idle waits consume neither platform's CPU meter, so waiting alone does not justify a migration."
+    },
+    {
+      "situation": "The deployment requires an unchanged asset larger than 25 MiB",
+      "pick": "Not Pages unchanged",
+      "why": "Pages has a hard per-asset ceiling, and the fact sheet does not establish Vercel's equivalent limit."
+    },
+    {
+      "situation": "The build must run beyond 20 minutes",
+      "pick": "Not Pages unchanged",
+      "why": "The Pages build timeout defeats that build regardless of egress cost."
+    },
+    {
+      "situation": "CPU-heavy handlers fit Workers and meet its invocation limits",
+      "pick": "Cloudflare Pages",
+      "why": "Its listed CPU unit rate is lower, but requests and separate service line items still need costing."
+    },
+    {
+      "situation": "A Vercel function must execute beyond 5 minutes unchanged",
+      "pick": "Neither — redesign first",
+      "why": "Vercel's listed duration ceiling rules it out while a switch requires checking Workers CPU limits rather than assuming longer execution."
+    }
+  ],
+  "cost_math": [
+    {
+      "label": "Monthly transfer overage at 3 TB",
+      "formula": "Vercel Pro: 2,048 GB beyond the included 1 TB × starting $0.15/GB = $307.20; Cloudflare: $0 egress by policy",
+      "result": "$307.20 Vercel transfer overage versus $0 Cloudflare egress; not total invoices"
+    },
+    {
+      "label": "Monthly request charges at 50M metered requests",
+      "formula": "Vercel: 40M over × starting $2/M = $80; Cloudflare: 40M over × $0.30/M = $12; $12 + $5 base = $17 before CPU",
+      "result": "$80 Vercel request overage versus $17 Cloudflare requests plus base; Vercel seats excluded"
+    },
+    {
+      "label": "CPU rate normalized to a million CPU-ms",
+      "formula": "Vercel: starting $0.128 ÷ 3.6M CPU-ms × 1M CPU-ms ≈ $0.0356; Cloudflare: 1M billable CPU-ms × $0.02/M CPU-ms = $0.02",
+      "result": "Approximately $0.0356 versus $0.02 per million CPU-ms; Cloudflare includes 30M CPU-ms/month"
+    },
+    {
+      "label": "CPU in Cloudflare's own cached example",
+      "formula": "Uncached: (100M × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $13.40; cached: (100M × (1 − 80%) × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $2.20",
+      "result": "$13.40 versus $2.20 CPU only in Cloudflare's example; request charges remain"
+    }
+  ],
+  "verdict_summary": "If bytes and seats dominate and Workers fits the app, Cloudflare Pages wins; if preserving a working framework deployment matters more and transfer stays within its allowance, Vercel wins. Check CPU milliseconds, build minutes and generated assets today before committing to either bill.",
+  "faqs": [
+    {
+      "q": "What is the Workers Free execution budget?",
+      "a": "Workers Free allows 100,000 requests/day with 10 ms CPU time per invocation and no charge for duration."
+    },
+    {
+      "q": "What execution limits apply to Workers Paid?",
+      "a": "The default CPU limit is 30 seconds, with a maximum of 5 minutes per invocation. Cron Trigger and Queue consumer invocations allow 15 minutes."
+    },
+    {
+      "q": "Can paid Pages sites hold more files?",
+      "a": "Paid Pages sites support 100,000 files with `PAGES_WRANGLER_MAJOR_VERSION=4`."
+    },
+    {
+      "q": "Can I make a temporary Vercel deployment without an account?",
+      "a": "The fact sheet lists `vercel deploy --temporary` under Hobby for temporary deployments without an account."
+    }
+  ],
+  "sources": [
+    "https://vercel.com/pricing",
+    "https://vercel.com/blog/introducing-active-cpu-pricing-for-fluid-compute",
+    "https://developers.cloudflare.com/workers/platform/pricing/",
+    "https://developers.cloudflare.com/pages/platform/limits/"
+  ]
+}

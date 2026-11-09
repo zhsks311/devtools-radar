@@ -1,29 +1,47 @@
-# ⚡ DevTools Radar — Programmatic SEO Static Site Generator
+# ⚡ DevTools Radar — comparison teardowns with the arithmetic shown
 
-A production-ready, zero-cost programmatic SEO comparison directory for developer tools and SaaS products.
+A static, zero-dependency comparison site for developer tools. Every article treats a vendor's price
+sheet as a **penalty table** — which usage does this meter punish — then shows the arithmetic at the
+volume you will actually reach, and ends with a decision matrix.
+
+## Pipeline
+
+```
+content/facts/{slug}.md        verified facts only (prices, limits, sources) — written by hand
+        │
+        │  omp --model claude-opus-5-5   (author)
+        ▼
+content/draft/{slug}.json      article written under the writing standard, restricted to the fact sheet
+        │
+        │  omp --model gpt-6.1-sol       (reviewer — never the author's model)
+        ▼
+content/review/{slug}.md       defect list: FACT / META / SLOP / LOGIC / RHYTHM / BORING / WEAK
+        │
+        │  omp --model <reviewer>        (reviser implements the review)
+        ▼
+content/final/{slug}.json  →  data/tools.json  →  build.py  →  dist/
+```
+
+`tools/lint_content.py` is the gate: banned phrases, meta-text, body length, paragraph length, visual
+anchor density, and the shape of `decision_matrix` / `cost_math` / `faqs`. A file that fails does not ship.
+
+```bash
+python3 tools/lint_content.py        # gate
+python3 build.py                     # render dist/
+```
+
+The writing standard itself lives outside this repo at `docs/tech-blog-writing-standard.md`
+(four archetypes, hook formulas, the comparison ladder, anti-patterns, prompt contracts).
 
 ## Architecture
 
-- **Data Layer**: `data/tools.json` (Structured benchmark metrics for competing developer tools)
-- **Compiler**: `build.py` (Vanilla Python 3 — zero npm/node dependencies, generates modern responsive dark-mode HTML)
-- **Distribution**: `dist/` (Static HTML pages + `sitemap.xml` + `robots.txt` + `JSON-LD` Rich Snippet schema)
-- **Hosting**: Designed for **Cloudflare Pages** (Free tier, zero bandwidth fees, global anycast edge)
+- `data/tools.json` — one object per comparison: product metadata, hook, sections (markdown subset),
+  cost arithmetic, decision matrix, verdict, migration path, FAQs, sources.
+- `build.py` — vanilla Python 3, no npm. Renders a markdown subset (headings, lists, tables, fenced
+  code, blockquotes, bold, inline code) and emits TechArticle + FAQPage + BreadcrumbList JSON-LD.
+- `dist/` — static output; published to the `gh-pages` branch.
 
-## Quick Start
+## Verify before trusting a number
 
-```bash
-# 1. Compile the site
-python3 build.py
-
-# 2. Deploy to Cloudflare Pages via GitHub
-git init
-git add .
-git commit -m "Deploy DevTools Radar"
-gh repo create devtools-radar --public --source=. --push
-```
-
-In Cloudflare Pages Dashboard:
-- Connect your GitHub repository `devtools-radar`
-- Set **Build command**: `python3 build.py`
-- Set **Build output directory**: `dist`
-- Click **Deploy**!
+Each article carries `last_verified` and a `sources` list. Prices in this market move twice a year —
+if a figure here disagrees with a vendor's price sheet, the price sheet wins.
