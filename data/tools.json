@@ -191,7 +191,7 @@
         "Privacy policy requires attention for proprietary enterprise IP (Business plan needed for zero retention)",
         "$20/mo Pro tier limits fast requests to 500/month before throttling"
       ],
-      "code_example": "# .cursorrules example\nYou are an expert senior backend engineer at Kurly.\n- Always write unit tests with pytest.\n- Enforce strict typing with Pydantic v2.\n- Never delete existing safety guards in run.sh."
+      "code_example": "# .cursorrules example\nYou are an expert senior backend engineer at a high-growth tech startup.\n- Always write unit tests with pytest.\n- Enforce strict typing with Pydantic v2.\n- Never delete existing safety guards in run.sh."
     },
     "tool_b": {
       "name": "GitHub Copilot",
