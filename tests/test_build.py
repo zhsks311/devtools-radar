@@ -45,6 +45,41 @@ class RendererTests(unittest.TestCase):
     def test_malicious_deal_url_rejected(self):
         with self.assertRaises(ValueError): build._deal_card({'link':{'url':'javascript:alert(1)'}})
 
+class EditorialTests(unittest.TestCase):
+    def test_excerpt_preserves_short_text_and_word_boundaries(self):
+        self.assertEqual(build._excerpt("A short **note**."), "A short note.")
+        self.assertEqual(build._excerpt("first second third", 14), "first second…")
+
+    def test_index_keeps_all_comparison_links_without_fake_verification(self):
+        items=json.loads(build.DATA_PATH.read_text())
+        page=build.generate_index_html(items)
+        parser=Parser();parser.feed(page)
+        links=[attrs.get('href') for tag,attrs in parser.tags if tag=='a']
+        for item in items:
+            self.assertIn(f"./compare/{item['slug']}/",links)
+        self.assertNotIn('Verified Nov 2026',page)
+        self.assertNotIn('tested for productivity',page)
+        self.assertIn('affiliate links',page)
+        self.assertIn('sponsored',page)
+
+    def test_comparison_does_not_repeat_verdict(self):
+        item=json.loads(build.DATA_PATH.read_text())[0]
+        page=build.generate_comparison_html(item)
+        self.assertIn('class="verdict-box"',page)
+        self.assertNotIn('class="answer-box"',page)
+        self.assertIn('Code and configuration',page)
+        self.assertIn(item['last_verified'],page)
+
+    def test_portals_label_collected_prices_without_lowest_price_claim(self):
+        ko=build.generate_ko_html(build.load_deals())
+        en=build.generate_deals_en_html(build.load_deals(build.DEALS_EN_DATA_PATH))
+        for page in (ko,en):
+            self.assertNotIn('Updated daily',page)
+            self.assertNotIn('매일 갱신',page)
+            self.assertNotIn('쿠팡 최저가',page)
+        self.assertIn('원문 게시글 기준',ko)
+        self.assertIn('Collected tech deals',en)
+
 class BuildTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)

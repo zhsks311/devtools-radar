@@ -21,7 +21,7 @@
   {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "실시간 테크 핫딜",
+  "name": "수집된 테크 핫딜",
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -140,328 +140,145 @@
 }
   </script>
   <style>
-:root {
-  --bg: #090d16;
-  --surface: #121826;
-  --surface-raised: #182234;
-  --border: #222f46;
-  --text: #e2e8f0;
-  --text-muted: #94a3b8;
-  --primary: #38bdf8;
-  --primary-glow: rgba(56, 189, 248, 0.15);
-  --accent: #10b981;
-  --warn: #f59e0b;
-  --danger: #f43f5e;
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-}
-.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1.1rem 0;
-  background: rgba(9, 13, 22, 0.88);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
-.logo span { color: var(--primary); }
-.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
-.nav-link:hover { color: var(--primary); }
-.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
-.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
-.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
-.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
-.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
-h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
-h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
-h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
-h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
-p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
-ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
-li { margin-bottom: 0.4rem; font-size: 0.98rem; }
-li > code, p > code { font-size: 0.86em; }
-strong { color: #fff; font-weight: 640; }
-a { color: var(--primary); }
-blockquote {
-  border-left: 3px solid var(--primary);
-  background: rgba(56, 189, 248, 0.05);
-  padding: 0.9rem 1.2rem;
-  margin: 1.3rem 0;
-  color: #cbd5e1;
-  border-radius: 0 8px 8px 0;
-  font-size: 0.97rem;
-}
-blockquote p:last-child { margin-bottom: 0; }
-.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
-.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
-.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
-th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
-tr:last-child td { border-bottom: none; }
-td code { color: var(--primary); }
-.btn {
-  display: inline-block;
-  padding: 0.72rem 1.4rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.94rem;
-  text-decoration: none;
-  transition: all 0.18s;
-  text-align: center;
-}
-.btn-primary { background: var(--primary); color: #04121b; }
-.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
-.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
-.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.2rem;
-  transition: border-color 0.18s, transform 0.18s;
-}
-a.card { display: block; text-decoration: none; }
-a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
-.verdict-box {
-  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
-  border: 1px solid #1e3a5f;
-  border-left: 3px solid var(--primary);
-  border-radius: 12px;
-  padding: 1.4rem 1.5rem;
-  margin: 1.5rem 0 2rem;
-}
-.answer-box {
-  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
-  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
-}
-.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
-.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
-.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
-.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
-.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
-@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
-.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
-.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
-.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
-.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
-pre {
-  background: #0b1120;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.15rem;
-  overflow-x: auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: #9dd7f5;
-  margin: 1rem 0 1.2rem;
-  tab-size: 2;
-}
-pre code { color: inherit; background: none; padding: 0; }
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  background: rgba(56, 189, 248, 0.09);
-  color: #9dd7f5;
-  padding: 0.12rem 0.35rem;
-  border-radius: 4px;
-  font-size: 0.87em;
-}
-.migration-box {
-  background: #121e33;
-  border-left: 3px solid var(--primary);
-  border-radius: 0 8px 8px 0;
-  padding: 1.2rem 1.4rem;
-  margin: 1.4rem 0;
-}
-.migration-box strong { color: #fff; }
-.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
-.faq-item:last-child { border-bottom: none; }
-.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
-.faq-a { color: var(--text-muted); font-size: 0.94rem; }
-.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
-.cost-row:last-child { border-bottom: none; }
-.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
-.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
-.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
-.matrix-pick { color: var(--primary); font-weight: 600; }
-.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
-.updated-note {
-  font-size: 0.8rem; color: var(--text-muted);
-  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
-}
-.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
-.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
-.toc ol { margin: 0 0 0 1.1rem; }
-.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
-.toc a { color: #cbd5e1; text-decoration: none; }
-.toc a:hover { color: var(--primary); }
-footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
-
-body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -apple-system,
-  BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", Roboto, sans-serif; }
-
-.ko-hero { padding: 3.4rem 0 1.2rem; }
-.ko-hero h1 { font-size: clamp(2rem, 4.6vw, 2.9rem); line-height: 1.25; margin: 0.7rem 0 1rem; }
-.ko-hero .lead { font-size: 1.05rem; line-height: 1.85; color: #b8c5d6; max-width: 720px; }
-.ko-stats { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0 0.2rem; }
-.ko-stat {
-  background: #111a2b; border: 1px solid var(--border); border-radius: 10px;
-  padding: 0.55rem 0.85rem; font-size: 0.76rem; color: #8fa1b8;
-}
-.ko-stat strong { color: #eaf2ff; font-size: 0.95rem; margin-right: 0.35rem; }
-.disclosure-bar {
-  background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3);
-  color: #f1c98d; font-size: 0.78rem; line-height: 1.65; padding: 0.7rem 0.95rem;
-  border-radius: 10px; margin: 1.3rem 0 0;
-}
-
-/* ---------- quick filter tabs ---------- */
-.quick-tabs {
-  position: sticky; top: 57px; z-index: 20; display: flex; gap: 0.45rem;
-  overflow-x: auto; scrollbar-width: none; padding: 0.75rem 0;
-  margin: 0.6rem 0 1.2rem; background: rgba(9, 13, 22, 0.94);
-  backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
-}
-.quick-tabs::-webkit-scrollbar { display: none; }
-.tab {
-  flex: none; border: 1px solid var(--border); background: #101828; color: #a9b8cb;
-  font-size: 0.85rem; font-weight: 600; padding: 0.5rem 0.95rem; border-radius: 999px;
-  cursor: pointer; transition: all 0.16s; font-family: inherit; white-space: nowrap;
-}
-.tab:hover { color: #e6f1ff; border-color: #33506f; }
-.tab.is-active { background: var(--primary); border-color: var(--primary); color: #04121b; }
-.tab .n { opacity: 0.65; font-size: 0.76rem; margin-left: 0.2rem; }
-
-/* ---------- deal cards ---------- */
-.deal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; margin: 0.4rem 0 0.5rem; }
-.deal-card {
-  display: flex; flex-direction: column; position: relative;
-  background: linear-gradient(168deg, #131d2e 0%, #101725 100%);
-  border: 1px solid #24344c; border-radius: 16px; padding: 1.35rem 1.4rem 1.2rem;
-  transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
-}
-.deal-card:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); }
-.deal-card.is-hidden { display: none; }
-.deal-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
-.cat-chip {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.01em;
-  color: #9ad8ff; background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.32); border-radius: 999px; padding: 0.22rem 0.65rem;
-}
-.deal-src { font-size: 0.74rem; color: #7c8ca3; }
-.deal-title {
-  font-size: 1.06rem; line-height: 1.52; color: #f4f8ff; font-weight: 700;
-  margin: 0 0 0.85rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-}
-.deal-price { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.55rem; }
-.deal-price strong {
-  font-size: clamp(1.6rem, 4.4vw, 1.85rem); font-weight: 800; color: #7dd3fc;
-  letter-spacing: -0.03em; line-height: 1.15;
-}
-.deal-price s { color: #64748b; font-size: 0.88rem; }
-.deal-price .unknown { font-size: 1rem; color: #94a3b8; font-weight: 600; }
-.deal-flags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
-.flag {
-  font-size: 0.74rem; font-weight: 800; padding: 0.24rem 0.6rem; border-radius: 7px; letter-spacing: 0.01em;
-}
-.flag-discount { background: #f43f5e; color: #fff; }
-.flag-free { background: rgba(16, 185, 129, 0.16); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.45); }
-.flag-ship { background: #1e293b; color: #cbd5e1; border: 1px solid #334155; }
-.flag-rocket { background: rgba(56, 189, 248, 0.16); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.4); }
-
-.deal-facts { margin: 0 0 1.05rem; display: flex; flex-direction: column; gap: 0.45rem; }
-.deal-facts .fact { display: grid; grid-template-columns: 5.6rem 1fr; gap: 0.5rem; align-items: start; }
-.deal-facts dt { font-size: 0.75rem; font-weight: 700; color: #8ea3bd; letter-spacing: 0.01em; padding-top: 0.08rem; }
-.deal-facts dd { margin: 0; font-size: 0.86rem; line-height: 1.6; color: #c3d0e0; }
-.deal-check { margin: -0.5rem 0 0.9rem; font-size: 0.74rem; color: #7288a3; line-height: 1.55; }
-
-.cta {
-  display: block; width: 100%; text-align: center; text-decoration: none;
-  background: linear-gradient(92deg, #38bdf8 0%, #22d3ee 100%);
-  color: #04121b; font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em;
-  padding: 0.82rem 1rem; border-radius: 11px; margin-top: auto;
-  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.22); transition: transform 0.15s, box-shadow 0.15s;
-}
-.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(56, 189, 248, 0.32); }
-.cta.secondary { background: #1c2a40; color: #cfe4ff; box-shadow: none; border: 1px solid #2f4664; }
-.deal-foot { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-top: 0.55rem; }
-.deal-foot a { font-size: 0.74rem; color: #6f8098; text-decoration: none; }
-.deal-foot a:hover { color: var(--primary); }
-.deal-foot .note { font-size: 0.7rem; color: #5f6f86; }
-
-.cat-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-top: 3.2rem; }
-.cat-head h2 { margin: 0; border-bottom: none; padding-bottom: 0; font-size: 1.35rem; }
-.cat-sub { color: #8798ae; font-size: 0.84rem; }
-.cat-list { list-style: none; margin: 0.9rem 0 0; padding: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #0e1624; }
-.cat-list li { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 1.1rem; border-bottom: 1px solid #1b2637; margin: 0; }
-.cat-list li:last-child { border-bottom: none; }
-.cat-list a { color: #dbe7f5; text-decoration: none; font-size: 0.93rem; flex: 1; line-height: 1.45; }
-.cat-list a:hover { color: var(--primary); }
-.cat-list .p { color: #7dd3fc; font-weight: 800; font-size: 0.95rem; white-space: nowrap; }
-.cat-list .s { color: #7c8ca3; font-size: 0.74rem; white-space: nowrap; }
-
-.pick-card {
-  display: block; text-decoration: none; background: linear-gradient(160deg, #142033 0%, #0f1725 100%);
-  border: 1px solid #24344c; border-radius: 14px; padding: 1.2rem 1.3rem;
-  transition: border-color 0.18s, transform 0.18s;
-}
-.pick-card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.pick-kicker { font-size: 0.7rem; color: #7dd3fc; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; }
-.pick-card strong { display: block; color: #fff; margin: 0.4rem 0 0.35rem; font-size: 1.02rem; }
-.pick-card p { font-size: 0.85rem; color: #9fb0c6; margin: 0 0 0.7rem; line-height: 1.65; }
-.pick-card span.go { font-size: 0.83rem; color: var(--primary); font-weight: 700; }
-
-.goldbox {
-  margin: 2.4rem 0 0; padding: 1.4rem 1.6rem;
-  background: linear-gradient(120deg, rgba(56,189,248,0.12), rgba(16,185,129,0.08));
-  border: 1px solid #24425f; border-radius: 16px;
-  display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; flex-wrap: wrap;
-}
-.goldbox h3 { margin: 0 0 0.35rem; font-size: 1.08rem; }
-.goldbox p { margin: 0; font-size: 0.86rem; color: #9fb0c6; }
-.method-note { font-size: 0.8rem; color: #8ea3bd; line-height: 1.85; margin-top: 2.8rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
-
-@media (max-width: 640px) {
-  .container { padding: 1.2rem 1rem; }
-  .ko-hero { padding-top: 2rem; }
-  .deal-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .deal-card { padding: 1.15rem 1.05rem 1rem; border-radius: 14px; }
-  .deal-facts .fact { grid-template-columns: 4.9rem 1fr; }
-  .quick-tabs { top: 53px; }
-}
+.ko-hero { padding:2rem 0 1rem; }
+.ko-hero h1 { font-family:inherit; font-size:clamp(2rem,4vw,2.7rem); font-weight:650; letter-spacing:-.05em; }
+.ko-stats { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; margin:1.4rem 0; }
+.ko-stat { font-size:.78rem; color:var(--text-muted); }
+.ko-stat strong { margin-right:.4rem; }
+.disclosure-bar { border-left:2px solid var(--border); padding:.5rem .9rem; font-size:.78rem; color:var(--text-muted); }
+.quick-tabs { display:flex; gap:.5rem; overflow-x:auto; padding:.6rem 0 1rem; margin-bottom:1rem; }
+.tab { flex:none; background:transparent; color:var(--text-muted); border:1px solid var(--border); padding:.5rem .8rem; font:inherit; font-size:.8rem; cursor:pointer; }
+.tab.is-active { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.tab .n { margin-left:.3rem; }
+.deal-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:1.5rem; }
+.deal-card { display:flex; flex-direction:column; border:1px solid var(--border); background:var(--surface); padding:1.3rem; }
+.deal-card.is-hidden { display:none; }
+.deal-top,.deal-foot { display:flex; justify-content:space-between; gap:.5rem; margin-bottom:.8rem; }
+.cat-chip,.deal-src,.deal-foot { font-size:.73rem; color:var(--text-muted); }
+.deal-title { margin:0 0 1rem; font-size:1.08rem; line-height:1.6; }
+.deal-price { display:flex; align-items:baseline; flex-wrap:wrap; gap:.7rem; margin-bottom:.6rem; }
+.deal-price strong { font-size:1.55rem; font-weight:600; }
+.deal-price s,.deal-price .unknown { font-size:.85rem; color:var(--text-muted); }
+.deal-flags { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem; }
+.flag { color:var(--primary); font-size:.74rem; }
+.deal-facts { margin:0 0 1rem; }
+.deal-facts .fact { display:grid; grid-template-columns:5rem 1fr; gap:.6rem; margin-bottom:.5rem; font-size:.82rem; }
+.deal-facts dt { color:var(--text-muted); }
+.deal-facts dd { margin:0; }
+.deal-check { color:var(--text-muted); font-size:.74rem; }
+.cta { display:block; text-align:center; padding:.7rem 1rem; background:var(--primary); color:var(--surface); text-decoration:none; font-size:.85rem; margin-top:auto; }
+.cta.secondary { background:var(--surface-raised); color:var(--primary); }
+.deal-foot { margin:.6rem 0 0; font-size:.72rem; }
+.cat-head { display:flex; align-items:baseline; flex-wrap:wrap; gap:.7rem; margin-top:2.6rem; }
+.cat-head h2 { margin:0; }
+.cat-sub { color:var(--text-muted); font-size:.8rem; }
+.cat-list { list-style:none; margin:1rem 0; border-top:1px solid var(--border); }
+.cat-list li { display:flex; align-items:baseline; flex-wrap:wrap; gap:.7rem; padding:.8rem 0; border-bottom:1px solid var(--border); margin:0; }
+.cat-list a { flex:1; min-width:180px; font-size:.9rem; }
+.cat-list .p { font-weight:600; font-size:.9rem; }
+.cat-list .s { font-size:.74rem; color:var(--text-muted); }
+.pick-card { padding:1.2rem 0; border-block:1px solid var(--border); text-decoration:none; }
+.pick-kicker { font-size:.72rem; color:var(--text-muted); }
+.pick-card strong { display:block; margin:.5rem 0; }
+.pick-card p,.pick-card .go { font-size:.85rem; }
+.goldbox { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.2rem; padding:1.5rem 0; margin-top:2rem; border-block:1px solid var(--border); }
+.goldbox h3 { margin:0 0 .3rem; }
+.goldbox p { font-size:.85rem; color:var(--text-muted); margin:0; }
 </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <a href="/ko/" class="logo">⚡ DevTeardown<span>KR</span></a>
+      <a href="/ko/" class="logo">DevTeardown<span>KR</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
-        <a class="nav-link" href="#feed">실시간 핫딜</a>
+        <a class="nav-link" href="#feed">수집된 핫딜</a>
         <a class="nav-link" href="/deals/">Global Deals</a>
         <a class="nav-link" href="/">EN Reports</a>
       </div>
@@ -470,24 +287,23 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
 
   <main class="container">
     <div class="ko-hero">
-      <span class="badge badge-blue">매일 갱신 · 원문 가격 기준</span>
-      <h1>개발자 장비, 살 때만 사세요.</h1>
+      <span class="badge badge-blue">원문 게시글 기준</span>
+      <h1>장비 살 때, 가격부터 비교.</h1>
       <p class="lead">뽐뿌·클리앙·퀘이사존·에펨코리아·폴센트에 올라온 테크 핫딜을 한곳에 모아,
-      원문에 적힌 가격과 배송 조건만으로 실구매가를 다시 계산합니다. 과장된 "역대급" 대신
-      지금 사도 되는지 판단할 수 있는 숫자만 남겼습니다.</p>
+      게시글에 적힌 가격과 배송 조건을 정리했습니다.
+      할인 조건과 재고는 구매 전에 판매 페이지에서 확인하세요.</p>
       <div class="ko-stats">
-        <div class="ko-stat"><strong>17건</strong>실시간 핫딜</div>
+        <div class="ko-stat"><strong>17건</strong>수집된 핫딜</div>
         <div class="ko-stat"><strong>7개</strong>핫딜 카테고리</div>
         <div class="ko-stat"><strong>2026.11.10</strong>업데이트</div>
-        <div class="ko-stat"><strong>0원</strong>가입 비용</div>
       </div>
       <div class="disclosure-bar">
         이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
       </div>
     </div>
 
-    <h2 id="feed" style="margin-top:2.4rem;">실시간 테크 · 개발자 핫딜</h2>
-    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
+    <h2 id="feed" style="margin-top:2.4rem;">수집된 테크 · 개발자 핫딜</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.3rem;">
       가격·할인율·배송은 수집 시점의 원문 표기입니다. 품절·가격 변동은 원문에서 확인하세요.
     </p>
     <nav class="quick-tabs" id="quickTabs"><button class="tab is-active" data-filter="all">전체 <span class="n">17</span></button><button class="tab" data-filter="vouchers">상품권·쿠폰 <span class="n">2</span></button><button class="tab" data-filter="snacks">과자·스낵 <span class="n">4</span></button><button class="tab" data-filter="keyboard-mouse">키보드·마우스 <span class="n">2</span></button><button class="tab" data-filter="tech">테크 장비 <span class="n">4</span></button><button class="tab" data-filter="monitor-desk">모니터·데스크 <span class="n">2</span></button><button class="tab" data-filter="laptops">노트북·PC <span class="n">2</span></button><button class="tab" data-filter="afterwork">커피·음료 <span class="n">1</span></button></nav>
@@ -500,7 +316,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">로지텍 MX Master 3S (로켓직구)</h3>
         <div class="deal-price"><strong>95,220원</strong><s>159,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-40%</span><span class="flag flag-free">와우 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>95,220원 (로켓직구 39% 특가, 와우 무료배송)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>하루 8시간 이상 IDE와 터미널을 오가는 백엔드·데브옵스</dd></div></dl><p class="deal-check">⚡ 국내 정발(11만 후반) 대비 2만 원 저렴한 최저가 실구매가</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>95,220원 (로켓직구 39% 특가, 와우 무료배송)</dd></div><div class="fact"><dt>추천</dt><dd>하루 8시간 이상 IDE와 터미널을 오가는 백엔드·데브옵스</dd></div></dl><p class="deal-check">국내 정발(11만 후반) 대비 2만 원 저렴한 최저가 실구매가</p>
         <a class="cta" href="https://link.coupang.com/a/iyBYu25xw4" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -512,7 +328,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">올리브영 기프트카드 20,000원권 (실시간 e쿠폰)</h3>
         <div class="deal-price"><strong>19,600원</strong><s>20,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-2%</span><span class="flag flag-ship">결제 즉시 문자/카카오톡 발송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>19,600원 (정가 2만 원에서 2% 즉시할인 e쿠폰)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>화장품·면도날·영양제·간식 올리브영 쇼핑 전 상테크 생활비 절약</dd></div></dl><p class="deal-check">⚡ 결제 완료 즉시 바코드가 발송되어 오프라인 매장 결제 시 바로 사용 가능</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>19,600원 (정가 2만 원에서 2% 즉시할인 e쿠폰)</dd></div><div class="fact"><dt>추천</dt><dd>화장품·면도날·영양제·간식 올리브영 쇼핑 전 상테크 생활비 절약</dd></div></dl><p class="deal-check">결제 완료 즉시 바코드가 발송되어 오프라인 매장 결제 시 바로 사용 가능</p>
         <a class="cta" href="https://link.coupang.com/a/iyI8z25s60" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -524,7 +340,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">롯데 빼빼로 샘플러 6종 세트 258g (빼빼로데이)</h3>
         <div class="deal-price"><strong>9,300원</strong><s>12,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-23%</span><span class="flag flag-ship">내일(수) 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>9,300원 (6종 풀세트, 로켓 무료배송 9천 원대)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>11월 11일 빼빼로데이 선물 및 사무실 동료들과 나눠 먹을 간식</dd></div></dl><p class="deal-check">⚡ 쿠팡 로켓배송으로 내일 새벽 문 앞 보장 도착 (무료배송/무료반품)</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>9,300원 (6종 풀세트, 로켓 무료배송 9천 원대)</dd></div><div class="fact"><dt>추천</dt><dd>11월 11일 빼빼로데이 선물 및 사무실 동료들과 나눠 먹을 간식</dd></div></dl><p class="deal-check">쿠팡 로켓배송으로 내일 새벽 문 앞 보장 도착 (무료배송/무료반품)</p>
         <a class="cta" href="https://link.coupang.com/a/iyJh99DCuW" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -536,7 +352,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">오리온 와우스낵 16팩 선물세트 (인기스낵 16봉)</h3>
         <div class="deal-price"><strong>10,980원</strong><s>14,800원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-26%</span><span class="flag flag-ship">와우 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>10,980원 (16봉 세트, 봉당 680원 대 가성비 종결)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>사무실 탕비실 서랍에 쟁여두거나 야근·코딩할 때 바삭한 짠맛 땡기는 분</dd></div></dl><p class="deal-check">⚡ 쿠팡 로켓배송으로 오늘 주문하면 내일 새벽 사무실/집 문 앞 도착</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>10,980원 (16봉 세트, 봉당 680원 대 가성비 종결)</dd></div><div class="fact"><dt>추천</dt><dd>사무실 탕비실 서랍에 쟁여두거나 야근·코딩할 때 바삭한 짠맛 땡기는 분</dd></div></dl><p class="deal-check">쿠팡 로켓배송으로 오늘 주문하면 내일 새벽 사무실/집 문 앞 도착</p>
         <a class="cta" href="https://link.coupang.com/a/iyJbjsBrye" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -548,7 +364,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">쿠팡·쿠팡이츠 기프트카드 10,000원권 (모바일 e쿠폰)</h3>
         <div class="deal-price"><strong>10,000원</strong><s>10,000원</s></div>
         <div class="deal-flags"><span class="flag flag-ship">결제 즉시 휴대폰 MMS/알림톡 발송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>10,000원 (쿠팡캐시 10,000원 1:1 충전형 e쿠폰)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>친구·동료에게 가볍게 모바일로 선물하거나 쿠팡이츠 배달 시 결제용</dd></div></dl><p class="deal-check">⚡ 코드 입력 즉시 쿠팡캐시로 적립되어 와우회원 혜택과 중복 사용 가능</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>10,000원 (쿠팡캐시 10,000원 1:1 충전형 e쿠폰)</dd></div><div class="fact"><dt>추천</dt><dd>친구·동료에게 가볍게 모바일로 선물하거나 쿠팡이츠 배달 시 결제용</dd></div></dl><p class="deal-check">코드 입력 즉시 쿠팡캐시로 적립되어 와우회원 혜택과 중복 사용 가능</p>
         <a class="cta" href="https://link.coupang.com/a/iyJeI3BcT6" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -560,7 +376,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">오리온 비쵸비 비스켓 125g 2개입</h3>
         <div class="deal-price"><strong>4,370원</strong><s>5,200원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-16%</span><span class="flag flag-ship">내일 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>4,370원 (2상자 세트, 로켓 새벽배송 최저가)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>얇은 초코 과자와 달리 진짜 두툼한 통초콜릿이 씹히는 고급 간식</dd></div></dl><p class="deal-check">⚡ 아메리카노나 라떼랑 찰떡궁합, 품절 잦은 스낵 마니아 원픽</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>4,370원 (2상자 세트, 로켓 새벽배송 최저가)</dd></div><div class="fact"><dt>추천</dt><dd>얇은 초코 과자와 달리 진짜 두툼한 통초콜릿이 씹히는 고급 간식</dd></div></dl><p class="deal-check">아메리카노나 라떼랑 찰떡궁합, 품절 잦은 스낵 마니아 원픽</p>
         <a class="cta" href="https://link.coupang.com/a/iyJdEYzZMO" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -572,7 +388,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">사무실 과자 세트 10종 탕비실 간식 세트</h3>
         <div class="deal-price"><strong>27,800원</strong><s>35,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-21%</span><span class="flag flag-free">무료배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>27,800원 (무료배송, 탕비실 인기 스테디셀러 10종 완벽 구성)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>팀원들 당 떨어질 때 집어먹는 달콤한 초코·비스킷 간식 일괄 구비</dd></div></dl><p class="deal-check">⚡ 개별 포장이라 책상 위나 회의실에 두고 하나씩 깔끔하게 먹기 좋음</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>27,800원 (무료배송, 탕비실 인기 스테디셀러 10종 완벽 구성)</dd></div><div class="fact"><dt>추천</dt><dd>팀원들 당 떨어질 때 집어먹는 달콤한 초코·비스킷 간식 일괄 구비</dd></div></dl><p class="deal-check">개별 포장이라 책상 위나 회의실에 두고 하나씩 깔끔하게 먹기 좋음</p>
         <a class="cta" href="https://link.coupang.com/a/iyJcuOpMhU" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -584,7 +400,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">벨킨 부스트차지 100W GaN 초고속 충전기</h3>
         <div class="deal-price"><strong>39,900원</strong><s>63,900원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-37%</span><span class="flag flag-free">로켓배송 무료반품</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>39,900원 (정가 63,900원에서 37% 특가)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>맥북 프로 14/16인치와 스마트폰을 벽돌 충전기 없이 고속 충전하려는 개발자</dd></div></dl><p class="deal-check">⚡ 접지 설계로 맥북 메탈 바디 미세전류 찌릿함 방지</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>39,900원 (정가 63,900원에서 37% 특가)</dd></div><div class="fact"><dt>추천</dt><dd>맥북 프로 14/16인치와 스마트폰을 벽돌 충전기 없이 고속 충전하려는 개발자</dd></div></dl><p class="deal-check">접지 설계로 맥북 메탈 바디 미세전류 찌릿함 방지</p>
         <a class="cta" href="https://link.coupang.com/a/iyIrM2GlPg" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -596,7 +412,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">LG 울트라기어 27인치 QHD IPS 게이밍 모니터</h3>
         <div class="deal-price"><strong>241,734원</strong><s>329,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-26%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>241,734원 (정가 32.9만 원 대비 역대급 특가)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>코드 3분할 뷰와 선명한 폰트 가독성이 필요한 개발자 서브/메인 모니터</dd></div></dl><p class="deal-check">⚡ 피벗·틸트 지원 스탠드 기본 제공, QHD 해상도로 글자 뭉개짐 없음</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>241,734원 (정가 32.9만 원 대비 역대급 특가)</dd></div><div class="fact"><dt>추천</dt><dd>코드 3분할 뷰와 선명한 폰트 가독성이 필요한 개발자 서브/메인 모니터</dd></div></dl><p class="deal-check">피벗·틸트 지원 스탠드 기본 제공, QHD 해상도로 글자 뭉개짐 없음</p>
         <a class="cta" href="https://link.coupang.com/a/iyztqGf2zc" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -608,7 +424,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">유그린 넥소드 프로 GaN 100W 3포트 멀티충전기</h3>
         <div class="deal-price"><strong>60,900원</strong><s>89,900원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-32%</span><span class="flag flag-ship">내일 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>60,900원 (정가 89,900원, 32% 와우할인)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>데스크 위 케이블을 하나로 통합해 노트북+폰+워치를 동시 충전하려는 사람</dd></div></dl><p class="deal-check">⚡ 컴팩트한 사이즈로 출장·카페 작업 시 가방 무게 대폭 감소</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>60,900원 (정가 89,900원, 32% 와우할인)</dd></div><div class="fact"><dt>추천</dt><dd>데스크 위 케이블을 하나로 통합해 노트북+폰+워치를 동시 충전하려는 사람</dd></div></dl><p class="deal-check">컴팩트한 사이즈로 출장·카페 작업 시 가방 무게 대폭 감소</p>
         <a class="cta" href="https://link.coupang.com/a/iyIsS5yg2e" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -620,7 +436,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">아트뮤 PD 3.2 100W 접지 2포트 멀티충전기</h3>
         <div class="deal-price"><strong>35,700원</strong><s>44,800원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-20%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>35,700원 (쿠팡 로켓배송 최저가)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>국내 콘센트 규격에 딱 맞는 흔들림 없는 접지 충전기를 찾는 개발자</dd></div></dl><p class="deal-check">⚡ 누전 차단 및 기기 보호 회로 탑재, 맥북 터치패드 오작동 완벽 방지</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>35,700원 (쿠팡 로켓배송 최저가)</dd></div><div class="fact"><dt>추천</dt><dd>국내 콘센트 규격에 딱 맞는 흔들림 없는 접지 충전기를 찾는 개발자</dd></div></dl><p class="deal-check">누전 차단 및 기기 보호 회로 탑재, 맥북 터치패드 오작동 완벽 방지</p>
         <a class="cta" href="https://link.coupang.com/a/iyItY3nD1U" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -632,7 +448,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">소니 MDR-3R 모니터링 이어폰</h3>
         <div class="deal-price"><strong>78,640원</strong><s>119,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-34%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>78,640원 (정가 11.9만 원 대비 34% 할인)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>헤드셋 무게에 목·정수리가 아파 가벼운 유선 이어폰을 찾는 코더</dd></div></dl><p class="deal-check">⚡ 배터리 방전 걱정 없이 하루 종일 꽂고 집중 코딩 가능</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>78,640원 (정가 11.9만 원 대비 34% 할인)</dd></div><div class="fact"><dt>추천</dt><dd>헤드셋 무게에 목·정수리가 아파 가벼운 유선 이어폰을 찾는 코더</dd></div></dl><p class="deal-check">배터리 방전 걱정 없이 하루 종일 꽂고 집중 코딩 가능</p>
         <a class="cta" href="https://link.coupang.com/a/iyzv0uG1N6" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -644,7 +460,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">Apple M4 Pro MacBook Pro 14</h3>
         <div class="deal-price"><strong>2,990,000원</strong><s>3,290,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-9%</span><span class="flag flag-ship">내일 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>2,990,000원 (카드사 즉시할인 및 무이자 할부 혜택)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>로컬 LLM 양자화 모델(Ollama) 추론과 대규모 도커 빌드를 병행하는 백엔드 개발자</dd></div></dl><p class="deal-check">⚡ 통합 메모리 대역폭 273GB/s로 컴파일 및 컨테이너 빌드 시간 반토막</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>2,990,000원 (카드사 즉시할인 및 무이자 할부 혜택)</dd></div><div class="fact"><dt>추천</dt><dd>로컬 LLM 양자화 모델(Ollama) 추론과 대규모 도커 빌드를 병행하는 백엔드 개발자</dd></div></dl><p class="deal-check">통합 메모리 대역폭 273GB/s로 컴파일 및 컨테이너 빌드 시간 반토막</p>
         <a class="cta" href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -656,7 +472,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">저소음 적축 기계식 키보드</h3>
         <div class="deal-price"><strong>68,900원</strong><s>89,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-23%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>68,900원 (정가 대비 23% 할인)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>사무실이나 심야 코딩 시 타건 소음으로 주변 눈치 보지 않고 연타하고 싶은 사람</dd></div></dl><p class="deal-check">⚡ 45g 키압으로 장시간 코딩 시 손가락 관절 피로도 최소화</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>68,900원 (정가 대비 23% 할인)</dd></div><div class="fact"><dt>추천</dt><dd>사무실이나 심야 코딩 시 타건 소음으로 주변 눈치 보지 않고 연타하고 싶은 사람</dd></div></dl><p class="deal-check">45g 키압으로 장시간 코딩 시 손가락 관절 피로도 최소화</p>
         <a class="cta" href="https://link.coupang.com/a/iyzxBosAM0" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -668,7 +484,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">고중량 기계식 모니터암 거치대</h3>
         <div class="deal-price"><strong>49,900원</strong><s>69,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-28%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>49,900원 (쿠팡 로켓 특가)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>거북목 방지를 위해 모니터를 눈높이로 띄우고 데스크 공간을 2배로 넓히려는 분</dd></div></dl><p class="deal-check">⚡ 스탠드 다리가 사라져 모니터 아래 키보드·노트 수납 완벽 가능</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>49,900원 (쿠팡 로켓 특가)</dd></div><div class="fact"><dt>추천</dt><dd>거북목 방지를 위해 모니터를 눈높이로 띄우고 데스크 공간을 2배로 넓히려는 분</dd></div></dl><p class="deal-check">스탠드 다리가 사라져 모니터 아래 키보드·노트 수납 완벽 가능</p>
         <a class="cta" href="https://link.coupang.com/a/iyzzXmg6CG" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -680,7 +496,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">미니PC 16GB N100 저전력 홈서버</h3>
         <div class="deal-price"><strong>189,000원</strong><s>259,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-27%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>189,000원 (20만 원 이하 가성비 종결)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>24시간 도커 컨테이너, 홈서버, 자동화 봇, DB 테스트베드를 돌릴 저전력 머신</dd></div></dl><p class="deal-check">⚡ 소비전력 6W 수준으로 한 달 전기요금 1,000원 안팎</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>189,000원 (20만 원 이하 가성비 종결)</dd></div><div class="fact"><dt>추천</dt><dd>24시간 도커 컨테이너, 홈서버, 자동화 봇, DB 테스트베드를 돌릴 저전력 머신</dd></div></dl><p class="deal-check">소비전력 6W 수준으로 한 달 전기요금 1,000원 안팎</p>
         <a class="cta" href="https://link.coupang.com/a/iyzyHkgEOi" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
@@ -692,15 +508,15 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
         <h3 class="deal-title">사무실 대용량 원두 1kg (고소한 블렌드)</h3>
         <div class="deal-price"><strong>16,900원</strong><s>22,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-23%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>16,900원 (잔당 300원 꼴 가성비)</dd></div><div class="fact"><dt>🎯 추천</dt><dd>팀원들과 매일 아침·야근 때 커피머신 돌리는 개발팀 간식 담당자</dd></div></dl><p class="deal-check">⚡ 산미 없이 묵직하고 고소한 맛으로 호불호 없는 오피스 베스트셀러</p>
+        <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>16,900원 (잔당 300원 꼴 가성비)</dd></div><div class="fact"><dt>추천</dt><dd>팀원들과 매일 아침·야근 때 커피머신 돌리는 개발팀 간식 담당자</dd></div></dl><p class="deal-check">산미 없이 묵직하고 고소한 맛으로 호불호 없는 오피스 베스트셀러</p>
         <a class="cta" href="https://link.coupang.com/a/iyzuKorRTw" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article></div>
 
     <div class="goldbox">
       <div>
-        <h3>⏰ 오늘의 골드박스</h3>
-        <p>매일 오전 7시, 한정 수량 특가. 개발 장비부터 사무 간식까지.</p>
+        <h3>쿠팡 골드박스</h3>
+        <p>현재 판매 상품과 할인 조건은 쿠팡에서 확인하세요.</p>
       </div>
       <a class="cta" style="width:auto; padding:0.75rem 1.2rem;" href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">쿠팡 골드박스 — 매일 오전 7시 특가 →</a>
     </div>
@@ -742,43 +558,43 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
     </div>
     <ul class="cat-list"><li><a href="https://link.coupang.com/a/iyzuKorRTw" target="_blank" rel="noopener nofollow sponsored">사무실 대용량 원두 1kg (고소한 블렌드)</a><span class="p">16,900원</span><span class="s">쿠팡 로켓배송</span></li></ul>
 
-    <h2 style="margin-top:3.4rem;">지금 사도 되는 장비 큐레이션</h2>
-    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
-      핫딜이 뜰 때까지 기다리지 않아도 되는, 개발자 책상 기본 장비.</p>
-    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+    <h2 style="margin-top:3.4rem;">함께 볼 만한 책상 장비</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.3rem;">
+      할인 여부와 별개로 모아 둔 장비입니다. 아래 링크는 제휴 링크입니다.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));">
       <a class="pick-card" href="https://link.coupang.com/a/iyBYu25xw4" target="_blank" rel="noopener nofollow sponsored">
         <div class="pick-kicker">Mouse &amp; Desk Setup</div>
         <strong>로지텍 MX Master 3S</strong>
         <p>무소음 스위치와 MagSpeed 휠. 하루 8시간 손목 부담을 줄이는 개발자 기본 장비.</p>
-        <span class="go">쿠팡 최저가 확인 →</span>
+        <span class="go">쿠팡에서 가격 확인 →</span>
       </a>
       <a class="pick-card" href="https://link.coupang.com/a/iyI8z25s60" target="_blank" rel="noopener nofollow sponsored">
         <div class="pick-kicker">Living / Voucher</div>
         <strong>올리브영 기프트카드 20,000원권</strong>
         <p>CJ ONE 적립 가능한 실시간 e쿠폰. 화장품·생필품 쇼핑 전 2% 즉시할인 상테크.</p>
-        <span class="go">쿠팡 최저가 확인 →</span>
+        <span class="go">쿠팡에서 가격 확인 →</span>
       </a>
       <a class="pick-card" href="https://link.coupang.com/a/iyJh99DCuW" target="_blank" rel="noopener nofollow sponsored">
         <div class="pick-kicker">Pantry / Snack</div>
         <strong>롯데 빼빼로 샘플러 6종 세트</strong>
         <p>내일 11/11 빼빼로데이 선물 &amp; 탕비실 당 충전. 6종 인기 맛 모음 로켓 새벽배송.</p>
-        <span class="go">쿠팡 최저가 확인 →</span>
+        <span class="go">쿠팡에서 가격 확인 →</span>
       </a>
       <a class="pick-card" href="https://link.coupang.com/a/iyIrM2GlPg" target="_blank" rel="noopener nofollow sponsored">
         <div class="pick-kicker">Fast Charger / GaN</div>
         <strong>벨킨 100W GaN 초고속 충전기</strong>
         <p>접지 플러그로 맥북 미세전류 방지. 100W 단일 출력으로 맥북 프로 고속 충전.</p>
-        <span class="go">쿠팡 최저가 확인 →</span>
+        <span class="go">쿠팡에서 가격 확인 →</span>
       </a>
       <a class="pick-card" href="https://link.coupang.com/a/iyJbjsBrye" target="_blank" rel="noopener nofollow sponsored">
         <div class="pick-kicker">Office Bites</div>
         <strong>오리온 와우스낵 16팩 세트</strong>
         <p>포카칩·꼬북칩·오감자·썬칩 16봉. 봉당 680원대 탕비실 쟁여두기 베스트셀러.</p>
-        <span class="go">쿠팡 최저가 확인 →</span>
+        <span class="go">쿠팡에서 가격 확인 →</span>
       </a></div>
 
     <div class="method-note">
-      <strong style="color:#fff;">이 페이지가 가격을 다루는 방식</strong><br>
+      <strong style="color:var(--text-muted);">이 페이지가 가격을 다루는 방식</strong><br>
       모든 가격은 수집한 원문 게시글의 표기를 그대로 옮깁니다. 할인율은 원문에 정가가 있을 때만 계산하고,
       없으면 추정하지 않습니다. 쿠팡 링크는 파트너스 트래킹 링크이며, 트래킹 링크가 없는 상품은
       '쿠팡 검색'으로 표시해 수익 링크와 구분합니다. 가격·재고는 언제든 바뀌므로 결제 전 원문 확인이 필요합니다.<br><br>

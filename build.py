@@ -18,185 +18,92 @@ DIST_DIR = ROOT / "dist"
 DATA_PATH = ROOT / "data" / "tools.json"
 
 SHARED_CSS = """
-:root {
-  --bg: #090d16;
-  --surface: #121826;
-  --surface-raised: #182234;
-  --border: #222f46;
-  --text: #e2e8f0;
-  --text-muted: #94a3b8;
-  --primary: #38bdf8;
-  --primary-glow: rgba(56, 189, 248, 0.15);
-  --accent: #10b981;
-  --warn: #f59e0b;
-  --danger: #f43f5e;
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-}
-.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1.1rem 0;
-  background: rgba(9, 13, 22, 0.88);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
-.logo span { color: var(--primary); }
-.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
-.nav-link:hover { color: var(--primary); }
-.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
-.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
-.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
-.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
-.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
-h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
-h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
-h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
-h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
-p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
-ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
-li { margin-bottom: 0.4rem; font-size: 0.98rem; }
-li > code, p > code { font-size: 0.86em; }
-strong { color: #fff; font-weight: 640; }
-a { color: var(--primary); }
-blockquote {
-  border-left: 3px solid var(--primary);
-  background: rgba(56, 189, 248, 0.05);
-  padding: 0.9rem 1.2rem;
-  margin: 1.3rem 0;
-  color: #cbd5e1;
-  border-radius: 0 8px 8px 0;
-  font-size: 0.97rem;
-}
-blockquote p:last-child { margin-bottom: 0; }
-.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
-.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
-.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
-th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
-tr:last-child td { border-bottom: none; }
-td code { color: var(--primary); }
-.btn {
-  display: inline-block;
-  padding: 0.72rem 1.4rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.94rem;
-  text-decoration: none;
-  transition: all 0.18s;
-  text-align: center;
-}
-.btn-primary { background: var(--primary); color: #04121b; }
-.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
-.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
-.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.2rem;
-  transition: border-color 0.18s, transform 0.18s;
-}
-a.card { display: block; text-decoration: none; }
-a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
-.verdict-box {
-  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
-  border: 1px solid #1e3a5f;
-  border-left: 3px solid var(--primary);
-  border-radius: 12px;
-  padding: 1.4rem 1.5rem;
-  margin: 1.5rem 0 2rem;
-}
-.answer-box {
-  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
-  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
-}
-.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
-.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
-.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
-.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
-.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
-@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
-.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
-.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
-.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
-.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
-pre {
-  background: #0b1120;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.15rem;
-  overflow-x: auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: #9dd7f5;
-  margin: 1rem 0 1.2rem;
-  tab-size: 2;
-}
-pre code { color: inherit; background: none; padding: 0; }
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  background: rgba(56, 189, 248, 0.09);
-  color: #9dd7f5;
-  padding: 0.12rem 0.35rem;
-  border-radius: 4px;
-  font-size: 0.87em;
-}
-.migration-box {
-  background: #121e33;
-  border-left: 3px solid var(--primary);
-  border-radius: 0 8px 8px 0;
-  padding: 1.2rem 1.4rem;
-  margin: 1.4rem 0;
-}
-.migration-box strong { color: #fff; }
-.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
-.faq-item:last-child { border-bottom: none; }
-.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
-.faq-a { color: var(--text-muted); font-size: 0.94rem; }
-.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
-.cost-row:last-child { border-bottom: none; }
-.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
-.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
-.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
-.matrix-pick { color: var(--primary); font-weight: 600; }
-.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
-.updated-note {
-  font-size: 0.8rem; color: var(--text-muted);
-  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
-}
-.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
-.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
-.toc ol { margin: 0 0 0 1.1rem; }
-.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
-.toc a { color: #cbd5e1; text-decoration: none; }
-.toc a:hover { color: var(--primary); }
-footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 """
 
 # ---------------------------------------------------------------- markdown
@@ -408,9 +315,9 @@ def generate_llms_txt(items, ko_deals, en_deals) -> str:
         "",
         "## Deals",
         "",
-        f"- [Korean tech deals]({BASE_URL}/ko/): {len(ko_deals.get('feed', []))} live hardware deals from "
+        f"- [Korean tech deals]({BASE_URL}/ko/): {len(ko_deals.get('feed', []))} collected hardware deals from "
         "뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.",
-        f"- [Global tech deals]({BASE_URL}/deals/): {len(en_deals.get('feed', []))} live deals from "
+        f"- [Global tech deals]({BASE_URL}/deals/): {len(en_deals.get('feed', []))} collected deals from "
         "r/buildapcsales, Slickdeals and Dealabs.",
         "",
         "## Optional",
@@ -454,38 +361,17 @@ def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
 # ---------------------------------------------------------------- pages
 
 DEALS_SECTION_HTML = """
-    <div style="margin: 3.5rem 0 1.5rem; padding: 1.6rem 1.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.8rem; flex-wrap:wrap; gap:0.5rem;">
-        <h3 style="margin:0; font-size:1.15rem; color:#fff;">⚡ Verified Tech Deals &amp; Workstation Gear</h3>
-        <span class="badge badge-blue">Curated for Builders</span>
-      </div>
-      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.2rem;">
-        High-impact developer hardware &amp; workstation picks tested for productivity, with live rocket delivery links.
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
       </p>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Mouse &amp; Desk Setup</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Logitech MX Master 3S</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Ergonomic silent switches with dual-scroll MagSpeed wheels.</p>
-          <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
-        </div>
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Workstation / Laptop</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Apple M4 MacBook Pro</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Unified memory bandwidth for local LLM inference and instant builds.</p>
-          <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
-        </div>
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Daily Limited Deals</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Coupang Goldbox (7AM)</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Daily limited morning flash discounts up to 50% on tech &amp; essentials.</p>
-          <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">골드박스 특가 보기 →</a>
-        </div>
-      </div>
-      <div style="font-size:0.75rem; color:#64748b; margin-top:1rem; padding-top:0.6rem; border-top:1px solid var(--border); text-align:right;">
-        * 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
-      </div>
-    </div>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
 """
 
 
@@ -501,140 +387,50 @@ KO_DISCLOSURE = (
 )
 
 DEAL_CSS = """
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
-
-body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -apple-system,
-  BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", Roboto, sans-serif; }
-
-.ko-hero { padding: 3.4rem 0 1.2rem; }
-.ko-hero h1 { font-size: clamp(2rem, 4.6vw, 2.9rem); line-height: 1.25; margin: 0.7rem 0 1rem; }
-.ko-hero .lead { font-size: 1.05rem; line-height: 1.85; color: #b8c5d6; max-width: 720px; }
-.ko-stats { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0 0.2rem; }
-.ko-stat {
-  background: #111a2b; border: 1px solid var(--border); border-radius: 10px;
-  padding: 0.55rem 0.85rem; font-size: 0.76rem; color: #8fa1b8;
-}
-.ko-stat strong { color: #eaf2ff; font-size: 0.95rem; margin-right: 0.35rem; }
-.disclosure-bar {
-  background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3);
-  color: #f1c98d; font-size: 0.78rem; line-height: 1.65; padding: 0.7rem 0.95rem;
-  border-radius: 10px; margin: 1.3rem 0 0;
-}
-
-/* ---------- quick filter tabs ---------- */
-.quick-tabs {
-  position: sticky; top: 57px; z-index: 20; display: flex; gap: 0.45rem;
-  overflow-x: auto; scrollbar-width: none; padding: 0.75rem 0;
-  margin: 0.6rem 0 1.2rem; background: rgba(9, 13, 22, 0.94);
-  backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
-}
-.quick-tabs::-webkit-scrollbar { display: none; }
-.tab {
-  flex: none; border: 1px solid var(--border); background: #101828; color: #a9b8cb;
-  font-size: 0.85rem; font-weight: 600; padding: 0.5rem 0.95rem; border-radius: 999px;
-  cursor: pointer; transition: all 0.16s; font-family: inherit; white-space: nowrap;
-}
-.tab:hover { color: #e6f1ff; border-color: #33506f; }
-.tab.is-active { background: var(--primary); border-color: var(--primary); color: #04121b; }
-.tab .n { opacity: 0.65; font-size: 0.76rem; margin-left: 0.2rem; }
-
-/* ---------- deal cards ---------- */
-.deal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; margin: 0.4rem 0 0.5rem; }
-.deal-card {
-  display: flex; flex-direction: column; position: relative;
-  background: linear-gradient(168deg, #131d2e 0%, #101725 100%);
-  border: 1px solid #24344c; border-radius: 16px; padding: 1.35rem 1.4rem 1.2rem;
-  transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
-}
-.deal-card:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); }
-.deal-card.is-hidden { display: none; }
-.deal-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
-.cat-chip {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.01em;
-  color: #9ad8ff; background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.32); border-radius: 999px; padding: 0.22rem 0.65rem;
-}
-.deal-src { font-size: 0.74rem; color: #7c8ca3; }
-.deal-title {
-  font-size: 1.06rem; line-height: 1.52; color: #f4f8ff; font-weight: 700;
-  margin: 0 0 0.85rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-}
-.deal-price { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.55rem; }
-.deal-price strong {
-  font-size: clamp(1.6rem, 4.4vw, 1.85rem); font-weight: 800; color: #7dd3fc;
-  letter-spacing: -0.03em; line-height: 1.15;
-}
-.deal-price s { color: #64748b; font-size: 0.88rem; }
-.deal-price .unknown { font-size: 1rem; color: #94a3b8; font-weight: 600; }
-.deal-flags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
-.flag {
-  font-size: 0.74rem; font-weight: 800; padding: 0.24rem 0.6rem; border-radius: 7px; letter-spacing: 0.01em;
-}
-.flag-discount { background: #f43f5e; color: #fff; }
-.flag-free { background: rgba(16, 185, 129, 0.16); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.45); }
-.flag-ship { background: #1e293b; color: #cbd5e1; border: 1px solid #334155; }
-.flag-rocket { background: rgba(56, 189, 248, 0.16); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.4); }
-
-.deal-facts { margin: 0 0 1.05rem; display: flex; flex-direction: column; gap: 0.45rem; }
-.deal-facts .fact { display: grid; grid-template-columns: 5.6rem 1fr; gap: 0.5rem; align-items: start; }
-.deal-facts dt { font-size: 0.75rem; font-weight: 700; color: #8ea3bd; letter-spacing: 0.01em; padding-top: 0.08rem; }
-.deal-facts dd { margin: 0; font-size: 0.86rem; line-height: 1.6; color: #c3d0e0; }
-.deal-check { margin: -0.5rem 0 0.9rem; font-size: 0.74rem; color: #7288a3; line-height: 1.55; }
-
-.cta {
-  display: block; width: 100%; text-align: center; text-decoration: none;
-  background: linear-gradient(92deg, #38bdf8 0%, #22d3ee 100%);
-  color: #04121b; font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em;
-  padding: 0.82rem 1rem; border-radius: 11px; margin-top: auto;
-  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.22); transition: transform 0.15s, box-shadow 0.15s;
-}
-.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(56, 189, 248, 0.32); }
-.cta.secondary { background: #1c2a40; color: #cfe4ff; box-shadow: none; border: 1px solid #2f4664; }
-.deal-foot { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-top: 0.55rem; }
-.deal-foot a { font-size: 0.74rem; color: #6f8098; text-decoration: none; }
-.deal-foot a:hover { color: var(--primary); }
-.deal-foot .note { font-size: 0.7rem; color: #5f6f86; }
-
-.cat-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-top: 3.2rem; }
-.cat-head h2 { margin: 0; border-bottom: none; padding-bottom: 0; font-size: 1.35rem; }
-.cat-sub { color: #8798ae; font-size: 0.84rem; }
-.cat-list { list-style: none; margin: 0.9rem 0 0; padding: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #0e1624; }
-.cat-list li { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 1.1rem; border-bottom: 1px solid #1b2637; margin: 0; }
-.cat-list li:last-child { border-bottom: none; }
-.cat-list a { color: #dbe7f5; text-decoration: none; font-size: 0.93rem; flex: 1; line-height: 1.45; }
-.cat-list a:hover { color: var(--primary); }
-.cat-list .p { color: #7dd3fc; font-weight: 800; font-size: 0.95rem; white-space: nowrap; }
-.cat-list .s { color: #7c8ca3; font-size: 0.74rem; white-space: nowrap; }
-
-.pick-card {
-  display: block; text-decoration: none; background: linear-gradient(160deg, #142033 0%, #0f1725 100%);
-  border: 1px solid #24344c; border-radius: 14px; padding: 1.2rem 1.3rem;
-  transition: border-color 0.18s, transform 0.18s;
-}
-.pick-card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.pick-kicker { font-size: 0.7rem; color: #7dd3fc; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; }
-.pick-card strong { display: block; color: #fff; margin: 0.4rem 0 0.35rem; font-size: 1.02rem; }
-.pick-card p { font-size: 0.85rem; color: #9fb0c6; margin: 0 0 0.7rem; line-height: 1.65; }
-.pick-card span.go { font-size: 0.83rem; color: var(--primary); font-weight: 700; }
-
-.goldbox {
-  margin: 2.4rem 0 0; padding: 1.4rem 1.6rem;
-  background: linear-gradient(120deg, rgba(56,189,248,0.12), rgba(16,185,129,0.08));
-  border: 1px solid #24425f; border-radius: 16px;
-  display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; flex-wrap: wrap;
-}
-.goldbox h3 { margin: 0 0 0.35rem; font-size: 1.08rem; }
-.goldbox p { margin: 0; font-size: 0.86rem; color: #9fb0c6; }
-.method-note { font-size: 0.8rem; color: #8ea3bd; line-height: 1.85; margin-top: 2.8rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
-
-@media (max-width: 640px) {
-  .container { padding: 1.2rem 1rem; }
-  .ko-hero { padding-top: 2rem; }
-  .deal-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .deal-card { padding: 1.15rem 1.05rem 1rem; border-radius: 14px; }
-  .deal-facts .fact { grid-template-columns: 4.9rem 1fr; }
-  .quick-tabs { top: 53px; }
-}
+.ko-hero { padding:2rem 0 1rem; }
+.ko-hero h1 { font-family:inherit; font-size:clamp(2rem,4vw,2.7rem); font-weight:650; letter-spacing:-.05em; }
+.ko-stats { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; margin:1.4rem 0; }
+.ko-stat { font-size:.78rem; color:var(--text-muted); }
+.ko-stat strong { margin-right:.4rem; }
+.disclosure-bar { border-left:2px solid var(--border); padding:.5rem .9rem; font-size:.78rem; color:var(--text-muted); }
+.quick-tabs { display:flex; gap:.5rem; overflow-x:auto; padding:.6rem 0 1rem; margin-bottom:1rem; }
+.tab { flex:none; background:transparent; color:var(--text-muted); border:1px solid var(--border); padding:.5rem .8rem; font:inherit; font-size:.8rem; cursor:pointer; }
+.tab.is-active { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.tab .n { margin-left:.3rem; }
+.deal-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:1.5rem; }
+.deal-card { display:flex; flex-direction:column; border:1px solid var(--border); background:var(--surface); padding:1.3rem; }
+.deal-card.is-hidden { display:none; }
+.deal-top,.deal-foot { display:flex; justify-content:space-between; gap:.5rem; margin-bottom:.8rem; }
+.cat-chip,.deal-src,.deal-foot { font-size:.73rem; color:var(--text-muted); }
+.deal-title { margin:0 0 1rem; font-size:1.08rem; line-height:1.6; }
+.deal-price { display:flex; align-items:baseline; flex-wrap:wrap; gap:.7rem; margin-bottom:.6rem; }
+.deal-price strong { font-size:1.55rem; font-weight:600; }
+.deal-price s,.deal-price .unknown { font-size:.85rem; color:var(--text-muted); }
+.deal-flags { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem; }
+.flag { color:var(--primary); font-size:.74rem; }
+.deal-facts { margin:0 0 1rem; }
+.deal-facts .fact { display:grid; grid-template-columns:5rem 1fr; gap:.6rem; margin-bottom:.5rem; font-size:.82rem; }
+.deal-facts dt { color:var(--text-muted); }
+.deal-facts dd { margin:0; }
+.deal-check { color:var(--text-muted); font-size:.74rem; }
+.cta { display:block; text-align:center; padding:.7rem 1rem; background:var(--primary); color:var(--surface); text-decoration:none; font-size:.85rem; margin-top:auto; }
+.cta.secondary { background:var(--surface-raised); color:var(--primary); }
+.deal-foot { margin:.6rem 0 0; font-size:.72rem; }
+.cat-head { display:flex; align-items:baseline; flex-wrap:wrap; gap:.7rem; margin-top:2.6rem; }
+.cat-head h2 { margin:0; }
+.cat-sub { color:var(--text-muted); font-size:.8rem; }
+.cat-list { list-style:none; margin:1rem 0; border-top:1px solid var(--border); }
+.cat-list li { display:flex; align-items:baseline; flex-wrap:wrap; gap:.7rem; padding:.8rem 0; border-bottom:1px solid var(--border); margin:0; }
+.cat-list a { flex:1; min-width:180px; font-size:.9rem; }
+.cat-list .p { font-weight:600; font-size:.9rem; }
+.cat-list .s { font-size:.74rem; color:var(--text-muted); }
+.pick-card { padding:1.2rem 0; border-block:1px solid var(--border); text-decoration:none; }
+.pick-kicker { font-size:.72rem; color:var(--text-muted); }
+.pick-card strong { display:block; margin:.5rem 0; }
+.pick-card p,.pick-card .go { font-size:.85rem; }
+.goldbox { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.2rem; padding:1.5rem 0; margin-top:2rem; border-block:1px solid var(--border); }
+.goldbox h3 { margin:0 0 .3rem; }
+.goldbox p { font-size:.85rem; color:var(--text-muted); margin:0; }
 """
 
 CAT_SHORT = {
@@ -648,16 +444,16 @@ CAT_SHORT = {
 }
 
 FACT_ICONS = [
-    ("실구매가", "💰 실구매가"),
-    ("추천", "🎯 추천"),
-    ("스펙", "⚙️ 스펙"),
-    ("체크", "⚡ 체크"),
-    ("Price", "💰 Price"),
-    ("Good for", "🎯 Good for"),
-    ("Specs", "⚙️ Specs"),
-    ("Shipping", "🚚 Shipping"),
-    ("Check", "⚡ Check"),
-    ("Key", "🔑 Key"),
+    ("실구매가", "실구매가"),
+    ("추천", "추천"),
+    ("스펙", "스펙"),
+    ("체크", "체크"),
+    ("Price", "Price"),
+    ("Good for", "Good for"),
+    ("Specs", "Specs"),
+    ("Shipping", "Shipping"),
+    ("Check", "Check"),
+    ("Key", "Key"),
 ]
 
 
@@ -700,7 +496,7 @@ def _fact_rows(deal: dict) -> str:
                  f'<dd>{html.escape(value.strip())}</dd></div>')
     facts = f'<dl class="deal-facts">{rows}</dl>' if rows else ""
     if check:
-        facts += f'<p class="deal-check">⚡ {html.escape(check)}</p>'
+        facts += f'<p class="deal-check">{html.escape(check)}</p>'
     return facts
 
 
@@ -801,7 +597,7 @@ def generate_ko_html(deals: dict) -> str:
 
     feed_cards = "".join(_deal_card(d) for d in feed[:24])
     if not feed_cards:
-        feed_cards = ('<p style="color:#94a3b8;font-size:0.92rem;padding:1rem 0;">'
+        feed_cards = ('<p style="color:var(--text-muted);font-size:0.92rem;padding:1rem 0;">'
                       '지금 수집된 신규 테크 핫딜이 없습니다. 아래 큐레이션과 골드박스를 확인하세요.</p>')
 
     tabs = _tabs(
@@ -825,7 +621,7 @@ def generate_ko_html(deals: dict) -> str:
                      f'<span class="p">{price}</span>'
                      f'<span class="s">{html.escape(d.get("store") or "")}</span></li>')
         body = f'<ul class="cat-list">{rows}</ul>' if rows else (
-            '<p style="color:#8798ae;font-size:0.88rem;">이 카테고리에 새로 올라온 핫딜이 없습니다. 아래 큐레이션을 참고하세요.</p>')
+            '<p style="color:var(--text-muted);font-size:0.88rem;">이 카테고리에 새로 올라온 핫딜이 없습니다. 아래 큐레이션을 참고하세요.</p>')
         cat_html += f"""
     <div class="cat-head" id="{slug}">
       <h2>{html.escape(cat.get('label', slug))}</h2>
@@ -840,7 +636,7 @@ def generate_ko_html(deals: dict) -> str:
         <div class="pick-kicker">{html.escape(p.get('kicker', ''))}</div>
         <strong>{html.escape(p.get('title', ''))}</strong>
         <p>{html.escape(p.get('desc', ''))}</p>
-        <span class="go">쿠팡 최저가 확인 →</span>
+        <span class="go">쿠팡에서 가격 확인 →</span>
       </a>"""
 
     schema = {
@@ -872,7 +668,7 @@ def generate_ko_html(deals: dict) -> str:
   {_json_ld({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "실시간 테크 핫딜",
+      "name": "수집된 테크 핫딜",
       "itemListElement": [
           {"@type": "ListItem", "position": i + 1,
            "name": d.get("product", ""),
@@ -889,9 +685,9 @@ def generate_ko_html(deals: dict) -> str:
 <body>
   <header>
     <div class="header-inner">
-      <a href="/ko/" class="logo">⚡ DevTeardown<span>KR</span></a>
+      <a href="/ko/" class="logo">DevTeardown<span>KR</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
-        <a class="nav-link" href="#feed">실시간 핫딜</a>
+        <a class="nav-link" href="#feed">수집된 핫딜</a>
         <a class="nav-link" href="/deals/">Global Deals</a>
         <a class="nav-link" href="/">EN Reports</a>
       </div>
@@ -900,24 +696,23 @@ def generate_ko_html(deals: dict) -> str:
 
   <main class="container">
     <div class="ko-hero">
-      <span class="badge badge-blue">매일 갱신 · 원문 가격 기준</span>
-      <h1>개발자 장비, 살 때만 사세요.</h1>
+      <span class="badge badge-blue">원문 게시글 기준</span>
+      <h1>장비 살 때, 가격부터 비교.</h1>
       <p class="lead">뽐뿌·클리앙·퀘이사존·에펨코리아·폴센트에 올라온 테크 핫딜을 한곳에 모아,
-      원문에 적힌 가격과 배송 조건만으로 실구매가를 다시 계산합니다. 과장된 "역대급" 대신
-      지금 사도 되는지 판단할 수 있는 숫자만 남겼습니다.</p>
+      게시글에 적힌 가격과 배송 조건을 정리했습니다.
+      할인 조건과 재고는 구매 전에 판매 페이지에서 확인하세요.</p>
       <div class="ko-stats">
-        <div class="ko-stat"><strong>{len(feed)}건</strong>실시간 핫딜</div>
+        <div class="ko-stat"><strong>{len(feed)}건</strong>수집된 핫딜</div>
         <div class="ko-stat"><strong>{len(categories)}개</strong>핫딜 카테고리</div>
         <div class="ko-stat"><strong>{html.escape(updated)}</strong>업데이트</div>
-        <div class="ko-stat"><strong>0원</strong>가입 비용</div>
       </div>
       <div class="disclosure-bar">
         {html.escape(deals.get('disclosure', KO_DISCLOSURE))}
       </div>
     </div>
 
-    <h2 id="feed" style="margin-top:2.4rem;">실시간 테크 · 개발자 핫딜</h2>
-    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
+    <h2 id="feed" style="margin-top:2.4rem;">수집된 테크 · 개발자 핫딜</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.3rem;">
       가격·할인율·배송은 수집 시점의 원문 표기입니다. 품절·가격 변동은 원문에서 확인하세요.
     </p>
     {tabs}
@@ -925,21 +720,21 @@ def generate_ko_html(deals: dict) -> str:
 
     <div class="goldbox">
       <div>
-        <h3>⏰ 오늘의 골드박스</h3>
-        <p>매일 오전 7시, 한정 수량 특가. 개발 장비부터 사무 간식까지.</p>
+        <h3>쿠팡 골드박스</h3>
+        <p>현재 판매 상품과 할인 조건은 쿠팡에서 확인하세요.</p>
       </div>
       <a class="cta" style="width:auto; padding:0.75rem 1.2rem;" href="{_safe_url(goldbox['url'])}" target="_blank" rel="noopener nofollow sponsored">{html.escape(goldbox.get('label', '골드박스 보기'))} →</a>
     </div>
 
     {cat_html}
 
-    <h2 style="margin-top:3.4rem;">지금 사도 되는 장비 큐레이션</h2>
-    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
-      핫딜이 뜰 때까지 기다리지 않아도 되는, 개발자 책상 기본 장비.</p>
-    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">{pick_cards}</div>
+    <h2 style="margin-top:3.4rem;">함께 볼 만한 책상 장비</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.3rem;">
+      할인 여부와 별개로 모아 둔 장비입니다. 아래 링크는 제휴 링크입니다.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));">{pick_cards}</div>
 
     <div class="method-note">
-      <strong style="color:#fff;">이 페이지가 가격을 다루는 방식</strong><br>
+      <strong style="color:var(--text-muted);">이 페이지가 가격을 다루는 방식</strong><br>
       모든 가격은 수집한 원문 게시글의 표기를 그대로 옮깁니다. 할인율은 원문에 정가가 있을 때만 계산하고,
       없으면 추정하지 않습니다. 쿠팡 링크는 파트너스 트래킹 링크이며, 트래킹 링크가 없는 상품은
       '쿠팡 검색'으로 표시해 수익 링크와 구분합니다. 가격·재고는 언제든 바뀌므로 결제 전 원문 확인이 필요합니다.<br><br>
@@ -967,7 +762,7 @@ def generate_deals_en_html(payload: dict) -> str:
 
     feed_cards = "".join(_deal_card(d, lang="en") for d in feed[:12])
     if not feed_cards:
-        feed_cards = ('<p style="color:#94a3b8;font-size:0.92rem;padding:1rem 0;">'
+        feed_cards = ('<p style="color:var(--text-muted);font-size:0.92rem;padding:1rem 0;">'
                       'No new tech deals collected right now. Check back after the next run.</p>')
 
     tabs = _tabs(
@@ -989,7 +784,7 @@ def generate_deals_en_html(payload: dict) -> str:
                      f'<span class="p">{price}</span>'
                      f'<span class="s">{html.escape(d.get("store") or "")}</span></li>')
         body = f'<ul class="cat-list">{rows}</ul>' if rows else (
-            '<p style="color:#8798ae;font-size:0.88rem;">No new deals in this category yet.</p>')
+            '<p style="color:var(--text-muted);font-size:0.88rem;">No new deals in this category yet.</p>')
         cat_html += f"""
     <div class="cat-head" id="{slug}">
       <h2>{html.escape(cat.get('label', slug))}</h2>
@@ -1026,7 +821,7 @@ def generate_deals_en_html(payload: dict) -> str:
   {_json_ld({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Live tech deals",
+      "name": "Collected tech deals",
       "itemListElement": [
           {"@type": "ListItem", "position": i + 1,
            "name": d.get("product", ""),
@@ -1043,7 +838,7 @@ def generate_deals_en_html(payload: dict) -> str:
 <body>
   <header>
     <div class="header-inner">
-      <a href="/deals/" class="logo">⚡ DevTeardown<span>Deals</span></a>
+      <a href="/deals/" class="logo">DevTeardown<span>Deals</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
         <a class="nav-link" href="/ko/">한국어 핫딜</a>
         <a class="nav-link" href="/">Teardowns</a>
@@ -1053,21 +848,21 @@ def generate_deals_en_html(payload: dict) -> str:
 
   <main class="container">
     <div class="ko-hero">
-      <span class="badge badge-blue">Updated daily · source prices</span>
-      <h1>Hardware deals, without the hype.</h1>
+      <span class="badge badge-blue">Prices from source posts</span>
+      <h1>Hardware prices worth comparing.</h1>
       <p class="lead">Developer-relevant deals pulled from r/buildapcsales, Slickdeals and Dealabs.
       Each card shows the price exactly as the source lists it, the discount only when the source gives
-      a list price, and who the deal actually fits. No paid placement.</p>
+      a list price, and the original source link.</p>
       <div class="ko-stats">
-        <div class="ko-stat"><strong>{len(feed)}</strong>live deals</div>
+        <div class="ko-stat"><strong>{len(feed)}</strong>collected deals</div>
         <div class="ko-stat"><strong>4</strong>categories</div>
         <div class="ko-stat"><strong>{html.escape(updated)}</strong>updated</div>
         <div class="ko-stat"><strong>{html.escape(str(payload.get('stats', {}).get('sources', 0)))}</strong>sources</div>
       </div>
     </div>
 
-    <h2 id="feed" style="margin-top:2.4rem;">Live tech deals</h2>
-    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
+    <h2 id="feed" style="margin-top:2.4rem;">Collected tech deals</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.3rem;">
       Prices are the source's own listing at collection time. Stock, tax and shipping vary by region.
     </p>
     {tabs}
@@ -1076,7 +871,7 @@ def generate_deals_en_html(payload: dict) -> str:
     {cat_html}
 
     <div class="method-note">
-      <strong style="color:#fff;">How prices are handled</strong><br>
+      <strong style="color:var(--text-muted);">How prices are handled</strong><br>
       Every price is copied from the source post; discounts are computed only when the post states a
       list price. Links go to the source deal page, and DevTeardown takes no commission on them.
       Prices and stock move fast — confirm on the retailer page before buying.
@@ -1095,6 +890,13 @@ def generate_deals_en_html(payload: dict) -> str:
 </html>"""
 
 
+def _excerpt(text, limit=175):
+    text = " ".join(_plain(text).split())
+    if len(text) <= limit:
+        return text
+    return text[:limit].rsplit(" ", 1)[0].rstrip(".,;:") + "…"
+
+
 def generate_index_html(items):
 
     cards_html = ""
@@ -1102,14 +904,10 @@ def generate_index_html(items):
         a = item["tool_a"]
         b = item["tool_b"]
         cards_html += f"""
-        <a class="card" href="./compare/{item['slug']}/">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.7rem;">
-            <span class="badge badge-blue">{html.escape(item['category'])}</span>
-            <span style="font-size:0.78rem; color:var(--text-muted);">{reading_time(item)}</span>
-          </div>
-          <h2 style="font-size:1.22rem; color:#fff; margin:0 0 0.5rem; border-bottom:none; padding-bottom:0;">{html.escape(a['name'])} vs {html.escape(b['name'])}</h2>
-          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1rem; line-height:1.6;">{html.escape(_plain(item.get('hook', item['verdict_summary']))[:175])}…</p>
-          <span style="color:var(--primary); font-size:0.86rem; font-weight:600;">Read the teardown →</span>
+        <a class="index-entry" href="./compare/{item['slug']}/">
+          <div class="entry-meta"><span>{html.escape(item['category'])}</span><span>{reading_time(item)}</span></div>
+          <h2>{html.escape(a['name'])} <span style="color:var(--text-muted);">/</span> {html.escape(b['name'])}</h2>
+          <p>{html.escape(_excerpt(item.get('hook', item['verdict_summary'])))}</p>
         </a>
         """
 
@@ -1118,8 +916,8 @@ def generate_index_html(items):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{SITE_NAME} — Developer Tool Teardowns, Priced in Arithmetic (2026)</title>
-  <meta name="description" content="Independent teardowns of competing developer tools: what each vendor's billing unit punishes, worked cost arithmetic from published price sheets, and a decision matrix you can paste into a design doc.">
+  <title>{SITE_NAME} — Developer tool comparisons</title>
+  <meta name="description" content="Developer tool comparisons with published pricing, worked cost examples, and practical trade-offs.">
   <link rel="canonical" href="{BASE_URL}/">
   <link rel="alternate" hreflang="en" href="{BASE_URL}/">
   <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
@@ -1128,7 +926,7 @@ def generate_index_html(items):
   <meta property="og:description" content="Independent teardowns of developer tools: billing units, worked cost arithmetic, and a decision matrix you can paste into a design doc.">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{SITE_NAME} — Developer Tool Teardowns">
-  <meta name="twitter:description" content="Every comparison is a billing question in disguise. Worked cost arithmetic from published price sheets.">
+  <meta name="twitter:description" content="Compare developer tools, their costs, and their trade-offs.">
   <meta property="og:title" content="{SITE_NAME} — Developer Tool Teardowns">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{BASE_URL}/">
@@ -1152,7 +950,7 @@ def generate_index_html(items):
       "name": SITE_NAME,
       "url": BASE_URL,
       "inLanguage": "en",
-      "description": "Independent teardowns of competing developer tools, priced in arithmetic.",
+      "description": "Developer tool comparisons with pricing and trade-offs.",
   }, ensure_ascii=False, indent=2)}
   </script>
   <style>{SHARED_CSS}</style>
@@ -1160,41 +958,37 @@ def generate_index_html(items):
 <body>
   <header>
     <div class="header-inner">
-      <a href="./" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="./" class="logo">DevTools<span>Radar</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
         <a class="nav-link" href="./deals/">Deals</a>
         <a class="nav-link" href="./ko/">한국어 핫딜</a>
-        <span class="badge badge-green">Verified Nov 2026</span>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <div style="max-width: 760px; margin: 1.5rem 0 2.5rem;">
-      <span class="badge badge-blue">No sponsored placement</span>
-      <h1>Every comparison is a billing question in disguise.</h1>
-      <p class="lead">We take each vendor's published price sheet and read it as a penalty table: which
-      usage does this meter punish, what does that make impossible, and what does it cost at the volume
-      you will actually reach. No hand-waved benchmarks — the arithmetic is shown, with formulas.</p>
-    </div>
-
-    <div class="grid">
+    <section class="index-intro">
+      <div class="eyebrow">Notes on choosing software</div>
+      <h1>Before you pick<br>the next tool.</h1>
+      <p class="lead">What it costs, where it fits, and what you give up. Comparisons of developer tools, with pricing examples you can check against your own workload.</p>
+    </section>
+    <h2 class="section-label">The comparisons · {len(items):02d}</h2>
+    <div class="index-list">
       {cards_html}
     </div>
 
     {DEALS_SECTION_HTML}
 
     <div class="updated-note">
-      <strong>How to read this site.</strong> Every number here is either taken from a vendor's own price
-      sheet or documentation, or derived from it with the formula printed next to it. Vendor performance
-      claims are labelled as vendor claims. Each article carries the date its prices were verified,
-      because this market reprices itself twice a year.
+      <strong>A note on the numbers.</strong> Articles link to vendor pricing and documentation.
+      Cost examples show their assumptions and formulas; they are not measured benchmarks.
+      Check each article's verification date and the current vendor price before making a decision.
     </div>
   </main>
 
   <footer>
     <div class="container">
-      <p>© 2026 {SITE_NAME}. Independent developer analysis. Nothing here is paid placement.</p>
+      <p>© 2026 {SITE_NAME}. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
   </footer>
 </body>
@@ -1339,7 +1133,7 @@ def generate_comparison_html(item):
         for r in related:
             rel_cards += f"""
           <a class="card" href="../{r['slug']}/" style="padding:1.1rem;">
-            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">{html.escape(r['name'])}</h3>
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">{html.escape(r['name'])}</h3>
             <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">{html.escape(r['why'])}</p>
           </a>"""
         related_html = f"""
@@ -1378,7 +1172,7 @@ def generate_comparison_html(item):
 <body>
   <header>
     <div class="header-inner">
-      <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="../../" class="logo">DevTools<span>Radar</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
         <a href="../../deals/" class="nav-link">Deals</a>
         <a href="../../ko/" class="nav-link">한국어 핫딜</a>
@@ -1391,8 +1185,6 @@ def generate_comparison_html(item):
     <div class="meta-row">
       <span class="badge badge-blue">{html.escape(item['category'])}</span>
       <span class="badge badge-gray">{html.escape(a['name'])} vs {html.escape(b['name'])}</span>
-      <span>DevTeardown Team</span>
-      <span>·</span>
       <span>Prices verified {html.escape(updated)}</span>
       <span>·</span>
       <span>{rt}</span>
@@ -1406,17 +1198,12 @@ def generate_comparison_html(item):
       {md_to_html(item['verdict_summary'])}
     </div>
 
-    <div class="answer-box">
-      <span class="label">Direct answer</span>
-      <p>{html.escape(first_sentence(item['verdict_summary']))}</p>
-    </div>
-
     <div class="toc">
       <div class="toc-title">In this teardown</div>
       <ol>{toc_items}</ol>
     </div>
 
-    <h2>Key metric comparison</h2>
+    <h2>At a glance</h2>
     <div class="table-wrapper">
       <table>
         <thead>
@@ -1443,7 +1230,7 @@ def generate_comparison_html(item):
     </div>
 {sections_html}{cost_html}{matrix_html}
 
-    <h2>Same task, two SDKs</h2>
+    <h2>Code and configuration</h2>
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
         <span class="badge badge-blue" style="margin-bottom:0.4rem;">{html.escape(a['name'])}</span>
@@ -1482,7 +1269,7 @@ def generate_comparison_html(item):
     </div>
 {migration_html}
 
-    <h2 id="faq">Questions that change the decision</h2>
+    <h2 id="faq">Common questions</h2>
     <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
       {faqs_html}
     </div>
@@ -1496,7 +1283,7 @@ def generate_comparison_html(item):
     {DEALS_SECTION_HTML}
 
     <div class="updated-note">
-      Prices and limits verified on {html.escape(updated)}. This market reprices often — if a number below looks wrong,
+      Prices and limits verified on {html.escape(updated)}. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -1504,7 +1291,7 @@ def generate_comparison_html(item):
 
   <footer>
     <div class="container">
-      <p>© 2026 {SITE_NAME}. Independent developer analysis. No paid placement, no affiliate ranking.</p>
+      <p>© 2026 {SITE_NAME}. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
   </footer>
 </body>
@@ -1650,7 +1437,10 @@ def build_site(data_path=DATA_PATH, output=DIST_DIR, deals_path=DEALS_DATA_PATH,
             else:
                 previous = []
                 for page in (output / "compare").glob("*/index.html"):
-                    if "DevTools" in page.read_text(encoding="utf-8") and "Key metric comparison" in page.read_text(encoding="utf-8"):
+                    if "DevTools" in page.read_text(encoding="utf-8") and any(
+                        marker in page.read_text(encoding="utf-8")
+                        for marker in ("Key metric comparison", "At a glance")
+                    ):
                         previous.append(str(page.relative_to(output)))
             owned = set(previous) | set(generated) | {MANIFEST}
             for file in output.rglob("*"):
