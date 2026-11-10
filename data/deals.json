@@ -1,0 +1,530 @@
+{
+  "generated_at": "2026-11-10T13:16:20+09:00",
+  "site": {
+    "name": "DevTeardown KR",
+    "url": "https://devteardown.com/ko/"
+  },
+  "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+  "feed": [
+    {
+      "id": "794d0c4ca90f",
+      "category": "afterwork",
+      "category_label": "야근 · 생산성 · 커피·간식",
+      "title_raw": "[지마켓] 라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개(38,630원/무료)",
+      "product": "라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개",
+      "store": "지마켓",
+      "price": 38630,
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "무료배송",
+      "rocket": false,
+      "specs": [
+        "2개"
+      ],
+      "price_source": "title",
+      "briefing": [
+        "핵심: 라이프익스텐션 종합비타민 120정 2개",
+        "실구매가: 38,630원 / 무료배송 (지마켓)",
+        "추천: 장시간 근무하며 영양 보충이 필요한 직장인",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+      "source": {
+        "id": "ppomppu",
+        "label": "뽐뿌게시판",
+        "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747553"
+      },
+      "published_at": "2026-11-10T13:05:58+09:00",
+      "score": 52,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://www.coupang.com/np/search?q=%EB%9D%BC%EC%9D%B4%ED%94%84%EC%9D%B5%EC%8A%A4%ED%85%90%EC%85%98+%EC%A2%85%ED%95%A9%EB%B9%84%ED%83%80%EB%AF%BC+%ED%88%AC%ED%8D%BC%EB%8D%B0%EC%9D%B4+V2+120%EC%A0%95+2%EA%B0%9C&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개 쿠팡 검색",
+        "label_kind": "검색"
+      }
+    },
+    {
+      "id": "bbabf4ec07be",
+      "category": "keyboard-mouse",
+      "category_label": "키보드 · 마우스",
+      "title_raw": "[코스트코] 로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션",
+      "product": "로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션",
+      "store": "코스트코",
+      "price": 114900,
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "무선",
+        "블루투스"
+      ],
+      "price_source": "detail",
+      "briefing": [
+        "핵심: 로지텍 MX MASTER 3S 블루투스",
+        "실구매가: 114,900원 (코스트코)",
+        "추천: 정밀한 조작이 필요한 개발자/디자이너",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
+      "source": {
+        "id": "clien_p3",
+        "label": "클리앙 알뜰구매 3페이지",
+        "url": "https://www.clien.net/service/board/jirum/19276995?od=T31&po=2&category=0&groupCd="
+      },
+      "published_at": "2026-11-10T13:11:51+09:00",
+      "score": 48,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyxFRjouBM",
+        "tracked": true,
+        "matched_keyword": "로지텍 MX Master 3S",
+        "label": "로지텍 MX Master 3S 무선 마우스",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "f38d54653455",
+      "category": "monitor-desk",
+      "category_label": "모니터 · 암 · 데스크",
+      "title_raw": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
+      "product": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
+      "store": "",
+      "price": 241734,
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "27인치",
+        "QHD",
+        "200Hz"
+      ],
+      "price_source": "detail",
+      "briefing": [
+        "핵심: LG 울트라기어 27인치 게이밍모니터",
+        "실구매가: 241,734원",
+        "추천: 고주사율 게이밍모니터를 찾는 게이머",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+      "source": {
+        "id": "clien",
+        "label": "클리앙 알뜰구매",
+        "url": "https://www.clien.net/service/board/jirum/19288627?od=T31&po=0&category=0&groupCd="
+      },
+      "published_at": "2026-11-10T13:11:49+09:00",
+      "score": 48,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyztqGf2zc",
+        "tracked": true,
+        "matched_keyword": "LG 울트라기어 27인치 QHD",
+        "label": "LG 울트라기어 27인치 QHD 게이밍 모니터",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "5fd2f083fe20",
+      "category": "afterwork",
+      "category_label": "야근 · 생산성 · 커피·간식",
+      "title_raw": "[카카오] 유한양행 비컴플 마시는 멀티비타민 7입 (9,900원/무료)",
+      "product": "유한양행 비컴플 마시는 멀티비타민 7입",
+      "store": "카카오",
+      "price": 9900,
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "무료배송",
+      "rocket": false,
+      "specs": [
+        "7입"
+      ],
+      "price_source": "title",
+      "briefing": [
+        "핵심: 유한양행 비컴플 마시는 멀티비타민 7입",
+        "실구매가: 9,900원 / 무료배송 (카카오)",
+        "추천: 간편하게 비타민을 섭취하고 싶은 사람",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+      "source": {
+        "id": "ppomppu",
+        "label": "뽐뿌게시판",
+        "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747552"
+      },
+      "published_at": "2026-11-10T13:04:46+09:00",
+      "score": 44,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://www.coupang.com/np/search?q=%EC%9C%A0%ED%95%9C%EC%96%91%ED%96%89+%EB%B9%84%EC%BB%B4%ED%94%8C+%EB%A7%88%EC%8B%9C%EB%8A%94+%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+7%EC%9E%85&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "유한양행 비컴플 마시는 멀티비타민 7입 쿠팡 검색",
+        "label_kind": "검색"
+      }
+    },
+    {
+      "id": "70196d250bfc",
+      "category": "afterwork",
+      "category_label": "야근 · 생산성 · 커피·간식",
+      "title_raw": "[네이버]고소한원두1kg 29,500원/유료",
+      "product": "고소한원두1kg",
+      "store": "네이버",
+      "price": 29500,
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "유료배송",
+      "rocket": false,
+      "specs": [
+        "1kg"
+      ],
+      "price_source": "title",
+      "briefing": [
+        "핵심: 고소한원두1kg, 네이버",
+        "실구매가: 29,500원 유료배송",
+        "추천: 야근할 때 커피 필요한 사람",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+      "source": {
+        "id": "ppomppu",
+        "label": "뽐뿌게시판",
+        "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747541"
+      },
+      "published_at": "2026-11-10T12:40:50+09:00",
+      "score": 40,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyzuKorRTw",
+        "tracked": true,
+        "matched_keyword": "고소한 원두 1kg",
+        "label": "고소한 원두 1kg (사무실 커피)",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "d2d85692dbf0",
+      "category": "tech",
+      "category_label": "테크 장비",
+      "title_raw": "[롯데온] 소니 MDR-3R (78,640원)",
+      "product": "소니 MDR-3R",
+      "store": "롯데온",
+      "price": 78640,
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [],
+      "price_source": "title",
+      "briefing": [
+        "핵심: 소니 MDR-3R, 롯데온",
+        "실구매가: 78,640원",
+        "추천: 좋은 헤드폰으로 음질 즐기고 싶은 사람",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "장비 지름을 고민 중인 개발자",
+      "source": {
+        "id": "clien",
+        "label": "클리앙 알뜰구매",
+        "url": "https://www.clien.net/service/board/jirum/19289649?od=T31&po=0&category=0&groupCd="
+      },
+      "published_at": "2026-11-10T13:11:49+09:00",
+      "score": 30,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyzv0uG1N6",
+        "tracked": true,
+        "matched_keyword": "소니 MDR-3R",
+        "label": "소니 MDR-3R 이어폰",
+        "label_kind": "상품"
+      }
+    }
+  ],
+  "categories": {
+    "laptops": {
+      "label": "맥북 · 노트북 · 미니PC",
+      "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+      "items": []
+    },
+    "monitor-desk": {
+      "label": "모니터 · 암 · 데스크",
+      "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+      "items": [
+        {
+          "id": "f38d54653455",
+          "category": "monitor-desk",
+          "category_label": "모니터 · 암 · 데스크",
+          "title_raw": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
+          "product": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
+          "store": "",
+          "price": 241734,
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "27인치",
+            "QHD",
+            "200Hz"
+          ],
+          "price_source": "detail",
+          "briefing": [
+            "핵심: LG 울트라기어 27인치 게이밍모니터",
+            "실구매가: 241,734원",
+            "추천: 고주사율 게이밍모니터를 찾는 게이머",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+          "source": {
+            "id": "clien",
+            "label": "클리앙 알뜰구매",
+            "url": "https://www.clien.net/service/board/jirum/19288627?od=T31&po=0&category=0&groupCd="
+          },
+          "published_at": "2026-11-10T13:11:49+09:00",
+          "score": 48,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "tracked": true,
+            "matched_keyword": "LG 울트라기어 27인치 QHD",
+            "label": "LG 울트라기어 27인치 QHD 게이밍 모니터",
+            "label_kind": "상품"
+          }
+        }
+      ]
+    },
+    "keyboard-mouse": {
+      "label": "키보드 · 마우스",
+      "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
+      "items": [
+        {
+          "id": "bbabf4ec07be",
+          "category": "keyboard-mouse",
+          "category_label": "키보드 · 마우스",
+          "title_raw": "[코스트코] 로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션",
+          "product": "로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션",
+          "store": "코스트코",
+          "price": 114900,
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "무선",
+            "블루투스"
+          ],
+          "price_source": "detail",
+          "briefing": [
+            "핵심: 로지텍 MX MASTER 3S 블루투스",
+            "실구매가: 114,900원 (코스트코)",
+            "추천: 정밀한 조작이 필요한 개발자/디자이너",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
+          "source": {
+            "id": "clien_p3",
+            "label": "클리앙 알뜰구매 3페이지",
+            "url": "https://www.clien.net/service/board/jirum/19276995?od=T31&po=2&category=0&groupCd="
+          },
+          "published_at": "2026-11-10T13:11:51+09:00",
+          "score": 48,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyxFRjouBM",
+            "tracked": true,
+            "matched_keyword": "로지텍 MX Master 3S",
+            "label": "로지텍 MX Master 3S 무선 마우스",
+            "label_kind": "상품"
+          }
+        }
+      ]
+    },
+    "afterwork": {
+      "label": "야근 · 생산성 · 커피·간식",
+      "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+      "items": [
+        {
+          "id": "794d0c4ca90f",
+          "category": "afterwork",
+          "category_label": "야근 · 생산성 · 커피·간식",
+          "title_raw": "[지마켓] 라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개(38,630원/무료)",
+          "product": "라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개",
+          "store": "지마켓",
+          "price": 38630,
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "무료배송",
+          "rocket": false,
+          "specs": [
+            "2개"
+          ],
+          "price_source": "title",
+          "briefing": [
+            "핵심: 라이프익스텐션 종합비타민 120정 2개",
+            "실구매가: 38,630원 / 무료배송 (지마켓)",
+            "추천: 장시간 근무하며 영양 보충이 필요한 직장인",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+          "source": {
+            "id": "ppomppu",
+            "label": "뽐뿌게시판",
+            "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747553"
+          },
+          "published_at": "2026-11-10T13:05:58+09:00",
+          "score": 52,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://www.coupang.com/np/search?q=%EB%9D%BC%EC%9D%B4%ED%94%84%EC%9D%B5%EC%8A%A4%ED%85%90%EC%85%98+%EC%A2%85%ED%95%A9%EB%B9%84%ED%83%80%EB%AF%BC+%ED%88%AC%ED%8D%BC%EB%8D%B0%EC%9D%B4+V2+120%EC%A0%95+2%EA%B0%9C&channel=user",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개 쿠팡 검색",
+            "label_kind": "검색"
+          }
+        },
+        {
+          "id": "5fd2f083fe20",
+          "category": "afterwork",
+          "category_label": "야근 · 생산성 · 커피·간식",
+          "title_raw": "[카카오] 유한양행 비컴플 마시는 멀티비타민 7입 (9,900원/무료)",
+          "product": "유한양행 비컴플 마시는 멀티비타민 7입",
+          "store": "카카오",
+          "price": 9900,
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "무료배송",
+          "rocket": false,
+          "specs": [
+            "7입"
+          ],
+          "price_source": "title",
+          "briefing": [
+            "핵심: 유한양행 비컴플 마시는 멀티비타민 7입",
+            "실구매가: 9,900원 / 무료배송 (카카오)",
+            "추천: 간편하게 비타민을 섭취하고 싶은 사람",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+          "source": {
+            "id": "ppomppu",
+            "label": "뽐뿌게시판",
+            "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747552"
+          },
+          "published_at": "2026-11-10T13:04:46+09:00",
+          "score": 44,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://www.coupang.com/np/search?q=%EC%9C%A0%ED%95%9C%EC%96%91%ED%96%89+%EB%B9%84%EC%BB%B4%ED%94%8C+%EB%A7%88%EC%8B%9C%EB%8A%94+%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+7%EC%9E%85&channel=user",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "유한양행 비컴플 마시는 멀티비타민 7입 쿠팡 검색",
+            "label_kind": "검색"
+          }
+        },
+        {
+          "id": "70196d250bfc",
+          "category": "afterwork",
+          "category_label": "야근 · 생산성 · 커피·간식",
+          "title_raw": "[네이버]고소한원두1kg 29,500원/유료",
+          "product": "고소한원두1kg",
+          "store": "네이버",
+          "price": 29500,
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "유료배송",
+          "rocket": false,
+          "specs": [
+            "1kg"
+          ],
+          "price_source": "title",
+          "briefing": [
+            "핵심: 고소한원두1kg, 네이버",
+            "실구매가: 29,500원 유료배송",
+            "추천: 야근할 때 커피 필요한 사람",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+          "source": {
+            "id": "ppomppu",
+            "label": "뽐뿌게시판",
+            "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747541"
+          },
+          "published_at": "2026-11-10T12:40:50+09:00",
+          "score": 40,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyzuKorRTw",
+            "tracked": true,
+            "matched_keyword": "고소한 원두 1kg",
+            "label": "고소한 원두 1kg (사무실 커피)",
+            "label_kind": "상품"
+          }
+        }
+      ]
+    }
+  },
+  "picks": [
+    {
+      "category": "keyboard-mouse",
+      "kicker": "Mouse & Desk Setup",
+      "title": "로지텍 MX Master 3S",
+      "desc": "무소음 스위치와 MagSpeed 휠. 하루 8시간 손목 부담을 줄이는 개발자 기본 장비.",
+      "url": "https://link.coupang.com/a/iyxFRjouBM",
+      "tracked": true
+    },
+    {
+      "category": "laptops",
+      "kicker": "Workstation / Laptop",
+      "title": "Apple M4 MacBook Pro",
+      "desc": "통합 메모리 대역폭으로 로컬 LLM 추론과 빌드를 한 대에서. 14/16인치.",
+      "url": "https://link.coupang.com/a/iyxHrMNtyC",
+      "tracked": true
+    },
+    {
+      "category": "monitor-desk",
+      "kicker": "Desk Ergonomics",
+      "title": "모니터암 · 거치대",
+      "desc": "화면을 눈높이로 올리면 8시간 뒤 목·어깨 피로가 달라집니다. 쿠팡 인기 순 정렬.",
+      "url": "https://link.coupang.com/a/iyzzXmg6CG",
+      "tracked": true
+    },
+    {
+      "category": "keyboard-mouse",
+      "kicker": "Keyboard",
+      "title": "저소음 기계식 키보드",
+      "desc": "회사·야간 작업에서도 눈치 보이지 않는 저소음 축. 손목 피로를 줄이는 기본 장비.",
+      "url": "https://link.coupang.com/a/iyzxBosAM0",
+      "tracked": true
+    },
+    {
+      "category": "afterwork",
+      "kicker": "Office Coffee & Snack",
+      "title": "사무실 커피·간식 재고",
+      "desc": "야근 잦은 팀일수록 커피·간식 재고가 생산성에 직결됩니다. 골드박스 특가로 채우세요.",
+      "url": "https://link.coupang.com/a/iyxEbxQMEK",
+      "tracked": true
+    }
+  ],
+  "goldbox": {
+    "url": "https://link.coupang.com/a/iyxEbxQMEK",
+    "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
+  },
+  "stats": {
+    "feed": 6,
+    "tracked_links": 4,
+    "search_fallback": 2
+  }
+}

@@ -391,6 +391,301 @@ DEALS_SECTION_HTML = """
 """
 
 
+# ---------------------------------------------------------------- korean portal
+
+DEALS_DATA_PATH = "/workspace/devtools-radar/data/deals.json"
+KO_SITE_NAME = "DevTeardown KR"
+KO_TAGLINE = "개발자 장비 & 테크 핫딜 레이더"
+KO_DISCLOSURE = (
+    "이 포스팅은 쿠팡 파트너스 활동의 일환으로, "
+    "이에 따른 일정액의 수수료를 제공받습니다."
+)
+
+KO_CSS = """
+.ko-hero { padding: 3rem 0 1.5rem; }
+.ko-hero h1 { font-size: 2.5rem; margin: 0.6rem 0 0.9rem; }
+.ko-hero .lead { max-width: 700px; }
+.ko-stats { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 1.6rem 0 0.4rem; }
+.ko-stat { font-size: 0.82rem; color: var(--text-muted); }
+.ko-stat strong { display: block; font-size: 1.15rem; color: #fff; letter-spacing: -0.01em; }
+.disclosure-bar {
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  color: #f0c98a;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin: 1.4rem 0 0;
+}
+.deal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.1rem; margin: 1.6rem 0 0.5rem; }
+.deal-card {
+  display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.15rem 1.2rem 1.05rem;
+  transition: border-color 0.18s, transform 0.18s;
+}
+.deal-card:hover { border-color: #2b405f; transform: translateY(-2px); }
+.deal-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.65rem; }
+.deal-src { font-size: 0.72rem; color: var(--text-muted); }
+.deal-title { font-size: 1rem; line-height: 1.45; color: #fff; margin: 0 0 0.6rem; font-weight: 650; }
+.deal-price { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.45rem; }
+.deal-price strong { font-size: 1.35rem; color: var(--primary); letter-spacing: -0.02em; }
+.deal-price s { color: #64748b; font-size: 0.85rem; }
+.deal-price .unknown { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
+.deal-flags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+.deal-brief { list-style: none; margin: 0 0 0.9rem; padding: 0; }
+.deal-brief li { font-size: 0.83rem; color: #a9b7c9; line-height: 1.55; margin: 0 0 0.28rem; padding-left: 0.7rem; position: relative; }
+.deal-brief li::before { content: "·"; position: absolute; left: 0; color: var(--primary); }
+.deal-cta { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
+.deal-cta .btn { font-size: 0.82rem; padding: 0.5rem 0.9rem; }
+.deal-cta .src-link { font-size: 0.72rem; color: #64748b; text-decoration: none; }
+.deal-cta .src-link:hover { color: var(--primary); }
+.untracked-note { font-size: 0.68rem; color: #64748b; margin-top: 0.5rem; }
+.cat-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-top: 3rem; }
+.cat-head h2 { margin: 0; border-bottom: none; padding-bottom: 0; }
+.cat-sub { color: var(--text-muted); font-size: 0.86rem; }
+.pick-card {
+  display: block; text-decoration: none;
+  background: linear-gradient(160deg, #131c2d 0%, #101725 100%);
+  border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.1rem 1.2rem;
+  transition: border-color 0.18s, transform 0.18s;
+}
+.pick-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.pick-kicker { font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.pick-card strong { display: block; color: #fff; margin: 0.35rem 0 0.3rem; font-size: 1rem; }
+.pick-card p { font-size: 0.83rem; color: var(--text-muted); margin: 0 0 0.6rem; }
+.pick-card span.go { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
+.goldbox {
+  margin: 2.4rem 0 0; padding: 1.3rem 1.5rem;
+  background: linear-gradient(120deg, rgba(56,189,248,0.10), rgba(16,185,129,0.07));
+  border: 1px solid #1e3a5f; border-radius: 12px;
+  display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+}
+.goldbox h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+.goldbox p { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+.method-note { font-size: 0.8rem; color: var(--text-muted); line-height: 1.75; margin-top: 2.6rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
+@media (max-width: 640px) { .ko-hero h1 { font-size: 1.9rem; } }
+"""
+
+
+def load_deals() -> dict:
+    if os.path.exists(DEALS_DATA_PATH):
+        try:
+            with open(DEALS_DATA_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict) and data.get("feed") is not None:
+                return data
+        except (json.JSONDecodeError, OSError):
+            pass
+    # 데이터가 없어도 포털은 떠야 한다: 큐레이션 카드만으로 구성
+    return {
+        "generated_at": "",
+        "feed": [],
+        "categories": {},
+        "picks": [
+            {"category": "keyboard-mouse", "kicker": "Mouse & Desk Setup",
+             "title": "로지텍 MX Master 3S",
+             "desc": "무소음 스위치와 MagSpeed 휠. 하루 8시간 손목 부담을 줄이는 개발자 기본 장비.",
+             "url": "https://link.coupang.com/a/iyxFRjouBM", "tracked": True},
+            {"category": "laptops", "kicker": "Workstation / Laptop",
+             "title": "Apple M4 MacBook Pro",
+             "desc": "통합 메모리 대역폭으로 로컬 LLM 추론과 빌드를 한 대에서. 14/16인치.",
+             "url": "https://link.coupang.com/a/iyxHrMNtyC", "tracked": True},
+        ],
+        "goldbox": {"url": "https://link.coupang.com/a/iyxEbxQMEK",
+                    "label": "쿠팡 골드박스 — 매일 오전 7시 특가"},
+        "disclosure": KO_DISCLOSURE,
+    }
+
+
+def _price_block(deal: dict) -> str:
+    if deal.get("price"):
+        out = f'<strong>{deal["price"]:,}원</strong>'
+        if deal.get("original_price") and deal["original_price"] > deal["price"]:
+            out += f'<s>{deal["original_price"]:,}원</s>'
+        if deal.get("discount_pct"):
+            out += f'<span class="badge badge-green">-{deal["discount_pct"]}%</span>'
+        return out
+    if deal.get("discount_pct"):
+        return f'<span class="unknown">원문 가격 확인</span><span class="badge badge-green">-{deal["discount_pct"]}%</span>'
+    return '<span class="unknown">원문 가격 확인</span>'
+
+
+def _deal_card(deal: dict) -> str:
+    link = deal.get("link") or {}
+    url = html.escape(link.get("url", ""))
+    tracked = bool(link.get("tracked"))
+    cta = "쿠팡에서 보기 →" if tracked else "쿠팡에서 검색 →"
+    flags = ""
+    if deal.get("shipping"):
+        cls = "badge-green" if "무료" in deal["shipping"] else "badge-gray"
+        flags += f'<span class="badge {cls}">{html.escape(deal["shipping"])}</span>'
+    if deal.get("rocket"):
+        flags += '<span class="badge badge-blue">로켓배송</span>'
+    brief = "".join(
+        f"<li>{html.escape(line)}</li>"
+        for line in deal.get("briefing", [])
+        if not line.startswith("핵심")
+    )
+    note = "" if tracked else '<div class="untracked-note">제휴 링크 없음 — 쿠팡 검색으로 연결</div>'
+    rel = "noopener nofollow sponsored" if tracked else "noopener nofollow"
+    return f"""
+      <article class="deal-card">
+        <div class="deal-top">
+          <span class="badge badge-blue">{html.escape(deal.get('category_label', '테크'))}</span>
+          <span class="deal-src">{html.escape(deal.get('store') or deal.get('source', {}).get('label', ''))}</span>
+        </div>
+        <h3 class="deal-title">{html.escape(deal.get('product', ''))}</h3>
+        <div class="deal-price">{_price_block(deal)}</div>
+        <div class="deal-flags">{flags}</div>
+        <ul class="deal-brief">{brief}</ul>
+        <div class="deal-cta">
+          <a class="btn btn-primary" href="{url}" target="_blank" rel="{rel}">{cta}</a>
+          <a class="src-link" href="{html.escape(deal.get('source', {}).get('url', '#'))}" target="_blank" rel="noopener nofollow">원문</a>
+        </div>
+        {note}
+      </article>"""
+
+
+def generate_ko_html(deals: dict) -> str:
+    feed = deals.get("feed", [])
+    categories = deals.get("categories", {})
+    picks = deals.get("picks", [])
+    goldbox = deals.get("goldbox") or {"url": "https://link.coupang.com/a/iyxEbxQMEK", "label": "쿠팡 골드박스"}
+    updated = deals.get("generated_at", "")[:10].replace("-", ".") or "2026.11.10"
+
+    feed_cards = "".join(_deal_card(d) for d in feed[:12])
+    if not feed_cards:
+        feed_cards = ('<p style="color:var(--text-muted);font-size:0.92rem;">'
+                      '지금 수집된 신규 테크 핫딜이 없습니다. 아래 큐레이션과 골드박스를 확인하세요.</p>')
+
+    cat_html = ""
+    for slug in ("laptops", "monitor-desk", "keyboard-mouse", "afterwork"):
+        cat = categories.get(slug) or {}
+        items = cat.get("items", [])
+        label = cat.get("label", slug)
+        audience = cat.get("audience", "")
+        cards = "".join(_deal_card(d) for d in items[:4])
+        if not cards:
+            cards = ('<p style="color:var(--text-muted);font-size:0.88rem;">'
+                     '이 카테고리에 새로 올라온 핫딜이 없습니다. 아래 큐레이션을 참고하세요.</p>')
+        cat_html += f"""
+    <div class="cat-head" id="{slug}">
+      <h2>{html.escape(label)}</h2>
+      <span class="cat-sub">{html.escape(audience)}</span>
+    </div>
+    <div class="deal-grid">{cards}</div>"""
+
+    pick_cards = ""
+    for p in picks:
+        go = "쿠팡 최저가 확인 →" if p.get("tracked", True) else "쿠팡에서 검색 →"
+        pick_cards += f"""
+      <a class="pick-card" href="{html.escape(p['url'])}" target="_blank" rel="noopener nofollow sponsored">
+        <div class="pick-kicker">{html.escape(p.get('kicker', ''))}</div>
+        <strong>{html.escape(p.get('title', ''))}</strong>
+        <p>{html.escape(p.get('desc', ''))}</p>
+        <span class="go">{go}</span>
+      </a>"""
+
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": KO_SITE_NAME,
+        "alternateName": KO_TAGLINE,
+        "url": f"{BASE_URL}/ko/",
+        "inLanguage": "ko-KR",
+        "description": "개발자 장비·테크 핫딜을 원문 가격 그대로 모아 실구매가와 추천 대상을 정리하는 한글 핫딜 레이더.",
+    }
+
+    return f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{KO_SITE_NAME} — {KO_TAGLINE} (2026)</title>
+  <meta name="description" content="개발자 장비·테크 핫딜을 뽐뿌·클리앙 등 원문에서 모아 가격·할인율·배송 조건을 정리하고, 실구매가와 추천 대상을 한눈에 보여주는 한글 핫딜 레이더.">
+  <link rel="canonical" href="{BASE_URL}/ko/">
+  <link rel="alternate" hreflang="en" href="{BASE_URL}/">
+  <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
+  <meta property="og:title" content="{KO_SITE_NAME} — {KO_TAGLINE}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{BASE_URL}/ko/">
+  <meta property="og:locale" content="ko_KR">
+  <script type="application/ld+json">
+  {json.dumps(schema, ensure_ascii=False, indent=2)}
+  </script>
+  <style>{SHARED_CSS}{KO_CSS}</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/ko/" class="logo">⚡ DevTeardown<span>KR</span></a>
+      <div style="display:flex; gap:1rem; align-items:center;">
+        <a class="nav-link" href="#feed">실시간 핫딜</a>
+        <a class="nav-link" href="#keyboard-mouse">장비</a>
+        <a class="nav-link" href="/">EN Reports</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="ko-hero">
+      <span class="badge badge-blue">매일 갱신 · 원문 가격 기준</span>
+      <h1>개발자 장비, 살 때만 사세요.</h1>
+      <p class="lead">뽐뿌·클리앙 알뜰구매에 올라온 테크 핫딜을 모아, 원문에 적힌 가격과 배송 조건만으로
+      실구매가를 다시 계산합니다. 과장된 "역대급" 대신, 지금 사도 되는지 판단할 수 있는 숫자와 카테고리만 남겼습니다.</p>
+      <div class="ko-stats">
+        <div class="ko-stat"><strong>{len(feed)}건</strong>실시간 수집 핫딜</div>
+        <div class="ko-stat"><strong>4개</strong>장비 카테고리</div>
+        <div class="ko-stat"><strong>{updated}</strong>마지막 업데이트</div>
+        <div class="ko-stat"><strong>0원</strong>가입·구독 비용</div>
+      </div>
+      <div class="disclosure-bar">
+        {html.escape(deals.get('disclosure', KO_DISCLOSURE))}
+      </div>
+    </div>
+
+    <h2 id="feed" style="margin-top:2.6rem;">실시간 테크 · 개발자 핫딜</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.4rem;">
+      가격·할인율·배송은 수집 시점의 원문 표기입니다. 품절·가격 변동은 원문에서 확인하세요.
+    </p>
+    <div class="deal-grid">{feed_cards}</div>
+
+    <div class="goldbox">
+      <div>
+        <h3>⏰ 오늘의 골드박스</h3>
+        <p>매일 오전 7시, 한정 수량 특가. 개발 장비부터 사무 간식까지.</p>
+      </div>
+      <a class="btn btn-primary" href="{html.escape(goldbox['url'])}" target="_blank" rel="noopener nofollow sponsored">{html.escape(goldbox.get('label', '골드박스 보기'))} →</a>
+    </div>
+
+    {cat_html}
+
+    <h2 style="margin-top:3.4rem;">지금 사도 되는 장비 큐레이션</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.4rem;">
+      핫딜이 뜰 때까지 기다리지 않아도 되는, 개발자 책상 기본 장비.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">{pick_cards}</div>
+
+    <div class="method-note">
+      <strong style="color:#fff;">이 페이지가 가격을 다루는 방식</strong><br>
+      모든 가격은 수집한 원문 게시글의 표기를 그대로 옮깁니다. 할인율은 원문에 정가가 있을 때만 계산하고,
+      없으면 추정하지 않습니다. 쿠팡 링크는 파트너스 트래킹 링크이며, 트래킹 링크가 없는 상품은
+      '쿠팡 검색'으로 표시해 수익 링크와 구분합니다. 가격·재고는 언제든 바뀌므로 결제 전 원문 확인이 필요합니다.<br><br>
+      {html.escape(deals.get('disclosure', KO_DISCLOSURE))}
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 {KO_SITE_NAME}. 개발자 장비 핫딜 큐레이션. 가격은 원문 표기 기준입니다.</p>
+      <p style="margin-top:0.4rem;"><a href="/" style="color:var(--text-muted);">English teardowns → devteardown.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>"""
+
+
 def generate_index_html(items):
     cards_html = ""
     for item in items:
@@ -416,6 +711,8 @@ def generate_index_html(items):
   <title>{SITE_NAME} — Developer Tool Teardowns, Priced in Arithmetic (2026)</title>
   <meta name="description" content="Independent teardowns of competing developer tools: what each vendor's billing unit punishes, worked cost arithmetic from published price sheets, and a decision matrix you can paste into a design doc.">
   <link rel="canonical" href="{BASE_URL}/">
+  <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
+  <link rel="alternate" hreflang="en" href="{BASE_URL}/">
   <meta property="og:title" content="{SITE_NAME} — Developer Tool Teardowns">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{BASE_URL}/">
@@ -425,7 +722,10 @@ def generate_index_html(items):
   <header>
     <div class="header-inner">
       <a href="./" class="logo">⚡ DevTools<span>Radar</span></a>
-      <span class="badge badge-green">Verified Nov 2026</span>
+      <div style="display:flex; gap:1rem; align-items:center;">
+        <a class="nav-link" href="./ko/">한국어 핫딜</a>
+        <span class="badge badge-green">Verified Nov 2026</span>
+      </div>
     </div>
   </header>
 
@@ -633,7 +933,10 @@ def generate_comparison_html(item):
   <header>
     <div class="header-inner">
       <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
-      <a href="../../" class="nav-link">← All teardowns</a>
+      <div style="display:flex; gap:1rem; align-items:center;">
+        <a href="../../ko/" class="nav-link">한국어 핫딜</a>
+        <a href="../../" class="nav-link">← All teardowns</a>
+      </div>
     </div>
   </header>
 
@@ -762,6 +1065,10 @@ def generate_sitemap(items):
     <loc>{BASE_URL}/</loc>
     <lastmod>{today}</lastmod>
     <priority>1.0</priority>
+  </url>\n  <url>
+    <loc>{BASE_URL}/ko/</loc>
+    <lastmod>{today}</lastmod>
+    <priority>0.9</priority>
   </url>\n"""
     for item in items:
         urls += f"""  <url>
@@ -796,13 +1103,22 @@ def main():
     with open(os.path.join(DIST_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(sitemap)
 
+    # 한글 핫딜 포털 (/ko/)
+    deals = load_deals()
+    ko_dir = os.path.join(DIST_DIR, "ko")
+    os.makedirs(ko_dir, exist_ok=True)
+    with open(os.path.join(ko_dir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(generate_ko_html(deals))
+    print(f"  {'ko-portal':<28} feed={len(deals.get('feed', []))} deals  "
+          f"picks={len(deals.get('picks', []))}  updated={deals.get('generated_at', '-')}")
+
     with open(os.path.join(DIST_DIR, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE_URL}/sitemap.xml\n")
 
     with open(os.path.join(DIST_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("devteardown.com\n")
 
-    print(f"Build complete: {len(items) + 1} pages in {DIST_DIR}")
+    print(f"Build complete: {len(items) + 2} pages in {DIST_DIR}")
 
 
 if __name__ == "__main__":
