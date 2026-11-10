@@ -338,20 +338,20 @@ Neki is PlanetScale's sharded Postgres, in platform preview since 10 September 2
 ### Pick from measured compute, branch and data charges
 Choose Neon when measured CU-hours plus branch, storage and transfer charges beat PlanetScale's total. Choose PlanetScale for suitable always-on cluster compute or an existing Vitess-shaped MySQL estate. Check this today: 1. Pull last month's awake hours per Neon compute. For compute only: $15 ÷ (0.25 CU × $0.106/CU-hour) ≈ 566.04 h on Launch. 2. Count branches alive at once and how long each lives, and price them as PlanetScale clusters before copying the habit. 3. Check suspension configuration and billed CU-hours; add storage, backups and transfer before choosing. 4. Do not run production workloads on Neki's platform preview; evaluate it only outside production.
 
-## Current deals (KR)
+## Retained Korean listings (not confirmed current deals)
 
-- 로지텍 MX Master 3S (로켓직구) — 95220 KRW at 쿠팡 로켓직구 (키보드 · 마우스) 
-- 올리브영 기프트카드 20,000원권 (실시간 e쿠폰) — 19600 KRW at 쿠팡 실시간e쿠폰 (모바일 상품권 · e쿠폰) 
-- 롯데 빼빼로 샘플러 6종 세트 258g (빼빼로데이) — 9300 KRW at 쿠팡 로켓배송 (맛있는 과자 · 탕비실 간식) 
-- 오리온 와우스낵 16팩 선물세트 (인기스낵 16봉) — 10980 KRW at 쿠팡 로켓배송 (맛있는 과자 · 탕비실 간식) 
-- 쿠팡·쿠팡이츠 기프트카드 10,000원권 (모바일 e쿠폰) — 10000 KRW at 쿠팡 모바일쿠폰 (모바일 상품권 · e쿠폰) 
-- 오리온 비쵸비 비스켓 125g 2개입 — 4370 KRW at 쿠팡 로켓배송 (맛있는 과자 · 탕비실 간식) 
-- 사무실 과자 세트 10종 탕비실 간식 세트 — 27800 KRW at 쿠팡 무료배송 (맛있는 과자 · 탕비실 간식) 
-- 벨킨 부스트차지 100W GaN 초고속 충전기 — 39900 KRW at 쿠팡 로켓배송 (테크 장비 · 충전기) 
-- LG 울트라기어 27인치 QHD IPS 게이밍 모니터 — 241734 KRW at 쿠팡 로켓배송 (모니터 · 암 · 데스크) 
-- 유그린 넥소드 프로 GaN 100W 3포트 멀티충전기 — 60900 KRW at 쿠팡 로켓배송 (테크 장비 · 충전기) 
+- 로지텍 MX Master 3S (로켓직구) — 95220 KRW at 쿠팡 로켓직구 (키보드 · 마우스) Historical price, not reverified. 
+- 올리브영 기프트카드 20,000원권 (실시간 e쿠폰) — 19600 KRW at 쿠팡 실시간e쿠폰 (모바일 상품권 · e쿠폰) Historical price, not reverified. 
+- 롯데 빼빼로 샘플러 6종 세트 258g (빼빼로데이) — 9300 KRW at 쿠팡 로켓배송 (맛있는 과자 · 탕비실 간식) Historical price, not reverified. 
+- 오리온 와우스낵 16팩 선물세트 (인기스낵 16봉) — 10980 KRW at 쿠팡 로켓배송 (맛있는 과자 · 탕비실 간식) Historical price, not reverified. 
+- 쿠팡·쿠팡이츠 기프트카드 10,000원권 (모바일 e쿠폰) — 10000 KRW at 쿠팡 모바일쿠폰 (모바일 상품권 · e쿠폰) Historical price, not reverified. 
+- 오리온 비쵸비 비스켓 125g 2개입 — 4370 KRW at 쿠팡 로켓배송 (맛있는 과자 · 탕비실 간식) Historical price, not reverified. 
+- 사무실 과자 세트 10종 탕비실 간식 세트 — 27800 KRW at 쿠팡 무료배송 (맛있는 과자 · 탕비실 간식) Historical price, not reverified. 
+- 벨킨 부스트차지 100W GaN 초고속 충전기 — 39900 KRW at 쿠팡 로켓배송 (테크 장비 · 충전기) Historical price, not reverified. 
+- LG 울트라기어 27인치 QHD IPS 게이밍 모니터 — 241734 KRW at 쿠팡 로켓배송 (모니터 · 암 · 데스크) Historical price, not reverified. 
+- 유그린 넥소드 프로 GaN 100W 3포트 멀티충전기 — 60900 KRW at 쿠팡 로켓배송 (테크 장비 · 충전기) Historical price, not reverified. 
 
-## Current deals (global)
+## Recorded international product offers (discounts not independently established)
 
 - DJI Osmo Mobile 7 — 349 CNY at DJI China (China storefronts) https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN Purchase eligibility: China storefront; address eligibility unverified. Page advertises free shipping; delivery eligibility, stock and arrival date require a specific address. Payment eligibility and final checkout total unverified.
 - Lenovo GK10 RT60 magnetic keyboard · black — 199 CNY at Lenovo China (China storefronts) https://item.lenovo.com.cn/product/1057925.html Purchase eligibility: China storefront; address eligibility unverified. China storefront; item-specific mainland delivery, freight and postcode eligibility unverified. Payment eligibility and final checkout total unverified.
