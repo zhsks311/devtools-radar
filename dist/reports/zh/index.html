@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTools Radar — Developer tool comparisons</title>
+  <meta name="description" content="Developer tool comparisons with published pricing, worked cost examples, and practical trade-offs.">
+  <link rel="canonical" href="https://devteardown.com/reports/zh/">
+  
+  
+  
+  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:description" content="Independent teardowns of developer tools: billing units, worked cost arithmetic, and a decision matrix you can paste into a design doc.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DevTools Radar — Developer Tool Teardowns">
+  <meta name="twitter:description" content="Compare developer tools, their costs, and their trade-offs.">
+  <meta property="og:title" content="DevTools Radar — Developer Tool Teardowns">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://devteardown.com/">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Developer tool teardowns",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/",
+      "name": "Stripe vs Lemon Squeezy / Paddle"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/",
+      "name": "Anthropic vs OpenAI"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://devteardown.com/compare/datadog-vs-grafana-cloud/",
+      "name": "Datadog vs Grafana Cloud"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/",
+      "name": "AWS Lambda vs Cloudflare Workers"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "url": "https://devteardown.com/compare/resend-vs-sendgrid/",
+      "name": "Resend vs SendGrid"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "url": "https://devteardown.com/compare/supabase-vs-firebase/",
+      "name": "Supabase vs Firebase"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "url": "https://devteardown.com/compare/vercel-vs-cloudflare-pages/",
+      "name": "Vercel vs Cloudflare Pages"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "url": "https://devteardown.com/compare/cursor-vs-github-copilot/",
+      "name": "Cursor vs GitHub Copilot"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "url": "https://devteardown.com/compare/notion-vs-obsidian/",
+      "name": "Notion vs Obsidian"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "url": "https://devteardown.com/compare/bun-vs-node/",
+      "name": "Bun vs Node.js"
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "url": "https://devteardown.com/compare/prisma-vs-drizzle/",
+      "name": "Prisma vs Drizzle"
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "url": "https://devteardown.com/compare/docker-vs-podman/",
+      "name": "Docker vs Podman"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "url": "https://devteardown.com/compare/clerk-vs-auth0/",
+      "name": "Clerk vs Auth0"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "url": "https://devteardown.com/compare/planetscale-vs-neon/",
+      "name": "PlanetScale vs Neon"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DevTools Radar",
+  "url": "https://devteardown.com",
+  "inLanguage": "en",
+  "description": "Developer tool comparisons with pricing and trade-offs."
+}
+  </script>
+  <style>
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
+<body>
+  <header class="unified-header"><a class="brand" href="/zh/">DevTeardown</a><nav aria-label="Navigation"><a href="/zh/">优惠</a><a href="/reports/zh/">工具比较</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh" aria-current="page">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
+
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
+    <section class="index-intro">
+      <div class="eyebrow">软件选择指南</div>
+      <h1>选择下一个工具之前。</h1>
+      <p class="lead">比较价格、用途和取舍。比较文章正文为英文。</p>
+    </section>
+    <h2 class="section-label">工具比较 · 14</h2>
+    <div class="index-list">
+      
+        <a class="index-entry" href="/compare/stripe-vs-lemonsqueezy-vs-paddle/">
+          <div class="entry-meta"><span>Payments &amp; Billing</span><span>5 min read</span></div>
+          <h2>Stripe <span style="color:var(--text-muted);">/</span> Lemon Squeezy / Paddle</h2>
+          <p>A thousand subscribers at $20 a month pay $1,520 on an assembled Stripe stack and $1,500 on a merchant of record. The vendor everyone calls expensive is the cheaper one at…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/anthropic-vs-openai-api-pricing/">
+          <div class="entry-meta"><span>AI &amp; LLM APIs</span><span>5 min read</span></div>
+          <h2>Anthropic <span style="color:var(--text-muted);">/</span> OpenAI</h2>
+          <p>Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/datadog-vs-grafana-cloud/">
+          <div class="entry-meta"><span>Monitoring &amp; Observability</span><span>5 min read</span></div>
+          <h2>Datadog <span style="color:var(--text-muted);">/</span> Grafana Cloud</h2>
+          <p>Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud&#x27;s Pro plan. The difference is not the per-series rate. It is that only one of them…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/aws-lambda-vs-cloudflare-workers/">
+          <div class="entry-meta"><span>Serverless &amp; Edge</span><span>5 min read</span></div>
+          <h2>AWS Lambda <span style="color:var(--text-muted);">/</span> Cloudflare Workers</h2>
+          <p>One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/resend-vs-sendgrid/">
+          <div class="entry-meta"><span>Email Infrastructure</span><span>5 min read</span></div>
+          <h2>Resend <span style="color:var(--text-muted);">/</span> SendGrid</h2>
+          <p>At 100,000 emails a month, Resend&#x27;s Pro plan is $35 and SendGrid&#x27;s Essentials plan is $34.95. Both vendors then charge exactly $55 more for the next rung, and none of that…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/supabase-vs-firebase/">
+          <div class="entry-meta"><span>Backend &amp; Database</span><span>5 min read</span></div>
+          <h2>Supabase <span style="color:var(--text-muted);">/</span> Firebase</h2>
+          <p>Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/vercel-vs-cloudflare-pages/">
+          <div class="entry-meta"><span>Hosting &amp; Edge</span><span>5 min read</span></div>
+          <h2>Vercel <span style="color:var(--text-muted);">/</span> Cloudflare Pages</h2>
+          <p>Both hosts now meter CPU time, so an idle await is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel —…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/cursor-vs-github-copilot/">
+          <div class="entry-meta"><span>AI Coding</span><span>5 min read</span></div>
+          <h2>Cursor <span style="color:var(--text-muted);">/</span> GitHub Copilot</h2>
+          <p>The $20 all-you-can-eat AI editor is gone, and its replacement is an $8 tier that only runs Grok and a $30 tier where Claude and GPT tokens bill on top. Both Cursor and…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/notion-vs-obsidian/">
+          <div class="entry-meta"><span>Knowledge &amp; Notes</span><span>5 min read</span></div>
+          <h2>Notion <span style="color:var(--text-muted);">/</span> Obsidian</h2>
+          <p>On Notion Free, page history stops at 7 days; Business keeps 90, and an Obsidian vault under git has no plan-imposed cutoff at all. For ten people that is 10 × $20 × 12 =…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/bun-vs-node/">
+          <div class="entry-meta"><span>Runtimes &amp; Tooling</span><span>4 min read</span></div>
+          <h2>Bun <span style="color:var(--text-muted);">/</span> Node.js</h2>
+          <p>Bun&#x27;s own test count says node:http passes 403 of 415 tests, and Node&#x27;s own calendar says v20 died on 24 March 2026. Neither runtime charges a cent, so the bill arrives…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/prisma-vs-drizzle/">
+          <div class="entry-meta"><span>Data &amp; ORM</span><span>5 min read</span></div>
+          <h2>Prisma <span style="color:var(--text-muted);">/</span> Drizzle</h2>
+          <p>Both ORMs are free, and in 2026 each arrives with a database vendor attached: Prisma sells Prisma Postgres beside its client, and PlanetScale hired Drizzle&#x27;s entire core team…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/docker-vs-podman/">
+          <div class="entry-meta"><span>Containers &amp; Runtime</span><span>4 min read</span></div>
+          <h2>Docker <span style="color:var(--text-muted);">/</span> Podman</h2>
+          <p>Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/clerk-vs-auth0/">
+          <div class="entry-meta"><span>Identity &amp; Auth</span><span>5 min read</span></div>
+          <h2>Clerk <span style="color:var(--text-muted);">/</span> Auth0</h2>
+          <p>At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that…</p>
+        </a>
+        
+        <a class="index-entry" href="/compare/planetscale-vs-neon/">
+          <div class="entry-meta"><span>Backend &amp; Database</span><span>5 min read</span></div>
+          <h2>PlanetScale <span style="color:var(--text-muted);">/</span> Neon</h2>
+          <p>Suspended compute costs $0 on Neon; PlanetScale&#x27;s smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU ×…</p>
+        </a>
+        
+    </div>
+
+    
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
+      </p>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
+
+
+    <div class="updated-note">
+      <strong>A note on the numbers.</strong> Articles link to vendor pricing and documentation.
+      Cost examples show their assumptions and formulas; they are not measured benchmarks.
+      Check each article's verification date and the current vendor price before making a decision.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+    </div>
+  </footer>
+</body>
+</html>

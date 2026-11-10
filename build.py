@@ -1508,7 +1508,9 @@ def render_site(items, output, deals, en_deals):
     if (ROOT / "assets" / "deals").exists():
         shutil.copytree(ROOT / "assets" / "deals", Path(DIST_DIR) / "assets" / "deals", dirs_exist_ok=True)
 
-    print(f"Rendered {len(items) + 3} pages")
+    from site_i18n import write_unified
+    write_unified(DIST_DIR, items, deals, en_deals)
+    print(f"Rendered {len(items) + 7} pages")
 
 
 MANIFEST = ".generated-files.json"

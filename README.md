@@ -114,3 +114,13 @@ until a current mainland offer is independently verified.
 
 Run `python3 tools/check.py` before publication. For an authorized live feed check:
 `python3 tools/collect_deal_feeds.py --output collection-output`.
+
+## Unified multilingual catalogue
+
+`site_i18n.py` renders the same curated Korean and international records in six languages.
+English uses `/deals/`; `/ko/`, `/zh/`, `/ja/`, `/es/`, `/fr/` share the same catalogue.
+Market and category filters are combined and retained in the URL when changing language.
+`data/deal_localizations.json` contains the translated product summary and purchase caveats.
+The expandable original source record is deliberately not translated or presented as new verification.
+Korean records retain their historical prices; inclusion does not reverify availability.
+Comparison articles remain English, with a clearly labeled original-language fallback and common navigation.

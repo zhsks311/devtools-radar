@@ -183,20 +183,11 @@ footer p { font-size:.8rem; margin:0; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
-</head>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
 <body>
-  <header>
-    <div class="header-inner">
-      <a href="../../" class="logo">DevTools<span>Radar</span></a>
-      <div style="display:flex; gap:1rem; align-items:center;">
-        <a href="../../deals/" class="nav-link">Deals</a>
-        <a href="../../ko/" class="nav-link">한국어 핫딜</a>
-        <a href="../../" class="nav-link">← All teardowns</a>
-      </div>
-    </div>
-  </header>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
 
-  <main class="container">
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
     <div class="meta-row">
       <span class="badge badge-blue">Serverless &amp; Edge</span>
       <span class="badge badge-gray">AWS Lambda vs Cloudflare Workers</span>
