@@ -280,6 +280,34 @@ footer p { font-size:.8rem; margin:0; }
 .goldbox { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.2rem; padding:1.5rem 0; margin-top:2rem; border-block:1px solid var(--border); }
 .goldbox h3 { margin:0 0 .3rem; }
 .goldbox p { font-size:.85rem; color:var(--text-muted); margin:0; }
+/* Keep shopping decisions visible; secondary evidence opens on demand. */
+.international-deals .deal-grid { grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; }
+.international-deals .deal-card { min-width:0; padding:1.35rem; gap:0; border-radius:8px; }
+.international-deals .deal-title { font-size:1.22rem; line-height:1.4; min-height:0; margin-bottom:.65rem; overflow-wrap:anywhere; }
+.international-deals .deal-price strong { font-size:1.9rem; color:var(--text); }
+.international-deals .deal-summary { color:var(--text); line-height:1.55; }
+.international-deals .deal-flags { margin-bottom:.6rem; }
+.international-deals .flag { line-height:1.5; color:#355947; }
+.deal-region { font-size:.8rem; line-height:1.5; background:#eef2ed; color:#304636; padding:.6rem .75rem; border-radius:4px; margin:0 0 .9rem; }
+.purchase-terms,.offer-evidence { border-top:1px solid var(--border); font-size:.82rem; margin:0; }
+.purchase-terms summary,.offer-evidence summary { cursor:pointer; padding:.8rem 0; font-weight:600; line-height:1.4; }
+.purchase-terms dl { display:grid; grid-template-columns:6.5rem minmax(0,1fr); margin:0 0 1rem; }
+.purchase-terms dt,.purchase-terms dd { border-top:1px solid var(--border); padding:.6rem 0; margin:0; line-height:1.55; overflow-wrap:anywhere; }
+.purchase-terms dt { color:var(--text-muted); padding-right:.7rem; }
+.purchase-terms dd { color:var(--text); }
+.offer-evidence .deal-check { color:var(--text); line-height:1.6; }
+.international-deals .cta { margin-top:.7rem; border-radius:4px; font-weight:600; }
+.deal-filters { display:flex; gap:1rem; flex-wrap:wrap; padding:1rem; background:var(--surface); border:1px solid var(--border); border-radius:6px; margin:1rem 0; }
+.deal-filters label { display:grid; gap:.4rem; font-size:.8rem; font-weight:600; flex:1; min-width:180px; }
+.deal-filters select { width:100%; padding:.7rem; font:inherit; background:var(--surface); color:var(--text); border:1px solid var(--border); border-radius:4px; }
+.filter-status { font-size:.85rem; color:var(--text-muted); margin:1rem 0; }
+[hidden] { display:none !important; }
+.korea-panel { padding:1.5rem; border:1px solid var(--border); border-radius:6px; background:var(--surface); }
+.korea-panel .cta { display:inline-block; }
+summary:focus-visible,select:focus-visible,.cta:focus-visible { outline:3px solid #538268; outline-offset:3px; }
+@media(max-width:1000px) { .international-deals .deal-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:640px) { .international-deals .deal-grid { grid-template-columns:1fr; } .international-deals .deal-card { padding:1.1rem; } .deal-filters { gap:.8rem; } .deal-filters label { min-width:100%; } .purchase-terms dl { grid-template-columns:5.7rem minmax(0,1fr); } .international-deals .header-inner { flex-wrap:wrap; gap:1rem; } }
+
 </style>
 </head>
 <body>
@@ -317,7 +345,7 @@ footer p { font-size:.8rem; margin:0; }
     </p>
     <nav class="quick-tabs" id="quickTabs"><button class="tab is-active" data-filter="all">전체 <span class="n">17</span></button><button class="tab" data-filter="vouchers">상품권·쿠폰 <span class="n">2</span></button><button class="tab" data-filter="snacks">과자·스낵 <span class="n">4</span></button><button class="tab" data-filter="keyboard-mouse">키보드·마우스 <span class="n">2</span></button><button class="tab" data-filter="tech">테크 장비 <span class="n">4</span></button><button class="tab" data-filter="monitor-desk">모니터·데스크 <span class="n">2</span></button><button class="tab" data-filter="laptops">노트북·PC <span class="n">2</span></button><button class="tab" data-filter="afterwork">커피·음료 <span class="n">1</span></button></nav>
     <div class="deal-grid" id="feedGrid">
-      <article class="deal-card" data-cat="keyboard-mouse">
+      <article class="deal-card" data-country="unverified" data-topic="keyboard-mouse" data-cat="keyboard-mouse">
         
         <div class="deal-top">
           <span class="cat-chip">키보드·마우스</span>
@@ -327,11 +355,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>95,220원</strong><s>159,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-40%</span><span class="flag flag-free">와우 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>95,220원 (로켓직구 39% 특가, 와우 무료배송)</dd></div><div class="fact"><dt>추천</dt><dd>하루 8시간 이상 IDE와 터미널을 오가는 백엔드·데브옵스</dd></div></dl><p class="deal-check">국내 정발(11만 후반) 대비 2만 원 저렴한 최저가 실구매가</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyBYu25xw4" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="vouchers">
+      <article class="deal-card" data-country="unverified" data-topic="vouchers" data-cat="vouchers">
         
         <div class="deal-top">
           <span class="cat-chip">상품권·쿠폰</span>
@@ -341,11 +371,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>19,600원</strong><s>20,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-2%</span><span class="flag flag-ship">결제 즉시 문자/카카오톡 발송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>19,600원 (정가 2만 원에서 2% 즉시할인 e쿠폰)</dd></div><div class="fact"><dt>추천</dt><dd>화장품·면도날·영양제·간식 올리브영 쇼핑 전 상테크 생활비 절약</dd></div></dl><p class="deal-check">결제 완료 즉시 바코드가 발송되어 오프라인 매장 결제 시 바로 사용 가능</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyI8z25s60" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="snacks">
+      <article class="deal-card" data-country="unverified" data-topic="snacks" data-cat="snacks">
         
         <div class="deal-top">
           <span class="cat-chip">과자·스낵</span>
@@ -355,11 +387,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>9,300원</strong><s>12,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-23%</span><span class="flag flag-ship">내일(수) 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>9,300원 (6종 풀세트, 로켓 무료배송 9천 원대)</dd></div><div class="fact"><dt>추천</dt><dd>11월 11일 빼빼로데이 선물 및 사무실 동료들과 나눠 먹을 간식</dd></div></dl><p class="deal-check">쿠팡 로켓배송으로 내일 새벽 문 앞 보장 도착 (무료배송/무료반품)</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyJh99DCuW" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="snacks">
+      <article class="deal-card" data-country="unverified" data-topic="snacks" data-cat="snacks">
         
         <div class="deal-top">
           <span class="cat-chip">과자·스낵</span>
@@ -369,11 +403,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>10,980원</strong><s>14,800원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-26%</span><span class="flag flag-ship">와우 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>10,980원 (16봉 세트, 봉당 680원 대 가성비 종결)</dd></div><div class="fact"><dt>추천</dt><dd>사무실 탕비실 서랍에 쟁여두거나 야근·코딩할 때 바삭한 짠맛 땡기는 분</dd></div></dl><p class="deal-check">쿠팡 로켓배송으로 오늘 주문하면 내일 새벽 사무실/집 문 앞 도착</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyJbjsBrye" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="vouchers">
+      <article class="deal-card" data-country="unverified" data-topic="vouchers" data-cat="vouchers">
         
         <div class="deal-top">
           <span class="cat-chip">상품권·쿠폰</span>
@@ -383,11 +419,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>10,000원</strong><s>10,000원</s></div>
         <div class="deal-flags"><span class="flag flag-ship">결제 즉시 휴대폰 MMS/알림톡 발송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>10,000원 (쿠팡캐시 10,000원 1:1 충전형 e쿠폰)</dd></div><div class="fact"><dt>추천</dt><dd>친구·동료에게 가볍게 모바일로 선물하거나 쿠팡이츠 배달 시 결제용</dd></div></dl><p class="deal-check">코드 입력 즉시 쿠팡캐시로 적립되어 와우회원 혜택과 중복 사용 가능</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyJeI3BcT6" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="snacks">
+      <article class="deal-card" data-country="unverified" data-topic="snacks" data-cat="snacks">
         
         <div class="deal-top">
           <span class="cat-chip">과자·스낵</span>
@@ -397,11 +435,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>4,370원</strong><s>5,200원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-16%</span><span class="flag flag-ship">내일 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>4,370원 (2상자 세트, 로켓 새벽배송 최저가)</dd></div><div class="fact"><dt>추천</dt><dd>얇은 초코 과자와 달리 진짜 두툼한 통초콜릿이 씹히는 고급 간식</dd></div></dl><p class="deal-check">아메리카노나 라떼랑 찰떡궁합, 품절 잦은 스낵 마니아 원픽</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyJdEYzZMO" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="snacks">
+      <article class="deal-card" data-country="unverified" data-topic="snacks" data-cat="snacks">
         
         <div class="deal-top">
           <span class="cat-chip">과자·스낵</span>
@@ -411,11 +451,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>27,800원</strong><s>35,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-21%</span><span class="flag flag-free">무료배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>27,800원 (무료배송, 탕비실 인기 스테디셀러 10종 완벽 구성)</dd></div><div class="fact"><dt>추천</dt><dd>팀원들 당 떨어질 때 집어먹는 달콤한 초코·비스킷 간식 일괄 구비</dd></div></dl><p class="deal-check">개별 포장이라 책상 위나 회의실에 두고 하나씩 깔끔하게 먹기 좋음</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyJcuOpMhU" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="tech">
+      <article class="deal-card" data-country="unverified" data-topic="tech" data-cat="tech">
         
         <div class="deal-top">
           <span class="cat-chip">테크 장비</span>
@@ -425,11 +467,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>39,900원</strong><s>63,900원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-37%</span><span class="flag flag-free">로켓배송 무료반품</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>39,900원 (정가 63,900원에서 37% 특가)</dd></div><div class="fact"><dt>추천</dt><dd>맥북 프로 14/16인치와 스마트폰을 벽돌 충전기 없이 고속 충전하려는 개발자</dd></div></dl><p class="deal-check">접지 설계로 맥북 메탈 바디 미세전류 찌릿함 방지</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyIrM2GlPg" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="monitor-desk">
+      <article class="deal-card" data-country="unverified" data-topic="monitor-desk" data-cat="monitor-desk">
         
         <div class="deal-top">
           <span class="cat-chip">모니터·데스크</span>
@@ -439,11 +483,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>241,734원</strong><s>329,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-26%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>241,734원 (정가 32.9만 원 대비 역대급 특가)</dd></div><div class="fact"><dt>추천</dt><dd>코드 3분할 뷰와 선명한 폰트 가독성이 필요한 개발자 서브/메인 모니터</dd></div></dl><p class="deal-check">피벗·틸트 지원 스탠드 기본 제공, QHD 해상도로 글자 뭉개짐 없음</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyztqGf2zc" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="tech">
+      <article class="deal-card" data-country="unverified" data-topic="tech" data-cat="tech">
         
         <div class="deal-top">
           <span class="cat-chip">테크 장비</span>
@@ -453,11 +499,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>60,900원</strong><s>89,900원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-32%</span><span class="flag flag-ship">내일 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>60,900원 (정가 89,900원, 32% 와우할인)</dd></div><div class="fact"><dt>추천</dt><dd>데스크 위 케이블을 하나로 통합해 노트북+폰+워치를 동시 충전하려는 사람</dd></div></dl><p class="deal-check">컴팩트한 사이즈로 출장·카페 작업 시 가방 무게 대폭 감소</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyIsS5yg2e" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="tech">
+      <article class="deal-card" data-country="unverified" data-topic="tech" data-cat="tech">
         
         <div class="deal-top">
           <span class="cat-chip">테크 장비</span>
@@ -467,11 +515,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>35,700원</strong><s>44,800원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-20%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>35,700원 (쿠팡 로켓배송 최저가)</dd></div><div class="fact"><dt>추천</dt><dd>국내 콘센트 규격에 딱 맞는 흔들림 없는 접지 충전기를 찾는 개발자</dd></div></dl><p class="deal-check">누전 차단 및 기기 보호 회로 탑재, 맥북 터치패드 오작동 완벽 방지</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyItY3nD1U" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="tech">
+      <article class="deal-card" data-country="unverified" data-topic="tech" data-cat="tech">
         
         <div class="deal-top">
           <span class="cat-chip">테크 장비</span>
@@ -481,11 +531,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>78,640원</strong><s>119,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-34%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>78,640원 (정가 11.9만 원 대비 34% 할인)</dd></div><div class="fact"><dt>추천</dt><dd>헤드셋 무게에 목·정수리가 아파 가벼운 유선 이어폰을 찾는 코더</dd></div></dl><p class="deal-check">배터리 방전 걱정 없이 하루 종일 꽂고 집중 코딩 가능</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyzv0uG1N6" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="laptops">
+      <article class="deal-card" data-country="unverified" data-topic="laptops" data-cat="laptops">
         
         <div class="deal-top">
           <span class="cat-chip">노트북·PC</span>
@@ -495,11 +547,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>2,990,000원</strong><s>3,290,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-9%</span><span class="flag flag-ship">내일 새벽 도착 보장</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>2,990,000원 (카드사 즉시할인 및 무이자 할부 혜택)</dd></div><div class="fact"><dt>추천</dt><dd>로컬 LLM 양자화 모델(Ollama) 추론과 대규모 도커 빌드를 병행하는 백엔드 개발자</dd></div></dl><p class="deal-check">통합 메모리 대역폭 273GB/s로 컴파일 및 컨테이너 빌드 시간 반토막</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="keyboard-mouse">
+      <article class="deal-card" data-country="unverified" data-topic="keyboard-mouse" data-cat="keyboard-mouse">
         
         <div class="deal-top">
           <span class="cat-chip">키보드·마우스</span>
@@ -509,11 +563,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>68,900원</strong><s>89,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-23%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>68,900원 (정가 대비 23% 할인)</dd></div><div class="fact"><dt>추천</dt><dd>사무실이나 심야 코딩 시 타건 소음으로 주변 눈치 보지 않고 연타하고 싶은 사람</dd></div></dl><p class="deal-check">45g 키압으로 장시간 코딩 시 손가락 관절 피로도 최소화</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyzxBosAM0" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="monitor-desk">
+      <article class="deal-card" data-country="unverified" data-topic="monitor-desk" data-cat="monitor-desk">
         
         <div class="deal-top">
           <span class="cat-chip">모니터·데스크</span>
@@ -523,11 +579,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>49,900원</strong><s>69,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-28%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>49,900원 (쿠팡 로켓 특가)</dd></div><div class="fact"><dt>추천</dt><dd>거북목 방지를 위해 모니터를 눈높이로 띄우고 데스크 공간을 2배로 넓히려는 분</dd></div></dl><p class="deal-check">스탠드 다리가 사라져 모니터 아래 키보드·노트 수납 완벽 가능</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyzzXmg6CG" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="laptops">
+      <article class="deal-card" data-country="unverified" data-topic="laptops" data-cat="laptops">
         
         <div class="deal-top">
           <span class="cat-chip">노트북·PC</span>
@@ -537,11 +595,13 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>189,000원</strong><s>259,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-27%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>189,000원 (20만 원 이하 가성비 종결)</dd></div><div class="fact"><dt>추천</dt><dd>24시간 도커 컨테이너, 홈서버, 자동화 봇, DB 테스트베드를 돌릴 저전력 머신</dd></div></dl><p class="deal-check">소비전력 6W 수준으로 한 달 전기요금 1,000원 안팎</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyzyHkgEOi" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article>
-      <article class="deal-card" data-cat="afterwork">
+      <article class="deal-card" data-country="unverified" data-topic="afterwork" data-cat="afterwork">
         
         <div class="deal-top">
           <span class="cat-chip">커피·음료</span>
@@ -551,7 +611,9 @@ footer p { font-size:.8rem; margin:0; }
         
         <div class="deal-price"><strong>16,900원</strong><s>22,000원</s></div>
         <div class="deal-flags"><span class="flag flag-discount">-23%</span><span class="flag flag-free">로켓배송 무료배송</span><span class="flag flag-rocket">로켓배송</span></div>
+        
         <dl class="deal-facts"><div class="fact"><dt>실구매가</dt><dd>16,900원 (잔당 300원 꼴 가성비)</dd></div><div class="fact"><dt>추천</dt><dd>팀원들과 매일 아침·야근 때 커피머신 돌리는 개발팀 간식 담당자</dd></div></dl><p class="deal-check">산미 없이 묵직하고 고소한 맛으로 호불호 없는 오피스 베스트셀러</p>
+        
         <a class="cta" href="https://link.coupang.com/a/iyzuKorRTw" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
         
       </article></div>

@@ -54,6 +54,25 @@ class RendererTests(unittest.TestCase):
             self.assertIn('eligibility unverified', card)
         self.assertNotIn('no independently verified offer is published yet', build._source_monitor_html())
 
+    def test_deal_filters_and_compact_evidence(self):
+        payload=build.load_deals(build.DEALS_EN_DATA_PATH)
+        page=build.generate_deals_en_html(payload)
+        self.assertIn('id="countryFilter"', page)
+        self.assertIn('id="categoryFilter"', page)
+        self.assertIn('SaaS & cloud services', page)
+        self.assertIn('South Korea · local deals page', page)
+        parser=Parser(); parser.feed(page)
+        cards=[a for t,a in parser.tags if t=='article' and a.get('class')=='deal-card']
+        self.assertEqual(len(cards),len(payload['feed']))
+        self.assertEqual(sum(a['data-country']=='CN' for a in cards),4)
+        self.assertEqual(sum(a['data-country']=='AU' for a in cards),1)
+        self.assertEqual(sum(a['data-country']=='unverified' for a in cards),8)
+        self.assertEqual(sum(a['data-topic']=='cloud' for a in cards),1)
+        self.assertFalse(any('open' in a for t,a in parser.tags if t=='details'))
+        for d in payload['feed']:
+            for key in ['delivery','activation','payment','tax','returns']:
+                self.assertIn(build.html.escape(d['purchase_eligibility'][key]),page)
+
     def test_deals_stats_are_escaped(self):
         parser=Parser();parser.feed(build.generate_deals_en_html({'feed':[], 'stats':{'sources':'<img src=x onerror=alert(1)>'}}))
         self.assertFalse(any(t == 'img' for t,a in parser.tags))

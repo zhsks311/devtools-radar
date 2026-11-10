@@ -24,7 +24,7 @@
 ## Deals
 
 - [Korean tech deals](https://devteardown.com/ko/): 17 collected hardware deals from 뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.
-- [Global tech deals](https://devteardown.com/deals/): 9 collected deals from StackSocial and OzBargain, with direct product links and dated checks.
+- [Global tech deals](https://devteardown.com/deals/): 13 collected deals from retailers and deal sources, with direct product links and dated checks. China listings are not verified discounts.
 
 ## Optional
 

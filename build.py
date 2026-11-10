@@ -442,6 +442,34 @@ DEAL_CSS = """
 .goldbox { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.2rem; padding:1.5rem 0; margin-top:2rem; border-block:1px solid var(--border); }
 .goldbox h3 { margin:0 0 .3rem; }
 .goldbox p { font-size:.85rem; color:var(--text-muted); margin:0; }
+/* Keep shopping decisions visible; secondary evidence opens on demand. */
+.international-deals .deal-grid { grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; }
+.international-deals .deal-card { min-width:0; padding:1.35rem; gap:0; border-radius:8px; }
+.international-deals .deal-title { font-size:1.22rem; line-height:1.4; min-height:0; margin-bottom:.65rem; overflow-wrap:anywhere; }
+.international-deals .deal-price strong { font-size:1.9rem; color:var(--text); }
+.international-deals .deal-summary { color:var(--text); line-height:1.55; }
+.international-deals .deal-flags { margin-bottom:.6rem; }
+.international-deals .flag { line-height:1.5; color:#355947; }
+.deal-region { font-size:.8rem; line-height:1.5; background:#eef2ed; color:#304636; padding:.6rem .75rem; border-radius:4px; margin:0 0 .9rem; }
+.purchase-terms,.offer-evidence { border-top:1px solid var(--border); font-size:.82rem; margin:0; }
+.purchase-terms summary,.offer-evidence summary { cursor:pointer; padding:.8rem 0; font-weight:600; line-height:1.4; }
+.purchase-terms dl { display:grid; grid-template-columns:6.5rem minmax(0,1fr); margin:0 0 1rem; }
+.purchase-terms dt,.purchase-terms dd { border-top:1px solid var(--border); padding:.6rem 0; margin:0; line-height:1.55; overflow-wrap:anywhere; }
+.purchase-terms dt { color:var(--text-muted); padding-right:.7rem; }
+.purchase-terms dd { color:var(--text); }
+.offer-evidence .deal-check { color:var(--text); line-height:1.6; }
+.international-deals .cta { margin-top:.7rem; border-radius:4px; font-weight:600; }
+.deal-filters { display:flex; gap:1rem; flex-wrap:wrap; padding:1rem; background:var(--surface); border:1px solid var(--border); border-radius:6px; margin:1rem 0; }
+.deal-filters label { display:grid; gap:.4rem; font-size:.8rem; font-weight:600; flex:1; min-width:180px; }
+.deal-filters select { width:100%; padding:.7rem; font:inherit; background:var(--surface); color:var(--text); border:1px solid var(--border); border-radius:4px; }
+.filter-status { font-size:.85rem; color:var(--text-muted); margin:1rem 0; }
+[hidden] { display:none !important; }
+.korea-panel { padding:1.5rem; border:1px solid var(--border); border-radius:6px; background:var(--surface); }
+.korea-panel .cta { display:inline-block; }
+summary:focus-visible,select:focus-visible,.cta:focus-visible { outline:3px solid #538268; outline-offset:3px; }
+@media(max-width:1000px) { .international-deals .deal-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:640px) { .international-deals .deal-grid { grid-template-columns:1fr; } .international-deals .deal-card { padding:1.1rem; } .deal-filters { gap:.8rem; } .deal-filters label { min-width:100%; } .purchase-terms dl { grid-template-columns:5.7rem minmax(0,1fr); } .international-deals .header-inner { flex-wrap:wrap; gap:1rem; } }
+
 """
 
 CAT_SHORT = {
@@ -529,7 +557,7 @@ def _eligibility_rows(deal: dict) -> str:
     rows = "".join(f"<dt>{html.escape(k)}</dt><dd>{html.escape(str(v))}</dd>" for k,v in values)
     for policy in info.get('policy_urls', []):
         rows += '<dt>Retailer policy</dt><dd><a target="_blank" rel="noopener" href="' + _safe_url(policy) + '">Source terms</a></dd>'
-    return '<details class="purchase-terms"><summary>Purchase eligibility: ' + html.escape(values[0][1]) + '</summary><dl>' + rows + '</dl></details>'
+    return '<details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl>' + rows + '</dl></details>'
 
 
 def _source_monitor_html() -> str:
@@ -591,8 +619,15 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
     summary_html = f'<p class="deal-summary">{html.escape(summary)}</p>' if summary else ""
     cat_label = deal.get("category_label", "")
     cat = html.escape(CAT_SHORT.get(deal.get("category", ""), cat_label) if lang == "ko" else cat_label)
+    info = deal.get("purchase_eligibility") or {}
+    market = "CN" if deal.get("category") == "china" else ("AU" if "AU" in info.get("countries_confirmed", []) else "unverified")
+    topic = "hardware" if deal.get("category") == "china" else deal.get("category", "tech")
+    evidence = _fact_rows(deal)
+    if lang == "en":
+        evidence = '<details class="offer-evidence"><summary>Price check & offer details</summary>' + evidence + '</details>'
+    region = '<p class="deal-region">' + html.escape(info.get("label", "Country eligibility unverified")) + '</p>' if lang == "en" else ""
     return f"""
-      <article class="deal-card" data-cat="{html.escape(deal.get('category', 'tech'))}">
+      <article class="deal-card" data-country="{market}" data-topic="{topic}" data-cat="{html.escape(deal.get('category', 'tech'))}">
         {media_html}
         <div class="deal-top">
           <span class="cat-chip">{cat}</span>
@@ -602,7 +637,8 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
         {summary_html}
         <div class="deal-price">{price_html}</div>
         <div class="deal-flags">{flags}</div>
-        {_fact_rows(deal)}
+        {region}
+        {evidence}
         {_eligibility_rows(deal) if lang == "en" else ""}
         <a class="cta" href="{url}" target="_blank" rel="{rel}">{cta}</a>
         {foot}
@@ -635,6 +671,27 @@ TABS_JS = """
       });
     });
   });
+})();
+</script>
+"""
+
+
+DEAL_FILTER_JS = """
+<script>
+(function () {
+  var category = document.getElementById('categoryFilter');
+  var country = document.getElementById('countryFilter');
+  var cards = document.querySelectorAll('#feedGrid .deal-card');
+  function filter() {
+    var count = 0;
+    cards.forEach(function(card) {
+      var show = (category.value === 'all' || card.dataset.topic === category.value) && (country.value === 'all' || card.dataset.country === country.value);
+      card.hidden = !show; if (show) count++;
+    });
+    document.getElementById('koreaPanel').hidden = country.value !== 'KR';
+    document.getElementById('filterStatus').textContent = country.value === 'KR' ? 'Korean listings are on the local page; use its category filters.' : count + ' offers shown' + (count === 0 ? '. No matching offers in this collection.' : '. Country labels do not guarantee checkout eligibility.');
+  }
+  category.addEventListener('change', filter); country.addEventListener('change', filter); filter();
 })();
 </script>
 """
@@ -732,7 +789,7 @@ def generate_ko_html(deals: dict) -> str:
   <script type="application/ld+json">
   {_json_ld(schema, ensure_ascii=False, indent=2)}
   </script>
-  <style>{SHARED_CSS}{DEAL_CSS} .purchase-terms {{ font-size:.85rem; margin:1rem 0; }} .purchase-terms summary {{ cursor:pointer; font-weight:600; }} .purchase-terms dl {{ display:grid; grid-template-columns:1fr; gap:.2rem; }} .purchase-terms dd {{ margin:0 0 .65rem; color:var(--text-muted); }}</style>
+  <style>{SHARED_CSS}{DEAL_CSS}</style>
 </head>
 <body>
   <header>
@@ -817,11 +874,7 @@ def generate_deals_en_html(payload: dict) -> str:
         feed_cards = ('<p style="color:var(--text-muted);font-size:0.92rem;padding:1rem 0;">'
                       'No new tech deals collected right now. Check back after the next run.</p>')
 
-    tabs = _tabs(
-        categories,
-        [(slug, cat.get("label", slug)) for slug, cat in categories.items()],
-        len(feed), lang="en",
-    )
+    tabs = '''<div class="deal-filters"><label>Category<select id="categoryFilter"><option value="all">All categories</option><option value="software">Software</option><option value="cloud">SaaS & cloud services</option><option value="gaming">Gaming</option><option value="hardware">Hardware & accessories</option></select></label><label>Country / market<select id="countryFilter"><option value="all">All markets</option><option value="KR">South Korea · local deals page</option><option value="AU">Australia · delivery confirmed</option><option value="CN">China storefronts · eligibility unverified</option><option value="unverified">Country eligibility unverified</option></select></label></div><p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p><section class="korea-panel" id="koreaPanel" hidden><h3>South Korea deals</h3><p>Korean-language listings are kept on the local deals page, with category filters and KRW prices. Some links are affiliate links or retailer searches. These are source-reported offers, not verified checkout eligibility.</p><a class="cta" href="/ko/">Browse Korean deals →</a></section>'''
 
     cat_html = ""
     for slug in ():  # Cards already provide the complete category listing.
@@ -884,7 +937,7 @@ def generate_deals_en_html(payload: dict) -> str:
   <script type="application/ld+json">
   {_json_ld(schema, ensure_ascii=False, indent=2)}
   </script>
-  <style>{SHARED_CSS}{DEAL_CSS} .purchase-terms {{ font-size:.85rem; margin:1rem 0; }} .purchase-terms summary {{ cursor:pointer; font-weight:600; }} .purchase-terms dl {{ display:grid; grid-template-columns:1fr; gap:.2rem; }} .purchase-terms dd {{ margin:0 0 .65rem; color:var(--text-muted); }}</style>
+  <style>{SHARED_CSS}{DEAL_CSS}</style>
 </head>
 <body class="international-deals">
   <header>
@@ -902,8 +955,8 @@ def generate_deals_en_html(payload: dict) -> str:
       <span class="badge badge-blue">Direct retailer links</span>
       <h1>Tech offers. Clear purchase terms.</h1>
       <p class="lead">Offers labelled with purchase eligibility evidence, not by the currency or the source website.
-      Every button opens the actual product page, not a search or community post.
-      Prices keep their original currency. Country restrictions, activation, delivery and checkout conditions are listed on each card.</p>
+      International product buttons open retailer pages; Korean listings are available on the separate local page.
+      Compare the price and market first. Open each card’s details for verification notes and purchase conditions.</p>
       <div class="ko-stats">
         <div class="ko-stat"><strong>{len(feed)}</strong>product offers</div>
         <div class="ko-stat"><strong>{sum(bool(c.get("items")) for c in categories.values())}</strong>categories with deals</div>
@@ -940,7 +993,7 @@ def generate_deals_en_html(payload: dict) -> str:
       &nbsp;·&nbsp;<a href="/" style="color:var(--text-muted);">English teardowns →</a></p>
     </div>
   </footer>
-  {TABS_JS}
+  {DEAL_FILTER_JS}
 </body>
 </html>"""
 

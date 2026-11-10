@@ -26,54 +26,78 @@
     {
       "@type": "ListItem",
       "position": 1,
+      "name": "DJI Osmo Mobile 7",
+      "url": "https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lenovo GK10 RT60 magnetic keyboard · black",
+      "url": "https://item.lenovo.com.cn/product/1057925.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lenovo LOQ 25-10 · 24.5-inch FHD 280 Hz monitor",
+      "url": "https://item.lenovo.com.cn/product/1058662.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Lenovo C02 · 7-in-1 cleaning kit",
+      "url": "https://item.lenovo.com.cn/product/1016949.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
       "name": "Nintendo Switch 2 Console",
       "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console"
     },
     {
       "@type": "ListItem",
-      "position": 2,
+      "position": 6,
       "name": "TextSniper for Mac",
       "url": "https://www.stacksocial.com/sales/textsniper-for-mac"
     },
     {
       "@type": "ListItem",
-      "position": 3,
+      "position": 7,
       "name": "Slidepad for Mac",
       "url": "https://www.stacksocial.com/sales/slidepad-mac-app"
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 8,
       "name": "PDF Expert for Mac · version 3",
       "url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime"
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 9,
       "name": "Koofr · 1 TB lifetime plan",
       "url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb"
     },
     {
       "@type": "ListItem",
-      "position": 6,
+      "position": 10,
       "name": "VSDC Video Editor Pro · version 11",
       "url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2"
     },
     {
       "@type": "ListItem",
-      "position": 7,
+      "position": 11,
       "name": "AdGuard Family · 9 devices",
       "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription"
     },
     {
       "@type": "ListItem",
-      "position": 8,
+      "position": 12,
       "name": "AcePDF · 2 devices",
       "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license"
     },
     {
       "@type": "ListItem",
-      "position": 9,
+      "position": 13,
       "name": "Action! Screen \u0026 Gameplay Recorder",
       "url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder"
     }
@@ -231,6 +255,34 @@ footer p { font-size:.8rem; margin:0; }
 .goldbox { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.2rem; padding:1.5rem 0; margin-top:2rem; border-block:1px solid var(--border); }
 .goldbox h3 { margin:0 0 .3rem; }
 .goldbox p { font-size:.85rem; color:var(--text-muted); margin:0; }
+/* Keep shopping decisions visible; secondary evidence opens on demand. */
+.international-deals .deal-grid { grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; }
+.international-deals .deal-card { min-width:0; padding:1.35rem; gap:0; border-radius:8px; }
+.international-deals .deal-title { font-size:1.22rem; line-height:1.4; min-height:0; margin-bottom:.65rem; overflow-wrap:anywhere; }
+.international-deals .deal-price strong { font-size:1.9rem; color:var(--text); }
+.international-deals .deal-summary { color:var(--text); line-height:1.55; }
+.international-deals .deal-flags { margin-bottom:.6rem; }
+.international-deals .flag { line-height:1.5; color:#355947; }
+.deal-region { font-size:.8rem; line-height:1.5; background:#eef2ed; color:#304636; padding:.6rem .75rem; border-radius:4px; margin:0 0 .9rem; }
+.purchase-terms,.offer-evidence { border-top:1px solid var(--border); font-size:.82rem; margin:0; }
+.purchase-terms summary,.offer-evidence summary { cursor:pointer; padding:.8rem 0; font-weight:600; line-height:1.4; }
+.purchase-terms dl { display:grid; grid-template-columns:6.5rem minmax(0,1fr); margin:0 0 1rem; }
+.purchase-terms dt,.purchase-terms dd { border-top:1px solid var(--border); padding:.6rem 0; margin:0; line-height:1.55; overflow-wrap:anywhere; }
+.purchase-terms dt { color:var(--text-muted); padding-right:.7rem; }
+.purchase-terms dd { color:var(--text); }
+.offer-evidence .deal-check { color:var(--text); line-height:1.6; }
+.international-deals .cta { margin-top:.7rem; border-radius:4px; font-weight:600; }
+.deal-filters { display:flex; gap:1rem; flex-wrap:wrap; padding:1rem; background:var(--surface); border:1px solid var(--border); border-radius:6px; margin:1rem 0; }
+.deal-filters label { display:grid; gap:.4rem; font-size:.8rem; font-weight:600; flex:1; min-width:180px; }
+.deal-filters select { width:100%; padding:.7rem; font:inherit; background:var(--surface); color:var(--text); border:1px solid var(--border); border-radius:4px; }
+.filter-status { font-size:.85rem; color:var(--text-muted); margin:1rem 0; }
+[hidden] { display:none !important; }
+.korea-panel { padding:1.5rem; border:1px solid var(--border); border-radius:6px; background:var(--surface); }
+.korea-panel .cta { display:inline-block; }
+summary:focus-visible,select:focus-visible,.cta:focus-visible { outline:3px solid #538268; outline-offset:3px; }
+@media(max-width:1000px) { .international-deals .deal-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:640px) { .international-deals .deal-grid { grid-template-columns:1fr; } .international-deals .deal-card { padding:1.1rem; } .deal-filters { gap:.8rem; } .deal-filters label { min-width:100%; } .purchase-terms dl { grid-template-columns:5.7rem minmax(0,1fr); } .international-deals .header-inner { flex-wrap:wrap; gap:1rem; } }
+
 </style>
 </head>
 <body class="international-deals">
@@ -248,25 +300,89 @@ footer p { font-size:.8rem; margin:0; }
     <div class="ko-hero">
       <span class="badge badge-blue">Direct retailer links</span>
       <h1>Tech offers. Clear purchase terms.</h1>
-      <p class="lead">Software offers from StackSocial, plus an Australian console deal found on OzBargain and checked at EB Games.
-      Every button opens the actual product page, not a search or community post.
-      Digital prices are in US dollars; the Australian console price is marked A$.</p>
+      <p class="lead">Offers labelled with purchase eligibility evidence, not by the currency or the source website.
+      International product buttons open retailer pages; Korean listings are available on the separate local page.
+      Compare the price and market first. Open each card’s details for verification notes and purchase conditions.</p>
       <div class="ko-stats">
-        <div class="ko-stat"><strong>9</strong>product offers</div>
-        <div class="ko-stat"><strong>3</strong>categories with deals</div>
+        <div class="ko-stat"><strong>13</strong>product offers</div>
+        <div class="ko-stat"><strong>4</strong>categories with deals</div>
         <div class="ko-stat"><strong>2026-11-10</strong>updated</div>
-        <div class="ko-stat"><strong>2</strong>sources</div>
+        <div class="ko-stat"><strong>4</strong>sources</div>
       </div>
     </div>
 
     <h2 id="feed" style="margin-top:2.4rem;">Browse the offers</h2>
     <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.3rem;">
-      Listed prices exclude untested coupon savings. Country eligibility and checkout totals are not verified.
+      Listed prices exclude untested coupon savings. Australia delivery is confirmed only where noted; digital country eligibility and checkout totals remain unverified.
       Redemption deadlines apply; review refund terms before activating a license.
     </p>
-    <nav class="quick-tabs" id="quickTabs"><button class="tab is-active" data-filter="all">All <span class="n">9</span></button><button class="tab" data-filter="software">Software <span class="n">7</span></button><button class="tab" data-filter="cloud">Cloud storage <span class="n">1</span></button><button class="tab" data-filter="gaming">Gaming <span class="n">1</span></button></nav>
+    <div class="deal-filters"><label>Category<select id="categoryFilter"><option value="all">All categories</option><option value="software">Software</option><option value="cloud">SaaS & cloud services</option><option value="gaming">Gaming</option><option value="hardware">Hardware & accessories</option></select></label><label>Country / market<select id="countryFilter"><option value="all">All markets</option><option value="KR">South Korea · local deals page</option><option value="AU">Australia · delivery confirmed</option><option value="CN">China storefronts · eligibility unverified</option><option value="unverified">Country eligibility unverified</option></select></label></div><p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p><section class="korea-panel" id="koreaPanel" hidden><h3>South Korea deals</h3><p>Korean-language listings are kept on the local deals page, with category filters and KRW prices. Some links are affiliate links or retailer searches. These are source-reported offers, not verified checkout eligibility.</p><a class="cta" href="/ko/">Browse Korean deals →</a></section>
     <div class="deal-grid" id="feedGrid">
-      <article class="deal-card" data-cat="gaming">
+      <article class="deal-card" data-country="CN" data-topic="hardware" data-cat="china">
+        
+        <div class="deal-top">
+          <span class="cat-chip">China storefronts</span>
+          <span class="deal-src">DJI China</span>
+        </div>
+        <h3 class="deal-title">DJI Osmo Mobile 7</h3>
+        <p class="deal-summary">Smartphone gimbal; base Osmo Mobile 7 configuration.</p>
+        <div class="deal-price"><strong>CNY 349</strong></div>
+        <div class="deal-flags"><span class="flag flag-ship">China storefront · check address &amp; stock</span></div>
+        <p class="deal-region">China storefront; address eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Region</dt><dd>China storefront; address-specific purchase eligibility must be checked.</dd></div><div class="fact"><dt>Condition</dt><dd>Listed price, not a verified discount.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Product page price; Add to cart and Buy shown. Address-specific stock not checked.</dd></div></dl><p class="deal-check">Page advertises free shipping; delivery eligibility, stock and arrival date require a specific address. Payment eligibility and final checkout total unverified.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>China storefront; address eligibility unverified</dd><dt>Delivery</dt><dd>Page advertises free shipping; delivery eligibility, stock and arrival date require a specific address.</dd><dt>Activation</dt><dd>Hardware product; warranty coverage and any app/account requirements must be checked.</dd><dt>Payment</dt><dd>Payment methods, billing-country restrictions and account requirements unverified.</dd><dt>Tax &amp; fees</dt><dd>Final total, freight and any additional fees must be checked at checkout.</dd><dt>Returns</dt><dd>Page advertises 7-day no-reason returns; exclusions and eligibility must be checked.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
+        <a class="cta" href="https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN" target="_blank" rel="noopener nofollow">View product →</a>
+        
+      </article>
+      <article class="deal-card" data-country="CN" data-topic="hardware" data-cat="china">
+        
+        <div class="deal-top">
+          <span class="cat-chip">China storefronts</span>
+          <span class="deal-src">Lenovo China</span>
+        </div>
+        <h3 class="deal-title">Lenovo GK10 RT60 magnetic keyboard · black</h3>
+        <p class="deal-summary">Magnetic keyboard, black variant.</p>
+        <div class="deal-price"><strong>CNY 199</strong></div>
+        <div class="deal-flags"><span class="flag flag-ship">China storefront · check address &amp; stock</span></div>
+        <p class="deal-region">China storefront; address eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Region</dt><dd>China storefront; address-specific purchase eligibility must be checked.</dd></div><div class="fact"><dt>Condition</dt><dd>Listed price, not a verified discount.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Official storefront listing price. Product page identifies model; live product price and stock not verified.</dd></div></dl><p class="deal-check">China storefront; item-specific mainland delivery, freight and postcode eligibility unverified. Payment eligibility and final checkout total unverified.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>China storefront; address eligibility unverified</dd><dt>Delivery</dt><dd>China storefront; item-specific mainland delivery, freight and postcode eligibility unverified.</dd><dt>Activation</dt><dd>Hardware product; warranty coverage and any app/account requirements must be checked.</dd><dt>Payment</dt><dd>Payment methods, billing-country restrictions and account requirements unverified.</dd><dt>Tax &amp; fees</dt><dd>Final total, freight and any additional fees must be checked at checkout.</dd><dt>Returns</dt><dd>Item-specific return conditions unverified; check retailer before ordering.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
+        <a class="cta" href="https://item.lenovo.com.cn/product/1057925.html" target="_blank" rel="noopener nofollow">View product →</a>
+        <div class="deal-foot"><a href="https://shop.lenovo.com.cn/" target="_blank" rel="noopener nofollow">Source post</a></div>
+      </article>
+      <article class="deal-card" data-country="CN" data-topic="hardware" data-cat="china">
+        
+        <div class="deal-top">
+          <span class="cat-chip">China storefronts</span>
+          <span class="deal-src">Lenovo China</span>
+        </div>
+        <h3 class="deal-title">Lenovo LOQ 25-10 · 24.5-inch FHD 280 Hz monitor</h3>
+        <p class="deal-summary">24.5-inch FHD IPS display, up to 280 Hz.</p>
+        <div class="deal-price"><strong>CNY 599</strong></div>
+        <div class="deal-flags"><span class="flag flag-ship">China storefront · check address &amp; stock</span></div>
+        <p class="deal-region">China storefront; address eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Region</dt><dd>China storefront; address-specific purchase eligibility must be checked.</dd></div><div class="fact"><dt>Condition</dt><dd>Listed price, not a verified discount.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Official storefront listing price. Product page identifies model; live product price and stock not verified.</dd></div></dl><p class="deal-check">China storefront; item-specific mainland delivery, freight and postcode eligibility unverified. Payment eligibility and final checkout total unverified.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>China storefront; address eligibility unverified</dd><dt>Delivery</dt><dd>China storefront; item-specific mainland delivery, freight and postcode eligibility unverified.</dd><dt>Activation</dt><dd>Hardware product; warranty coverage and any app/account requirements must be checked.</dd><dt>Payment</dt><dd>Payment methods, billing-country restrictions and account requirements unverified.</dd><dt>Tax &amp; fees</dt><dd>Final total, freight and any additional fees must be checked at checkout.</dd><dt>Returns</dt><dd>Item-specific return conditions unverified; check retailer before ordering.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
+        <a class="cta" href="https://item.lenovo.com.cn/product/1058662.html" target="_blank" rel="noopener nofollow">View product →</a>
+        <div class="deal-foot"><a href="https://shop.lenovo.com.cn/" target="_blank" rel="noopener nofollow">Source post</a></div>
+      </article>
+      <article class="deal-card" data-country="CN" data-topic="hardware" data-cat="china">
+        
+        <div class="deal-top">
+          <span class="cat-chip">China storefronts</span>
+          <span class="deal-src">Lenovo China</span>
+        </div>
+        <h3 class="deal-title">Lenovo C02 · 7-in-1 cleaning kit</h3>
+        <p class="deal-summary">Seven-in-one device cleaning kit.</p>
+        <div class="deal-price"><strong>CNY 29.90</strong></div>
+        <div class="deal-flags"><span class="flag flag-ship">China storefront · check address &amp; stock</span></div>
+        <p class="deal-region">China storefront; address eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Region</dt><dd>China storefront; address-specific purchase eligibility must be checked.</dd></div><div class="fact"><dt>Condition</dt><dd>Listed price, not a verified discount.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Official storefront listing price. Product page identifies model; live product price and stock not verified.</dd></div></dl><p class="deal-check">China storefront; item-specific mainland delivery, freight and postcode eligibility unverified. Payment eligibility and final checkout total unverified.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>China storefront; address eligibility unverified</dd><dt>Delivery</dt><dd>China storefront; item-specific mainland delivery, freight and postcode eligibility unverified.</dd><dt>Activation</dt><dd>Hardware product; warranty coverage and any app/account requirements must be checked.</dd><dt>Payment</dt><dd>Payment methods, billing-country restrictions and account requirements unverified.</dd><dt>Tax &amp; fees</dt><dd>Final total, freight and any additional fees must be checked at checkout.</dd><dt>Returns</dt><dd>Item-specific return conditions unverified; check retailer before ordering.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
+        <a class="cta" href="https://item.lenovo.com.cn/product/1016949.html" target="_blank" rel="noopener nofollow">View product →</a>
+        <div class="deal-foot"><a href="https://shop.lenovo.com.cn/" target="_blank" rel="noopener nofollow">Source post</a></div>
+      </article>
+      <article class="deal-card" data-country="AU" data-topic="gaming" data-cat="gaming">
         
         <div class="deal-top">
           <span class="cat-chip">Gaming</span>
@@ -276,11 +392,13 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">Nintendo Switch 2 console, sold by EB Games Australia.</p>
         <div class="deal-price"><strong>A$728</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Australia · delivery available</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Region</dt><dd>Australia; delivery cost calculated at checkout.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Home Delivery Available; Add to cart shown.</dd></div></dl><p class="deal-check">A$698 is a paid EB World PLUS member price, not the public price. Local pickup availability depends on store.</p>
+        <p class="deal-region">Australia</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Region</dt><dd>Australia; delivery cost calculated at checkout.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Home Delivery Available; Add to cart shown.</dd></div></dl><p class="deal-check">A$698 is a paid EB World PLUS member price, not the public price. Local pickup availability depends on store.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Australia</dd><dt>Delivery</dt><dd>Australia delivery shown. Terms also allow selected products to New Zealand; this product&#x27;s NZ eligibility is unverified. Postcode/stock restrictions apply.</dd><dt>Activation</dt><dd>Console region/account and warranty terms: check retailer.</dd><dt>Payment</dt><dd>Terms require AU/NZ resident customers; payment methods and billing details must be checked at checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd><dt>Retailer policy</dt><dd><a target="_blank" rel="noopener" href="https://www.ebgames.com.au/terms">Source terms</a></dd><dt>Retailer policy</dt><dd><a target="_blank" rel="noopener" href="https://support.ebgames.com.au/hc/en-us/articles/13814050254735-Do-you-ship-internationally">Source terms</a></dd></dl></details>
         <a class="cta" href="https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console" target="_blank" rel="noopener nofollow">View product →</a>
         <div class="deal-foot"><a href="https://www.ozbargain.com.au/node/982360" target="_blank" rel="noopener nofollow">Source post</a></div>
       </article>
-      <article class="deal-card" data-cat="software">
+      <article class="deal-card" data-country="unverified" data-topic="software" data-cat="software">
         
         <div class="deal-top">
           <span class="cat-chip">Software</span>
@@ -290,11 +408,13 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">Copy text from images and your screen.</p>
         <div class="deal-price"><strong>$3.99</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Digital delivery</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; 1 Mac; macOS 10.15+.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Redeem within 30 days.</p>
+        <p class="deal-region">Country eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; 1 Mac; macOS 10.15+.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Redeem within 30 days.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Country eligibility unverified</dd><dt>Delivery</dt><dd>Digital delivery; no shipping does not mean worldwide activation.</dd><dt>Activation</dt><dd>License activation country restrictions have not been verified.</dd><dt>Payment</dt><dd>Accepted payment methods and billing-country restrictions: check checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
         <a class="cta" href="https://www.stacksocial.com/sales/textsniper-for-mac" target="_blank" rel="noopener nofollow">View product →</a>
         
       </article>
-      <article class="deal-card" data-cat="software">
+      <article class="deal-card" data-country="unverified" data-topic="software" data-cat="software">
         
         <div class="deal-top">
           <span class="cat-chip">Software</span>
@@ -304,11 +424,13 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">Keep web apps in a slide-out workspace.</p>
         <div class="deal-price"><strong>$8.99</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Digital delivery</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; 1 Mac; macOS 10.14+.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Redeem within 30 days.</p>
+        <p class="deal-region">Country eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; 1 Mac; macOS 10.14+.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Redeem within 30 days.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Country eligibility unverified</dd><dt>Delivery</dt><dd>Digital delivery; no shipping does not mean worldwide activation.</dd><dt>Activation</dt><dd>License activation country restrictions have not been verified.</dd><dt>Payment</dt><dd>Accepted payment methods and billing-country restrictions: check checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
         <a class="cta" href="https://www.stacksocial.com/sales/slidepad-mac-app" target="_blank" rel="noopener nofollow">View product →</a>
         
       </article>
-      <article class="deal-card" data-cat="software">
+      <article class="deal-card" data-country="unverified" data-topic="software" data-cat="software">
         <figure class="deal-media"><img src="/assets/deals/pdf-expert-icon.png" alt="PDF Expert official app icon" loading="lazy" decoding="async"><figcaption>Official app icon. <a href="https://readdle.com/press" target="_blank" rel="noopener">Readdle press kit</a></figcaption></figure>
         <div class="deal-top">
           <span class="cat-chip">Software</span>
@@ -318,11 +440,13 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">Edit and annotate PDFs on Mac.</p>
         <div class="deal-price"><strong>$79.99</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Digital delivery</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; macOS 12+; iOS not included.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Redeem within 30 days. Version-specific license.</p>
+        <p class="deal-region">Country eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; macOS 12+; iOS not included.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Redeem within 30 days. Version-specific license.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Country eligibility unverified</dd><dt>Delivery</dt><dd>Digital delivery; no shipping does not mean worldwide activation.</dd><dt>Activation</dt><dd>License activation country restrictions have not been verified.</dd><dt>Payment</dt><dd>Accepted payment methods and billing-country restrictions: check checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
         <a class="cta" href="https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime" target="_blank" rel="noopener nofollow">View product →</a>
         
       </article>
-      <article class="deal-card" data-cat="cloud">
+      <article class="deal-card" data-country="unverified" data-topic="cloud" data-cat="cloud">
         <figure class="deal-media"><img src="/assets/deals/koofr-web-app.png" alt="Koofr web app file browser screenshot" loading="lazy" decoding="async"><figcaption>App preview; storage shown is illustrative. <a href="https://koofr.eu/" target="_blank" rel="noopener">Koofr</a></figcaption></figure>
         <div class="deal-top">
           <span class="cat-chip">Cloud storage</span>
@@ -332,11 +456,13 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">Cloud file storage, with a one-time purchase.</p>
         <div class="deal-price"><strong>$199.99</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Digital delivery</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>One lifetime subscription per account.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Page advertises $159.99 with KOOFR; checkout not tested. Redeem within 15 days. Lifetime is subject to service and inactivity terms.</p>
+        <p class="deal-region">Country eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>One lifetime subscription per account.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Page advertises $159.99 with KOOFR; checkout not tested. Redeem within 15 days. Lifetime is subject to service and inactivity terms.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Country eligibility unverified</dd><dt>Delivery</dt><dd>Digital delivery; no shipping does not mean worldwide activation.</dd><dt>Activation</dt><dd>License activation country restrictions have not been verified.</dd><dt>Payment</dt><dd>Accepted payment methods and billing-country restrictions: check checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
         <a class="cta" href="https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb" target="_blank" rel="noopener nofollow">View product →</a>
         
       </article>
-      <article class="deal-card" data-cat="software">
+      <article class="deal-card" data-country="unverified" data-topic="software" data-cat="software">
         
         <div class="deal-top">
           <span class="cat-chip">Software</span>
@@ -346,11 +472,13 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">Video editing for Windows.</p>
         <div class="deal-price"><strong>$29.99</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Digital delivery</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>2 Windows devices; version 11.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days.</p>
+        <p class="deal-region">Country eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>2 Windows devices; version 11.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Country eligibility unverified</dd><dt>Delivery</dt><dd>Digital delivery; no shipping does not mean worldwide activation.</dd><dt>Activation</dt><dd>License activation country restrictions have not been verified.</dd><dt>Payment</dt><dd>Accepted payment methods and billing-country restrictions: check checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
         <a class="cta" href="https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2" target="_blank" rel="noopener nofollow">View product →</a>
         
       </article>
-      <article class="deal-card" data-cat="software">
+      <article class="deal-card" data-country="unverified" data-topic="software" data-cat="software">
         
         <div class="deal-top">
           <span class="cat-chip">Software</span>
@@ -360,11 +488,13 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">Ad blocking for a household.</p>
         <div class="deal-price"><strong>$19.99</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Digital delivery</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; 9 devices.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Page advertises $16 with DEAL20; checkout not tested. Redeem within 30 days.</p>
+        <p class="deal-region">Country eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; 9 devices.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Page advertises $16 with DEAL20; checkout not tested. Redeem within 30 days.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Country eligibility unverified</dd><dt>Delivery</dt><dd>Digital delivery; no shipping does not mean worldwide activation.</dd><dt>Activation</dt><dd>License activation country restrictions have not been verified.</dd><dt>Payment</dt><dd>Accepted payment methods and billing-country restrictions: check checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
         <a class="cta" href="https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription" target="_blank" rel="noopener nofollow">View product →</a>
         
       </article>
-      <article class="deal-card" data-cat="software">
+      <article class="deal-card" data-country="unverified" data-topic="software" data-cat="software">
         
         <div class="deal-top">
           <span class="cat-chip">Software</span>
@@ -374,11 +504,13 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">PDF conversion and editing.</p>
         <div class="deal-price"><strong>$29.99</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Digital delivery</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>Windows 8/10/11 or macOS 12+; 2 devices.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days.</p>
+        <p class="deal-region">Country eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>Windows 8/10/11 or macOS 12+; 2 devices.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Country eligibility unverified</dd><dt>Delivery</dt><dd>Digital delivery; no shipping does not mean worldwide activation.</dd><dt>Activation</dt><dd>License activation country restrictions have not been verified.</dd><dt>Payment</dt><dd>Accepted payment methods and billing-country restrictions: check checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
         <a class="cta" href="https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license" target="_blank" rel="noopener nofollow">View product →</a>
         
       </article>
-      <article class="deal-card" data-cat="software">
+      <article class="deal-card" data-country="unverified" data-topic="software" data-cat="software">
         
         <div class="deal-top">
           <span class="cat-chip">Software</span>
@@ -388,13 +520,16 @@ footer p { font-size:.8rem; margin:0; }
         <p class="deal-summary">Record your screen and gameplay.</p>
         <div class="deal-price"><strong>$9.99</strong></div>
         <div class="deal-flags"><span class="flag flag-ship">Digital delivery</span></div>
-        <dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; 1 Windows device; version 4.20.2.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Redeem within 30 days. Windows 7/8/8.1/10/11.</p>
+        <p class="deal-region">Country eligibility unverified</p>
+        <details class="offer-evidence"><summary>Price check & offer details</summary><dl class="deal-facts"><div class="fact"><dt>Condition</dt><dd>New users; 1 Windows device; version 4.20.2.</dd></div><div class="fact"><dt>Checked</dt><dd>November 10, 2026 · Add to Cart shown</dd></div></dl><p class="deal-check">Redeem within 30 days. Windows 7/8/8.1/10/11.</p></details>
+        <details class="purchase-terms"><summary>Delivery, payment & returns</summary><dl><dt>Purchase country</dt><dd>Country eligibility unverified</dd><dt>Delivery</dt><dd>Digital delivery; no shipping does not mean worldwide activation.</dd><dt>Activation</dt><dd>License activation country restrictions have not been verified.</dd><dt>Payment</dt><dd>Accepted payment methods and billing-country restrictions: check checkout.</dd><dt>Tax &amp; fees</dt><dd>Delivery fees, taxes and final total: check checkout.</dd><dt>Returns</dt><dd>Return/refund rules: check retailer before purchase or activation.</dd><dt>Evidence date</dt><dd>2026-11-10</dd></dl></details>
         <a class="cta" href="https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder" target="_blank" rel="noopener nofollow">View product →</a>
         
       </article></div>
 
     
 
+    <section class="method-note"><h2>Source monitoring</h2><p>Official feed checks are scheduled every six hours. GitHub schedules can be delayed. New feed items are review candidates, not verified product offers. Existing price-check dates are never refreshed by a feed check.</p><p><a href="https://github.com/zhsks311/devtools-radar/actions/workflows/deal-feeds.yml">Latest collection runs and source status</a></p><ul><li><a href="https://www.dealnews.com/pages/rss.html">DealNews</a>: Official RSS. Preserve feed and referral links unchanged; candidates need independent retailer checks before publication.</li><li><a href="https://www.ozbargain.com.au/wiki/help:terms">OzBargain</a>: Official teaser RSS exists; automatic reuse review pending. Existing independently verified deal retained.</li><li><a href="https://corp-site.slickdeals.net/content-list-slickdeals-terms-of-service/">Slickdeals</a>: Automated scraping restricted; official partner API requires authorization.</li><li><a href="https://www.stacksocial.com/terms">StackSocial</a>: Automated scraping restricted. Existing manually verified product records retain their original dates.</li><li><a href="https://developer.woot.com/">Woot</a>: Official API requires approved credentials. No credentials generated.</li><li><a href="https://www.smzdm.com/dingyue">SMZDM (Mainland China)</a>: Official RSS returned 403; no bypass. Reuse permission unconfirmed.</li></ul><p>China storefront listings are labeled separately. Listed prices are not verified discounts; address-specific stock, delivery and payment eligibility may be unverified. A Chinese source or CNY price alone does not prove purchase eligibility.</p></section>
     <div class="method-note">
       <strong style="color:var(--text-muted);">How prices are handled</strong><br>
       Retailer prices and visible availability were checked at the time noted on each card; checkout was not completed.
@@ -415,19 +550,19 @@ footer p { font-size:.8rem; margin:0; }
   
 <script>
 (function () {
-  var tabs = document.querySelectorAll('#quickTabs .tab');
+  var category = document.getElementById('categoryFilter');
+  var country = document.getElementById('countryFilter');
   var cards = document.querySelectorAll('#feedGrid .deal-card');
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      tabs.forEach(function (t) { t.classList.remove('is-active'); });
-      tab.classList.add('is-active');
-      var f = tab.getAttribute('data-filter');
-      cards.forEach(function (c) {
-        var show = (f === 'all') || (c.getAttribute('data-cat') === f);
-        c.classList.toggle('is-hidden', !show);
-      });
+  function filter() {
+    var count = 0;
+    cards.forEach(function(card) {
+      var show = (category.value === 'all' || card.dataset.topic === category.value) && (country.value === 'all' || card.dataset.country === country.value);
+      card.hidden = !show; if (show) count++;
     });
-  });
+    document.getElementById('koreaPanel').hidden = country.value !== 'KR';
+    document.getElementById('filterStatus').textContent = country.value === 'KR' ? 'Korean listings are on the local page; use its category filters.' : count + ' offers shown' + (count === 0 ? '. No matching offers in this collection.' : '. Country labels do not guarantee checkout eligibility.');
+  }
+  category.addEventListener('change', filter); country.addEventListener('change', filter); filter();
 })();
 </script>
 
