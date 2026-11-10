@@ -318,7 +318,7 @@ def generate_llms_txt(items, ko_deals, en_deals) -> str:
         f"- [Korean tech deals]({BASE_URL}/ko/): {len(ko_deals.get('feed', []))} collected hardware deals from "
         "뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.",
         f"- [Global tech deals]({BASE_URL}/deals/): {len(en_deals.get('feed', []))} collected deals from "
-        "StackSocial and OzBargain, with direct product links and dated checks.",
+        "retailers and deal sources, with direct product links and dated checks. China listings are not verified discounts.",
         "",
         "## Optional",
         "",
@@ -352,9 +352,11 @@ def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
         out.append(f"- {d['product']} — {d.get('price') or 'see source'} KRW at {d.get('store') or 'source'} "
                    f"({d.get('category_label')}) {d.get('source', {}).get('url', '')}")
     out += ["", "## Current deals (global)", ""]
-    for d in en_deals.get("feed", [])[:10]:
+    for d in en_deals.get("feed", []):
         out.append(f"- {d['product']} — {d.get('price')} {d.get('currency')} at {d.get('store') or 'source'} "
-                   f"({d.get('category_label')}) {d.get('source', {}).get('url', '')}")
+                   f"({d.get('category_label')}) {d.get('link', {}).get('url', '')} "
+                   f"Purchase eligibility: {d.get('purchase_eligibility', {}).get('label', 'unverified')}. "
+                   f"{next((line[7:] for line in d.get('briefing', []) if line.startswith('Check: ')), '')}")
     return "\n".join(out) + "\n"
 
 
