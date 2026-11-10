@@ -39,6 +39,21 @@ class RendererTests(unittest.TestCase):
         for page in [build.generate_comparison_html(item),build.generate_index_html([item])]:
             parser=Parser();parser.feed(page)
             self.assertFalse(any(t in ['img','iframe'] for t,a in parser.tags))
+    def test_china_listings_are_honest_and_link_to_products(self):
+        payload=json.loads((build.ROOT / 'data/deals_en.json').read_text())
+        china=[d for d in payload['feed'] if d.get('category') == 'china']
+        self.assertEqual(len(china), 4)
+        self.assertEqual(build._won({'price':29.9, 'currency':'CNY'}), 'CNY 29.90')
+        for deal in china:
+            self.assertIsNone(deal['discount_pct'])
+            self.assertIsNone(deal['original_price'])
+            self.assertEqual(deal['purchase_eligibility']['countries_confirmed'], [])
+            self.assertIn('/product/', deal['link']['url'])
+            card=build._deal_card(deal, lang='en')
+            self.assertIn('not a verified discount', card)
+            self.assertIn('eligibility unverified', card)
+        self.assertNotIn('no independently verified offer is published yet', build._source_monitor_html())
+
     def test_deals_stats_are_escaped(self):
         parser=Parser();parser.feed(build.generate_deals_en_html({'feed':[], 'stats':{'sources':'<img src=x onerror=alert(1)>'}}))
         self.assertFalse(any(t == 'img' for t,a in parser.tags))
@@ -87,7 +102,7 @@ class EditorialTests(unittest.TestCase):
         self.assertIn('checkout was not completed',en)
         for deal in build.load_deals(build.DEALS_EN_DATA_PATH)['feed']:
             self.assertEqual(deal['link']['label_kind'], 'retailer')
-            self.assertTrue(deal['link']['url'].startswith(('https://www.stacksocial.com/sales/', 'https://www.ebgames.com.au/product/')))
+            self.assertTrue(deal['link']['url'].startswith(('https://www.stacksocial.com/sales/', 'https://www.ebgames.com.au/product/', 'https://store.dji.com/cn/product/', 'https://item.lenovo.com.cn/product/')))
             self.assertIsNone(deal['discount_pct'])
             self.assertIsNone(deal['published_at'])
 

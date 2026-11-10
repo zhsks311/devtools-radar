@@ -533,7 +533,7 @@ def _eligibility_rows(deal: dict) -> str:
 def _source_monitor_html() -> str:
     config = json.loads((ROOT / "config/deal_sources.json").read_text())
     rows = "".join('<li><a href="' + _safe_url(s['policy_url']) + '">' + html.escape(s['name']) + '</a>: ' + html.escape(s['note']) + '</li>' for s in config['sources'])
-    return '<section class="method-note"><h2>Source monitoring</h2><p>Official feed checks are scheduled every six hours. GitHub schedules can be delayed. New feed items are review candidates, not verified product offers. Existing price-check dates are never refreshed by a feed check.</p><p><a href="https://github.com/zhsks311/devtools-radar/actions/workflows/deal-feeds.yml">Latest collection runs and source status</a></p><ul>' + rows + '</ul><p>Mainland China: no independently verified offer is published yet. A Chinese source or CNY price alone does not prove local purchase eligibility.</p></section>'
+    return '<section class="method-note"><h2>Source monitoring</h2><p>Official feed checks are scheduled every six hours. GitHub schedules can be delayed. New feed items are review candidates, not verified product offers. Existing price-check dates are never refreshed by a feed check.</p><p><a href="https://github.com/zhsks311/devtools-radar/actions/workflows/deal-feeds.yml">Latest collection runs and source status</a></p><ul>' + rows + '</ul><p>China storefront listings are labeled separately. Listed prices are not verified discounts; address-specific stock, delivery and payment eligibility may be unverified. A Chinese source or CNY price alone does not prove purchase eligibility.</p></section>'
 
 
 def _deal_card(deal: dict, lang: str = "ko") -> str:
