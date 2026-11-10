@@ -513,6 +513,29 @@ def _fact_rows(deal: dict) -> str:
     return facts
 
 
+def _eligibility_rows(deal: dict) -> str:
+    info = deal.get("purchase_eligibility") or {}
+    values = [
+        ("Purchase country", info.get("label", "Country eligibility unverified")),
+        ("Delivery", info.get("delivery", "Not verified")),
+        ("Activation", info.get("activation", "Not verified")),
+        ("Payment", info.get("payment", "Not verified")),
+        ("Tax & fees", info.get("tax", "Not verified")),
+        ("Returns", info.get("returns", "Check retailer terms")),
+        ("Evidence date", info.get("checked_at") or deal.get("checked_date") or "Unknown"),
+    ]
+    rows = "".join(f"<dt>{html.escape(k)}</dt><dd>{html.escape(str(v))}</dd>" for k,v in values)
+    for policy in info.get('policy_urls', []):
+        rows += '<dt>Retailer policy</dt><dd><a target="_blank" rel="noopener" href="' + _safe_url(policy) + '">Source terms</a></dd>'
+    return '<details class="purchase-terms"><summary>Purchase eligibility: ' + html.escape(values[0][1]) + '</summary><dl>' + rows + '</dl></details>'
+
+
+def _source_monitor_html() -> str:
+    config = json.loads((ROOT / "config/deal_sources.json").read_text())
+    rows = "".join('<li><a href="' + _safe_url(s['policy_url']) + '">' + html.escape(s['name']) + '</a>: ' + html.escape(s['note']) + '</li>' for s in config['sources'])
+    return '<section class="method-note"><h2>Source monitoring</h2><p>Official feed checks are scheduled every six hours. GitHub schedules can be delayed. New feed items are review candidates, not verified product offers. Existing price-check dates are never refreshed by a feed check.</p><p><a href="https://github.com/zhsks311/devtools-radar/actions/workflows/deal-feeds.yml">Latest collection runs and source status</a></p><ul>' + rows + '</ul><p>Mainland China: no independently verified offer is published yet. A Chinese source or CNY price alone does not prove local purchase eligibility.</p></section>'
+
+
 def _deal_card(deal: dict, lang: str = "ko") -> str:
     link = deal.get("link") or {}
     url = _safe_url(link.get("url", ""))
@@ -578,6 +601,7 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
         <div class="deal-price">{price_html}</div>
         <div class="deal-flags">{flags}</div>
         {_fact_rows(deal)}
+        {_eligibility_rows(deal) if lang == "en" else ""}
         <a class="cta" href="{url}" target="_blank" rel="{rel}">{cta}</a>
         {foot}
       </article>"""
@@ -706,7 +730,7 @@ def generate_ko_html(deals: dict) -> str:
   <script type="application/ld+json">
   {_json_ld(schema, ensure_ascii=False, indent=2)}
   </script>
-  <style>{SHARED_CSS}{DEAL_CSS}</style>
+  <style>{SHARED_CSS}{DEAL_CSS} .purchase-terms {{ font-size:.85rem; margin:1rem 0; }} .purchase-terms summary {{ cursor:pointer; font-weight:600; }} .purchase-terms dl {{ display:grid; grid-template-columns:1fr; gap:.2rem; }} .purchase-terms dd {{ margin:0 0 .65rem; color:var(--text-muted); }}</style>
 </head>
 <body>
   <header>
@@ -786,7 +810,7 @@ def generate_deals_en_html(payload: dict) -> str:
     categories = payload.get("categories", {})
     updated = payload.get("generated_at", "")[:10] or "2026-11-10"
 
-    feed_cards = "".join(_deal_card(d, lang="en") for d in feed[:12])
+    feed_cards = "".join(_deal_card(d, lang="en") for d in feed)
     if not feed_cards:
         feed_cards = ('<p style="color:var(--text-muted);font-size:0.92rem;padding:1rem 0;">'
                       'No new tech deals collected right now. Check back after the next run.</p>')
@@ -794,7 +818,7 @@ def generate_deals_en_html(payload: dict) -> str:
     tabs = _tabs(
         categories,
         [(slug, cat.get("label", slug)) for slug, cat in categories.items()],
-        len(feed[:12]), lang="en",
+        len(feed), lang="en",
     )
 
     cat_html = ""
@@ -851,14 +875,14 @@ def generate_deals_en_html(payload: dict) -> str:
           {"@type": "ListItem", "position": i + 1,
            "name": d.get("product", ""),
            "url": (d.get("link") or {}).get("url", "")}
-          for i, d in enumerate(feed[:12])
+          for i, d in enumerate(feed)
       ],
   }, ensure_ascii=False, indent=2)}
   </script>
   <script type="application/ld+json">
   {_json_ld(schema, ensure_ascii=False, indent=2)}
   </script>
-  <style>{SHARED_CSS}{DEAL_CSS}</style>
+  <style>{SHARED_CSS}{DEAL_CSS} .purchase-terms {{ font-size:.85rem; margin:1rem 0; }} .purchase-terms summary {{ cursor:pointer; font-weight:600; }} .purchase-terms dl {{ display:grid; grid-template-columns:1fr; gap:.2rem; }} .purchase-terms dd {{ margin:0 0 .65rem; color:var(--text-muted); }}</style>
 </head>
 <body class="international-deals">
   <header>
@@ -875,9 +899,9 @@ def generate_deals_en_html(payload: dict) -> str:
     <div class="ko-hero">
       <span class="badge badge-blue">Direct retailer links</span>
       <h1>Tech offers. Clear purchase terms.</h1>
-      <p class="lead">Software offers from StackSocial, plus an Australian console deal found on OzBargain and checked at EB Games.
+      <p class="lead">Offers labelled with purchase eligibility evidence, not by the currency or the source website.
       Every button opens the actual product page, not a search or community post.
-      Digital prices are in US dollars; the Australian console price is marked A$.</p>
+      Prices keep their original currency. Country restrictions, activation, delivery and checkout conditions are listed on each card.</p>
       <div class="ko-stats">
         <div class="ko-stat"><strong>{len(feed)}</strong>product offers</div>
         <div class="ko-stat"><strong>{sum(bool(c.get("items")) for c in categories.values())}</strong>categories with deals</div>
@@ -888,7 +912,7 @@ def generate_deals_en_html(payload: dict) -> str:
 
     <h2 id="feed" style="margin-top:2.4rem;">Browse the offers</h2>
     <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.3rem;">
-      Listed prices exclude untested coupon savings. Country eligibility and checkout totals are not verified.
+      Listed prices exclude untested coupon savings. Australia delivery is confirmed only where noted; digital country eligibility and checkout totals remain unverified.
       Redemption deadlines apply; review refund terms before activating a license.
     </p>
     {tabs}
@@ -896,6 +920,7 @@ def generate_deals_en_html(payload: dict) -> str:
 
     {cat_html}
 
+    {_source_monitor_html()}
     <div class="method-note">
       <strong style="color:var(--text-muted);">How prices are handled</strong><br>
       Retailer prices and visible availability were checked at the time noted on each card; checkout was not completed.

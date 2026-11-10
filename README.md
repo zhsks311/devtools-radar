@@ -68,3 +68,49 @@ The writing standard itself lives outside this repo at `docs/tech-blog-writing-s
 
 Each article carries `last_verified` and a `sources` list. Prices in this market move twice a year —
 if a figure here disagrees with a vendor's price sheet, the price sheet wins.
+# Deal collection and purchase eligibility
+
+## Scheduled discovery, not automatic publication
+
+`Check official deal feeds` runs at minute 17 every six hours (UTC 00:17,
+06:17, 12:17, 18:17; Asia/Seoul 09:17, 15:17, 21:17, 03:17).
+GitHub schedules are best-effort, can be delayed, and may be disabled by GitHub
+on inactive public repositories. Check the Actions run history, not this document,
+for actual execution. `workflow_dispatch` also permits an authorized manual run.
+
+Only DealNews official RSS is enabled initially. Its RSS terms require preserving
+content and links unchanged. The job therefore saves the original XML as a short-lived
+Actions artifact and a status JSON; it does NOT rewrite feed links or publish source
+articles onto DevTeardown. No paid API, added secret, login, or page scraping is used.
+The token is `contents: read`; scheduled code cannot edit the website or repository.
+
+Other discovered sources have explicit disabled/review states in
+`config/deal_sources.json`. Do not enable a source merely because it has an RSS URL.
+Slickdeals/StackSocial forbid unapproved scraping, Woot needs approved API access,
+SMZDM's feed returned 403, and OzBargain reuse permission remains under review.
+
+The collector checks robots, waits two seconds, uses conditional HTTP headers when
+available, caps response size at 2 MB, uses a 25-second timeout, rejects redirects,
+DTD/entities and empty feeds, and stops on 401/403/429. It does not solve challenges,
+change identity or try another access path. Source failures keep the last-success
+metadata in the cache and produce a failed run rather than a fake successful update.
+
+Artifacts are retained for seven days. The last XML and status are also cached and carried forward on HTTP 304. GitHub cache is best effort. Last-good published
+products remain in Git and their actual price-check dates are never changed by a crawl.
+Operators should review the original feeds, independently verify the actual merchant
+URL, current price/currency, region, delivery, activation, tax, refund and coupon terms,
+and then intentionally update curated `data/deals_en.json`. Keep source attribution.
+Never copy product images without a usable permission basis. Archive superseded data.
+
+## Country statements
+
+`purchase_eligibility` separates confirmed destination evidence from unknown billing,
+activation, payment and refund restrictions. Digital delivery, a USD/CNY price, an
+English/Chinese interface or a source's country is NOT evidence of worldwide/local
+purchase eligibility. No guessed country allowlists. China candidates remain unpublished
+until a current mainland offer is independently verified.
+
+## Validation
+
+Run `python3 tools/check.py` before publication. For an authorized live feed check:
+`python3 tools/collect_deal_feeds.py --output collection-output`.

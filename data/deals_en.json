@@ -46,6 +46,24 @@
         "matched_keyword": null,
         "label": "View product at EB Games Australia",
         "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "AU"
+        ],
+        "label": "Australia",
+        "status": "retailer_delivery_statement",
+        "delivery": "Australia delivery shown. Terms also allow selected products to New Zealand; this product's NZ eligibility is unverified. Postcode/stock restrictions apply.",
+        "activation": "Console region/account and warranty terms: check retailer.",
+        "payment": "Terms require AU/NZ resident customers; payment methods and billing details must be checked at checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+        "checked_at": "2026-11-10",
+        "policy_urls": [
+          "https://www.ebgames.com.au/terms",
+          "https://support.ebgames.com.au/hc/en-us/articles/13814050254735-Do-you-ship-internationally"
+        ]
       }
     },
     {
@@ -88,6 +106,18 @@
         "matched_keyword": null,
         "label": "View product at StackSocial",
         "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "label": "Country eligibility unverified",
+        "status": "unverified",
+        "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+        "activation": "License activation country restrictions have not been verified.",
+        "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": null,
+        "checked_at": "2026-11-10"
       }
     },
     {
@@ -130,6 +160,18 @@
         "matched_keyword": null,
         "label": "View product at StackSocial",
         "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "label": "Country eligibility unverified",
+        "status": "unverified",
+        "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+        "activation": "License activation country restrictions have not been verified.",
+        "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": null,
+        "checked_at": "2026-11-10"
       }
     },
     {
@@ -179,6 +221,18 @@
         "credit": "Readdle press kit",
         "credit_url": "https://readdle.com/press",
         "caption": "Official app icon."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "label": "Country eligibility unverified",
+        "status": "unverified",
+        "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+        "activation": "License activation country restrictions have not been verified.",
+        "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": null,
+        "checked_at": "2026-11-10"
       }
     },
     {
@@ -228,6 +282,18 @@
         "credit": "Koofr",
         "credit_url": "https://koofr.eu/",
         "caption": "App preview; storage shown is illustrative."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "label": "Country eligibility unverified",
+        "status": "unverified",
+        "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+        "activation": "License activation country restrictions have not been verified.",
+        "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": null,
+        "checked_at": "2026-11-10"
       }
     },
     {
@@ -270,6 +336,18 @@
         "matched_keyword": null,
         "label": "View product at StackSocial",
         "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "label": "Country eligibility unverified",
+        "status": "unverified",
+        "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+        "activation": "License activation country restrictions have not been verified.",
+        "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": null,
+        "checked_at": "2026-11-10"
       }
     },
     {
@@ -312,6 +390,18 @@
         "matched_keyword": null,
         "label": "View product at StackSocial",
         "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "label": "Country eligibility unverified",
+        "status": "unverified",
+        "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+        "activation": "License activation country restrictions have not been verified.",
+        "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": null,
+        "checked_at": "2026-11-10"
       }
     },
     {
@@ -354,6 +444,18 @@
         "matched_keyword": null,
         "label": "View product at StackSocial",
         "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "label": "Country eligibility unverified",
+        "status": "unverified",
+        "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+        "activation": "License activation country restrictions have not been verified.",
+        "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": null,
+        "checked_at": "2026-11-10"
       }
     },
     {
@@ -396,6 +498,18 @@
         "matched_keyword": null,
         "label": "View product at StackSocial",
         "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "label": "Country eligibility unverified",
+        "status": "unverified",
+        "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+        "activation": "License activation country restrictions have not been verified.",
+        "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+        "tax": "Delivery fees, taxes and final total: check checkout.",
+        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "evidence_url": null,
+        "checked_at": "2026-11-10"
       }
     }
   ],
@@ -572,6 +686,18 @@
             "matched_keyword": null,
             "label": "View product at StackSocial",
             "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "label": "Country eligibility unverified",
+            "status": "unverified",
+            "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+            "activation": "License activation country restrictions have not been verified.",
+            "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": null,
+            "checked_at": "2026-11-10"
           }
         },
         {
@@ -614,6 +740,18 @@
             "matched_keyword": null,
             "label": "View product at StackSocial",
             "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "label": "Country eligibility unverified",
+            "status": "unverified",
+            "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+            "activation": "License activation country restrictions have not been verified.",
+            "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": null,
+            "checked_at": "2026-11-10"
           }
         },
         {
@@ -663,6 +801,18 @@
             "credit": "Readdle press kit",
             "credit_url": "https://readdle.com/press",
             "caption": "Official app icon."
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "label": "Country eligibility unverified",
+            "status": "unverified",
+            "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+            "activation": "License activation country restrictions have not been verified.",
+            "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": null,
+            "checked_at": "2026-11-10"
           }
         },
         {
@@ -705,6 +855,18 @@
             "matched_keyword": null,
             "label": "View product at StackSocial",
             "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "label": "Country eligibility unverified",
+            "status": "unverified",
+            "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+            "activation": "License activation country restrictions have not been verified.",
+            "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": null,
+            "checked_at": "2026-11-10"
           }
         },
         {
@@ -747,6 +909,18 @@
             "matched_keyword": null,
             "label": "View product at StackSocial",
             "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "label": "Country eligibility unverified",
+            "status": "unverified",
+            "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+            "activation": "License activation country restrictions have not been verified.",
+            "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": null,
+            "checked_at": "2026-11-10"
           }
         },
         {
@@ -789,6 +963,18 @@
             "matched_keyword": null,
             "label": "View product at StackSocial",
             "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "label": "Country eligibility unverified",
+            "status": "unverified",
+            "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+            "activation": "License activation country restrictions have not been verified.",
+            "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": null,
+            "checked_at": "2026-11-10"
           }
         },
         {
@@ -831,6 +1017,18 @@
             "matched_keyword": null,
             "label": "View product at StackSocial",
             "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "label": "Country eligibility unverified",
+            "status": "unverified",
+            "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+            "activation": "License activation country restrictions have not been verified.",
+            "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": null,
+            "checked_at": "2026-11-10"
           }
         }
       ]
@@ -886,6 +1084,18 @@
             "credit": "Koofr",
             "credit_url": "https://koofr.eu/",
             "caption": "App preview; storage shown is illustrative."
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "label": "Country eligibility unverified",
+            "status": "unverified",
+            "delivery": "Digital delivery; no shipping does not mean worldwide activation.",
+            "activation": "License activation country restrictions have not been verified.",
+            "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": null,
+            "checked_at": "2026-11-10"
           }
         }
       ]
@@ -934,6 +1144,24 @@
             "matched_keyword": null,
             "label": "View product at EB Games Australia",
             "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "AU"
+            ],
+            "label": "Australia",
+            "status": "retailer_delivery_statement",
+            "delivery": "Australia delivery shown. Terms also allow selected products to New Zealand; this product's NZ eligibility is unverified. Postcode/stock restrictions apply.",
+            "activation": "Console region/account and warranty terms: check retailer.",
+            "payment": "Terms require AU/NZ resident customers; payment methods and billing details must be checked at checkout.",
+            "tax": "Delivery fees, taxes and final total: check checkout.",
+            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "evidence_url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+            "checked_at": "2026-11-10",
+            "policy_urls": [
+              "https://www.ebgames.com.au/terms",
+              "https://support.ebgames.com.au/hc/en-us/articles/13814050254735-Do-you-ship-internationally"
+            ]
           }
         }
       ]
