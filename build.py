@@ -3,11 +3,19 @@ import re
 import json
 import html
 import datetime
+import argparse
+import shutil
+import tempfile
+from pathlib import Path
+from urllib.parse import urlsplit
+
+from tools.validate_data import validate_items
 
 BASE_URL = "https://devteardown.com"
 SITE_NAME = "DevTools Radar"
-DIST_DIR = "/workspace/devtools-radar/dist"
-DATA_PATH = "/workspace/devtools-radar/data/tools.json"
+ROOT = Path(__file__).resolve().parent
+DIST_DIR = ROOT / "dist"
+DATA_PATH = ROOT / "data" / "tools.json"
 
 SHARED_CSS = """
 :root {
@@ -195,7 +203,21 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
 
 def _esc(text):
-    return html.escape(text, quote=False)
+    return html.escape(text, quote=True)
+
+
+def _safe_url(value):
+    """Only absolute HTTP(S) URLs are accepted from content."""
+    if not isinstance(value, str) or any(ord(c) < 32 for c in value):
+        raise ValueError("Invalid URL")
+    parsed = urlsplit(value)
+    if parsed.scheme not in ("http", "https") or not parsed.netloc or parsed.username:
+        raise ValueError("Only absolute HTTP(S) URLs without credentials are allowed")
+    return html.escape(value, quote=True)
+
+
+def _json_ld(value, **kwargs):
+    return json.dumps(value, **kwargs).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
 
 
 def _inline(text):
@@ -249,7 +271,7 @@ def md_to_html(md):
                 buf.append(lines[i])
                 i += 1
             i += 1
-            cls = ' class="language-%s"' % lang if lang else ""
+            cls = ' class="language-%s"' % lang if re.fullmatch(r'[A-Za-z0-9_+-]+', lang) else ""
             out.append("<pre><code%s>%s</code></pre>" % (cls, _esc("\n".join(buf))))
             continue
 
@@ -469,8 +491,8 @@ DEALS_SECTION_HTML = """
 
 # ---------------------------------------------------------------- deal portals
 
-DEALS_DATA_PATH = "/workspace/devtools-radar/data/deals.json"
-DEALS_EN_DATA_PATH = "/workspace/devtools-radar/data/deals_en.json"
+DEALS_DATA_PATH = ROOT / "data" / "deals.json"
+DEALS_EN_DATA_PATH = ROOT / "data" / "deals_en.json"
 KO_SITE_NAME = "DevTeardown KR"
 KO_TAGLINE = "개발자 장비 & 테크 핫딜 레이더"
 KO_DISCLOSURE = (
@@ -639,33 +661,15 @@ FACT_ICONS = [
 ]
 
 
-def load_deals(path: str = DEALS_DATA_PATH) -> dict:
-    if os.path.exists(path):
-        try:
-            with open(path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            if isinstance(data, dict) and data.get("feed") is not None:
-                return data
-        except (json.JSONDecodeError, OSError):
-            pass
-    return {
-        "generated_at": "",
-        "feed": [],
-        "categories": {},
-        "picks": [
-            {"category": "keyboard-mouse", "kicker": "Mouse & Desk Setup",
-             "title": "로지텍 MX Master 3S",
-             "desc": "무소음 스위치와 MagSpeed 휠. 하루 8시간 손목 부담을 줄이는 개발자 기본 장비.",
-             "url": "https://link.coupang.com/a/iyxFRjouBM", "tracked": True},
-            {"category": "laptops", "kicker": "Workstation / Laptop",
-             "title": "Apple M4 MacBook Pro",
-             "desc": "통합 메모리 대역폭으로 로컬 LLM 추론과 빌드를 한 대에서. 14/16인치.",
-             "url": "https://link.coupang.com/a/iyxHrMNtyC", "tracked": True},
-        ],
-        "goldbox": {"url": "https://link.coupang.com/a/iyxEbxQMEK",
-                    "label": "쿠팡 골드박스 — 매일 오전 7시 특가"},
-        "disclosure": KO_DISCLOSURE,
-    }
+def load_deals(path=DEALS_DATA_PATH):
+    # Do not replace corrupt/missing production input with an apparently valid feed.
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    if not isinstance(data, dict) or not isinstance(data.get("feed"), list):
+        raise ValueError(f"Invalid deals feed: {path}")
+    if not isinstance(data.get("categories", {}), dict) or not isinstance(data.get("picks", []), list):
+        raise ValueError(f"Invalid deals categories/picks: {path}")
+    return data
 
 
 def _won(deal: dict) -> str:
@@ -702,7 +706,7 @@ def _fact_rows(deal: dict) -> str:
 
 def _deal_card(deal: dict, lang: str = "ko") -> str:
     link = deal.get("link") or {}
-    url = html.escape(link.get("url", ""))
+    url = _safe_url(link.get("url", ""))
     tracked = bool(link.get("tracked"))
     is_global = deal.get("region") == "global"
     if is_global:
@@ -722,7 +726,7 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
 
     flags = ""
     if deal.get("discount_pct"):
-        flags += f'<span class="flag flag-discount">-{deal["discount_pct"]}%</span>'
+        flags += f'<span class="flag flag-discount">-{html.escape(str(deal["discount_pct"]))}%</span>'
     ship = deal.get("shipping") or ""
     if "무료" in ship or ship == "Free shipping":
         flags += f'<span class="flag flag-free">{html.escape(ship)}</span>'
@@ -735,7 +739,7 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
     if not tracked and not is_global:
         note = '<span class="note">제휴 링크 없음 · 쿠팡 검색</span>'
     foot = ""
-    src_url = html.escape((deal.get("source") or {}).get("url", ""))
+    src_url = _safe_url((deal.get("source") or {}).get("url", "")) if (deal.get("source") or {}).get("url") else ""
     if src_url and src_url != url:
         label = "원문 보기" if lang == "ko" else "Source post"
         foot = f'<div class="deal-foot"><a href="{src_url}" target="_blank" rel="noopener nofollow">{label}</a>{note}</div>'
@@ -816,7 +820,7 @@ def generate_ko_html(deals: dict) -> str:
         for d in cat.get("items", [])[:4]:
             link = d.get("link") or {}
             price = _won(d) or "가격 확인"
-            rows += (f'<li><a href="{html.escape(link.get("url", "#"))}" target="_blank" '
+            rows += (f'<li><a href="{_safe_url(link.get("url", ""))}" target="_blank" '
                      f'rel="noopener nofollow sponsored">{html.escape(d.get("product", ""))}</a>'
                      f'<span class="p">{price}</span>'
                      f'<span class="s">{html.escape(d.get("store") or "")}</span></li>')
@@ -832,7 +836,7 @@ def generate_ko_html(deals: dict) -> str:
     pick_cards = ""
     for p in picks:
         pick_cards += f"""
-      <a class="pick-card" href="{html.escape(p['url'])}" target="_blank" rel="noopener nofollow sponsored">
+      <a class="pick-card" href="{_safe_url(p['url'])}" target="_blank" rel="noopener nofollow sponsored">
         <div class="pick-kicker">{html.escape(p.get('kicker', ''))}</div>
         <strong>{html.escape(p.get('title', ''))}</strong>
         <p>{html.escape(p.get('desc', ''))}</p>
@@ -865,7 +869,7 @@ def generate_ko_html(deals: dict) -> str:
   <meta name="twitter:title" content="{KO_SITE_NAME} — {KO_TAGLINE}">
   <meta name="twitter:description" content="원문 가격 그대로 모은 개발자 장비·테크 핫딜. 실구매가와 추천 대상만 남겼습니다.">
   <script type="application/ld+json">
-  {json.dumps({
+  {_json_ld({
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "실시간 테크 핫딜",
@@ -878,7 +882,7 @@ def generate_ko_html(deals: dict) -> str:
   }, ensure_ascii=False, indent=2)}
   </script>
   <script type="application/ld+json">
-  {json.dumps(schema, ensure_ascii=False, indent=2)}
+  {_json_ld(schema, ensure_ascii=False, indent=2)}
   </script>
   <style>{SHARED_CSS}{DEAL_CSS}</style>
 </head>
@@ -904,7 +908,7 @@ def generate_ko_html(deals: dict) -> str:
       <div class="ko-stats">
         <div class="ko-stat"><strong>{len(feed)}건</strong>실시간 핫딜</div>
         <div class="ko-stat"><strong>{len(categories)}개</strong>핫딜 카테고리</div>
-        <div class="ko-stat"><strong>{updated}</strong>업데이트</div>
+        <div class="ko-stat"><strong>{html.escape(updated)}</strong>업데이트</div>
         <div class="ko-stat"><strong>0원</strong>가입 비용</div>
       </div>
       <div class="disclosure-bar">
@@ -924,7 +928,7 @@ def generate_ko_html(deals: dict) -> str:
         <h3>⏰ 오늘의 골드박스</h3>
         <p>매일 오전 7시, 한정 수량 특가. 개발 장비부터 사무 간식까지.</p>
       </div>
-      <a class="cta" style="width:auto; padding:0.75rem 1.2rem;" href="{html.escape(goldbox['url'])}" target="_blank" rel="noopener nofollow sponsored">{html.escape(goldbox.get('label', '골드박스 보기'))} →</a>
+      <a class="cta" style="width:auto; padding:0.75rem 1.2rem;" href="{_safe_url(goldbox['url'])}" target="_blank" rel="noopener nofollow sponsored">{html.escape(goldbox.get('label', '골드박스 보기'))} →</a>
     </div>
 
     {cat_html}
@@ -980,7 +984,7 @@ def generate_deals_en_html(payload: dict) -> str:
         for d in cat.get("items", [])[:4]:
             link = d.get("link") or {}
             price = _won(d) or "see source"
-            rows += (f'<li><a href="{html.escape(link.get("url", "#"))}" target="_blank" '
+            rows += (f'<li><a href="{_safe_url(link.get("url", ""))}" target="_blank" '
                      f'rel="noopener nofollow">{html.escape(d.get("product", ""))}</a>'
                      f'<span class="p">{price}</span>'
                      f'<span class="s">{html.escape(d.get("store") or "")}</span></li>')
@@ -1019,7 +1023,7 @@ def generate_deals_en_html(payload: dict) -> str:
   <meta name="twitter:title" content="DevTeardown Deals — developer hardware deals">
   <meta name="twitter:description" content="Deals from r/buildapcsales, Slickdeals and Dealabs, priced exactly as the source lists them.">
   <script type="application/ld+json">
-  {json.dumps({
+  {_json_ld({
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Live tech deals",
@@ -1032,7 +1036,7 @@ def generate_deals_en_html(payload: dict) -> str:
   }, ensure_ascii=False, indent=2)}
   </script>
   <script type="application/ld+json">
-  {json.dumps(schema, ensure_ascii=False, indent=2)}
+  {_json_ld(schema, ensure_ascii=False, indent=2)}
   </script>
   <style>{SHARED_CSS}{DEAL_CSS}</style>
 </head>
@@ -1057,8 +1061,8 @@ def generate_deals_en_html(payload: dict) -> str:
       <div class="ko-stats">
         <div class="ko-stat"><strong>{len(feed)}</strong>live deals</div>
         <div class="ko-stat"><strong>4</strong>categories</div>
-        <div class="ko-stat"><strong>{updated}</strong>updated</div>
-        <div class="ko-stat"><strong>{payload.get('stats', {}).get('sources', 0)}</strong>sources</div>
+        <div class="ko-stat"><strong>{html.escape(updated)}</strong>updated</div>
+        <div class="ko-stat"><strong>{html.escape(str(payload.get('stats', {}).get('sources', 0)))}</strong>sources</div>
       </div>
     </div>
 
@@ -1100,11 +1104,11 @@ def generate_index_html(items):
         cards_html += f"""
         <a class="card" href="./compare/{item['slug']}/">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.7rem;">
-            <span class="badge badge-blue">{item['category']}</span>
+            <span class="badge badge-blue">{html.escape(item['category'])}</span>
             <span style="font-size:0.78rem; color:var(--text-muted);">{reading_time(item)}</span>
           </div>
-          <h2 style="font-size:1.22rem; color:#fff; margin:0 0 0.5rem; border-bottom:none; padding-bottom:0;">{a['name']} vs {b['name']}</h2>
-          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1rem; line-height:1.6;">{_plain(item.get('hook', item['verdict_summary']))[:175]}…</p>
+          <h2 style="font-size:1.22rem; color:#fff; margin:0 0 0.5rem; border-bottom:none; padding-bottom:0;">{html.escape(a['name'])} vs {html.escape(b['name'])}</h2>
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1rem; line-height:1.6;">{html.escape(_plain(item.get('hook', item['verdict_summary']))[:175])}…</p>
           <span style="color:var(--primary); font-size:0.86rem; font-weight:600;">Read the teardown →</span>
         </a>
         """
@@ -1129,7 +1133,7 @@ def generate_index_html(items):
   <meta property="og:type" content="website">
   <meta property="og:url" content="{BASE_URL}/">
   <script type="application/ld+json">
-  {json.dumps({
+  {_json_ld({
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Developer tool teardowns",
@@ -1142,7 +1146,7 @@ def generate_index_html(items):
   }, ensure_ascii=False, indent=2)}
   </script>
   <script type="application/ld+json">
-  {json.dumps({
+  {_json_ld({
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": SITE_NAME,
@@ -1234,10 +1238,10 @@ def generate_comparison_html(item):
         ],
     }
 
-    a_pros_html = "".join(f"<li>{p}</li>" for p in a.get("pros", []))
-    a_cons_html = "".join(f"<li>{c}</li>" for c in a.get("cons", []))
-    b_pros_html = "".join(f"<li>{p}</li>" for p in b.get("pros", []))
-    b_cons_html = "".join(f"<li>{c}</li>" for c in b.get("cons", []))
+    a_pros_html = "".join(f"<li>{html.escape(p)}</li>" for p in a.get("pros", []))
+    a_cons_html = "".join(f"<li>{html.escape(c)}</li>" for c in a.get("cons", []))
+    b_pros_html = "".join(f"<li>{html.escape(p)}</li>" for p in b.get("pros", []))
+    b_cons_html = "".join(f"<li>{html.escape(c)}</li>" for c in b.get("cons", []))
 
     sections = item.get("sections") or item.get("deep_dive_sections", [])
 
@@ -1310,12 +1314,12 @@ def generate_comparison_html(item):
     sources_html = ""
     if item.get("sources"):
         links = "".join(
-            f'<a href="{html.escape(u)}" rel="noopener nofollow" target="_blank">{html.escape(u)}</a><br>'
+            f'<a href="{_safe_url(u)}" rel="noopener nofollow" target="_blank">{html.escape(u)}</a><br>'
             for u in item["sources"]
         )
         sources_html = f"""
       <h2>Sources &amp; verification</h2>
-      <p class="sources-list">Prices and limits were read from these pages on <strong>{updated}</strong>.
+      <p class="sources-list">Prices and limits were read from these pages on <strong>{html.escape(updated)}</strong>.
       Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
       <div class="card"><p class="sources-list">{links}</p></div>"""
 
@@ -1335,8 +1339,8 @@ def generate_comparison_html(item):
         for r in related:
             rel_cards += f"""
           <a class="card" href="../{r['slug']}/" style="padding:1.1rem;">
-            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">{r['name']}</h3>
-            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">{r['why']}</p>
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">{html.escape(r['name'])}</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">{html.escape(r['why'])}</p>
           </a>"""
         related_html = f"""
       <h2>Keep reading</h2>
@@ -1347,27 +1351,27 @@ def generate_comparison_html(item):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{a['name']} vs {b['name']} (2026): Cost, Limits and the Decision Matrix</title>
+  <title>{html.escape(a['name'])} vs {html.escape(b['name'])} (2026): Cost, Limits and the Decision Matrix</title>
   <meta name="description" content="{html.escape(item['hook'][:180], quote=True)}">
   <link rel="canonical" href="{BASE_URL}/compare/{slug}/">
   <link rel="alternate" hreflang="en" href="{BASE_URL}/compare/{slug}/">
   <link rel="alternate" hreflang="x-default" href="{BASE_URL}/compare/{slug}/">
   <meta property="og:site_name" content="{SITE_NAME}">
-  <meta property="og:title" content="{a['name']} vs {b['name']} — 2026 teardown">
+  <meta property="og:title" content="{html.escape(a['name'])} vs {html.escape(b['name'])} — 2026 teardown">
   <meta property="og:description" content="{html.escape(item['hook'][:180], quote=True)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{BASE_URL}/compare/{slug}/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{a['name']} vs {b['name']}: cost, limits and the decision matrix">
+  <meta name="twitter:title" content="{html.escape(a['name'])} vs {html.escape(b['name'])}: cost, limits and the decision matrix">
   <meta name="twitter:description" content="{html.escape(first_sentence(item['verdict_summary'])[:180], quote=True)}">
   <script type="application/ld+json">
-  {json.dumps(schema_article, ensure_ascii=False, indent=2)}
+  {_json_ld(schema_article, ensure_ascii=False, indent=2)}
   </script>
   <script type="application/ld+json">
-  {json.dumps(schema_faq, ensure_ascii=False, indent=2)}
+  {_json_ld(schema_faq, ensure_ascii=False, indent=2)}
   </script>
   <script type="application/ld+json">
-  {json.dumps(schema_crumb, ensure_ascii=False, indent=2)}
+  {_json_ld(schema_crumb, ensure_ascii=False, indent=2)}
   </script>
   <style>{SHARED_CSS}</style>
 </head>
@@ -1385,16 +1389,16 @@ def generate_comparison_html(item):
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">{item['category']}</span>
-      <span class="badge badge-gray">{a['name']} vs {b['name']}</span>
+      <span class="badge badge-blue">{html.escape(item['category'])}</span>
+      <span class="badge badge-gray">{html.escape(a['name'])} vs {html.escape(b['name'])}</span>
       <span>DevTeardown Team</span>
       <span>·</span>
-      <span>Prices verified {updated}</span>
+      <span>Prices verified {html.escape(updated)}</span>
       <span>·</span>
       <span>{rt}</span>
     </div>
 
-    <h1>{a['name']} vs {b['name']}</h1>
+    <h1>{html.escape(a['name'])} vs {html.escape(b['name'])}</h1>
     <div class="lead">{md_to_html(item['hook'])}</div>
 
     <div class="verdict-box">
@@ -1418,21 +1422,21 @@ def generate_comparison_html(item):
         <thead>
           <tr>
             <th>Dimension</th>
-            <th>{a['name']} <span class="badge badge-blue">{a.get('badge','')}</span></th>
-            <th>{b['name']} <span class="badge badge-green">{b.get('badge','')}</span></th>
+            <th>{html.escape(a['name'])} <span class="badge badge-blue">{html.escape(a.get('badge',''))}</span></th>
+            <th>{html.escape(b['name'])} <span class="badge badge-green">{html.escape(b.get('badge',''))}</span></th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>{a['db']}</td><td>{b['db']}</td></tr>
-          <tr><td><strong>Pricing model</strong></td><td>{a['pricing']}</td><td>{b['pricing']}</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>{a['self_host']}</strong></td><td>{b['self_host']}</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>{a['realtime']}</td><td>{b['realtime']}</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>{a['ai_readiness']}</td><td>{b['ai_readiness']}</td></tr>
-          <tr><td><strong>Lock-in risk</strong></td><td>{a['lock_in']}</td><td>{b['lock_in']}</td></tr>
+          <tr><td><strong>Core engine</strong></td><td>{html.escape(a['db'])}</td><td>{html.escape(b['db'])}</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>{html.escape(a['pricing'])}</td><td>{html.escape(b['pricing'])}</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>{html.escape(a['self_host'])}</strong></td><td>{html.escape(b['self_host'])}</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>{html.escape(a['realtime'])}</td><td>{html.escape(b['realtime'])}</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>{html.escape(a['ai_readiness'])}</td><td>{html.escape(b['ai_readiness'])}</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>{html.escape(a['lock_in'])}</td><td>{html.escape(b['lock_in'])}</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
-            <td><a href="{a['cta_url']}" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">{a['name']} →</a></td>
-            <td><a href="{b['cta_url']}" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">{b['name']} →</a></td>
+            <td><a href="{_safe_url(a['cta_url'])}" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">{html.escape(a['name'])} →</a></td>
+            <td><a href="{_safe_url(b['cta_url'])}" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">{html.escape(b['name'])} →</a></td>
           </tr>
         </tbody>
       </table>
@@ -1442,11 +1446,11 @@ def generate_comparison_html(item):
     <h2>Same task, two SDKs</h2>
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
-        <span class="badge badge-blue" style="margin-bottom:0.4rem;">{a['name']}</span>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">{html.escape(a['name'])}</span>
         <pre><code>{html.escape(a.get('code_example',''))}</code></pre>
       </div>
       <div>
-        <span class="badge badge-green" style="margin-bottom:0.4rem;">{b['name']}</span>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">{html.escape(b['name'])}</span>
         <pre><code>{html.escape(b.get('code_example',''))}</code></pre>
       </div>
     </div>
@@ -1454,7 +1458,7 @@ def generate_comparison_html(item):
     <h2>What you gain, what you give up</h2>
     <div class="pros-cons-grid">
       <div class="card" style="padding:1.2rem;">
-        <h3 style="color:var(--primary); margin-top:0;">{a['name']}</h3>
+        <h3 style="color:var(--primary); margin-top:0;">{html.escape(a['name'])}</h3>
         <div class="pros-box" style="margin-bottom:0.9rem;">
           <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
           <ul>{a_pros_html}</ul>
@@ -1465,7 +1469,7 @@ def generate_comparison_html(item):
         </div>
       </div>
       <div class="card" style="padding:1.2rem;">
-        <h3 style="color:var(--accent); margin-top:0;">{b['name']}</h3>
+        <h3 style="color:var(--accent); margin-top:0;">{html.escape(b['name'])}</h3>
         <div class="pros-box" style="margin-bottom:0.9rem;">
           <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
           <ul>{b_pros_html}</ul>
@@ -1485,14 +1489,14 @@ def generate_comparison_html(item):
 {sources_html}{related_html}
 
     <div style="text-align:center; margin: 3rem 0 1rem;">
-      <a href="{a['cta_url']}" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try {a['name']} →</a>
-      <a href="{b['cta_url']}" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore {b['name']} →</a>
+      <a href="{_safe_url(a['cta_url'])}" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try {html.escape(a['name'])} →</a>
+      <a href="{_safe_url(b['cta_url'])}" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore {html.escape(b['name'])} →</a>
     </div>
 
     {DEALS_SECTION_HTML}
 
     <div class="updated-note">
-      Prices and limits verified on {updated}. This market reprices often — if a number below looks wrong,
+      Prices and limits verified on {html.escape(updated)}. This market reprices often — if a number below looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -1543,10 +1547,9 @@ def generate_sitemap(items):
 {urls}</urlset>"""
 
 
-def main():
+def render_site(items, output, deals, en_deals):
+    DIST_DIR = output
     os.makedirs(DIST_DIR, exist_ok=True)
-    with open(DATA_PATH, "r", encoding="utf-8") as f:
-        items = json.load(f)
 
     index_html = generate_index_html(items)
     with open(os.path.join(DIST_DIR, "index.html"), "w", encoding="utf-8") as f:
@@ -1566,7 +1569,6 @@ def main():
         f.write(sitemap)
 
     # 한글 핫딜 포털 (/ko/)
-    deals = load_deals()
     ko_dir = os.path.join(DIST_DIR, "ko")
     os.makedirs(ko_dir, exist_ok=True)
     with open(os.path.join(ko_dir, "index.html"), "w", encoding="utf-8") as f:
@@ -1574,7 +1576,6 @@ def main():
     print(f"  {'ko-portal':<28} feed={len(deals.get('feed', []))} deals  "
           f"picks={len(deals.get('picks', []))}  updated={deals.get('generated_at', '-')}")
 
-    en_deals = load_deals(DEALS_EN_DATA_PATH)
     en_dir = os.path.join(DIST_DIR, "deals")
     os.makedirs(en_dir, exist_ok=True)
     with open(os.path.join(en_dir, "index.html"), "w", encoding="utf-8") as f:
@@ -1609,7 +1610,81 @@ def main():
     with open(os.path.join(DIST_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("devteardown.com\n")
 
-    print(f"Build complete: {len(items) + 3} pages in {DIST_DIR}")
+    print(f"Rendered {len(items) + 3} pages")
+
+
+MANIFEST = ".generated-files.json"
+
+
+def build_site(data_path=DATA_PATH, output=DIST_DIR, deals_path=DEALS_DATA_PATH,
+               en_deals_path=DEALS_EN_DATA_PATH):
+    output = Path(output).absolute()
+    inputs = [Path(p).resolve() for p in (data_path, deals_path, en_deals_path)]
+    if output.is_symlink() or output == ROOT or output == Path(output.anchor) or ".git" in output.parts:
+        raise ValueError("Unsafe output directory")
+    resolved = output.resolve()
+    if ".git" in resolved.parts or any(p == resolved or resolved in p.parents for p in [ROOT, *inputs]):
+        raise ValueError("Output must not contain source files")
+    with open(data_path, encoding="utf-8") as f:
+        items = json.load(f)
+    errors = validate_items(items)
+    if errors:
+        raise ValueError("Invalid build input:\n" + "\n".join(errors))
+    deals, en_deals = load_deals(deals_path), load_deals(en_deals_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".radar-build-", dir=output.parent) as temp:
+        stage = Path(temp) / "site"
+        stage.mkdir()
+        render_site(items, stage, deals, en_deals)
+        generated = sorted(str(p.relative_to(stage)) for p in stage.rglob("*") if p.is_file())
+        # Preserve user-managed assets. Remove only manifest-owned (or recognizable legacy) output.
+        if output.exists():
+            if not output.is_dir() or any(p.is_symlink() for p in output.rglob("*")):
+                raise ValueError("Output must be a directory without symlinks")
+            manifest = output / MANIFEST
+            if manifest.exists():
+                previous = json.loads(manifest.read_text(encoding="utf-8"))
+                if not isinstance(previous, list) or any(not isinstance(v, str) or Path(v).is_absolute()
+                    or ".." in Path(v).parts for v in previous):
+                    raise ValueError("Unsafe generated file manifest")
+            else:
+                previous = []
+                for page in (output / "compare").glob("*/index.html"):
+                    if "DevTools" in page.read_text(encoding="utf-8") and "Key metric comparison" in page.read_text(encoding="utf-8"):
+                        previous.append(str(page.relative_to(output)))
+            owned = set(previous) | set(generated) | {MANIFEST}
+            for file in output.rglob("*"):
+                relative = file.relative_to(output)
+                if file.is_file() and str(relative) not in owned:
+                    target = stage / relative
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(file, target)
+        (stage / MANIFEST).write_text(json.dumps(generated, indent=2) + "\n", encoding="utf-8")
+        backup = Path(temp) / "previous"
+        existed = output.exists()
+        if existed:
+            output.rename(backup)
+        try:
+            stage.rename(output)
+        except BaseException:
+            if existed:
+                backup.rename(output)
+            raise
+    print(f"Build complete: {output}")
+    return generated
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Validate and render the static site safely")
+    parser.add_argument("--data", type=Path, default=DATA_PATH)
+    parser.add_argument("--output", type=Path, default=DIST_DIR)
+    parser.add_argument("--deals", type=Path, default=DEALS_DATA_PATH)
+    parser.add_argument("--deals-en", type=Path, default=DEALS_EN_DATA_PATH)
+    args = parser.parse_args(argv)
+    try:
+        build_site(args.data, args.output, args.deals, args.deals_en)
+    except (ValueError, OSError, TypeError, KeyError) as exc:
+        parser.exit(1, f"Build failed: {exc}\n")
 
 
 if __name__ == "__main__":

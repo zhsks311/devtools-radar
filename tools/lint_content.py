@@ -12,6 +12,13 @@ import glob
 import json
 import re
 import sys
+import argparse
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from tools.validate_data import article_errors, validate_items
 
 BANNED = [
     "game-changer", "game changer", "seamless", "seamlessly", "robust", "leverage", "leveraging",
@@ -70,9 +77,20 @@ def has_anchor(segment):
 
 
 def lint(path):
-    problems = []
-    d = json.load(open(path, encoding="utf-8"))
-    slug = d.get("slug", path)
+    try:
+        with open(path, encoding="utf-8") as f:
+            return lint_article(json.load(f), str(path))
+    except (OSError, ValueError) as exc:
+        return str(path), [str(exc)], {}
+
+
+def lint_article(d, label="article"):
+    problems = article_errors(d)
+    slug = d.get("slug", label) if isinstance(d, dict) else label
+    if not isinstance(slug, str):
+        slug = label
+    if problems:
+        return slug, problems, {}
 
     for key in ("slug", "hook", "sections", "decision_matrix", "cost_math", "verdict_summary", "faqs", "sources"):
         if key not in d:
@@ -152,10 +170,32 @@ def lint(path):
 
 
 def main():
-    paths = sys.argv[1:] or sorted(glob.glob("content/final/*.json"))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("paths", nargs="*")
+    parser.add_argument("--data", type=Path, help="Validate exact deployment JSON, including metadata and references")
+    args = parser.parse_args()
+    if args.data:
+        try:
+            items = json.loads(args.data.read_text(encoding="utf-8"))
+            errors = validate_items(items)
+        except (OSError, ValueError) as exc:
+            errors = [str(exc)]
+        for error in errors:
+            print("FAIL: " + error)
+        if not errors:
+            print(f"PASS: {len(items)} deployment articles checked")
+        return 1 if errors else 0
+    paths = args.paths or sorted((ROOT / "content" / "final").glob("*.json"))
+    if not paths:
+        print("FAIL: no content files found")
+        return 1
     failed = 0
+    seen = set()
     for p in paths:
         slug, problems, stats = lint(p)
+        if slug in seen:
+            problems.append("duplicate slug: " + str(slug))
+        seen.add(slug)
         status = "PASS" if not problems else "FAIL"
         print("%-28s %s  body=%s sections=%s money=%s" % (
             slug, status, stats.get("body"), stats.get("sections"), stats.get("money_figures")))
@@ -163,8 +203,8 @@ def main():
             print("    - " + pr)
         failed += 1 if problems else 0
     print("\n%d file(s) checked, %d failed" % (len(paths), failed))
-    sys.exit(1 if failed else 0)
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

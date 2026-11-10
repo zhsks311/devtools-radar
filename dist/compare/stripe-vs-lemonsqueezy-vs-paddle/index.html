@@ -291,7 +291,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">Payments & Billing</span>
+      <span class="badge badge-blue">Payments &amp; Billing</span>
       <span class="badge badge-gray">Stripe vs Lemon Squeezy / Paddle</span>
       <span>DevTeardown Team</span>
       <span>·</span>
@@ -345,7 +345,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     </div>
 
       <h2 id="s1">1. The sticker price is one of four meters you will pay</h2>
-      <p>Stripe's pricing page prints one number: 2.9% + 30¢ for a domestic card. A subscription business pays that plus three more.</p>
+      <p>Stripe&#x27;s pricing page prints one number: 2.9% + 30¢ for a domestic card. A subscription business pays that plus three more.</p>
 <div class="table-wrapper"><table><thead><tr><th>Meter</th><th>Price</th><th>Applied when</th></tr></thead><tbody><tr><td>Domestic card</td><td>2.9% + 30¢</td><td>every successful charge</td></tr><tr><td>International card</td><td>+1.5%</td><td>the card is issued outside your country</td></tr><tr><td>Currency conversion</td><td>+1.5%</td><td>the charge is not in your settlement currency</td></tr><tr><td>Billing</td><td>0.7% of Billing volume</td><td>subscriptions, processed on or off Stripe</td></tr><tr><td>Tax Basic</td><td>50¢ per transaction</td><td>you are registered to collect there</td></tr><tr><td>ACH direct debit</td><td>0.8%, $5 cap</td><td>bank debits</td></tr><tr><td>Dispute</td><td>$15.00</td><td>each chargeback received</td></tr></tbody></table></div>
 <p>None of those lines is hidden. Each one has its own page, which is how a 2.9% product becomes a 3.6% + 80¢ product by the end of the month.</p>
 
@@ -369,11 +369,11 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <p>For the fee you get fraud screening, chargeback handling, buyer support and the remittance itself. Paddle lists payments, subscriptions, tax, fraud protection and billing support inside the 5%. Lemon Squeezy lists the same set and states the liability plainly: it takes on tax collection and pays the taxes on your behalf.</p>
 <p>The cost is control:</p>
 <ul><li>You do not hold the merchant account, so the acquirer relationship and the risk decision are theirs.</li><li>Refund and chargeback conversations belong to their support queue, not yours.</li><li>Leaving means moving subscribers, and Paddle sells that as a migration service rather than a button.</li></ul>
-<p>Stripe's answer is Tax Complete, which monitors thresholds, registers in 90+ countries and files returns. It is priced in tiers by registrations, transactions and filings, and the tiers are a quote rather than a number on the page.</p>
+<p>Stripe&#x27;s answer is Tax Complete, which monitors thresholds, registers in 90+ countries and files returns. It is priced in tiers by registrations, transactions and filings, and the tiers are a quote rather than a number on the page.</p>
 
       <h2 id="s6">6. Where each one breaks</h2>
       <p>Stripe breaks at the first country you sell into without registering. Tax Basic tells you the tax is due and meters 50¢ once you are registered; it does not register you, and back taxes plus penalties appear on no price sheet.</p>
-<p>The merchant of record breaks on the fixed fee. 50¢ is 5.6% of a $9 product, so a $9 sale keeps $8.05 before hosting. Paddle's own FAQ routes products under $10 to custom pricing, which is the same admission in a politer sentence.</p>
+<p>The merchant of record breaks on the fixed fee. 50¢ is 5.6% of a $9 product, so a $9 sale keeps $8.05 before hosting. Paddle&#x27;s own FAQ routes products under $10 to custom pricing, which is the same admission in a politer sentence.</p>
 <p>It breaks again at the top, because 5% never thins out. A $200,000 month split into 1,000 charges of $200 pays $10,000 + $500 on a merchant of record and $7,200 + $800 on the assembled stack, a $30,000 gap across a year.</p>
 <p>Price three things before you choose: your average charge, the share of cards that are not domestic, and whether anyone on the team has filed a VAT return.</p>
 
@@ -405,7 +405,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Average charge under $21 and a team of one</td><td class="matrix-pick">Lemon Squeezy or Paddle</td><td>At $20 the single 5% + 50¢ meter bills $1,500 against $1,520 for the assembled Stripe stack, and nobody has to register for VAT.</td></tr><tr><td>Average charge over $21, mostly domestic cards</td><td class="matrix-pick">Stripe</td><td>The crossover is 1.4% × P = 30¢, so from $21.43 upward the four Stripe meters total less than one merchant-of-record fee.</td></tr><tr><td>Selling into the EU and UK from day one</td><td class="matrix-pick">Lemon Squeezy or Paddle</td><td>An international non-USD card costs the Stripe stack 6.6% + 80¢, which is more than the merchant-of-record fee that includes the filings.</td></tr><tr><td>Enterprise buyers who want invoices, POs and net terms</td><td class="matrix-pick">Stripe</td><td>Invoicing and Billing sit on the same account, and the 0.7% Billing rate excludes one-off invoices.</td></tr><tr><td>A marketplace that pays out to sellers</td><td class="matrix-pick">Stripe</td><td>Neither merchant-of-record price sheet covers paying out to third-party sellers; the 5% + 50¢ is a single-seller fee.</td></tr><tr><td>Products priced under $10</td><td class="matrix-pick">Paddle, at custom pricing</td><td>The 50¢ fixed fee is 5.6% of a $9 sale, and Paddle's FAQ sends sub-$10 products to a bespoke rate instead of the public one.</td></tr><tr><td>$200,000 months with $200 charges</td><td class="matrix-pick">Stripe</td><td>The percentage never falls on a merchant of record: that month pays $10,500 there against $8,000 on the assembled stack.</td></tr><tr><td>Nobody on the team has ever filed a VAT return</td><td class="matrix-pick">A merchant of record</td><td>Tax Basic meters 50¢ per registered transaction but does not register you; the registrations and filings are the part you are buying.</td></tr></tbody>
+        <tbody><tr><td>Average charge under $21 and a team of one</td><td class="matrix-pick">Lemon Squeezy or Paddle</td><td>At $20 the single 5% + 50¢ meter bills $1,500 against $1,520 for the assembled Stripe stack, and nobody has to register for VAT.</td></tr><tr><td>Average charge over $21, mostly domestic cards</td><td class="matrix-pick">Stripe</td><td>The crossover is 1.4% × P = 30¢, so from $21.43 upward the four Stripe meters total less than one merchant-of-record fee.</td></tr><tr><td>Selling into the EU and UK from day one</td><td class="matrix-pick">Lemon Squeezy or Paddle</td><td>An international non-USD card costs the Stripe stack 6.6% + 80¢, which is more than the merchant-of-record fee that includes the filings.</td></tr><tr><td>Enterprise buyers who want invoices, POs and net terms</td><td class="matrix-pick">Stripe</td><td>Invoicing and Billing sit on the same account, and the 0.7% Billing rate excludes one-off invoices.</td></tr><tr><td>A marketplace that pays out to sellers</td><td class="matrix-pick">Stripe</td><td>Neither merchant-of-record price sheet covers paying out to third-party sellers; the 5% + 50¢ is a single-seller fee.</td></tr><tr><td>Products priced under $10</td><td class="matrix-pick">Paddle, at custom pricing</td><td>The 50¢ fixed fee is 5.6% of a $9 sale, and Paddle&#x27;s FAQ sends sub-$10 products to a bespoke rate instead of the public one.</td></tr><tr><td>$200,000 months with $200 charges</td><td class="matrix-pick">Stripe</td><td>The percentage never falls on a merchant of record: that month pays $10,500 there against $8,000 on the assembled stack.</td></tr><tr><td>Nobody on the team has ever filed a VAT return</td><td class="matrix-pick">A merchant of record</td><td>Tax Basic meters 50¢ per registered transaction but does not register you; the registrations and filings are the part you are buying.</td></tr></tbody>
       </table></div>
 
     <h2>Same task, two SDKs</h2>
@@ -462,7 +462,7 @@ return transaction.id;</code></pre>
         <h3 style="color:var(--accent); margin-top:0;">Lemon Squeezy / Paddle</h3>
         <div class="pros-box" style="margin-bottom:0.9rem;">
           <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
-          <ul><li>One percentage and one fixed fee cover payments, tax, fraud and buyer support</li><li>No monthly fee on either, so the cost is zero until the first sale</li><li>Tax collection follows the merchant's registrations, so a new country does not add a filing</li><li>Both publish no lock-in period, and both sell a migration service for the exit</li></ul>
+          <ul><li>One percentage and one fixed fee cover payments, tax, fraud and buyer support</li><li>No monthly fee on either, so the cost is zero until the first sale</li><li>Tax collection follows the merchant&#x27;s registrations, so a new country does not add a filing</li><li>Both publish no lock-in period, and both sell a migration service for the exit</li></ul>
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>

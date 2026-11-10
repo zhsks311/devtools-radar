@@ -301,7 +301,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     </div>
 
     <h1>Resend vs SendGrid</h1>
-    <div class="lead"><p>At 100,000 emails a month, Resend's Pro plan is $35 and SendGrid's Essentials plan is $34.95. Both vendors then charge exactly $55 more for the next rung, and none of that $55 buys an extra email: it buys the tier where a dedicated IP becomes possible.</p></div>
+    <div class="lead"><p>At 100,000 emails a month, Resend&#x27;s Pro plan is $35 and SendGrid&#x27;s Essentials plan is $34.95. Both vendors then charge exactly $55 more for the next rung, and none of that $55 buys an extra email: it buys the tier where a dedicated IP becomes possible.</p></div>
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
@@ -353,9 +353,9 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2 id="s2">2. The ladder is not monotonic, and overage is sometimes the cheaper rung</h2>
       <p>Read each ladder as cost per 1,000, not as a monthly price.</p>
 <div class="table-wrapper"><table><thead><tr><th>Volume needed</th><th>Resend</th><th>Per 1,000</th><th>SendGrid</th><th>Per 1,000</th></tr></thead><tbody><tr><td>50,000</td><td>$20.00 (50k)</td><td>$0.40</td><td>$19.95 (50k)</td><td>$0.40</td></tr><tr><td>100,000</td><td>$35.00 (100k Pro)</td><td>$0.35</td><td>$34.95 (100k Essentials)</td><td>$0.35</td></tr><tr><td>200,000</td><td>$160.00 (200k)</td><td>$0.80</td><td>$249.00 (300k)</td><td>$1.25</td></tr><tr><td>500,000</td><td>$350.00 (500k)</td><td>$0.70</td><td>$499.00 (700k)</td><td>$1.00</td></tr><tr><td>1,000,000</td><td>$650.00 (1M)</td><td>$0.65</td><td>$799.00 (1.5M)</td><td>$0.80</td></tr><tr><td>2,500,000</td><td>$1,150.00 (2.5M)</td><td>$0.46</td><td>$1,099.00 (2.5M)</td><td>$0.44</td></tr></tbody></table></div>
-<p>Where one vendor has no rung at that volume, the column shows the cheapest rung that covers it, which is why SendGrid's 200,000 row is its 300,000 plan.</p>
-<p>Resend's 200,000 rung costs $0.80 per 1,000, more than twice its 100,000 rung. That is not a discount curve; it is a plan boundary, and the cheaper block stops at 100,000.</p>
-<p>Overage repairs it. Resend charges $0.90 per 1,000 beyond the included volume, so 100,000 on Pro plus 100,000 of overage is $35 + $90 = $125, not $160. SendGrid's same move on Pro is $89.95 + 100,000 × $1.10/1,000 = $199.95, not $249.</p>
+<p>Where one vendor has no rung at that volume, the column shows the cheapest rung that covers it, which is why SendGrid&#x27;s 200,000 row is its 300,000 plan.</p>
+<p>Resend&#x27;s 200,000 rung costs $0.80 per 1,000, more than twice its 100,000 rung. That is not a discount curve; it is a plan boundary, and the cheaper block stops at 100,000.</p>
+<p>Overage repairs it. Resend charges $0.90 per 1,000 beyond the included volume, so 100,000 on Pro plus 100,000 of overage is $35 + $90 = $125, not $160. SendGrid&#x27;s same move on Pro is $89.95 + 100,000 × $1.10/1,000 = $199.95, not $249.</p>
 
       <h2 id="s3">3. Dedicated IP: $30 plus a $55 step, or included at $89.95</h2>
       <p>A dedicated IP is the feature that decides most of these purchases, because shared IP reputation is the thing a growing sender cannot control.</p>
@@ -367,10 +367,10 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2 id="s4">4. Domain authentication is table stakes; the domain count is not</h2>
       <p>Both authenticate sending with DKIM, SPF and DMARC, and both include a REST API, SMTP relay and official SDKs on every paid plan. The differences are in the quantities.</p>
 <div class="table-wrapper"><table><thead><tr><th>Quantity</th><th>Resend</th><th>SendGrid</th></tr></thead><tbody><tr><td>Custom domains</td><td>3 Free, 10 Pro, 1,000 Scale</td><td>Domain authentication included</td></tr><tr><td>Extra domains</td><td>$20/mo adds 100</td><td>Not a listed line item</td></tr><tr><td>Teammates</td><td>Not metered</td><td>1 on Essentials, 1,000 on Pro</td></tr><tr><td>Event webhooks</td><td>5 on Pro, 10 on Scale</td><td>2 on Essentials, 5 on Pro</td></tr><tr><td>SSO</td><td>$150/mo add-on on Scale</td><td>Included in Pro</td></tr></tbody></table></div>
-<p>An agency managing dozens of client domains should price the domain line before the email line: Resend's add-on covers 100 extra domains for $20, and SendGrid's inclusion has no printed ceiling.</p>
+<p>An agency managing dozens of client domains should price the domain line before the email line: Resend&#x27;s add-on covers 100 extra domains for $20, and SendGrid&#x27;s inclusion has no printed ceiling.</p>
 
       <h2 id="s5">5. The bottom of the market is where they stop competing</h2>
-      <p>Resend keeps a free plan: 3,000 emails a month, 100 a day, three domains, 30 days of data retention. SendGrid's free option is a 60-day trial at 100 emails a day, after which the account converts to a paid plan starting at $19.95.</p>
+      <p>Resend keeps a free plan: 3,000 emails a month, 100 a day, three domains, 30 days of data retention. SendGrid&#x27;s free option is a 60-day trial at 100 emails a day, after which the account converts to a paid plan starting at $19.95.</p>
 <p>That single difference moves a whole segment. A side project, a staging environment or a low-volume notification service runs at $0 on Resend and at $19.95 on SendGrid, and the gap is $239.40 a year before either vendor has been compared on anything else.</p>
 <p>It also sets the frame for the first paid tier: $20 on Resend buys 50,000 emails, more than sixteen times what its own free plan allowed, and the same 50,000 that SendGrid now sells as its smallest paid plan.</p>
 
@@ -407,7 +407,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Transactional email only, under 50,000 a month</td><td class="matrix-pick">Either</td><td>$20 on Resend and $19.95 on SendGrid buy the same volume, and the five-cent gap is not a reason to migrate.</td></tr><tr><td>You need a dedicated IP at 100,000 emails</td><td class="matrix-pick">SendGrid Pro</td><td>$89.95 includes one IP, against $90 for Resend Scale plus $30 for the add-on, and Resend Pro cannot buy an IP at all.</td></tr><tr><td>A free tier is mandatory for staging</td><td class="matrix-pick">Resend</td><td>Resend's free plan sends 3,000 a month, while SendGrid's free option is a 60-day trial and then $19.95.</td></tr><tr><td>Agencies authenticating dozens of client domains</td><td class="matrix-pick">Resend Scale, with the domain add-on</td><td>1,000 domains are included on Scale and $20 adds 100 more, against a domain line SendGrid does not print.</td></tr><tr><td>SSO and an IP at 500,000 emails</td><td class="matrix-pick">SendGrid Pro</td><td>SSO is included in Pro and so is one IP, while Resend puts SSO at $150 a month and the IP at $30 on top of Scale.</td></tr><tr><td>2,500,000 emails a month and nothing exotic</td><td class="matrix-pick">SendGrid Pro</td><td>$1,099 against $1,150 on Resend, and the gap widens with the IP add-on that Resend needs for the same setup.</td></tr><tr><td>Marketing broadcasts to a contact list</td><td class="matrix-pick">Resend marketing plans</td><td>Marketing is priced per contact rather than per email, so an unlimited number of sends to 10,000 contacts is $80.</td></tr><tr><td>Volume swings month to month</td><td class="matrix-pick">Either, with an alert at 60,000</td><td>Both overage rates are more expensive than the next rung: the break-even is about 61,000 on SendGrid and 67,000 on Resend.</td></tr></tbody>
+        <tbody><tr><td>Transactional email only, under 50,000 a month</td><td class="matrix-pick">Either</td><td>$20 on Resend and $19.95 on SendGrid buy the same volume, and the five-cent gap is not a reason to migrate.</td></tr><tr><td>You need a dedicated IP at 100,000 emails</td><td class="matrix-pick">SendGrid Pro</td><td>$89.95 includes one IP, against $90 for Resend Scale plus $30 for the add-on, and Resend Pro cannot buy an IP at all.</td></tr><tr><td>A free tier is mandatory for staging</td><td class="matrix-pick">Resend</td><td>Resend&#x27;s free plan sends 3,000 a month, while SendGrid&#x27;s free option is a 60-day trial and then $19.95.</td></tr><tr><td>Agencies authenticating dozens of client domains</td><td class="matrix-pick">Resend Scale, with the domain add-on</td><td>1,000 domains are included on Scale and $20 adds 100 more, against a domain line SendGrid does not print.</td></tr><tr><td>SSO and an IP at 500,000 emails</td><td class="matrix-pick">SendGrid Pro</td><td>SSO is included in Pro and so is one IP, while Resend puts SSO at $150 a month and the IP at $30 on top of Scale.</td></tr><tr><td>2,500,000 emails a month and nothing exotic</td><td class="matrix-pick">SendGrid Pro</td><td>$1,099 against $1,150 on Resend, and the gap widens with the IP add-on that Resend needs for the same setup.</td></tr><tr><td>Marketing broadcasts to a contact list</td><td class="matrix-pick">Resend marketing plans</td><td>Marketing is priced per contact rather than per email, so an unlimited number of sends to 10,000 contacts is $80.</td></tr><tr><td>Volume swings month to month</td><td class="matrix-pick">Either, with an alert at 60,000</td><td>Both overage rates are more expensive than the next rung: the break-even is about 61,000 on SendGrid and 67,000 on Resend.</td></tr></tbody>
       </table></div>
 
     <h2>Same task, two SDKs</h2>
@@ -459,7 +459,7 @@ await sgMail.send({
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
-          <ul><li>The dedicated IP is a $30 add-on on Scale only, so Pro customers cannot buy one at any price</li><li>SSO is $150 a month on Scale and unavailable below it</li><li>Scale at 100,000 emails is $90 against $35 on Pro, a $55 step for features rather than volume</li><li>The 200,000 rung costs $0.80 per 1,000, more than twice the 100,000 rung's rate</li></ul>
+          <ul><li>The dedicated IP is a $30 add-on on Scale only, so Pro customers cannot buy one at any price</li><li>SSO is $150 a month on Scale and unavailable below it</li><li>Scale at 100,000 emails is $90 against $35 on Pro, a $55 step for features rather than volume</li><li>The 200,000 rung costs $0.80 per 1,000, more than twice the 100,000 rung&#x27;s rate</li></ul>
         </div>
       </div>
       <div class="card" style="padding:1.2rem;">
@@ -479,7 +479,7 @@ await sgMail.send({
       <div class="migration-box">
         <strong>What switching actually takes</strong>
         <div style="margin-top:0.5rem;"><p>Both vendors authenticate a domain with DKIM, SPF and DMARC records, so moving means adding new DNS records while the old ones still answer. Keep both authenticated for a week, warm the new domain or IP, then flip the sending domain in code.</p>
-<p>The parts that do not travel are templates and reputation. React Email templates are code and move with the repository; SendGrid's dynamic templates are vendor objects. A dedicated IP starts cold on either side, so a sender who relies on one should plan the warm-up as a week of projected volume rather than a switch.</p></div>
+<p>The parts that do not travel are templates and reputation. React Email templates are code and move with the repository; SendGrid&#x27;s dynamic templates are vendor objects. A dedicated IP starts cold on either side, so a sender who relies on one should plan the warm-up as a week of projected volume rather than a switch.</p></div>
       </div>
 
     <h2 id="faq">Questions that change the decision</h2>
@@ -490,12 +490,12 @@ await sgMail.send({
           <div class="faq-a">No. The $30 per month add-on is listed for Scale plans, to accounts sending more than 3,000 emails a day. Pro has no IP option.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">What does SendGrid's free plan include now?</div>
+          <div class="faq-q">What does SendGrid&#x27;s free plan include now?</div>
           <div class="faq-a">A 60-day trial at 100 emails a day, with no credit card. After it ends the account moves to a paid plan, and Essentials starts at $19.95 for 50,000 emails.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Is overage cheaper than buying the next tier?</div>
-          <div class="faq-a">Usually not. Overage on the 50,000 tiers is $1.33 per 1,000 on SendGrid and $0.90 on Resend, both far above the next tier's per-1,000 rate, so the break-even arrives at 61,000 to 67,000 sends.</div>
+          <div class="faq-a">Usually not. Overage on the 50,000 tiers is $1.33 per 1,000 on SendGrid and $0.90 on Resend, both far above the next tier&#x27;s per-1,000 rate, so the break-even arrives at 61,000 to 67,000 sends.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Do both include inbound email parsing?</div>

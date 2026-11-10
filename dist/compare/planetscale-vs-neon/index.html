@@ -291,7 +291,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">Backend & Database</span>
+      <span class="badge badge-blue">Backend &amp; Database</span>
       <span class="badge badge-gray">PlanetScale vs Neon</span>
       <span>DevTeardown Team</span>
       <span>·</span>
@@ -301,7 +301,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     </div>
 
     <h1>PlanetScale vs Neon</h1>
-    <div class="lead"><p>Suspended compute costs $0 on Neon; PlanetScale's smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35/month before storage, versus $15/month for PlanetScale PS-5 HA.</p></div>
+    <div class="lead"><p>Suspended compute costs $0 on Neon; PlanetScale&#x27;s smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35/month before storage, versus $15/month for PlanetScale PS-5 HA.</p></div>
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
@@ -334,7 +334,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
           <tr><td><strong>Self-hostable</strong></td><td><strong>No (managed on AWS, GCP and Azure)</strong></td><td>No (managed, Databricks)</td></tr>
           <tr><td><strong>Realtime and concurrency</strong></td><td>3-node HA clusters; Neki shards run 1 primary and 2 replicas each</td><td>Up to 10,000 pooled connections per compute; scale to zero after 5 minutes</td></tr>
           <tr><td><strong>AI and vector readiness</strong></td><td>MCP and Insights in the platform (vendor description)</td><td>Managed Better Auth and an AI Gateway with prepaid credits</td></tr>
-          <tr><td><strong>Lock-in risk</strong></td><td>Medium: Postgres or MySQL underneath, managed control plane on top</td><td>Medium: Postgres underneath, but branches and services are Neon's</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium: Postgres or MySQL underneath, managed control plane on top</td><td>Medium: Postgres underneath, but branches and services are Neon&#x27;s</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
             <td><a href="https://planetscale.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">PlanetScale →</a></td>
@@ -347,26 +347,26 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2 id="s1">1. PlanetScale rents you a machine; Neon bills the hours it is awake</h2>
       <p>For Postgres with idle periods or many branches, compare billed CU-hours with dedicated clusters; existing Vitess-based MySQL still has an engine constraint.</p>
 <blockquote><p>PlanetScale: capacity is a cluster you rent. Neon: compute is CU-hours, meaning compute size × hours running on Lakebase Postgres.</p></blockquote>
-<ul><li>PlanetScale charges for idle cluster capacity; storage, backups and egress can add charges. Each branch runs on its own separately billed dedicated cluster.</li><li>Neon's paid plans charge for CU-hours used, while suspended compute costs $0. Its pricing describes Lakebase Postgres as “from Databricks”.</li></ul>
-<p>PlanetScale's docs say it plainly: there is no free plan.</p>
+<ul><li>PlanetScale charges for idle cluster capacity; storage, backups and egress can add charges. Each branch runs on its own separately billed dedicated cluster.</li><li>Neon&#x27;s paid plans charge for CU-hours used, while suspended compute costs $0. Its pricing describes Lakebase Postgres as “from Databricks”.</li></ul>
+<p>PlanetScale&#x27;s docs say it plainly: there is no free plan.</p>
 <blockquote><p>Figures below are AWS us-east-1 list prices checked 10 November 2026, or arithmetic on them; nothing is benchmarked.</p></blockquote>
 
       <h2 id="s2">2. The $0 database out-bills the $15 cluster once it never sleeps</h2>
       <p>The bottom of each price list:</p>
 <div class="table-wrapper"><table><thead><tr><th>Entry</th><th>Monthly</th><th>What you get</th></tr></thead><tbody><tr><td>Neon Free</td><td>$0</td><td>100 CU-hours, 1 GB storage per project</td></tr><tr><td>PlanetScale PS-5, single node</td><td>$5</td><td>1/16 vCPU, 512 MiB</td></tr><tr><td>PlanetScale PS-5 HA</td><td>$15</td><td>1 primary + 2 replicas</td></tr></tbody></table></div>
 <p>Now keep a 0.25 CU Neon compute awake all month on Launch: 0.25 × 730 h = 182.5 CU-hours × $0.106 = $19.35, before storage.</p>
-<blockquote><p>Compute only: $19.35 − $15 = $4.35 more than PlanetScale's three-node cluster; capacity is not equivalent.</p></blockquote>
+<blockquote><p>Compute only: $19.35 − $15 = $4.35 more than PlanetScale&#x27;s three-node cluster; capacity is not equivalent.</p></blockquote>
 <pre><code class="language-python"># Awake hours/month before 0.25 CU on Neon Launch out-bills PS-5 HA.
 CU, RATE, PS5_HA = 0.25, 0.106, 15.00
 break_even = PS5_HA / (CU * RATE)
-print(f"approximately {break_even:.2f} of 730 hours")
+print(f&quot;approximately {break_even:.2f} of 730 hours&quot;)
 # Assumes 0.25 CU runs throughout the awake hours.</code></pre>
 
       <h2 id="s3">3. Who should NOT pick Neon: existing Vitess-based MySQL deployments</h2>
       <p>Now one CU, awake all month:</p>
 <div class="table-wrapper"><table><thead><tr><th>Option</th><th>Compute formula</th><th>Monthly</th></tr></thead><tbody><tr><td>Neon Launch, 1 CU</td><td>1 × 730 × $0.106</td><td>$77.38</td></tr><tr><td>Neon Scale, 1 CU</td><td>1 × 730 × $0.222</td><td>$162.06</td></tr><tr><td>PlanetScale PS-80 HA</td><td>fixed cluster, arm64</td><td>$148</td></tr></tbody></table></div>
 <p>Not identical machines. A CU is about 4 GB RAM; PS-80 is listed at 1 vCPU and 8 GiB plus two replicas.</p>
-<ul><li>Scale's compute crossover: $148 ÷ (1 CU × $0.222/CU-hour) ≈ 666.67 h; choose PS-80 only if its capacity suits the workload.</li><li>Neon's own typical-cost rows answer "how many hours?": intermittent load (140 CU-hours + 1 GB) is $15 on Launch, high load (3,000 CU-hours + 100 GB) is $353 on Launch and $701 on Scale.</li><li>PlanetScale's SKU ladder answers "which size?", from PS-5 at $15 to PS-2560 at $4,529 HA on arm64.</li></ul>
+<ul><li>Scale&#x27;s compute crossover: $148 ÷ (1 CU × $0.222/CU-hour) ≈ 666.67 h; choose PS-80 only if its capacity suits the workload.</li><li>Neon&#x27;s own typical-cost rows answer &quot;how many hours?&quot;: intermittent load (140 CU-hours + 1 GB) is $15 on Launch, high load (3,000 CU-hours + 100 GB) is $353 on Launch and $701 on Scale.</li><li>PlanetScale&#x27;s SKU ladder answers &quot;which size?&quot;, from PS-5 at $15 to PS-2560 at $4,529 HA on arm64.</li></ul>
 <blockquote><p>Do not pick Neon if you must retain Vitess-based MySQL; Launch also lacks an uptime SLA. Compare billed CU-hours with the cluster charge before attributing savings to suspension.</p></blockquote>
 
       <h2 id="s4">4. Who should NOT pick PlanetScale: projects with a $0 budget</h2>
@@ -376,14 +376,14 @@ print(f"approximately {break_even:.2f} of 730 hours")
 <p>Do not pick PlanetScale for a $0 budget; every database requires a paid subscription.</p>
 
       <h2 id="s5">5. Neki adds sharded Postgres, but its preview excludes production</h2>
-      <p>Neki is PlanetScale's sharded Postgres, in platform preview since 10 September 2026. PlanetScale says preview is not for production, and that "some of those changes will be breaking".</p>
+      <p>Neki is PlanetScale&#x27;s sharded Postgres, in platform preview since 10 September 2026. PlanetScale says preview is not for production, and that &quot;some of those changes will be breaking&quot;.</p>
 <blockquote><p>Apps reach it through a Neki router over the Postgres wire protocol.</p></blockquote>
 <ul><li>No single-node configuration: the smallest arm64 shard is PS-10 at $30, 1 primary and 2 replicas across 3 availability zones.</li><li>Routers start at $6 (NKR-0). Production router compute = router rate × observed routers ÷ 3; the rate covers the three-router baseline, one per AZ.</li><li>Four PS-20 shards plus NKR-20 routers: 4 × $50 + $170 × 3 ÷ 3 = $370/month, before storage, backups and network usage.</li></ul>
 
       <h2 id="s6">6. Pick from measured compute, branch and data charges</h2>
-      <p>Choose Neon when measured CU-hours plus branch, storage and transfer charges beat PlanetScale's total. Choose PlanetScale for suitable always-on cluster compute or an existing Vitess-shaped MySQL estate.</p>
+      <p>Choose Neon when measured CU-hours plus branch, storage and transfer charges beat PlanetScale&#x27;s total. Choose PlanetScale for suitable always-on cluster compute or an existing Vitess-shaped MySQL estate.</p>
 <p>Check this today:</p>
-<ol><li>Pull last month's awake hours per Neon compute. For compute only: $15 ÷ (0.25 CU × $0.106/CU-hour) ≈ 566.04 h on Launch.</li><li>Count branches alive at once and how long each lives, and price them as PlanetScale clusters before copying the habit.</li><li>Check suspension configuration and billed CU-hours; add storage, backups and transfer before choosing.</li><li>Do not run production workloads on Neki's platform preview; evaluate it only outside production.</li></ol>
+<ol><li>Pull last month&#x27;s awake hours per Neon compute. For compute only: $15 ÷ (0.25 CU × $0.106/CU-hour) ≈ 566.04 h on Launch.</li><li>Count branches alive at once and how long each lives, and price them as PlanetScale clusters before copying the habit.</li><li>Check suspension configuration and billed CU-hours; add storage, backups and transfer before choosing.</li><li>Do not run production workloads on Neki&#x27;s platform preview; evaluate it only outside production.</li></ol>
 
       <h2 id="cost">Cost arithmetic at volume</h2>
       <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
@@ -413,7 +413,7 @@ print(f"approximately {break_even:.2f} of 730 hours")
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Dev and test databases idle overnight, one branch per pull request</td><td class="matrix-pick">Neon Launch</td><td>Suspended compute bills $0 and branches past the included 10 cost $1.50 per branch-month instead of a cluster each. Running compute, data storage and transfer remain separate.</td></tr><tr><td>Always-on database comparing compute charges only</td><td class="matrix-pick">PlanetScale Postgres HA</td><td>For compute only, 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35 on Neon Launch, versus $15 for PlanetScale PS-5 HA; storage and other charges remain separate, and capacity must suit the workload.</td></tr><tr><td>Existing Vitess-shaped MySQL estate</td><td class="matrix-pick">PlanetScale (Vitess)</td><td>Neon's pricing lists only Lakebase Postgres, so leaving Vitess would be an engine migration, not a vendor switch.</td></tr><tr><td>Side project or prototype with a $0 budget</td><td class="matrix-pick">Neon Free</td><td>PlanetScale has no free plan, while Neon Free is permanent, needs no card and includes 100 CU-hours per project.</td></tr><tr><td>Considering Neki for production sharding</td><td class="matrix-pick">Do not use Neki</td><td>Neki is a platform preview and PlanetScale says not to run production on it.</td></tr><tr><td>Compliance-bound production (HIPAA BAA, uptime SLA) with traffic that idles for hours</td><td class="matrix-pick">Neon Scale</td><td>Scale includes self-serve HIPAA with a BAA and an SLA; suspended compute costs $0, while running compute costs $0.222/CU-hour. Suspension is configurable from 1 minute to always on.</td></tr><tr><td>Comparing one always-on Neon Scale CU with PS-80 HA compute prices</td><td class="matrix-pick">PlanetScale PS-80 HA, only if its capacity suits the workload</td><td>Compute charges cross at $148 ÷ (1 CU × $0.222/CU-hour) ≈ 666.67 h; this compares prices, not equivalent workload capacity.</td></tr><tr><td>Need Launch's compute ceiling exceeded by a fixed-size deployment</td><td class="matrix-pick">Neon Scale</td><td>Launch autoscaling stops at 16 CU, while Scale offers fixed sizes up to 56 CU (224 GB RAM).</td></tr></tbody>
+        <tbody><tr><td>Dev and test databases idle overnight, one branch per pull request</td><td class="matrix-pick">Neon Launch</td><td>Suspended compute bills $0 and branches past the included 10 cost $1.50 per branch-month instead of a cluster each. Running compute, data storage and transfer remain separate.</td></tr><tr><td>Always-on database comparing compute charges only</td><td class="matrix-pick">PlanetScale Postgres HA</td><td>For compute only, 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35 on Neon Launch, versus $15 for PlanetScale PS-5 HA; storage and other charges remain separate, and capacity must suit the workload.</td></tr><tr><td>Existing Vitess-shaped MySQL estate</td><td class="matrix-pick">PlanetScale (Vitess)</td><td>Neon&#x27;s pricing lists only Lakebase Postgres, so leaving Vitess would be an engine migration, not a vendor switch.</td></tr><tr><td>Side project or prototype with a $0 budget</td><td class="matrix-pick">Neon Free</td><td>PlanetScale has no free plan, while Neon Free is permanent, needs no card and includes 100 CU-hours per project.</td></tr><tr><td>Considering Neki for production sharding</td><td class="matrix-pick">Do not use Neki</td><td>Neki is a platform preview and PlanetScale says not to run production on it.</td></tr><tr><td>Compliance-bound production (HIPAA BAA, uptime SLA) with traffic that idles for hours</td><td class="matrix-pick">Neon Scale</td><td>Scale includes self-serve HIPAA with a BAA and an SLA; suspended compute costs $0, while running compute costs $0.222/CU-hour. Suspension is configurable from 1 minute to always on.</td></tr><tr><td>Comparing one always-on Neon Scale CU with PS-80 HA compute prices</td><td class="matrix-pick">PlanetScale PS-80 HA, only if its capacity suits the workload</td><td>Compute charges cross at $148 ÷ (1 CU × $0.222/CU-hour) ≈ 666.67 h; this compares prices, not equivalent workload capacity.</td></tr><tr><td>Need Launch&#x27;s compute ceiling exceeded by a fixed-size deployment</td><td class="matrix-pick">Neon Scale</td><td>Launch autoscaling stops at 16 CU, while Scale offers fixed sizes up to 56 CU (224 GB RAM).</td></tr></tbody>
       </table></div>
 
     <h2>Same task, two SDKs</h2>
@@ -442,7 +442,7 @@ print(f"approximately {break_even:.2f} of 730 hours")
         <h3 style="color:var(--primary); margin-top:0;">PlanetScale</h3>
         <div class="pros-box" style="margin-bottom:0.9rem;">
           <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
-          <ul><li>A fixed cluster charge: PS-5 HA is $15/month whether the database sleeps or not</li><li>Every branch is its own cluster, so a schema change never touches production</li><li>Postgres, Neki's sharded Postgres and Vitess for MySQL on one platform</li><li>Backups included up to 2x disk size and run automatically every 12 hours</li></ul>
+          <ul><li>A fixed cluster charge: PS-5 HA is $15/month whether the database sleeps or not</li><li>Every branch is its own cluster, so a schema change never touches production</li><li>Postgres, Neki&#x27;s sharded Postgres and Vitess for MySQL on one platform</li><li>Backups included up to 2x disk size and run automatically every 12 hours</li></ul>
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
@@ -481,7 +481,7 @@ print(f"approximately {break_even:.2f} of 730 hours")
         </div>
         <div class="faq-item">
           <div class="faq-q">How much egress is included?</div>
-          <div class="faq-a">Neon Launch includes 500 GB per project, then $0.10/GB. PlanetScale includes 100 GB/month on a production branch and 10 GB on development branches and PS-5 non-HA, then a region rate it does not print; ingress is free. At 1,024 GB on Neon Launch: 1,024 − 500 = 524 GB × $0.10 = $52.40/month; PlanetScale's overage rate is region-dependent and not printed.</div>
+          <div class="faq-a">Neon Launch includes 500 GB per project, then $0.10/GB. PlanetScale includes 100 GB/month on a production branch and 10 GB on development branches and PS-5 non-HA, then a region rate it does not print; ingress is free. At 1,024 GB on Neon Launch: 1,024 − 500 = 524 GB × $0.10 = $52.40/month; PlanetScale&#x27;s overage rate is region-dependent and not printed.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">When do PlanetScale backups add charges?</div>

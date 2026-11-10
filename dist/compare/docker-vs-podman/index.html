@@ -291,7 +291,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">Containers & Runtime</span>
+      <span class="badge badge-blue">Containers &amp; Runtime</span>
       <span class="badge badge-gray">Docker vs Podman</span>
       <span>DevTeardown Team</span>
       <span>·</span>
@@ -345,7 +345,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     </div>
 
       <h2 id="s1">1. Docker licenses the desktop; Podman has no paid tier</h2>
-      <p>For teams paying for Docker Desktop, or about to. Docker's November 2026 pricing and licence terms distinguish the engine from the desktop:</p>
+      <p>For teams paying for Docker Desktop, or about to. Docker&#x27;s November 2026 pricing and licence terms distinguish the engine from the desktop:</p>
 <blockquote><p><strong>Docker:</strong> the engine is open source; the desktop is a licensed product. <strong>Podman:</strong> the runtime has no daemon; the desktop uses Apache License 2.0.</p></blockquote>
 <ul><li>Docker Engine and Moby stay open source; Docker Desktop uses the Docker Subscription Service Agreement.</li><li>Podman 6.1.4 and Podman Desktop 1.30.5 use Apache License 2.0 with no paid tier.</li></ul>
 <blockquote><p>Choose paid Docker Desktop for its plan controls; choose Podman when eliminating licence fees justifies Docker-only API rewrites and socket-security responsibility.</p></blockquote>
@@ -355,27 +355,27 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 <div class="table-wrapper"><table><thead><tr><th>Commercial company</th><th>Docker Desktop bill</th></tr></thead><tbody><tr><td>249 employees, under $10M annual revenue</td><td>$0</td></tr><tr><td>250 employees or $10M+ annual revenue; 200 users choosing Team</td><td>200 × $15 = $3,000/month; $3,000 × 12 = $36,000/year</td></tr></tbody></table></div>
 <p>The software did not change between those rows.</p>
 <div class="table-wrapper"><table><thead><tr><th>Plan</th><th>USD/user/month</th><th>Adds</th></tr></thead><tbody><tr><td>Personal</td><td>$0</td><td>—</td></tr><tr><td>Pro</td><td>$9</td><td>commercial Desktop use, Build Cloud, unlimited private repos</td></tr><tr><td>Team</td><td>$15</td><td>audit logs, role-based access control</td></tr><tr><td>Business</td><td>Contact us for pricing</td><td>SSO, SCIM, Hardened Docker Desktop, Image Access Management</td></tr></tbody></table></div>
-<p>Business publishes no per-seat price. Docker Team's flat $15 per user/month charges for seats, not container usage.</p>
+<p>Business publishes no per-seat price. Docker Team&#x27;s flat $15 per user/month charges for seats, not container usage.</p>
 
       <h2 id="s3">3. Docker&#x27;s money buys meters, and each meter is its own decision</h2>
-      <p>Past the seat, paid plans attach meters, at Docker's prices:</p>
+      <p>Past the seat, paid plans attach meters, at Docker&#x27;s prices:</p>
 <div class="table-wrapper"><table><thead><tr><th>Item</th><th>Price</th><th>Decision it forces</th></tr></thead><tbody><tr><td>Build Cloud</td><td>base minutes per plan</td><td>Do builds fit the allocation?</td></tr><tr><td>Testcontainers Cloud</td><td>$3/100 min prepaid, $4/100 on demand</td><td>Steady enough to prepay?</td></tr><tr><td>Docker Hardened Images</td><td>free for developers; production with compliance support starts at $5k/repo</td><td>How many repos ship?</td></tr><tr><td>Docker Offload</td><td>licences on Team and Business</td><td>Worth the sales call it requires?</td></tr></tbody></table></div>
 <p>At 4,000 Testcontainers minutes a month: 4,000 ÷ 100 = 40 blocks, so 40 × $4 = $160 on demand or 40 × $3 = $120 prepaid.</p>
 <ul><li>DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.</li><li>Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period.</li></ul>
 
       <h2 id="s4">4. Who should not pick Podman: teams without socket ownership</h2>
-      <p>Podman's licence bill is $0. Its <code>podman system service</code> provides Docker v1.40 compatibility beside the native Libpod API. Socket-activated by systemd, it exits after 5 idle seconds by default.</p>
+      <p>Podman&#x27;s licence bill is $0. Its <code>podman system service</code> provides Docker v1.40 compatibility beside the native Libpod API. Socket-activated by systemd, it exits after 5 idle seconds by default.</p>
 <p>With a rootless API service already listening:</p>
 <pre><code class="language-bash">export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock</code></pre>
 <p>Check required API calls and rewrite Docker-only handlers. The command is unavailable directly on macOS or Windows; <code>--time 0</code> disables inactivity timeout.</p>
 <p>The man page warns:</p>
-<blockquote><p>"the API grants full access to all Podman functionality, and thus allows arbitrary code execution as the user running the API, with no ability to limit or audit this access"</p></blockquote>
+<blockquote><p>&quot;the API grants full access to all Podman functionality, and thus allows arbitrary code execution as the user running the API, with no ability to limit or audit this access&quot;</p></blockquote>
 <p>Rootless narrows whose account is exposed; it does not make the socket safe to share.</p>
 <ul><li>Skip Podman if required API calls are unsupported or nobody owns socket permissions.</li><li>Avoid TCP exposure without mutual TLS; the man page suggests SSH forwarding instead.</li></ul>
 
       <h2 id="s5">5. Who should not pick Docker: government expecting free Desktop</h2>
-      <p>Podman Desktop is free, Apache 2.0 and, in its own words, "trusted as part of the CNCF". It runs on Linux, macOS and Windows. Red Hat sells enterprise support as a build, the Red Hat Build of Podman Desktop, not as a licence tier.</p>
-<ul><li>Docker Business includes SOC 2, SSO and SCIM, plus Hardened Docker Desktop and Image Access Management.</li><li>Podman Desktop's enterprise path is that Red Hat build: support and long-term maintenance, not a licence tier.</li></ul>
+      <p>Podman Desktop is free, Apache 2.0 and, in its own words, &quot;trusted as part of the CNCF&quot;. It runs on Linux, macOS and Windows. Red Hat sells enterprise support as a build, the Red Hat Build of Podman Desktop, not as a licence tier.</p>
+<ul><li>Docker Business includes SOC 2, SSO and SCIM, plus Hardened Docker Desktop and Image Access Management.</li><li>Podman Desktop&#x27;s enterprise path is that Red Hat build: support and long-term maintenance, not a licence tier.</li></ul>
 <p>Skip Docker if you are a government entity counting on the free tier; it never applied.</p>
 
       <h2 id="s6">6. Who should pay Docker, and who should fund the port?</h2>
@@ -412,7 +412,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Commercial company with fewer than 250 employees AND less than $10 million annual revenue; team can fund Docker-only API changes and own socket security before growth</td><td class="matrix-pick">Podman</td><td>Choose Podman to avoid future Desktop seat fees when the port is funded and socket access has an owner; keeping free Desktop is also available below both limits.</td></tr><tr><td>Commercial company at 249 employees, below $10 million annual revenue, hiring toward 250; a funded Podman port can finish before crossing the boundary</td><td class="matrix-pick">Podman, ported before the boundary</td><td>Employee 250 bills every commercial Desktop seat at once, so the port or the budget line has to exist before the hire, not after.</td></tr><tr><td>Commercial company with fewer than 250 employees and annual revenue of $10 million or more requires audit logs and role-based access control</td><td class="matrix-pick">Docker Team</td><td>The free tier needs both limits to hold, and the revenue test has already failed. Team adds the required audit logs and role-based access control.</td></tr><tr><td>Government entity of any size with a feasible, staffed Docker-only API port and named socket owner; Business controls are not required</td><td class="matrix-pick">Podman</td><td>Docker Desktop's free tier never covers government, while Podman has no seat to license.</td></tr><tr><td>The identity team requires SSO, SCIM and Image Access Management</td><td class="matrix-pick">Docker Business</td><td>Those are documented Business plan gates; request pricing because the page publishes no per-seat figure.</td></tr><tr><td>Large org wants the seat line deleted; its platform team owns CI sockets and can fund Docker-only API rewrites</td><td class="matrix-pick">Podman</td><td>Licence fees become $0; the funded rewrites and socket-access responsibility stay with the platform team.</td></tr><tr><td>Committed Testcontainers Cloud usage of 4,000 runtime minutes per month</td><td class="matrix-pick">Testcontainers Cloud pre-purchase</td><td>4,000 ÷ 100 = 40 blocks; 40 × $3 = $120/month prepaid versus 40 × $4 = $160/month on demand. Choose pre-purchase for this committed usage.</td></tr><tr><td>Mid-term on an annual Docker Team or Business plan with every seat assigned; a funded Podman migration is planned</td><td class="matrix-pick">Prepare the Podman port before renewal</td><td>Only unused seats can be removed and a cancelled plan refunds nothing, so plan the port against the renewal date. Paid access continues through the paid cycle; cancellation cannot pause the plan.</td></tr></tbody>
+        <tbody><tr><td>Commercial company with fewer than 250 employees AND less than $10 million annual revenue; team can fund Docker-only API changes and own socket security before growth</td><td class="matrix-pick">Podman</td><td>Choose Podman to avoid future Desktop seat fees when the port is funded and socket access has an owner; keeping free Desktop is also available below both limits.</td></tr><tr><td>Commercial company at 249 employees, below $10 million annual revenue, hiring toward 250; a funded Podman port can finish before crossing the boundary</td><td class="matrix-pick">Podman, ported before the boundary</td><td>Employee 250 bills every commercial Desktop seat at once, so the port or the budget line has to exist before the hire, not after.</td></tr><tr><td>Commercial company with fewer than 250 employees and annual revenue of $10 million or more requires audit logs and role-based access control</td><td class="matrix-pick">Docker Team</td><td>The free tier needs both limits to hold, and the revenue test has already failed. Team adds the required audit logs and role-based access control.</td></tr><tr><td>Government entity of any size with a feasible, staffed Docker-only API port and named socket owner; Business controls are not required</td><td class="matrix-pick">Podman</td><td>Docker Desktop&#x27;s free tier never covers government, while Podman has no seat to license.</td></tr><tr><td>The identity team requires SSO, SCIM and Image Access Management</td><td class="matrix-pick">Docker Business</td><td>Those are documented Business plan gates; request pricing because the page publishes no per-seat figure.</td></tr><tr><td>Large org wants the seat line deleted; its platform team owns CI sockets and can fund Docker-only API rewrites</td><td class="matrix-pick">Podman</td><td>Licence fees become $0; the funded rewrites and socket-access responsibility stay with the platform team.</td></tr><tr><td>Committed Testcontainers Cloud usage of 4,000 runtime minutes per month</td><td class="matrix-pick">Testcontainers Cloud pre-purchase</td><td>4,000 ÷ 100 = 40 blocks; 40 × $3 = $120/month prepaid versus 40 × $4 = $160/month on demand. Choose pre-purchase for this committed usage.</td></tr><tr><td>Mid-term on an annual Docker Team or Business plan with every seat assigned; a funded Podman migration is planned</td><td class="matrix-pick">Prepare the Podman port before renewal</td><td>Only unused seats can be removed and a cancelled plan refunds nothing, so plan the port against the renewal date. Paid access continues through the paid cycle; cancellation cannot pause the plan.</td></tr></tbody>
       </table></div>
 
     <h2>Same task, two SDKs</h2>
@@ -458,7 +458,7 @@ $ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
-          <ul><li>The API socket is arbitrary code execution as that user, with no way to limit or audit it (Podman's man page)</li><li>Docker-only API surface still needs rewriting, and the compatibility layer is Docker v1.40</li><li>The service command is unavailable where Podman runs directly on a Windows or macOS host</li><li>There is no vendor to call unless you buy the Red Hat build</li></ul>
+          <ul><li>The API socket is arbitrary code execution as that user, with no way to limit or audit it (Podman&#x27;s man page)</li><li>Docker-only API surface still needs rewriting, and the compatibility layer is Docker v1.40</li><li>The service command is unavailable where Podman runs directly on a Windows or macOS host</li><li>There is no vendor to call unless you buy the Red Hat build</li></ul>
         </div>
       </div>
     </div>
@@ -486,7 +486,7 @@ $ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
         </div>
         <div class="faq-item">
           <div class="faq-q">Does Podman Desktop work on a locked-down network?</div>
-          <div class="faq-a">Podman Desktop's vendor lists VPN/proxy support and air-gapped installation options. Check which of those network and installation options matches your environment's restrictions.</div>
+          <div class="faq-a">Podman Desktop&#x27;s vendor lists VPN/proxy support and air-gapped installation options. Check which of those network and installation options matches your environment&#x27;s restrictions.</div>
         </div>
     </div>
 

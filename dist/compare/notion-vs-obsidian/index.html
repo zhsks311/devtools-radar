@@ -291,7 +291,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">Knowledge & Notes</span>
+      <span class="badge badge-blue">Knowledge &amp; Notes</span>
       <span class="badge badge-gray">Notion vs Obsidian</span>
       <span>DevTeardown Team</span>
       <span>·</span>
@@ -353,7 +353,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <p>On Friday afternoon, test recovery before choosing a plan: does the version from before the mistaken edit still exist?</p>
 <div class="table-wrapper"><table><thead><tr><th>Plan</th><th>Price</th><th>Page history</th></tr></thead><tbody><tr><td>Free</td><td>$0/member</td><td>7 days</td></tr><tr><td>Plus</td><td>$10/member/month</td><td>30 days</td></tr><tr><td>Business</td><td>$20/member/month</td><td>90 days</td></tr></tbody></table></div>
 <p>The pattern this punishes is the slow mistake. Choose a window that covers how long a mistake could go unnoticed.</p>
-<p>The rest of Free's ceiling sits in the same place:</p>
+<p>The rest of Free&#x27;s ceiling sits in the same place:</p>
 <ul><li>File uploads capped at <strong>5 MB</strong> (Plus raises it to 5 GB).</li><li><strong>10 external guests</strong>.</li><li>A Free-plan workspace block limit that Notion announced for 2026-09-08.</li></ul>
 <p>Obsidian has no window to buy. A vault is plain files, so <code>git log</code> keeps every committed version for as long as you keep the repo.</p>
 
@@ -363,22 +363,22 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 <p>The <code>.base</code> file is YAML and holds only the view definition:</p>
 <pre><code class="language-yaml">filters:
   and:
-    - file.inFolder("Projects")
-    - file.hasTag("active")
+    - file.inFolder(&quot;Projects&quot;)
+    - file.hasTag(&quot;active&quot;)
 formulas:
-  ratio: '(price / age).toFixed(2)'
+  ratio: &#x27;(price / age).toFixed(2)&#x27;
 views:
   - type: table
     order:
       - file.name
       - formula.ratio</code></pre>
-<p>Obsidian's own docs: "Delete a base and your notes are untouched." What Bases still does not give you:</p>
+<p>Obsidian&#x27;s own docs: &quot;Delete a base and your notes are untouched.&quot; What Bases still does not give you:</p>
 <ul><li><strong>Permissions.</strong> Obsidian has no permission model.</li><li><strong>Server-side computed properties.</strong> Bases does not replace them.</li><li><strong>Multi-user edit.</strong> Shared vaults sync files; there is no built-in co-editing.</li></ul>
 <p>Do not pick Obsidian if you need granular database permissions or built-in multi-user editing.</p>
 
       <h2 id="s4">4. Notion&#x27;s agent is real, and so is its meter</h2>
-      <p>Notion's built-in agent lives on Business at $20/member/month, next to AI Meeting Notes. Free and Plus get an AI trial only.</p>
-<div class="table-wrapper"><table><thead><tr><th>Notion piece</th><th>Billing, per Notion</th></tr></thead><tbody><tr><td>Notion Agent</td><td>Included in Business</td></tr><tr><td>Custom Agents</td><td>"Free to try, then $10 per 1,000 monthly Notion credits"</td></tr><tr><td>Workers</td><td>Beta: custom code for agent tools and sync</td></tr></tbody></table></div>
+      <p>Notion&#x27;s built-in agent lives on Business at $20/member/month, next to AI Meeting Notes. Free and Plus get an AI trial only.</p>
+<div class="table-wrapper"><table><thead><tr><th>Notion piece</th><th>Billing, per Notion</th></tr></thead><tbody><tr><td>Notion Agent</td><td>Included in Business</td></tr><tr><td>Custom Agents</td><td>&quot;Free to try, then $10 per 1,000 monthly Notion credits&quot;</td></tr><tr><td>Workers</td><td>Beta: custom code for agent tools and sync</td></tr></tbody></table></div>
 <p>Custom Agents are separately metered; do not infer a Business prerequisite. Obsidian has no server-side agent.</p>
 <p>Notion API budgets:</p>
 <ul><li><strong>180 requests per 60-second window per connection</strong>, or <strong>600/minute on Business/Enterprise</strong>; bursts allowed.</li><li>A <strong>per-workspace</strong> budget shared by every connection; its <code>Retry-After</code> can exceed a minute. It scales by plan.</li><li>Data-source queries capped near 3 requests/second per connection.</li></ul>
@@ -386,7 +386,7 @@ views:
 
       <h2 id="s5">5. For ten people, $2,400 a year buys permissions or it buys nothing</h2>
       <p>Run the 10-person team through both price sheets:</p>
-<ul><li>For 10 people needing Business permissions and Notion Agent, 10 × $20 × 12 = <strong>$2,400/year</strong>.</li><li>For 10 people needing Plus's 30-day history, 10 × $10 × 12 = <strong>$1,200/year</strong>.</li><li>For 10 people wanting Obsidian Sync, 10 × $4 × 12 = <strong>$480/year</strong>, billed annually.</li><li>For 10 people choosing Sync plus optional commercial licences, (10 × $4 × 12) + (10 × $50) = <strong>$980/year</strong>.</li></ul>
+<ul><li>For 10 people needing Business permissions and Notion Agent, 10 × $20 × 12 = <strong>$2,400/year</strong>.</li><li>For 10 people needing Plus&#x27;s 30-day history, 10 × $10 × 12 = <strong>$1,200/year</strong>.</li><li>For 10 people wanting Obsidian Sync, 10 × $4 × 12 = <strong>$480/year</strong>, billed annually.</li><li>For 10 people choosing Sync plus optional commercial licences, (10 × $4 × 12) + (10 × $50) = <strong>$980/year</strong>.</li></ul>
 <p>Business includes:</p>
 <ul><li>SAML SSO, granular database permissions, private teamspaces.</li><li>90-day page history and the Notion Agent.</li></ul>
 <p>Do not pay for Business solely to store private drafts if you do not need its agent, AI Meeting Notes, SSO, permissions or 90-day page history.</p>
@@ -395,7 +395,7 @@ views:
       <h2 id="s6">6. Choose by permissions, then test recovery</h2>
       <p>Choose Notion Business when granular database permissions or private teamspaces are required; choose Obsidian for local Markdown notes only if you can forgo a permission model and built-in multi-user editing.</p>
 <p>Check these today:</p>
-<ol><li>Open page history on your most important Notion page. Can you recover the version from before a mistaken edit within your plan's 7-, 30- or 90-day window?</li><li>Identify the Business permissions, private teamspaces, agent or recovery window you need.</li><li>List every integration calling the Notion API. Check connection, workspace and data-source query budgets before upgrading.</li><li>On Obsidian at work, explicitly accept or decline the optional commercial licence.</li></ol>
+<ol><li>Open page history on your most important Notion page. Can you recover the version from before a mistaken edit within your plan&#x27;s 7-, 30- or 90-day window?</li><li>Identify the Business permissions, private teamspaces, agent or recovery window you need.</li><li>List every integration calling the Notion API. Check connection, workspace and data-source query budgets before upgrading.</li><li>On Obsidian at work, explicitly accept or decline the optional commercial licence.</li></ol>
 
       <h2 id="cost">Cost arithmetic at volume</h2>
       <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
@@ -425,7 +425,7 @@ views:
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Team wiki where some pages must be hidden from some members</td><td class="matrix-pick">Notion Business</td><td>Granular database permissions and private teamspaces are Business features, and Obsidian has no permission model at all.</td></tr><tr><td>Solo engineer keeping private design notes and journals</td><td class="matrix-pick">Obsidian</td><td>The app is free without limits and plain files under git give history no plan can expire.</td></tr><tr><td>Team that wants an agent doing repetitive tasks without anyone's laptop running</td><td class="matrix-pick">Notion Custom Agents; Business only if its included Notion Agent is needed</td><td>Choose Business if you need its included Notion Agent; price autonomous repetitive tasks separately with Custom Agents: "Free to try, then $10 per 1,000 monthly Notion credits". Do not infer a Business prerequisite for Custom Agents.</td></tr><tr><td>Pipeline constrained by Notion API connection throughput</td><td class="matrix-pick">Notion Business only if its higher connection budget meets the requirement</td><td>Business/Enterprise allow 600 requests/minute per connection, versus 180 per 60-second window on other plans; bursts are allowed. A separate plan-scaled workspace budget and roughly 3 data-source queries/second per connection still constrain the pipeline. Obey Retry-After on HTTP 429 or 529; the JS SDK retries for you.</td></tr><tr><td>Team choosing a recovery window for policies and runbooks</td><td class="matrix-pick">Plus for 30 days, Business for 90, or Obsidian with git for no plan-imposed cutoff</td><td>Choose Plus only if 30 days of recovery is enough, Business if you need 90 days, or plain files under git if you need history without a plan-imposed cutoff.</td></tr><tr><td>Notion Free team collaborating with more than 10 outside clients</td><td class="matrix-pick">Rule out Notion Free; verify paid-plan guest capacity before choosing</td><td>Notion Free allows 10 external guests; do not choose a paid plan until its guest capacity meets your client requirement. Obsidian offers collaboration through Sync shared vaults or third-party tooling, without a permission model.</td></tr><tr><td>Team needing only views over local Markdown properties, not permissions or built-in multi-user editing</td><td class="matrix-pick">Obsidian with Bases</td><td>Choose Bases if the requirement is views over local Markdown properties rather than shared editing or permissions; Map additionally requires the Maps plugin.</td></tr><tr><td>Notion team whose pages are stable, permissioned and within their history window</td><td class="matrix-pick">Notion — stay put</td><td>Stay on Notion if its existing permissions and history meet your requirements; Obsidian has no permission model or built-in multi-user editing.</td></tr></tbody>
+        <tbody><tr><td>Team wiki where some pages must be hidden from some members</td><td class="matrix-pick">Notion Business</td><td>Granular database permissions and private teamspaces are Business features, and Obsidian has no permission model at all.</td></tr><tr><td>Solo engineer keeping private design notes and journals</td><td class="matrix-pick">Obsidian</td><td>The app is free without limits and plain files under git give history no plan can expire.</td></tr><tr><td>Team that wants an agent doing repetitive tasks without anyone&#x27;s laptop running</td><td class="matrix-pick">Notion Custom Agents; Business only if its included Notion Agent is needed</td><td>Choose Business if you need its included Notion Agent; price autonomous repetitive tasks separately with Custom Agents: &quot;Free to try, then $10 per 1,000 monthly Notion credits&quot;. Do not infer a Business prerequisite for Custom Agents.</td></tr><tr><td>Pipeline constrained by Notion API connection throughput</td><td class="matrix-pick">Notion Business only if its higher connection budget meets the requirement</td><td>Business/Enterprise allow 600 requests/minute per connection, versus 180 per 60-second window on other plans; bursts are allowed. A separate plan-scaled workspace budget and roughly 3 data-source queries/second per connection still constrain the pipeline. Obey Retry-After on HTTP 429 or 529; the JS SDK retries for you.</td></tr><tr><td>Team choosing a recovery window for policies and runbooks</td><td class="matrix-pick">Plus for 30 days, Business for 90, or Obsidian with git for no plan-imposed cutoff</td><td>Choose Plus only if 30 days of recovery is enough, Business if you need 90 days, or plain files under git if you need history without a plan-imposed cutoff.</td></tr><tr><td>Notion Free team collaborating with more than 10 outside clients</td><td class="matrix-pick">Rule out Notion Free; verify paid-plan guest capacity before choosing</td><td>Notion Free allows 10 external guests; do not choose a paid plan until its guest capacity meets your client requirement. Obsidian offers collaboration through Sync shared vaults or third-party tooling, without a permission model.</td></tr><tr><td>Team needing only views over local Markdown properties, not permissions or built-in multi-user editing</td><td class="matrix-pick">Obsidian with Bases</td><td>Choose Bases if the requirement is views over local Markdown properties rather than shared editing or permissions; Map additionally requires the Maps plugin.</td></tr><tr><td>Notion team whose pages are stable, permissioned and within their history window</td><td class="matrix-pick">Notion — stay put</td><td>Stay on Notion if its existing permissions and history meet your requirements; Obsidian has no permission model or built-in multi-user editing.</td></tr></tbody>
       </table></div>
 
     <h2>Same task, two SDKs</h2>
@@ -513,8 +513,8 @@ views:
           <div class="faq-a">Obsidian gives a 40% education/nonprofit discount on Sync and Publish. Sync and Publish also have a 7-day no-questions refund.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Do I have to hand-write retry logic for Notion's 429s?</div>
-          <div class="faq-a">Not in JavaScript: Notion's JS SDK retries for you and obeys <code>Retry-After</code>. Overloads can also come back as HTTP 529 with <code>service_overload</code>.</div>
+          <div class="faq-q">Do I have to hand-write retry logic for Notion&#x27;s 429s?</div>
+          <div class="faq-a">Not in JavaScript: Notion&#x27;s JS SDK retries for you and obeys <code>Retry-After</code>. Overloads can also come back as HTTP 529 with <code>service_overload</code>.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Which Notion plan lists zero data retention with LLM providers?</div>

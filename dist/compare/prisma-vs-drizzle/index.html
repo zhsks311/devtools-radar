@@ -291,7 +291,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">Data & ORM</span>
+      <span class="badge badge-blue">Data &amp; ORM</span>
       <span class="badge badge-gray">Prisma vs Drizzle</span>
       <span>DevTeardown Team</span>
       <span>·</span>
@@ -301,7 +301,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     </div>
 
     <h1>Prisma vs Drizzle</h1>
-    <div class="lead"><p>Both ORMs are free, and in 2026 each arrives with a database vendor attached: Prisma sells Prisma Postgres beside its client, and PlanetScale hired Drizzle's entire core team in March. Prisma generates its client, while Drizzle keeps the schema in TypeScript without a code-generation step; neither ORM has a per-seat price.</p></div>
+    <div class="lead"><p>Both ORMs are free, and in 2026 each arrives with a database vendor attached: Prisma sells Prisma Postgres beside its client, and PlanetScale hired Drizzle&#x27;s entire core team in March. Prisma generates its client, while Drizzle keeps the schema in TypeScript without a code-generation step; neither ORM has a per-seat price.</p></div>
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
@@ -345,25 +345,25 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     </div>
 
       <h2 id="s1">1. Free ORMs, separate hosting bills and dependency risk</h2>
-      <p>If you are choosing between Prisma's generated client and Drizzle's TypeScript schema, separate the free ORM decision from database pricing and release-candidate risk.</p>
+      <p>If you are choosing between Prisma&#x27;s generated client and Drizzle&#x27;s TypeScript schema, separate the free ORM decision from database pricing and release-candidate risk.</p>
 <ul><li><strong>Prisma:</strong> generates its Rust-free client with <code>prisma-client</code>; queries pass through a TypeScript/WebAssembly compiler and a JS driver adapter.</li><li><strong>Drizzle:</strong> the TypeScript file is the schema, without client codegen or a schema DSL; <code>drizzle-kit</code> generates migrations.</li></ul>
-<blockquote><p>Prisma's model forbids skipping the build: no generator run, no client. Drizzle's forbids a schema outside TypeScript, and Drizzle states its relational API "always outputs exactly 1 SQL query".</p></blockquote>
+<blockquote><p>Prisma&#x27;s model forbids skipping the build: no generator run, no client. Drizzle&#x27;s forbids a schema outside TypeScript, and Drizzle states its relational API &quot;always outputs exactly 1 SQL query&quot;.</p></blockquote>
 
       <h2 id="s2">2. Who should not pick Prisma: teams avoiding client generation</h2>
       <p>Prisma 7.0.0 shipped 19 November 2025 with a Rust-free client: a TypeScript/WebAssembly query compiler plus a JS driver adapter.</p>
 <ul><li>Prisma 7.10.1 shipped 15 October 2026: generator <code>output</code> is required, replacing generation into <code>node_modules</code> by default.</li><li>The upgrade guide replaces the old datasource URL style with <code>prisma.config.ts</code>.</li></ul>
-<p>Prisma's AMA of 13 February 2026 attributes "cases where throughput is similar or slightly worse" to database access from JavaScript instead of a multi-threaded Rust runtime.</p>
+<p>Prisma&#x27;s AMA of 13 February 2026 attributes &quot;cases where throughput is similar or slightly worse&quot; to database access from JavaScript instead of a multi-threaded Rust runtime.</p>
 <blockquote><p>Since 7.3.0, <code>$queryRaw</code> and <code>$executeRaw</code> skip the compiler entirely.</p></blockquote>
 <p>Avoid Prisma if client generation is a blocker.</p>
 
       <h2 id="s3">3. Who should not pick Drizzle: teams ruling out its newest RC</h2>
       <p>Drizzle ORM and Kit are free and open source. It bills you in dependency risk instead.</p>
-<ul><li><strong>Newest release, not stable 1.0:</strong> as of 10 November 2026, it is 1.0.0-rc.5.</li><li>1.0.0-rc.5 shipped 21 October 2026, and its notes list a dozen-plus BREAKING changes, from postgres-js parsers to <code>withReplicas</code> default routing and the <code>sqlite-proxy</code> rework.</li><li><strong>No Studio source.</strong> ORM and Kit are open source; Drizzle Studio is not.</li><li><strong>Employment:</strong> In March 2026 PlanetScale hired the entire core team. Drizzle's own page: "PlanetScale is our biggest sponsor, they hired us".</li></ul>
+<ul><li><strong>Newest release, not stable 1.0:</strong> as of 10 November 2026, it is 1.0.0-rc.5.</li><li>1.0.0-rc.5 shipped 21 October 2026, and its notes list a dozen-plus BREAKING changes, from postgres-js parsers to <code>withReplicas</code> default routing and the <code>sqlite-proxy</code> rework.</li><li><strong>No Studio source.</strong> ORM and Kit are open source; Drizzle Studio is not.</li><li><strong>Employment:</strong> In March 2026 PlanetScale hired the entire core team. Drizzle&#x27;s own page: &quot;PlanetScale is our biggest sponsor, they hired us&quot;.</li></ul>
 <p>That is a hire, not an acquisition, and the code stays open source. Still, the people choosing the next routing default are paid by a database company.</p>
 <blockquote><p>Do not adopt Drizzle 1.0.0-rc.5 if production policy forbids release candidates; this does not establish the suitability of earlier releases.</p></blockquote>
 
       <h2 id="s4">4. Prisma bundle size, warm queries and cold starts measure different things</h2>
-      <blockquote><p>Prisma claims 90% smaller output and 3x faster queries, from a Rust engine of roughly 14 MB (7 MB gzipped) to a compiler of about 1.6 MB (600 KB gzipped). Alex Georgiev's test, published 6 November 2026, ran two identical SQLite projects on one local machine. One developer, not a lab. For Prisma 6.19.3 versus 7.10.1 respectively, process start to first query was ~69 ms versus ~236 ms, while <code>node_modules</code> was 254.1 MiB versus 333.3 MiB.</p></blockquote>
+      <blockquote><p>Prisma claims 90% smaller output and 3x faster queries, from a Rust engine of roughly 14 MB (7 MB gzipped) to a compiler of about 1.6 MB (600 KB gzipped). Alex Georgiev&#x27;s test, published 6 November 2026, ran two identical SQLite projects on one local machine. One developer, not a lab. For Prisma 6.19.3 versus 7.10.1 respectively, process start to first query was ~69 ms versus ~236 ms, while <code>node_modules</code> was 254.1 MiB versus 333.3 MiB.</p></blockquote>
 <div class="table-wrapper"><table><thead><tr><th>Measure</th><th>Prisma 6.19.3</th><th>Prisma 7.10.1</th></tr></thead><tbody><tr><td>Warm <code>findUnique</code>, 2,000 sequential calls</td><td>~0.60 ms each</td><td>~0.19 ms each</td></tr><tr><td>Process start to first query</td><td>~69 ms</td><td>~236 ms</td></tr><tr><td><code>node_modules</code></td><td>254.1 MiB</td><td>333.3 MiB</td></tr></tbody></table></div>
 <p>The warm row backs the vendor: 0.60 ÷ 0.19 ≈ 3.1x. The cold row runs the other way, mostly in <code>import</code> and <code>$connect()</code>.</p>
 <ul><li>Cold-start ratio: 236 ÷ 69 ≈ 3.4x.</li><li>Directory growth: (333.3 − 254.1) ÷ 254.1 × 100 ≈ 31%.</li></ul>
@@ -378,8 +378,8 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 <p>One line item is retiring: the Accelerate cache ends 1 December 2026. If it absorbed your reads, redo the crossover with the uncached query count.</p>
 
       <h2 id="s6">6. Drizzle&#x27;s tools are free; database and runtime set the bill</h2>
-      <p>Drizzle charges $0 for the ORM, Kit, Studio for local development and Gateway. Your chosen database and runtime set the infrastructure bill, not the maintainers' employer; Prisma Postgres and Prisma Compute are optional paid services beside free Prisma ORM.</p>
-<ul><li>Pick <strong>Drizzle</strong> if no client codegen matters and you accept the named RC's compatibility risk.</li><li>Pick <strong>Prisma</strong> if generated-client workflow fits; its ORM does not require Prisma Postgres.</li></ul>
+      <p>Drizzle charges $0 for the ORM, Kit, Studio for local development and Gateway. Your chosen database and runtime set the infrastructure bill, not the maintainers&#x27; employer; Prisma Postgres and Prisma Compute are optional paid services beside free Prisma ORM.</p>
+<ul><li>Pick <strong>Drizzle</strong> if no client codegen matters and you accept the named RC&#x27;s compatibility risk.</li><li>Pick <strong>Prisma</strong> if generated-client workflow fits; its ORM does not require Prisma Postgres.</li></ul>
 <p>Check before your next deploy:</p>
 <ul><li>If using Prisma Postgres, compare Starter and Pro operation charges, then add storage overage.</li><li>Time process start to first query on your own target before trusting either Prisma figure.</li><li>Before adopting Drizzle 1.0.0-rc.5, check its breaking changes against your application.</li></ul>
 
@@ -411,7 +411,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Existing Prisma 6.19.3 deployment where cold starts dominate</td><td class="matrix-pick">Measure before upgrading to Prisma 7.10.1</td><td>Alex Georgiev's local SQLite test measured about 69 ms to first query on 6.19.3 against about 236 ms on 7.10.1; this is upgrade evidence, not a Drizzle comparison.</td></tr><tr><td>Prisma 6.19.3 application considering an upgrade for warm lookups</td><td class="matrix-pick">Measure Prisma 7.10.1 on the deployment target</td><td>Alex Georgiev's local SQLite test found about 0.60 ms versus 0.19 ms per lookup across 2,000 sequential warm findUnique calls on Prisma 6.19.3 and 7.10.1 respectively; it does not establish a winner over Drizzle.</td></tr><tr><td>Considering Drizzle 1.0.0-rc.5 under a production policy forbidding release candidates</td><td class="matrix-pick">Do not adopt this Drizzle release</td><td>Drizzle's newest release on 10 November 2026 is 1.0.0-rc.5, not a stable 1.0.</td></tr><tr><td>TypeScript-only codebase where a codegen step keeps breaking CI</td><td class="matrix-pick">Drizzle</td><td>The TypeScript file is the schema, so there is no generator output to keep in sync.</td></tr><tr><td>Need free self-hosted Studio and accept that Studio is not open source</td><td class="matrix-pick">Drizzle</td><td>Drizzle Gateway is free as a Docker image or binary; Drizzle Studio itself is not open source.</td></tr><tr><td>Need an ORM without a required adjacent hosting service</td><td class="matrix-pick">Either</td><td>Prisma sells Prisma Postgres and Prisma Compute on the same pricing page, next to a free ORM. Prisma ORM does not require Prisma Postgres, and Drizzle users choose their database and runtime.</td></tr><tr><td>Need an ORM whose maintainers no database vendor pays</td><td class="matrix-pick">Neither meets the stated requirement</td><td>Prisma sells its own database and PlanetScale hired Drizzle's team, so neither option is vendor-neutral in 2026.</td></tr><tr><td>Prisma app with hot paths already written as raw SQL</td><td class="matrix-pick">Prisma 7.3.0 or later</td><td>From 7.3.0, $queryRaw and $executeRaw bypass the query compiler and go straight to the driver adapter.</td></tr></tbody>
+        <tbody><tr><td>Existing Prisma 6.19.3 deployment where cold starts dominate</td><td class="matrix-pick">Measure before upgrading to Prisma 7.10.1</td><td>Alex Georgiev&#x27;s local SQLite test measured about 69 ms to first query on 6.19.3 against about 236 ms on 7.10.1; this is upgrade evidence, not a Drizzle comparison.</td></tr><tr><td>Prisma 6.19.3 application considering an upgrade for warm lookups</td><td class="matrix-pick">Measure Prisma 7.10.1 on the deployment target</td><td>Alex Georgiev&#x27;s local SQLite test found about 0.60 ms versus 0.19 ms per lookup across 2,000 sequential warm findUnique calls on Prisma 6.19.3 and 7.10.1 respectively; it does not establish a winner over Drizzle.</td></tr><tr><td>Considering Drizzle 1.0.0-rc.5 under a production policy forbidding release candidates</td><td class="matrix-pick">Do not adopt this Drizzle release</td><td>Drizzle&#x27;s newest release on 10 November 2026 is 1.0.0-rc.5, not a stable 1.0.</td></tr><tr><td>TypeScript-only codebase where a codegen step keeps breaking CI</td><td class="matrix-pick">Drizzle</td><td>The TypeScript file is the schema, so there is no generator output to keep in sync.</td></tr><tr><td>Need free self-hosted Studio and accept that Studio is not open source</td><td class="matrix-pick">Drizzle</td><td>Drizzle Gateway is free as a Docker image or binary; Drizzle Studio itself is not open source.</td></tr><tr><td>Need an ORM without a required adjacent hosting service</td><td class="matrix-pick">Either</td><td>Prisma sells Prisma Postgres and Prisma Compute on the same pricing page, next to a free ORM. Prisma ORM does not require Prisma Postgres, and Drizzle users choose their database and runtime.</td></tr><tr><td>Need an ORM whose maintainers no database vendor pays</td><td class="matrix-pick">Neither meets the stated requirement</td><td>Prisma sells its own database and PlanetScale hired Drizzle&#x27;s team, so neither option is vendor-neutral in 2026.</td></tr><tr><td>Prisma app with hot paths already written as raw SQL</td><td class="matrix-pick">Prisma 7.3.0 or later</td><td>From 7.3.0, $queryRaw and $executeRaw bypass the query compiler and go straight to the driver adapter.</td></tr></tbody>
       </table></div>
 
     <h2>Same task, two SDKs</h2>
@@ -446,11 +446,11 @@ export const countries = pgTable(&quot;countries&quot;, {
         <h3 style="color:var(--primary); margin-top:0;">Prisma</h3>
         <div class="pros-box" style="margin-bottom:0.9rem;">
           <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
-          <ul><li>One schema artefact drives migrations, types and the generated client</li><li>Rust-free client in 7.x: Prisma's figures are 90% smaller output and 3x faster queries</li><li>Prisma Postgres bills operations with no per-seat charge and a hard spend limit on paid plans</li><li>Raw queries bypass the compiler from 7.3.0, and compilerBuild chooses fast or small</li></ul>
+          <ul><li>One schema artefact drives migrations, types and the generated client</li><li>Rust-free client in 7.x: Prisma&#x27;s figures are 90% smaller output and 3x faster queries</li><li>Prisma Postgres bills operations with no per-seat charge and a hard spend limit on paid plans</li><li>Raw queries bypass the compiler from 7.3.0, and compilerBuild chooses fast or small</li></ul>
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
-          <ul><li>output is now required on the generator, so the client no longer lands in node_modules</li><li>A third-party test measured cold start worse than the Rust engine: about 69 ms vs 236 ms</li><li>The same test saw node_modules grow from 254.1 MiB to 333.3 MiB with WASM compilers per database</li><li>Starter's $10 stops being cheaper at 5.875M operations, where Pro's $49 takes over</li></ul>
+          <ul><li>output is now required on the generator, so the client no longer lands in node_modules</li><li>A third-party test measured cold start worse than the Rust engine: about 69 ms vs 236 ms</li><li>The same test saw node_modules grow from 254.1 MiB to 333.3 MiB with WASM compilers per database</li><li>Starter&#x27;s $10 stops being cheaper at 5.875M operations, where Pro&#x27;s $49 takes over</li></ul>
         </div>
       </div>
       <div class="card" style="padding:1.2rem;">
@@ -469,7 +469,7 @@ export const countries = pgTable(&quot;countries&quot;, {
       <h2 id="migration">Migration path</h2>
       <div class="migration-box">
         <strong>What switching actually takes</strong>
-        <div style="margin-top:0.5rem;"><p>Prisma to Drizzle rewrites the data layer: every model becomes a table definition, the <code>prisma migrate</code> history becomes drizzle-kit migrations, and there is no client to generate. Drizzle to Prisma means writing one schema file that becomes the truth again, and deciding whether the generated client is committed or ignored. In both directions, the migration tooling writes SQL you review — neither one replays the other's history.</p></div>
+        <div style="margin-top:0.5rem;"><p>Prisma to Drizzle rewrites the data layer: every model becomes a table definition, the <code>prisma migrate</code> history becomes drizzle-kit migrations, and there is no client to generate. Drizzle to Prisma means writing one schema file that becomes the truth again, and deciding whether the generated client is committed or ignored. In both directions, the migration tooling writes SQL you review — neither one replays the other&#x27;s history.</p></div>
       </div>
 
     <h2 id="faq">Questions that change the decision</h2>
@@ -481,7 +481,7 @@ export const countries = pgTable(&quot;countries&quot;, {
         </div>
         <div class="faq-item">
           <div class="faq-q">Can I shrink the Prisma 7 query compiler?</div>
-          <div class="faq-a">Since 7.3.0 the generator accepts <code>compilerBuild = "fast" | "small"</code>, with <code>fast</code> as the default. In Alex Georgiev's listing the SQLite compiler is 4,406,183 bytes in the fast build and 2,214,935 bytes in the small one.</div>
+          <div class="faq-a">Since 7.3.0 the generator accepts <code>compilerBuild = &quot;fast&quot; | &quot;small&quot;</code>, with <code>fast</code> as the default. In Alex Georgiev&#x27;s listing the SQLite compiler is 4,406,183 bytes in the fast build and 2,214,935 bytes in the small one.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Will long-running queries survive Prisma Postgres connection pooling?</div>
@@ -489,7 +489,7 @@ export const countries = pgTable(&quot;countries&quot;, {
         </div>
         <div class="faq-item">
           <div class="faq-q">Which databases can Drizzle talk to?</div>
-          <div class="faq-a">Postgres, MySQL, SQLite, SingleStore, MSSQL and CockroachDB, through the standard drivers. Drizzle states the ORM has "exactly 0 dependencies".</div>
+          <div class="faq-a">Postgres, MySQL, SQLite, SingleStore, MSSQL and CockroachDB, through the standard drivers. Drizzle states the ORM has &quot;exactly 0 dependencies&quot;.</div>
         </div>
     </div>
 
@@ -505,7 +505,7 @@ export const countries = pgTable(&quot;countries&quot;, {
           </a>
           <a class="card" href="../bun-vs-node/" style="padding:1.1rem;">
             <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Bun vs Node.js</h3>
-            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Prisma Compute runs on Bun's Rust port — the runtime invoice, told the same way.</p>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Prisma Compute runs on Bun&#x27;s Rust port — the runtime invoice, told the same way.</p>
           </a></div>
 
     <div style="text-align:center; margin: 3rem 0 1rem;">

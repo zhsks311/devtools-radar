@@ -3,8 +3,17 @@
 
 import json
 import os
+import sys
+import copy
+import argparse
+import tempfile
+from pathlib import Path
 
-BASE = "/workspace/devtools-radar"
+BASE = Path(__file__).resolve().parents[1]
+if str(BASE) not in sys.path:
+    sys.path.insert(0, str(BASE))
+from tools.validate_data import validate_items, SLUG
+from tools.lint_content import lint_article
 VERIFIED = "2026-11-10"
 
 META = {
@@ -807,35 +816,76 @@ RELATED = {
     ],
 }
 
-items = []
-for slug, meta in META.items():
-    final = json.load(open(os.path.join(BASE, "content", "final", slug + ".json"), encoding="utf-8"))
-    item = {
-        "slug": slug,
-        "category": meta["category"],
-        "last_verified": VERIFIED,
-        "published": "2026-11-10",
-        "hook": final["hook"],
-        "tool_a": meta["tool_a"],
-        "tool_b": meta["tool_b"],
-        "sections": final["sections"],
-        "cost_math": final["cost_math"],
-        "decision_matrix": final["decision_matrix"],
-        "verdict_summary": final["verdict_summary"],
-        "migration_guide": meta["migration_guide"],
-        "faqs": final["faqs"],
-        "sources": final["sources"],
-        "related": RELATED[slug],
-    }
-    items.append(item)
 
-path = os.path.join(BASE, "data", "tools.json")
-with open(path, "w", encoding="utf-8") as f:
-    json.dump(items, f, ensure_ascii=False, indent=2)
+def merge_articles(base=BASE, output=None):
+    """Refresh reviewed content without dropping articles or inventing verification dates.
 
-print("wrote", path, os.path.getsize(path), "bytes")
-for it in items:
-    body = "".join(s["content"] for s in it["sections"])
-    print("  %-28s body=%d  sections=%d  matrix=%d  cost=%d  faq=%d  src=%d" % (
-        it["slug"], len(body), len(it["sections"]), len(it["decision_matrix"]),
-        len(it["cost_math"]), len(it["faqs"]), len(it["sources"])))
+    Existing deployment metadata is preserved. A new article must supply its dates
+    and complete metadata (legacy META may fill tool metadata only).
+    """
+    base = Path(base)
+    path = Path(output) if output is not None else base / "data" / "tools.json"
+    source = base / "data" / "tools.json"
+    existing = json.loads(source.read_text(encoding="utf-8")) if source.exists() else []
+    if not isinstance(existing, list):
+        raise ValueError("existing data/tools.json must be a list")
+    if existing:
+        errors = validate_items(existing)
+        if errors:
+            raise ValueError("Invalid existing deployment data: " + "; ".join(errors))
+    by_slug = {item["slug"]: copy.deepcopy(item) for item in existing}
+    finals = sorted((base / "content" / "final").glob("*.json"))
+    if not finals:
+        raise ValueError("No reviewed final articles found")
+    seen = set()
+    for final_path in finals:
+        final = json.loads(final_path.read_text(encoding="utf-8"))
+        slug, errors, _ = lint_article(final, str(final_path))
+        if errors:
+            raise ValueError(f"{final_path}: " + "; ".join(errors))
+        if slug != final_path.stem or slug in seen:
+            raise ValueError(f"Duplicate or filename-mismatched slug: {slug}")
+        seen.add(slug)
+        item = by_slug.get(slug, copy.deepcopy(META.get(slug, {})))
+        # Explicit reviewed metadata overrides previous values; absent dates stay
+        # unchanged. Never stamp today's date merely because content was merged.
+        item.update(final)
+        if "related" not in item:
+            item["related"] = copy.deepcopy(RELATED.get(slug, []))
+        by_slug[slug] = item
+    items = list(by_slug.values())
+    errors = validate_items(items)
+    if errors:
+        raise ValueError("Invalid merged deployment data: " + "; ".join(errors))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    # Atomic replacement only after every article validates.
+    tmp = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent,
+                                         prefix=".tools-", suffix=".json", delete=False) as f:
+            tmp = Path(f.name)
+            json.dump(items, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        os.replace(tmp, path)
+    finally:
+        if tmp is not None and tmp.exists():
+            tmp.unlink()
+    return items
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--base", type=Path, default=BASE)
+    parser.add_argument("--output", type=Path, help="Write merged data elsewhere without replacing deployment input")
+    args = parser.parse_args()
+    try:
+        items = merge_articles(args.base, args.output)
+    except (OSError, ValueError) as exc:
+        print(f"Merge failed: {exc}", file=sys.stderr)
+        return 1
+    print(f"Merged {len(items)} articles")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

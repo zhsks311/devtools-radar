@@ -291,7 +291,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">Backend & Database</span>
+      <span class="badge badge-blue">Backend &amp; Database</span>
       <span class="badge badge-gray">Supabase vs Firebase</span>
       <span>DevTeardown Team</span>
       <span>·</span>
@@ -305,7 +305,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
-      <p>If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project. If your app fits Firestore's daily free quota of 50,000 reads, 20,000 writes and 20,000 deletes, stay where you are, because leaving costs a schema project and a password path the migration repo still marks incomplete.</p>
+      <p>If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project. If your app fits Firestore&#x27;s daily free quota of 50,000 reads, 20,000 writes and 20,000 deletes, stay where you are, because leaving costs a schema project and a password path the migration repo still marks incomplete.</p>
     </div>
 
     <div class="answer-box">
@@ -351,7 +351,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 <div class="table-wrapper"><table><thead><tr><th>Meter</th><th>Unit price</th><th>Pattern it punishes</th></tr></thead><tbody><tr><td>Firestore reads</td><td>$0.03 / 100,000</td><td>Live listeners on hot documents</td></tr><tr><td>Firestore writes</td><td>$0.09 / 100,000</td><td>Per-keystroke saves, chatty counters</td></tr><tr><td>Supabase disk</td><td>$0.125/GB over 8 GB</td><td>Keeping everything forever</td></tr><tr><td>Supabase compute</td><td>$10 to $3,730/month per project</td><td>Many connections, many projects</td></tr></tbody></table></div>
 
       <h2 id="s2">2. A listener is a meter, not a subscription</h2>
-      <p>A listener is not a free subscription. Firestore bills a read each time a document enters or updates in a live listener's result set, and one more when a change pushes it out. The meter runs while nobody clicks. Don't pick Firestore for a screen that stays open all day.</p>
+      <p>A listener is not a free subscription. Firestore bills a read each time a document enters or updates in a live listener&#x27;s result set, and one more when a change pushes it out. The meter runs while nobody clicks. Don&#x27;t pick Firestore for a screen that stays open all day.</p>
 <p>Take 50 users, each watching 100 documents that change 20 times a minute:</p>
 <pre><code class="language-python">users, docs, changes_per_min = 50, 100, 20
 reads = users * docs * changes_per_min * 60 * 24 * 30
@@ -365,18 +365,18 @@ print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota</code></pre>
 <blockquote><p>Add a table to the publication: <code>alter publication supabase_realtime add table your_table_name;</code></p></blockquote>
 <p>Nothing in that stream is metered per read. What runs out is the instance: its compute tier and its connection and pooler limits. Compute is billed per project, separately from the plan.</p>
 <div class="table-wrapper"><table><thead><tr><th>Compute</th><th>Monthly compute</th><th>Direct / pooled database connections</th></tr></thead><tbody><tr><td>Micro</td><td>$10</td><td>60 / 200</td></tr><tr><td>Small</td><td>$15</td><td>90 / 400</td></tr><tr><td>Medium</td><td>$60</td><td>120 / 600</td></tr><tr><td>Large</td><td>$110</td><td>160 / 800</td></tr><tr><td>XL</td><td>$210</td><td>240 / 1,000</td></tr><tr><td>16XL</td><td>$3,730</td><td>500 / 12,000</td></tr></tbody></table></div>
-<blockquote><p>You stop paying for spikes and start paying for headroom. Size for peak connections: Pro's $10/month credit covers one Micro, and every extra project adds its own compute.</p></blockquote>
+<blockquote><p>You stop paying for spikes and start paying for headroom. Size for peak connections: Pro&#x27;s $10/month credit covers one Micro, and every extra project adds its own compute.</p></blockquote>
 
       <h2 id="s4">4. Index entry reads are the Firestore line item nobody quotes</h2>
       <ul><li>One read per batch of up to 1,000 index entries a query reads.</li><li>A query with <strong>one</strong> range field pays nothing for index entries. Zero range fields are also exempt. Add a second range field and billing starts.</li><li><code>count()</code>, <code>sum()</code> and <code>avg()</code> bill index reads, with a 1-document-read minimum even at zero entries.</li></ul>
-<p>Firestore's own docs give the example: <code>count()</code> over 1,500 index entries bills 2 document reads.</p>
+<p>Firestore&#x27;s own docs give the example: <code>count()</code> over 1,500 index entries bills 2 document reads.</p>
 <blockquote><p>Ten million plain reads cost $3.00 at the listed rate. The <code>count()</code> in your page header is a different bill.</p></blockquote>
 <p>Audit any query that combines two range fields before it ships.</p>
 
       <h2 id="s5">5. Migration is a schema project with a script attached</h2>
       <p><code>supabase-community/firebase-to-supabase</code> on GitHub is community tooling, not an official CLI. What it does:</p>
 <ol><li><code>firestore2json.js</code> exports a collection; <code>json2supabase.js</code> loads it into a table. One collection, one table.</li><li>Fields are flattened to <code>text</code>, <code>numeric</code>, <code>boolean</code> or <code>jsonb</code>.</li><li>Splitting nested JSON into related tables needs custom hooks you write.</li></ol>
-<p>Auth is the sharper edge. <code>firestoreusers2json</code> and <code>import_users</code> move users, importing hashes with Firestore's SCRYPT parameters (<code>base64_signer_key</code>, <code>base64_salt_separator</code>, <code>rounds</code>, <code>mem_cost</code>).</p>
+<p>Auth is the sharper edge. <code>firestoreusers2json</code> and <code>import_users</code> move users, importing hashes with Firestore&#x27;s SCRYPT parameters (<code>base64_signer_key</code>, <code>base64_salt_separator</code>, <code>rounds</code>, <code>mem_cost</code>).</p>
 <blockquote><p>Verifying an existing Firebase password on first login needs a middleware the repo itself marks <strong>work in progress</strong>. The AWS Lambda variant is listed as TBD.</p></blockquote>
 <p>Until that middleware exists, plan for blocked logins at cutover and decide in advance whether you force a password reset.</p>
 
@@ -384,7 +384,7 @@ print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota</code></pre>
       <p>Choose Supabase when modeled Firestore charges exceed the plan and compute cost and the workload fits the selected tier and quotas. Keep Firestore when all free allowances fit:</p>
 <ul><li>50,000 reads, 20,000 writes and 20,000 deletes per day.</li><li>1 GiB stored, 10 GiB/month outbound; one free database per project.</li></ul>
 <p>Check today, in this order:</p>
-<ol><li>Multiply listeners × documents per listener × changes per minute × (60 × 24 × 30) minutes, then × $0.03 per 100,000.</li><li>Find every hot-path query with two range fields or a <code>count()</code>.</li><li>On Supabase, compare peak database connections to Micro's 60 direct / 200 pooled.</li><li>Check whether first-login existing-password verification blocks migration.</li></ol>
+<ol><li>Multiply listeners × documents per listener × changes per minute × (60 × 24 × 30) minutes, then × $0.03 per 100,000.</li><li>Find every hot-path query with two range fields or a <code>count()</code>.</li><li>On Supabase, compare peak database connections to Micro&#x27;s 60 direct / 200 pooled.</li><li>Check whether first-login existing-password verification blocks migration.</li></ol>
 
       <h2 id="cost">Cost arithmetic at volume</h2>
       <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
@@ -401,7 +401,7 @@ print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota</code></pre>
           <div class="cost-result">$25/month for one Pro Micro project within included quotas; egress beyond 250 GB costs $0.09/GB</div>
         </div>
         <div class="cost-row">
-          <div class="cost-label">Supabase's official billing example: Pro org, 2 Micro projects</div>
+          <div class="cost-label">Supabase&#x27;s official billing example: Pro org, 2 Micro projects</div>
           <div class="cost-formula">$25 (plan) + $10 (project 1) + $10 (project 2) − $10 (credits)</div>
           <div class="cost-result">$35/month within included quotas</div>
         </div>
@@ -414,7 +414,7 @@ print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota</code></pre>
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Live dashboard whose modeled Firestore charges exceed Supabase costs, within the selected tier and quotas</td><td class="matrix-pick">Supabase</td><td>One Pro Micro project costs $25/month within included quotas after the compute credit; listener updates count as Firestore reads. Check capacity separately.</td></tr><tr><td>Quiet app within every relevant Firestore free allowance</td><td class="matrix-pick">Firestore</td><td>Stay when reads, writes, deletes, stored data and outbound transfer all fit: 50,000 reads, 20,000 writes and 20,000 deletes daily, 1 GiB stored, 10 GiB/month outbound and one free database per project.</td></tr><tr><td>Relational reporting requiring JOINs, with migration schema work accepted</td><td class="matrix-pick">Supabase</td><td>Firestore has no JOINs. Supabase supports SQL JOINs; splitting nested JSON into related tables during migration requires custom hooks.</td></tr><tr><td>Offline app whose Firestore usage and reconnect charges fit its budget</td><td class="matrix-pick">Firestore with offline persistence on</td><td>With persistence off, every Firestore reconnect is billed like a brand-new query. With it on, disconnections longer than 30 minutes trigger that billing.</td></tr><tr><td>Database connection demand fits 16XL and its cost fits the budget</td><td class="matrix-pick">Supabase</td><td>16XL offers 500 direct / 12,000 pooled database connections at $3,730/month compute, separately from the plan; larger sizes are available by request.</td></tr><tr><td>Agency whose verified total Firestore usage charges are lower than the Supabase setup</td><td class="matrix-pick">Firestore</td><td>Compare client workloads against the $35/month Pro total for 2 Micro projects within included quotas. Every extra Supabase project adds its own compute line, $10 for each Micro.</td></tr><tr><td>Existing Firebase password verification at first login is required, but its migration dependency is unresolved</td><td class="matrix-pick">Stay on Firebase</td><td>First-login verification of Firebase passwords depends on middleware the migration repo marks work in progress.</td></tr><tr><td>Aggregate-call charges remain below the Supabase setup cost</td><td class="matrix-pick">Firestore</td><td>Firestore's count() bills index reads on every call, with a 1-document-read minimum. A count over 1,500 index entries bills 2 document reads; compare call volume at $0.03 per 100,000 reads against $25/month for one Supabase Pro Micro project within included quotas.</td></tr></tbody>
+        <tbody><tr><td>Live dashboard whose modeled Firestore charges exceed Supabase costs, within the selected tier and quotas</td><td class="matrix-pick">Supabase</td><td>One Pro Micro project costs $25/month within included quotas after the compute credit; listener updates count as Firestore reads. Check capacity separately.</td></tr><tr><td>Quiet app within every relevant Firestore free allowance</td><td class="matrix-pick">Firestore</td><td>Stay when reads, writes, deletes, stored data and outbound transfer all fit: 50,000 reads, 20,000 writes and 20,000 deletes daily, 1 GiB stored, 10 GiB/month outbound and one free database per project.</td></tr><tr><td>Relational reporting requiring JOINs, with migration schema work accepted</td><td class="matrix-pick">Supabase</td><td>Firestore has no JOINs. Supabase supports SQL JOINs; splitting nested JSON into related tables during migration requires custom hooks.</td></tr><tr><td>Offline app whose Firestore usage and reconnect charges fit its budget</td><td class="matrix-pick">Firestore with offline persistence on</td><td>With persistence off, every Firestore reconnect is billed like a brand-new query. With it on, disconnections longer than 30 minutes trigger that billing.</td></tr><tr><td>Database connection demand fits 16XL and its cost fits the budget</td><td class="matrix-pick">Supabase</td><td>16XL offers 500 direct / 12,000 pooled database connections at $3,730/month compute, separately from the plan; larger sizes are available by request.</td></tr><tr><td>Agency whose verified total Firestore usage charges are lower than the Supabase setup</td><td class="matrix-pick">Firestore</td><td>Compare client workloads against the $35/month Pro total for 2 Micro projects within included quotas. Every extra Supabase project adds its own compute line, $10 for each Micro.</td></tr><tr><td>Existing Firebase password verification at first login is required, but its migration dependency is unresolved</td><td class="matrix-pick">Stay on Firebase</td><td>First-login verification of Firebase passwords depends on middleware the migration repo marks work in progress.</td></tr><tr><td>Aggregate-call charges remain below the Supabase setup cost</td><td class="matrix-pick">Firestore</td><td>Firestore&#x27;s count() bills index reads on every call, with a 1-document-read minimum. A count over 1,500 index entries bills 2 document reads; compare call volume at $0.03 per 100,000 reads against $25/month for one Supabase Pro Micro project within included quotas.</td></tr></tbody>
       </table></div>
 
     <h2>Same task, two SDKs</h2>
@@ -475,7 +475,7 @@ for (const doc of snap.docs) {
       <h2 id="migration">Migration path</h2>
       <div class="migration-box">
         <strong>What switching actually takes</strong>
-        <div style="margin-top:0.5rem;"><p><code>supabase-community/firebase-to-supabase</code> is community tooling, not an official CLI. <code>firestore2json.js</code> exports one collection, <code>json2supabase.js</code> loads it into one table, and fields are flattened to text, numeric, boolean or jsonb — splitting nested JSON into related tables is a hook you write. Auth is the harder half: <code>firestoreusers2json</code> and <code>import_users</code> carry passwords over as SCRYPT hash parameters, and verifying a user's existing Firebase password on first login needs middleware the repo still marks work in progress. Budget the schema work, not the script.</p></div>
+        <div style="margin-top:0.5rem;"><p><code>supabase-community/firebase-to-supabase</code> is community tooling, not an official CLI. <code>firestore2json.js</code> exports one collection, <code>json2supabase.js</code> loads it into one table, and fields are flattened to text, numeric, boolean or jsonb — splitting nested JSON into related tables is a hook you write. Auth is the harder half: <code>firestoreusers2json</code> and <code>import_users</code> carry passwords over as SCRYPT hash parameters, and verifying a user&#x27;s existing Firebase password on first login needs middleware the repo still marks work in progress. Budget the schema work, not the script.</p></div>
       </div>
 
     <h2 id="faq">Questions that change the decision</h2>
@@ -490,8 +490,8 @@ for (const doc of snap.docs) {
           <div class="faq-a">No. Firestore bills a read for every skipped document, so offset 10 returning 1 document costs 11 reads.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Will Supabase Realtime leak rows a user shouldn't see?</div>
-          <div class="faq-a">Postgres Changes subscriptions are RLS-aware, so clients receive only rows they are allowed to select. Supabase's docs also document Broadcast as an alternative way to subscribe to database changes.</div>
+          <div class="faq-q">Will Supabase Realtime leak rows a user shouldn&#x27;t see?</div>
+          <div class="faq-a">Postgres Changes subscriptions are RLS-aware, so clients receive only rows they are allowed to select. Supabase&#x27;s docs also document Broadcast as an alternative way to subscribe to database changes.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">How is Firestore vector search billed?</div>

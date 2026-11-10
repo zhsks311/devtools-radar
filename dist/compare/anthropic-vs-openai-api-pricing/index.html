@@ -291,7 +291,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">AI & LLM APIs</span>
+      <span class="badge badge-blue">AI &amp; LLM APIs</span>
       <span class="badge badge-gray">Anthropic vs OpenAI</span>
       <span>DevTeardown Team</span>
       <span>·</span>
@@ -305,7 +305,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
-      <p>On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer's 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.</p>
+      <p>On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer&#x27;s 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.</p>
     </div>
 
     <div class="answer-box">
@@ -347,27 +347,27 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2 id="s1">1. Two sheets, one identical sticker</h2>
       <p>The flagship rows of both price sheets match to the cent, and so do the cache reads.</p>
 <div class="table-wrapper"><table><thead><tr><th>Per million tokens</th><th>Claude Sonnet 5.5</th><th>GPT-6.1 Sol</th></tr></thead><tbody><tr><td>Input</td><td>$2.00</td><td>$2.00</td></tr><tr><td>Output</td><td>$10.00</td><td>$10.00</td></tr><tr><td>Cached input (hit)</td><td>$0.10</td><td>$0.10</td></tr><tr><td>5m or 30m cache write</td><td>$2.50 (1.25x)</td><td>$2.50 (1.25x)</td></tr><tr><td>Batch input / output</td><td>$1.00 / $5.00</td><td>$1.00 / $5.00</td></tr></tbody></table></div>
-<p>Anthropic's Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI's GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision.</p>
+<p>Anthropic&#x27;s Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI&#x27;s GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision.</p>
 
       <h2 id="s2">2. The tokenizer changes the invoice before your prompt does</h2>
-      <p>Anthropic's pricing page carries a note most price sheets would leave out: Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text.</p>
-<p>So the sticker is $2 per million tokens, and the bill is $2 per million tokens of Claude's counting. For text that costs $2.00 per million source tokens on a standard tokenizer, the same text costs $2.00 × 1.3 = $2.60.</p>
+      <p>Anthropic&#x27;s pricing page carries a note most price sheets would leave out: Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text.</p>
+<p>So the sticker is $2 per million tokens, and the bill is $2 per million tokens of Claude&#x27;s counting. For text that costs $2.00 per million source tokens on a standard tokenizer, the same text costs $2.00 × 1.3 = $2.60.</p>
 <p>That is a 30% difference on the largest line of a RAG or agent bill, and it does not appear anywhere in a side-by-side table that compares per-token prices. The note also says the exact increase depends on the content, so treat 1.3 as a working multiplier, not a constant.</p>
 
       <h2 id="s3">3. Caching is a break-even test, not a discount</h2>
       <p>Both vendors sell the same shape: pay more to write a prefix, pay less to read it. The multipliers are where they part.</p>
 <div class="table-wrapper"><table><thead><tr><th>Cache operation</th><th>Anthropic</th><th>OpenAI</th></tr></thead><tbody><tr><td>Write, short</td><td>1.25x, 5 minutes</td><td>1.25x, 30 minutes</td></tr><tr><td>Write, long</td><td>2x, 1 hour</td><td>2.5x, 12 hours</td></tr><tr><td>Read (hit)</td><td>0.1x, or 0.05x on 5.5 models</td><td>0.05x</td></tr></tbody></table></div>
-<p>A cached prefix costs 1.25 + 0.1n to serve n requests, against n uncached. The break-even is n = 1.39, so the second request already wins, and ten requests cost 2.25 instead of 10, a 77.5% cut on the input line. The long windows are worse deals for short runs: 2x + 0.1n beats n only from the third request, and OpenAI's 2.5x write needs three reads before it pays.</p>
+<p>A cached prefix costs 1.25 + 0.1n to serve n requests, against n uncached. The break-even is n = 1.39, so the second request already wins, and ten requests cost 2.25 instead of 10, a 77.5% cut on the input line. The long windows are worse deals for short runs: 2x + 0.1n beats n only from the third request, and OpenAI&#x27;s 2.5x write needs three reads before it pays.</p>
 
       <h2 id="s4">4. Batch is the one line where both sheets agree</h2>
       <p>Both vendors halve input and output for asynchronous work. Anthropic publishes the batch rows separately; OpenAI prints a Batch table and a separate Flex table at the same numbers.</p>
 <div class="table-wrapper"><table><thead><tr><th>Batch, per million</th><th>Claude Sonnet 5.5</th><th>Claude Opus 5.5</th><th>GPT-6.1 Sol</th></tr></thead><tbody><tr><td>Input</td><td>$1.00</td><td>$2.00</td><td>$1.00</td></tr><tr><td>Output</td><td>$5.00</td><td>$10.00</td><td>$5.00</td></tr></tbody></table></div>
-<p>Anthropic's page says its cache multipliers stack with the batch discount. That combination is the cheapest published way to process a large, stable corpus: a cached prefix at 0.1x inside a batch, on a job that can wait. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.</p>
+<p>Anthropic&#x27;s page says its cache multipliers stack with the batch discount. That combination is the cheapest published way to process a large, stable corpus: a cached prefix at 0.1x inside a batch, on a job that can wait. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.</p>
 
       <h2 id="s5">5. Long prompts are where the sheets stop being comparable</h2>
       <p>Both vendors reprice the prompt once it gets long, and they do it in different shapes.</p>
 <div class="table-wrapper"><table><thead><tr><th>Prompt size</th><th>GPT-6.1 Sol</th><th>Claude Haiku 5.5</th></tr></thead><tbody><tr><td>Short context, input</td><td>$2.00</td><td>$0.10 up to 100,000 tokens</td></tr><tr><td>Long context, input</td><td>$4.00</td><td>$0.50 over 100,000 tokens</td></tr><tr><td>Long context, output</td><td>$15.00</td><td>$2.50 over 100,000 tokens</td></tr></tbody></table></div>
-<p>OpenAI's long-context row doubles input and multiplies output by 1.5. Anthropic's Haiku sheet lists two rows, one for prompts up to 100,000 tokens and one for prompts over it, at five times the rate, and it does not print a marginal split.</p>
+<p>OpenAI&#x27;s long-context row doubles input and multiplies output by 1.5. Anthropic&#x27;s Haiku sheet lists two rows, one for prompts up to 100,000 tokens and one for prompts over it, at five times the rate, and it does not print a marginal split.</p>
 <p>A 200,000-token prompt therefore bills at 0.2 × $0.50 = $0.10 on the over-100k row against $0.02 if the same prompt fit under the line. That cliff, not the per-token sticker, is what a document pipeline hits when someone pastes a whole contract set.</p>
 
       <h2 id="s6">6. Three add-ons that quietly change the unit</h2>
@@ -397,7 +397,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
         <div class="cost-row">
           <div class="cost-label">Long window write on a twice-daily job</div>
           <div class="cost-formula">OpenAI 12h: 2.5 write + 0.10 read = 2.60, against 2 × 1.00 = 2.00 uncached. Anthropic 1h: 2.0 write + 0.10 read = 2.10, against 2.00</div>
-          <div class="cost-result">2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor's long window</div>
+          <div class="cost-result">2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor&#x27;s long window</div>
         </div></div>
       <h2 id="matrix">Decision matrix</h2>
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
@@ -493,7 +493,7 @@ console.log(res.usage?.input_tokens_details);</code></pre>
         </div>
         <div class="faq-item">
           <div class="faq-q">What does the 30% tokenizer note change?</div>
-          <div class="faq-a">It raises the effective price per unit of source text by about 30% on Claude 4.7 and later, against a sheet whose per-token rates are otherwise identical to the competitor's.</div>
+          <div class="faq-a">It raises the effective price per unit of source text by about 30% on Claude 4.7 and later, against a sheet whose per-token rates are otherwise identical to the competitor&#x27;s.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Is a cache write ever a loss?</div>
