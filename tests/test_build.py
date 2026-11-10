@@ -94,7 +94,8 @@ class EditorialTests(unittest.TestCase):
         self.assertNotIn('Verified Nov 2026',page)
         self.assertNotIn('tested for productivity',page)
         self.assertIn('affiliate links',page)
-        self.assertIn('sponsored',page)
+        self.assertIn('href="/deals/"',page)
+        self.assertNotIn('https://link.coupang.com/',page)
 
     def test_comparison_does_not_repeat_verdict(self):
         item=json.loads(build.DATA_PATH.read_text())[0]

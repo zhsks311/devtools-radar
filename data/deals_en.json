@@ -59,6 +59,43 @@
         "returns": "Page advertises 7-day no-reason returns; exclusions and eligibility must be checked.",
         "evidence_url": "https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN",
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T12:02:55.128061+00:00",
+        "url": "https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN",
+        "product_match": true,
+        "evidence": "Independent web retrieval of DJI CN product page confirmed Osmo Mobile 7, CNY 349 and purchase UI. Address inventory and discount unverified."
+      },
+      "link_original": {
+        "url": "https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at DJI China",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "dji-osmo-mobile-7-cn",
+        "product": "DJI Osmo Mobile 7",
+        "seller_url": "https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN",
+        "recorded_price": 349,
+        "currency": "CNY",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 349,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "conditions": [
+          "CN storefront CNY349; free shipping and seven-day return advertised; address-specific inventory unverified."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -114,6 +151,36 @@
         "returns": "Item-specific return conditions unverified; check retailer before ordering.",
         "evidence_url": "https://item.lenovo.com.cn/product/1057925.html",
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:04.245028+00:00",
+        "url": "https://item.lenovo.com.cn/product/1057925.html",
+        "product_match": true,
+        "evidence": "Seller product title: 联想极光键盘GK10 RT60 磁轴有线机械键盘 黑色_多少钱_参数_图片_价格_用户评价_联想商城. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://item.lenovo.com.cn/product/1057925.html",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at Lenovo China",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "lenovo-gk10-rt60-cn",
+        "product": "Lenovo GK10 RT60 magnetic keyboard · black",
+        "seller_url": "https://item.lenovo.com.cn/product/1057925.html",
+        "recorded_price": 199,
+        "currency": "CNY",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [],
+        "limitations": [
+          "Current product-page price not available in retrieved page; previously listed homepage price is not independently reverified. Inventory and discount unverified."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -169,6 +236,36 @@
         "returns": "Item-specific return conditions unverified; check retailer before ordering.",
         "evidence_url": "https://item.lenovo.com.cn/product/1058662.html",
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:10.120101+00:00",
+        "url": "https://item.lenovo.com.cn/product/1058662.html",
+        "product_match": true,
+        "evidence": "Seller product title: 联想 LOQ 25-10 24.5英寸FHD IPS 高刷电竞显示器_多少钱_参数_图片_价格_用户评价_联想商城. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://item.lenovo.com.cn/product/1058662.html",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at Lenovo China",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "lenovo-loq-25-10-cn",
+        "product": "Lenovo LOQ 25-10 · 24.5-inch FHD 280 Hz monitor",
+        "seller_url": "https://item.lenovo.com.cn/product/1058662.html",
+        "recorded_price": 599,
+        "currency": "CNY",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [],
+        "limitations": [
+          "Current product-page price not available in retrieved page; previously listed homepage price is not independently reverified. Inventory and discount unverified."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -224,6 +321,36 @@
         "returns": "Item-specific return conditions unverified; check retailer before ordering.",
         "evidence_url": "https://item.lenovo.com.cn/product/1016949.html",
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:10.163689+00:00",
+        "url": "https://item.lenovo.com.cn/product/1016949.html",
+        "product_match": true,
+        "evidence": "Seller product title: 联想7合1电脑手机屏幕清洁套装C02_多少钱_参数_图片_价格_用户评价_联想商城. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://item.lenovo.com.cn/product/1016949.html",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at Lenovo China",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "lenovo-c02-cn",
+        "product": "Lenovo C02 · 7-in-1 cleaning kit",
+        "seller_url": "https://item.lenovo.com.cn/product/1016949.html",
+        "recorded_price": 29.9,
+        "currency": "CNY",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [],
+        "limitations": [
+          "Current product-page price not available in retrieved page; previously listed homepage price is not independently reverified. Inventory and discount unverified."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -284,6 +411,53 @@
           "https://www.ebgames.com.au/terms",
           "https://support.ebgames.com.au/hc/en-us/articles/13814050254735-Do-you-ship-internationally"
         ]
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:10.296055+00:00",
+        "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+        "product_match": true,
+        "evidence": "Seller product title: Nintendo Switch 2 Console - Nintendo Switch 2 - EB Games Australia. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at EB Games Australia",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "43ca41d03daa",
+        "product": "Nintendo Switch 2 Console",
+        "seller_url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+        "recorded_price": 728,
+        "currency": "AUD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 728,
+        "deal_status": "below_official_srp",
+        "evidence": [
+          {
+            "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "comparison": {
+          "url": "https://www.nintendo.com/au/news-and-articles/price-revision-for-nintendo-switch-2-console/",
+          "type": "current official SRP effective 2026-09-01",
+          "price": 769.95,
+          "currency": "AUD",
+          "difference": 41.95,
+          "percent": 5.45
+        },
+        "conditions": [
+          "AUD728 public displayed price; AUD698 is separate paid-member offer, not unrestricted price.",
+          "Home delivery available displayed; shipping costs and address availability require checkout."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -338,6 +512,50 @@
         "returns": "Return/refund rules: check retailer before purchase or activation.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:10.383172+00:00",
+        "url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+        "product_match": true,
+        "evidence": "Seller product title: TextSniper for Mac: Lifetime Subscription | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at StackSocial",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "de0f62d0487f",
+        "product": "TextSniper for Mac",
+        "seller_url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+        "recorded_price": 3.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 3.99,
+        "deal_status": "below_vendor_displayed_price_with_caveat",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "comparison": {
+          "url": "https://textsniper.app/",
+          "price": 7.99,
+          "currency": "USD",
+          "note": "Official top buy menu 1Mac7.99 but another CTA6.99; conflicting official price so no exact percentage."
+        },
+        "conditions": [
+          "New users only; 1 Mac; version1.6.0; redeem within30days. Minor updates only, major upgrades extra."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -392,6 +610,50 @@
         "returns": "Return/refund rules: check retailer before purchase or activation.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:11.649043+00:00",
+        "url": "https://www.stacksocial.com/sales/slidepad-mac-app",
+        "product_match": true,
+        "evidence": "Seller product title: Slidepad Mac App: Lifetime Deal | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.stacksocial.com/sales/slidepad-mac-app",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at StackSocial",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "9caac4280b19",
+        "product": "Slidepad for Mac",
+        "seller_url": "https://www.stacksocial.com/sales/slidepad-mac-app",
+        "recorded_price": 8.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 8.99,
+        "deal_status": "not_like_for_like_comparison",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/slidepad-mac-app",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "comparison": {
+          "url": "https://slidepad.app/",
+          "price": 25,
+          "currency": "USD",
+          "note": "Official current lifetime3Mac seats/macOS15+, reseller1device/version1.0.43. Do not claim equal-edition discount."
+        },
+        "conditions": [
+          "New users only;1 device;redeem30days; updates included per reseller."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -453,6 +715,50 @@
         "returns": "Return/refund rules: check retailer before purchase or activation.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:14.004496+00:00",
+        "url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
+        "product_match": true,
+        "evidence": "Seller product title: PDF Expert Premium Plan: Lifetime Subscription (Mac) | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at StackSocial",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "bde198764514",
+        "product": "PDF Expert for Mac · version 3",
+        "seller_url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
+        "recorded_price": 79.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 79.99,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "conditions": [
+          "New users only; PDF Expert3 Mac; personal macOS devices; no iOS; redeem30days; new features may cost extra."
+        ],
+        "comparison": {
+          "url": "https://pdfexpert.com/pricing",
+          "price": 799.99,
+          "currency": "PLN",
+          "note": "Official geo-rendered PLN price; not same currency, no percentage comparison."
+        },
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -514,6 +820,56 @@
         "returns": "Return/refund rules: check retailer before purchase or activation.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:14.433160+00:00",
+        "url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb",
+        "product_match": true,
+        "evidence": "Seller product title: Koofr Cloud Storage and Remote Backup 1TB Lifetime Deal. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at StackSocial",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "e30c9a510928",
+        "product": "Koofr · 1 TB lifetime plan",
+        "seller_url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb",
+        "recorded_price": 199.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 199.99,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "coupon": {
+          "code": "KOOFR",
+          "displayed_price": 159.99,
+          "checkout_verified": false
+        },
+        "conditions": [
+          "One lifetime code per person; redeem15days; lifetime subject to service terms/inactivity."
+        ],
+        "comparison": {
+          "url": "https://koofr.eu/pricing/",
+          "price": 10,
+          "currency": "EUR",
+          "period": "month",
+          "note": "Recurring1TB not identical lifetime product. Reseller810USD suggested price not substantiated."
+        },
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -568,6 +924,49 @@
         "returns": "Return/refund rules: check retailer before purchase or activation.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:15.760342+00:00",
+        "url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
+        "product_match": true,
+        "evidence": "Seller product title: VSDC Video Editor Pro: Lifetime License | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at StackSocial",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "2f57dcdf2174",
+        "product": "VSDC Video Editor Pro · version 11",
+        "seller_url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
+        "recorded_price": 29.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 29.99,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "coupon": {
+          "code": "DEAL20",
+          "displayed_price": 24,
+          "checkout_verified": false
+        },
+        "conditions": [
+          "Version11;2devices;redeem30days."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -622,6 +1021,53 @@
         "returns": "Return/refund rules: check retailer before purchase or activation.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:16.121497+00:00",
+        "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
+        "product_match": true,
+        "evidence": "Seller product title: AdGuard Family Plan Lifetime Deal | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at StackSocial",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "3b4097687c74",
+        "product": "AdGuard Family · 9 devices",
+        "seller_url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
+        "recorded_price": 19.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 19.99,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "coupon": {
+          "code": "DEAL20",
+          "displayed_price": 16,
+          "checkout_verified": false
+        },
+        "conditions": [
+          "Family9devices; lifetime; vendor dynamic price not retrieved."
+        ],
+        "comparison": {
+          "url": "https://adguard.com/en/license.html",
+          "note": "Family9device license confirmed, dynamic current price unavailable;169.99USD reference unverified."
+        },
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -676,6 +1122,49 @@
         "returns": "Return/refund rules: check retailer before purchase or activation.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:16.141390+00:00",
+        "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+        "product_match": true,
+        "evidence": "Seller product title: AcePDF Converter &amp; Editor: Lifetime License | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at StackSocial",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "3b4c5d317572",
+        "product": "AcePDF · 2 devices",
+        "seller_url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+        "recorded_price": 29.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 29.99,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "coupon": {
+          "code": "DEAL20",
+          "displayed_price": 24,
+          "checkout_verified": false
+        },
+        "conditions": [
+          "2devices;Windows1.4.5.5/Mac1.6.1.0;redeem30days;conversion Internet required."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -730,6 +1219,50 @@
         "returns": "Return/refund rules: check retailer before purchase or activation.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-10T11:59:16.145254+00:00",
+        "url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder",
+        "product_match": true,
+        "evidence": "Seller product title: Action! Screen &amp; Gameplay Recorder: Lifetime Subscription | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "reason": "product_detail; "
+      },
+      "link_original": {
+        "url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at StackSocial",
+        "label_kind": "retailer"
+      },
+      "price_review": {
+        "id": "0deb259ecfd4",
+        "product": "Action! Screen & Gameplay Recorder",
+        "seller_url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder",
+        "recorded_price": 9.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 9.99,
+        "deal_status": "below_vendor_displayed_price_with_caveat",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder",
+            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          }
+        ],
+        "limitations": [
+          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+        ],
+        "comparison": {
+          "url": "https://mirillis.com/store",
+          "price": 19.77,
+          "currency": "USD",
+          "note": "Official current flash-sale price from19.77, not former29.95; license scope must match."
+        },
+        "conditions": [
+          "New users only;1device;v4.20.2;redeem30days."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     }
   ],

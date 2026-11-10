@@ -42,6 +42,43 @@
         "matched_keyword": "로지텍 MX Master 3S",
         "label": "로지텍 MX Master 3S 로켓직구 (와우 무료배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:40.903008+00:00",
+        "url": "https://link.coupang.com/a/iyBYu25xw4",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyBYu25xw4",
+        "tracked": true,
+        "matched_keyword": "로지텍 MX Master 3S",
+        "label": "로지텍 MX Master 3S 로켓직구 (와우 무료배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-mx-master-3s",
+        "product": "로지텍 MX Master 3S (로켓직구)",
+        "seller_url": "https://link.coupang.com/a/iyBYu25xw4",
+        "recorded_price": 95220,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyBYu25xw4",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -79,6 +116,43 @@
         "matched_keyword": "올리브영 기프트카드",
         "label": "올리브영 기프트카드 2만원권 (실시간 e쿠폰)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:40.903697+00:00",
+        "url": "https://link.coupang.com/a/iyI8z25s60",
+        "product_match": false,
+        "evidence": "쿠팡!",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyI8z25s60",
+        "tracked": true,
+        "matched_keyword": "올리브영 기프트카드",
+        "label": "올리브영 기프트카드 2만원권 (실시간 e쿠폰)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-oliveyoung-gift-card-20k",
+        "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
+        "seller_url": "https://link.coupang.com/a/iyI8z25s60",
+        "recorded_price": 19600,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyI8z25s60",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -116,6 +190,43 @@
         "matched_keyword": "빼빼로 샘플러 6종",
         "label": "롯데 빼빼로 샘플러 6종 세트 258g (새벽배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:40.904316+00:00",
+        "url": "https://link.coupang.com/a/iyJh99DCuW",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyJh99DCuW",
+        "tracked": true,
+        "matched_keyword": "빼빼로 샘플러 6종",
+        "label": "롯데 빼빼로 샘플러 6종 세트 258g (새벽배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-pepero-sampler-6pack",
+        "product": "롯데 빼빼로 샘플러 6종 세트 258g (빼빼로데이)",
+        "seller_url": "https://link.coupang.com/a/iyJh99DCuW",
+        "recorded_price": 9300,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyJh99DCuW",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -153,6 +264,43 @@
         "matched_keyword": "오리온 와우스낵 16팩",
         "label": "오리온 와우스낵 16팩 선물세트 (새벽배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:40.904742+00:00",
+        "url": "https://link.coupang.com/a/iyJbjsBrye",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyJbjsBrye",
+        "tracked": true,
+        "matched_keyword": "오리온 와우스낵 16팩",
+        "label": "오리온 와우스낵 16팩 선물세트 (새벽배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-orion-wow-snack-16",
+        "product": "오리온 와우스낵 16팩 선물세트 (인기스낵 16봉)",
+        "seller_url": "https://link.coupang.com/a/iyJbjsBrye",
+        "recorded_price": 10980,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyJbjsBrye",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -190,6 +338,43 @@
         "matched_keyword": "쿠팡 기프트카드",
         "label": "쿠팡·쿠팡이츠 기프트카드 (모바일 e쿠폰)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:40.905752+00:00",
+        "url": "https://link.coupang.com/a/iyJeI3BcT6",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyJeI3BcT6",
+        "tracked": true,
+        "matched_keyword": "쿠팡 기프트카드",
+        "label": "쿠팡·쿠팡이츠 기프트카드 (모바일 e쿠폰)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-coupang-gift-card-10k",
+        "product": "쿠팡·쿠팡이츠 기프트카드 10,000원권 (모바일 e쿠폰)",
+        "seller_url": "https://link.coupang.com/a/iyJeI3BcT6",
+        "recorded_price": 10000,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyJeI3BcT6",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -227,6 +412,43 @@
         "matched_keyword": "오리온 비쵸비",
         "label": "오리온 비쵸비 125g 2개입 (새벽배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:52.092073+00:00",
+        "url": "https://link.coupang.com/a/iyJdEYzZMO",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyJdEYzZMO",
+        "tracked": true,
+        "matched_keyword": "오리온 비쵸비",
+        "label": "오리온 비쵸비 125g 2개입 (새벽배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-orion-bichobi-2pack",
+        "product": "오리온 비쵸비 비스켓 125g 2개입",
+        "seller_url": "https://link.coupang.com/a/iyJdEYzZMO",
+        "recorded_price": 4370,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyJdEYzZMO",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -264,6 +486,44 @@
         "matched_keyword": "사무실 과자 10종 탕비실 세트",
         "label": "사무실 과자 10종 탕비실 세트 (무료배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:52.263279+00:00",
+        "url": "https://link.coupang.com/a/iyJcuOpMhU",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyJcuOpMhU",
+        "tracked": true,
+        "matched_keyword": "사무실 과자 10종 탕비실 세트",
+        "label": "사무실 과자 10종 탕비실 세트 (무료배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-office-pantry-snack-10",
+        "product": "사무실 과자 세트 10종 탕비실 간식 세트",
+        "seller_url": "https://link.coupang.com/a/iyJcuOpMhU",
+        "recorded_price": 27800,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyJcuOpMhU",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+          "Product model/specification/variant insufficiently specific to compare like-for-like."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -301,6 +561,43 @@
         "matched_keyword": "벨킨 100W GaN 충전기",
         "label": "벨킨 100W GaN 초고속 충전기 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:52.505917+00:00",
+        "url": "https://link.coupang.com/a/iyIrM2GlPg",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyIrM2GlPg",
+        "tracked": true,
+        "matched_keyword": "벨킨 100W GaN 충전기",
+        "label": "벨킨 100W GaN 초고속 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-belkin-100w-gan",
+        "product": "벨킨 부스트차지 100W GaN 초고속 충전기",
+        "seller_url": "https://link.coupang.com/a/iyIrM2GlPg",
+        "recorded_price": 39900,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyIrM2GlPg",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -338,6 +635,44 @@
         "matched_keyword": "LG 울트라기어 27인치 QHD",
         "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:52.615449+00:00",
+        "url": "https://link.coupang.com/a/iyztqGf2zc",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyztqGf2zc",
+        "tracked": true,
+        "matched_keyword": "LG 울트라기어 27인치 QHD",
+        "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-lg-ultragear-27",
+        "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
+        "seller_url": "https://link.coupang.com/a/iyztqGf2zc",
+        "recorded_price": 241734,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "result": "search_result",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+          "Product model/specification/variant insufficiently specific to compare like-for-like."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -375,6 +710,43 @@
         "matched_keyword": "유그린 100W GaN 충전기",
         "label": "유그린 100W GaN 3포트 충전기 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:58.954509+00:00",
+        "url": "https://link.coupang.com/a/iyIsS5yg2e",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyIsS5yg2e",
+        "tracked": true,
+        "matched_keyword": "유그린 100W GaN 충전기",
+        "label": "유그린 100W GaN 3포트 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-ugreen-100w-gan",
+        "product": "유그린 넥소드 프로 GaN 100W 3포트 멀티충전기",
+        "seller_url": "https://link.coupang.com/a/iyIsS5yg2e",
+        "recorded_price": 60900,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyIsS5yg2e",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -412,6 +784,43 @@
         "matched_keyword": "아트뮤 100W 접지 충전기",
         "label": "아트뮤 100W 접지 초고속 충전기 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:58.976568+00:00",
+        "url": "https://link.coupang.com/a/iyItY3nD1U",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyItY3nD1U",
+        "tracked": true,
+        "matched_keyword": "아트뮤 100W 접지 충전기",
+        "label": "아트뮤 100W 접지 초고속 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-artmu-100w-gb102",
+        "product": "아트뮤 PD 3.2 100W 접지 2포트 멀티충전기",
+        "seller_url": "https://link.coupang.com/a/iyItY3nD1U",
+        "recorded_price": 35700,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyItY3nD1U",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -449,6 +858,43 @@
         "matched_keyword": "소니 MDR-3R",
         "label": "소니 MDR-3R 이어폰 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:59.083195+00:00",
+        "url": "https://link.coupang.com/a/iyzv0uG1N6",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyzv0uG1N6",
+        "tracked": true,
+        "matched_keyword": "소니 MDR-3R",
+        "label": "소니 MDR-3R 이어폰 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-sony-mdr-3r",
+        "product": "소니 MDR-3R 모니터링 이어폰",
+        "seller_url": "https://link.coupang.com/a/iyzv0uG1N6",
+        "recorded_price": 78640,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "result": "search_result",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -486,6 +932,44 @@
         "matched_keyword": "애플 M4 맥북 프로",
         "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:59.278769+00:00",
+        "url": "https://link.coupang.com/a/iyxHrMNtyC",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyxHrMNtyC",
+        "tracked": true,
+        "matched_keyword": "애플 M4 맥북 프로",
+        "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-apple-m4-macbook-pro",
+        "product": "Apple M4 Pro MacBook Pro 14",
+        "seller_url": "https://link.coupang.com/a/iyxHrMNtyC",
+        "recorded_price": 2990000,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "result": "search_result",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+          "Product model/specification/variant insufficiently specific to compare like-for-like."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -523,6 +1007,44 @@
         "matched_keyword": "기계식 키보드 저소음",
         "label": "저소음 적축 기계식 키보드 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:59.585804+00:00",
+        "url": "https://link.coupang.com/a/iyzxBosAM0",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyzxBosAM0",
+        "tracked": true,
+        "matched_keyword": "기계식 키보드 저소음",
+        "label": "저소음 적축 기계식 키보드 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-silent-mech-keyboard",
+        "product": "저소음 적축 기계식 키보드",
+        "seller_url": "https://link.coupang.com/a/iyzxBosAM0",
+        "recorded_price": 68900,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyzxBosAM0",
+            "result": "search_result",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+          "Product model/specification/variant insufficiently specific to compare like-for-like."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -560,6 +1082,44 @@
         "matched_keyword": "모니터암",
         "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:59:04.097743+00:00",
+        "url": "https://link.coupang.com/a/iyzzXmg6CG",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyzzXmg6CG",
+        "tracked": true,
+        "matched_keyword": "모니터암",
+        "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-heavy-duty-monitor-arm",
+        "product": "고중량 기계식 모니터암 거치대",
+        "seller_url": "https://link.coupang.com/a/iyzzXmg6CG",
+        "recorded_price": 49900,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "result": "search_result",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+          "Product model/specification/variant insufficiently specific to compare like-for-like."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -597,6 +1157,44 @@
         "matched_keyword": "미니PC 16GB",
         "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:59:04.149450+00:00",
+        "url": "https://link.coupang.com/a/iyzyHkgEOi",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyzyHkgEOi",
+        "tracked": true,
+        "matched_keyword": "미니PC 16GB",
+        "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-mini-pc-n100",
+        "product": "미니PC 16GB N100 저전력 홈서버",
+        "seller_url": "https://link.coupang.com/a/iyzyHkgEOi",
+        "recorded_price": 189000,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "result": "search_result",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+          "Product model/specification/variant insufficiently specific to compare like-for-like."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     },
     {
@@ -634,6 +1232,44 @@
         "matched_keyword": "고소한 원두 1kg",
         "label": "고소한 원두 1kg 대용량 (로켓배송)",
         "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:59:04.155777+00:00",
+        "url": "https://link.coupang.com/a/iyzuKorRTw",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyzuKorRTw",
+        "tracked": true,
+        "matched_keyword": "고소한 원두 1kg",
+        "label": "고소한 원두 1kg 대용량 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-office-coffee-bean-1kg",
+        "product": "사무실 대용량 원두 1kg (고소한 블렌드)",
+        "seller_url": "https://link.coupang.com/a/iyzuKorRTw",
+        "recorded_price": 16900,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyzuKorRTw",
+            "result": "search_result",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+          "Product model/specification/variant insufficiently specific to compare like-for-like."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       }
     }
   ],

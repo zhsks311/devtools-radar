@@ -1,0 +1,272 @@
+[
+  {
+    "id": "deal-mx-master-3s",
+    "captured_at": "2026-11-10T11:58:40.903008+00:00",
+    "original_url": "https://link.coupang.com/a/iyBYu25xw4",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-oliveyoung-gift-card-20k",
+    "captured_at": "2026-11-10T11:58:40.903697+00:00",
+    "original_url": "https://link.coupang.com/a/iyI8z25s60",
+    "status": 200,
+    "title": "쿠팡!",
+    "detail_verified": false,
+    "classification": "product_route_unverified"
+  },
+  {
+    "id": "deal-pepero-sampler-6pack",
+    "captured_at": "2026-11-10T11:58:40.904316+00:00",
+    "original_url": "https://link.coupang.com/a/iyJh99DCuW",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-orion-wow-snack-16",
+    "captured_at": "2026-11-10T11:58:40.904742+00:00",
+    "original_url": "https://link.coupang.com/a/iyJbjsBrye",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-coupang-gift-card-10k",
+    "captured_at": "2026-11-10T11:58:40.905752+00:00",
+    "original_url": "https://link.coupang.com/a/iyJeI3BcT6",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-orion-bichobi-2pack",
+    "captured_at": "2026-11-10T11:58:52.092073+00:00",
+    "original_url": "https://link.coupang.com/a/iyJdEYzZMO",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-office-pantry-snack-10",
+    "captured_at": "2026-11-10T11:58:52.263279+00:00",
+    "original_url": "https://link.coupang.com/a/iyJcuOpMhU",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-belkin-100w-gan",
+    "captured_at": "2026-11-10T11:58:52.505917+00:00",
+    "original_url": "https://link.coupang.com/a/iyIrM2GlPg",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-lg-ultragear-27",
+    "captured_at": "2026-11-10T11:58:52.615449+00:00",
+    "original_url": "https://link.coupang.com/a/iyztqGf2zc",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "search_result",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-ugreen-100w-gan",
+    "captured_at": "2026-11-10T11:58:58.954509+00:00",
+    "original_url": "https://link.coupang.com/a/iyIsS5yg2e",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-artmu-100w-gb102",
+    "captured_at": "2026-11-10T11:58:58.976568+00:00",
+    "original_url": "https://link.coupang.com/a/iyItY3nD1U",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "product_route_unverified",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-sony-mdr-3r",
+    "captured_at": "2026-11-10T11:58:59.083195+00:00",
+    "original_url": "https://link.coupang.com/a/iyzv0uG1N6",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "search_result",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-apple-m4-macbook-pro",
+    "captured_at": "2026-11-10T11:58:59.278769+00:00",
+    "original_url": "https://link.coupang.com/a/iyxHrMNtyC",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "search_result",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-silent-mech-keyboard",
+    "captured_at": "2026-11-10T11:58:59.585804+00:00",
+    "original_url": "https://link.coupang.com/a/iyzxBosAM0",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "search_result",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-heavy-duty-monitor-arm",
+    "captured_at": "2026-11-10T11:59:04.097743+00:00",
+    "original_url": "https://link.coupang.com/a/iyzzXmg6CG",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "search_result",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-mini-pc-n100",
+    "captured_at": "2026-11-10T11:59:04.149450+00:00",
+    "original_url": "https://link.coupang.com/a/iyzyHkgEOi",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "search_result",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "deal-office-coffee-bean-1kg",
+    "captured_at": "2026-11-10T11:59:04.155777+00:00",
+    "original_url": "https://link.coupang.com/a/iyzuKorRTw",
+    "status": 403,
+    "detail_verified": false,
+    "classification": "search_result",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "dji-osmo-mobile-7-cn",
+    "captured_at": "2026-11-10T11:59:04.193029+00:00",
+    "original_url": "https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN",
+    "status": 200,
+    "title": null,
+    "detail_verified": false,
+    "classification": "product_route_unverified"
+  },
+  {
+    "id": "lenovo-gk10-rt60-cn",
+    "captured_at": "2026-11-10T11:59:04.245028+00:00",
+    "original_url": "https://item.lenovo.com.cn/product/1057925.html",
+    "status": 200,
+    "title": "联想极光键盘GK10 RT60 磁轴有线机械键盘 黑色_多少钱_参数_图片_价格_用户评价_联想商城",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "lenovo-loq-25-10-cn",
+    "captured_at": "2026-11-10T11:59:10.120101+00:00",
+    "original_url": "https://item.lenovo.com.cn/product/1058662.html",
+    "status": 200,
+    "title": "联想 LOQ 25-10 24.5英寸FHD IPS 高刷电竞显示器_多少钱_参数_图片_价格_用户评价_联想商城",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "lenovo-c02-cn",
+    "captured_at": "2026-11-10T11:59:10.163689+00:00",
+    "original_url": "https://item.lenovo.com.cn/product/1016949.html",
+    "status": 200,
+    "title": "联想7合1电脑手机屏幕清洁套装C02_多少钱_参数_图片_价格_用户评价_联想商城",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "43ca41d03daa",
+    "captured_at": "2026-11-10T11:59:10.296055+00:00",
+    "original_url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+    "status": 200,
+    "title": "Nintendo Switch 2 Console - Nintendo Switch 2 - EB Games Australia",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "de0f62d0487f",
+    "captured_at": "2026-11-10T11:59:10.383172+00:00",
+    "original_url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+    "status": 200,
+    "title": "TextSniper for Mac: Lifetime Subscription | StackSocial",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "9caac4280b19",
+    "captured_at": "2026-11-10T11:59:11.649043+00:00",
+    "original_url": "https://www.stacksocial.com/sales/slidepad-mac-app",
+    "status": 200,
+    "title": "Slidepad Mac App: Lifetime Deal | StackSocial",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "bde198764514",
+    "captured_at": "2026-11-10T11:59:14.004496+00:00",
+    "original_url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
+    "status": 200,
+    "title": "PDF Expert Premium Plan: Lifetime Subscription (Mac) | StackSocial",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "e30c9a510928",
+    "captured_at": "2026-11-10T11:59:14.433160+00:00",
+    "original_url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb",
+    "status": 200,
+    "title": "Koofr Cloud Storage and Remote Backup 1TB Lifetime Deal",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "2f57dcdf2174",
+    "captured_at": "2026-11-10T11:59:15.760342+00:00",
+    "original_url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
+    "status": 200,
+    "title": "VSDC Video Editor Pro: Lifetime License | StackSocial",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "3b4097687c74",
+    "captured_at": "2026-11-10T11:59:16.121497+00:00",
+    "original_url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
+    "status": 200,
+    "title": "AdGuard Family Plan Lifetime Deal | StackSocial",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "3b4c5d317572",
+    "captured_at": "2026-11-10T11:59:16.141390+00:00",
+    "original_url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+    "status": 200,
+    "title": "AcePDF Converter &amp; Editor: Lifetime License | StackSocial",
+    "detail_verified": true,
+    "classification": "product_detail"
+  },
+  {
+    "id": "0deb259ecfd4",
+    "captured_at": "2026-11-10T11:59:16.145254+00:00",
+    "original_url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder",
+    "status": 200,
+    "title": "Action! Screen &amp; Gameplay Recorder: Lifetime Subscription | StackSocial",
+    "detail_verified": true,
+    "classification": "product_detail"
+  }
+]

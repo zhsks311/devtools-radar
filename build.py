@@ -330,11 +330,11 @@ def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
             out.append(f"### {sec['title']}")
             out.append(re.sub(r"\s+", " ", body).strip()[:900])
             out.append("")
-    out += ["## Current deals (KR)", ""]
+    out += ["## Retained Korean listings (not confirmed current deals)", ""]
     for d in ko_deals.get("feed", [])[:10]:
         out.append(f"- {d['product']} — {d.get('price') or 'see source'} KRW at {d.get('store') or 'source'} "
-                   f"({d.get('category_label')}) {d.get('source', {}).get('url', '')}")
-    out += ["", "## Current deals (global)", ""]
+                   f"({d.get('category_label')}) Historical price, not reverified. {d.get('source', {}).get('url', '')}")
+    out += ["", "## Recorded international product offers (discounts not independently established)", ""]
     for d in en_deals.get("feed", []):
         out.append(f"- {d['product']} — {d.get('price')} {d.get('currency')} at {d.get('store') or 'source'} "
                    f"({d.get('category_label')}) {d.get('link', {}).get('url', '')} "
@@ -346,16 +346,9 @@ def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
 # ---------------------------------------------------------------- pages
 
 DEALS_SECTION_HTML = """
-    <aside class="gear-note" aria-label="Affiliate links">
-      <h3>Elsewhere: desk gear</h3>
-      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
-      <p class="gear-links">
-        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
-        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
-        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
-      </p>
-      <p>These are affiliate links; purchases may earn a commission.<br>
-      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    <aside class="gear-note" aria-label="Shopping catalog">
+      <h3>Elsewhere: product offers</h3>
+      <p><a href="/deals/">Browse the product catalog</a>. Direct seller links are shown only after a product-page review; unresolved links are held. Disclosed affiliate links may earn a commission.</p>
     </aside>
 """
 
@@ -1517,6 +1510,10 @@ def build_site(data_path=DATA_PATH, output=DIST_DIR, deals_path=DEALS_DATA_PATH,
     if errors:
         raise ValueError("Invalid build input:\n" + "\n".join(errors))
     deals, en_deals = load_deals(deals_path), load_deals(en_deals_path)
+    from tools.product_links import validate_deal_links
+    link_errors = validate_deal_links(deals.get('feed', []) + en_deals.get('feed', []))
+    if link_errors:
+        raise ValueError('Product link registration failed: ' + '; '.join(link_errors))
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".radar-build-", dir=output.parent) as temp:
         stage = Path(temp) / "site"

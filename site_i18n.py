@@ -1,6 +1,7 @@
 """Shared six-language navigation and one market-aware deal catalogue."""
 import html, json, re, datetime
 from pathlib import Path
+from tools.product_links import publishable_link
 from xml.sax.saxutils import escape
 LANGS={'en':'English','ko':'한국어','zh':'中文','ja':'日本語','es':'Español','fr':'Français'}
 PATHS={k:('/deals/' if k=='en' else f'/{k}/') for k in LANGS}
@@ -12,6 +13,12 @@ LABELS={
 'ja':['セール','ツール比較','すべてのセールを一か所で','販売地域とカテゴリで絞り込み。表示言語と配送可能地域は別です。','販売地域','カテゴリ','すべて','韓国','中国の販売店','オーストラリア','購入可能地域未確認','商品を見る','購入条件','記録された価格です。決済前に価格と在庫をご確認ください。','アフィリエイト収益を得る場合があります。韓国商品は既存の記録であり、価格の再確認はしていません。','該当する商品がありません。','件','出典の記録（原文）','比較記事の本文は英語です。','ソフトウェア','SaaS・クラウド','ゲーム','ハードウェア','キーボード・マウス','ノートパソコン','モニター・デスク','余暇','食品・お菓子','商品券','テクノロジー','出典'],
 'es':['Ofertas','Comparativas','Todas las ofertas en un lugar','Filtra por mercado y categoría. El idioma no determina la disponibilidad del envío.','Mercado','Categoría','Todas','Corea','Tienda de China','Australia','Disponibilidad no verificada','Ver producto','Condiciones de compra','Precio registrado; confirma el precio y las existencias al pagar.','Podemos recibir comisiones por enlaces afiliados. Las ofertas coreanas son registros anteriores, sin nueva verificación de precios.','No hay ofertas con estos filtros.','ofertas','Registro de la fuente (idioma original)','Los artículos comparativos están disponibles en inglés.','Software','SaaS y nube','Videojuegos','Hardware','Teclados y ratones','Portátiles','Monitores y escritorios','Ocio','Comida y aperitivos','Vales','Tecnología','Fuente'],
 'fr':['Offres','Comparatifs','Toutes les offres au même endroit','Filtrez par marché et catégorie. La langue ne détermine pas les zones de livraison.','Marché','Catégorie','Tout','Corée','Boutique chinoise','Australie','Disponibilité non vérifiée','Voir le produit','Conditions d’achat','Prix relevé ; vérifiez le prix et le stock au paiement.','Les liens affiliés peuvent générer une commission. Les offres coréennes sont des données conservées, sans nouvelle vérification des prix.','Aucune offre ne correspond.','offres','Relevé de la source (langue originale)','Les articles comparatifs sont disponibles en anglais.','Logiciels','SaaS et cloud','Jeux vidéo','Matériel','Claviers et souris','Ordinateurs portables','Écrans et bureaux','Loisirs','Alimentation','Bons cadeaux','Technologie','Source']}
+PRICE_CURRENT={'en':'Seller displayed price checked; checkout not verified','ko':'판매페이지 표시가 확인 · 최종 결제 미검증','zh':'已核实卖家标价；结算价未验证','ja':'販売ページの表示価格を確認・決済は未確認','es':'Precio del vendedor comprobado; pago sin verificar','fr':'Prix affiché vérifié ; paiement non vérifié'}
+DISCOUNT_UNKNOWN={'en':'Discount / historical low not established','ko':'할인·역대 최저가 근거 미확인','zh':'折扣及历史低价未证实','ja':'割引・過去最安値の根拠は未確認','es':'Descuento y mínimo histórico sin acreditar','fr':'Réduction et minimum historique non établis'}
+SRP={'en':'5.45% below official AUD 769.95 RRP; not a proven historical low','ko':'공식 권장가 A$769.95 대비 5.45% 낮음 · 역대 최저 여부 미확인','zh':'比官方建议价 A$769.95 低5.45%；非已证实历史低价','ja':'公式希望価格 A$769.95 より5.45%安い・過去最安の証明なし','es':'5,45% por debajo del PVP oficial A$769,95; no mínimo histórico probado','fr':'5,45 % sous le prix conseillé officiel A$769,95 ; minimum historique non prouvé'}
+HELD_SUMMARY={'en':'Retained listing, not a confirmed current deal. Product identity and current price need verification.','ko':'보존된 이전 상품 기록입니다. 현재 핫딜이 아니며 상품 일치와 현재 가격을 확인 중입니다.','zh':'保留的历史记录，并非已确认的当前优惠。商品身份和当前价格待核实。','ja':'保存された過去の商品記録です。現在の特価ではなく、商品と現行価格は確認中です。','es':'Registro anterior, no una oferta actual confirmada. Producto y precio pendientes de verificar.','fr':'Ancienne fiche conservée, pas une offre actuelle confirmée. Produit et prix à vérifier.'}
+PRICE_RECORDED={'en':'Previously recorded price; not reverified','ko':'이전 기록 가격 · 현재 가격 미검증','zh':'历史记录价格，当前价格未核实','ja':'過去の記録価格・現在価格は未確認','es':'Precio registrado anteriormente; sin reverificar','fr':'Prix précédemment relevé ; non revérifié'}
+HELD={'en':'Product link awaiting verification','ko':'상품 링크 확인 중','zh':'商品链接待核实','ja':'商品リンクを確認中','es':'Enlace de producto pendiente de verificar','fr':'Lien du produit en attente de vérification'}
 CATS={'software':20,'cloud':21,'gaming':22,'hardware':23,'keyboard-mouse':24,'laptops':25,'monitor-desk':26,'afterwork':27,'snacks':28,'vouchers':29,'tech':30}
 CATS={key:value-1 for key,value in CATS.items()}
 def e(x):return html.escape(str(x),quote=True)
@@ -32,12 +39,20 @@ def catalogue(lang,feeds,translations):
   title=loc.get('product',d.get('product','')); summary=loc.get('summary',''); conditions=loc.get('conditions',t[10]); conditions=' '.join(conditions) if isinstance(conditions,list) else conditions
   market='KR' if d.get('region')=='kr' else ('CN' if d.get('category')=='china' else ('AU' if 'AU' in d.get('purchase_eligibility',{}).get('countries_confirmed',[]) else 'unknown'))
   cat='hardware' if d.get('category')=='china' else d.get('category','tech'); link=d.get('link',{}); currency=d.get('currency','KRW');price=d.get('price');price=f'{currency} {price:,.2f}'.rstrip('0').rstrip('.') if isinstance(price,(int,float)) else '—'
-  record={k:d[k] for k in ('shipping','briefing','purchase_eligibility','source','checked_date','published_at','price_source','disclosure') if k in d}
+  record={k:d[k] for k in ('shipping','briefing','purchase_eligibility','source','checked_date','published_at','price_source','disclosure','price_review') if k in d}
   media=d.get('image') or {};image=''
   if media.get('path'):
    image=f'<figure><img src="{e(safe(media["path"]))}" alt="{e(title)}" loading="lazy"><figcaption class="caption">{e(media.get("caption",""))} <a href="{e(safe(media.get("credit_url","")))}">{e(media.get("credit",""))}</a></figcaption></figure>'
   source=d.get('source') or {};src=f'<a href="{e(safe(source.get("url","")))}" rel="noopener nofollow">{t[30]}</a>' if source.get('url') else ''
-  cards.append(f'''<article class="card" data-id="{e(d['id'])}" data-market="{market}" data-category="{e(cat)}">{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{e(title)}</h2><p>{e(summary)}</p><div class="price">{e(price)}</div><p class="meta">{t[{'KR':7,'CN':8,'AU':9,'unknown':10}[market]]}</p><details><summary>{t[12]}</summary><p>{e(conditions)}</p><p class="notice">{t[13]}</p></details><details><summary>{t[17]}</summary><pre class="original" lang="{'ko' if market=='KR' else 'en'}">{e(json.dumps(record,ensure_ascii=False,indent=2))}</pre>{src}</details><a class="cta" href="{e(safe(link.get('url','')))}" rel="noopener nofollow{' sponsored' if link.get('tracked') else ''}">{t[11]}</a></article>''')
+  cta=(f'<a class="cta" href="{e(link["url"])}" rel="noopener nofollow{" sponsored" if link.get("tracked") else ""}">{t[11]}</a>' if publishable_link(d) else f'<p class="notice link-held" role="status">{HELD[lang]}</p>')
+  review=d.get('price_review') or {}; current=review.get('price_status')=='seller_page_display_confirmed'
+  if not current: summary=HELD_SUMMARY[lang]
+  price_note=f'<p class="notice">{PRICE_CURRENT[lang] if current else PRICE_RECORDED[lang]}</p>'
+  price_note+=f'<p class="notice">{SRP[lang] if review.get("deal_status")=="below_official_srp" else DISCOUNT_UNKNOWN[lang]}</p>'
+  comparison=(review.get('comparison') or {}).get('url')
+  if comparison: price_note+=f'<a class="meta" href="{e(safe(comparison))}" rel="noopener nofollow">{t[30]}</a>'
+  if review.get('review_completed_at'): price_note+=f'<p class="meta"><time datetime="{e(review["review_completed_at"])}">{e(review["review_completed_at"])}</time></p>' 
+  cards.append(f'''<article class="card" data-id="{e(d['id'])}" data-market="{market}" data-category="{e(cat)}">{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{e(title)}</h2><p>{e(summary)}</p><div class="price">{e(price)}</div>{price_note}<p class="meta">{t[{'KR':7,'CN':8,'AU':9,'unknown':10}[market]]}</p><details><summary>{t[12]}</summary><p>{e(conditions)}</p><p class="notice">{t[13]}</p></details><details><summary>{t[17]}</summary><pre class="original" lang="{'ko' if market=='KR' else 'en'}">{e(json.dumps(record,ensure_ascii=False,indent=2))}</pre>{src}</details>{cta}</article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  schema=json.dumps({'@context':'https://schema.org','@type':'CollectionPage','name':t[2],'url':'https://devteardown.com'+PATHS[lang],'inLanguage':lang,'description':t[3]},ensure_ascii=False).replace('<','\\u003c')
  alternatives=''.join(f'<link rel="alternate" hreflang="{k}" href="https://devteardown.com{p}">' for k,p in PATHS.items())

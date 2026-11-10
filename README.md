@@ -124,3 +124,23 @@ Market and category filters are combined and retained in the URL when changing l
 The expandable original source record is deliberately not translated or presented as new verification.
 Korean records retain their historical prices; inclusion does not reverify availability.
 Comparison articles remain English, with a clearly labeled original-language fallback and common navigation.
+
+### Product-link registration gate
+
+Product buttons must use the exact seller product detail URL, never search, category,
+store homepage or a short/redirect link. Preserve the original URL in `link_original`
+when correcting a record. `tools/product_links.py` recognizes reviewed seller-detail
+routes and rejects search/redirect query parameters; add a new seller deliberately
+with regression tests rather than treating arbitrary non-search paths as products.
+
+For publication, each record needs `link_review.status=verified_detail`, the identical
+`url`, a real ISO `checked_at`, `product_match=true`, and nonempty `evidence` describing
+the observed model/variant. A URL pattern or HTTP 200 is **not** product verification.
+Check the final redirected URL and product content manually, including variants and
+country. When blocked, ambiguous, expired, redirected to search, or unverified, set
+`status=held` and `reason`; all six language views retain the record but remove the
+purchase button. Do not bypass access restrictions or fabricate product IDs.
+
+The build/CI fails on unreviewed new records. Review metadata is a human evidence
+attestation, not a live-stock guarantee; a later retailer redirect still requires a
+fresh check. RSS collection remains staging-only and cannot publish unchecked cards.
