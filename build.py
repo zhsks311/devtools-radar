@@ -355,6 +355,41 @@ def reading_time(item):
 
 # ---------------------------------------------------------------- pages
 
+DEALS_SECTION_HTML = """
+    <div style="margin: 3.5rem 0 1.5rem; padding: 1.6rem 1.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.8rem; flex-wrap:wrap; gap:0.5rem;">
+        <h3 style="margin:0; font-size:1.15rem; color:#fff;">⚡ Verified Tech Deals &amp; Workstation Gear</h3>
+        <span class="badge badge-blue">Curated for Builders</span>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.2rem;">
+        High-impact developer hardware &amp; workstation picks tested for productivity, with live rocket delivery links.
+      </p>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
+          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Mouse &amp; Desk Setup</div>
+          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Logitech MX Master 3S</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Ergonomic silent switches with dual-scroll MagSpeed wheels.</p>
+          <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
+        </div>
+        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
+          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Workstation / Laptop</div>
+          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Apple M4 MacBook Pro</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Unified memory bandwidth for local LLM inference and instant builds.</p>
+          <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
+        </div>
+        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
+          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Daily Limited Deals</div>
+          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Coupang Goldbox (7AM)</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Daily limited morning flash discounts up to 50% on tech &amp; essentials.</p>
+          <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">골드박스 특가 보기 →</a>
+        </div>
+      </div>
+      <div style="font-size:0.75rem; color:#64748b; margin-top:1rem; padding-top:0.6rem; border-top:1px solid var(--border); text-align:right;">
+        * 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+      </div>
+    </div>
+"""
+
 
 def generate_index_html(items):
     cards_html = ""
@@ -406,6 +441,8 @@ def generate_index_html(items):
     <div class="grid">
       {cards_html}
     </div>
+
+    {DEALS_SECTION_HTML}
 
     <div class="updated-note">
       <strong>How to read this site.</strong> Every number here is either taken from a vendor's own price
@@ -700,6 +737,8 @@ def generate_comparison_html(item):
       <a href="{a['cta_url']}" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try {a['name']} →</a>
       <a href="{b['cta_url']}" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore {b['name']} →</a>
     </div>
+
+    {DEALS_SECTION_HTML}
 
     <div class="updated-note">
       Prices and limits verified on {updated}. This market reprices often — if a number below looks wrong,
