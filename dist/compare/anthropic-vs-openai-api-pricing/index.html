@@ -6,10 +6,16 @@
   <title>Anthropic vs OpenAI (2026): Cost, Limits and the Decision Matrix</title>
   <meta name="description" content="Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one">
   <link rel="canonical" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
+  <meta property="og:site_name" content="DevTools Radar">
   <meta property="og:title" content="Anthropic vs OpenAI — 2026 teardown">
   <meta property="og:description" content="Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Anthropic vs OpenAI: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached.">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -203,6 +209,12 @@ a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
   padding: 1.4rem 1.5rem;
   margin: 1.5rem 0 2rem;
 }
+.answer-box {
+  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
+  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
+}
+.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
+.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
 .verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
 .verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
 .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
@@ -294,6 +306,11 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     <div class="verdict-box">
       <div class="label">Verdict</div>
       <p>On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer's 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.</p>
+    </div>
+
+    <div class="answer-box">
+      <span class="label">Direct answer</span>
+      <p>On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached.</p>
     </div>
 
     <div class="toc">

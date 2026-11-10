@@ -123,6 +123,12 @@ a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
   padding: 1.4rem 1.5rem;
   margin: 1.5rem 0 2rem;
 }
+.answer-box {
+  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
+  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
+}
+.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
+.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
 .verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
 .verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
 .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
@@ -351,6 +357,76 @@ def reading_time(item):
     )
     words = word_count(body) + 180  # chrome: table, matrix, faq
     return "%d min read" % max(4, round(words / 200))
+
+
+def first_sentence(markdown: str) -> str:
+    """Direct Answer 블록용 한 문장. 마크다운 기호를 걷어낸다."""
+    text = re.sub(r"[`*_>#]", "", markdown or "")
+    text = re.sub(r"\s+", " ", text).strip()
+    m = re.match(r"(.+?[.!?])(\s|$)", text)
+    return (m.group(1) if m else text[:220]).strip()
+
+
+def generate_llms_txt(items, ko_deals, en_deals) -> str:
+    """llmstxt.org 형식: AI 검색엔진이 읽는 사이트 디렉토리."""
+    lines = [
+        "# DevTeardown",
+        "",
+        "> Independent teardowns of developer tools priced in arithmetic, plus a daily tech-deals radar",
+        "> for Korean and global hardware deals. Every number is taken from a vendor price sheet or a",
+        "> source post; derived figures print their formula. No paid placement.",
+        "",
+        "## Teardowns",
+        "",
+    ]
+    for item in items:
+        lines.append(f"- [{item['tool_a']['name']} vs {item['tool_b']['name']}]({BASE_URL}/compare/{item['slug']}/): "
+                     f"{first_sentence(item.get('verdict_summary', ''))}")
+    lines += [
+        "",
+        "## Deals",
+        "",
+        f"- [Korean tech deals]({BASE_URL}/ko/): {len(ko_deals.get('feed', []))} live hardware deals from "
+        "뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.",
+        f"- [Global tech deals]({BASE_URL}/deals/): {len(en_deals.get('feed', []))} live deals from "
+        "r/buildapcsales, Slickdeals and Dealabs.",
+        "",
+        "## Optional",
+        "",
+        f"- [Full text for LLMs]({BASE_URL}/llms-full.txt): every teardown verdict and the current deal list.",
+        f"- [Sitemap]({BASE_URL}/sitemap.xml)",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
+    """LLM 인용용 전문: 테어다운 요약 + 현재 딜 목록."""
+    out = ["# DevTeardown — full text for LLMs", "",
+           "Source: https://devteardown.com · Updated: " + datetime.date.today().isoformat(), ""]
+    for item in items:
+        a, b = item["tool_a"]["name"], item["tool_b"]["name"]
+        out += [
+            f"## {a} vs {b}",
+            f"URL: {BASE_URL}/compare/{item['slug']}/",
+            f"Category: {item['category']} · Prices verified: {item.get('last_verified', '')}",
+            "",
+            "Verdict: " + first_sentence(item.get("verdict_summary", "")),
+            "",
+        ]
+        for sec in item.get("sections", []):
+            body = re.sub(r"[`*_>#]", "", sec.get("content", ""))
+            out.append(f"### {sec['title']}")
+            out.append(re.sub(r"\s+", " ", body).strip()[:900])
+            out.append("")
+    out += ["## Current deals (KR)", ""]
+    for d in ko_deals.get("feed", [])[:10]:
+        out.append(f"- {d['product']} — {d.get('price') or 'see source'} KRW at {d.get('store') or 'source'} "
+                   f"({d.get('category_label')}) {d.get('source', {}).get('url', '')}")
+    out += ["", "## Current deals (global)", ""]
+    for d in en_deals.get("feed", [])[:10]:
+        out.append(f"- {d['product']} — {d.get('price')} {d.get('currency')} at {d.get('store') or 'source'} "
+                   f"({d.get('category_label')}) {d.get('source', {}).get('url', '')}")
+    return "\n".join(out) + "\n"
 
 
 # ---------------------------------------------------------------- pages
@@ -773,12 +849,30 @@ def generate_ko_html(deals: dict) -> str:
   <title>{KO_SITE_NAME} — {KO_TAGLINE} (2026)</title>
   <meta name="description" content="개발자 장비·테크 핫딜을 뽐뿌·클리앙·퀘이사존·에펨코리아·폴센트에서 모아 가격·할인율·배송 조건을 정리하고, 실구매가와 추천 대상을 한눈에 보여주는 한글 핫딜 레이더.">
   <link rel="canonical" href="{BASE_URL}/ko/">
-  <link rel="alternate" hreflang="en" href="{BASE_URL}/deals/">
   <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
+  <link rel="alternate" hreflang="en" href="{BASE_URL}/deals/">
+  <link rel="alternate" hreflang="x-default" href="{BASE_URL}/">
+  <meta property="og:site_name" content="{KO_SITE_NAME}">
   <meta property="og:title" content="{KO_SITE_NAME} — {KO_TAGLINE}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{BASE_URL}/ko/">
   <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{KO_SITE_NAME} — {KO_TAGLINE}">
+  <meta name="twitter:description" content="원문 가격 그대로 모은 개발자 장비·테크 핫딜. 실구매가와 추천 대상만 남겼습니다.">
+  <script type="application/ld+json">
+  {json.dumps({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "실시간 테크 핫딜",
+      "itemListElement": [
+          {"@type": "ListItem", "position": i + 1,
+           "name": d.get("product", ""),
+           "url": (d.get("link") or {}).get("url", "")}
+          for i, d in enumerate(feed[:12])
+      ],
+  }, ensure_ascii=False, indent=2)}
+  </script>
   <script type="application/ld+json">
   {json.dumps(schema, ensure_ascii=False, indent=2)}
   </script>
@@ -909,11 +1003,30 @@ def generate_deals_en_html(payload: dict) -> str:
   <title>DevTeardown Deals — Developer Hardware Deals (2026)</title>
   <meta name="description" content="Developer hardware deals collected from r/buildapcsales, Slickdeals and Dealabs: price, discount and what the deal is actually good for. No sponsored placement.">
   <link rel="canonical" href="{BASE_URL}/deals/">
-  <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
   <link rel="alternate" hreflang="en" href="{BASE_URL}/deals/">
+  <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
+  <link rel="alternate" hreflang="x-default" href="{BASE_URL}/deals/">
+  <meta property="og:site_name" content="DevTeardown Deals">
   <meta property="og:title" content="DevTeardown Deals — developer hardware deals">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{BASE_URL}/deals/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DevTeardown Deals — developer hardware deals">
+  <meta name="twitter:description" content="Deals from r/buildapcsales, Slickdeals and Dealabs, priced exactly as the source lists them.">
+  <script type="application/ld+json">
+  {json.dumps({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Live tech deals",
+      "itemListElement": [
+          {"@type": "ListItem", "position": i + 1,
+           "name": d.get("product", ""),
+           "url": (d.get("link") or {}).get("url", "")}
+          for i, d in enumerate(feed[:12])
+      ],
+  }, ensure_ascii=False, indent=2)}
+  </script>
   <script type="application/ld+json">
   {json.dumps(schema, ensure_ascii=False, indent=2)}
   </script>
@@ -1000,11 +1113,40 @@ def generate_index_html(items):
   <title>{SITE_NAME} — Developer Tool Teardowns, Priced in Arithmetic (2026)</title>
   <meta name="description" content="Independent teardowns of competing developer tools: what each vendor's billing unit punishes, worked cost arithmetic from published price sheets, and a decision matrix you can paste into a design doc.">
   <link rel="canonical" href="{BASE_URL}/">
-  <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
   <link rel="alternate" hreflang="en" href="{BASE_URL}/">
+  <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
+  <link rel="alternate" hreflang="x-default" href="{BASE_URL}/">
+  <meta property="og:site_name" content="{SITE_NAME}">
+  <meta property="og:description" content="Independent teardowns of developer tools: billing units, worked cost arithmetic, and a decision matrix you can paste into a design doc.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{SITE_NAME} — Developer Tool Teardowns">
+  <meta name="twitter:description" content="Every comparison is a billing question in disguise. Worked cost arithmetic from published price sheets.">
   <meta property="og:title" content="{SITE_NAME} — Developer Tool Teardowns">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{BASE_URL}/">
+  <script type="application/ld+json">
+  {json.dumps({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Developer tool teardowns",
+      "itemListElement": [
+          {"@type": "ListItem", "position": i + 1,
+           "url": f"{BASE_URL}/compare/{it['slug']}/",
+           "name": f"{it['tool_a']['name']} vs {it['tool_b']['name']}"}
+          for i, it in enumerate(items)
+      ],
+  }, ensure_ascii=False, indent=2)}
+  </script>
+  <script type="application/ld+json">
+  {json.dumps({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": SITE_NAME,
+      "url": BASE_URL,
+      "inLanguage": "en",
+      "description": "Independent teardowns of competing developer tools, priced in arithmetic.",
+  }, ensure_ascii=False, indent=2)}
+  </script>
   <style>{SHARED_CSS}</style>
 </head>
 <body>
@@ -1204,10 +1346,16 @@ def generate_comparison_html(item):
   <title>{a['name']} vs {b['name']} (2026): Cost, Limits and the Decision Matrix</title>
   <meta name="description" content="{html.escape(item['hook'][:180], quote=True)}">
   <link rel="canonical" href="{BASE_URL}/compare/{slug}/">
+  <link rel="alternate" hreflang="en" href="{BASE_URL}/compare/{slug}/">
+  <link rel="alternate" hreflang="x-default" href="{BASE_URL}/compare/{slug}/">
+  <meta property="og:site_name" content="{SITE_NAME}">
   <meta property="og:title" content="{a['name']} vs {b['name']} — 2026 teardown">
   <meta property="og:description" content="{html.escape(item['hook'][:180], quote=True)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{BASE_URL}/compare/{slug}/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{a['name']} vs {b['name']}: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="{html.escape(first_sentence(item['verdict_summary'])[:180], quote=True)}">
   <script type="application/ld+json">
   {json.dumps(schema_article, ensure_ascii=False, indent=2)}
   </script>
@@ -1248,6 +1396,11 @@ def generate_comparison_html(item):
     <div class="verdict-box">
       <div class="label">Verdict</div>
       {md_to_html(item['verdict_summary'])}
+    </div>
+
+    <div class="answer-box">
+      <span class="label">Direct answer</span>
+      <p>{html.escape(first_sentence(item['verdict_summary']))}</p>
     </div>
 
     <div class="toc">
@@ -1356,14 +1509,23 @@ def generate_sitemap(items):
     <loc>{BASE_URL}/</loc>
     <lastmod>{today}</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{BASE_URL}/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE_URL}/"/>
   </url>\n  <url>
     <loc>{BASE_URL}/ko/</loc>
     <lastmod>{today}</lastmod>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{BASE_URL}/deals/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE_URL}/"/>
   </url>\n  <url>
     <loc>{BASE_URL}/deals/</loc>
     <lastmod>{today}</lastmod>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{BASE_URL}/deals/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE_URL}/deals/"/>
   </url>\n"""
     for item in items:
         urls += f"""  <url>
@@ -1372,7 +1534,8 @@ def generate_sitemap(items):
     <priority>0.8</priority>
   </url>\n"""
     return f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {urls}</urlset>"""
 
 
@@ -1415,8 +1578,29 @@ def main():
     print(f"  {'deals-portal-en':<28} feed={len(en_deals.get('feed', []))} deals  "
           f"updated={en_deals.get('generated_at', '-')}")
 
+    robots = (
+        "# Search engines\n"
+        "User-agent: Googlebot\nAllow: /\n\n"
+        "User-agent: Yeti\nAllow: /\n\n"
+        "User-agent: Bingbot\nAllow: /\n\n"
+        "# AI search / LLM agents\n"
+        "User-agent: PerplexityBot\nAllow: /\n\n"
+        "User-agent: ChatGPT-User\nAllow: /\n\n"
+        "User-agent: GPTBot\nAllow: /\n\n"
+        "User-agent: ClaudeBot\nAllow: /\n\n"
+        "User-agent: Claude-Web\nAllow: /\n\n"
+        "User-agent: Google-Extended\nAllow: /\n\n"
+        "User-agent: *\nAllow: /\n\n"
+        f"Sitemap: {BASE_URL}/sitemap.xml\n"
+        f"# LLM directory: {BASE_URL}/llms.txt\n"
+    )
     with open(os.path.join(DIST_DIR, "robots.txt"), "w", encoding="utf-8") as f:
-        f.write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE_URL}/sitemap.xml\n")
+        f.write(robots)
+
+    with open(os.path.join(DIST_DIR, "llms.txt"), "w", encoding="utf-8") as f:
+        f.write(generate_llms_txt(items, deals, en_deals))
+    with open(os.path.join(DIST_DIR, "llms-full.txt"), "w", encoding="utf-8") as f:
+        f.write(generate_llms_full_txt(items, deals, en_deals))
 
     with open(os.path.join(DIST_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("devteardown.com\n")

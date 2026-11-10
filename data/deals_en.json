@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T13:33:00+09:00",
+  "generated_at": "2026-11-10T13:47:35+09:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -28,10 +28,9 @@
         "USB3.0"
       ],
       "briefing": [
-        "Key: Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP1 — $399.99",
-        "Price: $399.99 at HDD; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: HDD · 16TB · USB3.0",
+        "핵심: Seagate 16TB 외장 HDD, 27% 할인",
+        "실구매가: USD 399.99 (27% 할인)",
+        "추천: 노트북·미니PC용 주변기기를 찾는 사람",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -43,6 +42,7 @@
       "published_at": "2026-11-09T17:31:02+09:00",
       "score": 75,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xrmfc5/hdd_seagate_expansion_desktop_16tb_external_hard/",
         "tracked": false,
@@ -73,10 +73,9 @@
         "5650G"
       ],
       "briefing": [
-        "Key: HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W1 — $247.99",
-        "Price: $247.99 at Prebuilt; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: 405G · Ryzen5 · 5650G",
+        "핵심: HP ProDesk 405 G8 데스크톱, 20% 쿠폰",
+        "실구매가: USD 247.99 (쿠폰코드 20% 할인 후)",
+        "추천: 노트북·미니PC 범주의 PC를 찾는 사람",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -88,6 +87,7 @@
       "published_at": "2026-11-09T05:30:55+09:00",
       "score": 68,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xr8bbs/prebuilt_hp_prodesk_405_g8_desktop_amd_ryzen_5/",
         "tracked": false,
@@ -116,10 +116,9 @@
         "dp"
       ],
       "briefing": [
-        "Key: Razer Kraken Kitty V2 USB Wired Headset Hello Kitty Edition, Restock — $39.99",
-        "Price: $39.99 at Headphones; tax and shipping vary by state",
-        "Good for: developers shopping for their next piece of gear",
-        "Specs: dp",
+        "핵심: Razer Kraken Kitty V2 헤드셋, 64% 할인",
+        "실구매가: USD 39.99 (64% 할인)",
+        "추천: 테크 기어를 추가로 장만하려는 사람",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers shopping for their next piece of gear",
@@ -131,6 +130,7 @@
       "published_at": "2026-11-10T09:04:26+09:00",
       "score": 60,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xs86d1/headphones_razer_kraken_kitty_v2_usb_wired/",
         "tracked": false,
@@ -159,10 +159,9 @@
         "650G"
       ],
       "briefing": [
-        "Key: Gigabyte B650 GAMING X AX V2 AMD AM5 — $104.99",
-        "Price: $104.99 at Motherboard; tax and shipping vary by state",
-        "Good for: developers shopping for their next piece of gear",
-        "Specs: 650G",
+        "핵심: Gigabyte B650 메인보드 AM5, 30% 할인",
+        "실구매가: USD 104.99 (30% 할인)",
+        "추천: PC 부품을 직접 고르는 테크 기어 구매자",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers shopping for their next piece of gear",
@@ -174,6 +173,7 @@
       "published_at": "2026-11-10T08:54:27+09:00",
       "score": 60,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xs7xcu/motherboard_gigabyte_b650_gaming_x_ax_v2_amd_am5/",
         "tracked": false,
@@ -202,10 +202,9 @@
         "Mechanical"
       ],
       "briefing": [
-        "Key: Epomaker Galaxy65 Mechanical Keyboard — $42.90",
-        "Price: $42.90 at Keyboard; tax and shipping vary by state",
-        "Good for: people typing eight hours a day with wrist or noise concerns",
-        "Specs: Mechanical",
+        "핵심: Epomaker Galaxy65 기계식 키보드 7% 할인",
+        "실구매가: USD 42.90",
+        "추천: 책상용 기계식 키보드를 새로 고르는 사람.",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "people typing eight hours a day with wrist or noise concerns",
@@ -217,6 +216,7 @@
       "published_at": "2026-11-10T04:04:41+09:00",
       "score": 55,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xs0i3t/keyboard_epomaker_galaxy65_mechanical_keyboard/",
         "tracked": false,
@@ -247,10 +247,9 @@
         "64GB"
       ],
       "briefing": [
-        "Key: 15.3\" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eM — $179",
-        "Price: $179 at source; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: FHD · 4GB · 64GB",
+        "핵심: 15.3인치 레노버 크롬북 M, 4GB/64GB eMMC",
+        "실구매가: USD 179 + Free S&H(무료 배송)",
+        "추천: 저렴한 보조 노트북을 찾는 사람.",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -262,6 +261,7 @@
       "published_at": "2026-11-10T10:58:57+09:00",
       "score": 48,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://slickdeals.net/f/20278857-lenovo-chromebook-m-15-3-2k-laptop-mediatek-kompanio-540-2026-4gb-memory-64gb-storage-luna-grey-179?utm_source=rss&utm_content=fp&utm_medium=RSS2",
         "tracked": false,
@@ -292,10 +292,9 @@
         "Ryzen5"
       ],
       "briefing": [
-        "Key: Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 — $518.98",
-        "Price: $518.98 at Combo; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: 16GB · DDR5 · Ryzen5",
+        "핵심: Newegg B850M+라이젠5 9600X+DDR5 16GB",
+        "실구매가: USD 518.98 (콤보 가격)",
+        "추천: AM5 PC 부품을 한 번에 맞추려는 사람.",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -307,6 +306,7 @@
       "published_at": "2026-11-10T10:41:26+09:00",
       "score": 48,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xsa9s7/combo_newegg_16gb_ddr5_combos_are_back_gigabyte/",
         "tracked": false,
@@ -336,10 +336,9 @@
         "850W"
       ],
       "briefing": [
-        "Key: Cooler Master Sneaker-X Mini-ITX PC Case f+ 360mm AIO + 850W SFX PSU — $231.69",
-        "Price: $231.69 at Bundle; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: 360mm · 850W",
+        "핵심: 쿨러마스터 Sneaker-X ITX 케이스+AIO+PSU",
+        "실구매가: USD 231.69 (번들 가격)",
+        "추천: 소형 PC를 직접 조립하려는 사람.",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -351,6 +350,7 @@
       "published_at": "2026-11-10T08:51:53+09:00",
       "score": 48,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xs7v93/bundle_cooler_master_sneakerx_miniitx_pc_case_f/",
         "tracked": false,
@@ -379,10 +379,9 @@
         "Ryzen7"
       ],
       "briefing": [
-        "Key: AMD Ryzen 7 9850X3D, Amazon S/S, $419 A/C — $419",
-        "Price: $419 at CPU; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: Ryzen7",
+        "핵심: AMD Ryzen 7 9850X3D, Amazon S/S",
+        "실구매가: USD 419 (A/C 표기)",
+        "추천: 노트북·미니PC 카테고리 딜을 비교하는 사람.",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -394,6 +393,7 @@
       "published_at": "2026-11-10T07:54:32+09:00",
       "score": 48,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xs6i23/cpu_amd_ryzen_7_9850x3d_amazon_ss_419_ac/",
         "tracked": false,
@@ -422,10 +422,9 @@
         "RYZEN7"
       ],
       "briefing": [
-        "Key: AMD RYZEN 7 9800X3D, Amazon S/S — $400",
-        "Price: $400 at CPU; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: RYZEN7",
+        "핵심: AMD Ryzen 7 9800X3D, Amazon S/S",
+        "실구매가: USD 400",
+        "추천: 노트북·미니PC 카테고리 딜을 비교하는 사람.",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -437,6 +436,7 @@
       "published_at": "2026-11-10T07:47:04+09:00",
       "score": 48,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xs6b9z/cpu_amd_ryzen_7_9800x3d_amazon_ss_400/",
         "tracked": false,
@@ -467,10 +467,9 @@
         "DDR5"
       ],
       "briefing": [
-        "Key: Ryzen 5 7600X + ASRock B650M Pro RS WiFi + 32GB V-COLOR DDR5-6000 CL30 — $628",
-        "Price: $628 at Combo; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: Ryzen5 · 32GB · DDR5",
+        "핵심: Ryzen 5 7600X 번들, Newegg PC Builder",
+        "실구매가: USD 628 (Newegg PC Builder)",
+        "추천: 노트북·미니PC 카테고리 딜을 비교하는 사람.",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -482,6 +481,7 @@
       "published_at": "2026-11-10T03:34:52+09:00",
       "score": 48,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xrzp3e/combo_ryzen_5_7600x_asrock_b650m_pro_rs_wifi_32gb/",
         "tracked": false,
@@ -512,10 +512,9 @@
         "32GB"
       ],
       "briefing": [
-        "Key: AMD Ryzen 9 9900X - GeForce RTX 5080 - Windows 11 Home - 32GB RAM - 2T — $3,200",
-        "Price: $3,200 at Prebuilt; tax and shipping vary by state",
-        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-        "Specs: Ryzen9 · RTX · 32GB",
+        "핵심: Ryzen 9 9900X + RTX 5080 완제품",
+        "실구매가: USD 3200 (11/16 USD 2800 인하 가능)",
+        "추천: 노트북·미니PC 카테고리 딜을 비교하는 사람.",
         "Check: prices and stock move fast; confirm on the retailer page"
       ],
       "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -527,6 +526,7 @@
       "published_at": "2026-11-10T01:00:18+09:00",
       "score": 48,
       "disclosure": "",
+      "ai_rewritten": true,
       "link": {
         "url": "https://www.reddit.com/r/buildapcsales/comments/1xrvgc9/prebuilt_amd_ryzen_9_9900x_geforce_rtx_5080/",
         "tracked": false,
@@ -563,10 +563,9 @@
             "USB3.0"
           ],
           "briefing": [
-            "Key: Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP1 — $399.99",
-            "Price: $399.99 at HDD; tax and shipping vary by state",
-            "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-            "Specs: HDD · 16TB · USB3.0",
+            "핵심: Seagate 16TB 외장 HDD, 27% 할인",
+            "실구매가: USD 399.99 (27% 할인)",
+            "추천: 노트북·미니PC용 주변기기를 찾는 사람",
             "Check: prices and stock move fast; confirm on the retailer page"
           ],
           "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -578,6 +577,7 @@
           "published_at": "2026-11-09T17:31:02+09:00",
           "score": 75,
           "disclosure": "",
+          "ai_rewritten": true,
           "link": {
             "url": "https://www.reddit.com/r/buildapcsales/comments/1xrmfc5/hdd_seagate_expansion_desktop_16tb_external_hard/",
             "tracked": false,
@@ -608,10 +608,9 @@
             "5650G"
           ],
           "briefing": [
-            "Key: HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W1 — $247.99",
-            "Price: $247.99 at Prebuilt; tax and shipping vary by state",
-            "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-            "Specs: 405G · Ryzen5 · 5650G",
+            "핵심: HP ProDesk 405 G8 데스크톱, 20% 쿠폰",
+            "실구매가: USD 247.99 (쿠폰코드 20% 할인 후)",
+            "추천: 노트북·미니PC 범주의 PC를 찾는 사람",
             "Check: prices and stock move fast; confirm on the retailer page"
           ],
           "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -623,6 +622,7 @@
           "published_at": "2026-11-09T05:30:55+09:00",
           "score": 68,
           "disclosure": "",
+          "ai_rewritten": true,
           "link": {
             "url": "https://www.reddit.com/r/buildapcsales/comments/1xr8bbs/prebuilt_hp_prodesk_405_g8_desktop_amd_ryzen_5/",
             "tracked": false,
@@ -653,10 +653,9 @@
             "64GB"
           ],
           "briefing": [
-            "Key: 15.3\" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eM — $179",
-            "Price: $179 at source; tax and shipping vary by state",
-            "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-            "Specs: FHD · 4GB · 64GB",
+            "핵심: 15.3인치 레노버 크롬북 M, 4GB/64GB eMMC",
+            "실구매가: USD 179 + Free S&H(무료 배송)",
+            "추천: 저렴한 보조 노트북을 찾는 사람.",
             "Check: prices and stock move fast; confirm on the retailer page"
           ],
           "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -668,6 +667,7 @@
           "published_at": "2026-11-10T10:58:57+09:00",
           "score": 48,
           "disclosure": "",
+          "ai_rewritten": true,
           "link": {
             "url": "https://slickdeals.net/f/20278857-lenovo-chromebook-m-15-3-2k-laptop-mediatek-kompanio-540-2026-4gb-memory-64gb-storage-luna-grey-179?utm_source=rss&utm_content=fp&utm_medium=RSS2",
             "tracked": false,
@@ -698,10 +698,9 @@
             "Ryzen5"
           ],
           "briefing": [
-            "Key: Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 — $518.98",
-            "Price: $518.98 at Combo; tax and shipping vary by state",
-            "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
-            "Specs: 16GB · DDR5 · Ryzen5",
+            "핵심: Newegg B850M+라이젠5 9600X+DDR5 16GB",
+            "실구매가: USD 518.98 (콤보 가격)",
+            "추천: AM5 PC 부품을 한 번에 맞추려는 사람.",
             "Check: prices and stock move fast; confirm on the retailer page"
           ],
           "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
@@ -713,6 +712,7 @@
           "published_at": "2026-11-10T10:41:26+09:00",
           "score": 48,
           "disclosure": "",
+          "ai_rewritten": true,
           "link": {
             "url": "https://www.reddit.com/r/buildapcsales/comments/1xsa9s7/combo_newegg_16gb_ddr5_combos_are_back_gigabyte/",
             "tracked": false,
@@ -745,9 +745,9 @@
           "rocket": false,
           "specs": [],
           "briefing": [
-            "Key: Heavy-Duty Dual Monitor Stand up to 32\" — $15.99",
-            "Price: $15.99 at Other; tax and shipping vary by state",
-            "Good for: engineers juggling code, logs and dashboards on one screen",
+            "핵심: 헤비듀티 듀얼 모니터 스탠드, 최대 32\"",
+            "실구매가: USD 15.99 (판매처 Other)",
+            "추천: 모니터 두 대를 책상에 설치하려는 사람.",
             "Check: prices and stock move fast; confirm on the retailer page"
           ],
           "audience": "engineers juggling code, logs and dashboards on one screen",
@@ -759,6 +759,7 @@
           "published_at": "2026-11-10T05:25:20+09:00",
           "score": 40,
           "disclosure": "",
+          "ai_rewritten": true,
           "link": {
             "url": "https://www.reddit.com/r/buildapcsales/comments/1xs2oxz/other_heavyduty_dual_monitor_stand_up_to_32_1599/",
             "tracked": false,
@@ -793,10 +794,9 @@
             "Mechanical"
           ],
           "briefing": [
-            "Key: Epomaker Galaxy65 Mechanical Keyboard — $42.90",
-            "Price: $42.90 at Keyboard; tax and shipping vary by state",
-            "Good for: people typing eight hours a day with wrist or noise concerns",
-            "Specs: Mechanical",
+            "핵심: Epomaker Galaxy65 기계식 키보드 7% 할인",
+            "실구매가: USD 42.90",
+            "추천: 책상용 기계식 키보드를 새로 고르는 사람.",
             "Check: prices and stock move fast; confirm on the retailer page"
           ],
           "audience": "people typing eight hours a day with wrist or noise concerns",
@@ -808,6 +808,7 @@
           "published_at": "2026-11-10T04:04:41+09:00",
           "score": 55,
           "disclosure": "",
+          "ai_rewritten": true,
           "link": {
             "url": "https://www.reddit.com/r/buildapcsales/comments/1xs0i3t/keyboard_epomaker_galaxy65_mechanical_keyboard/",
             "tracked": false,
@@ -837,10 +838,9 @@
             "Mechanical"
           ],
           "briefing": [
-            "Key: Cooler Master SK620 Wired Mechanical Low Profile Gaming Keyboard w/ Bl — $15",
-            "Price: $15 at source; tax and shipping vary by state",
-            "Good for: people typing eight hours a day with wrist or noise concerns",
-            "Specs: 620W · Mechanical",
+            "핵심: Cooler Master SK620 유선 청축 키보드",
+            "실구매가: $15 USD + 무료 배송(Free S&H)",
+            "추천: 키보드·마우스 주변기기를 싸게 찾는 사람.",
             "Check: prices and stock move fast; confirm on the retailer page"
           ],
           "audience": "people typing eight hours a day with wrist or noise concerns",
@@ -852,6 +852,7 @@
           "published_at": "2026-11-10T12:10:36+09:00",
           "score": 40,
           "disclosure": "",
+          "ai_rewritten": true,
           "link": {
             "url": "https://slickdeals.net/f/20281251-cooler-master-sk620-mechanical-low-profile-keyboard-with-blue-switches-15-free-s-h?utm_source=rss&utm_content=fp&utm_medium=RSS2",
             "tracked": false,
