@@ -2,6 +2,7 @@
 import html, json, re, datetime
 from pathlib import Path
 from tools.product_links import publishable_link
+from tools.deal_prices import checked_price
 from xml.sax.saxutils import escape
 LANGS={'en':'English','ko':'한국어','zh':'中文','ja':'日本語','es':'Español','fr':'Français'}
 PATHS={k:('/deals/' if k=='en' else f'/{k}/') for k in LANGS}
@@ -16,6 +17,7 @@ LABELS={
 PRICE_CURRENT={'en':'Seller displayed price checked; checkout not verified','ko':'판매페이지 표시가 확인 · 최종 결제 미검증','zh':'已核实卖家标价；结算价未验证','ja':'販売ページの表示価格を確認・決済は未確認','es':'Precio del vendedor comprobado; pago sin verificar','fr':'Prix affiché vérifié ; paiement non vérifié'}
 DISCOUNT_UNKNOWN={'en':'Discount / historical low not established','ko':'할인·역대 최저가 근거 미확인','zh':'折扣及历史低价未证实','ja':'割引・過去最安値の根拠は未確認','es':'Descuento y mínimo histórico sin acreditar','fr':'Réduction et minimum historique non établis'}
 SRP={'en':'5.45% below official AUD 769.95 RRP; not a proven historical low','ko':'공식 권장가 A$769.95 대비 5.45% 낮음 · 역대 최저 여부 미확인','zh':'比官方建议价 A$769.95 低5.45%；非已证实历史低价','ja':'公式希望価格 A$769.95 より5.45%安い・過去最安の証明なし','es':'5,45% por debajo del PVP oficial A$769,95; no mínimo histórico probado','fr':'5,45 % sous le prix conseillé officiel A$769,95 ; minimum historique non prouvé'}
+NOT_DISCOUNT={'en':'No discount: recorded sale and reference prices are equal','ko':'할인 아님 · 기록된 판매가와 비교가격이 동일','zh':'非折扣：记录售价与参考价相同','ja':'割引ではありません・記録された販売価格と比較価格が同額','es':'Sin descuento: precio registrado igual al de referencia','fr':'Pas de réduction : prix relevé identique au prix de référence'}
 HELD_SUMMARY={'en':'Retained listing, not a confirmed current deal. Product identity and current price need verification.','ko':'보존된 이전 상품 기록입니다. 현재 핫딜이 아니며 상품 일치와 현재 가격을 확인 중입니다.','zh':'保留的历史记录，并非已确认的当前优惠。商品身份和当前价格待核实。','ja':'保存された過去の商品記録です。現在の特価ではなく、商品と現行価格は確認中です。','es':'Registro anterior, no una oferta actual confirmada. Producto y precio pendientes de verificar.','fr':'Ancienne fiche conservée, pas une offre actuelle confirmée. Produit et prix à vérifier.'}
 PRICE_RECORDED={'en':'Previously recorded price; not reverified','ko':'이전 기록 가격 · 현재 가격 미검증','zh':'历史记录价格，当前价格未核实','ja':'過去の記録価格・現在価格は未確認','es':'Precio registrado anteriormente; sin reverificar','fr':'Prix précédemment relevé ; non revérifié'}
 HELD={'en':'Product link awaiting verification','ko':'상품 링크 확인 중','zh':'商品链接待核实','ja':'商品リンクを確認中','es':'Enlace de producto pendiente de verificar','fr':'Lien du produit en attente de vérification'}
@@ -45,10 +47,10 @@ def catalogue(lang,feeds,translations):
    image=f'<figure><img src="{e(safe(media["path"]))}" alt="{e(title)}" loading="lazy"><figcaption class="caption">{e(media.get("caption",""))} <a href="{e(safe(media.get("credit_url","")))}">{e(media.get("credit",""))}</a></figcaption></figure>'
   source=d.get('source') or {};src=f'<a href="{e(safe(source.get("url","")))}" rel="noopener nofollow">{t[30]}</a>' if source.get('url') else ''
   cta=(f'<a class="cta" href="{e(link["url"])}" rel="noopener nofollow{" sponsored" if link.get("tracked") else ""}">{t[11]}</a>' if publishable_link(d) else f'<p class="notice link-held" role="status">{HELD[lang]}</p>')
-  review=d.get('price_review') or {}; current=review.get('price_status')=='seller_page_display_confirmed'
+  review=d.get('price_review') or {}; current=checked_price(d)
   if not current: summary=HELD_SUMMARY[lang]
   price_note=f'<p class="notice">{PRICE_CURRENT[lang] if current else PRICE_RECORDED[lang]}</p>'
-  price_note+=f'<p class="notice">{SRP[lang] if review.get("deal_status")=="below_official_srp" else DISCOUNT_UNKNOWN[lang]}</p>'
+  price_note+=f'<p class="notice">{SRP[lang] if review.get("deal_status")=="below_official_srp" else (NOT_DISCOUNT[lang] if review.get("deal_status")=="not_a_discount" else DISCOUNT_UNKNOWN[lang])}</p>'
   comparison=(review.get('comparison') or {}).get('url')
   if comparison: price_note+=f'<a class="meta" href="{e(safe(comparison))}" rel="noopener nofollow">{t[30]}</a>'
   if review.get('review_completed_at'): price_note+=f'<p class="meta"><time datetime="{e(review["review_completed_at"])}">{e(review["review_completed_at"])}</time></p>' 

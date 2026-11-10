@@ -558,14 +558,16 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
     price = _won(deal)
     price_html = f"<strong>{html.escape(price)}</strong>" if price else (
         '<span class="unknown">원문 가격 확인</span>' if lang == "ko" else '<span class="unknown">See price at source</span>')
-    if deal.get("original_price"):
+    from tools.deal_prices import discount_percent
+    verified_discount = discount_percent(deal)
+    if verified_discount is not None:
         orig = deal["original_price"]
         orig_txt = _won({"price": orig, "currency": deal.get("currency", "KRW")})
         price_html += f"<s>{html.escape(orig_txt)}</s>"
 
     flags = ""
-    if deal.get("discount_pct"):
-        flags += f'<span class="flag flag-discount">-{html.escape(str(deal["discount_pct"]))}%</span>'
+    if verified_discount is not None:
+        flags += f'<span class="flag flag-discount">-{html.escape(str(verified_discount))}%</span>'
     ship = deal.get("shipping") or ""
     if "무료" in ship or ship == "Free shipping":
         flags += f'<span class="flag flag-free">{html.escape(ship)}</span>'
@@ -1514,6 +1516,10 @@ def build_site(data_path=DATA_PATH, output=DIST_DIR, deals_path=DEALS_DATA_PATH,
     link_errors = validate_deal_links(deals.get('feed', []) + en_deals.get('feed', []))
     if link_errors:
         raise ValueError('Product link registration failed: ' + '; '.join(link_errors))
+    from tools.deal_prices import validate_deal_prices
+    price_errors = validate_deal_prices(deals.get('feed', []) + en_deals.get('feed', []))
+    if price_errors:
+        raise ValueError('Price registration failed: ' + '; '.join(price_errors))
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".radar-build-", dir=output.parent) as temp:
         stage = Path(temp) / "site"

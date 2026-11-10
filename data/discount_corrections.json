@@ -1,0 +1,124 @@
+{
+  "scope": "Static audit of 30 stored records; no fresh merchant recheck; previous source timestamps retained",
+  "rejected_claims": [
+    {
+      "id": "deal-mx-master-3s",
+      "price": 95220,
+      "original_price": 159000,
+      "discount_pct": 40,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-oliveyoung-gift-card-20k",
+      "price": 19600,
+      "original_price": 20000,
+      "discount_pct": 2,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-pepero-sampler-6pack",
+      "price": 9300,
+      "original_price": 12000,
+      "discount_pct": 23,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-orion-wow-snack-16",
+      "price": 10980,
+      "original_price": 14800,
+      "discount_pct": 26,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-coupang-gift-card-10k",
+      "price": 10000,
+      "original_price": 10000,
+      "discount_pct": 0,
+      "decision": "equal_price_not_a_discount"
+    },
+    {
+      "id": "deal-orion-bichobi-2pack",
+      "price": 4370,
+      "original_price": 5200,
+      "discount_pct": 16,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-office-pantry-snack-10",
+      "price": 27800,
+      "original_price": 35000,
+      "discount_pct": 21,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-belkin-100w-gan",
+      "price": 39900,
+      "original_price": 63900,
+      "discount_pct": 37,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-lg-ultragear-27",
+      "price": 241734,
+      "original_price": 329000,
+      "discount_pct": 26,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-ugreen-100w-gan",
+      "price": 60900,
+      "original_price": 89900,
+      "discount_pct": 32,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-artmu-100w-gb102",
+      "price": 35700,
+      "original_price": 44800,
+      "discount_pct": 20,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-sony-mdr-3r",
+      "price": 78640,
+      "original_price": 119000,
+      "discount_pct": 34,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-apple-m4-macbook-pro",
+      "price": 2990000,
+      "original_price": 3290000,
+      "discount_pct": 9,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-silent-mech-keyboard",
+      "price": 68900,
+      "original_price": 89000,
+      "discount_pct": 23,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-heavy-duty-monitor-arm",
+      "price": 49900,
+      "original_price": 69000,
+      "discount_pct": 28,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-mini-pc-n100",
+      "price": 189000,
+      "original_price": 259000,
+      "discount_pct": 27,
+      "decision": "comparison_evidence_unverified"
+    },
+    {
+      "id": "deal-office-coffee-bean-1kg",
+      "price": 16900,
+      "original_price": 22000,
+      "discount_pct": 23,
+      "decision": "comparison_evidence_unverified"
+    }
+  ]
+}
