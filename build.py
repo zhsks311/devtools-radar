@@ -481,6 +481,7 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
 .deal-facts .fact { display: grid; grid-template-columns: 5.6rem 1fr; gap: 0.5rem; align-items: start; }
 .deal-facts dt { font-size: 0.75rem; font-weight: 700; color: #8ea3bd; letter-spacing: 0.01em; padding-top: 0.08rem; }
 .deal-facts dd { margin: 0; font-size: 0.86rem; line-height: 1.6; color: #c3d0e0; }
+.deal-check { margin: -0.5rem 0 0.9rem; font-size: 0.74rem; color: #7288a3; line-height: 1.55; }
 
 .cta {
   display: block; width: 100%; text-align: center; text-decoration: none;
@@ -538,6 +539,14 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
 }
 """
 
+CAT_SHORT = {
+    "laptops": "노트북·PC",
+    "monitor-desk": "모니터·데스크",
+    "keyboard-mouse": "키보드·마우스",
+    "afterwork": "커피·간식",
+    "tech": "테크 장비",
+}
+
 FACT_ICONS = [
     ("실구매가", "💰 실구매가"),
     ("추천", "🎯 추천"),
@@ -593,16 +602,24 @@ def _won(deal: dict) -> str:
 
 def _fact_rows(deal: dict) -> str:
     rows = ""
+    check = ""
     for line in deal.get("briefing", []):
         label, sep, value = line.partition(":")
-        if not sep or label.strip() in ("핵심", "Key"):
+        key = label.strip()
+        if not sep or key in ("핵심", "Key"):
             continue
-        icon = dict(FACT_ICONS).get(label.strip(), "")
+        if key in ("체크", "Check"):
+            check = value.strip()
+            continue
+        icon = dict(FACT_ICONS).get(key, "")
         if not icon:
             continue
         rows += (f'<div class="fact"><dt>{html.escape(icon)}</dt>'
                  f'<dd>{html.escape(value.strip())}</dd></div>')
-    return f'<dl class="deal-facts">{rows}</dl>' if rows else ""
+    facts = f'<dl class="deal-facts">{rows}</dl>' if rows else ""
+    if check:
+        facts += f'<p class="deal-check">⚡ {html.escape(check)}</p>'
+    return facts
 
 
 def _deal_card(deal: dict, lang: str = "ko") -> str:
@@ -645,7 +662,8 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
         label = "원문 보기" if lang == "ko" else "Source post"
         foot = f'<div class="deal-foot"><a href="{src_url}" target="_blank" rel="noopener nofollow">{label}</a>{note}</div>'
 
-    cat = html.escape(deal.get("category_label", ""))
+    cat_label = deal.get("category_label", "")
+    cat = html.escape(CAT_SHORT.get(deal.get("category", ""), cat_label) if lang == "ko" else cat_label)
     return f"""
       <article class="deal-card" data-cat="{html.escape(deal.get('category', 'tech'))}">
         <div class="deal-top">
