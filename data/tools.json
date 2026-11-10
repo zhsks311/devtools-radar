@@ -1,5 +1,935 @@
 [
   {
+    "slug": "stripe-vs-lemonsqueezy-vs-paddle",
+    "category": "Payments & Billing",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "A thousand subscribers at $20 a month pay $1,520 on an assembled Stripe stack and $1,500 on a merchant of record. The vendor everyone calls expensive is the cheaper one at the price point most SaaS products actually charge.",
+    "sections": [
+      {
+        "title": "The sticker price is one of four meters you will pay",
+        "content": "Stripe's pricing page prints one number: 2.9% + 30¢ for a domestic card. A subscription business pays that plus three more.\n\n| Meter | Price | Applied when |\n|---|---|---|\n| Domestic card | 2.9% + 30¢ | every successful charge |\n| International card | +1.5% | the card is issued outside your country |\n| Currency conversion | +1.5% | the charge is not in your settlement currency |\n| Billing | 0.7% of Billing volume | subscriptions, processed on or off Stripe |\n| Tax Basic | 50¢ per transaction | you are registered to collect there |\n| ACH direct debit | 0.8%, $5 cap | bank debits |\n| Dispute | $15.00 | each chargeback received |\n\nNone of those lines is hidden. Each one has its own page, which is how a 2.9% product becomes a 3.6% + 80¢ product by the end of the month."
+      },
+      {
+        "title": "A merchant of record sells a different invoice, not a cheaper one",
+        "content": "Lemon Squeezy and Paddle both publish 5% + 50¢ per transaction and $0 per month. They also publish the same sentence in different words: they are the seller.\n\nThat moves who owns the tax question. On Stripe you are the merchant, so the VAT number, the filing deadline and the penalty for missing it are yours. On either merchant of record the receipt carries their name and you receive a net payout.\n\n- **Lemon Squeezy:** 5% + 50¢ per transaction, $0 monthly, and sales tax or VAT collection where it is the merchant of record, with the liability taken on.\n- **Paddle:** 5% + 50¢ per Checkout transaction, no monthly fee, and custom pricing for products under $10.\n- Neither fee moves when you add a country to your tax map. That is the product.\n\nThe question is not which percentage is smaller. It is whether the extra points cost less than the paperwork you would otherwise do yourself."
+      },
+      {
+        "title": "At $20 a month the assembled stack loses by $20",
+        "content": "Take 1,000 subscribers at $20, all domestic cards, $20,000 of volume, and assume you are registered to collect tax everywhere you sell. If you are not, the Tax line is smaller and the Stripe stack cheaper.\n\n| Line | Assembled Stripe stack | Merchant of record |\n|---|---|---|\n| Payments | 2.9% × $20,000 = $580, plus 1,000 × 30¢ = $300 | — |\n| Billing | 0.7% × $20,000 = $140 | — |\n| Tax Basic | 1,000 × 50¢ = $500 | — |\n| Single fee | — | 5% × $20,000 = $1,000, plus 1,000 × 50¢ = $500 |\n| **Total** | **$1,520** | **$1,500** |\n\nMove the price to $100 and keep the same $20,000: Stripe bills $580 + $140 + $160 = $880, the merchant of record bills $1,000 + $100 = $1,100. The crossover is one equation: 3.6% × P + 80¢ = 5% × P + 50¢, so 1.4% × P = 30¢, and P = $21.43."
+      },
+      {
+        "title": "Every foreign card multiplies the crossover by fourteen",
+        "content": "1.5% for an international card turns 3.6% + 80¢ into 5.1% + 80¢. Against 5% + 50¢ the gap becomes 0.1% × P − 30¢, so the merchant of record wins until a single charge passes $300.\n\n| Card | Stripe stack | Merchant of record | Cheaper |\n|---|---|---|---|\n| Domestic | 3.6% + 80¢ | 5% + 50¢ | Stripe above $21.43 |\n| International | 5.1% + 80¢ | 5% + 50¢ | MoR below $300 |\n| International, non-USD | 6.6% + 80¢ | 5% + 50¢ | MoR at every price |\n\nThe third row is the one people miss. A euro customer paying with a euro card costs 6.6% + 80¢, which is more than the fee that supposedly includes filing for thirty countries. Currency conversion is charged on top of the international card fee, so both can land on one charge."
+      },
+      {
+        "title": "What the extra points buy, and what they take",
+        "content": "For the fee you get fraud screening, chargeback handling, buyer support and the remittance itself. Paddle lists payments, subscriptions, tax, fraud protection and billing support inside the 5%. Lemon Squeezy lists the same set and states the liability plainly: it takes on tax collection and pays the taxes on your behalf.\n\nThe cost is control:\n\n- You do not hold the merchant account, so the acquirer relationship and the risk decision are theirs.\n- Refund and chargeback conversations belong to their support queue, not yours.\n- Leaving means moving subscribers, and Paddle sells that as a migration service rather than a button.\n\nStripe's answer is Tax Complete, which monitors thresholds, registers in 90+ countries and files returns. It is priced in tiers by registrations, transactions and filings, and the tiers are a quote rather than a number on the page."
+      },
+      {
+        "title": "Where each one breaks",
+        "content": "Stripe breaks at the first country you sell into without registering. Tax Basic tells you the tax is due and meters 50¢ once you are registered; it does not register you, and back taxes plus penalties appear on no price sheet.\n\nThe merchant of record breaks on the fixed fee. 50¢ is 5.6% of a $9 product, so a $9 sale keeps $8.05 before hosting. Paddle's own FAQ routes products under $10 to custom pricing, which is the same admission in a politer sentence.\n\nIt breaks again at the top, because 5% never thins out. A $200,000 month split into 1,000 charges of $200 pays $10,000 + $500 on a merchant of record and $7,200 + $800 on the assembled stack, a $30,000 gap across a year.\n\nPrice three things before you choose: your average charge, the share of cards that are not domestic, and whether anyone on the team has filed a VAT return."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "1,000 subscribers at $20, domestic cards",
+        "formula": "Stripe: 2.9% × $20,000 = $580; 1,000 × 30¢ = $300; Billing 0.7% × $20,000 = $140; Tax Basic 1,000 × 50¢ = $500. MoR: 5% × $20,000 = $1,000; 1,000 × 50¢ = $500",
+        "result": "$1,520 assembled Stripe stack against $1,500 on either merchant of record"
+      },
+      {
+        "label": "200 subscribers at $100, same $20,000 of volume",
+        "formula": "Stripe: 2.9% × $20,000 = $580; 200 × 30¢ = $60; 0.7% × $20,000 = $140; 200 × 50¢ = $100. MoR: 5% × $20,000 = $1,000; 200 × 50¢ = $100",
+        "result": "$880 on Stripe against $1,100 on a merchant of record, a $220 monthly premium"
+      },
+      {
+        "label": "Break-even price per charge",
+        "formula": "3.6% × P + $0.80 = 5% × P + $0.50, so 1.4% × P = $0.30 and P = $21.43",
+        "result": "Above $21.43 a charge the assembled stack is cheaper; below it the merchant of record is"
+      },
+      {
+        "label": "A $9 product on a merchant of record",
+        "formula": "5% × $9 = $0.45, plus $0.50 fixed = $0.95 per sale; $0.95 ÷ $9 = 10.6%",
+        "result": "$0.95 of a $9 sale, with half of it coming from the fixed fee alone"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "Average charge under $21 and a team of one",
+        "pick": "Lemon Squeezy or Paddle",
+        "why": "At $20 the single 5% + 50¢ meter bills $1,500 against $1,520 for the assembled Stripe stack, and nobody has to register for VAT."
+      },
+      {
+        "situation": "Average charge over $21, mostly domestic cards",
+        "pick": "Stripe",
+        "why": "The crossover is 1.4% × P = 30¢, so from $21.43 upward the four Stripe meters total less than one merchant-of-record fee."
+      },
+      {
+        "situation": "Selling into the EU and UK from day one",
+        "pick": "Lemon Squeezy or Paddle",
+        "why": "An international non-USD card costs the Stripe stack 6.6% + 80¢, which is more than the merchant-of-record fee that includes the filings."
+      },
+      {
+        "situation": "Enterprise buyers who want invoices, POs and net terms",
+        "pick": "Stripe",
+        "why": "Invoicing and Billing sit on the same account, and the 0.7% Billing rate excludes one-off invoices."
+      },
+      {
+        "situation": "A marketplace that pays out to sellers",
+        "pick": "Stripe",
+        "why": "Neither merchant-of-record price sheet covers paying out to third-party sellers; the 5% + 50¢ is a single-seller fee."
+      },
+      {
+        "situation": "Products priced under $10",
+        "pick": "Paddle, at custom pricing",
+        "why": "The 50¢ fixed fee is 5.6% of a $9 sale, and Paddle's FAQ sends sub-$10 products to a bespoke rate instead of the public one."
+      },
+      {
+        "situation": "$200,000 months with $200 charges",
+        "pick": "Stripe",
+        "why": "The percentage never falls on a merchant of record: that month pays $10,500 there against $8,000 on the assembled stack."
+      },
+      {
+        "situation": "Nobody on the team has ever filed a VAT return",
+        "pick": "A merchant of record",
+        "why": "Tax Basic meters 50¢ per registered transaction but does not register you; the registrations and filings are the part you are buying."
+      }
+    ],
+    "verdict_summary": "Below roughly $21 per charge, or on any card that is not domestic, the merchant of record is the cheaper invoice, not the expensive one. Above it, the assembled Stripe stack wins on price and only on price: the moment you are not doing the registrations and filings yourself, the two points you saved are paying for work you still owe.",
+    "migration_guide": "Leaving a merchant of record means moving subscribers, and there is no card-data path between the two: cards stored with the merchant of record do not transfer, so each customer either re-enters payment details or you run both systems until the next renewal. Product and price objects are recreated on the other side, and historical tax filings stay with whoever made them. Paddle sells this as a migration service; on Stripe the same move is exports plus a dunning sequence you write.\n\nGoing the other way, from Stripe to a merchant of record, the tax history is the part that does not travel. You keep the records, the new merchant registers where it needs to, and the previous filings remain your responsibility for the periods you owned them.",
+    "faqs": [
+      {
+        "q": "Does the 5% + 50¢ include payment processing?",
+        "a": "Yes. Both pages describe one all-in fee covering payments, checkout, subscriptions, tax collection, fraud screening and buyer support, with no monthly fee on top."
+      },
+      {
+        "q": "Is Stripe Tax the same thing as a merchant of record?",
+        "a": "No. Tax Basic calculates and collects tax where you are registered and meters 50¢ per transaction. Registration and filing are yours unless you buy Tax Complete, which is tiered and quoted."
+      },
+      {
+        "q": "What does an international card add on Stripe?",
+        "a": "1.5% on top of 2.9% + 30¢, and currency conversion is a separate 1.5% when the charge is not in your settlement currency."
+      },
+      {
+        "q": "Can a merchant of record refuse a product?",
+        "a": "It is the seller named on the receipt, so what it will and will not sell is its decision to make. That approval is part of what the 5% covers."
+      }
+    ],
+    "sources": [
+      "https://stripe.com/pricing",
+      "https://stripe.com/billing/pricing",
+      "https://stripe.com/tax/pricing",
+      "https://www.lemonsqueezy.com/pricing",
+      "https://www.paddle.com/pricing"
+    ],
+    "related": [
+      {
+        "slug": "resend-vs-sendgrid",
+        "name": "Resend vs SendGrid",
+        "why": "The same fixed-fee trap, one decimal place smaller: 50¢ on a $9 sale is 5.6%."
+      },
+      {
+        "slug": "datadog-vs-grafana-cloud",
+        "name": "Datadog vs Grafana Cloud",
+        "why": "Another invoice built from meters the pricing page lists one at a time."
+      }
+    ],
+    "tool_a": {
+      "name": "Stripe",
+      "tagline": "Four meters, one invoice, and you are the seller",
+      "db": "Payments, Billing and Tax as separate line items",
+      "pricing": "2.9% + 30¢ domestic · +1.5% international · Billing 0.7% · Tax 50¢ per transaction",
+      "self_host": "No (Stripe-hosted checkout and portal)",
+      "realtime": "You are the seller of record: registrations, filings and penalties are yours",
+      "ai_readiness": "Radar fraud screening included; Smart Disputes takes 30% of a recovered dispute",
+      "lock_in": "Low on card data, high on tax history: filings stay in your name",
+      "badge": "3.6% + 80¢ assembled",
+      "cta_url": "https://stripe.com/?utm_source=devteardown",
+      "pros": [
+        "Four meters you can turn off: Tax Basic and Billing are opt-in, so the fee follows the feature",
+        "Payments, Billing and Invoicing share one customer record, so a one-off invoice skips the 0.7%",
+        "Disputes cost $15 flat, which is cheaper than losing the dispute and the goods",
+        "The exit is real: card tokens export and the API is documented, so a PSP swap is a project rather than a rewrite"
+      ],
+      "cons": [
+        "The 2.9% + 30¢ on the pricing page is not the rate a subscription business pays",
+        "Tax Basic meters 50¢ per registered transaction and still leaves registration and filing to you",
+        "An international non-USD card carries 1.5% twice, before anyone mentions VAT",
+        "Tax Complete, the part that would replace a merchant of record, is a quoted tier"
+      ],
+      "code_example": "// Stripe: you are the seller, so the tax switch is yours to get wrong.\nimport Stripe from \"stripe\";\nconst stripe = new Stripe(process.env.STRIPE_SECRET_KEY);\n\nconst session = await stripe.checkout.sessions.create({\n  mode: \"subscription\",\n  line_items: [{ price: process.env.PRICE_20_MONTHLY, quantity: 1 }],\n  automatic_tax: { enabled: true }, // 50¢ per transaction once registered\n  customer_update: { address: \"auto\" },\n  success_url: \"https://app.example.com/ok?session={CHECKOUT_SESSION_ID}\",\n  cancel_url: \"https://app.example.com/pricing\",\n});\n// Breaks when: automatic_tax is on and you never registered in the buyer's country.\n// No tax is collected, the liability stays yours, and the invoice still looks right."
+    },
+    "tool_b": {
+      "name": "Lemon Squeezy / Paddle",
+      "tagline": "One meter for payments, tax and the seller's name on the receipt",
+      "db": "Checkout, subscriptions and tax remittance as a single fee",
+      "pricing": "5% + 50¢ per transaction on both · $0 per month · custom pricing under $10",
+      "self_host": "No (both act as the merchant of record)",
+      "realtime": "They are the seller: tax collection and remittance sit with them, not you",
+      "ai_readiness": "Fraud screening and buyer support are inside the 5%, not priced separately",
+      "lock_in": "Medium: subscriptions move through a paid migration, and cards do not transfer",
+      "badge": "5% + 50¢",
+      "cta_url": "https://www.paddle.com/?utm_source=devteardown",
+      "pros": [
+        "One percentage and one fixed fee cover payments, tax, fraud and buyer support",
+        "No monthly fee on either, so the cost is zero until the first sale",
+        "Tax collection follows the merchant's registrations, so a new country does not add a filing",
+        "Both publish no lock-in period, and both sell a migration service for the exit"
+      ],
+      "cons": [
+        "The percentage never thins out: a $200,000 month pays $10,500 where Stripe pays $8,000",
+        "50¢ per transaction is 5.6% of a $9 product and 11% of a $4.50 one",
+        "You do not hold the merchant account, so the risk decision and support queue are theirs",
+        "Subscription data moves through a migration rather than an export you run yourself"
+      ],
+      "code_example": "// Paddle: the tax never becomes your line item, but the webhook is the billable event.\nimport { Paddle, Environment } from \"@paddle/paddle-node-sdk\";\nconst paddle = new Paddle(process.env.PADDLE_API_KEY, {\n  environment: Environment.production,\n});\n\nconst transaction = await paddle.transactions.create({\n  items: [{ priceId: process.env.PRICE_20_MONTHLY, quantity: 1 }],\n  customData: { account_id: \"acc_123\" },\n});\n// Breaks when: you grant access from this response. The transaction is not the\n// subscription; only the subscription webhook says the 5% + 50¢ was collected.\nreturn transaction.id;"
+    }
+  },
+  {
+    "slug": "anthropic-vs-openai-api-pricing",
+    "category": "AI & LLM APIs",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one tokenizer counts about 30% more tokens for the same text.",
+    "sections": [
+      {
+        "title": "Two sheets, one identical sticker",
+        "content": "The flagship rows of both price sheets match to the cent, and so do the cache reads.\n\n| Per million tokens | Claude Sonnet 5.5 | GPT-6.1 Sol |\n|---|---|---|\n| Input | $2.00 | $2.00 |\n| Output | $10.00 | $10.00 |\n| Cached input (hit) | $0.10 | $0.10 |\n| 5m or 30m cache write | $2.50 (1.25x) | $2.50 (1.25x) |\n| Batch input / output | $1.00 / $5.00 | $1.00 / $5.00 |\n\nAnthropic's Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI's GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision."
+      },
+      {
+        "title": "The tokenizer changes the invoice before your prompt does",
+        "content": "Anthropic's pricing page carries a note most price sheets would leave out: Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text.\n\nSo the sticker is $2 per million tokens, and the bill is $2 per million tokens of Claude's counting. For text that costs $2.00 per million source tokens on a standard tokenizer, the same text costs $2.00 × 1.3 = $2.60.\n\nThat is a 30% difference on the largest line of a RAG or agent bill, and it does not appear anywhere in a side-by-side table that compares per-token prices. The note also says the exact increase depends on the content, so treat 1.3 as a working multiplier, not a constant."
+      },
+      {
+        "title": "Caching is a break-even test, not a discount",
+        "content": "Both vendors sell the same shape: pay more to write a prefix, pay less to read it. The multipliers are where they part.\n\n| Cache operation | Anthropic | OpenAI |\n|---|---|---|\n| Write, short | 1.25x, 5 minutes | 1.25x, 30 minutes |\n| Write, long | 2x, 1 hour | 2.5x, 12 hours |\n| Read (hit) | 0.1x, or 0.05x on 5.5 models | 0.05x |\n\nA cached prefix costs 1.25 + 0.1n to serve n requests, against n uncached. The break-even is n = 1.39, so the second request already wins, and ten requests cost 2.25 instead of 10, a 77.5% cut on the input line. The long windows are worse deals for short runs: 2x + 0.1n beats n only from the third request, and OpenAI's 2.5x write needs three reads before it pays."
+      },
+      {
+        "title": "Batch is the one line where both sheets agree",
+        "content": "Both vendors halve input and output for asynchronous work. Anthropic publishes the batch rows separately; OpenAI prints a Batch table and a separate Flex table at the same numbers.\n\n| Batch, per million | Claude Sonnet 5.5 | Claude Opus 5.5 | GPT-6.1 Sol |\n|---|---|---|---|\n| Input | $1.00 | $2.00 | $1.00 |\n| Output | $5.00 | $10.00 | $5.00 |\n\nAnthropic's page says its cache multipliers stack with the batch discount. That combination is the cheapest published way to process a large, stable corpus: a cached prefix at 0.1x inside a batch, on a job that can wait. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached."
+      },
+      {
+        "title": "Long prompts are where the sheets stop being comparable",
+        "content": "Both vendors reprice the prompt once it gets long, and they do it in different shapes.\n\n| Prompt size | GPT-6.1 Sol | Claude Haiku 5.5 |\n|---|---|---|\n| Short context, input | $2.00 | $0.10 up to 100,000 tokens |\n| Long context, input | $4.00 | $0.50 over 100,000 tokens |\n| Long context, output | $15.00 | $2.50 over 100,000 tokens |\n\nOpenAI's long-context row doubles input and multiplies output by 1.5. Anthropic's Haiku sheet lists two rows, one for prompts up to 100,000 tokens and one for prompts over it, at five times the rate, and it does not print a marginal split.\n\nA 200,000-token prompt therefore bills at 0.2 × $0.50 = $0.10 on the over-100k row against $0.02 if the same prompt fit under the line. That cliff, not the per-token sticker, is what a document pipeline hits when someone pastes a whole contract set."
+      },
+      {
+        "title": "Three add-ons that quietly change the unit",
+        "content": "Fast mode on both sides doubles the sticker: Opus 5.5 goes to $8 input and $40 output, GPT-6.1 Sol to $4 and $20. Anthropic notes that fast mode is not available with the Batch API, so the two savings cannot be stacked.\n\nData residency is a multiplier rather than a tier. Sending Claude 4.6 or later to US-only inference applies 1.1x to every token category, cache writes and reads included.\n\nThe third is the cache window, and it is easy to lose money on. A 12-hour write costs 2.5x, so a job that runs twice a day should skip caching entirely rather than pay 2.5x for a prefix it reads once. Check the read count before enabling it: three reads is where the long window starts to earn."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "100k requests, 16k cached prefix, 4k fresh input, 500 output",
+        "formula": "Sonnet 5.5 or GPT-6.1 Sol: writes 10,000 × 16,000 = 160M × $2.50 = $400; hits 90,000 × 16,000 = 1,440M × $0.10 = $144; fresh 100,000 × 4,000 = 400M × $2 = $800; output 100,000 × 500 = 50M × $10 = $500",
+        "result": "$1,844 on either vendor at list price, before the tokenizer"
+      },
+      {
+        "label": "The same workload through a tokenizer that counts 30% more",
+        "formula": "$1,844 × 1.3 = $2,397.20, applying Anthropic's stated ~30% token increase",
+        "result": "$2,397 against $1,844 for identical text, a 30% difference on a sheet whose per-token prices match"
+      },
+      {
+        "label": "Cache break-even on a shared prefix",
+        "formula": "1.25 + 0.10n < n, so n > 1.39; at n = 10 the cost is 1.25 + 1.00 = 2.25 against 10 uncached",
+        "result": "Profitable from the second request; 77.5% off the input line by the tenth"
+      },
+      {
+        "label": "Long window write on a twice-daily job",
+        "formula": "OpenAI 12h: 2.5 write + 0.10 read = 2.60, against 2 × 1.00 = 2.00 uncached. Anthropic 1h: 2.0 write + 0.10 read = 2.10, against 2.00",
+        "result": "2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor's long window"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "A long, stable system prompt at high volume",
+        "pick": "Either; decide on the tokenizer",
+        "why": "Both bill the prefix at 1.25x to write and 0.10x or 0.05x to read, so a 30% token difference decides more than the cache terms do."
+      },
+      {
+        "situation": "Prompts that regularly pass 100,000 tokens",
+        "pick": "Weigh the long-context row first",
+        "why": "OpenAI doubles input and multiplies output by 1.5 past the boundary; Haiku 5.5 lists a rate five times higher for prompts over 100,000 tokens."
+      },
+      {
+        "situation": "Nightly batch of a few hundred thousand jobs",
+        "pick": "Batch API on either",
+        "why": "Both halve input and output, and a single nightly pass has no cache to read from, so a cold write only adds 25%."
+      },
+      {
+        "situation": "A job that runs every 12 hours over one corpus",
+        "pick": "No cache at all",
+        "why": "The 12-hour write costs 2.5x and the 1-hour write has expired by the next run; two uncached passes cost 2.0 against 2.6."
+      },
+      {
+        "situation": "Output-heavy generation, 500+ tokens per call",
+        "pick": "GPT-6.1 Sol over Opus 5.5",
+        "why": "Output is 5x input on both sheets, so the $10 against $20 output rate dominates the bill long before the input line does."
+      },
+      {
+        "situation": "Streaming that a user is watching",
+        "pick": "Fast mode, at 2x",
+        "why": "Opus 5.5 moves to $8 and $40 and GPT-6.1 Sol to $4 and $20, and fast mode cannot be combined with batch."
+      },
+      {
+        "situation": "Data must stay in the US",
+        "pick": "Price the 1.1x before comparing",
+        "why": "US-only inference multiplies every Claude token category by 1.1, cache writes and reads included, which changes a close comparison."
+      },
+      {
+        "situation": "A prototype with prompts under 100,000 tokens",
+        "pick": "Claude Haiku 5.5",
+        "why": "$0.10 input and $0.50 output per million is a twentieth of the flagship rows, and the over-100k rate only applies when the prompt crosses the line."
+      }
+    ],
+    "verdict_summary": "On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer's 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.",
+    "migration_guide": "Moving between the two APIs is mostly a prompt rewrite, because the cache is the part that does not travel: Anthropic takes an explicit breakpoint marker, OpenAI caches a stable prefix automatically. Re-measure your token counts on the new tokenizer before you migrate pricing assumptions, since the same text will not bill the same number of tokens.\n\nEverything asynchronous needs resubmission. Batch jobs, files and fine-tuned endpoints are per-vendor objects with no portable format, and model deprecations retire a SKU you may still be calling, so keep the model name in configuration rather than in code.",
+    "faqs": [
+      {
+        "q": "Is prompt caching automatic on both?",
+        "a": "No. Anthropic takes a cache_control marker on the block you want cached, and OpenAI caches a stable prefix automatically with no marker to place."
+      },
+      {
+        "q": "Do the batch discount and the cache discount combine?",
+        "a": "On Anthropic the page says cache multipliers stack with the batch discount. OpenAI publishes separate Batch and Flex tables at the same rates, and fast mode is excluded from batch on Anthropic."
+      },
+      {
+        "q": "What does the 30% tokenizer note change?",
+        "a": "It raises the effective price per unit of source text by about 30% on Claude 4.7 and later, against a sheet whose per-token rates are otherwise identical to the competitor's."
+      },
+      {
+        "q": "Is a cache write ever a loss?",
+        "a": "Yes. The 1.25x short write needs a read to pay for itself and the 2x or 2.5x long write needs two or three, so a job that reads the prefix once bills more with caching than without."
+      }
+    ],
+    "sources": [
+      "https://docs.anthropic.com/en/docs/about-claude/pricing",
+      "https://platform.openai.com/docs/pricing",
+      "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+      "https://claude.com/pricing"
+    ],
+    "related": [
+      {
+        "slug": "datadog-vs-grafana-cloud",
+        "name": "Datadog vs Grafana Cloud",
+        "why": "The same discipline on a monitoring invoice: find the meter, then print the formula."
+      },
+      {
+        "slug": "aws-lambda-vs-cloudflare-workers",
+        "name": "AWS Lambda vs Cloudflare Workers",
+        "why": "When the bill depends on whether you charge for waiting or for working."
+      }
+    ],
+    "tool_a": {
+      "name": "Anthropic",
+      "tagline": "Per-token pricing with an explicit cache breakpoint",
+      "db": "Claude API: messages, prompt caching and batch in one price sheet",
+      "pricing": "Sonnet 5.5 $2 / $10 · Opus 5.5 $4 / $20 · Haiku 5.5 $0.10 / $0.50 per MTok",
+      "self_host": "No (first-party API, Bedrock and Google Cloud endpoints)",
+      "realtime": "Cache reads at 0.1x, or 0.05x on Opus 5.5 and Sonnet 5.5; writes 1.25x for 5m and 2x for 1h",
+      "ai_readiness": "Batch halves both sides; fast mode doubles; US-only inference adds 1.1x",
+      "lock_in": "Medium: model deprecations retire SKUs, and cache breakpoints are vendor-specific",
+      "badge": "Cache breakpoints",
+      "cta_url": "https://claude.com/pricing?utm_source=devteardown",
+      "pros": [
+        "Two cache windows on every model, 5 minutes and 1 hour, priced at 1.25x and 2x",
+        "Cache reads cost 0.05x on Opus 5.5 and Sonnet 5.5, cheaper than the standard 0.1x row",
+        "The batch and cache multipliers stack, which is the cheapest published path for a stable corpus",
+        "Haiku 5.5 starts at $0.10 input for prompts under 100,000 tokens, with a documented higher row above it"
+      ],
+      "cons": [
+        "The 4.7-and-later tokenizer produces about 30% more tokens for the same text, which the per-token price hides",
+        "The over-100,000-token Haiku row is five times the rate and is printed as a whole-prompt rate",
+        "Fast mode doubles the sheet and cannot be stacked with the batch discount",
+        "US-only inference applies 1.1x to cache writes and reads, not just to fresh input"
+      ],
+      "code_example": "// Anthropic bills the prefix once: the breakpoint is a marker, not a hint.\nimport Anthropic from \"@anthropic-ai/sdk\";\nconst client = new Anthropic();\n\nconst msg = await client.messages.create({\n  model: \"claude-sonnet-5-5\",\n  max_tokens: 512,\n  system: [{\n    type: \"text\",\n    text: SYSTEM_PROMPT,\n    cache_control: { type: \"ephemeral\" }, // 1.25x write, then 0.10x reads\n  }],\n  messages: [{ role: \"user\", content: question }],\n});\n// Breaks when: the breakpoint sits after a timestamp or a user id. Every request\n// then writes a new prefix and pays 1.25x instead of reading at 0.10x.\nconsole.log(msg.usage);"
+    },
+    "tool_b": {
+      "name": "OpenAI",
+      "tagline": "Per-token pricing with automatic prefix caching and two windows",
+      "db": "GPT API: tokens, cached input, Batch and Flex as separate rate cards",
+      "pricing": "GPT-6.1 Sol $2 / $10 · GPT-6 Astra $10 / $50 · GPT-6 Luna $0.10 / $0.50 per MTok",
+      "self_host": "No (first-party API and Azure-hosted deployments)",
+      "realtime": "Cached input at 0.05x; writes 1.25x for 30 minutes and 2.5x for 12 hours",
+      "ai_readiness": "Batch and Flex halve both sides; long context doubles input and multiplies output by 1.5",
+      "lock_in": "Medium: batch files and assistants are per-vendor objects with no export",
+      "badge": "Automatic caching",
+      "cta_url": "https://openai.com/api/pricing/?utm_source=devteardown",
+      "pros": [
+        "Caching needs no marker: keep the prefix byte-identical and the discount applies",
+        "A 12-hour cache window exists, which suits jobs spread over a working day",
+        "Flex is priced at the batch rate, so the discount is available without the queue",
+        "Long context is priced as a multiplier on the same row, so the jump is visible before you hit it"
+      ],
+      "cons": [
+        "The 12-hour write costs 2.5x, so it needs three reads before it beats paying full price",
+        "Long context doubles input and multiplies output by 1.5, which lands on the most expensive line",
+        "A single changed byte in the prefix is a silent cache miss at full input price",
+        "Fast mode doubles the sheet and is a separate rate card from the standard one"
+      ],
+      "code_example": "// OpenAI caches automatically: there is no marker, only a prefix to keep stable.\nimport OpenAI from \"openai\";\nconst client = new OpenAI();\n\nconst res = await client.responses.create({\n  model: \"gpt-6.1-sol\",\n  input: [\n    { role: \"system\", content: SYSTEM_PROMPT }, // byte-identical every call\n    { role: \"user\", content: question },\n  ],\n});\n// Breaks when: the system prompt is assembled with a date or a request id.\n// A changed prefix is a cache miss billed at the full $2 per million.\nconsole.log(res.usage?.input_tokens_details);"
+    }
+  },
+  {
+    "slug": "datadog-vs-grafana-cloud",
+    "category": "Monitoring & Observability",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud's Pro plan. The difference is not the per-series rate. It is that only one of them puts the hosts on the invoice.",
+    "sections": [
+      {
+        "title": "One sells a host, the other sells a series",
+        "content": "Datadog's infrastructure line is a licence: $15 per host per month billed annually, $18 month-to-month, and every licence carries 100 custom metrics. Grafana Cloud's Pro plan is a $19 platform fee for the whole account, with 10,000 active series and 50 GB of logs inside it.\n\nThat is the whole philosophical difference, and it decides the invoice shape:\n\n- **Datadog:** cost grows with machines first, then with the cardinality of what you send from them.\n- **Grafana Cloud:** cost is flat until you pass the account-level allowances, then grows with data volume only.\n\nNeither page hides this. It is written in the billing unit, which is the one line worth reading before the price."
+      },
+      {
+        "title": "The custom metrics line is the one that grows without a deploy",
+        "content": "Per unit, Datadog's custom metrics cost $5 per 100 per month, which is $50 per 1,000. Grafana Cloud's first paid band is $6.50 per 1,000, then $5.90 above 100,000 and $5.50 above 200,000.\n\n| Meter | Datadog Infrastructure Pro | Grafana Cloud Pro |\n|---|---|---|\n| Base | $15 per host per month, annual | $19 per account per month |\n| Included series | 100 per host | 10,000 per account |\n| Series beyond that | $5 per 100 | $6.50 per 1,000 |\n| Effective per 1,000 | $50.00 | $6.50 |\n\nDatadog's rate is 7.7 times Grafana's, and the allotment it ships with is 100 times smaller. Those two numbers pull in opposite directions, so the bill depends on whether your cardinality scales with hosts or with users."
+      },
+      {
+        "title": "Two shops, and the same four numbers",
+        "content": "Shop one: 20 hosts, 5,000 custom series.\n\n| Line | Datadog | Grafana Cloud |\n|---|---|---|\n| Platform or hosts | 20 × $15 = $300 | $19 |\n| Billable series | 5,000 − 2,000 = 3,000 | 0 (5,000 under 10,000) |\n| Series cost | 30 × $5 = $150 | $0 |\n| **Total** | **$450** | **$19** |\n\nShop two: 20 hosts, 200,000 custom series, which is what a `user_id` tag does to a counter.\n\n| Line | Datadog | Grafana Cloud |\n|---|---|---|\n| Platform or hosts | $300 | $19 |\n| Billable series | 198,000 | 190,000 |\n| Series cost | 1,980 × $5 = $9,900 | 90,000 × $6.50/1k + 100,000 × $5.90/1k = $1,175 |\n| **Total** | **$10,200** | **$1,194** |\n\nThe second table is the one that arrives without a deploy, a migration or a new service. It arrives the week someone adds a tag."
+      },
+      {
+        "title": "Logs: one vendor counts bytes, the other counts events",
+        "content": "This is where the two sheets stop being directly comparable. Datadog charges $0.10 per ingested GB, then $1.70 per million indexed events at 15-day retention or $2.50 at 30-day. Grafana charges three meters per GB: $0.05 to process, $0.40 to write and $0.10 to retain, with 50 GB included.\n\nTake 500 GB a month at roughly 2.5 KB per event, or 200 million events, indexed for 30 days.\n\n| Meter | Datadog | Grafana Cloud |\n|---|---|---|\n| Ingest | 500 GB × $0.10 = $50 | 450 GB × $0.05 = $22.50 |\n| Index and retain | 200M × $2.50/M = $500 | 450 GB × $0.40 = $180 |\n| Retention | included in the index rate | 450 GB × $0.10 = $45 |\n| **Total** | **$550** | **$247.50** |\n\nThe event meter rewards fat logs and the byte meter rewards few of them. The same 500 GB is $550 or $247.50 depending on which unit your logging happens to satisfy."
+      },
+      {
+        "title": "Both vendors now discount you for deleting tags",
+        "content": "Datadog sells Metrics without Limits, which splits one number into two: ingested custom metrics at $0.10 per 100, and indexed ones at $5 per 100. Grafana ships Adaptive Metrics, which aggregates and drops unused series, and the page states the claim as the vendor's own: up to 80%.\n\nRead that as an admission. When a vendor builds a product whose only job is to delete time series before they reach the meter, the meter is cardinality, and the vendor knows the cardinality is often junk.\n\nThe practical move costs nothing:\n\n1. Sort your metrics by tag value count, not by metric name.\n2. Drop any tag whose values scale with users, carts or request ids.\n3. Re-count before you negotiate a discount, because the discount is priced on the number you can already fix."
+      },
+      {
+        "title": "What the switch actually costs",
+        "content": "Grafana Cloud speaks Prometheus for metrics, Loki for logs and Tempo for traces, so an application already instrumented with a Prometheus client can point at a remote write endpoint and stop. Datadog's agent, dashboards, monitors and APM traces do not translate: every dashboard is a rebuild, and every monitor needs a PromQL equivalent.\n\nRetention also moves. Datadog keeps full-resolution metrics for 15 months on Pro; Grafana's Pro plan lists 13 months for metrics and 30 days for logs, traces, profiles and k6 tests.\n\nThe reverse move is the expensive direction for a small team: going to Datadog means adopting a per-host licence where Grafana charged per account, so the same twenty hosts start at $300 before a single custom metric."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "20 hosts, 5,000 custom series",
+        "formula": "Datadog: 20 × $15 = $300, plus (5,000 − 20 × 100) = 3,000 series ÷ 100 × $5 = $150. Grafana: $19 platform fee, 5,000 under the 10,000 allowance",
+        "result": "$450 on Datadog against $19 on Grafana Cloud Pro"
+      },
+      {
+        "label": "20 hosts, 200,000 custom series",
+        "formula": "Datadog: $300 + (200,000 − 2,000) ÷ 100 × $5 = $9,900. Grafana: $19 + 90,000 × $6.50/1,000 = $585 + 100,000 × $5.90/1,000 = $590",
+        "result": "$10,200 on Datadog against $1,194 on Grafana Cloud Pro"
+      },
+      {
+        "label": "500 GB of logs a month, 200M events, 30-day retention",
+        "formula": "Datadog: 500 × $0.10 = $50 ingest, plus 200M ÷ 1M × $2.50 = $500 indexed. Grafana: 450 GB over the 50 GB allowance × ($0.05 + $0.40 + $0.10) = $247.50",
+        "result": "$550 on Datadog against $247.50 on Grafana Cloud Pro"
+      },
+      {
+        "label": "30 hosts with APM on Datadog",
+        "formula": "30 × ($15 infrastructure + $31 APM) = 30 × $46 = $1,380 per month at annual rates",
+        "result": "$1,380 before logs, traces or RUM; Grafana Cloud Pro has no per-host infrastructure line"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "Series count scales with users, not hosts",
+        "pick": "Grafana Cloud",
+        "why": "At 200,000 series the series meter bills $9,900 on Datadog against $1,175 on Grafana, and the 10,000-series allowance is account-wide."
+      },
+      {
+        "situation": "A team already living in Datadog APM and security",
+        "pick": "Datadog",
+        "why": "At 30 hosts the infrastructure plus APM licence is $1,380, and rebuilding dashboards and monitors is the hidden cost of leaving."
+      },
+      {
+        "situation": "Five hosts and one person on call",
+        "pick": "Grafana Cloud",
+        "why": "Datadog's licence starts at $75 for five hosts before any custom metrics; Grafana's platform fee is $19 for the account."
+      },
+      {
+        "situation": "You need 15 months of full-resolution metrics",
+        "pick": "Datadog",
+        "why": "Datadog keeps 15 months on Pro; Grafana Cloud Pro lists 13 months for metrics and 30 days for logs and traces."
+      },
+      {
+        "situation": "The custom metrics line is already over $500",
+        "pick": "Grafana Cloud",
+        "why": "That line is $500 per 10,000 series on Datadog and $65 per 10,000 on Grafana, so the same data crosses a factor of 7.7."
+      },
+      {
+        "situation": "Logs are verbose JSON from a dozen services",
+        "pick": "Compute both before choosing",
+        "why": "Datadog's index rate is per event and Grafana's is per GB, so 500 GB at 2.5 KB per event bills $550 against $247.50 and at 250 bytes per event the ratio flips toward events."
+      },
+      {
+        "situation": "Security, SIEM and audit on one invoice",
+        "pick": "Datadog",
+        "why": "Cloud SIEM, workload protection and audit trail are on the same price list; Grafana Cloud prices observability and leaves security elsewhere."
+      },
+      {
+        "situation": "Everything is already Prometheus and you self-host Grafana",
+        "pick": "Grafana Cloud, or keep self-hosting",
+        "why": "The remote-write path means no re-instrumentation, and the open-source stack is the same software the paid plan runs."
+      }
+    ],
+    "verdict_summary": "Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance. Datadog wins where the workflow is the product: one agent, one APM trace, one security screen, and a team that already knows where to click. If your custom metrics line is a typo away from $10,000, the migration pays for itself in a quarter.",
+    "migration_guide": "Self-hosted or Grafana Cloud, the instrumentation is the portable part: a Prometheus client library pushes to a remote-write endpoint, and the same client keeps working on either. Datadog's agent can also forward to a Prometheus-compatible backend, so the first phase is usually dual-writing while you rebuild dashboards.\n\nThe rebuild is the cost. Datadog dashboards, monitors and APM traces have no export format for Grafana, and every alert needs a PromQL translation with its own threshold review. Plan the monitor rewrite as its own project; the metrics are the easy half, which is why teams that switch usually run both systems for a quarter.",
+    "faqs": [
+      {
+        "q": "Are Grafana Cloud's tier prices marginal or flat?",
+        "a": "Marginal. Each new band bills at a lower rate for the usage inside it, so the blended rate falls as the account grows: $6.50 per 1,000 to 100,000, then $5.90, then $5.50."
+      },
+      {
+        "q": "What exactly is a custom metric on Datadog?",
+        "a": "A unique metric name plus tag combination, averaged hourly across the month. Adding a tag with many values multiplies the count even if the metric name never changes."
+      },
+      {
+        "q": "Does Grafana Cloud charge per host?",
+        "a": "The Pro plan is a $19 platform fee per account. Host hours appear for Kubernetes monitoring at $0.01 per host hour, which is a separate product from infrastructure metrics."
+      },
+      {
+        "q": "Can I keep 30-day logs on Grafana Cloud?",
+        "a": "Yes. Pro includes 30 days of log retention inside the platform fee, with 50 GB of ingest included and $0.55 per GB across the process, write and retain meters after that."
+      }
+    ],
+    "sources": [
+      "https://www.datadoghq.com/pricing/",
+      "https://www.datadoghq.com/pricing/list/",
+      "https://docs.datadoghq.com/account_management/billing/custom_metrics/",
+      "https://grafana.com/pricing/",
+      "https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/"
+    ],
+    "related": [
+      {
+        "slug": "aws-lambda-vs-cloudflare-workers",
+        "name": "AWS Lambda vs Cloudflare Workers",
+        "why": "Another invoice where the billing unit, not the price, decides the total."
+      },
+      {
+        "slug": "stripe-vs-lemonsqueezy-vs-paddle",
+        "name": "Stripe vs Lemon Squeezy / Paddle",
+        "why": "Four meters on one invoice, and the sticker price covers one of them."
+      }
+    ],
+    "tool_a": {
+      "name": "Datadog",
+      "tagline": "Per-host licences with a custom-metric meter on top",
+      "db": "SaaS telemetry: infrastructure, APM, logs, security and RUM",
+      "pricing": "Infrastructure Pro $15/host/mo annual ($18 monthly) · custom metrics $5 per 100 · logs $0.10/GB + $1.70 per 1M at 15 days",
+      "self_host": "No (hosted SaaS, agent-based collection)",
+      "realtime": "15 months of full-resolution metrics; 15-day log and trace search",
+      "ai_readiness": "Bits AI credits from $500, with per-action credit estimates",
+      "lock_in": "High: dashboards, monitors and APM traces have no export to another backend",
+      "badge": "Per host",
+      "cta_url": "https://www.datadoghq.com/?utm_source=devteardown",
+      "pros": [
+        "One agent covers infrastructure, APM, logs and security, so the product surface is the reason teams stay",
+        "100 custom metrics ride along with every host licence, which covers a well-behaved service",
+        "Metrics without Limits decouples ingest from index, so you can keep sending and stop paying full price",
+        "15 months of full-resolution retention on Pro is the longest on either price sheet"
+      ],
+      "cons": [
+        "The host licence bills machines you did not grow, so a fleet of small instances pays per instance",
+        "Custom metrics at $5 per 100 is $50 per 1,000, after an allowance of just 100 per host",
+        "Logs are metered twice, on ingest and on indexed events, and the event count follows log size",
+        "APM is a second per-host licence at $31, so a monitored host is $46 before logs"
+      ],
+      "code_example": "# Every tag value pair is its own billable series on Datadog.\nfrom datadog import statsd\n\ndef checkout(cart_id: str, user_id: str, items: int) -> None:\n    statsd.increment(\"checkout.completed\", tags=[f\"user_id:{user_id}\"])\n    statsd.gauge(\"checkout.items\", items, tags=[f\"cart_id:{cart_id}\"])\n# Breaks when: user_id has 50,000 values. That is 50,000 custom series,\n# against an allowance of 100 per host — 500 hosts' worth of licence for one tag."
+    },
+    "tool_b": {
+      "name": "Grafana Cloud",
+      "tagline": "One platform fee, then per-series and per-GB meters",
+      "db": "Managed Prometheus, Loki, Tempo and Mimir behind Grafana dashboards",
+      "pricing": "Pro $19/mo platform fee · 10,000 series and 50 GB logs included · $6.50 per 1k series after",
+      "self_host": "Yes (Grafana, Loki, Mimir and Tempo are open source)",
+      "realtime": "13 months of metrics on Pro; 30 days for logs, traces, profiles and k6 tests",
+      "ai_readiness": "AI Assistant and Adaptive Telemetry included on Free and Pro",
+      "lock_in": "Low: Prometheus remote write in, dashboards and data out",
+      "badge": "Per series",
+      "cta_url": "https://grafana.com/?utm_source=devteardown",
+      "pros": [
+        "The account-level fee means machines are free: twenty hosts cost the same as two",
+        "10,000 included series cover most small deployments with no custom-metric line at all",
+        "Tiered marginal rates mean the effective price falls as volume grows, to $5.50 per 1,000",
+        "Prometheus, Loki and Tempo are open source, so the paid plan runs software you can also host"
+      ],
+      "cons": [
+        "The series rate is cheaper but the 10,000-series allowance is shared by every metric in the account",
+        "Traces, profiles and logs all meter GB, so a verbose log line is a billable byte",
+        "There is no Datadog-equivalent APM product on the Pro sheet, so trace-based debugging is a rebuild",
+        "Metrics retention is 13 months against Datadog's 15, which matters for year-over-year comparisons"
+      ],
+      "code_example": "# Same job, same mistake: cardinality is the meter, not the vendor.\nfrom prometheus_client import Counter, Gauge, start_http_server\n\ncheckout = Counter(\"checkout_completed_total\", \"Checkouts\", [\"user_id\"])\nitems = Gauge(\"checkout_items\", \"Items per cart\", [\"cart_id\"])\nstart_http_server(9100)\n\ncheckout.labels(user_id=\"u_123\").inc()  # one time series per label value\n# Breaks first here: 50,000 user_id values are 50,000 series on Grafana Cloud too,\n# and the 10,000-series allowance ends long before the first page of users."
+    }
+  },
+  {
+    "slug": "aws-lambda-vs-cloudflare-workers",
+    "category": "Serverless & Edge",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bills the waiting.",
+    "sections": [
+      {
+        "title": "Two vendors, three meters, two definitions of work",
+        "content": "Lambda now publishes two price sheets. Event Functions bill requests plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, memory at $0.0000036667 per GB-second for as long as the environment exists, and $0.30 per million requests.\n\nWorkers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. The page is explicit that there is no charge for duration, for egress or for bandwidth.\n\n| Meter | Lambda Event | Lambda Web | Workers |\n|---|---|---|---|\n| Requests | $0.20/M | $0.30/M | $0.30/M |\n| Duration | GB-seconds | memory GB-s, whole life | none |\n| CPU | inside duration | $0.0000276944/vCPU-s | $0.02/M CPU-ms |"
+      },
+      {
+        "title": "A GB-second is a memory meter wearing a clock",
+        "content": "Duration billing multiplies wall time by allocated memory, and both factors are yours to set. A 512 MB function that takes 200 ms bills 0.5 GB × 0.2 s = 0.1 GB-s per request. At 100 million requests that is 10 million GB-seconds, or $133.34 on Arm at $0.0000133334.\n\nWorkers bills the 10 ms of actual work instead: 100 million × 10 ms = 1,000 million CPU-milliseconds, which is 970 million after the 30 million included, at $0.02 per million CPU-ms = $19.40.\n\nSo the ratio between the two vendors is not a rate difference. It is the fraction of the request that is CPU: 10 ms of 200 ms is 5%, and that 5% is what Workers meters. Make the handler heavier and the gap narrows; make it wait on a database and the gap widens."
+      },
+      {
+        "title": "The bills cross at about 7.5 million requests",
+        "content": "Same shape everywhere below: 200 ms duration, 512 MB, 10 ms of CPU, one function.\n\n| Requests/month | Lambda Event (Arm) | Workers | Cheaper |\n|---|---|---|---|\n| 5M | $0.80 + $1.33 = $2.13 | $5.00 + $0.40 = $5.40 | Lambda |\n| 7.5M | $1.30 + $4.67 = $5.97 | $5.00 + $0.90 = $5.90 | Workers, by 7¢ |\n| 10M | $1.80 + $8.00 = $9.80 | $5.00 + $1.40 = $6.40 | Workers |\n| 50M | $9.80 + $61.33 = $71.13 | $5.00 + $12.00 + $9.40 = $26.40 | Workers |\n| 100M | $19.80 + $128.00 = $147.80 | $5.00 + $27.00 + $19.40 = $51.40 | Workers |\n\nThe crossover is a free-tier artefact, not a policy: 1 million requests and 400,000 GB-seconds are free on Lambda, and 30 million CPU-ms are free on Workers. Below roughly 7.5 million requests the Lambda allowance is worth more than the CPU savings. Above it, the $5 plan floor disappears into the noise."
+      },
+      {
+        "title": "Lambda's second sheet splits the same request in two",
+        "content": "Web Functions are AWS's answer to active-CPU billing, and they price the same 100 million requests differently.\n\n| Line | Lambda Event | Lambda Web | Workers |\n|---|---|---|---|\n| Requests | $19.80 | $30.00 | $27.00 |\n| Compute | 10M GB-s = $128.00 | 1M vCPU-s = $27.69, 1.296M GB-s = $4.75 | 970M CPU-ms = $19.40 |\n| Plan floor | — | — | $5.00 |\n| **Total** | **$147.80** | **$62.45** | **$51.40** |\n\nWeb Functions bill $62.45 for the same traffic, 42% of the Event price, and still 21% above the Workers bill. The memory meter is why: it bills the environment for its whole life, idle time included, and AWS's own examples quietly assume exactly one environment stays up for the entire month."
+      },
+      {
+        "title": "Where Lambda wins on the same sheet",
+        "content": "The free tier, for one. Five million requests a month cost $2.13 on Lambda and $5.40 on Workers, and a hobby project that sends three million costs $2.73 by AWS's own worked example.\n\nMemory ceiling is the second. Lambda allocates up to 10,240 MB per function, which covers a model that will not fit in a V8 isolate. Workers caps a single invocation at 5 minutes of CPU, 30 seconds by default.\n\nThe third is everything around the function: VPC access, IAM, SQS, Kinesis, Step Functions and the rest of the event-source catalogue. On an AWS shop, the compute line is frequently cheaper than the integration you would rewrite to leave it."
+      },
+      {
+        "title": "The exit door has a rewrite behind it",
+        "content": "Workers runs JavaScript on V8 with a fetch-shaped API. A Lambda handler that imports a native module, spawns a process or needs a writable filesystem does not run there, and the 5-minute CPU cap is not negotiable with a support ticket.\n\nThe reverse move is easier and still not free: Workers' egress is $0 and Lambda's is not, so a byte-heavy service that moves back to Lambda picks up a data transfer line it never had.\n\nPrice the traffic, not the platform. If your p50 request spends most of its time waiting on a database, the CPU meter is the cheaper meter and the rewrite is the only real cost. If your requests are heavy, synchronous and mostly compute, the two bills converge and the free tier decides."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "100M requests at 200 ms, 512 MB, 10 ms CPU",
+        "formula": "Lambda Event Arm: 100M × 0.2 s × 0.5 GB = 10M GB-s, minus 400k free = 9.6M × $0.0000133334 = $128.00, plus 99M × $0.20/M = $19.80. Workers: (100M − 10M) × $0.30/M = $27.00, plus (1,000M − 30M) CPU-ms × $0.02/M = $19.40, plus $5.00",
+        "result": "$147.80 on Lambda against $51.40 on Workers"
+      },
+      {
+        "label": "The same traffic on Lambda Web Functions",
+        "formula": "100M × 10 ms = 1M vCPU-s × $0.0000276944 = $27.69; 0.5 GB × 2,592,000 s = 1,296,000 GB-s × $0.0000036667 = $4.75; 100M × $0.30/M = $30.00",
+        "result": "$62.45, 58% below Lambda's own Event price for identical traffic"
+      },
+      {
+        "label": "Cross-over against Lambda's free tier",
+        "formula": "Lambda: (R − 1M) × $0.20/M + (R × 0.1 − 400k) × $0.0000133334. Workers: $5 + (R × 10 − 30M) × $0.02/M",
+        "result": "Equal at about 7.5M requests a month; below that Lambda's free allowance wins, above it the CPU meter does"
+      },
+      {
+        "label": "Replacing a 200 ms wait with a 1 s wait",
+        "formula": "At 10M requests: Lambda 10M × 1 s × 0.5 GB = 5M GB-s − 400k = 4.6M × $0.0000133334 = $61.33 + $1.80. Workers CPU is unchanged at 10M × 200 ms = 2,000M − 30M × $0.02/M = $39.40 + $5",
+        "result": "$63.13 against $44.40: the slower request costs Lambda $53 more and Workers nothing"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "Under about 5 million requests a month",
+        "pick": "Lambda Event Functions",
+        "why": "The 1M-request and 400,000 GB-second free allowances cover the whole job: 5M requests at 200 ms and 512 MB price at $2.13 against $5.40 on Workers."
+      },
+      {
+        "situation": "100 million requests that mostly wait on I/O",
+        "pick": "Workers",
+        "why": "The same shape prices at $51.40 against $147.80, because 10 ms of CPU out of a 200 ms request is all Workers meters."
+      },
+      {
+        "situation": "A function that needs 10 GB of memory",
+        "pick": "Lambda",
+        "why": "Lambda allocates up to 10,240 MB; Workers caps a single invocation at 5 minutes of CPU and runs in an isolate with a far smaller footprint."
+      },
+      {
+        "situation": "Long-lived streaming to a browser",
+        "pick": "Lambda Web Functions",
+        "why": "Active-CPU billing ignores the wait: AWS's own LLM streaming example prices 5M requests of 3 s at $33.94, against $101.00 as Event Functions."
+      },
+      {
+        "situation": "Byte-heavy responses at the edge",
+        "pick": "Workers",
+        "why": "Workers charges nothing for egress or bandwidth, and static asset requests are free and unlimited."
+      },
+      {
+        "situation": "SQS, Kinesis, VPC and IAM already wired into the app",
+        "pick": "Lambda",
+        "why": "The compute line is often the small one; rewriting event sources and IAM to leave AWS costs more than the difference on the invoice."
+      },
+      {
+        "situation": "A cron job every hour, minutes of CPU each",
+        "pick": "Workers",
+        "why": "Cloudflare's own example prices 720 invocations at 180,000 ms CPU each at $6.99, and duration is not a meter at all."
+      },
+      {
+        "situation": "Traffic so spiky that one environment cannot serve it",
+        "pick": "Lambda Event Functions",
+        "why": "Web Functions bill memory for the life of every environment, and the pricing examples quietly assume exactly one environment runs all month."
+      }
+    ],
+    "verdict_summary": "For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call. For a request that works, the two converge, and Lambda's free tier and memory ceiling win back the low end. The bill is a statement about your code's shape, not about the vendors' rates.",
+    "migration_guide": "Lambda to Workers is a runtime rewrite: the handler becomes a fetch listener, environment variables become bindings, and anything that needs a native module, a spawned process or a writable disk has no equivalent. State moves to Durable Objects or KV, which bill separately.\n\nWorkers to Lambda is smaller but not free: package the code, replace KV and Durable Objects with a database, and accept that egress is metered again. In both directions the traffic analysis comes first, because the arithmetic only favours one vendor when you know the request duration and the CPU share of it.",
+    "faqs": [
+      {
+        "q": "Does Workers really charge nothing for duration?",
+        "a": "The pricing page states there is no charge or limit for duration and no charge for data transfer or bandwidth. Only CPU milliseconds and requests are metered."
+      },
+      {
+        "q": "What are Lambda Web Functions?",
+        "a": "A second Lambda billing model that charges per request, per vCPU-second of active CPU and per GB-second of memory for as long as the execution environment exists."
+      },
+      {
+        "q": "Which free tier is bigger?",
+        "a": "Lambda's, in dollar terms at low volume: 1 million requests and 400,000 GB-seconds against Workers' 10 million requests and 30 million CPU-milliseconds on the $5 plan."
+      },
+      {
+        "q": "Is a cold start billed?",
+        "a": "On Event Functions the initialisation runs inside the billed duration, and SnapStart adds its own cache and restore charges. Workers does not bill duration at all."
+      }
+    ],
+    "sources": [
+      "https://aws.amazon.com/lambda/pricing/",
+      "https://developers.cloudflare.com/workers/platform/pricing/",
+      "https://developers.cloudflare.com/workers/platform/limits/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
+      "https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html"
+    ],
+    "related": [
+      {
+        "slug": "datadog-vs-grafana-cloud",
+        "name": "Datadog vs Grafana Cloud",
+        "why": "The same reading exercise on a monitoring bill: find the unit, then the formula."
+      },
+      {
+        "slug": "anthropic-vs-openai-api-pricing",
+        "name": "Anthropic vs OpenAI API pricing",
+        "why": "Two vendors, identical stickers, and the invoice decided by a token count."
+      }
+    ],
+    "tool_a": {
+      "name": "AWS Lambda",
+      "tagline": "Two bills in one product: duration and active CPU",
+      "db": "Event Functions bill duration in GB-seconds; Web Functions bill active CPU plus memory",
+      "pricing": "Event: $0.20/M requests + $0.0000133334/GB-s Arm · Web: $0.30/M + $0.0000276944/vCPU-s + $0.0000036667/GB-s",
+      "self_host": "No (AWS-managed, VPC and IAM integrated)",
+      "realtime": "Free tier 1M requests and 400,000 GB-s; 10,240 MB memory ceiling",
+      "ai_readiness": "Durable functions at $8 per million operations; streaming priced per GB written",
+      "lock_in": "Medium: event sources, IAM and VPC wiring are AWS-shaped",
+      "badge": "GB-seconds",
+      "cta_url": "https://aws.amazon.com/lambda/?utm_source=devteardown",
+      "pros": [
+        "Free tier covers a small service outright: 1M requests and 400,000 GB-seconds each month",
+        "Up to 10,240 MB of memory per function, which a V8 isolate cannot match",
+        "Event Functions, MicroVMs, Web Functions and durable functions are all one integration",
+        "The event-source catalogue is the reason teams stay: SQS, Kinesis and Step Functions in one IAM model"
+      ],
+      "cons": [
+        "GB-second billing multiplies wall time by memory, so a request that waits still bills",
+        "Web Functions fix the wait but bill memory for the life of every environment, idle included",
+        "Requests cost $0.20/M on Event Functions and $0.30/M on Web Functions, above Workers' $0.30 after 10M included",
+        "Data transfer is metered, so a byte-heavy response is a billable event"
+      ],
+      "code_example": "// Event Function: the meter starts at invocation and runs through the wait.\nexport const handler = async (event) => {\n  const user = await db.users.findUnique({ where: { id: event.userId } }); // 180 ms here\n  const digest = render(user);                                            // 10 ms here\n  return { statusCode: 200, body: digest };\n};\n// Breaks when: the lookup takes 1 s. You are billed 1.01 s of 512 MB, so the wait\n// is 99% of the invoice. Web Functions bill only the 10 ms of active CPU."
+    },
+    "tool_b": {
+      "name": "Cloudflare Workers",
+      "tagline": "A flat $5 and a CPU meter, with no duration line",
+      "db": "V8 isolates at the edge: CPU time is the only compute meter",
+      "pricing": "$5/mo minimum · 10M requests included then $0.30/M · 30M CPU-ms included then $0.02/M",
+      "self_host": "No managed equivalent; workerd is open source",
+      "realtime": "Free: 100,000 requests/day and 10 ms CPU per invocation; paid: 5-minute CPU ceiling",
+      "ai_readiness": "Durable Objects, KV, Queues and Workflows meter separately; static assets are free",
+      "lock_in": "Low on compute, higher on state: Durable Objects hold data inside the product",
+      "badge": "CPU-ms",
+      "cta_url": "https://workers.cloudflare.com/?utm_source=devteardown",
+      "pros": [
+        "No charge for duration, egress or bandwidth, which removes the line that surprises AWS bills",
+        "The $5 plan includes 10M requests and 30M CPU-ms, enough for a real product to start",
+        "Static asset requests are free and unlimited, so a Worker-fronted site pays for the API only",
+        "Caching at the edge cuts CPU without cutting the request, and only the request is billed"
+      ],
+      "cons": [
+        "A 5-minute CPU ceiling per invocation, 30 seconds by default, with no ticket that lifts it",
+        "The runtime is not a container: native modules, spawned processes and writable disks do not run",
+        "Memory is an isolate-sized budget rather than a configurable 10 GB",
+        "At very low volume the $5 floor is more than Lambda's free tier charges"
+      ],
+      "code_example": "// Workers: nothing here is billed by the clock, only the CPU this code burns.\nexport default {\n  async fetch(request, env) {\n    const userId = new URL(request.url).searchParams.get(\"id\");\n    const user = await env.DB.prepare(\"SELECT * FROM users WHERE id = ?\")\n      .bind(userId).first();            // 180 ms of waiting, not billed\n    return new Response(render(user), {\n      headers: { \"content-type\": \"text/html\" },\n    });\n  },\n};\n// Breaks when: render() parses a 5 MB XML feed on every request. CPU is the meter,\n// and the 30M CPU-ms allowance is 30 million milliseconds of exactly that."
+    }
+  },
+  {
+    "slug": "resend-vs-sendgrid",
+    "category": "Email Infrastructure",
+    "last_verified": "2026-11-10",
+    "published": "2026-11-10",
+    "hook": "At 100,000 emails a month, Resend's Pro plan is $35 and SendGrid's Essentials plan is $34.95. Both vendors then charge exactly $55 more for the next rung, and none of that $55 buys an extra email: it buys the tier where a dedicated IP becomes possible.",
+    "sections": [
+      {
+        "title": "At 100,000 emails, both vendors charge $55 for the same feature",
+        "content": "Resend splits its ladder at 100,000 emails, where the plan name changes: Pro is $20 for 50,000 and $35 for 100,000, while Scale starts at $90 for that same 100,000. The $55 difference buys no volume at all.\n\nSendGrid splits the same way: Essentials is $19.95 for 50,000 emails and $34.95 for 100,000, and Pro is $89.95 for the identical 100,000. The difference is $55.00, to the cent.\n\n| At 100,000 emails | Cheap tier | Feature tier | Difference |\n|---|---|---|---|\n| Resend | Pro $35.00 | Scale $90.00 | $55.00 |\n| SendGrid | Essentials $34.95 | Pro $89.95 | $55.00 |\n\nTwo vendors that share no code and no pricing page arrived at the same step, at the same volume, for the same reason: at 100,000 emails the feature gates are what the plan is priced on, not the sending."
+      },
+      {
+        "title": "The ladder is not monotonic, and overage is sometimes the cheaper rung",
+        "content": "Read each ladder as cost per 1,000, not as a monthly price.\n\n| Volume needed | Resend | Per 1,000 | SendGrid | Per 1,000 |\n|---|---|---|---|---|\n| 50,000 | $20.00 (50k) | $0.40 | $19.95 (50k) | $0.40 |\n| 100,000 | $35.00 (100k Pro) | $0.35 | $34.95 (100k Essentials) | $0.35 |\n| 200,000 | $160.00 (200k) | $0.80 | $249.00 (300k) | $1.25 |\n| 500,000 | $350.00 (500k) | $0.70 | $499.00 (700k) | $1.00 |\n| 1,000,000 | $650.00 (1M) | $0.65 | $799.00 (1.5M) | $0.80 |\n| 2,500,000 | $1,150.00 (2.5M) | $0.46 | $1,099.00 (2.5M) | $0.44 |\n\nWhere one vendor has no rung at that volume, the column shows the cheapest rung that covers it, which is why SendGrid's 200,000 row is its 300,000 plan.\n\nResend's 200,000 rung costs $0.80 per 1,000, more than twice its 100,000 rung. That is not a discount curve; it is a plan boundary, and the cheaper block stops at 100,000.\n\nOverage repairs it. Resend charges $0.90 per 1,000 beyond the included volume, so 100,000 on Pro plus 100,000 of overage is $35 + $90 = $125, not $160. SendGrid's same move on Pro is $89.95 + 100,000 × $1.10/1,000 = $199.95, not $249."
+      },
+      {
+        "title": "Dedicated IP: $30 plus a $55 step, or included at $89.95",
+        "content": "A dedicated IP is the feature that decides most of these purchases, because shared IP reputation is the thing a growing sender cannot control.\n\nResend sells it as a $30 per month add-on, and only on Scale, to accounts sending more than 3,000 emails a day. At 100,000 emails that is $90 + $30 = $120, or $1.20 per 1,000.\n\nSendGrid includes one dedicated IP in Pro, which is $89.95 at the same volume, or $0.90 per 1,000.\n\n| 100,000 emails with a dedicated IP | Monthly | Per 1,000 |\n|---|---|---|\n| Resend Scale + IP add-on | $120.00 | $1.20 |\n| SendGrid Pro | $89.95 | $0.90 |\n\nThere is no Resend Pro path to an IP at any price. That is not a worse deal; it is a missing SKU, and it decides the vendor for anyone whose deliverability depends on one."
+      },
+      {
+        "title": "Domain authentication is table stakes; the domain count is not",
+        "content": "Both authenticate sending with DKIM, SPF and DMARC, and both include a REST API, SMTP relay and official SDKs on every paid plan. The differences are in the quantities.\n\n| Quantity | Resend | SendGrid |\n|---|---|---|\n| Custom domains | 3 Free, 10 Pro, 1,000 Scale | Domain authentication included |\n| Extra domains | $20/mo adds 100 | Not a listed line item |\n| Teammates | Not metered | 1 on Essentials, 1,000 on Pro |\n| Event webhooks | 5 on Pro, 10 on Scale | 2 on Essentials, 5 on Pro |\n| SSO | $150/mo add-on on Scale | Included in Pro |\n\nAn agency managing dozens of client domains should price the domain line before the email line: Resend's add-on covers 100 extra domains for $20, and SendGrid's inclusion has no printed ceiling."
+      },
+      {
+        "title": "The bottom of the market is where they stop competing",
+        "content": "Resend keeps a free plan: 3,000 emails a month, 100 a day, three domains, 30 days of data retention. SendGrid's free option is a 60-day trial at 100 emails a day, after which the account converts to a paid plan starting at $19.95.\n\nThat single difference moves a whole segment. A side project, a staging environment or a low-volume notification service runs at $0 on Resend and at $19.95 on SendGrid, and the gap is $239.40 a year before either vendor has been compared on anything else.\n\nIt also sets the frame for the first paid tier: $20 on Resend buys 50,000 emails, more than sixteen times what its own free plan allowed, and the same 50,000 that SendGrid now sells as its smallest paid plan."
+      },
+      {
+        "title": "Where each one breaks",
+        "content": "Resend breaks on the feature boundary. The dedicated IP, SSO and 1,000 domains all sit on Scale, so the 100,000-email customer who outgrows Pro pays a $55 step and then $30 more for the IP. Marketing email moves to a separate contact-priced plan, and broadcasts only reach existing contacts.\n\nSendGrid breaks on the tier edge and on history. The 50,000 Essentials tier charges $1.33 per 1,000 beyond its volume, so 80,000 emails bills $19.95 + $39.90 = $59.85 against $34.95 for the next tier up. Searchable activity is 3 days on Essentials against 7 on Pro, so a deliverability investigation can outlast the evidence.\n\nCheck three numbers before choosing: your monthly volume rounded up to the rung that covers it, whether you need an IP this quarter, and how many domains you will authenticate in a year."
+      }
+    ],
+    "cost_math": [
+      {
+        "label": "100,000 emails a month, no dedicated IP",
+        "formula": "Resend Pro $35 ÷ 100,000 emails × 1,000 = $0.35 per 1,000. SendGrid Essentials $34.95 ÷ 100,000 × 1,000 = $0.35 per 1,000",
+        "result": "$35.00 against $34.95, a five-cent gap at the bottom of the ladder"
+      },
+      {
+        "label": "200,000 emails a month, the rung against the overage",
+        "formula": "Resend: 100,000 Pro at $35 + 100,000 × $0.90/1,000 = $125, against the Scale 200,000 rung at $160. SendGrid: $89.95 + 100,000 × $1.10/1,000 = $199.95, against the Pro 300,000 rung at $249",
+        "result": "$125 on Resend and $199.95 on SendGrid, both cheaper than buying the next rung"
+      },
+      {
+        "label": "Overage break-even on the 50,000 tiers",
+        "formula": "Resend: $20 + $0.90 per 1,000 over 50,000 equals $35 at 16,666 extra emails, so 66,666. SendGrid: $19.95 + $1.33 per 1,000 equals $34.95 at 11,278 extra, so 61,278",
+        "result": "Past roughly 61,000 to 67,000 sends the next tier is cheaper than the overage"
+      },
+      {
+        "label": "The same feature at the same volume",
+        "formula": "Resend: Scale $90 + dedicated IP $30 = $120. SendGrid: Pro $89.95 including one dedicated IP",
+        "result": "$120 against $89.95 for 100,000 emails with a dedicated IP, a $30.05 monthly difference"
+      }
+    ],
+    "decision_matrix": [
+      {
+        "situation": "Transactional email only, under 50,000 a month",
+        "pick": "Either",
+        "why": "$20 on Resend and $19.95 on SendGrid buy the same volume, and the five-cent gap is not a reason to migrate."
+      },
+      {
+        "situation": "You need a dedicated IP at 100,000 emails",
+        "pick": "SendGrid Pro",
+        "why": "$89.95 includes one IP, against $90 for Resend Scale plus $30 for the add-on, and Resend Pro cannot buy an IP at all."
+      },
+      {
+        "situation": "A free tier is mandatory for staging",
+        "pick": "Resend",
+        "why": "Resend's free plan sends 3,000 a month, while SendGrid's free option is a 60-day trial and then $19.95."
+      },
+      {
+        "situation": "Agencies authenticating dozens of client domains",
+        "pick": "Resend Scale, with the domain add-on",
+        "why": "1,000 domains are included on Scale and $20 adds 100 more, against a domain line SendGrid does not print."
+      },
+      {
+        "situation": "SSO and an IP at 500,000 emails",
+        "pick": "SendGrid Pro",
+        "why": "SSO is included in Pro and so is one IP, while Resend puts SSO at $150 a month and the IP at $30 on top of Scale."
+      },
+      {
+        "situation": "2,500,000 emails a month and nothing exotic",
+        "pick": "SendGrid Pro",
+        "why": "$1,099 against $1,150 on Resend, and the gap widens with the IP add-on that Resend needs for the same setup."
+      },
+      {
+        "situation": "Marketing broadcasts to a contact list",
+        "pick": "Resend marketing plans",
+        "why": "Marketing is priced per contact rather than per email, so an unlimited number of sends to 10,000 contacts is $80."
+      },
+      {
+        "situation": "Volume swings month to month",
+        "pick": "Either, with an alert at 60,000",
+        "why": "Both overage rates are more expensive than the next rung: the break-even is about 61,000 on SendGrid and 67,000 on Resend."
+      }
+    ],
+    "verdict_summary": "Under 50,000 emails the two vendors are the same product at the same price, and the free tier is the only real difference. Past 100,000 the choice is decided by one feature: SendGrid includes a dedicated IP at $89.95, Resend sells it for $30 on a plan that already costs $90. If you need an IP, SendGrid; if you need a free tier and a clean API, Resend; if you need volume, check the rung and the overage before either.",
+    "migration_guide": "Both vendors authenticate a domain with DKIM, SPF and DMARC records, so moving means adding new DNS records while the old ones still answer. Keep both authenticated for a week, warm the new domain or IP, then flip the sending domain in code.\n\nThe parts that do not travel are templates and reputation. React Email templates are code and move with the repository; SendGrid's dynamic templates are vendor objects. A dedicated IP starts cold on either side, so a sender who relies on one should plan the warm-up as a week of projected volume rather than a switch.",
+    "faqs": [
+      {
+        "q": "Does Resend sell a dedicated IP on Pro?",
+        "a": "No. The $30 per month add-on is listed for Scale plans, to accounts sending more than 3,000 emails a day. Pro has no IP option."
+      },
+      {
+        "q": "What does SendGrid's free plan include now?",
+        "a": "A 60-day trial at 100 emails a day, with no credit card. After it ends the account moves to a paid plan, and Essentials starts at $19.95 for 50,000 emails."
+      },
+      {
+        "q": "Is overage cheaper than buying the next tier?",
+        "a": "Usually not. Overage on the 50,000 tiers is $1.33 per 1,000 on SendGrid and $0.90 on Resend, both far above the next tier's per-1,000 rate, so the break-even arrives at 61,000 to 67,000 sends."
+      },
+      {
+        "q": "Do both include inbound email parsing?",
+        "a": "Resend lists inbound email with webhooks on every plan, and SendGrid lists an Inbound Parse webhook as part of the Email API feature set."
+      }
+    ],
+    "sources": [
+      "https://resend.com/pricing",
+      "https://www.twilio.com/en-us/products/email-api/pricing",
+      "https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai",
+      "https://resend.com/docs",
+      "https://www.twilio.com/docs/sendgrid"
+    ],
+    "related": [
+      {
+        "slug": "stripe-vs-lemonsqueezy-vs-paddle",
+        "name": "Stripe vs Lemon Squeezy / Paddle",
+        "why": "The same $55-style feature step, one decimal place larger."
+      },
+      {
+        "slug": "datadog-vs-grafana-cloud",
+        "name": "Datadog vs Grafana Cloud",
+        "why": "What happens when a vendor meters the thing your code does by accident."
+      }
+    ],
+    "tool_a": {
+      "name": "Resend",
+      "tagline": "Per-block email pricing with a free tier and a Scale step",
+      "db": "Transactional email API with React Email templates and inbound parsing",
+      "pricing": "Free 3,000/mo · Pro $20 for 50k, $35 for 100k · Scale $90 for 100k to $1,150 for 2.5M",
+      "self_host": "No (managed sending infrastructure and shared IPs)",
+      "realtime": "Batch sending and webhooks on every plan; 5 endpoints on Pro, 10 on Scale",
+      "ai_readiness": "100 AI credits a month on Pro, 500 on Scale; 10,000 automation runs included",
+      "lock_in": "Low: SMTP and REST, and domain reputation travels with your DNS",
+      "badge": "Free tier",
+      "cta_url": "https://resend.com/?utm_source=devteardown",
+      "pros": [
+        "A free plan that sends 3,000 emails a month, so staging and side projects cost nothing",
+        "Monthly billing only, with no annual contract to sign before the first send",
+        "10 domains on Pro and 1,000 on Scale, with 100 more for $20 a month",
+        "React Email templates are code, so they live in the repository rather than a dashboard"
+      ],
+      "cons": [
+        "The dedicated IP is a $30 add-on on Scale only, so Pro customers cannot buy one at any price",
+        "SSO is $150 a month on Scale and unavailable below it",
+        "Scale at 100,000 emails is $90 against $35 on Pro, a $55 step for features rather than volume",
+        "The 200,000 rung costs $0.80 per 1,000, more than twice the 100,000 rung's rate"
+      ],
+      "code_example": "// Resend: the idempotency key is what stops a retry from sending twice.\nimport { Resend } from \"resend\";\nconst resend = new Resend(process.env.RESEND_API_KEY);\n\nconst { data, error } = await resend.emails.send(\n  {\n    from: \"billing@example.com\",\n    to: order.email,\n    subject: `Receipt for ${order.id}`,\n    react: Receipt({ order }),\n  },\n  { idempotencyKey: `receipt-${order.id}` },\n);\n// Breaks when: the key is built from Date.now(). A retry after a 429 is then a\n// second email, and there is no deduplication on the receiving side."
+    },
+    "tool_b": {
+      "name": "SendGrid",
+      "tagline": "Per-block pricing where Pro includes the dedicated IP",
+      "db": "Email API with dynamic templates, subusers and dedicated IPs",
+      "pricing": "60-day trial · Essentials $19.95 for 50k, $34.95 for 100k · Pro $89.95 for 100k to $1,099 for 2.5M",
+      "self_host": "No (Twilio-managed sending infrastructure)",
+      "realtime": "Event webhook on every plan: 1 endpoint on trial, 2 on Essentials, 5 on Pro",
+      "ai_readiness": "Address validation included with Pro: 2,500 checks, 5,000 on Premier",
+      "lock_in": "Medium: templates, subusers and IP warm-up history live in the product",
+      "badge": "IP included",
+      "cta_url": "https://www.twilio.com/en-us/products/email-api/pricing?utm_source=devteardown",
+      "pros": [
+        "One dedicated IP is included in Pro, which is the cheapest published way to get one at 100,000 emails",
+        "SSO and 1,000 teammates arrive with Pro rather than as add-ons",
+        "Subuser management makes it a fit for agencies and multi-brand senders",
+        "The ladder keeps falling to $0.44 per 1,000 at 2,500,000, undercutting Resend at the top"
+      ],
+      "cons": [
+        "No free plan: the trial runs 60 days and then the account is on a paid tier",
+        "The 50,000 tier charges $1.33 per 1,000 beyond its volume, so 80,000 emails bills $59.85 against $34.95 for the next tier",
+        "Essentials keeps 3 days of searchable activity against 7 on Pro, which can outlast a deliverability investigation",
+        "Email validation and content testing are gated to Pro and above"
+      ],
+      "code_example": "// SendGrid: categories are the only cheap way to separate streams in the event webhook.\nimport sgMail from \"@sendgrid/mail\";\nsgMail.setApiKey(process.env.SENDGRID_API_KEY);\n\nawait sgMail.send({\n  to: order.email,\n  from: \"billing@example.com\",\n  templateId: \"d-receipt-v3\",\n  dynamicTemplateData: { orderId: order.id, total: order.total },\n  categories: [\"receipt\", `region-${order.region}`],\n  customArgs: { order_id: order.id }, // echoed in the event webhook\n});\n// Breaks when: the template renders a total without a currency. The API accepts it,\n// the receipt is wrong, and the event webhook reports a delivered message."
+    }
+  },
+  {
     "slug": "supabase-vs-firebase",
     "category": "Backend & Database",
     "last_verified": "2026-11-10",
@@ -15,7 +945,7 @@
       "ai_readiness": "pgvector in the same database as your app data",
       "lock_in": "Low: standard Postgres, dump and leave",
       "badge": "Open source",
-      "cta_url": "https://supabase.com/?utm_source=devtoolsradar",
+      "cta_url": "https://supabase.com/?utm_source=devteardown",
       "pros": [
         "One invoice for compute, disk and connections — reads inside the instance are not metered",
         "pgvector lives in the same Postgres as your rows, so RAG needs no second system",
@@ -40,7 +970,7 @@
       "ai_readiness": "kNN vector search, billed per 100-entry index batch",
       "lock_in": "High: rules, SDKs, and no SQL export path",
       "badge": "Managed Google",
-      "cta_url": "https://firebase.google.com/?utm_source=devtoolsradar",
+      "cta_url": "https://firebase.google.com/?utm_source=devteardown",
       "pros": [
         "Offline persistence and multi-platform SDKs that work when the network does not",
         "No connection pool to size: events are metered, not sockets",
@@ -201,7 +1131,7 @@
       "ai_readiness": "Fluid compute targets inference and agent workloads",
       "lock_in": "Medium: framework and platform coupling",
       "badge": "Framework-native",
-      "cta_url": "https://vercel.com/?utm_source=devtoolsradar",
+      "cta_url": "https://vercel.com/?utm_source=devteardown",
       "pros": [
         "Your framework deploys as written; no runtime port to a different JS environment",
         "Fluid compute bills execution time, so an idle await on an external API costs no CPU",
@@ -226,7 +1156,7 @@
       "ai_readiness": "CPU-metered runtime; 30M CPU-ms included per month",
       "lock_in": "Medium-high: Workers runtime, per-product line items",
       "badge": "Zero egress",
-      "cta_url": "https://pages.cloudflare.com/?utm_source=devtoolsradar",
+      "cta_url": "https://pages.cloudflare.com/?utm_source=devteardown",
       "pros": [
         "Egress is free by policy: 3 TB a month costs $0 where Vercel adds $307.20",
         "Requests after 10M cost $0.30/million, against $2/million on Vercel Pro",
@@ -386,7 +1316,7 @@
       "ai_readiness": "Own models trained on SpaceX compute",
       "lock_in": "High: Grok-first routing after the acquisition",
       "badge": "Grok-native",
-      "cta_url": "https://cursor.com/?utm_source=devtoolsradar",
+      "cta_url": "https://cursor.com/?utm_source=devteardown",
       "pros": [
         "Owns its models, so it optimises the whole loop rather than renting someone's API",
         "One editor, one bill for indexing, completion, agent and cloud automation",
@@ -411,7 +1341,7 @@
       "ai_readiness": "Premium models incl. Opus on Pro+",
       "lock_in": "Medium: one credit pool inside GitHub",
       "badge": "Repo-native",
-      "cta_url": "https://github.com/features/copilot?utm_source=devtoolsradar",
+      "cta_url": "https://github.com/features/copilot?utm_source=devteardown",
       "pros": [
         "Runs in VS Code, Visual Studio, JetBrains, Xcode, Eclipse, Neovim, Zed and on github.com",
         "Free already includes agent mode and the CLI — the entry tier is usable, not a demo",
@@ -561,7 +1491,7 @@
       "ai_readiness": "Notion Agent in Business; Custom Agents metered",
       "lock_in": "Medium-high: export is a conversion, history is a plan tier",
       "badge": "Team workspace",
-      "cta_url": "https://www.notion.com/?utm_source=devtoolsradar",
+      "cta_url": "https://www.notion.com/?utm_source=devteardown",
       "pros": [
         "Permissions, private teamspaces and SSO in the same place as the content",
         "Databases with relations, rollups and formulas computed server-side",
@@ -586,7 +1516,7 @@
       "ai_readiness": "No server-side agent; bring your own script or plugin",
       "lock_in": "None: plain files, git history you own",
       "badge": "Local-first",
-      "cta_url": "https://obsidian.md/?utm_source=devtoolsradar",
+      "cta_url": "https://obsidian.md/?utm_source=devteardown",
       "pros": [
         "Free without limits, no sign-up, no telemetry, data on your own disk",
         "Bases is a core plugin: table, cards, list, kanban and map views over frontmatter",
@@ -747,7 +1677,7 @@
       "ai_readiness": "Claude Code ships as a Bun executable (Bun's statement)",
       "lock_in": "Low: MIT, npm-compatible, runs Node projects",
       "badge": "All-in-one",
-      "cta_url": "https://bun.com/?utm_source=devtoolsradar",
+      "cta_url": "https://bun.com/?utm_source=devteardown",
       "pros": [
         "JavaScript, TypeScript, JSX and bundling from one executable, so no separate tsc, test runner or bundler",
         "1,517 more Node test-suite tests pass in 1.4, and node:sqlite passes 18 of 18 by Bun's own count",
@@ -772,7 +1702,7 @@
       "ai_readiness": "Type stripping on by default; no type checking",
       "lock_in": "None: MIT, runs on every platform",
       "badge": "Standards runtime",
-      "cta_url": "https://nodejs.org/?utm_source=devtoolsradar",
+      "cta_url": "https://nodejs.org/?utm_source=devteardown",
       "pros": [
         "A dated calendar: v26 Lithium and v24 Krypton are LTS, and LTS typically guarantees fixes for 30 months",
         "Native addons are the default path, and ABI builds target the runtime you actually run",
@@ -933,7 +1863,7 @@
       "ai_readiness": "Generated typed client over a schema contract",
       "lock_in": "Medium: schema DSL, generated client, optional platform",
       "badge": "Code generation",
-      "cta_url": "https://www.prisma.io/?utm_source=devtoolsradar",
+      "cta_url": "https://www.prisma.io/?utm_source=devteardown",
       "pros": [
         "One schema artefact drives migrations, types and the generated client",
         "Rust-free client in 7.x: Prisma's figures are 90% smaller output and 3x faster queries",
@@ -958,7 +1888,7 @@
       "ai_readiness": "Zero dependencies and SQL-shaped output (vendor claim)",
       "lock_in": "Low: no engine, no runtime, plain SQL",
       "badge": "Open source",
-      "cta_url": "https://orm.drizzle.team/?utm_source=devtoolsradar",
+      "cta_url": "https://orm.drizzle.team/?utm_source=devteardown",
       "pros": [
         "No generate step and no engine to load: the TypeScript schema is the source of truth",
         "ORM, Kit, Studio for local development and Gateway are all free",
@@ -1120,7 +2050,7 @@
       "ai_readiness": "Hardened Images free for developers, from $5k/repo in production",
       "lock_in": "Medium: Compose and image tooling are standard, the desktop is licensed",
       "badge": "Licensed desktop",
-      "cta_url": "https://www.docker.com/?utm_source=devtoolsradar",
+      "cta_url": "https://www.docker.com/?utm_source=devteardown",
       "pros": [
         "Desktop stays free under 250 employees AND $10M revenue, plus personal, education and non-commercial OSS",
         "A flat per-user rate with monthly or annual billing, and seats can be removed when people leave",
@@ -1145,7 +2075,7 @@
       "ai_readiness": "GPU acceleration in Podman Desktop (vendor claim)",
       "lock_in": "Low: Apache 2.0, OCI and Compose compatible",
       "badge": "No paid tier",
-      "cta_url": "https://podman.io/?utm_source=devtoolsradar",
+      "cta_url": "https://podman.io/?utm_source=devteardown",
       "pros": [
         "No daemon and no seat: containers run as the invoking user and nothing idles in the background",
         "Docker v1.40 compatibility layer, so DOCKER_HOST moves most CLI and Compose tooling",
@@ -1307,7 +2237,7 @@
       "ai_readiness": "M2M tokens and API keys with monthly verification limits",
       "lock_in": "Medium: hosted users, full data exports on every plan",
       "badge": "Retained users",
-      "cta_url": "https://clerk.com/?utm_source=devtoolsradar",
+      "cta_url": "https://clerk.com/?utm_source=devteardown",
       "pros": [
         "50,000 MRU included on Pro, then $0.02 each — a user who never returns is never billed",
         "Unlimited applications on every plan, including Hobby",
@@ -1332,7 +2262,7 @@
       "ai_readiness": "AI Agents add-on adds 50% to the base price",
       "lock_in": "High: tenants, connections and rules live inside the product",
       "badge": "Tiered MAU",
-      "cta_url": "https://auth0.com/?utm_source=devtoolsradar",
+      "cta_url": "https://auth0.com/?utm_source=devteardown",
       "pros": [
         "25,000 MAU free, with 5 organisations, self-service SSO and SCIM included",
         "B2B Essentials is $150/month for 500 MAU with unlimited organisations",
@@ -1490,7 +2420,7 @@
       "ai_readiness": "MCP and Insights in the platform (vendor description)",
       "lock_in": "Medium: Postgres or MySQL underneath, managed control plane on top",
       "badge": "Clusters",
-      "cta_url": "https://planetscale.com/?utm_source=devtoolsradar",
+      "cta_url": "https://planetscale.com/?utm_source=devteardown",
       "pros": [
         "A fixed cluster charge: PS-5 HA is $15/month whether the database sleeps or not",
         "Every branch is its own cluster, so a schema change never touches production",
@@ -1515,7 +2445,7 @@
       "ai_readiness": "Managed Better Auth and an AI Gateway with prepaid credits",
       "lock_in": "Medium: Postgres underneath, but branches and services are Neon's",
       "badge": "CU-hours",
-      "cta_url": "https://neon.com/?utm_source=devtoolsradar",
+      "cta_url": "https://neon.com/?utm_source=devteardown",
       "pros": [
         "Suspended compute costs $0, so a database that sleeps most of the day costs almost nothing",
         "A permanent free plan: 100 CU-hours, 1 GB storage and 100 projects",

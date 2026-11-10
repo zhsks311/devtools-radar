@@ -447,7 +447,7 @@ def generate_comparison_html(item):
         "description": item["hook"].replace('"', "'"),
         "dateModified": updated,
         "datePublished": item.get("published", updated),
-        "author": {"@type": "Organization", "name": SITE_NAME},
+        "author": {"@type": "Organization", "name": "DevTeardown Team"},
         "publisher": {"@type": "Organization", "name": SITE_NAME},
         "mainEntityOfPage": f"{BASE_URL}/compare/{slug}/",
     }
@@ -604,17 +604,19 @@ def generate_comparison_html(item):
     <div class="meta-row">
       <span class="badge badge-blue">{item['category']}</span>
       <span class="badge badge-gray">{a['name']} vs {b['name']}</span>
+      <span>DevTeardown Team</span>
+      <span>·</span>
       <span>Prices verified {updated}</span>
       <span>·</span>
       <span>{rt}</span>
     </div>
 
     <h1>{a['name']} vs {b['name']}</h1>
-    <p class="lead">{md_to_html(item['hook'])}</p>
+    <div class="lead">{md_to_html(item['hook'])}</div>
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
-      <p>{md_to_html(item['verdict_summary'])}</p>
+      {md_to_html(item['verdict_summary'])}
     </div>
 
     <div class="toc">
