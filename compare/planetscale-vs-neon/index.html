@@ -20,7 +20,7 @@
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown Team"
   },
   "publisher": {
     "@type": "Organization",
@@ -277,17 +277,19 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     <div class="meta-row">
       <span class="badge badge-blue">Backend & Database</span>
       <span class="badge badge-gray">PlanetScale vs Neon</span>
+      <span>DevTeardown Team</span>
+      <span>·</span>
       <span>Prices verified 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
 
     <h1>PlanetScale vs Neon</h1>
-    <p class="lead"><p>Suspended compute costs $0 on Neon; PlanetScale's smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35/month before storage, versus $15/month for PlanetScale PS-5 HA.</p></p>
+    <div class="lead"><p>Suspended compute costs $0 on Neon; PlanetScale's smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35/month before storage, versus $15/month for PlanetScale PS-5 HA.</p></div>
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
-      <p><p>Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it.</p></p>
+      <p>Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it.</p>
     </div>
 
     <div class="toc">
@@ -314,8 +316,8 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
           <tr><td><strong>Lock-in risk</strong></td><td>Medium: Postgres or MySQL underneath, managed control plane on top</td><td>Medium: Postgres underneath, but branches and services are Neon's</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
-            <td><a href="https://planetscale.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">PlanetScale →</a></td>
-            <td><a href="https://neon.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Neon →</a></td>
+            <td><a href="https://planetscale.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">PlanetScale →</a></td>
+            <td><a href="https://neon.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Neon →</a></td>
           </tr>
         </tbody>
       </table>
@@ -482,8 +484,8 @@ print(f"approximately {break_even:.2f} of 730 hours")
           </a></div>
 
     <div style="text-align:center; margin: 3rem 0 1rem;">
-      <a href="https://planetscale.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try PlanetScale →</a>
-      <a href="https://neon.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Neon →</a>
+      <a href="https://planetscale.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try PlanetScale →</a>
+      <a href="https://neon.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Neon →</a>
     </div>
 
     <div class="updated-note">

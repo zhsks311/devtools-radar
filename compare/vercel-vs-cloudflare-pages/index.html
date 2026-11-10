@@ -20,7 +20,7 @@
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown Team"
   },
   "publisher": {
     "@type": "Organization",
@@ -277,17 +277,19 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     <div class="meta-row">
       <span class="badge badge-blue">Hosting & Edge</span>
       <span class="badge badge-gray">Vercel vs Cloudflare Pages</span>
+      <span>DevTeardown Team</span>
+      <span>·</span>
       <span>Prices verified 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
 
     <h1>Vercel vs Cloudflare Pages</h1>
-    <p class="lead"><p>Both hosts now meter CPU time, so an idle <code>await</code> is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel — 3 TB a month adds 2,048 GB × $0.15 = $307.20 — against CPU milliseconds on Cloudflare, where egress costs $0.</p></p>
+    <div class="lead"><p>Both hosts now meter CPU time, so an idle <code>await</code> is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel — 3 TB a month adds 2,048 GB × $0.15 = $307.20 — against CPU milliseconds on Cloudflare, where egress costs $0.</p></div>
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
-      <p><p>Teams whose transfer passes 1 TB or whose requests pass 10M a month should pick Cloudflare Pages if every asset fits 25 MiB: 3 TB means $307.20 of Vercel overage against $0. Teams inside Pro's 1 TB and 10M CDN requests should stay on Vercel. Teams eyeing Pages should today compare their monthly builds with its 500 / 5,000 / 20,000 limits and their largest asset with its 25 MiB ceiling.</p></p>
+      <p>Teams whose transfer passes 1 TB or whose requests pass 10M a month should pick Cloudflare Pages if every asset fits 25 MiB: 3 TB means $307.20 of Vercel overage against $0. Teams inside Pro's 1 TB and 10M CDN requests should stay on Vercel. Teams eyeing Pages should today compare their monthly builds with its 500 / 5,000 / 20,000 limits and their largest asset with its 25 MiB ceiling.</p>
     </div>
 
     <div class="toc">
@@ -314,8 +316,8 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
           <tr><td><strong>Lock-in risk</strong></td><td>Medium: framework and platform coupling</td><td>Medium-high: Workers runtime, per-product line items</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
-            <td><a href="https://vercel.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Vercel →</a></td>
-            <td><a href="https://pages.cloudflare.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Cloudflare Pages →</a></td>
+            <td><a href="https://vercel.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Vercel →</a></td>
+            <td><a href="https://pages.cloudflare.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Cloudflare Pages →</a></td>
           </tr>
         </tbody>
       </table>
@@ -499,8 +501,8 @@ export default {
           </a></div>
 
     <div style="text-align:center; margin: 3rem 0 1rem;">
-      <a href="https://vercel.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Vercel →</a>
-      <a href="https://pages.cloudflare.com/?utm_source=devtoolsradar" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Cloudflare Pages →</a>
+      <a href="https://vercel.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Vercel →</a>
+      <a href="https://pages.cloudflare.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Cloudflare Pages →</a>
     </div>
 
     <div class="updated-note">
