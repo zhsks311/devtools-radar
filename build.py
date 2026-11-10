@@ -456,6 +456,14 @@ KO_CSS = """
 .pick-card strong { display: block; color: #fff; margin: 0.35rem 0 0.3rem; font-size: 1rem; }
 .pick-card p { font-size: 0.83rem; color: var(--text-muted); margin: 0 0 0.6rem; }
 .pick-card span.go { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
+.cat-list { list-style: none; margin: 1rem 0 0; padding: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.cat-list li { display: flex; align-items: baseline; gap: 0.8rem; padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--border); margin: 0; }
+.cat-list li:last-child { border-bottom: none; }
+.cat-list a { color: #e2e8f0; text-decoration: none; font-size: 0.92rem; flex: 1; }
+.cat-list a:hover { color: var(--primary); }
+.cat-list .p { color: var(--primary); font-weight: 650; font-size: 0.9rem; white-space: nowrap; }
+.cat-list .s { color: var(--text-muted); font-size: 0.75rem; white-space: nowrap; }
+@media (max-width: 560px) { .cat-list li { flex-wrap: wrap; gap: 0.3rem; } .cat-list a { flex-basis: 100%; } }
 .goldbox {
   margin: 2.4rem 0 0; padding: 1.3rem 1.5rem;
   background: linear-gradient(120deg, rgba(56,189,248,0.10), rgba(16,185,129,0.07));
@@ -566,16 +574,27 @@ def generate_ko_html(deals: dict) -> str:
         items = cat.get("items", [])
         label = cat.get("label", slug)
         audience = cat.get("audience", "")
-        cards = "".join(_deal_card(d) for d in items[:4])
-        if not cards:
-            cards = ('<p style="color:var(--text-muted);font-size:0.88rem;">'
-                     '이 카테고리에 새로 올라온 핫딜이 없습니다. 아래 큐레이션을 참고하세요.</p>')
+        rows = ""
+        for d in items[:4]:
+            link = d.get("link") or {}
+            price = f'{d["price"]:,}원' if d.get("price") else "가격 확인"
+            rows += (
+                f'<li><a href="{html.escape(link.get("url", "#"))}" target="_blank" '
+                f'rel="noopener nofollow sponsored">{html.escape(d.get("product", ""))}</a>'
+                f'<span class="p">{price}</span>'
+                f'<span class="s">{html.escape(d.get("store") or "")}</span></li>'
+            )
+        if rows:
+            body = f'<ul class="cat-list">{rows}</ul>'
+        else:
+            body = ('<p style="color:var(--text-muted);font-size:0.88rem;">'
+                    '이 카테고리에 새로 올라온 핫딜이 없습니다. 아래 큐레이션을 참고하세요.</p>')
         cat_html += f"""
     <div class="cat-head" id="{slug}">
       <h2>{html.escape(label)}</h2>
       <span class="cat-sub">{html.escape(audience)}</span>
     </div>
-    <div class="deal-grid">{cards}</div>"""
+    {body}"""
 
     pick_cards = ""
     for p in picks:
