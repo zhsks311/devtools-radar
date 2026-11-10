@@ -18,10 +18,20 @@
   "compare/supabase-vs-firebase/index.html",
   "compare/vercel-vs-cloudflare-pages/index.html",
   "deals/index.html",
+  "editorial-policy/index.html",
+  "es/index.html",
+  "fr/index.html",
   "index.html",
+  "ja/index.html",
   "ko/index.html",
   "llms-full.txt",
   "llms.txt",
+  "reports/es/index.html",
+  "reports/fr/index.html",
+  "reports/ja/index.html",
+  "reports/ko/index.html",
+  "reports/zh/index.html",
   "robots.txt",
-  "sitemap.xml"
+  "sitemap.xml",
+  "zh/index.html"
 ]

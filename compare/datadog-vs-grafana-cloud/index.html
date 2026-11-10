@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
   <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
-  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Datadog vs Grafana Cloud — 2026 teardown">
   <meta property="og:description" content="Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud&#x27;s Pro plan. The difference is not the per-series rate. It is that only one of them puts t">
   <meta property="og:type" content="article">
@@ -22,15 +22,23 @@
   "@type": "TechArticle",
   "headline": "Datadog vs Grafana Cloud: a 2026 engineering teardown",
   "description": "Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud's Pro plan. The difference is not the per-series rate. It is that only one of them puts the hosts on the invoice.",
-  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTeardown Team"
+    "name": "DevTeardown",
+    "url": "https://devteardown.com/editorial-policy/"
   },
+  "inLanguage": "en",
+  "citation": [
+    "https://www.datadoghq.com/pricing/",
+    "https://www.datadoghq.com/pricing/list/",
+    "https://docs.datadoghq.com/account_management/billing/custom_metrics/",
+    "https://grafana.com/pricing/",
+    "https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown"
   },
   "mainEntityOfPage": "https://devteardown.com/compare/datadog-vs-grafana-cloud/"
 }
@@ -183,24 +191,15 @@ footer p { font-size:.8rem; margin:0; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
-</head>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
 <body>
-  <header>
-    <div class="header-inner">
-      <a href="../../" class="logo">DevTools<span>Radar</span></a>
-      <div style="display:flex; gap:1rem; align-items:center;">
-        <a href="../../deals/" class="nav-link">Deals</a>
-        <a href="../../ko/" class="nav-link">한국어 핫딜</a>
-        <a href="../../" class="nav-link">← All teardowns</a>
-      </div>
-    </div>
-  </header>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
 
-  <main class="container">
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
     <div class="meta-row">
       <span class="badge badge-blue">Monitoring &amp; Observability</span>
       <span class="badge badge-gray">Datadog vs Grafana Cloud</span>
-      <span>Prices verified 2026-11-10</span>
+      <span>Source review recorded 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
@@ -229,11 +228,11 @@ footer p { font-size:.8rem; margin:0; }
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>SaaS telemetry: infrastructure, APM, logs, security and RUM</td><td>Managed Prometheus, Loki, Tempo and Mimir behind Grafana dashboards</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>SaaS telemetry: infrastructure, APM, logs, security and RUM</td><td>Managed Prometheus, Loki, Tempo and Mimir behind Grafana dashboards</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>Infrastructure Pro $15/host/mo annual ($18 monthly) · custom metrics $5 per 100 · logs $0.10/GB + $1.70 per 1M at 15 days</td><td>Pro $19/mo platform fee · 10,000 series and 50 GB logs included · $6.50 per 1k series after</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>No (hosted SaaS, agent-based collection)</strong></td><td>Yes (Grafana, Loki, Mimir and Tempo are open source)</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>15 months of full-resolution metrics; 15-day log and trace search</td><td>13 months of metrics on Pro; 30 days for logs, traces, profiles and k6 tests</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>Bits AI credits from $500, with per-action credit estimates</td><td>AI Assistant and Adaptive Telemetry included on Free and Pro</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>No (hosted SaaS, agent-based collection)</strong></td><td>Yes (Grafana, Loki, Mimir and Tempo are open source)</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>15 months of full-resolution metrics; 15-day log and trace search</td><td>13 months of metrics on Pro; 30 days for logs, traces, profiles and k6 tests</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>Bits AI credits from $500, with per-action credit estimates</td><td>AI Assistant and Adaptive Telemetry included on Free and Pro</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>High: dashboards, monitors and APM traces have no export to another backend</td><td>Low: Prometheus remote write in, dashboards and data out</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -427,7 +426,7 @@ checkout.labels(user_id=&quot;u_123&quot;).inc()  # one time series per label va
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: 2026-11-10. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -435,8 +434,8 @@ checkout.labels(user_id=&quot;u_123&quot;).inc()  # one time series per label va
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+      <p>© 2026 DevTeardown. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
-  </footer>
+  <p style="text-align:center"><a href="/editorial-policy/" lang="en">Editorial &amp; source policy (English)</a></p></footer>
 </body>
 </html>

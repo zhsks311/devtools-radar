@@ -1,10 +1,10 @@
-# DevTeardown — full text for LLMs
+# DevTeardown — comparison summaries and deal observations
 
-Source: https://devteardown.com · Updated: 2026-11-10
+Source: https://devteardown.com · Export generated: 2026-11-10
 
 ## Stripe vs Lemon Squeezy / Paddle
 URL: https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/
-Category: Payments & Billing · Prices verified: 2026-11-10
+Category: Payments & Billing · Recorded source review: 2026-11-10
 
 Verdict: Below roughly $21 per charge, or on any card that is not domestic, the merchant of record is the cheaper invoice, not the expensive one.
 
@@ -17,8 +17,8 @@ Lemon Squeezy and Paddle both publish 5% + 50¢ per transaction and $0 per month
 ### At $20 a month the assembled stack loses by $20
 Take 1,000 subscribers at $20, all domestic cards, $20,000 of volume, and assume you are registered to collect tax everywhere you sell. If you are not, the Tax line is smaller and the Stripe stack cheaper. | Line | Assembled Stripe stack | Merchant of record | |---|---|---| | Payments | 2.9% × $20,000 = $580, plus 1,000 × 30¢ = $300 | — | | Billing | 0.7% × $20,000 = $140 | — | | Tax Basic | 1,000 × 50¢ = $500 | — | | Single fee | — | 5% × $20,000 = $1,000, plus 1,000 × 50¢ = $500 | | Total | $1,520 | $1,500 | Move the price to $100 and keep the same $20,000: Stripe bills $580 + $140 + $160 = $880, the merchant of record bills $1,000 + $100 = $1,100. The crossover is one equation: 3.6% × P + 80¢ = 5% × P + 50¢, so 1.4% × P = 30¢, and P = $21.43.
 
-### Every foreign card multiplies the crossover by fourteen
-1.5% for an international card turns 3.6% + 80¢ into 5.1% + 80¢. Against 5% + 50¢ the gap becomes 0.1% × P − 30¢, so the merchant of record wins until a single charge passes $300. | Card | Stripe stack | Merchant of record | Cheaper | |---|---|---|---| | Domestic | 3.6% + 80¢ | 5% + 50¢ | Stripe above $21.43 | | International | 5.1% + 80¢ | 5% + 50¢ | MoR below $300 | | International, non-USD | 6.6% + 80¢ | 5% + 50¢ | MoR at every price | The third row is the one people miss. A euro customer paying with a euro card costs 6.6% + 80¢, which is more than the fee that supposedly includes filing for thirty countries. Currency conversion is charged on top of the international card fee, so both can land on one charge.
+### International-card fees remove this modeled crossover
+1.5% for an international card turns 3.6% + 80¢ into 5.1% + 80¢. The modeled gap against 5% + 50¢ is 0.1% × P + 30¢, always positive. Correction: the earlier $300 crossover used the wrong sign. | Card | Stripe stack | Merchant of record | Cheaper | |---|---|---|---| | Domestic | 3.6% + 80¢ | 5% + 50¢ | Stripe above $21.43 | | International | 5.1% + 80¢ | 5% + 50¢ | MoR at every positive price in this model | | International, non-USD | 6.6% + 80¢ | 5% + 50¢ | MoR at every price | The third row is the one people miss. A euro customer paying with a euro card costs 6.6% + 80¢, which is more than the fee that supposedly includes filing for thirty countries. Currency conversion is charged on top of the international card fee, so both can land on one charge.
 
 ### What the extra points buy, and what they take
 For the fee you get fraud screening, chargeback handling, buyer support and the remittance itself. Paddle lists payments, subscriptions, tax, fraud protection and billing support inside the 5%. Lemon Squeezy lists the same set and states the liability plainly: it takes on tax collection and pays the taxes on your behalf. The cost is control: - You do not hold the merchant account, so the acquirer relationship and the risk decision are theirs. - Refund and chargeback conversations belong to their support queue, not yours. - Leaving means moving subscribers, and Paddle sells that as a migration service rather than a button. Stripe's answer is Tax Complete, which monitors thresholds, registers in 90+ countries and files returns. It is priced in tiers by registrations, transactions and filings, and the tiers are a quote rather than a number on the page.
@@ -28,7 +28,7 @@ Stripe breaks at the first country you sell into without registering. Tax Basic 
 
 ## Anthropic vs OpenAI
 URL: https://devteardown.com/compare/anthropic-vs-openai-api-pricing/
-Category: AI & LLM APIs · Prices verified: 2026-11-10
+Category: AI & LLM APIs · Recorded source review: 2026-11-10
 
 Verdict: On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached.
 
@@ -52,7 +52,7 @@ Fast mode on both sides doubles the sticker: Opus 5.5 goes to $8 input and $40 o
 
 ## Datadog vs Grafana Cloud
 URL: https://devteardown.com/compare/datadog-vs-grafana-cloud/
-Category: Monitoring & Observability · Prices verified: 2026-11-10
+Category: Monitoring & Observability · Recorded source review: 2026-11-10
 
 Verdict: Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance.
 
@@ -76,7 +76,7 @@ Grafana Cloud speaks Prometheus for metrics, Loki for logs and Tempo for traces,
 
 ## AWS Lambda vs Cloudflare Workers
 URL: https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/
-Category: Serverless & Edge · Prices verified: 2026-11-10
+Category: Serverless & Edge · Recorded source review: 2026-11-10
 
 Verdict: For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call.
 
@@ -100,7 +100,7 @@ Workers runs JavaScript on V8 with a fetch-shaped API. A Lambda handler that imp
 
 ## Resend vs SendGrid
 URL: https://devteardown.com/compare/resend-vs-sendgrid/
-Category: Email Infrastructure · Prices verified: 2026-11-10
+Category: Email Infrastructure · Recorded source review: 2026-11-10
 
 Verdict: Under 50,000 emails the two vendors are the same product at the same price, and the free tier is the only real difference.
 
@@ -124,7 +124,7 @@ Resend breaks on the feature boundary. The dedicated IP, SSO and 1,000 domains a
 
 ## Supabase vs Firebase
 URL: https://devteardown.com/compare/supabase-vs-firebase/
-Category: Backend & Database · Prices verified: 2026-11-10
+Category: Backend & Database · Recorded source review: 2026-11-10
 
 Verdict: If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project.
 
@@ -148,7 +148,7 @@ Choose Supabase when modeled Firestore charges exceed the plan and compute cost 
 
 ## Vercel vs Cloudflare Pages
 URL: https://devteardown.com/compare/vercel-vs-cloudflare-pages/
-Category: Hosting & Edge · Prices verified: 2026-11-10
+Category: Hosting & Edge · Recorded source review: 2026-11-10
 
 Verdict: Teams whose transfer passes 1 TB or whose requests pass 10M a month should pick Cloudflare Pages if every asset fits 25 MiB: 3 TB means $307.20 of Vercel overage against $0.
 
@@ -172,7 +172,7 @@ Cloudflare charges $0 for egress, but Pages Functions still bill as Workers requ
 
 ## Cursor vs GitHub Copilot
 URL: https://devteardown.com/compare/cursor-vs-github-copilot/
-Category: AI Coding · Prices verified: 2026-11-10
+Category: AI Coding · Recorded source review: 2026-11-10
 
 Verdict: Teams content with Grok should choose Cursor, from $8 Plus; teams whose review runs through GitHub PRs should choose Copilot Pro at $10/user/month or above.
 
@@ -196,7 +196,7 @@ Teams happy on Grok should buy Cursor; teams whose review lives in GitHub PRs sh
 
 ## Notion vs Obsidian
 URL: https://devteardown.com/compare/notion-vs-obsidian/
-Category: Knowledge & Notes · Prices verified: 2026-11-10
+Category: Knowledge & Notes · Recorded source review: 2026-11-10
 
 Verdict: Choose Notion Business if you need granular database permissions or private teamspaces: for 10 people, 10 × $20 × 12 = $2,400/year, including Notion Agent but not Custom Agent credits.
 
@@ -220,7 +220,7 @@ Choose Notion Business when granular database permissions or private teamspaces 
 
 ## Bun vs Node.js
 URL: https://devteardown.com/compare/bun-vs-node/
-Category: Runtimes & Tooling · Prices verified: 2026-11-10
+Category: Runtimes & Tooling · Recorded source review: 2026-11-10
 
 Verdict: Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a native addon in your tree has no build for NODEMODULEVERSION 147.
 
@@ -244,7 +244,7 @@ Anthropic acquired Bun on 2 December 2025. Claude Code ships as a Bun executable
 
 ## Prisma vs Drizzle
 URL: https://devteardown.com/compare/prisma-vs-drizzle/
-Category: Data & ORM · Prices verified: 2026-11-10
+Category: Data & ORM · Recorded source review: 2026-11-10
 
 Verdict: Pick Drizzle if a generated client is the thing you refuse to add and you can pin 1.0.0-rc.5 having read its breaking notes.
 
@@ -268,7 +268,7 @@ Drizzle charges $0 for the ORM, Kit, Studio for local development and Gateway. Y
 
 ## Docker vs Podman
 URL: https://devteardown.com/compare/docker-vs-podman/
-Category: Containers & Runtime · Prices verified: 2026-11-10
+Category: Containers & Runtime · Recorded source review: 2026-11-10
 
 Verdict: Pick Podman if your company sits under both free-use limits and you can fund the port, or if you are past them and want per-seat × headcount off the budget.
 
@@ -292,7 +292,7 @@ Podman Desktop is free, Apache 2.0 and, in its own words, "trusted as part of th
 
 ## Clerk vs Auth0
 URL: https://devteardown.com/compare/clerk-vs-auth0/
-Category: Identity & Auth · Prices verified: 2026-11-10
+Category: Identity & Auth · Recorded source review: 2026-11-10
 
 Verdict: Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan.
 
@@ -316,7 +316,7 @@ Choose Clerk Pro if you need MFA, passkeys or branding removal below 50,000 MRU 
 
 ## PlanetScale vs Neon
 URL: https://devteardown.com/compare/planetscale-vs-neon/
-Category: Backend & Database · Prices verified: 2026-11-10
+Category: Backend & Database · Recorded source review: 2026-11-10
 
 Verdict: Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster.
 

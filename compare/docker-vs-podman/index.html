@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://devteardown.com/compare/docker-vs-podman/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/docker-vs-podman/">
   <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/docker-vs-podman/">
-  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Docker vs Podman — 2026 teardown">
   <meta property="og:description" content="Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison ">
   <meta property="og:type" content="article">
@@ -22,15 +22,24 @@
   "@type": "TechArticle",
   "headline": "Docker vs Podman: a 2026 engineering teardown",
   "description": "Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison is not daemon versus daemonless but which company may run the free one.",
-  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTeardown Team"
+    "name": "DevTeardown",
+    "url": "https://devteardown.com/editorial-policy/"
   },
+  "inLanguage": "en",
+  "citation": [
+    "https://www.docker.com/pricing/",
+    "https://docs.docker.com/subscription-billing/desktop-license/",
+    "https://docs.docker.com/subscription-billing/plans/docker/",
+    "https://podman.io/",
+    "https://podman-desktop.io/",
+    "https://docs.podman.io/en/latest/markdown/podman-system-service.1.html"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown"
   },
   "mainEntityOfPage": "https://devteardown.com/compare/docker-vs-podman/"
 }
@@ -183,24 +192,15 @@ footer p { font-size:.8rem; margin:0; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
-</head>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
 <body>
-  <header>
-    <div class="header-inner">
-      <a href="../../" class="logo">DevTools<span>Radar</span></a>
-      <div style="display:flex; gap:1rem; align-items:center;">
-        <a href="../../deals/" class="nav-link">Deals</a>
-        <a href="../../ko/" class="nav-link">한국어 핫딜</a>
-        <a href="../../" class="nav-link">← All teardowns</a>
-      </div>
-    </div>
-  </header>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
 
-  <main class="container">
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
     <div class="meta-row">
       <span class="badge badge-blue">Containers &amp; Runtime</span>
       <span class="badge badge-gray">Docker vs Podman</span>
-      <span>Prices verified 2026-11-10</span>
+      <span>Source review recorded 2026-11-10</span>
       <span>·</span>
       <span>4 min read</span>
     </div>
@@ -229,11 +229,11 @@ footer p { font-size:.8rem; margin:0; }
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>Docker Engine (Moby) plus the Docker Desktop app</td><td>Podman 6.1.4 runtime with Podman Desktop 1.30.5</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>Docker Engine (Moby) plus the Docker Desktop app</td><td>Podman 6.1.4 runtime with Podman Desktop 1.30.5</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>Personal $0 · Pro $9 · Team $15 per user/month · Business quote-only</td><td>Free · Apache 2.0 · enterprise support through the Red Hat build</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>Yes for Engine and Moby; Desktop carries the subscription agreement</strong></td><td>Yes — a local process, not a service</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes</td><td>Socket-activated API with one listening socket (--time default 5 s)</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>Hardened Images free for developers, from $5k/repo in production</td><td>GPU acceleration in Podman Desktop (vendor claim)</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>Yes for Engine and Moby; Desktop carries the subscription agreement</strong></td><td>Yes — a local process, not a service</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes</td><td>Socket-activated API with one listening socket (--time default 5 s)</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>Hardened Images free for developers, from $5k/repo in production</td><td>GPU acceleration in Podman Desktop (vendor claim)</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>Medium: Compose and image tooling are standard, the desktop is licensed</td><td>Low: Apache 2.0, OCI and Compose compatible</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -425,7 +425,7 @@ $ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: 2026-11-10. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -433,8 +433,8 @@ $ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+      <p>© 2026 DevTeardown. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
-  </footer>
+  <p style="text-align:center"><a href="/editorial-policy/" lang="en">Editorial &amp; source policy (English)</a></p></footer>
 </body>
 </html>
