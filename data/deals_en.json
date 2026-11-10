@@ -1,0 +1,875 @@
+{
+  "generated_at": "2026-11-10T13:33:00+09:00",
+  "site": {
+    "name": "DevTeardown Deals",
+    "url": "https://devteardown.com/deals/",
+    "lang": "en"
+  },
+  "feed": [
+    {
+      "id": "8e69b345fa50",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "[HDD] Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP16000400 - $399.99 (27% off)",
+      "product": "Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP16000400",
+      "store": "HDD",
+      "price": 399.99,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": 27,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "HDD",
+        "16TB",
+        "USB3.0"
+      ],
+      "briefing": [
+        "Key: Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP1 — $399.99",
+        "Price: $399.99 at HDD; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: HDD · 16TB · USB3.0",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xrmfc5/hdd_seagate_expansion_desktop_16tb_external_hard/"
+      },
+      "published_at": "2026-11-09T17:31:02+09:00",
+      "score": 75,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xrmfc5/hdd_seagate_expansion_desktop_16tb_external_hard/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "507f9918bcdf",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "[Prebuilt] HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W11P $247.99 (after 20% off coupon code)",
+      "product": "HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W11P",
+      "store": "Prebuilt",
+      "price": 247.99,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": 20,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "405G",
+        "Ryzen5",
+        "5650G"
+      ],
+      "briefing": [
+        "Key: HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W1 — $247.99",
+        "Price: $247.99 at Prebuilt; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: 405G · Ryzen5 · 5650G",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xr8bbs/prebuilt_hp_prodesk_405_g8_desktop_amd_ryzen_5/"
+      },
+      "published_at": "2026-11-09T05:30:55+09:00",
+      "score": 68,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xr8bbs/prebuilt_hp_prodesk_405_g8_desktop_amd_ryzen_5/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "4e758b3e7ac9",
+      "region": "global",
+      "target": "en",
+      "category": "tech",
+      "category_label": "Tech Gear",
+      "title_raw": "[Headphones] Razer Kraken Kitty V2 USB Wired Headset Hello Kitty Edition, Restock - $39.99 (64% off)",
+      "product": "Razer Kraken Kitty V2 USB Wired Headset Hello Kitty Edition, Restock",
+      "store": "Headphones",
+      "price": 39.99,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": 64,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "dp"
+      ],
+      "briefing": [
+        "Key: Razer Kraken Kitty V2 USB Wired Headset Hello Kitty Edition, Restock — $39.99",
+        "Price: $39.99 at Headphones; tax and shipping vary by state",
+        "Good for: developers shopping for their next piece of gear",
+        "Specs: dp",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers shopping for their next piece of gear",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs86d1/headphones_razer_kraken_kitty_v2_usb_wired/"
+      },
+      "published_at": "2026-11-10T09:04:26+09:00",
+      "score": 60,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs86d1/headphones_razer_kraken_kitty_v2_usb_wired/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "fd7f30dfe57c",
+      "region": "global",
+      "target": "en",
+      "category": "tech",
+      "category_label": "Tech Gear",
+      "title_raw": "[Motherboard] Gigabyte B650 GAMING X AX V2 AMD AM5 - $104.99 (30% off)",
+      "product": "Gigabyte B650 GAMING X AX V2 AMD AM5",
+      "store": "Motherboard",
+      "price": 104.99,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": 30,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "650G"
+      ],
+      "briefing": [
+        "Key: Gigabyte B650 GAMING X AX V2 AMD AM5 — $104.99",
+        "Price: $104.99 at Motherboard; tax and shipping vary by state",
+        "Good for: developers shopping for their next piece of gear",
+        "Specs: 650G",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers shopping for their next piece of gear",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs7xcu/motherboard_gigabyte_b650_gaming_x_ax_v2_amd_am5/"
+      },
+      "published_at": "2026-11-10T08:54:27+09:00",
+      "score": 60,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs7xcu/motherboard_gigabyte_b650_gaming_x_ax_v2_amd_am5/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "1c6d588a23ef",
+      "region": "global",
+      "target": "en",
+      "category": "keyboard-mouse",
+      "category_label": "Keyboards & Mice",
+      "title_raw": "[Keyboard] Epomaker Galaxy65 Mechanical Keyboard - $42.90 (-7% off)",
+      "product": "Epomaker Galaxy65 Mechanical Keyboard",
+      "store": "Keyboard",
+      "price": 42.9,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": 7,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "Mechanical"
+      ],
+      "briefing": [
+        "Key: Epomaker Galaxy65 Mechanical Keyboard — $42.90",
+        "Price: $42.90 at Keyboard; tax and shipping vary by state",
+        "Good for: people typing eight hours a day with wrist or noise concerns",
+        "Specs: Mechanical",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "people typing eight hours a day with wrist or noise concerns",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs0i3t/keyboard_epomaker_galaxy65_mechanical_keyboard/"
+      },
+      "published_at": "2026-11-10T04:04:41+09:00",
+      "score": 55,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs0i3t/keyboard_epomaker_galaxy65_mechanical_keyboard/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "e920cafdc040",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "15.3\" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eMMC $179 + Free S&H",
+      "product": "15.3\" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eMMC $179 + Free S&H",
+      "store": "",
+      "price": 179.0,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "FHD",
+        "4GB",
+        "64GB"
+      ],
+      "briefing": [
+        "Key: 15.3\" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eM — $179",
+        "Price: $179 at source; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: FHD · 4GB · 64GB",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "slickdeals",
+        "label": "Slickdeals Frontpage",
+        "url": "https://slickdeals.net/f/20278857-lenovo-chromebook-m-15-3-2k-laptop-mediatek-kompanio-540-2026-4gb-memory-64gb-storage-luna-grey-179?utm_source=rss&utm_content=fp&utm_medium=RSS2"
+      },
+      "published_at": "2026-11-10T10:58:57+09:00",
+      "score": 48,
+      "disclosure": "",
+      "link": {
+        "url": "https://slickdeals.net/f/20278857-lenovo-chromebook-m-15-3-2k-laptop-mediatek-kompanio-540-2026-4gb-memory-64gb-storage-luna-grey-179?utm_source=rss&utm_content=fp&utm_medium=RSS2",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Slickdeals Frontpage",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "d7512085ed13",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "[Combo] Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 MATX + AMD Ryzen 5 9600X + T-Force Delta Alpha RGB 16GB DDR5 6000 - $$518.98",
+      "product": "Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 MATX + AMD Ryzen 5 9600X + T-Force Delta Alpha RGB 16GB DDR5 6000 - $",
+      "store": "Combo",
+      "price": 518.98,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "16GB",
+        "DDR5",
+        "Ryzen5"
+      ],
+      "briefing": [
+        "Key: Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 — $518.98",
+        "Price: $518.98 at Combo; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: 16GB · DDR5 · Ryzen5",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xsa9s7/combo_newegg_16gb_ddr5_combos_are_back_gigabyte/"
+      },
+      "published_at": "2026-11-10T10:41:26+09:00",
+      "score": 48,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xsa9s7/combo_newegg_16gb_ddr5_combos_are_back_gigabyte/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "5e1573bce8ad",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "[Bundle] Cooler Master Sneaker-X Mini-ITX PC Case f+ 360mm AIO + 850W SFX PSU $231.69",
+      "product": "Cooler Master Sneaker-X Mini-ITX PC Case f+ 360mm AIO + 850W SFX PSU",
+      "store": "Bundle",
+      "price": 231.69,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "360mm",
+        "850W"
+      ],
+      "briefing": [
+        "Key: Cooler Master Sneaker-X Mini-ITX PC Case f+ 360mm AIO + 850W SFX PSU — $231.69",
+        "Price: $231.69 at Bundle; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: 360mm · 850W",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs7v93/bundle_cooler_master_sneakerx_miniitx_pc_case_f/"
+      },
+      "published_at": "2026-11-10T08:51:53+09:00",
+      "score": 48,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs7v93/bundle_cooler_master_sneakerx_miniitx_pc_case_f/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "6b7f43e74d8f",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "[CPU] AMD Ryzen 7 9850X3D, Amazon S/S, $419 A/C",
+      "product": "AMD Ryzen 7 9850X3D, Amazon S/S, $419 A/C",
+      "store": "CPU",
+      "price": 419.0,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "Ryzen7"
+      ],
+      "briefing": [
+        "Key: AMD Ryzen 7 9850X3D, Amazon S/S, $419 A/C — $419",
+        "Price: $419 at CPU; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: Ryzen7",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs6i23/cpu_amd_ryzen_7_9850x3d_amazon_ss_419_ac/"
+      },
+      "published_at": "2026-11-10T07:54:32+09:00",
+      "score": 48,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs6i23/cpu_amd_ryzen_7_9850x3d_amazon_ss_419_ac/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "f3dfb2d94450",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "[CPU] AMD RYZEN 7 9800X3D, Amazon S/S, $400",
+      "product": "AMD RYZEN 7 9800X3D, Amazon S/S",
+      "store": "CPU",
+      "price": 400.0,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "RYZEN7"
+      ],
+      "briefing": [
+        "Key: AMD RYZEN 7 9800X3D, Amazon S/S — $400",
+        "Price: $400 at CPU; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: RYZEN7",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs6b9z/cpu_amd_ryzen_7_9800x3d_amazon_ss_400/"
+      },
+      "published_at": "2026-11-10T07:47:04+09:00",
+      "score": 48,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xs6b9z/cpu_amd_ryzen_7_9800x3d_amazon_ss_400/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "5540b6fa510f",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "[Combo] Ryzen 5 7600X + ASRock B650M Pro RS WiFi + 32GB V-COLOR DDR5-6000 CL30 RGB + ASRock Rock 240 ARGB AIO + ASRock PRO-850B PSU + McAfee Total Protection (1 Yesr) - $628 (Newegg PC Builder - Instructions below)",
+      "product": "Ryzen 5 7600X + ASRock B650M Pro RS WiFi + 32GB V-COLOR DDR5-6000 CL30 RGB + ASRock Rock 240 ARGB AIO + ASRock PRO-850B PSU + McAfee Total Protection (1 Yesr)",
+      "store": "Combo",
+      "price": 628.0,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "Ryzen5",
+        "32GB",
+        "DDR5"
+      ],
+      "briefing": [
+        "Key: Ryzen 5 7600X + ASRock B650M Pro RS WiFi + 32GB V-COLOR DDR5-6000 CL30 — $628",
+        "Price: $628 at Combo; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: Ryzen5 · 32GB · DDR5",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xrzp3e/combo_ryzen_5_7600x_asrock_b650m_pro_rs_wifi_32gb/"
+      },
+      "published_at": "2026-11-10T03:34:52+09:00",
+      "score": 48,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xrzp3e/combo_ryzen_5_7600x_asrock_b650m_pro_rs_wifi_32gb/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    },
+    {
+      "id": "f466ba2e658b",
+      "region": "global",
+      "target": "en",
+      "category": "laptops",
+      "category_label": "Laptops & Mini PCs",
+      "title_raw": "[Prebuilt] AMD Ryzen 9 9900X - GeForce RTX 5080 - Windows 11 Home - 32GB RAM - 2TB SSD - $3200 (potential price drop on 11/16 to make it $2800, look at comments)",
+      "product": "AMD Ryzen 9 9900X - GeForce RTX 5080 - Windows 11 Home - 32GB RAM - 2TB SSD",
+      "store": "Prebuilt",
+      "price": 3200.0,
+      "price_source": "title",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "Ryzen9",
+        "RTX",
+        "32GB"
+      ],
+      "briefing": [
+        "Key: AMD Ryzen 9 9900X - GeForce RTX 5080 - Windows 11 Home - 32GB RAM - 2T — $3,200",
+        "Price: $3,200 at Prebuilt; tax and shipping vary by state",
+        "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+        "Specs: Ryzen9 · RTX · 32GB",
+        "Check: prices and stock move fast; confirm on the retailer page"
+      ],
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "source": {
+        "id": "reddit_buildapcsales",
+        "label": "Reddit r/buildapcsales",
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xrvgc9/prebuilt_amd_ryzen_9_9900x_geforce_rtx_5080/"
+      },
+      "published_at": "2026-11-10T01:00:18+09:00",
+      "score": 48,
+      "disclosure": "",
+      "link": {
+        "url": "https://www.reddit.com/r/buildapcsales/comments/1xrvgc9/prebuilt_amd_ryzen_9_9900x_geforce_rtx_5080/",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View deal at Reddit r/buildapcsales",
+        "label_kind": "source"
+      }
+    }
+  ],
+  "categories": {
+    "laptops": {
+      "label": "Laptops & Mini PCs",
+      "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+      "items": [
+        {
+          "id": "8e69b345fa50",
+          "region": "global",
+          "target": "en",
+          "category": "laptops",
+          "category_label": "Laptops & Mini PCs",
+          "title_raw": "[HDD] Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP16000400 - $399.99 (27% off)",
+          "product": "Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP16000400",
+          "store": "HDD",
+          "price": 399.99,
+          "price_source": "title",
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": 27,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "HDD",
+            "16TB",
+            "USB3.0"
+          ],
+          "briefing": [
+            "Key: Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP1 — $399.99",
+            "Price: $399.99 at HDD; tax and shipping vary by state",
+            "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+            "Specs: HDD · 16TB · USB3.0",
+            "Check: prices and stock move fast; confirm on the retailer page"
+          ],
+          "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+          "source": {
+            "id": "reddit_buildapcsales",
+            "label": "Reddit r/buildapcsales",
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xrmfc5/hdd_seagate_expansion_desktop_16tb_external_hard/"
+          },
+          "published_at": "2026-11-09T17:31:02+09:00",
+          "score": 75,
+          "disclosure": "",
+          "link": {
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xrmfc5/hdd_seagate_expansion_desktop_16tb_external_hard/",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View deal at Reddit r/buildapcsales",
+            "label_kind": "source"
+          }
+        },
+        {
+          "id": "507f9918bcdf",
+          "region": "global",
+          "target": "en",
+          "category": "laptops",
+          "category_label": "Laptops & Mini PCs",
+          "title_raw": "[Prebuilt] HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W11P $247.99 (after 20% off coupon code)",
+          "product": "HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W11P",
+          "store": "Prebuilt",
+          "price": 247.99,
+          "price_source": "title",
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": 20,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "405G",
+            "Ryzen5",
+            "5650G"
+          ],
+          "briefing": [
+            "Key: HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W1 — $247.99",
+            "Price: $247.99 at Prebuilt; tax and shipping vary by state",
+            "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+            "Specs: 405G · Ryzen5 · 5650G",
+            "Check: prices and stock move fast; confirm on the retailer page"
+          ],
+          "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+          "source": {
+            "id": "reddit_buildapcsales",
+            "label": "Reddit r/buildapcsales",
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xr8bbs/prebuilt_hp_prodesk_405_g8_desktop_amd_ryzen_5/"
+          },
+          "published_at": "2026-11-09T05:30:55+09:00",
+          "score": 68,
+          "disclosure": "",
+          "link": {
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xr8bbs/prebuilt_hp_prodesk_405_g8_desktop_amd_ryzen_5/",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View deal at Reddit r/buildapcsales",
+            "label_kind": "source"
+          }
+        },
+        {
+          "id": "e920cafdc040",
+          "region": "global",
+          "target": "en",
+          "category": "laptops",
+          "category_label": "Laptops & Mini PCs",
+          "title_raw": "15.3\" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eMMC $179 + Free S&H",
+          "product": "15.3\" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eMMC $179 + Free S&H",
+          "store": "",
+          "price": 179.0,
+          "price_source": "title",
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "FHD",
+            "4GB",
+            "64GB"
+          ],
+          "briefing": [
+            "Key: 15.3\" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eM — $179",
+            "Price: $179 at source; tax and shipping vary by state",
+            "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+            "Specs: FHD · 4GB · 64GB",
+            "Check: prices and stock move fast; confirm on the retailer page"
+          ],
+          "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+          "source": {
+            "id": "slickdeals",
+            "label": "Slickdeals Frontpage",
+            "url": "https://slickdeals.net/f/20278857-lenovo-chromebook-m-15-3-2k-laptop-mediatek-kompanio-540-2026-4gb-memory-64gb-storage-luna-grey-179?utm_source=rss&utm_content=fp&utm_medium=RSS2"
+          },
+          "published_at": "2026-11-10T10:58:57+09:00",
+          "score": 48,
+          "disclosure": "",
+          "link": {
+            "url": "https://slickdeals.net/f/20278857-lenovo-chromebook-m-15-3-2k-laptop-mediatek-kompanio-540-2026-4gb-memory-64gb-storage-luna-grey-179?utm_source=rss&utm_content=fp&utm_medium=RSS2",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View deal at Slickdeals Frontpage",
+            "label_kind": "source"
+          }
+        },
+        {
+          "id": "d7512085ed13",
+          "region": "global",
+          "target": "en",
+          "category": "laptops",
+          "category_label": "Laptops & Mini PCs",
+          "title_raw": "[Combo] Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 MATX + AMD Ryzen 5 9600X + T-Force Delta Alpha RGB 16GB DDR5 6000 - $$518.98",
+          "product": "Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 MATX + AMD Ryzen 5 9600X + T-Force Delta Alpha RGB 16GB DDR5 6000 - $",
+          "store": "Combo",
+          "price": 518.98,
+          "price_source": "title",
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "16GB",
+            "DDR5",
+            "Ryzen5"
+          ],
+          "briefing": [
+            "Key: Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 — $518.98",
+            "Price: $518.98 at Combo; tax and shipping vary by state",
+            "Good for: developers who run local LLMs, Docker builds and IDEs on one machine",
+            "Specs: 16GB · DDR5 · Ryzen5",
+            "Check: prices and stock move fast; confirm on the retailer page"
+          ],
+          "audience": "developers who run local LLMs, Docker builds and IDEs on one machine",
+          "source": {
+            "id": "reddit_buildapcsales",
+            "label": "Reddit r/buildapcsales",
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xsa9s7/combo_newegg_16gb_ddr5_combos_are_back_gigabyte/"
+          },
+          "published_at": "2026-11-10T10:41:26+09:00",
+          "score": 48,
+          "disclosure": "",
+          "link": {
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xsa9s7/combo_newegg_16gb_ddr5_combos_are_back_gigabyte/",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View deal at Reddit r/buildapcsales",
+            "label_kind": "source"
+          }
+        }
+      ]
+    },
+    "monitor-desk": {
+      "label": "Monitors & Desk",
+      "audience": "engineers juggling code, logs and dashboards on one screen",
+      "items": [
+        {
+          "id": "1ceeac40cd6d",
+          "region": "global",
+          "target": "en",
+          "category": "monitor-desk",
+          "category_label": "Monitors & Desk",
+          "title_raw": "[Other] Heavy-Duty Dual Monitor Stand up to 32\" $15.99",
+          "product": "Heavy-Duty Dual Monitor Stand up to 32\"",
+          "store": "Other",
+          "price": 15.99,
+          "price_source": "title",
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "Key: Heavy-Duty Dual Monitor Stand up to 32\" — $15.99",
+            "Price: $15.99 at Other; tax and shipping vary by state",
+            "Good for: engineers juggling code, logs and dashboards on one screen",
+            "Check: prices and stock move fast; confirm on the retailer page"
+          ],
+          "audience": "engineers juggling code, logs and dashboards on one screen",
+          "source": {
+            "id": "reddit_buildapcsales",
+            "label": "Reddit r/buildapcsales",
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xs2oxz/other_heavyduty_dual_monitor_stand_up_to_32_1599/"
+          },
+          "published_at": "2026-11-10T05:25:20+09:00",
+          "score": 40,
+          "disclosure": "",
+          "link": {
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xs2oxz/other_heavyduty_dual_monitor_stand_up_to_32_1599/",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View deal at Reddit r/buildapcsales",
+            "label_kind": "source"
+          }
+        }
+      ]
+    },
+    "keyboard-mouse": {
+      "label": "Keyboards & Mice",
+      "audience": "people typing eight hours a day with wrist or noise concerns",
+      "items": [
+        {
+          "id": "1c6d588a23ef",
+          "region": "global",
+          "target": "en",
+          "category": "keyboard-mouse",
+          "category_label": "Keyboards & Mice",
+          "title_raw": "[Keyboard] Epomaker Galaxy65 Mechanical Keyboard - $42.90 (-7% off)",
+          "product": "Epomaker Galaxy65 Mechanical Keyboard",
+          "store": "Keyboard",
+          "price": 42.9,
+          "price_source": "title",
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": 7,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "Mechanical"
+          ],
+          "briefing": [
+            "Key: Epomaker Galaxy65 Mechanical Keyboard — $42.90",
+            "Price: $42.90 at Keyboard; tax and shipping vary by state",
+            "Good for: people typing eight hours a day with wrist or noise concerns",
+            "Specs: Mechanical",
+            "Check: prices and stock move fast; confirm on the retailer page"
+          ],
+          "audience": "people typing eight hours a day with wrist or noise concerns",
+          "source": {
+            "id": "reddit_buildapcsales",
+            "label": "Reddit r/buildapcsales",
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xs0i3t/keyboard_epomaker_galaxy65_mechanical_keyboard/"
+          },
+          "published_at": "2026-11-10T04:04:41+09:00",
+          "score": 55,
+          "disclosure": "",
+          "link": {
+            "url": "https://www.reddit.com/r/buildapcsales/comments/1xs0i3t/keyboard_epomaker_galaxy65_mechanical_keyboard/",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View deal at Reddit r/buildapcsales",
+            "label_kind": "source"
+          }
+        },
+        {
+          "id": "bec239d903a8",
+          "region": "global",
+          "target": "en",
+          "category": "keyboard-mouse",
+          "category_label": "Keyboards & Mice",
+          "title_raw": "Cooler Master SK620 Wired Mechanical Low Profile Gaming Keyboard w/ Blue Switches $15 + Free S&H",
+          "product": "Cooler Master SK620 Wired Mechanical Low Profile Gaming Keyboard w/ Blue Switches $15 + Free S&H",
+          "store": "",
+          "price": 15.0,
+          "price_source": "title",
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "620W",
+            "Mechanical"
+          ],
+          "briefing": [
+            "Key: Cooler Master SK620 Wired Mechanical Low Profile Gaming Keyboard w/ Bl — $15",
+            "Price: $15 at source; tax and shipping vary by state",
+            "Good for: people typing eight hours a day with wrist or noise concerns",
+            "Specs: 620W · Mechanical",
+            "Check: prices and stock move fast; confirm on the retailer page"
+          ],
+          "audience": "people typing eight hours a day with wrist or noise concerns",
+          "source": {
+            "id": "slickdeals",
+            "label": "Slickdeals Frontpage",
+            "url": "https://slickdeals.net/f/20281251-cooler-master-sk620-mechanical-low-profile-keyboard-with-blue-switches-15-free-s-h?utm_source=rss&utm_content=fp&utm_medium=RSS2"
+          },
+          "published_at": "2026-11-10T12:10:36+09:00",
+          "score": 40,
+          "disclosure": "",
+          "link": {
+            "url": "https://slickdeals.net/f/20281251-cooler-master-sk620-mechanical-low-profile-keyboard-with-blue-switches-15-free-s-h?utm_source=rss&utm_content=fp&utm_medium=RSS2",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View deal at Slickdeals Frontpage",
+            "label_kind": "source"
+          }
+        }
+      ]
+    },
+    "afterwork": {
+      "label": "Coffee & Office Fuel",
+      "audience": "teams running late nights that live on coffee and snacks",
+      "items": []
+    }
+  },
+  "stats": {
+    "feed": 12,
+    "sources": 2
+  }
+}

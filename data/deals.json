@@ -1,29 +1,33 @@
 {
-  "generated_at": "2026-11-10T13:20:53+09:00",
+  "generated_at": "2026-11-10T13:33:00+09:00",
   "site": {
     "name": "DevTeardown KR",
-    "url": "https://devteardown.com/ko/"
+    "url": "https://devteardown.com/ko/",
+    "lang": "ko"
   },
   "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
   "feed": [
     {
       "id": "794d0c4ca90f",
+      "region": "kr",
+      "target": "ko",
       "category": "afterwork",
       "category_label": "야근 · 생산성 · 커피·간식",
       "title_raw": "[지마켓] 라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개(38,630원/무료)",
       "product": "라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개",
       "store": "지마켓",
-      "price": 38630,
+      "price": 38630.0,
+      "price_source": "title",
+      "currency": "KRW",
       "original_price": null,
       "discount_pct": null,
       "shipping": "무료배송",
       "rocket": false,
       "specs": [],
-      "price_source": "title",
       "briefing": [
-        "핵심: 라이프익스텐션 종합비타민 투퍼데이 120정",
-        "실구매가: 38,630원 무료배송 지마켓",
-        "추천: 피로한 야근 시 비타민 보충 필요",
+        "핵심: 라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개 — 지마켓 38,630원 · 무료배송",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
         "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
       ],
       "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
@@ -35,7 +39,6 @@
       "published_at": "2026-11-10T13:05:58+09:00",
       "score": 52,
       "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
       "link": {
         "url": "https://www.coupang.com/np/search?q=%EB%9D%BC%EC%9D%B4%ED%94%84%EC%9D%B5%EC%8A%A4%ED%85%90%EC%85%98+%EC%A2%85%ED%95%A9%EB%B9%84%ED%83%80%EB%AF%BC+%ED%88%AC%ED%8D%BC%EB%8D%B0%EC%9D%B4+V2+120%EC%A0%95+2%EA%B0%9C&channel=user",
         "tracked": false,
@@ -46,12 +49,16 @@
     },
     {
       "id": "bbabf4ec07be",
+      "region": "kr",
+      "target": "ko",
       "category": "keyboard-mouse",
       "category_label": "키보드 · 마우스",
       "title_raw": "[코스트코] 로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션",
       "product": "로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션",
       "store": "코스트코",
-      "price": 114900,
+      "price": 114900.0,
+      "price_source": "detail",
+      "currency": "KRW",
       "original_price": null,
       "discount_pct": null,
       "shipping": "",
@@ -60,11 +67,11 @@
         "무선",
         "블루투스"
       ],
-      "price_source": "detail",
       "briefing": [
-        "핵심: 로지텍 무선 마우스 MX MASTER 3S",
-        "실구매가: 114,900원 코스트코",
-        "추천: 업무 생산성을 높이는 고급 마우스",
+        "핵심: 로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션 — 코스트코 114,900원",
+        "실구매가: 본문 표기 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
+        "스펙: 무선 · 블루투스",
         "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
       ],
       "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
@@ -73,10 +80,9 @@
         "label": "클리앙 알뜰구매 3페이지",
         "url": "https://www.clien.net/service/board/jirum/19276995?od=T31&po=2&category=0&groupCd="
       },
-      "published_at": "2026-11-10T13:11:51+09:00",
+      "published_at": "2026-11-10T13:27:46+09:00",
       "score": 48,
       "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
       "link": {
         "url": "https://link.coupang.com/a/iyxFRjouBM",
         "tracked": true,
@@ -87,12 +93,16 @@
     },
     {
       "id": "f38d54653455",
+      "region": "kr",
+      "target": "ko",
       "category": "monitor-desk",
       "category_label": "모니터 · 암 · 데스크",
       "title_raw": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
       "product": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
       "store": "",
-      "price": 241734,
+      "price": 241734.0,
+      "price_source": "detail",
+      "currency": "KRW",
       "original_price": null,
       "discount_pct": null,
       "shipping": "",
@@ -100,13 +110,13 @@
       "specs": [
         "27인치",
         "QHD",
-        "200Hz"
+        "IPS"
       ],
-      "price_source": "detail",
       "briefing": [
-        "핵심: LG 울트라기어 27인치 게이밍모니터",
-        "실구매가: 241,734원",
-        "추천: 고주사율 모니터가 필요한 게이머",
+        "핵심: LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터 — 원문 판매처 241,734원",
+        "실구매가: 본문 표기 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+        "스펙: 27인치 · QHD · IPS",
         "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
       ],
       "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
@@ -115,10 +125,9 @@
         "label": "클리앙 알뜰구매",
         "url": "https://www.clien.net/service/board/jirum/19288627?od=T31&po=0&category=0&groupCd="
       },
-      "published_at": "2026-11-10T13:11:49+09:00",
+      "published_at": "2026-11-10T13:27:45+09:00",
       "score": 48,
       "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
       "link": {
         "url": "https://link.coupang.com/a/iyztqGf2zc",
         "tracked": true,
@@ -128,23 +137,192 @@
       }
     },
     {
+      "id": "06cd94e0d704",
+      "region": "kr",
+      "target": "ko",
+      "category": "monitor-desk",
+      "category_label": "모니터 · 암 · 데스크",
+      "title_raw": "[지마켓] 허먼밀러 뉴에어론 의자 풀체어 직구 (790,520원/착불)",
+      "product": "허먼밀러 뉴에어론 의자 풀체어 직구",
+      "store": "지마켓",
+      "price": 790520.0,
+      "price_source": "title",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "핵심: 허먼밀러 뉴에어론 의자 풀체어 직구 — 지마켓 790,520원",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+      "source": {
+        "id": "ppomppu",
+        "label": "뽐뿌게시판",
+        "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747558"
+      },
+      "published_at": "2026-11-10T13:17:36+09:00",
+      "score": 48,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "link": {
+        "url": "https://www.coupang.com/np/search?q=%ED%97%88%EB%A8%BC%EB%B0%80%EB%9F%AC+%EB%89%B4%EC%97%90%EC%96%B4%EB%A1%A0+%EC%9D%98%EC%9E%90+%ED%92%80%EC%B2%B4%EC%96%B4+%EC%A7%81%EA%B5%AC&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "허먼밀러 뉴에어론 의자 풀체어 직구 쿠팡 검색",
+        "label_kind": "검색"
+      }
+    },
+    {
+      "id": "889421109e64",
+      "region": "kr",
+      "target": "ko",
+      "category": "laptops",
+      "category_label": "맥북 · 노트북 · 미니PC",
+      "title_raw": "[지마켓] 인텔 코어 울트라 7 270K Plus_체감가 39만",
+      "product": "인텔 코어 울트라 7 270K Plus_체감가 39만",
+      "store": "지마켓",
+      "price": 412300.0,
+      "price_source": "hint",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "핵심: 인텔 코어 울트라 7 270K Plus_체감가 39만 — 지마켓 412,300원",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+      "source": {
+        "id": "quasarzone",
+        "label": "퀘이사존 핫딜",
+        "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000122"
+      },
+      "published_at": "2026-11-10T13:27:53+09:00",
+      "score": 45,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "link": {
+        "url": "https://www.coupang.com/np/search?q=%EC%9D%B8%ED%85%94+%EC%BD%94%EC%96%B4+%EC%9A%B8%ED%8A%B8%EB%9D%BC+7+270K+Plus_%EC%B2%B4%EA%B0%90%EA%B0%80+39%EB%A7%8C&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "인텔 코어 울트라 7 270K Plus_체감가 39만 쿠팡 검색",
+        "label_kind": "검색"
+      }
+    },
+    {
+      "id": "2b7b654e03ab",
+      "region": "kr",
+      "target": "ko",
+      "category": "laptops",
+      "category_label": "맥북 · 노트북 · 미니PC",
+      "title_raw": "[기타] AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 정품",
+      "product": "AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 정품",
+      "store": "기타",
+      "price": 338000.0,
+      "price_source": "hint",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "라이젠7"
+      ],
+      "briefing": [
+        "핵심: AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 정품 — 기타 338,000원",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+        "스펙: 라이젠7",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+      "source": {
+        "id": "quasarzone",
+        "label": "퀘이사존 핫딜",
+        "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000088"
+      },
+      "published_at": "2026-11-10T13:27:53+09:00",
+      "score": 45,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "link": {
+        "url": "https://www.coupang.com/np/search?q=AMD+%EB%9D%BC%EC%9D%B4%EC%A0%A07-5%EC%84%B8%EB%8C%80+7800X3D+%EB%9D%BC%ED%8C%8C%EC%97%98+%EB%A9%80%ED%8B%B0%ED%8C%A9&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 쿠팡 검색",
+        "label_kind": "검색"
+      }
+    },
+    {
+      "id": "6e3f7bf88739",
+      "region": "kr",
+      "target": "ko",
+      "category": "afterwork",
+      "category_label": "야근 · 생산성 · 커피·간식",
+      "title_raw": "[카카오선물하기] 퓨어코치 릴렉싱 무선 온열 공기압 눈 마사지기 +빼빼로 (29,610원/무료)",
+      "product": "퓨어코치 릴렉싱 무선 온열 공기압 눈 마사지기 +빼빼로",
+      "store": "카카오선물하기",
+      "price": 29610.0,
+      "price_source": "title",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "무료배송",
+      "rocket": false,
+      "specs": [
+        "무선"
+      ],
+      "briefing": [
+        "핵심: 퓨어코치 릴렉싱 무선 온열 공기압 눈 마사지기 +빼빼로 — 카카오선물하기 29,610원 · 무료배송",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+        "스펙: 무선",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+      "source": {
+        "id": "ppomppu",
+        "label": "뽐뿌게시판",
+        "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747560"
+      },
+      "published_at": "2026-11-10T13:20:50+09:00",
+      "score": 44,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "link": {
+        "url": "https://www.coupang.com/np/search?q=%ED%93%A8%EC%96%B4%EC%BD%94%EC%B9%98+%EB%A6%B4%EB%A0%89%EC%8B%B1+%EC%98%A8%EC%97%B4+%EA%B3%B5%EA%B8%B0%EC%95%95+%EB%88%88+%EB%A7%88%EC%82%AC%EC%A7%80%EA%B8%B0+%2B%EB%B9%BC%EB%B9%BC%EB%A1%9C&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "퓨어코치 릴렉싱 온열 공기압 눈 마사지기 +빼빼로 쿠팡 검색",
+        "label_kind": "검색"
+      }
+    },
+    {
       "id": "5fd2f083fe20",
+      "region": "kr",
+      "target": "ko",
       "category": "afterwork",
       "category_label": "야근 · 생산성 · 커피·간식",
       "title_raw": "[카카오] 유한양행 비컴플 마시는 멀티비타민 7입 (9,900원/무료)",
       "product": "유한양행 비컴플 마시는 멀티비타민 7입",
       "store": "카카오",
-      "price": 9900,
+      "price": 9900.0,
+      "price_source": "title",
+      "currency": "KRW",
       "original_price": null,
       "discount_pct": null,
       "shipping": "무료배송",
       "rocket": false,
       "specs": [],
-      "price_source": "title",
       "briefing": [
-        "핵심: 유한양행 비컴플 마시는 멀티비타민",
-        "실구매가: 9,900원 무료배송 카카오",
-        "추천: 바쁠 때 빠르게 비타민 보충 필요",
+        "핵심: 유한양행 비컴플 마시는 멀티비타민 7입 — 카카오 9,900원 · 무료배송",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
         "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
       ],
       "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
@@ -156,7 +334,6 @@
       "published_at": "2026-11-10T13:04:46+09:00",
       "score": 44,
       "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
       "link": {
         "url": "https://www.coupang.com/np/search?q=%EC%9C%A0%ED%95%9C%EC%96%91%ED%96%89+%EB%B9%84%EC%BB%B4%ED%94%8C+%EB%A7%88%EC%8B%9C%EB%8A%94+%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+7%EC%9E%85&channel=user",
         "tracked": false,
@@ -166,63 +343,69 @@
       }
     },
     {
-      "id": "70196d250bfc",
-      "category": "afterwork",
-      "category_label": "야근 · 생산성 · 커피·간식",
-      "title_raw": "[네이버]고소한원두1kg 29,500원/유료",
-      "product": "고소한원두1kg",
-      "store": "네이버",
-      "price": 29500,
+      "id": "4cb0cdf0c64e",
+      "region": "kr",
+      "target": "ko",
+      "category": "keyboard-mouse",
+      "category_label": "키보드 · 마우스",
+      "title_raw": "[카카오 톡딜] 로지텍코리아 공식 G304 무선 게이밍 마우스",
+      "product": "로지텍코리아 공식 G304 무선 게이밍 마우스",
+      "store": "카카오 톡딜",
+      "price": 28710.0,
+      "price_source": "hint",
+      "currency": "KRW",
       "original_price": null,
       "discount_pct": null,
-      "shipping": "유료배송",
+      "shipping": "",
       "rocket": false,
       "specs": [
-        "1kg"
+        "무선"
       ],
-      "price_source": "title",
       "briefing": [
-        "핵심: 고소한 원두 1kg 네이버 판매",
-        "실구매가: 29,500원(유료배송)",
-        "추천: 야근할 때 마실 질 좋은 원두가 필요한 분",
+        "핵심: 로지텍코리아 공식 G304 무선 게이밍 마우스 — 카카오 톡딜 28,710원",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
+        "스펙: 무선",
         "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
       ],
-      "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+      "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
       "source": {
-        "id": "ppomppu",
-        "label": "뽐뿌게시판",
-        "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747541"
+        "id": "quasarzone",
+        "label": "퀘이사존 핫딜",
+        "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000261"
       },
-      "published_at": "2026-11-10T12:40:50+09:00",
-      "score": 40,
+      "published_at": "2026-11-10T13:27:53+09:00",
+      "score": 37,
       "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
       "link": {
-        "url": "https://link.coupang.com/a/iyzuKorRTw",
-        "tracked": true,
-        "matched_keyword": "고소한 원두 1kg",
-        "label": "고소한 원두 1kg (사무실 커피)",
-        "label_kind": "상품"
+        "url": "https://www.coupang.com/np/search?q=%EB%A1%9C%EC%A7%80%ED%85%8D%EC%BD%94%EB%A6%AC%EC%95%84+%EA%B3%B5%EC%8B%9D+G304+%EA%B2%8C%EC%9D%B4%EB%B0%8D+%EB%A7%88%EC%9A%B0%EC%8A%A4&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "로지텍코리아 공식 G304 게이밍 마우스 쿠팡 검색",
+        "label_kind": "검색"
       }
     },
     {
       "id": "d2d85692dbf0",
+      "region": "kr",
+      "target": "ko",
       "category": "tech",
       "category_label": "테크 장비",
       "title_raw": "[롯데온] 소니 MDR-3R (78,640원)",
       "product": "소니 MDR-3R",
       "store": "롯데온",
-      "price": 78640,
+      "price": 78640.0,
+      "price_source": "title",
+      "currency": "KRW",
       "original_price": null,
       "discount_pct": null,
       "shipping": "",
       "rocket": false,
       "specs": [],
-      "price_source": "title",
       "briefing": [
-        "핵심: 소니 MDR-3R 롯데온 판매",
-        "실구매가: 78,640원",
-        "추천: 음질 좋은 헤드폰을 저렴하게 구하려는 분",
+        "핵심: 소니 MDR-3R — 롯데온 78,640원",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 장비 지름을 고민 중인 개발자",
         "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
       ],
       "audience": "장비 지름을 고민 중인 개발자",
@@ -231,10 +414,9 @@
         "label": "클리앙 알뜰구매",
         "url": "https://www.clien.net/service/board/jirum/19289649?od=T31&po=0&category=0&groupCd="
       },
-      "published_at": "2026-11-10T13:11:49+09:00",
+      "published_at": "2026-11-10T13:27:45+09:00",
       "score": 30,
       "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
       "link": {
         "url": "https://link.coupang.com/a/iyzv0uG1N6",
         "tracked": true,
@@ -242,13 +424,180 @@
         "label": "소니 MDR-3R 이어폰",
         "label_kind": "상품"
       }
+    },
+    {
+      "id": "9ad88b5fa6fa",
+      "region": "kr",
+      "target": "ko",
+      "category": "tech",
+      "category_label": "테크 장비",
+      "title_raw": "[네이버] (리퍼)SuperFlower SF-750, 850, 1000 파워서플라이",
+      "product": "(리퍼)SuperFlower SF-750, 850, 1000 파워서플라이",
+      "store": "네이버",
+      "price": 89000.0,
+      "price_source": "hint",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "핵심: (리퍼)SuperFlower SF-750, 850, 1000 파워서플라이 — 네이버 89,000원",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 장비 지름을 고민 중인 개발자",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "장비 지름을 고민 중인 개발자",
+      "source": {
+        "id": "quasarzone",
+        "label": "퀘이사존 핫딜",
+        "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000240"
+      },
+      "published_at": "2026-11-10T13:27:53+09:00",
+      "score": 27,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "link": {
+        "url": "https://www.coupang.com/np/search?q=SuperFlower+SF-750%2C+850%2C+1000+%ED%8C%8C%EC%9B%8C%EC%84%9C%ED%94%8C%EB%9D%BC%EC%9D%B4&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "SuperFlower SF-750, 850, 1000 파워서플라이 쿠팡 검색",
+        "label_kind": "검색"
+      }
+    },
+    {
+      "id": "8ef983c9fc10",
+      "region": "kr",
+      "target": "ko",
+      "category": "tech",
+      "category_label": "테크 장비",
+      "title_raw": "[11번가] 서린 9800X3D RTX 5080 완본체",
+      "product": "서린 9800X3D RTX 5080 완본체",
+      "store": "11번가",
+      "price": 4513140.0,
+      "price_source": "hint",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "",
+      "rocket": false,
+      "specs": [
+        "RTX"
+      ],
+      "briefing": [
+        "핵심: 서린 9800X3D RTX 5080 완본체 — 11번가 4,513,140원",
+        "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+        "추천: 장비 지름을 고민 중인 개발자",
+        "스펙: RTX",
+        "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+      ],
+      "audience": "장비 지름을 고민 중인 개발자",
+      "source": {
+        "id": "quasarzone",
+        "label": "퀘이사존 핫딜",
+        "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000175"
+      },
+      "published_at": "2026-11-10T13:27:53+09:00",
+      "score": 27,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "link": {
+        "url": "https://www.coupang.com/np/search?q=%EC%84%9C%EB%A6%B0+9800X3D+RTX+5080+%EC%99%84%EB%B3%B8%EC%B2%B4&channel=user",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "서린 9800X3D RTX 5080 완본체 쿠팡 검색",
+        "label_kind": "검색"
+      }
     }
   ],
   "categories": {
     "laptops": {
       "label": "맥북 · 노트북 · 미니PC",
       "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
-      "items": []
+      "items": [
+        {
+          "id": "889421109e64",
+          "region": "kr",
+          "target": "ko",
+          "category": "laptops",
+          "category_label": "맥북 · 노트북 · 미니PC",
+          "title_raw": "[지마켓] 인텔 코어 울트라 7 270K Plus_체감가 39만",
+          "product": "인텔 코어 울트라 7 270K Plus_체감가 39만",
+          "store": "지마켓",
+          "price": 412300.0,
+          "price_source": "hint",
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "핵심: 인텔 코어 울트라 7 270K Plus_체감가 39만 — 지마켓 412,300원",
+            "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+          "source": {
+            "id": "quasarzone",
+            "label": "퀘이사존 핫딜",
+            "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000122"
+          },
+          "published_at": "2026-11-10T13:27:53+09:00",
+          "score": 45,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "link": {
+            "url": "https://www.coupang.com/np/search?q=%EC%9D%B8%ED%85%94+%EC%BD%94%EC%96%B4+%EC%9A%B8%ED%8A%B8%EB%9D%BC+7+270K+Plus_%EC%B2%B4%EA%B0%90%EA%B0%80+39%EB%A7%8C&channel=user",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "인텔 코어 울트라 7 270K Plus_체감가 39만 쿠팡 검색",
+            "label_kind": "검색"
+          }
+        },
+        {
+          "id": "2b7b654e03ab",
+          "region": "kr",
+          "target": "ko",
+          "category": "laptops",
+          "category_label": "맥북 · 노트북 · 미니PC",
+          "title_raw": "[기타] AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 정품",
+          "product": "AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 정품",
+          "store": "기타",
+          "price": 338000.0,
+          "price_source": "hint",
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "라이젠7"
+          ],
+          "briefing": [
+            "핵심: AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 정품 — 기타 338,000원",
+            "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+            "스펙: 라이젠7",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+          "source": {
+            "id": "quasarzone",
+            "label": "퀘이사존 핫딜",
+            "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000088"
+          },
+          "published_at": "2026-11-10T13:27:53+09:00",
+          "score": 45,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "link": {
+            "url": "https://www.coupang.com/np/search?q=AMD+%EB%9D%BC%EC%9D%B4%EC%A0%A07-5%EC%84%B8%EB%8C%80+7800X3D+%EB%9D%BC%ED%8C%8C%EC%97%98+%EB%A9%80%ED%8B%B0%ED%8C%A9&channel=user",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 쿠팡 검색",
+            "label_kind": "검색"
+          }
+        }
+      ]
     },
     "monitor-desk": {
       "label": "모니터 · 암 · 데스크",
@@ -256,12 +605,16 @@
       "items": [
         {
           "id": "f38d54653455",
+          "region": "kr",
+          "target": "ko",
           "category": "monitor-desk",
           "category_label": "모니터 · 암 · 데스크",
           "title_raw": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
           "product": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
           "store": "",
-          "price": 241734,
+          "price": 241734.0,
+          "price_source": "detail",
+          "currency": "KRW",
           "original_price": null,
           "discount_pct": null,
           "shipping": "",
@@ -269,13 +622,13 @@
           "specs": [
             "27인치",
             "QHD",
-            "200Hz"
+            "IPS"
           ],
-          "price_source": "detail",
           "briefing": [
-            "핵심: LG 울트라기어 27인치 게이밍모니터",
-            "실구매가: 241,734원",
-            "추천: 고주사율 모니터가 필요한 게이머",
+            "핵심: LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터 — 원문 판매처 241,734원",
+            "실구매가: 본문 표기 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+            "스펙: 27인치 · QHD · IPS",
             "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
           ],
           "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
@@ -284,16 +637,55 @@
             "label": "클리앙 알뜰구매",
             "url": "https://www.clien.net/service/board/jirum/19288627?od=T31&po=0&category=0&groupCd="
           },
-          "published_at": "2026-11-10T13:11:49+09:00",
+          "published_at": "2026-11-10T13:27:45+09:00",
           "score": 48,
           "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
           "link": {
             "url": "https://link.coupang.com/a/iyztqGf2zc",
             "tracked": true,
             "matched_keyword": "LG 울트라기어 27인치 QHD",
             "label": "LG 울트라기어 27인치 QHD 게이밍 모니터",
             "label_kind": "상품"
+          }
+        },
+        {
+          "id": "06cd94e0d704",
+          "region": "kr",
+          "target": "ko",
+          "category": "monitor-desk",
+          "category_label": "모니터 · 암 · 데스크",
+          "title_raw": "[지마켓] 허먼밀러 뉴에어론 의자 풀체어 직구 (790,520원/착불)",
+          "product": "허먼밀러 뉴에어론 의자 풀체어 직구",
+          "store": "지마켓",
+          "price": 790520.0,
+          "price_source": "title",
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "핵심: 허먼밀러 뉴에어론 의자 풀체어 직구 — 지마켓 790,520원",
+            "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+          "source": {
+            "id": "ppomppu",
+            "label": "뽐뿌게시판",
+            "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747558"
+          },
+          "published_at": "2026-11-10T13:17:36+09:00",
+          "score": 48,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "link": {
+            "url": "https://www.coupang.com/np/search?q=%ED%97%88%EB%A8%BC%EB%B0%80%EB%9F%AC+%EB%89%B4%EC%97%90%EC%96%B4%EB%A1%A0+%EC%9D%98%EC%9E%90+%ED%92%80%EC%B2%B4%EC%96%B4+%EC%A7%81%EA%B5%AC&channel=user",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "허먼밀러 뉴에어론 의자 풀체어 직구 쿠팡 검색",
+            "label_kind": "검색"
           }
         }
       ]
@@ -304,12 +696,16 @@
       "items": [
         {
           "id": "bbabf4ec07be",
+          "region": "kr",
+          "target": "ko",
           "category": "keyboard-mouse",
           "category_label": "키보드 · 마우스",
           "title_raw": "[코스트코] 로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션",
           "product": "로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션",
           "store": "코스트코",
-          "price": 114900,
+          "price": 114900.0,
+          "price_source": "detail",
+          "currency": "KRW",
           "original_price": null,
           "discount_pct": null,
           "shipping": "",
@@ -318,11 +714,11 @@
             "무선",
             "블루투스"
           ],
-          "price_source": "detail",
           "briefing": [
-            "핵심: 로지텍 무선 마우스 MX MASTER 3S",
-            "실구매가: 114,900원 코스트코",
-            "추천: 업무 생산성을 높이는 고급 마우스",
+            "핵심: 로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션 — 코스트코 114,900원",
+            "실구매가: 본문 표기 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
+            "스펙: 무선 · 블루투스",
             "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
           ],
           "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
@@ -331,16 +727,58 @@
             "label": "클리앙 알뜰구매 3페이지",
             "url": "https://www.clien.net/service/board/jirum/19276995?od=T31&po=2&category=0&groupCd="
           },
-          "published_at": "2026-11-10T13:11:51+09:00",
+          "published_at": "2026-11-10T13:27:46+09:00",
           "score": 48,
           "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
           "link": {
             "url": "https://link.coupang.com/a/iyxFRjouBM",
             "tracked": true,
             "matched_keyword": "로지텍 MX Master 3S",
             "label": "로지텍 MX Master 3S 무선 마우스",
             "label_kind": "상품"
+          }
+        },
+        {
+          "id": "4cb0cdf0c64e",
+          "region": "kr",
+          "target": "ko",
+          "category": "keyboard-mouse",
+          "category_label": "키보드 · 마우스",
+          "title_raw": "[카카오 톡딜] 로지텍코리아 공식 G304 무선 게이밍 마우스",
+          "product": "로지텍코리아 공식 G304 무선 게이밍 마우스",
+          "store": "카카오 톡딜",
+          "price": 28710.0,
+          "price_source": "hint",
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "",
+          "rocket": false,
+          "specs": [
+            "무선"
+          ],
+          "briefing": [
+            "핵심: 로지텍코리아 공식 G304 무선 게이밍 마우스 — 카카오 톡딜 28,710원",
+            "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
+            "스펙: 무선",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
+          "source": {
+            "id": "quasarzone",
+            "label": "퀘이사존 핫딜",
+            "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000261"
+          },
+          "published_at": "2026-11-10T13:27:53+09:00",
+          "score": 37,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "link": {
+            "url": "https://www.coupang.com/np/search?q=%EB%A1%9C%EC%A7%80%ED%85%8D%EC%BD%94%EB%A6%AC%EC%95%84+%EA%B3%B5%EC%8B%9D+G304+%EA%B2%8C%EC%9D%B4%EB%B0%8D+%EB%A7%88%EC%9A%B0%EC%8A%A4&channel=user",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "로지텍코리아 공식 G304 게이밍 마우스 쿠팡 검색",
+            "label_kind": "검색"
           }
         }
       ]
@@ -351,22 +789,25 @@
       "items": [
         {
           "id": "794d0c4ca90f",
+          "region": "kr",
+          "target": "ko",
           "category": "afterwork",
           "category_label": "야근 · 생산성 · 커피·간식",
           "title_raw": "[지마켓] 라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개(38,630원/무료)",
           "product": "라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개",
           "store": "지마켓",
-          "price": 38630,
+          "price": 38630.0,
+          "price_source": "title",
+          "currency": "KRW",
           "original_price": null,
           "discount_pct": null,
           "shipping": "무료배송",
           "rocket": false,
           "specs": [],
-          "price_source": "title",
           "briefing": [
-            "핵심: 라이프익스텐션 종합비타민 투퍼데이 120정",
-            "실구매가: 38,630원 무료배송 지마켓",
-            "추천: 피로한 야근 시 비타민 보충 필요",
+            "핵심: 라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개 — 지마켓 38,630원 · 무료배송",
+            "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
             "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
           ],
           "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
@@ -378,7 +819,6 @@
           "published_at": "2026-11-10T13:05:58+09:00",
           "score": 52,
           "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
           "link": {
             "url": "https://www.coupang.com/np/search?q=%EB%9D%BC%EC%9D%B4%ED%94%84%EC%9D%B5%EC%8A%A4%ED%85%90%EC%85%98+%EC%A2%85%ED%95%A9%EB%B9%84%ED%83%80%EB%AF%BC+%ED%88%AC%ED%8D%BC%EB%8D%B0%EC%9D%B4+V2+120%EC%A0%95+2%EA%B0%9C&channel=user",
             "tracked": false,
@@ -388,23 +828,69 @@
           }
         },
         {
+          "id": "6e3f7bf88739",
+          "region": "kr",
+          "target": "ko",
+          "category": "afterwork",
+          "category_label": "야근 · 생산성 · 커피·간식",
+          "title_raw": "[카카오선물하기] 퓨어코치 릴렉싱 무선 온열 공기압 눈 마사지기 +빼빼로 (29,610원/무료)",
+          "product": "퓨어코치 릴렉싱 무선 온열 공기압 눈 마사지기 +빼빼로",
+          "store": "카카오선물하기",
+          "price": 29610.0,
+          "price_source": "title",
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "무료배송",
+          "rocket": false,
+          "specs": [
+            "무선"
+          ],
+          "briefing": [
+            "핵심: 퓨어코치 릴렉싱 무선 온열 공기압 눈 마사지기 +빼빼로 — 카카오선물하기 29,610원 · 무료배송",
+            "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+            "스펙: 무선",
+            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
+          ],
+          "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+          "source": {
+            "id": "ppomppu",
+            "label": "뽐뿌게시판",
+            "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747560"
+          },
+          "published_at": "2026-11-10T13:20:50+09:00",
+          "score": 44,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "link": {
+            "url": "https://www.coupang.com/np/search?q=%ED%93%A8%EC%96%B4%EC%BD%94%EC%B9%98+%EB%A6%B4%EB%A0%89%EC%8B%B1+%EC%98%A8%EC%97%B4+%EA%B3%B5%EA%B8%B0%EC%95%95+%EB%88%88+%EB%A7%88%EC%82%AC%EC%A7%80%EA%B8%B0+%2B%EB%B9%BC%EB%B9%BC%EB%A1%9C&channel=user",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "퓨어코치 릴렉싱 온열 공기압 눈 마사지기 +빼빼로 쿠팡 검색",
+            "label_kind": "검색"
+          }
+        },
+        {
           "id": "5fd2f083fe20",
+          "region": "kr",
+          "target": "ko",
           "category": "afterwork",
           "category_label": "야근 · 생산성 · 커피·간식",
           "title_raw": "[카카오] 유한양행 비컴플 마시는 멀티비타민 7입 (9,900원/무료)",
           "product": "유한양행 비컴플 마시는 멀티비타민 7입",
           "store": "카카오",
-          "price": 9900,
+          "price": 9900.0,
+          "price_source": "title",
+          "currency": "KRW",
           "original_price": null,
           "discount_pct": null,
           "shipping": "무료배송",
           "rocket": false,
           "specs": [],
-          "price_source": "title",
           "briefing": [
-            "핵심: 유한양행 비컴플 마시는 멀티비타민",
-            "실구매가: 9,900원 무료배송 카카오",
-            "추천: 바쁠 때 빠르게 비타민 보충 필요",
+            "핵심: 유한양행 비컴플 마시는 멀티비타민 7입 — 카카오 9,900원 · 무료배송",
+            "실구매가: 단일 가격 특가, 배송비 포함 여부는 원문에서 확인",
+            "추천: 야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
             "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
           ],
           "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
@@ -416,53 +902,12 @@
           "published_at": "2026-11-10T13:04:46+09:00",
           "score": 44,
           "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
           "link": {
             "url": "https://www.coupang.com/np/search?q=%EC%9C%A0%ED%95%9C%EC%96%91%ED%96%89+%EB%B9%84%EC%BB%B4%ED%94%8C+%EB%A7%88%EC%8B%9C%EB%8A%94+%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+7%EC%9E%85&channel=user",
             "tracked": false,
             "matched_keyword": null,
             "label": "유한양행 비컴플 마시는 멀티비타민 7입 쿠팡 검색",
             "label_kind": "검색"
-          }
-        },
-        {
-          "id": "70196d250bfc",
-          "category": "afterwork",
-          "category_label": "야근 · 생산성 · 커피·간식",
-          "title_raw": "[네이버]고소한원두1kg 29,500원/유료",
-          "product": "고소한원두1kg",
-          "store": "네이버",
-          "price": 29500,
-          "original_price": null,
-          "discount_pct": null,
-          "shipping": "유료배송",
-          "rocket": false,
-          "specs": [
-            "1kg"
-          ],
-          "price_source": "title",
-          "briefing": [
-            "핵심: 고소한 원두 1kg 네이버 판매",
-            "실구매가: 29,500원(유료배송)",
-            "추천: 야근할 때 마실 질 좋은 원두가 필요한 분",
-            "체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인"
-          ],
-          "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
-          "source": {
-            "id": "ppomppu",
-            "label": "뽐뿌게시판",
-            "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=747541"
-          },
-          "published_at": "2026-11-10T12:40:50+09:00",
-          "score": 40,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
-          "link": {
-            "url": "https://link.coupang.com/a/iyzuKorRTw",
-            "tracked": true,
-            "matched_keyword": "고소한 원두 1kg",
-            "label": "고소한 원두 1kg (사무실 커피)",
-            "label_kind": "상품"
           }
         }
       ]
@@ -489,7 +934,7 @@
       "category": "monitor-desk",
       "kicker": "Desk Ergonomics",
       "title": "모니터암 · 거치대",
-      "desc": "화면을 눈높이로 올리면 8시간 뒤 목·어깨 피로가 달라집니다. 쿠팡 인기 순 정렬.",
+      "desc": "화면을 눈높이로 올리면 8시간 뒤 목·어깨 피로가 달라집니다.",
       "url": "https://link.coupang.com/a/iyzzXmg6CG",
       "tracked": true
     },
@@ -515,8 +960,8 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 6,
-    "tracked_links": 4,
-    "search_fallback": 2
+    "feed": 12,
+    "tracked_links": 3,
+    "search_fallback": 9
   }
 }

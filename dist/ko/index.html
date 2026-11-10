@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevTeardown KR — 개발자 장비 & 테크 핫딜 레이더 (2026)</title>
-  <meta name="description" content="개발자 장비·테크 핫딜을 뽐뿌·클리앙 등 원문에서 모아 가격·할인율·배송 조건을 정리하고, 실구매가와 추천 대상을 한눈에 보여주는 한글 핫딜 레이더.">
+  <meta name="description" content="개발자 장비·테크 핫딜을 뽐뿌·클리앙·퀘이사존·에펨코리아·폴센트에서 모아 가격·할인율·배송 조건을 정리하고, 실구매가와 추천 대상을 한눈에 보여주는 한글 핫딜 레이더.">
   <link rel="canonical" href="https://devteardown.com/ko/">
-  <link rel="alternate" hreflang="en" href="https://devteardown.com/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/deals/">
   <link rel="alternate" hreflang="ko" href="https://devteardown.com/ko/">
   <meta property="og:title" content="DevTeardown KR — 개발자 장비 & 테크 핫딜 레이더">
   <meta property="og:type" content="website">
@@ -198,78 +198,139 @@ code {
 .toc a:hover { color: var(--primary); }
 footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
 
-.ko-hero { padding: 3rem 0 1.5rem; }
-.ko-hero h1 { font-size: 2.5rem; margin: 0.6rem 0 0.9rem; }
-.ko-hero .lead { max-width: 700px; }
-.ko-stats { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 1.6rem 0 0.4rem; }
-.ko-stat { font-size: 0.82rem; color: var(--text-muted); }
-.ko-stat strong { display: block; font-size: 1.15rem; color: #fff; letter-spacing: -0.01em; }
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", Roboto, sans-serif; }
+
+.ko-hero { padding: 3.4rem 0 1.2rem; }
+.ko-hero h1 { font-size: clamp(2rem, 4.6vw, 2.9rem); line-height: 1.25; margin: 0.7rem 0 1rem; }
+.ko-hero .lead { font-size: 1.05rem; line-height: 1.85; color: #b8c5d6; max-width: 720px; }
+.ko-stats { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0 0.2rem; }
+.ko-stat {
+  background: #111a2b; border: 1px solid var(--border); border-radius: 10px;
+  padding: 0.55rem 0.85rem; font-size: 0.76rem; color: #8fa1b8;
+}
+.ko-stat strong { color: #eaf2ff; font-size: 0.95rem; margin-right: 0.35rem; }
 .disclosure-bar {
-  background: rgba(245, 158, 11, 0.07);
-  border: 1px solid rgba(245, 158, 11, 0.28);
-  color: #f0c98a;
-  font-size: 0.8rem;
-  line-height: 1.6;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  margin: 1.4rem 0 0;
+  background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f1c98d; font-size: 0.78rem; line-height: 1.65; padding: 0.7rem 0.95rem;
+  border-radius: 10px; margin: 1.3rem 0 0;
 }
-.deal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.1rem; margin: 1.6rem 0 0.5rem; }
+
+/* ---------- quick filter tabs ---------- */
+.quick-tabs {
+  position: sticky; top: 57px; z-index: 20; display: flex; gap: 0.45rem;
+  overflow-x: auto; scrollbar-width: none; padding: 0.75rem 0;
+  margin: 0.6rem 0 1.2rem; background: rgba(9, 13, 22, 0.94);
+  backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+}
+.quick-tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: none; border: 1px solid var(--border); background: #101828; color: #a9b8cb;
+  font-size: 0.85rem; font-weight: 600; padding: 0.5rem 0.95rem; border-radius: 999px;
+  cursor: pointer; transition: all 0.16s; font-family: inherit; white-space: nowrap;
+}
+.tab:hover { color: #e6f1ff; border-color: #33506f; }
+.tab.is-active { background: var(--primary); border-color: var(--primary); color: #04121b; }
+.tab .n { opacity: 0.65; font-size: 0.76rem; margin-left: 0.2rem; }
+
+/* ---------- deal cards ---------- */
+.deal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; margin: 0.4rem 0 0.5rem; }
 .deal-card {
-  display: flex; flex-direction: column;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 1.15rem 1.2rem 1.05rem;
-  transition: border-color 0.18s, transform 0.18s;
+  display: flex; flex-direction: column; position: relative;
+  background: linear-gradient(168deg, #131d2e 0%, #101725 100%);
+  border: 1px solid #24344c; border-radius: 16px; padding: 1.35rem 1.4rem 1.2rem;
+  transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
 }
-.deal-card:hover { border-color: #2b405f; transform: translateY(-2px); }
-.deal-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.65rem; }
-.deal-src { font-size: 0.72rem; color: var(--text-muted); }
-.deal-title { font-size: 1rem; line-height: 1.45; color: #fff; margin: 0 0 0.6rem; font-weight: 650; }
-.deal-price { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.45rem; }
-.deal-price strong { font-size: 1.35rem; color: var(--primary); letter-spacing: -0.02em; }
-.deal-price s { color: #64748b; font-size: 0.85rem; }
-.deal-price .unknown { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
-.deal-flags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
-.deal-brief { list-style: none; margin: 0 0 0.9rem; padding: 0; }
-.deal-brief li { font-size: 0.83rem; color: #a9b7c9; line-height: 1.55; margin: 0 0 0.28rem; padding-left: 0.7rem; position: relative; }
-.deal-brief li::before { content: "·"; position: absolute; left: 0; color: var(--primary); }
-.deal-cta { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
-.deal-cta .btn { font-size: 0.82rem; padding: 0.5rem 0.9rem; }
-.deal-cta .src-link { font-size: 0.72rem; color: #64748b; text-decoration: none; }
-.deal-cta .src-link:hover { color: var(--primary); }
-.untracked-note { font-size: 0.68rem; color: #64748b; margin-top: 0.5rem; }
-.cat-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-top: 3rem; }
-.cat-head h2 { margin: 0; border-bottom: none; padding-bottom: 0; }
-.cat-sub { color: var(--text-muted); font-size: 0.86rem; }
+.deal-card:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); }
+.deal-card.is-hidden { display: none; }
+.deal-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.cat-chip {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.01em;
+  color: #9ad8ff; background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.32); border-radius: 999px; padding: 0.22rem 0.65rem;
+}
+.deal-src { font-size: 0.74rem; color: #7c8ca3; }
+.deal-title {
+  font-size: 1.06rem; line-height: 1.52; color: #f4f8ff; font-weight: 700;
+  margin: 0 0 0.85rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.deal-price { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.55rem; }
+.deal-price strong {
+  font-size: clamp(1.6rem, 4.4vw, 1.85rem); font-weight: 800; color: #7dd3fc;
+  letter-spacing: -0.03em; line-height: 1.15;
+}
+.deal-price s { color: #64748b; font-size: 0.88rem; }
+.deal-price .unknown { font-size: 1rem; color: #94a3b8; font-weight: 600; }
+.deal-flags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+.flag {
+  font-size: 0.74rem; font-weight: 800; padding: 0.24rem 0.6rem; border-radius: 7px; letter-spacing: 0.01em;
+}
+.flag-discount { background: #f43f5e; color: #fff; }
+.flag-free { background: rgba(16, 185, 129, 0.16); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.45); }
+.flag-ship { background: #1e293b; color: #cbd5e1; border: 1px solid #334155; }
+.flag-rocket { background: rgba(56, 189, 248, 0.16); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.4); }
+
+.deal-facts { margin: 0 0 1.05rem; display: flex; flex-direction: column; gap: 0.45rem; }
+.deal-facts .fact { display: grid; grid-template-columns: 5.6rem 1fr; gap: 0.5rem; align-items: start; }
+.deal-facts dt { font-size: 0.75rem; font-weight: 700; color: #8ea3bd; letter-spacing: 0.01em; padding-top: 0.08rem; }
+.deal-facts dd { margin: 0; font-size: 0.86rem; line-height: 1.6; color: #c3d0e0; }
+
+.cta {
+  display: block; width: 100%; text-align: center; text-decoration: none;
+  background: linear-gradient(92deg, #38bdf8 0%, #22d3ee 100%);
+  color: #04121b; font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em;
+  padding: 0.82rem 1rem; border-radius: 11px; margin-top: auto;
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.22); transition: transform 0.15s, box-shadow 0.15s;
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(56, 189, 248, 0.32); }
+.cta.secondary { background: #1c2a40; color: #cfe4ff; box-shadow: none; border: 1px solid #2f4664; }
+.deal-foot { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-top: 0.55rem; }
+.deal-foot a { font-size: 0.74rem; color: #6f8098; text-decoration: none; }
+.deal-foot a:hover { color: var(--primary); }
+.deal-foot .note { font-size: 0.7rem; color: #5f6f86; }
+
+.cat-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-top: 3.2rem; }
+.cat-head h2 { margin: 0; border-bottom: none; padding-bottom: 0; font-size: 1.35rem; }
+.cat-sub { color: #8798ae; font-size: 0.84rem; }
+.cat-list { list-style: none; margin: 0.9rem 0 0; padding: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #0e1624; }
+.cat-list li { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 1.1rem; border-bottom: 1px solid #1b2637; margin: 0; }
+.cat-list li:last-child { border-bottom: none; }
+.cat-list a { color: #dbe7f5; text-decoration: none; font-size: 0.93rem; flex: 1; line-height: 1.45; }
+.cat-list a:hover { color: var(--primary); }
+.cat-list .p { color: #7dd3fc; font-weight: 800; font-size: 0.95rem; white-space: nowrap; }
+.cat-list .s { color: #7c8ca3; font-size: 0.74rem; white-space: nowrap; }
+
 .pick-card {
-  display: block; text-decoration: none;
-  background: linear-gradient(160deg, #131c2d 0%, #101725 100%);
-  border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.1rem 1.2rem;
+  display: block; text-decoration: none; background: linear-gradient(160deg, #142033 0%, #0f1725 100%);
+  border: 1px solid #24344c; border-radius: 14px; padding: 1.2rem 1.3rem;
   transition: border-color 0.18s, transform 0.18s;
 }
 .pick-card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.pick-kicker { font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-.pick-card strong { display: block; color: #fff; margin: 0.35rem 0 0.3rem; font-size: 1rem; }
-.pick-card p { font-size: 0.83rem; color: var(--text-muted); margin: 0 0 0.6rem; }
-.pick-card span.go { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
-.cat-list { list-style: none; margin: 1rem 0 0; padding: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-.cat-list li { display: flex; align-items: baseline; gap: 0.8rem; padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--border); margin: 0; }
-.cat-list li:last-child { border-bottom: none; }
-.cat-list a { color: #e2e8f0; text-decoration: none; font-size: 0.92rem; flex: 1; }
-.cat-list a:hover { color: var(--primary); }
-.cat-list .p { color: var(--primary); font-weight: 650; font-size: 0.9rem; white-space: nowrap; }
-.cat-list .s { color: var(--text-muted); font-size: 0.75rem; white-space: nowrap; }
-@media (max-width: 560px) { .cat-list li { flex-wrap: wrap; gap: 0.3rem; } .cat-list a { flex-basis: 100%; } }
+.pick-kicker { font-size: 0.7rem; color: #7dd3fc; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; }
+.pick-card strong { display: block; color: #fff; margin: 0.4rem 0 0.35rem; font-size: 1.02rem; }
+.pick-card p { font-size: 0.85rem; color: #9fb0c6; margin: 0 0 0.7rem; line-height: 1.65; }
+.pick-card span.go { font-size: 0.83rem; color: var(--primary); font-weight: 700; }
+
 .goldbox {
-  margin: 2.4rem 0 0; padding: 1.3rem 1.5rem;
-  background: linear-gradient(120deg, rgba(56,189,248,0.10), rgba(16,185,129,0.07));
-  border: 1px solid #1e3a5f; border-radius: 12px;
+  margin: 2.4rem 0 0; padding: 1.4rem 1.6rem;
+  background: linear-gradient(120deg, rgba(56,189,248,0.12), rgba(16,185,129,0.08));
+  border: 1px solid #24425f; border-radius: 16px;
   display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; flex-wrap: wrap;
 }
-.goldbox h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
-.goldbox p { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
-.method-note { font-size: 0.8rem; color: var(--text-muted); line-height: 1.75; margin-top: 2.6rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
-@media (max-width: 640px) { .ko-hero h1 { font-size: 1.9rem; } }
+.goldbox h3 { margin: 0 0 0.35rem; font-size: 1.08rem; }
+.goldbox p { margin: 0; font-size: 0.86rem; color: #9fb0c6; }
+.method-note { font-size: 0.8rem; color: #8ea3bd; line-height: 1.85; margin-top: 2.8rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
+
+@media (max-width: 640px) {
+  .container { padding: 1.2rem 1rem; }
+  .ko-hero { padding-top: 2rem; }
+  .deal-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .deal-card { padding: 1.15rem 1.05rem 1rem; border-radius: 14px; }
+  .deal-facts .fact { grid-template-columns: 4.9rem 1fr; }
+  .quick-tabs { top: 53px; }
+}
 </style>
 </head>
 <body>
@@ -278,7 +339,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <a href="/ko/" class="logo">⚡ DevTeardown<span>KR</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
         <a class="nav-link" href="#feed">실시간 핫딜</a>
-        <a class="nav-link" href="#keyboard-mouse">장비</a>
+        <a class="nav-link" href="/deals/">Global Deals</a>
         <a class="nav-link" href="/">EN Reports</a>
       </div>
     </div>
@@ -288,113 +349,169 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     <div class="ko-hero">
       <span class="badge badge-blue">매일 갱신 · 원문 가격 기준</span>
       <h1>개발자 장비, 살 때만 사세요.</h1>
-      <p class="lead">뽐뿌·클리앙 알뜰구매에 올라온 테크 핫딜을 모아, 원문에 적힌 가격과 배송 조건만으로
-      실구매가를 다시 계산합니다. 과장된 "역대급" 대신, 지금 사도 되는지 판단할 수 있는 숫자와 카테고리만 남겼습니다.</p>
+      <p class="lead">뽐뿌·클리앙·퀘이사존·에펨코리아·폴센트에 올라온 테크 핫딜을 한곳에 모아,
+      원문에 적힌 가격과 배송 조건만으로 실구매가를 다시 계산합니다. 과장된 "역대급" 대신
+      지금 사도 되는지 판단할 수 있는 숫자만 남겼습니다.</p>
       <div class="ko-stats">
-        <div class="ko-stat"><strong>6건</strong>실시간 수집 핫딜</div>
+        <div class="ko-stat"><strong>12건</strong>실시간 핫딜</div>
         <div class="ko-stat"><strong>4개</strong>장비 카테고리</div>
-        <div class="ko-stat"><strong>2026.11.10</strong>마지막 업데이트</div>
-        <div class="ko-stat"><strong>0원</strong>가입·구독 비용</div>
+        <div class="ko-stat"><strong>2026.11.10</strong>업데이트</div>
+        <div class="ko-stat"><strong>0원</strong>가입 비용</div>
       </div>
       <div class="disclosure-bar">
         이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
       </div>
     </div>
 
-    <h2 id="feed" style="margin-top:2.6rem;">실시간 테크 · 개발자 핫딜</h2>
-    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.4rem;">
+    <h2 id="feed" style="margin-top:2.4rem;">실시간 테크 · 개발자 핫딜</h2>
+    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
       가격·할인율·배송은 수집 시점의 원문 표기입니다. 품절·가격 변동은 원문에서 확인하세요.
     </p>
-    <div class="deal-grid">
-      <article class="deal-card">
+    <nav class="quick-tabs" id="quickTabs"><button class="tab is-active" data-filter="all">전체 <span class="n">12</span></button><button class="tab" data-filter="monitor-desk">모니터·데스크 <span class="n">2</span></button><button class="tab" data-filter="keyboard-mouse">키보드·마우스 <span class="n">2</span></button><button class="tab" data-filter="laptops">노트북·PC <span class="n">2</span></button><button class="tab" data-filter="afterwork">커피·간식 <span class="n">3</span></button></nav>
+    <div class="deal-grid" id="feedGrid">
+      <article class="deal-card" data-cat="afterwork">
         <div class="deal-top">
-          <span class="badge badge-blue">야근 · 생산성 · 커피·간식</span>
+          <span class="cat-chip">야근 · 생산성 · 커피·간식</span>
           <span class="deal-src">지마켓</span>
         </div>
         <h3 class="deal-title">라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개</h3>
         <div class="deal-price"><strong>38,630원</strong></div>
-        <div class="deal-flags"><span class="badge badge-green">무료배송</span></div>
-        <ul class="deal-brief"><li>실구매가: 38,630원 무료배송 지마켓</li><li>추천: 피로한 야근 시 비타민 보충 필요</li><li>체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인</li></ul>
-        <div class="deal-cta">
-          <a class="btn btn-primary" href="https://www.coupang.com/np/search?q=%EB%9D%BC%EC%9D%B4%ED%94%84%EC%9D%B5%EC%8A%A4%ED%85%90%EC%85%98+%EC%A2%85%ED%95%A9%EB%B9%84%ED%83%80%EB%AF%BC+%ED%88%AC%ED%8D%BC%EB%8D%B0%EC%9D%B4+V2+120%EC%A0%95+2%EA%B0%9C&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
-          <a class="src-link" href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&amp;no=747553" target="_blank" rel="noopener nofollow">원문</a>
-        </div>
-        <div class="untracked-note">제휴 링크 없음 — 쿠팡 검색으로 연결</div>
+        <div class="deal-flags"><span class="flag flag-free">무료배송</span></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=%EB%9D%BC%EC%9D%B4%ED%94%84%EC%9D%B5%EC%8A%A4%ED%85%90%EC%85%98+%EC%A2%85%ED%95%A9%EB%B9%84%ED%83%80%EB%AF%BC+%ED%88%AC%ED%8D%BC%EB%8D%B0%EC%9D%B4+V2+120%EC%A0%95+2%EA%B0%9C&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&amp;no=747553" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
       </article>
-      <article class="deal-card">
+      <article class="deal-card" data-cat="keyboard-mouse">
         <div class="deal-top">
-          <span class="badge badge-blue">키보드 · 마우스</span>
+          <span class="cat-chip">키보드 · 마우스</span>
           <span class="deal-src">코스트코</span>
         </div>
         <h3 class="deal-title">로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션</h3>
         <div class="deal-price"><strong>114,900원</strong></div>
         <div class="deal-flags"></div>
-        <ul class="deal-brief"><li>실구매가: 114,900원 코스트코</li><li>추천: 업무 생산성을 높이는 고급 마우스</li><li>체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인</li></ul>
-        <div class="deal-cta">
-          <a class="btn btn-primary" href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
-          <a class="src-link" href="https://www.clien.net/service/board/jirum/19276995?od=T31&amp;po=2&amp;category=0&amp;groupCd=" target="_blank" rel="noopener nofollow">원문</a>
-        </div>
-        
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>본문 표기 단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분</dd></div><div class="fact"><dt>⚙️ 스펙</dt><dd>무선 · 블루투스</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
+        <div class="deal-foot"><a href="https://www.clien.net/service/board/jirum/19276995?od=T31&amp;po=2&amp;category=0&amp;groupCd=" target="_blank" rel="noopener nofollow">원문 보기</a></div>
       </article>
-      <article class="deal-card">
+      <article class="deal-card" data-cat="monitor-desk">
         <div class="deal-top">
-          <span class="badge badge-blue">모니터 · 암 · 데스크</span>
+          <span class="cat-chip">모니터 · 암 · 데스크</span>
           <span class="deal-src">클리앙 알뜰구매</span>
         </div>
         <h3 class="deal-title">LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터</h3>
         <div class="deal-price"><strong>241,734원</strong></div>
         <div class="deal-flags"></div>
-        <ul class="deal-brief"><li>실구매가: 241,734원</li><li>추천: 고주사율 모니터가 필요한 게이머</li><li>체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인</li></ul>
-        <div class="deal-cta">
-          <a class="btn btn-primary" href="https://link.coupang.com/a/iyztqGf2zc" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
-          <a class="src-link" href="https://www.clien.net/service/board/jirum/19288627?od=T31&amp;po=0&amp;category=0&amp;groupCd=" target="_blank" rel="noopener nofollow">원문</a>
-        </div>
-        
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>본문 표기 단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스</dd></div><div class="fact"><dt>⚙️ 스펙</dt><dd>27인치 · QHD · IPS</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://link.coupang.com/a/iyztqGf2zc" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
+        <div class="deal-foot"><a href="https://www.clien.net/service/board/jirum/19288627?od=T31&amp;po=0&amp;category=0&amp;groupCd=" target="_blank" rel="noopener nofollow">원문 보기</a></div>
       </article>
-      <article class="deal-card">
+      <article class="deal-card" data-cat="monitor-desk">
         <div class="deal-top">
-          <span class="badge badge-blue">야근 · 생산성 · 커피·간식</span>
+          <span class="cat-chip">모니터 · 암 · 데스크</span>
+          <span class="deal-src">지마켓</span>
+        </div>
+        <h3 class="deal-title">허먼밀러 뉴에어론 의자 풀체어 직구</h3>
+        <div class="deal-price"><strong>790,520원</strong></div>
+        <div class="deal-flags"></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=%ED%97%88%EB%A8%BC%EB%B0%80%EB%9F%AC+%EB%89%B4%EC%97%90%EC%96%B4%EB%A1%A0+%EC%9D%98%EC%9E%90+%ED%92%80%EC%B2%B4%EC%96%B4+%EC%A7%81%EA%B5%AC&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&amp;no=747558" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
+      </article>
+      <article class="deal-card" data-cat="laptops">
+        <div class="deal-top">
+          <span class="cat-chip">맥북 · 노트북 · 미니PC</span>
+          <span class="deal-src">지마켓</span>
+        </div>
+        <h3 class="deal-title">인텔 코어 울트라 7 270K Plus_체감가 39만</h3>
+        <div class="deal-price"><strong>412,300원</strong></div>
+        <div class="deal-flags"></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=%EC%9D%B8%ED%85%94+%EC%BD%94%EC%96%B4+%EC%9A%B8%ED%8A%B8%EB%9D%BC+7+270K+Plus_%EC%B2%B4%EA%B0%90%EA%B0%80+39%EB%A7%8C&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="https://quasarzone.com/bbs/qb_saleinfo/views/2000122" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
+      </article>
+      <article class="deal-card" data-cat="laptops">
+        <div class="deal-top">
+          <span class="cat-chip">맥북 · 노트북 · 미니PC</span>
+          <span class="deal-src">기타</span>
+        </div>
+        <h3 class="deal-title">AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 정품</h3>
+        <div class="deal-price"><strong>338,000원</strong></div>
+        <div class="deal-flags"></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자</dd></div><div class="fact"><dt>⚙️ 스펙</dt><dd>라이젠7</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=AMD+%EB%9D%BC%EC%9D%B4%EC%A0%A07-5%EC%84%B8%EB%8C%80+7800X3D+%EB%9D%BC%ED%8C%8C%EC%97%98+%EB%A9%80%ED%8B%B0%ED%8C%A9&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="https://quasarzone.com/bbs/qb_saleinfo/views/2000088" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
+      </article>
+      <article class="deal-card" data-cat="afterwork">
+        <div class="deal-top">
+          <span class="cat-chip">야근 · 생산성 · 커피·간식</span>
+          <span class="deal-src">카카오선물하기</span>
+        </div>
+        <h3 class="deal-title">퓨어코치 릴렉싱 무선 온열 공기압 눈 마사지기 +빼빼로</h3>
+        <div class="deal-price"><strong>29,610원</strong></div>
+        <div class="deal-flags"><span class="flag flag-free">무료배송</span></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분</dd></div><div class="fact"><dt>⚙️ 스펙</dt><dd>무선</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=%ED%93%A8%EC%96%B4%EC%BD%94%EC%B9%98+%EB%A6%B4%EB%A0%89%EC%8B%B1+%EC%98%A8%EC%97%B4+%EA%B3%B5%EA%B8%B0%EC%95%95+%EB%88%88+%EB%A7%88%EC%82%AC%EC%A7%80%EA%B8%B0+%2B%EB%B9%BC%EB%B9%BC%EB%A1%9C&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&amp;no=747560" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
+      </article>
+      <article class="deal-card" data-cat="afterwork">
+        <div class="deal-top">
+          <span class="cat-chip">야근 · 생산성 · 커피·간식</span>
           <span class="deal-src">카카오</span>
         </div>
         <h3 class="deal-title">유한양행 비컴플 마시는 멀티비타민 7입</h3>
         <div class="deal-price"><strong>9,900원</strong></div>
-        <div class="deal-flags"><span class="badge badge-green">무료배송</span></div>
-        <ul class="deal-brief"><li>실구매가: 9,900원 무료배송 카카오</li><li>추천: 바쁠 때 빠르게 비타민 보충 필요</li><li>체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인</li></ul>
-        <div class="deal-cta">
-          <a class="btn btn-primary" href="https://www.coupang.com/np/search?q=%EC%9C%A0%ED%95%9C%EC%96%91%ED%96%89+%EB%B9%84%EC%BB%B4%ED%94%8C+%EB%A7%88%EC%8B%9C%EB%8A%94+%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+7%EC%9E%85&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
-          <a class="src-link" href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&amp;no=747552" target="_blank" rel="noopener nofollow">원문</a>
-        </div>
-        <div class="untracked-note">제휴 링크 없음 — 쿠팡 검색으로 연결</div>
+        <div class="deal-flags"><span class="flag flag-free">무료배송</span></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=%EC%9C%A0%ED%95%9C%EC%96%91%ED%96%89+%EB%B9%84%EC%BB%B4%ED%94%8C+%EB%A7%88%EC%8B%9C%EB%8A%94+%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+7%EC%9E%85&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&amp;no=747552" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
       </article>
-      <article class="deal-card">
+      <article class="deal-card" data-cat="keyboard-mouse">
         <div class="deal-top">
-          <span class="badge badge-blue">야근 · 생산성 · 커피·간식</span>
-          <span class="deal-src">네이버</span>
+          <span class="cat-chip">키보드 · 마우스</span>
+          <span class="deal-src">카카오 톡딜</span>
         </div>
-        <h3 class="deal-title">고소한원두1kg</h3>
-        <div class="deal-price"><strong>29,500원</strong></div>
-        <div class="deal-flags"><span class="badge badge-gray">유료배송</span></div>
-        <ul class="deal-brief"><li>실구매가: 29,500원(유료배송)</li><li>추천: 야근할 때 마실 질 좋은 원두가 필요한 분</li><li>체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인</li></ul>
-        <div class="deal-cta">
-          <a class="btn btn-primary" href="https://link.coupang.com/a/iyzuKorRTw" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
-          <a class="src-link" href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&amp;no=747541" target="_blank" rel="noopener nofollow">원문</a>
-        </div>
-        
+        <h3 class="deal-title">로지텍코리아 공식 G304 무선 게이밍 마우스</h3>
+        <div class="deal-price"><strong>28,710원</strong></div>
+        <div class="deal-flags"></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분</dd></div><div class="fact"><dt>⚙️ 스펙</dt><dd>무선</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=%EB%A1%9C%EC%A7%80%ED%85%8D%EC%BD%94%EB%A6%AC%EC%95%84+%EA%B3%B5%EC%8B%9D+G304+%EA%B2%8C%EC%9D%B4%EB%B0%8D+%EB%A7%88%EC%9A%B0%EC%8A%A4&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="https://quasarzone.com/bbs/qb_saleinfo/views/2000261" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
       </article>
-      <article class="deal-card">
+      <article class="deal-card" data-cat="tech">
         <div class="deal-top">
-          <span class="badge badge-blue">테크 장비</span>
+          <span class="cat-chip">테크 장비</span>
           <span class="deal-src">롯데온</span>
         </div>
         <h3 class="deal-title">소니 MDR-3R</h3>
         <div class="deal-price"><strong>78,640원</strong></div>
         <div class="deal-flags"></div>
-        <ul class="deal-brief"><li>실구매가: 78,640원</li><li>추천: 음질 좋은 헤드폰을 저렴하게 구하려는 분</li><li>체크: 가격·재고는 실시간 변동, 결제 전 원문에서 확인</li></ul>
-        <div class="deal-cta">
-          <a class="btn btn-primary" href="https://link.coupang.com/a/iyzv0uG1N6" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
-          <a class="src-link" href="https://www.clien.net/service/board/jirum/19289649?od=T31&amp;po=0&amp;category=0&amp;groupCd=" target="_blank" rel="noopener nofollow">원문</a>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>장비 지름을 고민 중인 개발자</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://link.coupang.com/a/iyzv0uG1N6" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
+        <div class="deal-foot"><a href="https://www.clien.net/service/board/jirum/19289649?od=T31&amp;po=0&amp;category=0&amp;groupCd=" target="_blank" rel="noopener nofollow">원문 보기</a></div>
+      </article>
+      <article class="deal-card" data-cat="tech">
+        <div class="deal-top">
+          <span class="cat-chip">테크 장비</span>
+          <span class="deal-src">네이버</span>
         </div>
-        
+        <h3 class="deal-title">(리퍼)SuperFlower SF-750, 850, 1000 파워서플라이</h3>
+        <div class="deal-price"><strong>89,000원</strong></div>
+        <div class="deal-flags"></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>장비 지름을 고민 중인 개발자</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=SuperFlower+SF-750%2C+850%2C+1000+%ED%8C%8C%EC%9B%8C%EC%84%9C%ED%94%8C%EB%9D%BC%EC%9D%B4&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="https://quasarzone.com/bbs/qb_saleinfo/views/2000240" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
+      </article>
+      <article class="deal-card" data-cat="tech">
+        <div class="deal-top">
+          <span class="cat-chip">테크 장비</span>
+          <span class="deal-src">11번가</span>
+        </div>
+        <h3 class="deal-title">서린 9800X3D RTX 5080 완본체</h3>
+        <div class="deal-price"><strong>4,513,140원</strong></div>
+        <div class="deal-flags"></div>
+        <dl class="deal-facts"><div class="fact"><dt>💰 실구매가</dt><dd>단일 가격 특가, 배송비 포함 여부는 원문에서 확인</dd></div><div class="fact"><dt>🎯 추천</dt><dd>장비 지름을 고민 중인 개발자</dd></div><div class="fact"><dt>⚙️ 스펙</dt><dd>RTX</dd></div><div class="fact"><dt>⚡ 체크</dt><dd>가격·재고는 실시간 변동, 결제 전 원문에서 확인</dd></div></dl>
+        <a class="cta" href="https://www.coupang.com/np/search?q=%EC%84%9C%EB%A6%B0+9800X3D+RTX+5080+%EC%99%84%EB%B3%B8%EC%B2%B4&amp;channel=user" target="_blank" rel="noopener nofollow">쿠팡에서 검색 →</a>
+        <div class="deal-foot"><a href="https://quasarzone.com/bbs/qb_saleinfo/views/2000175" target="_blank" rel="noopener nofollow">원문 보기</a><span class="note">제휴 링크 없음 · 쿠팡 검색</span></div>
       </article></div>
 
     <div class="goldbox">
@@ -402,7 +519,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
         <h3>⏰ 오늘의 골드박스</h3>
         <p>매일 오전 7시, 한정 수량 특가. 개발 장비부터 사무 간식까지.</p>
       </div>
-      <a class="btn btn-primary" href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">쿠팡 골드박스 — 매일 오전 7시 특가 →</a>
+      <a class="cta" style="width:auto; padding:0.75rem 1.2rem;" href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">쿠팡 골드박스 — 매일 오전 7시 특가 →</a>
     </div>
 
     
@@ -410,25 +527,25 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2>맥북 · 노트북 · 미니PC</h2>
       <span class="cat-sub">로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자</span>
     </div>
-    <p style="color:var(--text-muted);font-size:0.88rem;">이 카테고리에 새로 올라온 핫딜이 없습니다. 아래 큐레이션을 참고하세요.</p>
+    <ul class="cat-list"><li><a href="https://www.coupang.com/np/search?q=%EC%9D%B8%ED%85%94+%EC%BD%94%EC%96%B4+%EC%9A%B8%ED%8A%B8%EB%9D%BC+7+270K+Plus_%EC%B2%B4%EA%B0%90%EA%B0%80+39%EB%A7%8C&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">인텔 코어 울트라 7 270K Plus_체감가 39만</a><span class="p">412,300원</span><span class="s">지마켓</span></li><li><a href="https://www.coupang.com/np/search?q=AMD+%EB%9D%BC%EC%9D%B4%EC%A0%A07-5%EC%84%B8%EB%8C%80+7800X3D+%EB%9D%BC%ED%8C%8C%EC%97%98+%EB%A9%80%ED%8B%B0%ED%8C%A9&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">AMD 라이젠7-5세대 7800X3D 라파엘 멀티팩 정품</a><span class="p">338,000원</span><span class="s">기타</span></li></ul>
     <div class="cat-head" id="monitor-desk">
       <h2>모니터 · 암 · 데스크</h2>
       <span class="cat-sub">코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스</span>
     </div>
-    <ul class="cat-list"><li><a href="https://link.coupang.com/a/iyztqGf2zc" target="_blank" rel="noopener nofollow sponsored">LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터</a><span class="p">241,734원</span><span class="s"></span></li></ul>
+    <ul class="cat-list"><li><a href="https://link.coupang.com/a/iyztqGf2zc" target="_blank" rel="noopener nofollow sponsored">LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터</a><span class="p">241,734원</span><span class="s"></span></li><li><a href="https://www.coupang.com/np/search?q=%ED%97%88%EB%A8%BC%EB%B0%80%EB%9F%AC+%EB%89%B4%EC%97%90%EC%96%B4%EB%A1%A0+%EC%9D%98%EC%9E%90+%ED%92%80%EC%B2%B4%EC%96%B4+%EC%A7%81%EA%B5%AC&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">허먼밀러 뉴에어론 의자 풀체어 직구</a><span class="p">790,520원</span><span class="s">지마켓</span></li></ul>
     <div class="cat-head" id="keyboard-mouse">
       <h2>키보드 · 마우스</h2>
       <span class="cat-sub">하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분</span>
     </div>
-    <ul class="cat-list"><li><a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션</a><span class="p">114,900원</span><span class="s">코스트코</span></li></ul>
+    <ul class="cat-list"><li><a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">로지텍 무선 마우스 MX MASTER 3S 블루투스 에디션</a><span class="p">114,900원</span><span class="s">코스트코</span></li><li><a href="https://www.coupang.com/np/search?q=%EB%A1%9C%EC%A7%80%ED%85%8D%EC%BD%94%EB%A6%AC%EC%95%84+%EA%B3%B5%EC%8B%9D+G304+%EA%B2%8C%EC%9D%B4%EB%B0%8D+%EB%A7%88%EC%9A%B0%EC%8A%A4&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">로지텍코리아 공식 G304 무선 게이밍 마우스</a><span class="p">28,710원</span><span class="s">카카오 톡딜</span></li></ul>
     <div class="cat-head" id="afterwork">
       <h2>야근 · 생산성 · 커피·간식</h2>
       <span class="cat-sub">야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분</span>
     </div>
-    <ul class="cat-list"><li><a href="https://www.coupang.com/np/search?q=%EB%9D%BC%EC%9D%B4%ED%94%84%EC%9D%B5%EC%8A%A4%ED%85%90%EC%85%98+%EC%A2%85%ED%95%A9%EB%B9%84%ED%83%80%EB%AF%BC+%ED%88%AC%ED%8D%BC%EB%8D%B0%EC%9D%B4+V2+120%EC%A0%95+2%EA%B0%9C&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개</a><span class="p">38,630원</span><span class="s">지마켓</span></li><li><a href="https://www.coupang.com/np/search?q=%EC%9C%A0%ED%95%9C%EC%96%91%ED%96%89+%EB%B9%84%EC%BB%B4%ED%94%8C+%EB%A7%88%EC%8B%9C%EB%8A%94+%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+7%EC%9E%85&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">유한양행 비컴플 마시는 멀티비타민 7입</a><span class="p">9,900원</span><span class="s">카카오</span></li><li><a href="https://link.coupang.com/a/iyzuKorRTw" target="_blank" rel="noopener nofollow sponsored">고소한원두1kg</a><span class="p">29,500원</span><span class="s">네이버</span></li></ul>
+    <ul class="cat-list"><li><a href="https://www.coupang.com/np/search?q=%EB%9D%BC%EC%9D%B4%ED%94%84%EC%9D%B5%EC%8A%A4%ED%85%90%EC%85%98+%EC%A2%85%ED%95%A9%EB%B9%84%ED%83%80%EB%AF%BC+%ED%88%AC%ED%8D%BC%EB%8D%B0%EC%9D%B4+V2+120%EC%A0%95+2%EA%B0%9C&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">라이프익스텐션 종합비타민 투퍼데이 V2 120정 2개</a><span class="p">38,630원</span><span class="s">지마켓</span></li><li><a href="https://www.coupang.com/np/search?q=%ED%93%A8%EC%96%B4%EC%BD%94%EC%B9%98+%EB%A6%B4%EB%A0%89%EC%8B%B1+%EC%98%A8%EC%97%B4+%EA%B3%B5%EA%B8%B0%EC%95%95+%EB%88%88+%EB%A7%88%EC%82%AC%EC%A7%80%EA%B8%B0+%2B%EB%B9%BC%EB%B9%BC%EB%A1%9C&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">퓨어코치 릴렉싱 무선 온열 공기압 눈 마사지기 +빼빼로</a><span class="p">29,610원</span><span class="s">카카오선물하기</span></li><li><a href="https://www.coupang.com/np/search?q=%EC%9C%A0%ED%95%9C%EC%96%91%ED%96%89+%EB%B9%84%EC%BB%B4%ED%94%8C+%EB%A7%88%EC%8B%9C%EB%8A%94+%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+7%EC%9E%85&amp;channel=user" target="_blank" rel="noopener nofollow sponsored">유한양행 비컴플 마시는 멀티비타민 7입</a><span class="p">9,900원</span><span class="s">카카오</span></li></ul>
 
     <h2 style="margin-top:3.4rem;">지금 사도 되는 장비 큐레이션</h2>
-    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.4rem;">
+    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
       핫딜이 뜰 때까지 기다리지 않아도 되는, 개발자 책상 기본 장비.</p>
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
       <a class="pick-card" href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">
@@ -446,7 +563,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <a class="pick-card" href="https://link.coupang.com/a/iyzzXmg6CG" target="_blank" rel="noopener nofollow sponsored">
         <div class="pick-kicker">Desk Ergonomics</div>
         <strong>모니터암 · 거치대</strong>
-        <p>화면을 눈높이로 올리면 8시간 뒤 목·어깨 피로가 달라집니다. 쿠팡 인기 순 정렬.</p>
+        <p>화면을 눈높이로 올리면 8시간 뒤 목·어깨 피로가 달라집니다.</p>
         <span class="go">쿠팡 최저가 확인 →</span>
       </a>
       <a class="pick-card" href="https://link.coupang.com/a/iyzxBosAM0" target="_blank" rel="noopener nofollow sponsored">
@@ -474,8 +591,28 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
   <footer>
     <div class="container">
       <p>© 2026 DevTeardown KR. 개발자 장비 핫딜 큐레이션. 가격은 원문 표기 기준입니다.</p>
-      <p style="margin-top:0.4rem;"><a href="/" style="color:var(--text-muted);">English teardowns → devteardown.com</a></p>
+      <p style="margin-top:0.4rem;"><a href="/deals/" style="color:var(--text-muted);">Global deals →</a>
+      &nbsp;·&nbsp;<a href="/" style="color:var(--text-muted);">English teardowns →</a></p>
     </div>
   </footer>
+  
+<script>
+(function () {
+  var tabs = document.querySelectorAll('#quickTabs .tab');
+  var cards = document.querySelectorAll('#feedGrid .deal-card');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+      var f = tab.getAttribute('data-filter');
+      cards.forEach(function (c) {
+        var show = (f === 'all') || (c.getAttribute('data-cat') === f);
+        c.classList.toggle('is-hidden', !show);
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>

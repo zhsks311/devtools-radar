@@ -391,9 +391,10 @@ DEALS_SECTION_HTML = """
 """
 
 
-# ---------------------------------------------------------------- korean portal
+# ---------------------------------------------------------------- deal portals
 
 DEALS_DATA_PATH = "/workspace/devtools-radar/data/deals.json"
+DEALS_EN_DATA_PATH = "/workspace/devtools-radar/data/deals_en.json"
 KO_SITE_NAME = "DevTeardown KR"
 KO_TAGLINE = "개발자 장비 & 테크 핫딜 레이더"
 KO_DISCLOSURE = (
@@ -401,92 +402,165 @@ KO_DISCLOSURE = (
     "이에 따른 일정액의 수수료를 제공받습니다."
 )
 
-KO_CSS = """
-.ko-hero { padding: 3rem 0 1.5rem; }
-.ko-hero h1 { font-size: 2.5rem; margin: 0.6rem 0 0.9rem; }
-.ko-hero .lead { max-width: 700px; }
-.ko-stats { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 1.6rem 0 0.4rem; }
-.ko-stat { font-size: 0.82rem; color: var(--text-muted); }
-.ko-stat strong { display: block; font-size: 1.15rem; color: #fff; letter-spacing: -0.01em; }
+DEAL_CSS = """
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", Roboto, sans-serif; }
+
+.ko-hero { padding: 3.4rem 0 1.2rem; }
+.ko-hero h1 { font-size: clamp(2rem, 4.6vw, 2.9rem); line-height: 1.25; margin: 0.7rem 0 1rem; }
+.ko-hero .lead { font-size: 1.05rem; line-height: 1.85; color: #b8c5d6; max-width: 720px; }
+.ko-stats { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0 0.2rem; }
+.ko-stat {
+  background: #111a2b; border: 1px solid var(--border); border-radius: 10px;
+  padding: 0.55rem 0.85rem; font-size: 0.76rem; color: #8fa1b8;
+}
+.ko-stat strong { color: #eaf2ff; font-size: 0.95rem; margin-right: 0.35rem; }
 .disclosure-bar {
-  background: rgba(245, 158, 11, 0.07);
-  border: 1px solid rgba(245, 158, 11, 0.28);
-  color: #f0c98a;
-  font-size: 0.8rem;
-  line-height: 1.6;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  margin: 1.4rem 0 0;
+  background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f1c98d; font-size: 0.78rem; line-height: 1.65; padding: 0.7rem 0.95rem;
+  border-radius: 10px; margin: 1.3rem 0 0;
 }
-.deal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.1rem; margin: 1.6rem 0 0.5rem; }
+
+/* ---------- quick filter tabs ---------- */
+.quick-tabs {
+  position: sticky; top: 57px; z-index: 20; display: flex; gap: 0.45rem;
+  overflow-x: auto; scrollbar-width: none; padding: 0.75rem 0;
+  margin: 0.6rem 0 1.2rem; background: rgba(9, 13, 22, 0.94);
+  backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+}
+.quick-tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: none; border: 1px solid var(--border); background: #101828; color: #a9b8cb;
+  font-size: 0.85rem; font-weight: 600; padding: 0.5rem 0.95rem; border-radius: 999px;
+  cursor: pointer; transition: all 0.16s; font-family: inherit; white-space: nowrap;
+}
+.tab:hover { color: #e6f1ff; border-color: #33506f; }
+.tab.is-active { background: var(--primary); border-color: var(--primary); color: #04121b; }
+.tab .n { opacity: 0.65; font-size: 0.76rem; margin-left: 0.2rem; }
+
+/* ---------- deal cards ---------- */
+.deal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; margin: 0.4rem 0 0.5rem; }
 .deal-card {
-  display: flex; flex-direction: column;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 1.15rem 1.2rem 1.05rem;
-  transition: border-color 0.18s, transform 0.18s;
+  display: flex; flex-direction: column; position: relative;
+  background: linear-gradient(168deg, #131d2e 0%, #101725 100%);
+  border: 1px solid #24344c; border-radius: 16px; padding: 1.35rem 1.4rem 1.2rem;
+  transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
 }
-.deal-card:hover { border-color: #2b405f; transform: translateY(-2px); }
-.deal-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.65rem; }
-.deal-src { font-size: 0.72rem; color: var(--text-muted); }
-.deal-title { font-size: 1rem; line-height: 1.45; color: #fff; margin: 0 0 0.6rem; font-weight: 650; }
-.deal-price { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.45rem; }
-.deal-price strong { font-size: 1.35rem; color: var(--primary); letter-spacing: -0.02em; }
-.deal-price s { color: #64748b; font-size: 0.85rem; }
-.deal-price .unknown { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
-.deal-flags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
-.deal-brief { list-style: none; margin: 0 0 0.9rem; padding: 0; }
-.deal-brief li { font-size: 0.83rem; color: #a9b7c9; line-height: 1.55; margin: 0 0 0.28rem; padding-left: 0.7rem; position: relative; }
-.deal-brief li::before { content: "·"; position: absolute; left: 0; color: var(--primary); }
-.deal-cta { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
-.deal-cta .btn { font-size: 0.82rem; padding: 0.5rem 0.9rem; }
-.deal-cta .src-link { font-size: 0.72rem; color: #64748b; text-decoration: none; }
-.deal-cta .src-link:hover { color: var(--primary); }
-.untracked-note { font-size: 0.68rem; color: #64748b; margin-top: 0.5rem; }
-.cat-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-top: 3rem; }
-.cat-head h2 { margin: 0; border-bottom: none; padding-bottom: 0; }
-.cat-sub { color: var(--text-muted); font-size: 0.86rem; }
+.deal-card:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); }
+.deal-card.is-hidden { display: none; }
+.deal-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.cat-chip {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.01em;
+  color: #9ad8ff; background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.32); border-radius: 999px; padding: 0.22rem 0.65rem;
+}
+.deal-src { font-size: 0.74rem; color: #7c8ca3; }
+.deal-title {
+  font-size: 1.06rem; line-height: 1.52; color: #f4f8ff; font-weight: 700;
+  margin: 0 0 0.85rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.deal-price { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.55rem; }
+.deal-price strong {
+  font-size: clamp(1.6rem, 4.4vw, 1.85rem); font-weight: 800; color: #7dd3fc;
+  letter-spacing: -0.03em; line-height: 1.15;
+}
+.deal-price s { color: #64748b; font-size: 0.88rem; }
+.deal-price .unknown { font-size: 1rem; color: #94a3b8; font-weight: 600; }
+.deal-flags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+.flag {
+  font-size: 0.74rem; font-weight: 800; padding: 0.24rem 0.6rem; border-radius: 7px; letter-spacing: 0.01em;
+}
+.flag-discount { background: #f43f5e; color: #fff; }
+.flag-free { background: rgba(16, 185, 129, 0.16); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.45); }
+.flag-ship { background: #1e293b; color: #cbd5e1; border: 1px solid #334155; }
+.flag-rocket { background: rgba(56, 189, 248, 0.16); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.4); }
+
+.deal-facts { margin: 0 0 1.05rem; display: flex; flex-direction: column; gap: 0.45rem; }
+.deal-facts .fact { display: grid; grid-template-columns: 5.6rem 1fr; gap: 0.5rem; align-items: start; }
+.deal-facts dt { font-size: 0.75rem; font-weight: 700; color: #8ea3bd; letter-spacing: 0.01em; padding-top: 0.08rem; }
+.deal-facts dd { margin: 0; font-size: 0.86rem; line-height: 1.6; color: #c3d0e0; }
+
+.cta {
+  display: block; width: 100%; text-align: center; text-decoration: none;
+  background: linear-gradient(92deg, #38bdf8 0%, #22d3ee 100%);
+  color: #04121b; font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em;
+  padding: 0.82rem 1rem; border-radius: 11px; margin-top: auto;
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.22); transition: transform 0.15s, box-shadow 0.15s;
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(56, 189, 248, 0.32); }
+.cta.secondary { background: #1c2a40; color: #cfe4ff; box-shadow: none; border: 1px solid #2f4664; }
+.deal-foot { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-top: 0.55rem; }
+.deal-foot a { font-size: 0.74rem; color: #6f8098; text-decoration: none; }
+.deal-foot a:hover { color: var(--primary); }
+.deal-foot .note { font-size: 0.7rem; color: #5f6f86; }
+
+.cat-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-top: 3.2rem; }
+.cat-head h2 { margin: 0; border-bottom: none; padding-bottom: 0; font-size: 1.35rem; }
+.cat-sub { color: #8798ae; font-size: 0.84rem; }
+.cat-list { list-style: none; margin: 0.9rem 0 0; padding: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #0e1624; }
+.cat-list li { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 1.1rem; border-bottom: 1px solid #1b2637; margin: 0; }
+.cat-list li:last-child { border-bottom: none; }
+.cat-list a { color: #dbe7f5; text-decoration: none; font-size: 0.93rem; flex: 1; line-height: 1.45; }
+.cat-list a:hover { color: var(--primary); }
+.cat-list .p { color: #7dd3fc; font-weight: 800; font-size: 0.95rem; white-space: nowrap; }
+.cat-list .s { color: #7c8ca3; font-size: 0.74rem; white-space: nowrap; }
+
 .pick-card {
-  display: block; text-decoration: none;
-  background: linear-gradient(160deg, #131c2d 0%, #101725 100%);
-  border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.1rem 1.2rem;
+  display: block; text-decoration: none; background: linear-gradient(160deg, #142033 0%, #0f1725 100%);
+  border: 1px solid #24344c; border-radius: 14px; padding: 1.2rem 1.3rem;
   transition: border-color 0.18s, transform 0.18s;
 }
 .pick-card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.pick-kicker { font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-.pick-card strong { display: block; color: #fff; margin: 0.35rem 0 0.3rem; font-size: 1rem; }
-.pick-card p { font-size: 0.83rem; color: var(--text-muted); margin: 0 0 0.6rem; }
-.pick-card span.go { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
-.cat-list { list-style: none; margin: 1rem 0 0; padding: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-.cat-list li { display: flex; align-items: baseline; gap: 0.8rem; padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--border); margin: 0; }
-.cat-list li:last-child { border-bottom: none; }
-.cat-list a { color: #e2e8f0; text-decoration: none; font-size: 0.92rem; flex: 1; }
-.cat-list a:hover { color: var(--primary); }
-.cat-list .p { color: var(--primary); font-weight: 650; font-size: 0.9rem; white-space: nowrap; }
-.cat-list .s { color: var(--text-muted); font-size: 0.75rem; white-space: nowrap; }
-@media (max-width: 560px) { .cat-list li { flex-wrap: wrap; gap: 0.3rem; } .cat-list a { flex-basis: 100%; } }
+.pick-kicker { font-size: 0.7rem; color: #7dd3fc; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; }
+.pick-card strong { display: block; color: #fff; margin: 0.4rem 0 0.35rem; font-size: 1.02rem; }
+.pick-card p { font-size: 0.85rem; color: #9fb0c6; margin: 0 0 0.7rem; line-height: 1.65; }
+.pick-card span.go { font-size: 0.83rem; color: var(--primary); font-weight: 700; }
+
 .goldbox {
-  margin: 2.4rem 0 0; padding: 1.3rem 1.5rem;
-  background: linear-gradient(120deg, rgba(56,189,248,0.10), rgba(16,185,129,0.07));
-  border: 1px solid #1e3a5f; border-radius: 12px;
+  margin: 2.4rem 0 0; padding: 1.4rem 1.6rem;
+  background: linear-gradient(120deg, rgba(56,189,248,0.12), rgba(16,185,129,0.08));
+  border: 1px solid #24425f; border-radius: 16px;
   display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; flex-wrap: wrap;
 }
-.goldbox h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
-.goldbox p { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
-.method-note { font-size: 0.8rem; color: var(--text-muted); line-height: 1.75; margin-top: 2.6rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
-@media (max-width: 640px) { .ko-hero h1 { font-size: 1.9rem; } }
+.goldbox h3 { margin: 0 0 0.35rem; font-size: 1.08rem; }
+.goldbox p { margin: 0; font-size: 0.86rem; color: #9fb0c6; }
+.method-note { font-size: 0.8rem; color: #8ea3bd; line-height: 1.85; margin-top: 2.8rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
+
+@media (max-width: 640px) {
+  .container { padding: 1.2rem 1rem; }
+  .ko-hero { padding-top: 2rem; }
+  .deal-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .deal-card { padding: 1.15rem 1.05rem 1rem; border-radius: 14px; }
+  .deal-facts .fact { grid-template-columns: 4.9rem 1fr; }
+  .quick-tabs { top: 53px; }
+}
 """
 
+FACT_ICONS = [
+    ("실구매가", "💰 실구매가"),
+    ("추천", "🎯 추천"),
+    ("스펙", "⚙️ 스펙"),
+    ("체크", "⚡ 체크"),
+    ("Price", "💰 Price"),
+    ("Good for", "🎯 Good for"),
+    ("Specs", "⚙️ Specs"),
+    ("Shipping", "🚚 Shipping"),
+    ("Check", "⚡ Check"),
+    ("Key", "🔑 Key"),
+]
 
-def load_deals() -> dict:
-    if os.path.exists(DEALS_DATA_PATH):
+
+def load_deals(path: str = DEALS_DATA_PATH) -> dict:
+    if os.path.exists(path):
         try:
-            with open(DEALS_DATA_PATH, "r", encoding="utf-8") as f:
+            with open(path, "r", encoding="utf-8") as f:
                 data = json.load(f)
             if isinstance(data, dict) and data.get("feed") is not None:
                 return data
         except (json.JSONDecodeError, OSError):
             pass
-    # 데이터가 없어도 포털은 떠야 한다: 큐레이션 카드만으로 구성
     return {
         "generated_at": "",
         "feed": [],
@@ -507,53 +581,115 @@ def load_deals() -> dict:
     }
 
 
-def _price_block(deal: dict) -> str:
-    if deal.get("price"):
-        out = f'<strong>{deal["price"]:,}원</strong>'
-        if deal.get("original_price") and deal["original_price"] > deal["price"]:
-            out += f'<s>{deal["original_price"]:,}원</s>'
-        if deal.get("discount_pct"):
-            out += f'<span class="badge badge-green">-{deal["discount_pct"]}%</span>'
-        return out
-    if deal.get("discount_pct"):
-        return f'<span class="unknown">원문 가격 확인</span><span class="badge badge-green">-{deal["discount_pct"]}%</span>'
-    return '<span class="unknown">원문 가격 확인</span>'
+def _won(deal: dict) -> str:
+    price = deal.get("price")
+    if not price:
+        return ""
+    cur = deal.get("currency", "KRW")
+    if cur == "KRW":
+        return f"{int(price):,}원"
+    return f"${price:,.2f}" if price % 1 else f"${int(price):,}"
 
 
-def _deal_card(deal: dict) -> str:
+def _fact_rows(deal: dict) -> str:
+    rows = ""
+    for line in deal.get("briefing", []):
+        label, sep, value = line.partition(":")
+        if not sep or label.strip() in ("핵심", "Key"):
+            continue
+        icon = dict(FACT_ICONS).get(label.strip(), "")
+        if not icon:
+            continue
+        rows += (f'<div class="fact"><dt>{html.escape(icon)}</dt>'
+                 f'<dd>{html.escape(value.strip())}</dd></div>')
+    return f'<dl class="deal-facts">{rows}</dl>' if rows else ""
+
+
+def _deal_card(deal: dict, lang: str = "ko") -> str:
     link = deal.get("link") or {}
     url = html.escape(link.get("url", ""))
     tracked = bool(link.get("tracked"))
-    cta = "쿠팡에서 보기 →" if tracked else "쿠팡에서 검색 →"
+    is_global = deal.get("region") == "global"
+    if is_global:
+        cta, rel = "View deal →", "noopener nofollow"
+    elif tracked:
+        cta, rel = "쿠팡에서 보기 →", "noopener nofollow sponsored"
+    else:
+        cta, rel = "쿠팡에서 검색 →", "noopener nofollow"
+
+    price = _won(deal)
+    price_html = f"<strong>{price}</strong>" if price else (
+        '<span class="unknown">원문 가격 확인</span>' if lang == "ko" else '<span class="unknown">See price at source</span>')
+    if deal.get("original_price"):
+        orig = deal["original_price"]
+        orig_txt = f"{int(orig):,}원" if deal.get("currency", "KRW") == "KRW" else f"${orig:,.2f}"
+        price_html += f"<s>{orig_txt}</s>"
+
     flags = ""
-    if deal.get("shipping"):
-        cls = "badge-green" if "무료" in deal["shipping"] else "badge-gray"
-        flags += f'<span class="badge {cls}">{html.escape(deal["shipping"])}</span>'
+    if deal.get("discount_pct"):
+        flags += f'<span class="flag flag-discount">-{deal["discount_pct"]}%</span>'
+    ship = deal.get("shipping") or ""
+    if "무료" in ship or ship == "Free shipping":
+        flags += f'<span class="flag flag-free">{html.escape(ship)}</span>'
+    elif ship:
+        flags += f'<span class="flag flag-ship">{html.escape(ship)}</span>'
     if deal.get("rocket"):
-        flags += '<span class="badge badge-blue">로켓배송</span>'
-    brief = "".join(
-        f"<li>{html.escape(line)}</li>"
-        for line in deal.get("briefing", [])
-        if not line.startswith("핵심")
-    )
-    note = "" if tracked else '<div class="untracked-note">제휴 링크 없음 — 쿠팡 검색으로 연결</div>'
-    rel = "noopener nofollow sponsored" if tracked else "noopener nofollow"
+        flags += '<span class="flag flag-rocket">로켓배송</span>'
+
+    note = ""
+    if not tracked and not is_global:
+        note = '<span class="note">제휴 링크 없음 · 쿠팡 검색</span>'
+    foot = ""
+    src_url = html.escape((deal.get("source") or {}).get("url", ""))
+    if src_url and src_url != url:
+        label = "원문 보기" if lang == "ko" else "Source post"
+        foot = f'<div class="deal-foot"><a href="{src_url}" target="_blank" rel="noopener nofollow">{label}</a>{note}</div>'
+
+    cat = html.escape(deal.get("category_label", ""))
     return f"""
-      <article class="deal-card">
+      <article class="deal-card" data-cat="{html.escape(deal.get('category', 'tech'))}">
         <div class="deal-top">
-          <span class="badge badge-blue">{html.escape(deal.get('category_label', '테크'))}</span>
-          <span class="deal-src">{html.escape(deal.get('store') or deal.get('source', {}).get('label', ''))}</span>
+          <span class="cat-chip">{cat}</span>
+          <span class="deal-src">{html.escape(deal.get('store') or (deal.get('source') or {}).get('label', ''))}</span>
         </div>
         <h3 class="deal-title">{html.escape(deal.get('product', ''))}</h3>
-        <div class="deal-price">{_price_block(deal)}</div>
+        <div class="deal-price">{price_html}</div>
         <div class="deal-flags">{flags}</div>
-        <ul class="deal-brief">{brief}</ul>
-        <div class="deal-cta">
-          <a class="btn btn-primary" href="{url}" target="_blank" rel="{rel}">{cta}</a>
-          <a class="src-link" href="{html.escape(deal.get('source', {}).get('url', '#'))}" target="_blank" rel="noopener nofollow">원문</a>
-        </div>
-        {note}
+        {_fact_rows(deal)}
+        <a class="cta" href="{url}" target="_blank" rel="{rel}">{cta}</a>
+        {foot}
       </article>"""
+
+
+def _tabs(categories: dict, labels: list[tuple[str, str]], total: int, lang: str = "ko") -> str:
+    tabs = f'<button class="tab is-active" data-filter="all">전체 <span class="n">{total}</span></button>' if lang == "ko" \
+        else f'<button class="tab is-active" data-filter="all">All <span class="n">{total}</span></button>'
+    for slug, label in labels:
+        count = len((categories.get(slug) or {}).get("items", []))
+        tabs += (f'<button class="tab" data-filter="{slug}">{html.escape(label)}'
+                 f' <span class="n">{count}</span></button>')
+    return f'<nav class="quick-tabs" id="quickTabs">{tabs}</nav>'
+
+
+TABS_JS = """
+<script>
+(function () {
+  var tabs = document.querySelectorAll('#quickTabs .tab');
+  var cards = document.querySelectorAll('#feedGrid .deal-card');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+      var f = tab.getAttribute('data-filter');
+      cards.forEach(function (c) {
+        var show = (f === 'all') || (c.getAttribute('data-cat') === f);
+        c.classList.toggle('is-hidden', !show);
+      });
+    });
+  });
+})();
+</script>
+"""
 
 
 def generate_ko_html(deals: dict) -> str:
@@ -565,55 +701,49 @@ def generate_ko_html(deals: dict) -> str:
 
     feed_cards = "".join(_deal_card(d) for d in feed[:12])
     if not feed_cards:
-        feed_cards = ('<p style="color:var(--text-muted);font-size:0.92rem;">'
+        feed_cards = ('<p style="color:#94a3b8;font-size:0.92rem;padding:1rem 0;">'
                       '지금 수집된 신규 테크 핫딜이 없습니다. 아래 큐레이션과 골드박스를 확인하세요.</p>')
+
+    tabs = _tabs(
+        categories,
+        [("monitor-desk", "모니터·데스크"), ("keyboard-mouse", "키보드·마우스"),
+         ("laptops", "노트북·PC"), ("afterwork", "커피·간식")],
+        len(feed[:12]),
+    )
 
     cat_html = ""
     for slug in ("laptops", "monitor-desk", "keyboard-mouse", "afterwork"):
         cat = categories.get(slug) or {}
-        items = cat.get("items", [])
-        label = cat.get("label", slug)
-        audience = cat.get("audience", "")
         rows = ""
-        for d in items[:4]:
+        for d in cat.get("items", [])[:4]:
             link = d.get("link") or {}
-            price = f'{d["price"]:,}원' if d.get("price") else "가격 확인"
-            rows += (
-                f'<li><a href="{html.escape(link.get("url", "#"))}" target="_blank" '
-                f'rel="noopener nofollow sponsored">{html.escape(d.get("product", ""))}</a>'
-                f'<span class="p">{price}</span>'
-                f'<span class="s">{html.escape(d.get("store") or "")}</span></li>'
-            )
-        if rows:
-            body = f'<ul class="cat-list">{rows}</ul>'
-        else:
-            body = ('<p style="color:var(--text-muted);font-size:0.88rem;">'
-                    '이 카테고리에 새로 올라온 핫딜이 없습니다. 아래 큐레이션을 참고하세요.</p>')
+            price = _won(d) or "가격 확인"
+            rows += (f'<li><a href="{html.escape(link.get("url", "#"))}" target="_blank" '
+                     f'rel="noopener nofollow sponsored">{html.escape(d.get("product", ""))}</a>'
+                     f'<span class="p">{price}</span>'
+                     f'<span class="s">{html.escape(d.get("store") or "")}</span></li>')
+        body = f'<ul class="cat-list">{rows}</ul>' if rows else (
+            '<p style="color:#8798ae;font-size:0.88rem;">이 카테고리에 새로 올라온 핫딜이 없습니다. 아래 큐레이션을 참고하세요.</p>')
         cat_html += f"""
     <div class="cat-head" id="{slug}">
-      <h2>{html.escape(label)}</h2>
-      <span class="cat-sub">{html.escape(audience)}</span>
+      <h2>{html.escape(cat.get('label', slug))}</h2>
+      <span class="cat-sub">{html.escape(cat.get('audience', ''))}</span>
     </div>
     {body}"""
 
     pick_cards = ""
     for p in picks:
-        go = "쿠팡 최저가 확인 →" if p.get("tracked", True) else "쿠팡에서 검색 →"
         pick_cards += f"""
       <a class="pick-card" href="{html.escape(p['url'])}" target="_blank" rel="noopener nofollow sponsored">
         <div class="pick-kicker">{html.escape(p.get('kicker', ''))}</div>
         <strong>{html.escape(p.get('title', ''))}</strong>
         <p>{html.escape(p.get('desc', ''))}</p>
-        <span class="go">{go}</span>
+        <span class="go">쿠팡 최저가 확인 →</span>
       </a>"""
 
     schema = {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": KO_SITE_NAME,
-        "alternateName": KO_TAGLINE,
-        "url": f"{BASE_URL}/ko/",
-        "inLanguage": "ko-KR",
+        "@context": "https://schema.org", "@type": "WebSite", "name": KO_SITE_NAME,
+        "alternateName": KO_TAGLINE, "url": f"{BASE_URL}/ko/", "inLanguage": "ko-KR",
         "description": "개발자 장비·테크 핫딜을 원문 가격 그대로 모아 실구매가와 추천 대상을 정리하는 한글 핫딜 레이더.",
     }
 
@@ -623,9 +753,9 @@ def generate_ko_html(deals: dict) -> str:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{KO_SITE_NAME} — {KO_TAGLINE} (2026)</title>
-  <meta name="description" content="개발자 장비·테크 핫딜을 뽐뿌·클리앙 등 원문에서 모아 가격·할인율·배송 조건을 정리하고, 실구매가와 추천 대상을 한눈에 보여주는 한글 핫딜 레이더.">
+  <meta name="description" content="개발자 장비·테크 핫딜을 뽐뿌·클리앙·퀘이사존·에펨코리아·폴센트에서 모아 가격·할인율·배송 조건을 정리하고, 실구매가와 추천 대상을 한눈에 보여주는 한글 핫딜 레이더.">
   <link rel="canonical" href="{BASE_URL}/ko/">
-  <link rel="alternate" hreflang="en" href="{BASE_URL}/">
+  <link rel="alternate" hreflang="en" href="{BASE_URL}/deals/">
   <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
   <meta property="og:title" content="{KO_SITE_NAME} — {KO_TAGLINE}">
   <meta property="og:type" content="website">
@@ -634,7 +764,7 @@ def generate_ko_html(deals: dict) -> str:
   <script type="application/ld+json">
   {json.dumps(schema, ensure_ascii=False, indent=2)}
   </script>
-  <style>{SHARED_CSS}{KO_CSS}</style>
+  <style>{SHARED_CSS}{DEAL_CSS}</style>
 </head>
 <body>
   <header>
@@ -642,7 +772,7 @@ def generate_ko_html(deals: dict) -> str:
       <a href="/ko/" class="logo">⚡ DevTeardown<span>KR</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
         <a class="nav-link" href="#feed">실시간 핫딜</a>
-        <a class="nav-link" href="#keyboard-mouse">장비</a>
+        <a class="nav-link" href="/deals/">Global Deals</a>
         <a class="nav-link" href="/">EN Reports</a>
       </div>
     </div>
@@ -652,37 +782,39 @@ def generate_ko_html(deals: dict) -> str:
     <div class="ko-hero">
       <span class="badge badge-blue">매일 갱신 · 원문 가격 기준</span>
       <h1>개발자 장비, 살 때만 사세요.</h1>
-      <p class="lead">뽐뿌·클리앙 알뜰구매에 올라온 테크 핫딜을 모아, 원문에 적힌 가격과 배송 조건만으로
-      실구매가를 다시 계산합니다. 과장된 "역대급" 대신, 지금 사도 되는지 판단할 수 있는 숫자와 카테고리만 남겼습니다.</p>
+      <p class="lead">뽐뿌·클리앙·퀘이사존·에펨코리아·폴센트에 올라온 테크 핫딜을 한곳에 모아,
+      원문에 적힌 가격과 배송 조건만으로 실구매가를 다시 계산합니다. 과장된 "역대급" 대신
+      지금 사도 되는지 판단할 수 있는 숫자만 남겼습니다.</p>
       <div class="ko-stats">
-        <div class="ko-stat"><strong>{len(feed)}건</strong>실시간 수집 핫딜</div>
+        <div class="ko-stat"><strong>{len(feed)}건</strong>실시간 핫딜</div>
         <div class="ko-stat"><strong>4개</strong>장비 카테고리</div>
-        <div class="ko-stat"><strong>{updated}</strong>마지막 업데이트</div>
-        <div class="ko-stat"><strong>0원</strong>가입·구독 비용</div>
+        <div class="ko-stat"><strong>{updated}</strong>업데이트</div>
+        <div class="ko-stat"><strong>0원</strong>가입 비용</div>
       </div>
       <div class="disclosure-bar">
         {html.escape(deals.get('disclosure', KO_DISCLOSURE))}
       </div>
     </div>
 
-    <h2 id="feed" style="margin-top:2.6rem;">실시간 테크 · 개발자 핫딜</h2>
-    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.4rem;">
+    <h2 id="feed" style="margin-top:2.4rem;">실시간 테크 · 개발자 핫딜</h2>
+    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
       가격·할인율·배송은 수집 시점의 원문 표기입니다. 품절·가격 변동은 원문에서 확인하세요.
     </p>
-    <div class="deal-grid">{feed_cards}</div>
+    {tabs}
+    <div class="deal-grid" id="feedGrid">{feed_cards}</div>
 
     <div class="goldbox">
       <div>
         <h3>⏰ 오늘의 골드박스</h3>
         <p>매일 오전 7시, 한정 수량 특가. 개발 장비부터 사무 간식까지.</p>
       </div>
-      <a class="btn btn-primary" href="{html.escape(goldbox['url'])}" target="_blank" rel="noopener nofollow sponsored">{html.escape(goldbox.get('label', '골드박스 보기'))} →</a>
+      <a class="cta" style="width:auto; padding:0.75rem 1.2rem;" href="{html.escape(goldbox['url'])}" target="_blank" rel="noopener nofollow sponsored">{html.escape(goldbox.get('label', '골드박스 보기'))} →</a>
     </div>
 
     {cat_html}
 
     <h2 style="margin-top:3.4rem;">지금 사도 되는 장비 큐레이션</h2>
-    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.4rem;">
+    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
       핫딜이 뜰 때까지 기다리지 않아도 되는, 개발자 책상 기본 장비.</p>
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">{pick_cards}</div>
 
@@ -698,14 +830,134 @@ def generate_ko_html(deals: dict) -> str:
   <footer>
     <div class="container">
       <p>© 2026 {KO_SITE_NAME}. 개발자 장비 핫딜 큐레이션. 가격은 원문 표기 기준입니다.</p>
-      <p style="margin-top:0.4rem;"><a href="/" style="color:var(--text-muted);">English teardowns → devteardown.com</a></p>
+      <p style="margin-top:0.4rem;"><a href="/deals/" style="color:var(--text-muted);">Global deals →</a>
+      &nbsp;·&nbsp;<a href="/" style="color:var(--text-muted);">English teardowns →</a></p>
     </div>
   </footer>
+  {TABS_JS}
+</body>
+</html>"""
+
+
+def generate_deals_en_html(payload: dict) -> str:
+    """해외 딜 포털 (/deals/) — 영문."""
+    feed = payload.get("feed", [])
+    categories = payload.get("categories", {})
+    updated = payload.get("generated_at", "")[:10] or "2026-11-10"
+
+    feed_cards = "".join(_deal_card(d, lang="en") for d in feed[:12])
+    if not feed_cards:
+        feed_cards = ('<p style="color:#94a3b8;font-size:0.92rem;padding:1rem 0;">'
+                      'No new tech deals collected right now. Check back after the next run.</p>')
+
+    tabs = _tabs(
+        categories,
+        [("laptops", "Laptops"), ("monitor-desk", "Monitors"),
+         ("keyboard-mouse", "Keyboards"), ("afterwork", "Office fuel")],
+        len(feed[:12]), lang="en",
+    )
+
+    cat_html = ""
+    for slug in ("laptops", "monitor-desk", "keyboard-mouse", "afterwork"):
+        cat = categories.get(slug) or {}
+        rows = ""
+        for d in cat.get("items", [])[:4]:
+            link = d.get("link") or {}
+            price = _won(d) or "see source"
+            rows += (f'<li><a href="{html.escape(link.get("url", "#"))}" target="_blank" '
+                     f'rel="noopener nofollow">{html.escape(d.get("product", ""))}</a>'
+                     f'<span class="p">{price}</span>'
+                     f'<span class="s">{html.escape(d.get("store") or "")}</span></li>')
+        body = f'<ul class="cat-list">{rows}</ul>' if rows else (
+            '<p style="color:#8798ae;font-size:0.88rem;">No new deals in this category yet.</p>')
+        cat_html += f"""
+    <div class="cat-head" id="{slug}">
+      <h2>{html.escape(cat.get('label', slug))}</h2>
+      <span class="cat-sub">{html.escape(cat.get('audience', ''))}</span>
+    </div>
+    {body}"""
+
+    schema = {
+        "@context": "https://schema.org", "@type": "WebSite", "name": "DevTeardown Deals",
+        "url": f"{BASE_URL}/deals/", "inLanguage": "en",
+        "description": "Tech deals for developers: hardware from Reddit, Slickdeals and Dealabs, priced in the currency of the source.",
+    }
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTeardown Deals — Developer Hardware Deals (2026)</title>
+  <meta name="description" content="Developer hardware deals collected from r/buildapcsales, Slickdeals and Dealabs: price, discount and what the deal is actually good for. No sponsored placement.">
+  <link rel="canonical" href="{BASE_URL}/deals/">
+  <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
+  <link rel="alternate" hreflang="en" href="{BASE_URL}/deals/">
+  <meta property="og:title" content="DevTeardown Deals — developer hardware deals">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{BASE_URL}/deals/">
+  <script type="application/ld+json">
+  {json.dumps(schema, ensure_ascii=False, indent=2)}
+  </script>
+  <style>{SHARED_CSS}{DEAL_CSS}</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/deals/" class="logo">⚡ DevTeardown<span>Deals</span></a>
+      <div style="display:flex; gap:1rem; align-items:center;">
+        <a class="nav-link" href="/ko/">한국어 핫딜</a>
+        <a class="nav-link" href="/">Teardowns</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="ko-hero">
+      <span class="badge badge-blue">Updated daily · source prices</span>
+      <h1>Hardware deals, without the hype.</h1>
+      <p class="lead">Developer-relevant deals pulled from r/buildapcsales, Slickdeals and Dealabs.
+      Each card shows the price exactly as the source lists it, the discount only when the source gives
+      a list price, and who the deal actually fits. No paid placement.</p>
+      <div class="ko-stats">
+        <div class="ko-stat"><strong>{len(feed)}</strong>live deals</div>
+        <div class="ko-stat"><strong>4</strong>categories</div>
+        <div class="ko-stat"><strong>{updated}</strong>updated</div>
+        <div class="ko-stat"><strong>{payload.get('stats', {}).get('sources', 0)}</strong>sources</div>
+      </div>
+    </div>
+
+    <h2 id="feed" style="margin-top:2.4rem;">Live tech deals</h2>
+    <p style="color:#8ea3bd; font-size:0.9rem; margin-top:-0.3rem;">
+      Prices are the source's own listing at collection time. Stock, tax and shipping vary by region.
+    </p>
+    {tabs}
+    <div class="deal-grid" id="feedGrid">{feed_cards}</div>
+
+    {cat_html}
+
+    <div class="method-note">
+      <strong style="color:#fff;">How prices are handled</strong><br>
+      Every price is copied from the source post; discounts are computed only when the post states a
+      list price. Links go to the source deal page, and DevTeardown takes no commission on them.
+      Prices and stock move fast — confirm on the retailer page before buying.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTeardown Deals. Developer hardware curation. Prices as listed at the source.</p>
+      <p style="margin-top:0.4rem;"><a href="/ko/" style="color:var(--text-muted);">한국어 핫딜 →</a>
+      &nbsp;·&nbsp;<a href="/" style="color:var(--text-muted);">English teardowns →</a></p>
+    </div>
+  </footer>
+  {TABS_JS}
 </body>
 </html>"""
 
 
 def generate_index_html(items):
+
     cards_html = ""
     for item in items:
         a = item["tool_a"]
@@ -742,6 +994,7 @@ def generate_index_html(items):
     <div class="header-inner">
       <a href="./" class="logo">⚡ DevTools<span>Radar</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
+        <a class="nav-link" href="./deals/">Deals</a>
         <a class="nav-link" href="./ko/">한국어 핫딜</a>
         <span class="badge badge-green">Verified Nov 2026</span>
       </div>
@@ -953,6 +1206,7 @@ def generate_comparison_html(item):
     <div class="header-inner">
       <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
+        <a href="../../deals/" class="nav-link">Deals</a>
         <a href="../../ko/" class="nav-link">한국어 핫딜</a>
         <a href="../../" class="nav-link">← All teardowns</a>
       </div>
@@ -1088,6 +1342,10 @@ def generate_sitemap(items):
     <loc>{BASE_URL}/ko/</loc>
     <lastmod>{today}</lastmod>
     <priority>0.9</priority>
+  </url>\n  <url>
+    <loc>{BASE_URL}/deals/</loc>
+    <lastmod>{today}</lastmod>
+    <priority>0.9</priority>
   </url>\n"""
     for item in items:
         urls += f"""  <url>
@@ -1131,13 +1389,21 @@ def main():
     print(f"  {'ko-portal':<28} feed={len(deals.get('feed', []))} deals  "
           f"picks={len(deals.get('picks', []))}  updated={deals.get('generated_at', '-')}")
 
+    en_deals = load_deals(DEALS_EN_DATA_PATH)
+    en_dir = os.path.join(DIST_DIR, "deals")
+    os.makedirs(en_dir, exist_ok=True)
+    with open(os.path.join(en_dir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(generate_deals_en_html(en_deals))
+    print(f"  {'deals-portal-en':<28} feed={len(en_deals.get('feed', []))} deals  "
+          f"updated={en_deals.get('generated_at', '-')}")
+
     with open(os.path.join(DIST_DIR, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE_URL}/sitemap.xml\n")
 
     with open(os.path.join(DIST_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("devteardown.com\n")
 
-    print(f"Build complete: {len(items) + 2} pages in {DIST_DIR}")
+    print(f"Build complete: {len(items) + 3} pages in {DIST_DIR}")
 
 
 if __name__ == "__main__":
