@@ -23,7 +23,7 @@
 
 ## Deals
 
-- [Korean tech deals](https://devteardown.com/ko/): 11 live hardware deals from 뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.
+- [Korean tech deals](https://devteardown.com/ko/): 17 live hardware deals from 뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.
 - [Global tech deals](https://devteardown.com/deals/): 12 live deals from r/buildapcsales, Slickdeals and Dealabs.
 
 ## Optional
