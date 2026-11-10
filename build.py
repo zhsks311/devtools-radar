@@ -4,7 +4,7 @@ import json
 import html
 import datetime
 
-BASE_URL = "https://zhsks311.github.io/devtools-radar"
+BASE_URL = "https://devteardown.com"
 SITE_NAME = "DevTools Radar"
 DIST_DIR = "/workspace/devtools-radar/dist"
 DATA_PATH = "/workspace/devtools-radar/data/tools.json"
@@ -757,6 +757,9 @@ def main():
 
     with open(os.path.join(DIST_DIR, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE_URL}/sitemap.xml\n")
+
+    with open(os.path.join(DIST_DIR, "CNAME"), "w", encoding="utf-8") as f:
+        f.write("devteardown.com\n")
 
     print(f"Build complete: {len(items) + 1} pages in {DIST_DIR}")
 

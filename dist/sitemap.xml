@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/</loc>
+    <loc>https://devteardown.com/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/supabase-vs-firebase/</loc>
+    <loc>https://devteardown.com/compare/supabase-vs-firebase/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/vercel-vs-cloudflare-pages/</loc>
+    <loc>https://devteardown.com/compare/vercel-vs-cloudflare-pages/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/cursor-vs-github-copilot/</loc>
+    <loc>https://devteardown.com/compare/cursor-vs-github-copilot/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/notion-vs-obsidian/</loc>
+    <loc>https://devteardown.com/compare/notion-vs-obsidian/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/bun-vs-node/</loc>
+    <loc>https://devteardown.com/compare/bun-vs-node/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/prisma-vs-drizzle/</loc>
+    <loc>https://devteardown.com/compare/prisma-vs-drizzle/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/docker-vs-podman/</loc>
+    <loc>https://devteardown.com/compare/docker-vs-podman/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/clerk-vs-auth0/</loc>
+    <loc>https://devteardown.com/compare/clerk-vs-auth0/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zhsks311.github.io/devtools-radar/compare/planetscale-vs-neon/</loc>
+    <loc>https://devteardown.com/compare/planetscale-vs-neon/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.8</priority>
   </url>
