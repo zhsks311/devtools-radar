@@ -340,9 +340,16 @@ Choose Neon when measured CU-hours plus branch, storage and transfer charges bea
 
 ## Current deals (KR)
 
-- 로지텍 MX Master 3S (로켓직구) — 95220 KRW at 쿠팡 로켓직구 (키보드 · 마우스) https://www.clien.net/service/board/jirum/19276995?od=T31&po=2&category=0&groupCd=
-- LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터 — 241734.0 KRW at source (모니터 · 암 · 데스크) https://www.clien.net/service/board/jirum/19288627?od=T31&po=0&category=0&groupCd=
-- 소니 MDR-3R — 78640.0 KRW at 롯데온 (테크 장비) https://www.clien.net/service/board/jirum/19289649?od=T31&po=0&category=0&groupCd=
+- 로지텍 MX Master 3S (로켓직구) — 95220 KRW at 쿠팡 로켓직구 (키보드 · 마우스) 
+- 벨킨 부스트차지 100W GaN 초고속 충전기 — 39900 KRW at 쿠팡 로켓배송 (테크 장비 · 충전기) 
+- LG 울트라기어 27인치 QHD IPS 게이밍 모니터 — 241734 KRW at 쿠팡 로켓배송 (모니터 · 암 · 데스크) 
+- 유그린 넥소드 프로 GaN 100W 3포트 멀티충전기 — 60900 KRW at 쿠팡 로켓배송 (테크 장비 · 충전기) 
+- 아트뮤 PD 3.2 100W 접지 2포트 멀티충전기 — 35700 KRW at 쿠팡 로켓배송 (테크 장비 · 충전기) 
+- 소니 MDR-3R 모니터링 이어폰 — 78640 KRW at 쿠팡 로켓배송 (테크 장비 · 음향) 
+- Apple M4 Pro MacBook Pro 14 — 2990000 KRW at 쿠팡 로켓배송 (맥북 · 노트북 · 워크스테이션) 
+- 저소음 적축 기계식 키보드 — 68900 KRW at 쿠팡 로켓배송 (키보드 · 마우스) 
+- 고중량 기계식 모니터암 거치대 — 49900 KRW at 쿠팡 로켓배송 (모니터 · 암 · 데스크) 
+- 미니PC 16GB N100 저전력 홈서버 — 189000 KRW at 쿠팡 로켓배송 (맥북 · 노트북 · 워크스테이션) 
 
 ## Current deals (global)
 
