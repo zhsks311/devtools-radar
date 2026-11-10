@@ -353,13 +353,11 @@ Choose Neon when measured CU-hours plus branch, storage and transfer charges bea
 
 ## Current deals (global)
 
-- Seagate Expansion Desktop 16TB External Hard Drive HDD, USB 3.0, STKP16000400 — 399.99 USD at HDD (Laptops & Mini PCs) https://www.reddit.com/r/buildapcsales/comments/1xrmfc5/hdd_seagate_expansion_desktop_16tb_external_hard/
-- HP ProDesk 405 G8 Desktop AMD Ryzen 5 PRO 5650GE 16GB RAM 512GB SSD W11P — 247.99 USD at Prebuilt (Laptops & Mini PCs) https://www.reddit.com/r/buildapcsales/comments/1xr8bbs/prebuilt_hp_prodesk_405_g8_desktop_amd_ryzen_5/
-- Razer Kraken Kitty V2 USB Wired Headset Hello Kitty Edition, Restock — 39.99 USD at Headphones (Tech Gear) https://www.reddit.com/r/buildapcsales/comments/1xs86d1/headphones_razer_kraken_kitty_v2_usb_wired/
-- Gigabyte B650 GAMING X AX V2 AMD AM5 — 104.99 USD at Motherboard (Tech Gear) https://www.reddit.com/r/buildapcsales/comments/1xs7xcu/motherboard_gigabyte_b650_gaming_x_ax_v2_amd_am5/
-- Epomaker Galaxy65 Mechanical Keyboard — 42.9 USD at Keyboard (Keyboards & Mice) https://www.reddit.com/r/buildapcsales/comments/1xs0i3t/keyboard_epomaker_galaxy65_mechanical_keyboard/
-- 15.3" Lenovo Chromebook M Laptop: FHD+, Kompanio 540, 4GB RAM, 64GB eMMC $179 + Free S&H — 179.0 USD at source (Laptops & Mini PCs) https://slickdeals.net/f/20278857-lenovo-chromebook-m-15-3-2k-laptop-mediatek-kompanio-540-2026-4gb-memory-64gb-storage-luna-grey-179?utm_source=rss&utm_content=fp&utm_medium=RSS2
-- Newegg 16GB DDR5 combos are back - GIGABYTE B850M EAGLE WIFI6E AMD AM5 MATX + AMD Ryzen 5 9600X + T-Force Delta Alpha RGB 16GB DDR5 6000 - $ — 518.98 USD at Combo (Laptops & Mini PCs) https://www.reddit.com/r/buildapcsales/comments/1xsa9s7/combo_newegg_16gb_ddr5_combos_are_back_gigabyte/
-- Cooler Master Sneaker-X Mini-ITX PC Case f+ 360mm AIO + 850W SFX PSU — 231.69 USD at Bundle (Laptops & Mini PCs) https://www.reddit.com/r/buildapcsales/comments/1xs7v93/bundle_cooler_master_sneakerx_miniitx_pc_case_f/
-- AMD Ryzen 7 9850X3D, Amazon S/S, $419 A/C — 419.0 USD at CPU (Laptops & Mini PCs) https://www.reddit.com/r/buildapcsales/comments/1xs6i23/cpu_amd_ryzen_7_9850x3d_amazon_ss_419_ac/
-- AMD RYZEN 7 9800X3D, Amazon S/S — 400.0 USD at CPU (Laptops & Mini PCs) https://www.reddit.com/r/buildapcsales/comments/1xs6b9z/cpu_amd_ryzen_7_9800x3d_amazon_ss_400/
+- TextSniper for Mac — 3.99 USD at StackSocial (Software) https://www.stacksocial.com/sales/textsniper-for-mac
+- Slidepad for Mac — 8.99 USD at StackSocial (Software) https://www.stacksocial.com/sales/slidepad-mac-app
+- PDF Expert for Mac · version 3 — 79.99 USD at StackSocial (Software) https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime
+- Koofr · 1 TB lifetime plan — 199.99 USD at StackSocial (Cloud storage) https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb
+- VSDC Video Editor Pro · version 11 — 29.99 USD at StackSocial (Software) https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2
+- AdGuard Family · 9 devices — 19.99 USD at StackSocial (Software) https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription
+- AcePDF · 2 devices — 29.99 USD at StackSocial (Software) https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license
+- Action! Screen & Gameplay Recorder — 9.99 USD at StackSocial (Software) https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder
