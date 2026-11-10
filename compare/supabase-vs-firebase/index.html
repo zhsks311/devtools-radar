@@ -6,10 +6,16 @@
   <title>Supabase vs Firebase (2026): Cost, Limits and the Decision Matrix</title>
   <meta name="description" content="Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The scree">
   <link rel="canonical" href="https://devteardown.com/compare/supabase-vs-firebase/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/supabase-vs-firebase/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/supabase-vs-firebase/">
+  <meta property="og:site_name" content="DevTools Radar">
   <meta property="og:title" content="Supabase vs Firebase — 2026 teardown">
   <meta property="og:description" content="Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The scree">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://devteardown.com/compare/supabase-vs-firebase/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Supabase vs Firebase: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one P">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -203,6 +209,12 @@ a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
   padding: 1.4rem 1.5rem;
   margin: 1.5rem 0 2rem;
 }
+.answer-box {
+  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
+  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
+}
+.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
+.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
 .verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
 .verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
 .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
@@ -294,6 +306,11 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     <div class="verdict-box">
       <div class="label">Verdict</div>
       <p>If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project. If your app fits Firestore's daily free quota of 50,000 reads, 20,000 writes and 20,000 deletes, stay where you are, because leaving costs a schema project and a password path the migration repo still marks incomplete.</p>
+    </div>
+
+    <div class="answer-box">
+      <span class="label">Direct answer</span>
+      <p>If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project.</p>
     </div>
 
     <div class="toc">

@@ -6,10 +6,16 @@
   <title>PlanetScale vs Neon (2026): Cost, Limits and the Decision Matrix</title>
   <meta name="description" content="Suspended compute costs $0 on Neon; PlanetScale&#x27;s smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h =">
   <link rel="canonical" href="https://devteardown.com/compare/planetscale-vs-neon/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/planetscale-vs-neon/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/planetscale-vs-neon/">
+  <meta property="og:site_name" content="DevTools Radar">
   <meta property="og:title" content="PlanetScale vs Neon — 2026 teardown">
   <meta property="og:description" content="Suspended compute costs $0 on Neon; PlanetScale&#x27;s smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h =">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://devteardown.com/compare/planetscale-vs-neon/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PlanetScale vs Neon: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster.">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -203,6 +209,12 @@ a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
   padding: 1.4rem 1.5rem;
   margin: 1.5rem 0 2rem;
 }
+.answer-box {
+  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
+  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
+}
+.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
+.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
 .verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
 .verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
 .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
@@ -294,6 +306,11 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     <div class="verdict-box">
       <div class="label">Verdict</div>
       <p>Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it.</p>
+    </div>
+
+    <div class="answer-box">
+      <span class="label">Direct answer</span>
+      <p>Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster.</p>
     </div>
 
     <div class="toc">

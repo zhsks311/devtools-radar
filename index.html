@@ -6,11 +6,120 @@
   <title>DevTools Radar — Developer Tool Teardowns, Priced in Arithmetic (2026)</title>
   <meta name="description" content="Independent teardowns of competing developer tools: what each vendor's billing unit punishes, worked cost arithmetic from published price sheets, and a decision matrix you can paste into a design doc.">
   <link rel="canonical" href="https://devteardown.com/">
-  <link rel="alternate" hreflang="ko" href="https://devteardown.com/ko/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/">
+  <link rel="alternate" hreflang="ko" href="https://devteardown.com/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/">
+  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:description" content="Independent teardowns of developer tools: billing units, worked cost arithmetic, and a decision matrix you can paste into a design doc.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DevTools Radar — Developer Tool Teardowns">
+  <meta name="twitter:description" content="Every comparison is a billing question in disguise. Worked cost arithmetic from published price sheets.">
   <meta property="og:title" content="DevTools Radar — Developer Tool Teardowns">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://devteardown.com/">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Developer tool teardowns",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/",
+      "name": "Stripe vs Lemon Squeezy / Paddle"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/",
+      "name": "Anthropic vs OpenAI"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://devteardown.com/compare/datadog-vs-grafana-cloud/",
+      "name": "Datadog vs Grafana Cloud"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/",
+      "name": "AWS Lambda vs Cloudflare Workers"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "url": "https://devteardown.com/compare/resend-vs-sendgrid/",
+      "name": "Resend vs SendGrid"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "url": "https://devteardown.com/compare/supabase-vs-firebase/",
+      "name": "Supabase vs Firebase"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "url": "https://devteardown.com/compare/vercel-vs-cloudflare-pages/",
+      "name": "Vercel vs Cloudflare Pages"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "url": "https://devteardown.com/compare/cursor-vs-github-copilot/",
+      "name": "Cursor vs GitHub Copilot"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "url": "https://devteardown.com/compare/notion-vs-obsidian/",
+      "name": "Notion vs Obsidian"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "url": "https://devteardown.com/compare/bun-vs-node/",
+      "name": "Bun vs Node.js"
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "url": "https://devteardown.com/compare/prisma-vs-drizzle/",
+      "name": "Prisma vs Drizzle"
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "url": "https://devteardown.com/compare/docker-vs-podman/",
+      "name": "Docker vs Podman"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "url": "https://devteardown.com/compare/clerk-vs-auth0/",
+      "name": "Clerk vs Auth0"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "url": "https://devteardown.com/compare/planetscale-vs-neon/",
+      "name": "PlanetScale vs Neon"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DevTools Radar",
+  "url": "https://devteardown.com",
+  "inLanguage": "en",
+  "description": "Independent teardowns of competing developer tools, priced in arithmetic."
+}
+  </script>
   <style>
 :root {
   --bg: #090d16;
@@ -125,6 +234,12 @@ a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
   padding: 1.4rem 1.5rem;
   margin: 1.5rem 0 2rem;
 }
+.answer-box {
+  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
+  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
+}
+.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
+.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
 .verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
 .verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
 .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }

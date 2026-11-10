@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://devteardown.com/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://devteardown.com/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://devteardown.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://devteardown.com/"/>
   </url>
   <url>
     <loc>https://devteardown.com/ko/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://devteardown.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://devteardown.com/deals/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://devteardown.com/"/>
   </url>
   <url>
     <loc>https://devteardown.com/deals/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://devteardown.com/deals/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://devteardown.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://devteardown.com/deals/"/>
   </url>
   <url>
     <loc>https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/</loc>
