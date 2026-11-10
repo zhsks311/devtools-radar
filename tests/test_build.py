@@ -78,7 +78,15 @@ class EditorialTests(unittest.TestCase):
             self.assertNotIn('매일 갱신',page)
             self.assertNotIn('쿠팡 최저가',page)
         self.assertIn('원문 게시글 기준',ko)
-        self.assertIn('Collected tech deals',en)
+        self.assertIn('Browse the offers',en)
+        self.assertNotRegex(en, r'[가-힣]')
+        self.assertIn('View product →',en)
+        self.assertIn('checkout was not completed',en)
+        for deal in build.load_deals(build.DEALS_EN_DATA_PATH)['feed']:
+            self.assertEqual(deal['link']['label_kind'], 'retailer')
+            self.assertTrue(deal['link']['url'].startswith('https://www.stacksocial.com/sales/'))
+            self.assertIsNone(deal['discount_pct'])
+            self.assertIsNone(deal['published_at'])
 
 class BuildTests(unittest.TestCase):
     def setUp(self):

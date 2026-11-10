@@ -318,7 +318,7 @@ def generate_llms_txt(items, ko_deals, en_deals) -> str:
         f"- [Korean tech deals]({BASE_URL}/ko/): {len(ko_deals.get('feed', []))} collected hardware deals from "
         "뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.",
         f"- [Global tech deals]({BASE_URL}/deals/): {len(en_deals.get('feed', []))} collected deals from "
-        "r/buildapcsales, Slickdeals and Dealabs.",
+        "StackSocial, with direct product links and dated checks.",
         "",
         "## Optional",
         "",
@@ -400,6 +400,12 @@ DEAL_CSS = """
 .deal-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:1.5rem; }
 .deal-card { display:flex; flex-direction:column; border:1px solid var(--border); background:var(--surface); padding:1.3rem; }
 .deal-card.is-hidden { display:none; }
+.international-deals .deal-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1rem; }
+.international-deals .deal-title { font-size:1.3rem; line-height:1.3; min-height:3.4em; }
+.international-deals .deal-card { padding:1.15rem; }
+.international-deals .deal-summary { font-size:.86rem; color:var(--text-muted); margin:0 0 .75rem; }
+.international-deals .deal-facts { font-size:0.85rem; }
+.international-deals .deal-check { font-size:0.8rem; line-height:1.5; }
 .deal-top,.deal-foot { display:flex; justify-content:space-between; gap:.5rem; margin-bottom:.8rem; }
 .cat-chip,.deal-src,.deal-foot { font-size:.73rem; color:var(--text-muted); }
 .deal-title { margin:0 0 1rem; font-size:1.08rem; line-height:1.6; }
@@ -454,6 +460,9 @@ FACT_ICONS = [
     ("Shipping", "Shipping"),
     ("Check", "Check"),
     ("Key", "Key"),
+    ("Region", "Region"),
+    ("Condition", "Condition"),
+    ("Checked", "Checked"),
 ]
 
 
@@ -475,7 +484,8 @@ def _won(deal: dict) -> str:
     cur = deal.get("currency", "KRW")
     if cur == "KRW":
         return f"{int(price):,}원"
-    return f"${price:,.2f}" if price % 1 else f"${int(price):,}"
+    prefix = {"USD": "$", "EUR": "€", "GBP": "£", "CAD": "CA$", "AUD": "A$"}.get(cur, cur + " ")
+    return f"{prefix}{price:,.2f}" if price % 1 else f"{prefix}{int(price):,}"
 
 
 def _fact_rows(deal: dict) -> str:
@@ -506,19 +516,20 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
     tracked = bool(link.get("tracked"))
     is_global = deal.get("region") == "global"
     if is_global:
-        cta, rel = "View deal →", "noopener nofollow"
+        cta = "View product →" if link.get("label_kind") == "retailer" else "View deal →"
+        rel = "noopener nofollow"
     elif tracked:
         cta, rel = "쿠팡에서 보기 →", "noopener nofollow sponsored"
     else:
         cta, rel = "쿠팡에서 검색 →", "noopener nofollow"
 
     price = _won(deal)
-    price_html = f"<strong>{price}</strong>" if price else (
+    price_html = f"<strong>{html.escape(price)}</strong>" if price else (
         '<span class="unknown">원문 가격 확인</span>' if lang == "ko" else '<span class="unknown">See price at source</span>')
     if deal.get("original_price"):
         orig = deal["original_price"]
-        orig_txt = f"{int(orig):,}원" if deal.get("currency", "KRW") == "KRW" else f"${orig:,.2f}"
-        price_html += f"<s>{orig_txt}</s>"
+        orig_txt = _won({"price": orig, "currency": deal.get("currency", "KRW")})
+        price_html += f"<s>{html.escape(orig_txt)}</s>"
 
     flags = ""
     if deal.get("discount_pct"):
@@ -540,6 +551,8 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
         label = "원문 보기" if lang == "ko" else "Source post"
         foot = f'<div class="deal-foot"><a href="{src_url}" target="_blank" rel="noopener nofollow">{label}</a>{note}</div>'
 
+    summary = next((line[5:].strip() for line in deal.get("briefing", []) if line.startswith("Key: ")), "") if lang == "en" else ""
+    summary_html = f'<p class="deal-summary">{html.escape(summary)}</p>' if summary else ""
     cat_label = deal.get("category_label", "")
     cat = html.escape(CAT_SHORT.get(deal.get("category", ""), cat_label) if lang == "ko" else cat_label)
     return f"""
@@ -549,6 +562,7 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
           <span class="deal-src">{html.escape(deal.get('store') or (deal.get('source') or {}).get('label', ''))}</span>
         </div>
         <h3 class="deal-title">{html.escape(deal.get('product', ''))}</h3>
+        {summary_html}
         <div class="deal-price">{price_html}</div>
         <div class="deal-flags">{flags}</div>
         {_fact_rows(deal)}
@@ -767,13 +781,12 @@ def generate_deals_en_html(payload: dict) -> str:
 
     tabs = _tabs(
         categories,
-        [("laptops", "Laptops"), ("monitor-desk", "Monitors"),
-         ("keyboard-mouse", "Keyboards"), ("afterwork", "Office fuel")],
+        [(slug, cat.get("label", slug)) for slug, cat in categories.items()],
         len(feed[:12]), lang="en",
     )
 
     cat_html = ""
-    for slug in ("laptops", "monitor-desk", "keyboard-mouse", "afterwork"):
+    for slug in ():  # Cards already provide the complete category listing.
         cat = categories.get(slug) or {}
         rows = ""
         for d in cat.get("items", [])[:4]:
@@ -795,7 +808,7 @@ def generate_deals_en_html(payload: dict) -> str:
     schema = {
         "@context": "https://schema.org", "@type": "WebSite", "name": "DevTeardown Deals",
         "url": f"{BASE_URL}/deals/", "inLanguage": "en",
-        "description": "Tech deals for developers: hardware from Reddit, Slickdeals and Dealabs, priced in the currency of the source.",
+        "description": "Software offers with direct retailer links and price-check notes.",
     }
 
     return f"""<!DOCTYPE html>
@@ -803,25 +816,25 @@ def generate_deals_en_html(payload: dict) -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevTeardown Deals — Developer Hardware Deals (2026)</title>
-  <meta name="description" content="Developer hardware deals collected from r/buildapcsales, Slickdeals and Dealabs: price, discount and what the deal is actually good for. No sponsored placement.">
+  <title>DevTeardown Deals — Software & Tech Offers (2026)</title>
+  <meta name="description" content="Software offers checked on retailer product pages, with prices and license conditions.">
   <link rel="canonical" href="{BASE_URL}/deals/">
   <link rel="alternate" hreflang="en" href="{BASE_URL}/deals/">
   <link rel="alternate" hreflang="ko" href="{BASE_URL}/ko/">
   <link rel="alternate" hreflang="x-default" href="{BASE_URL}/deals/">
   <meta property="og:site_name" content="DevTeardown Deals">
-  <meta property="og:title" content="DevTeardown Deals — developer hardware deals">
+  <meta property="og:title" content="DevTeardown Deals — software and tech offers">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{BASE_URL}/deals/">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="DevTeardown Deals — developer hardware deals">
-  <meta name="twitter:description" content="Deals from r/buildapcsales, Slickdeals and Dealabs, priced exactly as the source lists them.">
+  <meta name="twitter:title" content="DevTeardown Deals — software and tech offers">
+  <meta name="twitter:description" content="Software offers with direct product links and dated price checks.">
   <script type="application/ld+json">
   {_json_ld({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Collected tech deals",
+      "name": "Browse the offers",
       "itemListElement": [
           {"@type": "ListItem", "position": i + 1,
            "name": d.get("product", ""),
@@ -835,12 +848,12 @@ def generate_deals_en_html(payload: dict) -> str:
   </script>
   <style>{SHARED_CSS}{DEAL_CSS}</style>
 </head>
-<body>
+<body class="international-deals">
   <header>
     <div class="header-inner">
       <a href="/deals/" class="logo">DevTeardown<span>Deals</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
-        <a class="nav-link" href="/ko/">한국어 핫딜</a>
+        <a class="nav-link" href="/ko/">Korean deals</a>
         <a class="nav-link" href="/">Teardowns</a>
       </div>
     </div>
@@ -848,22 +861,23 @@ def generate_deals_en_html(payload: dict) -> str:
 
   <main class="container">
     <div class="ko-hero">
-      <span class="badge badge-blue">Prices from source posts</span>
-      <h1>Hardware prices worth comparing.</h1>
-      <p class="lead">Developer-relevant deals pulled from r/buildapcsales, Slickdeals and Dealabs.
-      Each card shows the price exactly as the source lists it, the discount only when the source gives
-      a list price, and the original source link.</p>
+      <span class="badge badge-blue">Direct retailer links</span>
+      <h1>Useful software. Clear purchase terms.</h1>
+      <p class="lead">Eight digital offers checked on StackSocial, an international deal marketplace.
+      Every button opens the actual product page, not a search or community post.
+      Prices below are in US dollars before any applicable tax.</p>
       <div class="ko-stats">
-        <div class="ko-stat"><strong>{len(feed)}</strong>collected deals</div>
-        <div class="ko-stat"><strong>4</strong>categories</div>
+        <div class="ko-stat"><strong>{len(feed)}</strong>product offers</div>
+        <div class="ko-stat"><strong>{sum(bool(c.get("items")) for c in categories.values())}</strong>categories with deals</div>
         <div class="ko-stat"><strong>{html.escape(updated)}</strong>updated</div>
         <div class="ko-stat"><strong>{html.escape(str(payload.get('stats', {}).get('sources', 0)))}</strong>sources</div>
       </div>
     </div>
 
-    <h2 id="feed" style="margin-top:2.4rem;">Collected tech deals</h2>
+    <h2 id="feed" style="margin-top:2.4rem;">Browse the offers</h2>
     <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.3rem;">
-      Prices are the source's own listing at collection time. Stock, tax and shipping vary by region.
+      Listed prices exclude untested coupon savings. Country eligibility and checkout totals are not verified.
+      Redemption deadlines apply; review refund terms before activating a license.
     </p>
     {tabs}
     <div class="deal-grid" id="feedGrid">{feed_cards}</div>
@@ -872,16 +886,18 @@ def generate_deals_en_html(payload: dict) -> str:
 
     <div class="method-note">
       <strong style="color:var(--text-muted);">How prices are handled</strong><br>
-      Every price is copied from the source post; discounts are computed only when the post states a
-      list price. Links go to the source deal page, and DevTeardown takes no commission on them.
-      Prices and stock move fast — confirm on the retailer page before buying.
+      Retailer prices and visible availability were checked at the time noted on each card; checkout was not completed.
+      A source post alone does not verify the current price. Crossed-out prices are retailer comparisons,
+      not proof of a historical low. These direct product links carry no DevTeardown affiliate tracking.
+      Confirm eligibility, tax and the final total before buying. “Lifetime” refers to the offer’s license or service terms, not an unlimited guarantee.
+      Product photos are available on each retailer page; third-party images are not republished without permission.
     </div>
   </main>
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTeardown Deals. Developer hardware curation. Prices as listed at the source.</p>
-      <p style="margin-top:0.4rem;"><a href="/ko/" style="color:var(--text-muted);">한국어 핫딜 →</a>
+      <p>© 2026 DevTeardown Deals. Software and tech curation. Check the retailer for the current total.</p>
+      <p style="margin-top:0.4rem;"><a href="/ko/" style="color:var(--text-muted);">Korean deals →</a>
       &nbsp;·&nbsp;<a href="/" style="color:var(--text-muted);">English teardowns →</a></p>
     </div>
   </footer>
