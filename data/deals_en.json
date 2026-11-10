@@ -1,11 +1,53 @@
 {
-  "generated_at": "2026-11-10T07:20:21.444770+00:00",
+  "generated_at": "2026-11-10T07:33:19.525734+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
     "lang": "en"
   },
   "feed": [
+    {
+      "id": "43ca41d03daa",
+      "region": "global",
+      "target": "en",
+      "category": "gaming",
+      "category_label": "Gaming",
+      "title_raw": "Nintendo Switch 2 Console",
+      "product": "Nintendo Switch 2 Console",
+      "store": "EB Games Australia",
+      "price": 728,
+      "price_source": "retailer_product_page",
+      "currency": "AUD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Australia · delivery available",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Key: Nintendo Switch 2 console, sold by EB Games Australia.",
+        "Region: Australia; delivery cost calculated at checkout.",
+        "Checked: November 10, 2026 · Home Delivery Available; Add to cart shown.",
+        "Check: A$698 is a paid EB World PLUS member price, not the public price. Local pickup availability depends on store."
+      ],
+      "audience": "Check OS, license and regional eligibility before purchase.",
+      "source": {
+        "id": "ozbargain",
+        "label": "OzBargain",
+        "url": "https://www.ozbargain.com.au/node/982360"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-10",
+      "score": null,
+      "disclosure": "Australian offer. No DevTeardown affiliate tracking. Shipping cost and checkout total unverified.",
+      "ai_rewritten": false,
+      "link": {
+        "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at EB Games Australia",
+        "label_kind": "retailer"
+      }
+    },
     {
       "id": "de0f62d0487f",
       "region": "global",
@@ -130,6 +172,13 @@
         "matched_keyword": null,
         "label": "View product at StackSocial",
         "label_kind": "retailer"
+      },
+      "image": {
+        "path": "/assets/deals/pdf-expert-icon.png",
+        "alt": "PDF Expert official app icon",
+        "credit": "Readdle press kit",
+        "credit_url": "https://readdle.com/press",
+        "caption": "Official app icon."
       }
     },
     {
@@ -172,6 +221,13 @@
         "matched_keyword": null,
         "label": "View product at StackSocial",
         "label_kind": "retailer"
+      },
+      "image": {
+        "path": "/assets/deals/koofr-web-app.png",
+        "alt": "Koofr web app file browser screenshot",
+        "credit": "Koofr",
+        "credit_url": "https://koofr.eu/",
+        "caption": "App preview; storage shown is illustrative."
       }
     },
     {
@@ -345,6 +401,48 @@
   ],
   "picks": [
     {
+      "id": "43ca41d03daa",
+      "region": "global",
+      "target": "en",
+      "category": "gaming",
+      "category_label": "Gaming",
+      "title_raw": "Nintendo Switch 2 Console",
+      "product": "Nintendo Switch 2 Console",
+      "store": "EB Games Australia",
+      "price": 728,
+      "price_source": "retailer_product_page",
+      "currency": "AUD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Australia · delivery available",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Key: Nintendo Switch 2 console, sold by EB Games Australia.",
+        "Region: Australia; delivery cost calculated at checkout.",
+        "Checked: November 10, 2026 · Home Delivery Available; Add to cart shown.",
+        "Check: A$698 is a paid EB World PLUS member price, not the public price. Local pickup availability depends on store."
+      ],
+      "audience": "Check OS, license and regional eligibility before purchase.",
+      "source": {
+        "id": "ozbargain",
+        "label": "OzBargain",
+        "url": "https://www.ozbargain.com.au/node/982360"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-10",
+      "score": null,
+      "disclosure": "Australian offer. No DevTeardown affiliate tracking. Shipping cost and checkout total unverified.",
+      "ai_rewritten": false,
+      "link": {
+        "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "View product at EB Games Australia",
+        "label_kind": "retailer"
+      }
+    },
+    {
       "id": "de0f62d0487f",
       "region": "global",
       "target": "en",
@@ -422,48 +520,6 @@
       "ai_rewritten": false,
       "link": {
         "url": "https://www.stacksocial.com/sales/slidepad-mac-app",
-        "tracked": false,
-        "matched_keyword": null,
-        "label": "View product at StackSocial",
-        "label_kind": "retailer"
-      }
-    },
-    {
-      "id": "bde198764514",
-      "region": "global",
-      "target": "en",
-      "category": "software",
-      "category_label": "Software",
-      "title_raw": "PDF Expert for Mac · version 3",
-      "product": "PDF Expert for Mac · version 3",
-      "store": "StackSocial",
-      "price": 79.99,
-      "price_source": "retailer_product_page",
-      "currency": "USD",
-      "original_price": null,
-      "discount_pct": null,
-      "shipping": "Digital delivery",
-      "rocket": false,
-      "specs": [],
-      "briefing": [
-        "Key: Edit and annotate PDFs on Mac.",
-        "Condition: New users; macOS 12+; iOS not included.",
-        "Checked: November 10, 2026 · Add to Cart shown",
-        "Check: Redeem within 30 days. Version-specific license."
-      ],
-      "audience": "Check OS, license and regional eligibility before purchase.",
-      "source": {
-        "id": "stacksocial",
-        "label": "StackSocial product offer",
-        "url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime"
-      },
-      "published_at": null,
-      "checked_date": "2026-11-10",
-      "score": null,
-      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Expiry unknown.",
-      "ai_rewritten": false,
-      "link": {
-        "url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
         "tracked": false,
         "matched_keyword": null,
         "label": "View product at StackSocial",
@@ -600,6 +656,13 @@
             "matched_keyword": null,
             "label": "View product at StackSocial",
             "label_kind": "retailer"
+          },
+          "image": {
+            "path": "/assets/deals/pdf-expert-icon.png",
+            "alt": "PDF Expert official app icon",
+            "credit": "Readdle press kit",
+            "credit_url": "https://readdle.com/press",
+            "caption": "Official app icon."
           }
         },
         {
@@ -816,13 +879,68 @@
             "matched_keyword": null,
             "label": "View product at StackSocial",
             "label_kind": "retailer"
+          },
+          "image": {
+            "path": "/assets/deals/koofr-web-app.png",
+            "alt": "Koofr web app file browser screenshot",
+            "credit": "Koofr",
+            "credit_url": "https://koofr.eu/",
+            "caption": "App preview; storage shown is illustrative."
+          }
+        }
+      ]
+    },
+    "gaming": {
+      "label": "Gaming",
+      "audience": "Australian retail offer.",
+      "items": [
+        {
+          "id": "43ca41d03daa",
+          "region": "global",
+          "target": "en",
+          "category": "gaming",
+          "category_label": "Gaming",
+          "title_raw": "Nintendo Switch 2 Console",
+          "product": "Nintendo Switch 2 Console",
+          "store": "EB Games Australia",
+          "price": 728,
+          "price_source": "retailer_product_page",
+          "currency": "AUD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "Australia · delivery available",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "Key: Nintendo Switch 2 console, sold by EB Games Australia.",
+            "Region: Australia; delivery cost calculated at checkout.",
+            "Checked: November 10, 2026 · Home Delivery Available; Add to cart shown.",
+            "Check: A$698 is a paid EB World PLUS member price, not the public price. Local pickup availability depends on store."
+          ],
+          "audience": "Check OS, license and regional eligibility before purchase.",
+          "source": {
+            "id": "ozbargain",
+            "label": "OzBargain",
+            "url": "https://www.ozbargain.com.au/node/982360"
+          },
+          "published_at": null,
+          "checked_date": "2026-11-10",
+          "score": null,
+          "disclosure": "Australian offer. No DevTeardown affiliate tracking. Shipping cost and checkout total unverified.",
+          "ai_rewritten": false,
+          "link": {
+            "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View product at EB Games Australia",
+            "label_kind": "retailer"
           }
         }
       ]
     }
   },
   "stats": {
-    "feed": 8,
-    "sources": 1
+    "feed": 9,
+    "sources": 2
   }
 }

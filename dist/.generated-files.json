@@ -1,5 +1,8 @@
 [
   "CNAME",
+  "assets/deals/README.md",
+  "assets/deals/koofr-web-app.png",
+  "assets/deals/pdf-expert-icon.png",
   "compare/anthropic-vs-openai-api-pricing/index.html",
   "compare/aws-lambda-vs-cloudflare-workers/index.html",
   "compare/bun-vs-node/index.html",

@@ -318,7 +318,7 @@ def generate_llms_txt(items, ko_deals, en_deals) -> str:
         f"- [Korean tech deals]({BASE_URL}/ko/): {len(ko_deals.get('feed', []))} collected hardware deals from "
         "뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.",
         f"- [Global tech deals]({BASE_URL}/deals/): {len(en_deals.get('feed', []))} collected deals from "
-        "StackSocial, with direct product links and dated checks.",
+        "StackSocial and OzBargain, with direct product links and dated checks.",
         "",
         "## Optional",
         "",
@@ -403,6 +403,9 @@ DEAL_CSS = """
 .international-deals .deal-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1rem; }
 .international-deals .deal-title { font-size:1.3rem; line-height:1.3; min-height:3.4em; }
 .international-deals .deal-card { padding:1.15rem; }
+.deal-media { margin:0 0 1rem; }
+.deal-media img { width:100%; height:150px; object-fit:contain; display:block; background:#fff; }
+.deal-media figcaption { font-size:.68rem; line-height:1.4; color:var(--text-muted); margin-top:.35rem; }
 .international-deals .deal-summary { font-size:.86rem; color:var(--text-muted); margin:0 0 .75rem; }
 .international-deals .deal-facts { font-size:0.85rem; }
 .international-deals .deal-check { font-size:0.8rem; line-height:1.5; }
@@ -551,12 +554,21 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
         label = "원문 보기" if lang == "ko" else "Source post"
         foot = f'<div class="deal-foot"><a href="{src_url}" target="_blank" rel="noopener nofollow">{label}</a>{note}</div>'
 
+    media = deal.get("image") or {}
+    media_html = ""
+    if lang == "en" and re.fullmatch(r"/assets/deals/[a-z0-9-]+\.png", media.get("path", "")):
+        media_html = (f'<figure class="deal-media"><img src="{html.escape(media["path"])}" '
+                      f'alt="{html.escape(media.get("alt", ""))}" loading="lazy" decoding="async">'
+                      f'<figcaption>{html.escape(media.get("caption", ""))} '
+                      f'<a href="{_safe_url(media.get("credit_url", ""))}" target="_blank" rel="noopener">'
+                      f'{html.escape(media.get("credit", ""))}</a></figcaption></figure>')
     summary = next((line[5:].strip() for line in deal.get("briefing", []) if line.startswith("Key: ")), "") if lang == "en" else ""
     summary_html = f'<p class="deal-summary">{html.escape(summary)}</p>' if summary else ""
     cat_label = deal.get("category_label", "")
     cat = html.escape(CAT_SHORT.get(deal.get("category", ""), cat_label) if lang == "ko" else cat_label)
     return f"""
       <article class="deal-card" data-cat="{html.escape(deal.get('category', 'tech'))}">
+        {media_html}
         <div class="deal-top">
           <span class="cat-chip">{cat}</span>
           <span class="deal-src">{html.escape(deal.get('store') or (deal.get('source') or {}).get('label', ''))}</span>
@@ -862,10 +874,10 @@ def generate_deals_en_html(payload: dict) -> str:
   <main class="container">
     <div class="ko-hero">
       <span class="badge badge-blue">Direct retailer links</span>
-      <h1>Useful software. Clear purchase terms.</h1>
-      <p class="lead">Eight digital offers checked on StackSocial, an international deal marketplace.
+      <h1>Tech offers. Clear purchase terms.</h1>
+      <p class="lead">Software offers from StackSocial, plus an Australian console deal found on OzBargain and checked at EB Games.
       Every button opens the actual product page, not a search or community post.
-      Prices below are in US dollars before any applicable tax.</p>
+      Digital prices are in US dollars; the Australian console price is marked A$.</p>
       <div class="ko-stats">
         <div class="ko-stat"><strong>{len(feed)}</strong>product offers</div>
         <div class="ko-stat"><strong>{sum(bool(c.get("items")) for c in categories.values())}</strong>categories with deals</div>
@@ -890,7 +902,7 @@ def generate_deals_en_html(payload: dict) -> str:
       A source post alone does not verify the current price. Crossed-out prices are retailer comparisons,
       not proof of a historical low. These direct product links carry no DevTeardown affiliate tracking.
       Confirm eligibility, tax and the final total before buying. “Lifetime” refers to the offer’s license or service terms, not an unlimited guarantee.
-      Product photos are available on each retailer page; third-party images are not republished without permission.
+      Official media assets are credited where supplied; other product images remain on retailer pages.
     </div>
   </main>
 
@@ -1412,6 +1424,9 @@ def render_site(items, output, deals, en_deals):
 
     with open(os.path.join(DIST_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("devteardown.com\n")
+
+    if (ROOT / "assets" / "deals").exists():
+        shutil.copytree(ROOT / "assets" / "deals", Path(DIST_DIR) / "assets" / "deals", dirs_exist_ok=True)
 
     print(f"Rendered {len(items) + 3} pages")
 

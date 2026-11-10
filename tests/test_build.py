@@ -81,10 +81,13 @@ class EditorialTests(unittest.TestCase):
         self.assertIn('Browse the offers',en)
         self.assertNotRegex(en, r'[가-힣]')
         self.assertIn('View product →',en)
+        self.assertEqual(en.count('<figure class="deal-media">'), 2)
+        self.assertIn('App preview; storage shown is illustrative.', en)
+        self.assertIn('A$728', en)
         self.assertIn('checkout was not completed',en)
         for deal in build.load_deals(build.DEALS_EN_DATA_PATH)['feed']:
             self.assertEqual(deal['link']['label_kind'], 'retailer')
-            self.assertTrue(deal['link']['url'].startswith('https://www.stacksocial.com/sales/'))
+            self.assertTrue(deal['link']['url'].startswith(('https://www.stacksocial.com/sales/', 'https://www.ebgames.com.au/product/')))
             self.assertIsNone(deal['discount_pct'])
             self.assertIsNone(deal['published_at'])
 
