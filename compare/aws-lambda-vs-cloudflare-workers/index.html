@@ -96,191 +96,98 @@
 }
   </script>
   <style>
-:root {
-  --bg: #090d16;
-  --surface: #121826;
-  --surface-raised: #182234;
-  --border: #222f46;
-  --text: #e2e8f0;
-  --text-muted: #94a3b8;
-  --primary: #38bdf8;
-  --primary-glow: rgba(56, 189, 248, 0.15);
-  --accent: #10b981;
-  --warn: #f59e0b;
-  --danger: #f43f5e;
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-}
-.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1.1rem 0;
-  background: rgba(9, 13, 22, 0.88);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
-.logo span { color: var(--primary); }
-.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
-.nav-link:hover { color: var(--primary); }
-.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
-.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
-.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
-.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
-.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
-h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
-h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
-h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
-h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
-p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
-ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
-li { margin-bottom: 0.4rem; font-size: 0.98rem; }
-li > code, p > code { font-size: 0.86em; }
-strong { color: #fff; font-weight: 640; }
-a { color: var(--primary); }
-blockquote {
-  border-left: 3px solid var(--primary);
-  background: rgba(56, 189, 248, 0.05);
-  padding: 0.9rem 1.2rem;
-  margin: 1.3rem 0;
-  color: #cbd5e1;
-  border-radius: 0 8px 8px 0;
-  font-size: 0.97rem;
-}
-blockquote p:last-child { margin-bottom: 0; }
-.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
-.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
-.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
-th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
-tr:last-child td { border-bottom: none; }
-td code { color: var(--primary); }
-.btn {
-  display: inline-block;
-  padding: 0.72rem 1.4rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.94rem;
-  text-decoration: none;
-  transition: all 0.18s;
-  text-align: center;
-}
-.btn-primary { background: var(--primary); color: #04121b; }
-.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
-.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
-.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.2rem;
-  transition: border-color 0.18s, transform 0.18s;
-}
-a.card { display: block; text-decoration: none; }
-a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
-.verdict-box {
-  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
-  border: 1px solid #1e3a5f;
-  border-left: 3px solid var(--primary);
-  border-radius: 12px;
-  padding: 1.4rem 1.5rem;
-  margin: 1.5rem 0 2rem;
-}
-.answer-box {
-  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
-  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
-}
-.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
-.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
-.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
-.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
-.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
-@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
-.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
-.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
-.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
-.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
-pre {
-  background: #0b1120;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.15rem;
-  overflow-x: auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: #9dd7f5;
-  margin: 1rem 0 1.2rem;
-  tab-size: 2;
-}
-pre code { color: inherit; background: none; padding: 0; }
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  background: rgba(56, 189, 248, 0.09);
-  color: #9dd7f5;
-  padding: 0.12rem 0.35rem;
-  border-radius: 4px;
-  font-size: 0.87em;
-}
-.migration-box {
-  background: #121e33;
-  border-left: 3px solid var(--primary);
-  border-radius: 0 8px 8px 0;
-  padding: 1.2rem 1.4rem;
-  margin: 1.4rem 0;
-}
-.migration-box strong { color: #fff; }
-.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
-.faq-item:last-child { border-bottom: none; }
-.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
-.faq-a { color: var(--text-muted); font-size: 0.94rem; }
-.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
-.cost-row:last-child { border-bottom: none; }
-.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
-.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
-.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
-.matrix-pick { color: var(--primary); font-weight: 600; }
-.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
-.updated-note {
-  font-size: 0.8rem; color: var(--text-muted);
-  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
-}
-.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
-.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
-.toc ol { margin: 0 0 0 1.1rem; }
-.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
-.toc a { color: #cbd5e1; text-decoration: none; }
-.toc a:hover { color: var(--primary); }
-footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="../../" class="logo">DevTools<span>Radar</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
         <a href="../../deals/" class="nav-link">Deals</a>
         <a href="../../ko/" class="nav-link">한국어 핫딜</a>
@@ -291,10 +198,8 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">Serverless & Edge</span>
+      <span class="badge badge-blue">Serverless &amp; Edge</span>
       <span class="badge badge-gray">AWS Lambda vs Cloudflare Workers</span>
-      <span>DevTeardown Team</span>
-      <span>·</span>
       <span>Prices verified 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
@@ -305,12 +210,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
-      <p>For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call. For a request that works, the two converge, and Lambda's free tier and memory ceiling win back the low end. The bill is a statement about your code's shape, not about the vendors' rates.</p>
-    </div>
-
-    <div class="answer-box">
-      <span class="label">Direct answer</span>
-      <p>For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call.</p>
+      <p>For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call. For a request that works, the two converge, and Lambda&#x27;s free tier and memory ceiling win back the low end. The bill is a statement about your code&#x27;s shape, not about the vendors&#x27; rates.</p>
     </div>
 
     <div class="toc">
@@ -318,7 +218,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <ol><li><a href="#s1">Two vendors, three meters, two definitions of work</a></li><li><a href="#s2">A GB-second is a memory meter wearing a clock</a></li><li><a href="#s3">The bills cross at about 7.5 million requests</a></li><li><a href="#s4">Lambda&#x27;s second sheet splits the same request in two</a></li><li><a href="#s5">Where Lambda wins on the same sheet</a></li><li><a href="#s6">The exit door has a rewrite behind it</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
     </div>
 
-    <h2>Key metric comparison</h2>
+    <h2>At a glance</h2>
     <div class="table-wrapper">
       <table>
         <thead>
@@ -360,18 +260,18 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 <p>The crossover is a free-tier artefact, not a policy: 1 million requests and 400,000 GB-seconds are free on Lambda, and 30 million CPU-ms are free on Workers. Below roughly 7.5 million requests the Lambda allowance is worth more than the CPU savings. Above it, the $5 plan floor disappears into the noise.</p>
 
       <h2 id="s4">4. Lambda&#x27;s second sheet splits the same request in two</h2>
-      <p>Web Functions are AWS's answer to active-CPU billing, and they price the same 100 million requests differently.</p>
+      <p>Web Functions are AWS&#x27;s answer to active-CPU billing, and they price the same 100 million requests differently.</p>
 <div class="table-wrapper"><table><thead><tr><th>Line</th><th>Lambda Event</th><th>Lambda Web</th><th>Workers</th></tr></thead><tbody><tr><td>Requests</td><td>$19.80</td><td>$30.00</td><td>$27.00</td></tr><tr><td>Compute</td><td>10M GB-s = $128.00</td><td>1M vCPU-s = $27.69, 1.296M GB-s = $4.75</td><td>970M CPU-ms = $19.40</td></tr><tr><td>Plan floor</td><td>—</td><td>—</td><td>$5.00</td></tr><tr><td><strong>Total</strong></td><td><strong>$147.80</strong></td><td><strong>$62.45</strong></td><td><strong>$51.40</strong></td></tr></tbody></table></div>
-<p>Web Functions bill $62.45 for the same traffic, 42% of the Event price, and still 21% above the Workers bill. The memory meter is why: it bills the environment for its whole life, idle time included, and AWS's own examples quietly assume exactly one environment stays up for the entire month.</p>
+<p>Web Functions bill $62.45 for the same traffic, 42% of the Event price, and still 21% above the Workers bill. The memory meter is why: it bills the environment for its whole life, idle time included, and AWS&#x27;s own examples quietly assume exactly one environment stays up for the entire month.</p>
 
       <h2 id="s5">5. Where Lambda wins on the same sheet</h2>
-      <p>The free tier, for one. Five million requests a month cost $2.13 on Lambda and $5.40 on Workers, and a hobby project that sends three million costs $2.73 by AWS's own worked example.</p>
+      <p>The free tier, for one. Five million requests a month cost $2.13 on Lambda and $5.40 on Workers, and a hobby project that sends three million costs $2.73 by AWS&#x27;s own worked example.</p>
 <p>Memory ceiling is the second. Lambda allocates up to 10,240 MB per function, which covers a model that will not fit in a V8 isolate. Workers caps a single invocation at 5 minutes of CPU, 30 seconds by default.</p>
 <p>The third is everything around the function: VPC access, IAM, SQS, Kinesis, Step Functions and the rest of the event-source catalogue. On an AWS shop, the compute line is frequently cheaper than the integration you would rewrite to leave it.</p>
 
       <h2 id="s6">6. The exit door has a rewrite behind it</h2>
       <p>Workers runs JavaScript on V8 with a fetch-shaped API. A Lambda handler that imports a native module, spawns a process or needs a writable filesystem does not run there, and the 5-minute CPU cap is not negotiable with a support ticket.</p>
-<p>The reverse move is easier and still not free: Workers' egress is $0 and Lambda's is not, so a byte-heavy service that moves back to Lambda picks up a data transfer line it never had.</p>
+<p>The reverse move is easier and still not free: Workers&#x27; egress is $0 and Lambda&#x27;s is not, so a byte-heavy service that moves back to Lambda picks up a data transfer line it never had.</p>
 <p>Price the traffic, not the platform. If your p50 request spends most of its time waiting on a database, the CPU meter is the cheaper meter and the rewrite is the only real cost. If your requests are heavy, synchronous and mostly compute, the two bills converge and the free tier decides.</p>
 
       <h2 id="cost">Cost arithmetic at volume</h2>
@@ -386,12 +286,12 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
         <div class="cost-row">
           <div class="cost-label">The same traffic on Lambda Web Functions</div>
           <div class="cost-formula">100M × 10 ms = 1M vCPU-s × $0.0000276944 = $27.69; 0.5 GB × 2,592,000 s = 1,296,000 GB-s × $0.0000036667 = $4.75; 100M × $0.30/M = $30.00</div>
-          <div class="cost-result">$62.45, 58% below Lambda's own Event price for identical traffic</div>
+          <div class="cost-result">$62.45, 58% below Lambda&#x27;s own Event price for identical traffic</div>
         </div>
         <div class="cost-row">
-          <div class="cost-label">Cross-over against Lambda's free tier</div>
+          <div class="cost-label">Cross-over against Lambda&#x27;s free tier</div>
           <div class="cost-formula">Lambda: (R − 1M) × $0.20/M + (R × 0.1 − 400k) × $0.0000133334. Workers: $5 + (R × 10 − 30M) × $0.02/M</div>
-          <div class="cost-result">Equal at about 7.5M requests a month; below that Lambda's free allowance wins, above it the CPU meter does</div>
+          <div class="cost-result">Equal at about 7.5M requests a month; below that Lambda&#x27;s free allowance wins, above it the CPU meter does</div>
         </div>
         <div class="cost-row">
           <div class="cost-label">Replacing a 200 ms wait with a 1 s wait</div>
@@ -402,10 +302,10 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Under about 5 million requests a month</td><td class="matrix-pick">Lambda Event Functions</td><td>The 1M-request and 400,000 GB-second free allowances cover the whole job: 5M requests at 200 ms and 512 MB price at $2.13 against $5.40 on Workers.</td></tr><tr><td>100 million requests that mostly wait on I/O</td><td class="matrix-pick">Workers</td><td>The same shape prices at $51.40 against $147.80, because 10 ms of CPU out of a 200 ms request is all Workers meters.</td></tr><tr><td>A function that needs 10 GB of memory</td><td class="matrix-pick">Lambda</td><td>Lambda allocates up to 10,240 MB; Workers caps a single invocation at 5 minutes of CPU and runs in an isolate with a far smaller footprint.</td></tr><tr><td>Long-lived streaming to a browser</td><td class="matrix-pick">Lambda Web Functions</td><td>Active-CPU billing ignores the wait: AWS's own LLM streaming example prices 5M requests of 3 s at $33.94, against $101.00 as Event Functions.</td></tr><tr><td>Byte-heavy responses at the edge</td><td class="matrix-pick">Workers</td><td>Workers charges nothing for egress or bandwidth, and static asset requests are free and unlimited.</td></tr><tr><td>SQS, Kinesis, VPC and IAM already wired into the app</td><td class="matrix-pick">Lambda</td><td>The compute line is often the small one; rewriting event sources and IAM to leave AWS costs more than the difference on the invoice.</td></tr><tr><td>A cron job every hour, minutes of CPU each</td><td class="matrix-pick">Workers</td><td>Cloudflare's own example prices 720 invocations at 180,000 ms CPU each at $6.99, and duration is not a meter at all.</td></tr><tr><td>Traffic so spiky that one environment cannot serve it</td><td class="matrix-pick">Lambda Event Functions</td><td>Web Functions bill memory for the life of every environment, and the pricing examples quietly assume exactly one environment runs all month.</td></tr></tbody>
+        <tbody><tr><td>Under about 5 million requests a month</td><td class="matrix-pick">Lambda Event Functions</td><td>The 1M-request and 400,000 GB-second free allowances cover the whole job: 5M requests at 200 ms and 512 MB price at $2.13 against $5.40 on Workers.</td></tr><tr><td>100 million requests that mostly wait on I/O</td><td class="matrix-pick">Workers</td><td>The same shape prices at $51.40 against $147.80, because 10 ms of CPU out of a 200 ms request is all Workers meters.</td></tr><tr><td>A function that needs 10 GB of memory</td><td class="matrix-pick">Lambda</td><td>Lambda allocates up to 10,240 MB; Workers caps a single invocation at 5 minutes of CPU and runs in an isolate with a far smaller footprint.</td></tr><tr><td>Long-lived streaming to a browser</td><td class="matrix-pick">Lambda Web Functions</td><td>Active-CPU billing ignores the wait: AWS&#x27;s own LLM streaming example prices 5M requests of 3 s at $33.94, against $101.00 as Event Functions.</td></tr><tr><td>Byte-heavy responses at the edge</td><td class="matrix-pick">Workers</td><td>Workers charges nothing for egress or bandwidth, and static asset requests are free and unlimited.</td></tr><tr><td>SQS, Kinesis, VPC and IAM already wired into the app</td><td class="matrix-pick">Lambda</td><td>The compute line is often the small one; rewriting event sources and IAM to leave AWS costs more than the difference on the invoice.</td></tr><tr><td>A cron job every hour, minutes of CPU each</td><td class="matrix-pick">Workers</td><td>Cloudflare&#x27;s own example prices 720 invocations at 180,000 ms CPU each at $6.99, and duration is not a meter at all.</td></tr><tr><td>Traffic so spiky that one environment cannot serve it</td><td class="matrix-pick">Lambda Event Functions</td><td>Web Functions bill memory for the life of every environment, and the pricing examples quietly assume exactly one environment runs all month.</td></tr></tbody>
       </table></div>
 
-    <h2>Same task, two SDKs</h2>
+    <h2>Code and configuration</h2>
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
         <span class="badge badge-blue" style="margin-bottom:0.4rem;">AWS Lambda</span>
@@ -446,7 +346,7 @@ export default {
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
-          <ul><li>GB-second billing multiplies wall time by memory, so a request that waits still bills</li><li>Web Functions fix the wait but bill memory for the life of every environment, idle included</li><li>Requests cost $0.20/M on Event Functions and $0.30/M on Web Functions, above Workers' $0.30 after 10M included</li><li>Data transfer is metered, so a byte-heavy response is a billable event</li></ul>
+          <ul><li>GB-second billing multiplies wall time by memory, so a request that waits still bills</li><li>Web Functions fix the wait but bill memory for the life of every environment, idle included</li><li>Requests cost $0.20/M on Event Functions and $0.30/M on Web Functions, above Workers&#x27; $0.30 after 10M included</li><li>Data transfer is metered, so a byte-heavy response is a billable event</li></ul>
         </div>
       </div>
       <div class="card" style="padding:1.2rem;">
@@ -457,7 +357,7 @@ export default {
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
-          <ul><li>A 5-minute CPU ceiling per invocation, 30 seconds by default, with no ticket that lifts it</li><li>The runtime is not a container: native modules, spawned processes and writable disks do not run</li><li>Memory is an isolate-sized budget rather than a configurable 10 GB</li><li>At very low volume the $5 floor is more than Lambda's free tier charges</li></ul>
+          <ul><li>A 5-minute CPU ceiling per invocation, 30 seconds by default, with no ticket that lifts it</li><li>The runtime is not a container: native modules, spawned processes and writable disks do not run</li><li>Memory is an isolate-sized budget rather than a configurable 10 GB</li><li>At very low volume the $5 floor is more than Lambda&#x27;s free tier charges</li></ul>
         </div>
       </div>
     </div>
@@ -469,7 +369,7 @@ export default {
 <p>Workers to Lambda is smaller but not free: package the code, replace KV and Durable Objects with a database, and accept that egress is metered again. In both directions the traffic analysis comes first, because the arithmetic only favours one vendor when you know the request duration and the CPU share of it.</p></div>
       </div>
 
-    <h2 id="faq">Questions that change the decision</h2>
+    <h2 id="faq">Common questions</h2>
     <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
       
         <div class="faq-item">
@@ -482,7 +382,7 @@ export default {
         </div>
         <div class="faq-item">
           <div class="faq-q">Which free tier is bigger?</div>
-          <div class="faq-a">Lambda's, in dollar terms at low volume: 1 million requests and 400,000 GB-seconds against Workers' 10 million requests and 30 million CPU-milliseconds on the $5 plan.</div>
+          <div class="faq-a">Lambda&#x27;s, in dollar terms at low volume: 1 million requests and 400,000 GB-seconds against Workers&#x27; 10 million requests and 30 million CPU-milliseconds on the $5 plan.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Is a cold start billed?</div>
@@ -497,11 +397,11 @@ export default {
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../datadog-vs-grafana-cloud/" style="padding:1.1rem;">
-            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Datadog vs Grafana Cloud</h3>
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Datadog vs Grafana Cloud</h3>
             <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The same reading exercise on a monitoring bill: find the unit, then the formula.</p>
           </a>
           <a class="card" href="../anthropic-vs-openai-api-pricing/" style="padding:1.1rem;">
-            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Anthropic vs OpenAI API pricing</h3>
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Anthropic vs OpenAI API pricing</h3>
             <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Two vendors, identical stickers, and the invoice decided by a token count.</p>
           </a></div>
 
@@ -511,42 +411,21 @@ export default {
     </div>
 
     
-    <div style="margin: 3.5rem 0 1.5rem; padding: 1.6rem 1.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.8rem; flex-wrap:wrap; gap:0.5rem;">
-        <h3 style="margin:0; font-size:1.15rem; color:#fff;">⚡ Verified Tech Deals &amp; Workstation Gear</h3>
-        <span class="badge badge-blue">Curated for Builders</span>
-      </div>
-      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.2rem;">
-        High-impact developer hardware &amp; workstation picks tested for productivity, with live rocket delivery links.
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
       </p>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Mouse &amp; Desk Setup</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Logitech MX Master 3S</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Ergonomic silent switches with dual-scroll MagSpeed wheels.</p>
-          <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
-        </div>
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Workstation / Laptop</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Apple M4 MacBook Pro</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Unified memory bandwidth for local LLM inference and instant builds.</p>
-          <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
-        </div>
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Daily Limited Deals</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Coupang Goldbox (7AM)</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Daily limited morning flash discounts up to 50% on tech &amp; essentials.</p>
-          <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">골드박스 특가 보기 →</a>
-        </div>
-      </div>
-      <div style="font-size:0.75rem; color:#64748b; margin-top:1rem; padding-top:0.6rem; border-top:1px solid var(--border); text-align:right;">
-        * 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
-      </div>
-    </div>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. This market reprices often — if a number below looks wrong,
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -554,7 +433,7 @@ export default {
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Independent developer analysis. No paid placement, no affiliate ranking.</p>
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
   </footer>
 </body>

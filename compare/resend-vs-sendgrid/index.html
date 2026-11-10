@@ -96,191 +96,98 @@
 }
   </script>
   <style>
-:root {
-  --bg: #090d16;
-  --surface: #121826;
-  --surface-raised: #182234;
-  --border: #222f46;
-  --text: #e2e8f0;
-  --text-muted: #94a3b8;
-  --primary: #38bdf8;
-  --primary-glow: rgba(56, 189, 248, 0.15);
-  --accent: #10b981;
-  --warn: #f59e0b;
-  --danger: #f43f5e;
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-}
-.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1.1rem 0;
-  background: rgba(9, 13, 22, 0.88);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
-.logo span { color: var(--primary); }
-.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
-.nav-link:hover { color: var(--primary); }
-.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
-.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
-.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
-.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
-.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
-h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
-h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
-h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
-h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
-p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
-ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
-li { margin-bottom: 0.4rem; font-size: 0.98rem; }
-li > code, p > code { font-size: 0.86em; }
-strong { color: #fff; font-weight: 640; }
-a { color: var(--primary); }
-blockquote {
-  border-left: 3px solid var(--primary);
-  background: rgba(56, 189, 248, 0.05);
-  padding: 0.9rem 1.2rem;
-  margin: 1.3rem 0;
-  color: #cbd5e1;
-  border-radius: 0 8px 8px 0;
-  font-size: 0.97rem;
-}
-blockquote p:last-child { margin-bottom: 0; }
-.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
-.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
-.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
-th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
-tr:last-child td { border-bottom: none; }
-td code { color: var(--primary); }
-.btn {
-  display: inline-block;
-  padding: 0.72rem 1.4rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.94rem;
-  text-decoration: none;
-  transition: all 0.18s;
-  text-align: center;
-}
-.btn-primary { background: var(--primary); color: #04121b; }
-.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
-.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
-.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.2rem;
-  transition: border-color 0.18s, transform 0.18s;
-}
-a.card { display: block; text-decoration: none; }
-a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
-.verdict-box {
-  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
-  border: 1px solid #1e3a5f;
-  border-left: 3px solid var(--primary);
-  border-radius: 12px;
-  padding: 1.4rem 1.5rem;
-  margin: 1.5rem 0 2rem;
-}
-.answer-box {
-  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
-  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
-}
-.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
-.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
-.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
-.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
-.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
-@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
-.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
-.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
-.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
-.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
-pre {
-  background: #0b1120;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.15rem;
-  overflow-x: auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: #9dd7f5;
-  margin: 1rem 0 1.2rem;
-  tab-size: 2;
-}
-pre code { color: inherit; background: none; padding: 0; }
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  background: rgba(56, 189, 248, 0.09);
-  color: #9dd7f5;
-  padding: 0.12rem 0.35rem;
-  border-radius: 4px;
-  font-size: 0.87em;
-}
-.migration-box {
-  background: #121e33;
-  border-left: 3px solid var(--primary);
-  border-radius: 0 8px 8px 0;
-  padding: 1.2rem 1.4rem;
-  margin: 1.4rem 0;
-}
-.migration-box strong { color: #fff; }
-.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
-.faq-item:last-child { border-bottom: none; }
-.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
-.faq-a { color: var(--text-muted); font-size: 0.94rem; }
-.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
-.cost-row:last-child { border-bottom: none; }
-.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
-.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
-.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
-.matrix-pick { color: var(--primary); font-weight: 600; }
-.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
-.updated-note {
-  font-size: 0.8rem; color: var(--text-muted);
-  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
-}
-.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
-.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
-.toc ol { margin: 0 0 0 1.1rem; }
-.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
-.toc a { color: #cbd5e1; text-decoration: none; }
-.toc a:hover { color: var(--primary); }
-footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="../../" class="logo">DevTools<span>Radar</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
         <a href="../../deals/" class="nav-link">Deals</a>
         <a href="../../ko/" class="nav-link">한국어 핫딜</a>
@@ -293,24 +200,17 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
     <div class="meta-row">
       <span class="badge badge-blue">Email Infrastructure</span>
       <span class="badge badge-gray">Resend vs SendGrid</span>
-      <span>DevTeardown Team</span>
-      <span>·</span>
       <span>Prices verified 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
 
     <h1>Resend vs SendGrid</h1>
-    <div class="lead"><p>At 100,000 emails a month, Resend's Pro plan is $35 and SendGrid's Essentials plan is $34.95. Both vendors then charge exactly $55 more for the next rung, and none of that $55 buys an extra email: it buys the tier where a dedicated IP becomes possible.</p></div>
+    <div class="lead"><p>At 100,000 emails a month, Resend&#x27;s Pro plan is $35 and SendGrid&#x27;s Essentials plan is $34.95. Both vendors then charge exactly $55 more for the next rung, and none of that $55 buys an extra email: it buys the tier where a dedicated IP becomes possible.</p></div>
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
       <p>Under 50,000 emails the two vendors are the same product at the same price, and the free tier is the only real difference. Past 100,000 the choice is decided by one feature: SendGrid includes a dedicated IP at $89.95, Resend sells it for $30 on a plan that already costs $90. If you need an IP, SendGrid; if you need a free tier and a clean API, Resend; if you need volume, check the rung and the overage before either.</p>
-    </div>
-
-    <div class="answer-box">
-      <span class="label">Direct answer</span>
-      <p>Under 50,000 emails the two vendors are the same product at the same price, and the free tier is the only real difference.</p>
     </div>
 
     <div class="toc">
@@ -318,7 +218,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <ol><li><a href="#s1">At 100,000 emails, both vendors charge $55 for the same feature</a></li><li><a href="#s2">The ladder is not monotonic, and overage is sometimes the cheaper rung</a></li><li><a href="#s3">Dedicated IP: $30 plus a $55 step, or included at $89.95</a></li><li><a href="#s4">Domain authentication is table stakes; the domain count is not</a></li><li><a href="#s5">The bottom of the market is where they stop competing</a></li><li><a href="#s6">Where each one breaks</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
     </div>
 
-    <h2>Key metric comparison</h2>
+    <h2>At a glance</h2>
     <div class="table-wrapper">
       <table>
         <thead>
@@ -353,9 +253,9 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2 id="s2">2. The ladder is not monotonic, and overage is sometimes the cheaper rung</h2>
       <p>Read each ladder as cost per 1,000, not as a monthly price.</p>
 <div class="table-wrapper"><table><thead><tr><th>Volume needed</th><th>Resend</th><th>Per 1,000</th><th>SendGrid</th><th>Per 1,000</th></tr></thead><tbody><tr><td>50,000</td><td>$20.00 (50k)</td><td>$0.40</td><td>$19.95 (50k)</td><td>$0.40</td></tr><tr><td>100,000</td><td>$35.00 (100k Pro)</td><td>$0.35</td><td>$34.95 (100k Essentials)</td><td>$0.35</td></tr><tr><td>200,000</td><td>$160.00 (200k)</td><td>$0.80</td><td>$249.00 (300k)</td><td>$1.25</td></tr><tr><td>500,000</td><td>$350.00 (500k)</td><td>$0.70</td><td>$499.00 (700k)</td><td>$1.00</td></tr><tr><td>1,000,000</td><td>$650.00 (1M)</td><td>$0.65</td><td>$799.00 (1.5M)</td><td>$0.80</td></tr><tr><td>2,500,000</td><td>$1,150.00 (2.5M)</td><td>$0.46</td><td>$1,099.00 (2.5M)</td><td>$0.44</td></tr></tbody></table></div>
-<p>Where one vendor has no rung at that volume, the column shows the cheapest rung that covers it, which is why SendGrid's 200,000 row is its 300,000 plan.</p>
-<p>Resend's 200,000 rung costs $0.80 per 1,000, more than twice its 100,000 rung. That is not a discount curve; it is a plan boundary, and the cheaper block stops at 100,000.</p>
-<p>Overage repairs it. Resend charges $0.90 per 1,000 beyond the included volume, so 100,000 on Pro plus 100,000 of overage is $35 + $90 = $125, not $160. SendGrid's same move on Pro is $89.95 + 100,000 × $1.10/1,000 = $199.95, not $249.</p>
+<p>Where one vendor has no rung at that volume, the column shows the cheapest rung that covers it, which is why SendGrid&#x27;s 200,000 row is its 300,000 plan.</p>
+<p>Resend&#x27;s 200,000 rung costs $0.80 per 1,000, more than twice its 100,000 rung. That is not a discount curve; it is a plan boundary, and the cheaper block stops at 100,000.</p>
+<p>Overage repairs it. Resend charges $0.90 per 1,000 beyond the included volume, so 100,000 on Pro plus 100,000 of overage is $35 + $90 = $125, not $160. SendGrid&#x27;s same move on Pro is $89.95 + 100,000 × $1.10/1,000 = $199.95, not $249.</p>
 
       <h2 id="s3">3. Dedicated IP: $30 plus a $55 step, or included at $89.95</h2>
       <p>A dedicated IP is the feature that decides most of these purchases, because shared IP reputation is the thing a growing sender cannot control.</p>
@@ -367,10 +267,10 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2 id="s4">4. Domain authentication is table stakes; the domain count is not</h2>
       <p>Both authenticate sending with DKIM, SPF and DMARC, and both include a REST API, SMTP relay and official SDKs on every paid plan. The differences are in the quantities.</p>
 <div class="table-wrapper"><table><thead><tr><th>Quantity</th><th>Resend</th><th>SendGrid</th></tr></thead><tbody><tr><td>Custom domains</td><td>3 Free, 10 Pro, 1,000 Scale</td><td>Domain authentication included</td></tr><tr><td>Extra domains</td><td>$20/mo adds 100</td><td>Not a listed line item</td></tr><tr><td>Teammates</td><td>Not metered</td><td>1 on Essentials, 1,000 on Pro</td></tr><tr><td>Event webhooks</td><td>5 on Pro, 10 on Scale</td><td>2 on Essentials, 5 on Pro</td></tr><tr><td>SSO</td><td>$150/mo add-on on Scale</td><td>Included in Pro</td></tr></tbody></table></div>
-<p>An agency managing dozens of client domains should price the domain line before the email line: Resend's add-on covers 100 extra domains for $20, and SendGrid's inclusion has no printed ceiling.</p>
+<p>An agency managing dozens of client domains should price the domain line before the email line: Resend&#x27;s add-on covers 100 extra domains for $20, and SendGrid&#x27;s inclusion has no printed ceiling.</p>
 
       <h2 id="s5">5. The bottom of the market is where they stop competing</h2>
-      <p>Resend keeps a free plan: 3,000 emails a month, 100 a day, three domains, 30 days of data retention. SendGrid's free option is a 60-day trial at 100 emails a day, after which the account converts to a paid plan starting at $19.95.</p>
+      <p>Resend keeps a free plan: 3,000 emails a month, 100 a day, three domains, 30 days of data retention. SendGrid&#x27;s free option is a 60-day trial at 100 emails a day, after which the account converts to a paid plan starting at $19.95.</p>
 <p>That single difference moves a whole segment. A side project, a staging environment or a low-volume notification service runs at $0 on Resend and at $19.95 on SendGrid, and the gap is $239.40 a year before either vendor has been compared on anything else.</p>
 <p>It also sets the frame for the first paid tier: $20 on Resend buys 50,000 emails, more than sixteen times what its own free plan allowed, and the same 50,000 that SendGrid now sells as its smallest paid plan.</p>
 
@@ -407,10 +307,10 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>Transactional email only, under 50,000 a month</td><td class="matrix-pick">Either</td><td>$20 on Resend and $19.95 on SendGrid buy the same volume, and the five-cent gap is not a reason to migrate.</td></tr><tr><td>You need a dedicated IP at 100,000 emails</td><td class="matrix-pick">SendGrid Pro</td><td>$89.95 includes one IP, against $90 for Resend Scale plus $30 for the add-on, and Resend Pro cannot buy an IP at all.</td></tr><tr><td>A free tier is mandatory for staging</td><td class="matrix-pick">Resend</td><td>Resend's free plan sends 3,000 a month, while SendGrid's free option is a 60-day trial and then $19.95.</td></tr><tr><td>Agencies authenticating dozens of client domains</td><td class="matrix-pick">Resend Scale, with the domain add-on</td><td>1,000 domains are included on Scale and $20 adds 100 more, against a domain line SendGrid does not print.</td></tr><tr><td>SSO and an IP at 500,000 emails</td><td class="matrix-pick">SendGrid Pro</td><td>SSO is included in Pro and so is one IP, while Resend puts SSO at $150 a month and the IP at $30 on top of Scale.</td></tr><tr><td>2,500,000 emails a month and nothing exotic</td><td class="matrix-pick">SendGrid Pro</td><td>$1,099 against $1,150 on Resend, and the gap widens with the IP add-on that Resend needs for the same setup.</td></tr><tr><td>Marketing broadcasts to a contact list</td><td class="matrix-pick">Resend marketing plans</td><td>Marketing is priced per contact rather than per email, so an unlimited number of sends to 10,000 contacts is $80.</td></tr><tr><td>Volume swings month to month</td><td class="matrix-pick">Either, with an alert at 60,000</td><td>Both overage rates are more expensive than the next rung: the break-even is about 61,000 on SendGrid and 67,000 on Resend.</td></tr></tbody>
+        <tbody><tr><td>Transactional email only, under 50,000 a month</td><td class="matrix-pick">Either</td><td>$20 on Resend and $19.95 on SendGrid buy the same volume, and the five-cent gap is not a reason to migrate.</td></tr><tr><td>You need a dedicated IP at 100,000 emails</td><td class="matrix-pick">SendGrid Pro</td><td>$89.95 includes one IP, against $90 for Resend Scale plus $30 for the add-on, and Resend Pro cannot buy an IP at all.</td></tr><tr><td>A free tier is mandatory for staging</td><td class="matrix-pick">Resend</td><td>Resend&#x27;s free plan sends 3,000 a month, while SendGrid&#x27;s free option is a 60-day trial and then $19.95.</td></tr><tr><td>Agencies authenticating dozens of client domains</td><td class="matrix-pick">Resend Scale, with the domain add-on</td><td>1,000 domains are included on Scale and $20 adds 100 more, against a domain line SendGrid does not print.</td></tr><tr><td>SSO and an IP at 500,000 emails</td><td class="matrix-pick">SendGrid Pro</td><td>SSO is included in Pro and so is one IP, while Resend puts SSO at $150 a month and the IP at $30 on top of Scale.</td></tr><tr><td>2,500,000 emails a month and nothing exotic</td><td class="matrix-pick">SendGrid Pro</td><td>$1,099 against $1,150 on Resend, and the gap widens with the IP add-on that Resend needs for the same setup.</td></tr><tr><td>Marketing broadcasts to a contact list</td><td class="matrix-pick">Resend marketing plans</td><td>Marketing is priced per contact rather than per email, so an unlimited number of sends to 10,000 contacts is $80.</td></tr><tr><td>Volume swings month to month</td><td class="matrix-pick">Either, with an alert at 60,000</td><td>Both overage rates are more expensive than the next rung: the break-even is about 61,000 on SendGrid and 67,000 on Resend.</td></tr></tbody>
       </table></div>
 
-    <h2>Same task, two SDKs</h2>
+    <h2>Code and configuration</h2>
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
         <span class="badge badge-blue" style="margin-bottom:0.4rem;">Resend</span>
@@ -459,7 +359,7 @@ await sgMail.send({
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
-          <ul><li>The dedicated IP is a $30 add-on on Scale only, so Pro customers cannot buy one at any price</li><li>SSO is $150 a month on Scale and unavailable below it</li><li>Scale at 100,000 emails is $90 against $35 on Pro, a $55 step for features rather than volume</li><li>The 200,000 rung costs $0.80 per 1,000, more than twice the 100,000 rung's rate</li></ul>
+          <ul><li>The dedicated IP is a $30 add-on on Scale only, so Pro customers cannot buy one at any price</li><li>SSO is $150 a month on Scale and unavailable below it</li><li>Scale at 100,000 emails is $90 against $35 on Pro, a $55 step for features rather than volume</li><li>The 200,000 rung costs $0.80 per 1,000, more than twice the 100,000 rung&#x27;s rate</li></ul>
         </div>
       </div>
       <div class="card" style="padding:1.2rem;">
@@ -479,10 +379,10 @@ await sgMail.send({
       <div class="migration-box">
         <strong>What switching actually takes</strong>
         <div style="margin-top:0.5rem;"><p>Both vendors authenticate a domain with DKIM, SPF and DMARC records, so moving means adding new DNS records while the old ones still answer. Keep both authenticated for a week, warm the new domain or IP, then flip the sending domain in code.</p>
-<p>The parts that do not travel are templates and reputation. React Email templates are code and move with the repository; SendGrid's dynamic templates are vendor objects. A dedicated IP starts cold on either side, so a sender who relies on one should plan the warm-up as a week of projected volume rather than a switch.</p></div>
+<p>The parts that do not travel are templates and reputation. React Email templates are code and move with the repository; SendGrid&#x27;s dynamic templates are vendor objects. A dedicated IP starts cold on either side, so a sender who relies on one should plan the warm-up as a week of projected volume rather than a switch.</p></div>
       </div>
 
-    <h2 id="faq">Questions that change the decision</h2>
+    <h2 id="faq">Common questions</h2>
     <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
       
         <div class="faq-item">
@@ -490,12 +390,12 @@ await sgMail.send({
           <div class="faq-a">No. The $30 per month add-on is listed for Scale plans, to accounts sending more than 3,000 emails a day. Pro has no IP option.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">What does SendGrid's free plan include now?</div>
+          <div class="faq-q">What does SendGrid&#x27;s free plan include now?</div>
           <div class="faq-a">A 60-day trial at 100 emails a day, with no credit card. After it ends the account moves to a paid plan, and Essentials starts at $19.95 for 50,000 emails.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Is overage cheaper than buying the next tier?</div>
-          <div class="faq-a">Usually not. Overage on the 50,000 tiers is $1.33 per 1,000 on SendGrid and $0.90 on Resend, both far above the next tier's per-1,000 rate, so the break-even arrives at 61,000 to 67,000 sends.</div>
+          <div class="faq-a">Usually not. Overage on the 50,000 tiers is $1.33 per 1,000 on SendGrid and $0.90 on Resend, both far above the next tier&#x27;s per-1,000 rate, so the break-even arrives at 61,000 to 67,000 sends.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Do both include inbound email parsing?</div>
@@ -510,11 +410,11 @@ await sgMail.send({
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../stripe-vs-lemonsqueezy-vs-paddle/" style="padding:1.1rem;">
-            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Stripe vs Lemon Squeezy / Paddle</h3>
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Stripe vs Lemon Squeezy / Paddle</h3>
             <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The same $55-style feature step, one decimal place larger.</p>
           </a>
           <a class="card" href="../datadog-vs-grafana-cloud/" style="padding:1.1rem;">
-            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Datadog vs Grafana Cloud</h3>
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Datadog vs Grafana Cloud</h3>
             <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">What happens when a vendor meters the thing your code does by accident.</p>
           </a></div>
 
@@ -524,42 +424,21 @@ await sgMail.send({
     </div>
 
     
-    <div style="margin: 3.5rem 0 1.5rem; padding: 1.6rem 1.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.8rem; flex-wrap:wrap; gap:0.5rem;">
-        <h3 style="margin:0; font-size:1.15rem; color:#fff;">⚡ Verified Tech Deals &amp; Workstation Gear</h3>
-        <span class="badge badge-blue">Curated for Builders</span>
-      </div>
-      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.2rem;">
-        High-impact developer hardware &amp; workstation picks tested for productivity, with live rocket delivery links.
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
       </p>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Mouse &amp; Desk Setup</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Logitech MX Master 3S</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Ergonomic silent switches with dual-scroll MagSpeed wheels.</p>
-          <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
-        </div>
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Workstation / Laptop</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Apple M4 MacBook Pro</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Unified memory bandwidth for local LLM inference and instant builds.</p>
-          <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
-        </div>
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Daily Limited Deals</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Coupang Goldbox (7AM)</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Daily limited morning flash discounts up to 50% on tech &amp; essentials.</p>
-          <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">골드박스 특가 보기 →</a>
-        </div>
-      </div>
-      <div style="font-size:0.75rem; color:#64748b; margin-top:1rem; padding-top:0.6rem; border-top:1px solid var(--border); text-align:right;">
-        * 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
-      </div>
-    </div>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. This market reprices often — if a number below looks wrong,
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -567,7 +446,7 @@ await sgMail.send({
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Independent developer analysis. No paid placement, no affiliate ranking.</p>
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
   </footer>
 </body>

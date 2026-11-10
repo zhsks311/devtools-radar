@@ -96,191 +96,98 @@
 }
   </script>
   <style>
-:root {
-  --bg: #090d16;
-  --surface: #121826;
-  --surface-raised: #182234;
-  --border: #222f46;
-  --text: #e2e8f0;
-  --text-muted: #94a3b8;
-  --primary: #38bdf8;
-  --primary-glow: rgba(56, 189, 248, 0.15);
-  --accent: #10b981;
-  --warn: #f59e0b;
-  --danger: #f43f5e;
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-}
-.container { max-width: 940px; margin: 0 auto; padding: 2rem 1.5rem; }
-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1.1rem 0;
-  background: rgba(9, 13, 22, 0.88);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-.logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
-.logo span { color: var(--primary); }
-.nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
-.nav-link:hover { color: var(--primary); }
-.badge { display: inline-block; padding: 0.18rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; }
-.badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
-.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
-.badge-warn { background: rgba(245, 158, 11, 0.1); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
-.badge-gray { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
-h1 { font-size: 2.15rem; font-weight: 800; line-height: 1.22; margin: 0.75rem 0 1rem; color: #fff; letter-spacing: -0.025em; }
-h2 { font-size: 1.45rem; font-weight: 700; color: #fff; margin: 3rem 0 1rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
-h3 { font-size: 1.12rem; font-weight: 650; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
-h4 { font-size: 1rem; font-weight: 650; color: var(--primary); margin: 1.5rem 0 0.4rem; }
-p { margin-bottom: 1rem; color: #cbd5e1; font-size: 1rem; }
-ul, ol { margin: 0 0 1.1rem 1.35rem; color: #cbd5e1; }
-li { margin-bottom: 0.4rem; font-size: 0.98rem; }
-li > code, p > code { font-size: 0.86em; }
-strong { color: #fff; font-weight: 640; }
-a { color: var(--primary); }
-blockquote {
-  border-left: 3px solid var(--primary);
-  background: rgba(56, 189, 248, 0.05);
-  padding: 0.9rem 1.2rem;
-  margin: 1.3rem 0;
-  color: #cbd5e1;
-  border-radius: 0 8px 8px 0;
-  font-size: 0.97rem;
-}
-blockquote p:last-child { margin-bottom: 0; }
-.lead { font-size: 1.12rem; color: #b6c2d2; margin-bottom: 1.6rem; line-height: 1.72; }
-.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--text-muted); font-size: 0.82rem; }
-.table-wrapper { overflow-x: auto; margin: 1.4rem 0 1.8rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
-th, td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-th { background: #162032; color: #fff; font-weight: 600; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.03em; }
-tr:last-child td { border-bottom: none; }
-td code { color: var(--primary); }
-.btn {
-  display: inline-block;
-  padding: 0.72rem 1.4rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.94rem;
-  text-decoration: none;
-  transition: all 0.18s;
-  text-align: center;
-}
-.btn-primary { background: var(--primary); color: #04121b; }
-.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
-.btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
-.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.2rem;
-  transition: border-color 0.18s, transform 0.18s;
-}
-a.card { display: block; text-decoration: none; }
-a.card:hover { border-color: var(--primary); transform: translateY(-2px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.2rem; margin: 1.8rem 0; }
-.verdict-box {
-  background: linear-gradient(145deg, #132238 0%, #0d1829 100%);
-  border: 1px solid #1e3a5f;
-  border-left: 3px solid var(--primary);
-  border-radius: 12px;
-  padding: 1.4rem 1.5rem;
-  margin: 1.5rem 0 2rem;
-}
-.answer-box {
-  background: #0f1a2b; border: 1px solid #24425f; border-left: 3px solid var(--accent);
-  border-radius: 10px; padding: 1rem 1.2rem; margin: -0.6rem 0 1.6rem;
-}
-.answer-box .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
-.answer-box p { margin: 0.35rem 0 0; color: #e6eefb; font-size: 0.98rem; line-height: 1.65; }
-.verdict-box .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; }
-.verdict-box p { color: #dbe4ef; margin: 0.5rem 0 0; font-size: 1.01rem; }
-.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
-@media (max-width: 680px) { .pros-cons-grid { grid-template-columns: 1fr; } }
-.pros-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.1rem; }
-.cons-box { background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 10px; padding: 1.1rem; }
-.pros-box ul, .cons-box ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
-.pros-box li, .cons-box li { font-size: 0.89rem; margin-bottom: 0.4rem; color: #cbd5e1; }
-pre {
-  background: #0b1120;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.15rem;
-  overflow-x: auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: #9dd7f5;
-  margin: 1rem 0 1.2rem;
-  tab-size: 2;
-}
-pre code { color: inherit; background: none; padding: 0; }
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  background: rgba(56, 189, 248, 0.09);
-  color: #9dd7f5;
-  padding: 0.12rem 0.35rem;
-  border-radius: 4px;
-  font-size: 0.87em;
-}
-.migration-box {
-  background: #121e33;
-  border-left: 3px solid var(--primary);
-  border-radius: 0 8px 8px 0;
-  padding: 1.2rem 1.4rem;
-  margin: 1.4rem 0;
-}
-.migration-box strong { color: #fff; }
-.faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
-.faq-item:last-child { border-bottom: none; }
-.faq-q { font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
-.faq-a { color: var(--text-muted); font-size: 0.94rem; }
-.cost-row { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
-.cost-row:last-child { border-bottom: none; }
-.cost-label { font-weight: 600; color: #fff; font-size: 0.95rem; }
-.cost-formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.83rem; color: var(--text-muted); word-break: break-word; }
-.cost-result { color: var(--accent); font-weight: 650; font-size: 0.98rem; }
-.matrix-pick { color: var(--primary); font-weight: 600; }
-.sources-list { font-size: 0.86rem; color: var(--text-muted); line-height: 1.9; word-break: break-all; }
-.updated-note {
-  font-size: 0.8rem; color: var(--text-muted);
-  border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem;
-}
-.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.8rem 0; }
-.toc-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
-.toc ol { margin: 0 0 0 1.1rem; }
-.toc li { font-size: 0.9rem; margin-bottom: 0.25rem; }
-.toc a { color: #cbd5e1; text-decoration: none; }
-.toc a:hover { color: var(--primary); }
-footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <a href="../../" class="logo">⚡ DevTools<span>Radar</span></a>
+      <a href="../../" class="logo">DevTools<span>Radar</span></a>
       <div style="display:flex; gap:1rem; align-items:center;">
         <a href="../../deals/" class="nav-link">Deals</a>
         <a href="../../ko/" class="nav-link">한국어 핫딜</a>
@@ -291,10 +198,8 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
   <main class="container">
     <div class="meta-row">
-      <span class="badge badge-blue">AI & LLM APIs</span>
+      <span class="badge badge-blue">AI &amp; LLM APIs</span>
       <span class="badge badge-gray">Anthropic vs OpenAI</span>
-      <span>DevTeardown Team</span>
-      <span>·</span>
       <span>Prices verified 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
@@ -305,12 +210,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
-      <p>On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer's 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.</p>
-    </div>
-
-    <div class="answer-box">
-      <span class="label">Direct answer</span>
-      <p>On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached.</p>
+      <p>On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer&#x27;s 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.</p>
     </div>
 
     <div class="toc">
@@ -318,7 +218,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <ol><li><a href="#s1">Two sheets, one identical sticker</a></li><li><a href="#s2">The tokenizer changes the invoice before your prompt does</a></li><li><a href="#s3">Caching is a break-even test, not a discount</a></li><li><a href="#s4">Batch is the one line where both sheets agree</a></li><li><a href="#s5">Long prompts are where the sheets stop being comparable</a></li><li><a href="#s6">Three add-ons that quietly change the unit</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
     </div>
 
-    <h2>Key metric comparison</h2>
+    <h2>At a glance</h2>
     <div class="table-wrapper">
       <table>
         <thead>
@@ -347,27 +247,27 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
       <h2 id="s1">1. Two sheets, one identical sticker</h2>
       <p>The flagship rows of both price sheets match to the cent, and so do the cache reads.</p>
 <div class="table-wrapper"><table><thead><tr><th>Per million tokens</th><th>Claude Sonnet 5.5</th><th>GPT-6.1 Sol</th></tr></thead><tbody><tr><td>Input</td><td>$2.00</td><td>$2.00</td></tr><tr><td>Output</td><td>$10.00</td><td>$10.00</td></tr><tr><td>Cached input (hit)</td><td>$0.10</td><td>$0.10</td></tr><tr><td>5m or 30m cache write</td><td>$2.50 (1.25x)</td><td>$2.50 (1.25x)</td></tr><tr><td>Batch input / output</td><td>$1.00 / $5.00</td><td>$1.00 / $5.00</td></tr></tbody></table></div>
-<p>Anthropic's Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI's GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision.</p>
+<p>Anthropic&#x27;s Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI&#x27;s GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision.</p>
 
       <h2 id="s2">2. The tokenizer changes the invoice before your prompt does</h2>
-      <p>Anthropic's pricing page carries a note most price sheets would leave out: Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text.</p>
-<p>So the sticker is $2 per million tokens, and the bill is $2 per million tokens of Claude's counting. For text that costs $2.00 per million source tokens on a standard tokenizer, the same text costs $2.00 × 1.3 = $2.60.</p>
+      <p>Anthropic&#x27;s pricing page carries a note most price sheets would leave out: Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text.</p>
+<p>So the sticker is $2 per million tokens, and the bill is $2 per million tokens of Claude&#x27;s counting. For text that costs $2.00 per million source tokens on a standard tokenizer, the same text costs $2.00 × 1.3 = $2.60.</p>
 <p>That is a 30% difference on the largest line of a RAG or agent bill, and it does not appear anywhere in a side-by-side table that compares per-token prices. The note also says the exact increase depends on the content, so treat 1.3 as a working multiplier, not a constant.</p>
 
       <h2 id="s3">3. Caching is a break-even test, not a discount</h2>
       <p>Both vendors sell the same shape: pay more to write a prefix, pay less to read it. The multipliers are where they part.</p>
 <div class="table-wrapper"><table><thead><tr><th>Cache operation</th><th>Anthropic</th><th>OpenAI</th></tr></thead><tbody><tr><td>Write, short</td><td>1.25x, 5 minutes</td><td>1.25x, 30 minutes</td></tr><tr><td>Write, long</td><td>2x, 1 hour</td><td>2.5x, 12 hours</td></tr><tr><td>Read (hit)</td><td>0.1x, or 0.05x on 5.5 models</td><td>0.05x</td></tr></tbody></table></div>
-<p>A cached prefix costs 1.25 + 0.1n to serve n requests, against n uncached. The break-even is n = 1.39, so the second request already wins, and ten requests cost 2.25 instead of 10, a 77.5% cut on the input line. The long windows are worse deals for short runs: 2x + 0.1n beats n only from the third request, and OpenAI's 2.5x write needs three reads before it pays.</p>
+<p>A cached prefix costs 1.25 + 0.1n to serve n requests, against n uncached. The break-even is n = 1.39, so the second request already wins, and ten requests cost 2.25 instead of 10, a 77.5% cut on the input line. The long windows are worse deals for short runs: 2x + 0.1n beats n only from the third request, and OpenAI&#x27;s 2.5x write needs three reads before it pays.</p>
 
       <h2 id="s4">4. Batch is the one line where both sheets agree</h2>
       <p>Both vendors halve input and output for asynchronous work. Anthropic publishes the batch rows separately; OpenAI prints a Batch table and a separate Flex table at the same numbers.</p>
 <div class="table-wrapper"><table><thead><tr><th>Batch, per million</th><th>Claude Sonnet 5.5</th><th>Claude Opus 5.5</th><th>GPT-6.1 Sol</th></tr></thead><tbody><tr><td>Input</td><td>$1.00</td><td>$2.00</td><td>$1.00</td></tr><tr><td>Output</td><td>$5.00</td><td>$10.00</td><td>$5.00</td></tr></tbody></table></div>
-<p>Anthropic's page says its cache multipliers stack with the batch discount. That combination is the cheapest published way to process a large, stable corpus: a cached prefix at 0.1x inside a batch, on a job that can wait. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.</p>
+<p>Anthropic&#x27;s page says its cache multipliers stack with the batch discount. That combination is the cheapest published way to process a large, stable corpus: a cached prefix at 0.1x inside a batch, on a job that can wait. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.</p>
 
       <h2 id="s5">5. Long prompts are where the sheets stop being comparable</h2>
       <p>Both vendors reprice the prompt once it gets long, and they do it in different shapes.</p>
 <div class="table-wrapper"><table><thead><tr><th>Prompt size</th><th>GPT-6.1 Sol</th><th>Claude Haiku 5.5</th></tr></thead><tbody><tr><td>Short context, input</td><td>$2.00</td><td>$0.10 up to 100,000 tokens</td></tr><tr><td>Long context, input</td><td>$4.00</td><td>$0.50 over 100,000 tokens</td></tr><tr><td>Long context, output</td><td>$15.00</td><td>$2.50 over 100,000 tokens</td></tr></tbody></table></div>
-<p>OpenAI's long-context row doubles input and multiplies output by 1.5. Anthropic's Haiku sheet lists two rows, one for prompts up to 100,000 tokens and one for prompts over it, at five times the rate, and it does not print a marginal split.</p>
+<p>OpenAI&#x27;s long-context row doubles input and multiplies output by 1.5. Anthropic&#x27;s Haiku sheet lists two rows, one for prompts up to 100,000 tokens and one for prompts over it, at five times the rate, and it does not print a marginal split.</p>
 <p>A 200,000-token prompt therefore bills at 0.2 × $0.50 = $0.10 on the over-100k row against $0.02 if the same prompt fit under the line. That cliff, not the per-token sticker, is what a document pipeline hits when someone pastes a whole contract set.</p>
 
       <h2 id="s6">6. Three add-ons that quietly change the unit</h2>
@@ -397,7 +297,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
         <div class="cost-row">
           <div class="cost-label">Long window write on a twice-daily job</div>
           <div class="cost-formula">OpenAI 12h: 2.5 write + 0.10 read = 2.60, against 2 × 1.00 = 2.00 uncached. Anthropic 1h: 2.0 write + 0.10 read = 2.10, against 2.00</div>
-          <div class="cost-result">2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor's long window</div>
+          <div class="cost-result">2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor&#x27;s long window</div>
         </div></div>
       <h2 id="matrix">Decision matrix</h2>
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
@@ -406,7 +306,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; margin-top: 4re
         <tbody><tr><td>A long, stable system prompt at high volume</td><td class="matrix-pick">Either; decide on the tokenizer</td><td>Both bill the prefix at 1.25x to write and 0.10x or 0.05x to read, so a 30% token difference decides more than the cache terms do.</td></tr><tr><td>Prompts that regularly pass 100,000 tokens</td><td class="matrix-pick">Weigh the long-context row first</td><td>OpenAI doubles input and multiplies output by 1.5 past the boundary; Haiku 5.5 lists a rate five times higher for prompts over 100,000 tokens.</td></tr><tr><td>Nightly batch of a few hundred thousand jobs</td><td class="matrix-pick">Batch API on either</td><td>Both halve input and output, and a single nightly pass has no cache to read from, so a cold write only adds 25%.</td></tr><tr><td>A job that runs every 12 hours over one corpus</td><td class="matrix-pick">No cache at all</td><td>The 12-hour write costs 2.5x and the 1-hour write has expired by the next run; two uncached passes cost 2.0 against 2.6.</td></tr><tr><td>Output-heavy generation, 500+ tokens per call</td><td class="matrix-pick">GPT-6.1 Sol over Opus 5.5</td><td>Output is 5x input on both sheets, so the $10 against $20 output rate dominates the bill long before the input line does.</td></tr><tr><td>Streaming that a user is watching</td><td class="matrix-pick">Fast mode, at 2x</td><td>Opus 5.5 moves to $8 and $40 and GPT-6.1 Sol to $4 and $20, and fast mode cannot be combined with batch.</td></tr><tr><td>Data must stay in the US</td><td class="matrix-pick">Price the 1.1x before comparing</td><td>US-only inference multiplies every Claude token category by 1.1, cache writes and reads included, which changes a close comparison.</td></tr><tr><td>A prototype with prompts under 100,000 tokens</td><td class="matrix-pick">Claude Haiku 5.5</td><td>$0.10 input and $0.50 output per million is a twentieth of the flagship rows, and the over-100k rate only applies when the prompt crosses the line.</td></tr></tbody>
       </table></div>
 
-    <h2>Same task, two SDKs</h2>
+    <h2>Code and configuration</h2>
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
         <span class="badge badge-blue" style="margin-bottom:0.4rem;">Anthropic</span>
@@ -480,7 +380,7 @@ console.log(res.usage?.input_tokens_details);</code></pre>
 <p>Everything asynchronous needs resubmission. Batch jobs, files and fine-tuned endpoints are per-vendor objects with no portable format, and model deprecations retire a SKU you may still be calling, so keep the model name in configuration rather than in code.</p></div>
       </div>
 
-    <h2 id="faq">Questions that change the decision</h2>
+    <h2 id="faq">Common questions</h2>
     <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
       
         <div class="faq-item">
@@ -493,7 +393,7 @@ console.log(res.usage?.input_tokens_details);</code></pre>
         </div>
         <div class="faq-item">
           <div class="faq-q">What does the 30% tokenizer note change?</div>
-          <div class="faq-a">It raises the effective price per unit of source text by about 30% on Claude 4.7 and later, against a sheet whose per-token rates are otherwise identical to the competitor's.</div>
+          <div class="faq-a">It raises the effective price per unit of source text by about 30% on Claude 4.7 and later, against a sheet whose per-token rates are otherwise identical to the competitor&#x27;s.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Is a cache write ever a loss?</div>
@@ -508,11 +408,11 @@ console.log(res.usage?.input_tokens_details);</code></pre>
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../datadog-vs-grafana-cloud/" style="padding:1.1rem;">
-            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">Datadog vs Grafana Cloud</h3>
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Datadog vs Grafana Cloud</h3>
             <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The same discipline on a monitoring invoice: find the meter, then print the formula.</p>
           </a>
           <a class="card" href="../aws-lambda-vs-cloudflare-workers/" style="padding:1.1rem;">
-            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:#fff;">AWS Lambda vs Cloudflare Workers</h3>
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">AWS Lambda vs Cloudflare Workers</h3>
             <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">When the bill depends on whether you charge for waiting or for working.</p>
           </a></div>
 
@@ -522,42 +422,21 @@ console.log(res.usage?.input_tokens_details);</code></pre>
     </div>
 
     
-    <div style="margin: 3.5rem 0 1.5rem; padding: 1.6rem 1.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.8rem; flex-wrap:wrap; gap:0.5rem;">
-        <h3 style="margin:0; font-size:1.15rem; color:#fff;">⚡ Verified Tech Deals &amp; Workstation Gear</h3>
-        <span class="badge badge-blue">Curated for Builders</span>
-      </div>
-      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.2rem;">
-        High-impact developer hardware &amp; workstation picks tested for productivity, with live rocket delivery links.
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
       </p>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Mouse &amp; Desk Setup</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Logitech MX Master 3S</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Ergonomic silent switches with dual-scroll MagSpeed wheels.</p>
-          <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
-        </div>
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Workstation / Laptop</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Apple M4 MacBook Pro</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Unified memory bandwidth for local LLM inference and instant builds.</p>
-          <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">쿠팡 최저가 보기 →</a>
-        </div>
-        <div class="card" style="padding:1.1rem; background:var(--surface-raised);">
-          <div style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; margin-bottom:0.3rem;">Daily Limited Deals</div>
-          <strong style="display:block; color:#fff; font-size:1rem; margin-bottom:0.4rem;">Coupang Goldbox (7AM)</strong>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Daily limited morning flash discounts up to 50% on tech &amp; essentials.</p>
-          <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">골드박스 특가 보기 →</a>
-        </div>
-      </div>
-      <div style="font-size:0.75rem; color:#64748b; margin-top:1rem; padding-top:0.6rem; border-top:1px solid var(--border); text-align:right;">
-        * 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
-      </div>
-    </div>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. This market reprices often — if a number below looks wrong,
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -565,7 +444,7 @@ console.log(res.usage?.input_tokens_details);</code></pre>
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Independent developer analysis. No paid placement, no affiliate ranking.</p>
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
   </footer>
 </body>
