@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T15:16:42+09:00",
+  "generated_at": "2026-11-10T15:31:06+09:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -41,6 +41,228 @@
         "tracked": true,
         "matched_keyword": "로지텍 MX Master 3S",
         "label": "로지텍 MX Master 3S 로켓직구 (와우 무료배송)",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "deal-oliveyoung-gift-card-20k",
+      "region": "kr",
+      "target": "ko",
+      "category": "vouchers",
+      "category_label": "모바일 상품권 · e쿠폰",
+      "title_raw": "[실시간e쿠폰] [CJONE] 올리브영 기프트카드 20,000원권 (2% 할인 19,600원)",
+      "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
+      "store": "쿠팡 실시간e쿠폰",
+      "price": 19600,
+      "original_price": 20000,
+      "discount_pct": 2,
+      "shipping": "결제 즉시 문자/카카오톡 발송",
+      "rocket": false,
+      "specs": [
+        "CJ ONE 적립/사용 가능",
+        "온/오프라인 올리브영 전매장",
+        "실시간 바코드 전송"
+      ],
+      "briefing": [
+        "실구매가: 19,600원 (정가 2만 원에서 2% 즉시할인 e쿠폰)",
+        "추천: 화장품·면도날·영양제·간식 올리브영 쇼핑 전 상테크 생활비 절약",
+        "체크: 결제 완료 즉시 바코드가 발송되어 오프라인 매장 결제 시 바로 사용 가능"
+      ],
+      "audience": "올리브영 세일이나 생필품 구매 시 상테크 생활비 할인을 챙기는 분",
+      "published_at": "2026-11-10T15:28:00+09:00",
+      "score": 97,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyI8z25s60",
+        "tracked": true,
+        "matched_keyword": "올리브영 기프트카드",
+        "label": "올리브영 기프트카드 2만원권 (실시간 e쿠폰)",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "deal-pepero-sampler-6pack",
+      "region": "kr",
+      "target": "ko",
+      "category": "snacks",
+      "category_label": "맛있는 과자 · 탕비실 간식",
+      "title_raw": "롯데 빼빼로 샘플러 6종 선물세트 258g (초코·아몬드·화이트쿠키·크런키·누드 6종 모음)",
+      "product": "롯데 빼빼로 샘플러 6종 세트 258g (빼빼로데이)",
+      "store": "쿠팡 로켓배송",
+      "price": 9300,
+      "original_price": 12000,
+      "discount_pct": 23,
+      "shipping": "내일(수) 새벽 도착 보장",
+      "rocket": true,
+      "specs": [
+        "빼빼로데이 베스트셀러",
+        "6종 인기 맛 전구성",
+        "내일 11/11 새벽 도착 보장"
+      ],
+      "briefing": [
+        "실구매가: 9,300원 (6종 풀세트, 로켓 무료배송 9천 원대)",
+        "추천: 11월 11일 빼빼로데이 선물 및 사무실 동료들과 나눠 먹을 간식",
+        "체크: 쿠팡 로켓배송으로 내일 새벽 문 앞 보장 도착 (무료배송/무료반품)"
+      ],
+      "audience": "빼빼로데이 선물 준비 및 사무실 당 충전 간식을 찾는 분",
+      "published_at": "2026-11-10T15:28:00+09:00",
+      "score": 96,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyJh99DCuW",
+        "tracked": true,
+        "matched_keyword": "빼빼로 샘플러 6종",
+        "label": "롯데 빼빼로 샘플러 6종 세트 258g (새벽배송)",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "deal-orion-wow-snack-16",
+      "region": "kr",
+      "target": "ko",
+      "category": "snacks",
+      "category_label": "맛있는 과자 · 탕비실 간식",
+      "title_raw": "오리온 와우스낵 선물세트 16팩 (포카칩·꼬북칩·오감자·썬칩 등 인기스낵 16봉)",
+      "product": "오리온 와우스낵 16팩 선물세트 (인기스낵 16봉)",
+      "store": "쿠팡 로켓배송",
+      "price": 10980,
+      "original_price": 14800,
+      "discount_pct": 26,
+      "shipping": "와우 새벽 도착 보장",
+      "rocket": true,
+      "specs": [
+        "인기 스낵 16봉 모음",
+        "포카칩·꼬북칩·오감자·썬칩",
+        "봉당 686원 꼴 가성비"
+      ],
+      "briefing": [
+        "실구매가: 10,980원 (16봉 세트, 봉당 680원 대 가성비 종결)",
+        "추천: 사무실 탕비실 서랍에 쟁여두거나 야근·코딩할 때 바삭한 짠맛 땡기는 분",
+        "체크: 쿠팡 로켓배송으로 오늘 주문하면 내일 새벽 사무실/집 문 앞 도착"
+      ],
+      "audience": "사무실 간식 담당자, 야간 작업 시 짭짤한 스낵을 쟁여두는 분",
+      "published_at": "2026-11-10T15:28:00+09:00",
+      "score": 95,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyJbjsBrye",
+        "tracked": true,
+        "matched_keyword": "오리온 와우스낵 16팩",
+        "label": "오리온 와우스낵 16팩 선물세트 (새벽배송)",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "deal-coupang-gift-card-10k",
+      "region": "kr",
+      "target": "ko",
+      "category": "vouchers",
+      "category_label": "모바일 상품권 · e쿠폰",
+      "title_raw": "[모바일] 쿠팡·쿠팡이츠 기프트카드 10,000원권 (쿠팡캐시 100% 전환)",
+      "product": "쿠팡·쿠팡이츠 기프트카드 10,000원권 (모바일 e쿠폰)",
+      "store": "쿠팡 모바일쿠폰",
+      "price": 10000,
+      "original_price": 10000,
+      "discount_pct": 0,
+      "shipping": "결제 즉시 휴대폰 MMS/알림톡 발송",
+      "rocket": false,
+      "specs": [
+        "쿠팡캐시 10,000원 즉시 전환",
+        "로켓배송·쿠팡이츠 결제 사용",
+        "유효기간 5년"
+      ],
+      "briefing": [
+        "실구매가: 10,000원 (쿠팡캐시 10,000원 1:1 충전형 e쿠폰)",
+        "추천: 친구·동료에게 가볍게 모바일로 선물하거나 쿠팡이츠 배달 시 결제용",
+        "체크: 코드 입력 즉시 쿠팡캐시로 적립되어 와우회원 혜택과 중복 사용 가능"
+      ],
+      "audience": "쿠팡 로켓배송과 쿠팡이츠 배달을 자주 이용하고 선물용 쿠폰을 찾는 분",
+      "published_at": "2026-11-10T15:28:00+09:00",
+      "score": 93,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyJeI3BcT6",
+        "tracked": true,
+        "matched_keyword": "쿠팡 기프트카드",
+        "label": "쿠팡·쿠팡이츠 기프트카드 (모바일 e쿠폰)",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "deal-orion-bichobi-2pack",
+      "region": "kr",
+      "target": "ko",
+      "category": "snacks",
+      "category_label": "맛있는 과자 · 탕비실 간식",
+      "title_raw": "오리온 비쵸비 비스켓 125g 2개입 (통밀 비스킷 사이 두툼한 진짜 통초콜릿)",
+      "product": "오리온 비쵸비 비스켓 125g 2개입",
+      "store": "쿠팡 로켓배송",
+      "price": 4370,
+      "original_price": 5200,
+      "discount_pct": 16,
+      "shipping": "내일 새벽 도착 보장",
+      "rocket": true,
+      "specs": [
+        "통밀 비스킷 + 두툼한 통밀크초콜릿",
+        "개별 포장 5개입 x 2상자",
+        "커피·우유 꿀조합"
+      ],
+      "briefing": [
+        "실구매가: 4,370원 (2상자 세트, 로켓 새벽배송 최저가)",
+        "추천: 얇은 초코 과자와 달리 진짜 두툼한 통초콜릿이 씹히는 고급 간식",
+        "체크: 아메리카노나 라떼랑 찰떡궁합, 품절 잦은 스낵 마니아 원픽"
+      ],
+      "audience": "커피와 함께 곁들일 진짜 초콜릿 디저트를 찾는 직장인",
+      "published_at": "2026-11-10T15:28:00+09:00",
+      "score": 94,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyJdEYzZMO",
+        "tracked": true,
+        "matched_keyword": "오리온 비쵸비",
+        "label": "오리온 비쵸비 125g 2개입 (새벽배송)",
+        "label_kind": "상품"
+      }
+    },
+    {
+      "id": "deal-office-pantry-snack-10",
+      "region": "kr",
+      "target": "ko",
+      "category": "snacks",
+      "category_label": "맛있는 과자 · 탕비실 간식",
+      "title_raw": "사무실 과자 세트 10종(+1) 탕비실 간식 세트 (오예스·초코하임·쿠크다스 모음)",
+      "product": "사무실 과자 세트 10종 탕비실 간식 세트",
+      "store": "쿠팡 무료배송",
+      "price": 27800,
+      "original_price": 35000,
+      "discount_pct": 21,
+      "shipping": "무료배송",
+      "rocket": false,
+      "specs": [
+        "인기 프리미엄 과자 10종 모음",
+        "개별 포장 위생 보관",
+        "오예스·초코하임·쿠크다스"
+      ],
+      "briefing": [
+        "실구매가: 27,800원 (무료배송, 탕비실 인기 스테디셀러 10종 완벽 구성)",
+        "추천: 팀원들 당 떨어질 때 집어먹는 달콤한 초코·비스킷 간식 일괄 구비",
+        "체크: 개별 포장이라 책상 위나 회의실에 두고 하나씩 깔끔하게 먹기 좋음"
+      ],
+      "audience": "회사 탕비실 간식 담당, 팀 간식 재고를 한 번에 채우려는 엔지니어",
+      "published_at": "2026-11-10T15:28:00+09:00",
+      "score": 92,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyJcuOpMhU",
+        "tracked": true,
+        "matched_keyword": "사무실 과자 10종 탕비실 세트",
+        "label": "사무실 과자 10종 탕비실 세트 (무료배송)",
         "label_kind": "상품"
       }
     },
@@ -416,161 +638,235 @@
     }
   ],
   "categories": {
-    "laptops": {
-      "label": "맥북 · 노트북 · 워크스테이션",
-      "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+    "vouchers": {
+      "label": "모바일 상품권 · e쿠폰",
+      "audience": "상테크·생활비 절약, 카페·배달·쇼핑 금액권을 찾는 분",
       "items": [
         {
-          "id": "deal-apple-m4-macbook-pro",
+          "id": "deal-oliveyoung-gift-card-20k",
           "region": "kr",
           "target": "ko",
-          "category": "laptops",
-          "category_label": "맥북 · 노트북 · 워크스테이션",
-          "title_raw": "Apple 2024 맥북 프로 14 M4 Pro (로켓배송 카드즉시할인)",
-          "product": "Apple M4 Pro MacBook Pro 14",
-          "store": "쿠팡 로켓배송",
-          "price": 2990000,
-          "original_price": 3290000,
-          "discount_pct": 9,
-          "shipping": "내일 새벽 도착 보장",
-          "rocket": true,
+          "category": "vouchers",
+          "category_label": "모바일 상품권 · e쿠폰",
+          "title_raw": "[실시간e쿠폰] [CJONE] 올리브영 기프트카드 20,000원권 (2% 할인 19,600원)",
+          "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
+          "store": "쿠팡 실시간e쿠폰",
+          "price": 19600,
+          "original_price": 20000,
+          "discount_pct": 2,
+          "shipping": "결제 즉시 문자/카카오톡 발송",
+          "rocket": false,
           "specs": [
-            "M4 Pro 12코어 CPU / 16코어 GPU",
-            "24GB 통합 메모리",
-            "512GB SSD"
+            "CJ ONE 적립/사용 가능",
+            "온/오프라인 올리브영 전매장",
+            "실시간 바코드 전송"
           ],
           "briefing": [
-            "실구매가: 2,990,000원 (카드사 즉시할인 및 무이자 할부 혜택)",
-            "추천: 로컬 LLM 양자화 모델(Ollama) 추론과 대규모 도커 빌드를 병행하는 백엔드 개발자",
-            "체크: 통합 메모리 대역폭 273GB/s로 컴파일 및 컨테이너 빌드 시간 반토막"
+            "실구매가: 19,600원 (정가 2만 원에서 2% 즉시할인 e쿠폰)",
+            "추천: 화장품·면도날·영양제·간식 올리브영 쇼핑 전 상테크 생활비 절약",
+            "체크: 결제 완료 즉시 바코드가 발송되어 오프라인 매장 결제 시 바로 사용 가능"
           ],
-          "audience": "빌드 속도와 로컬 AI 개발 환경을 한 번에 업그레이드하려는 개발자",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 96,
+          "audience": "올리브영 세일이나 생필품 구매 시 상테크 생활비 할인을 챙기는 분",
+          "published_at": "2026-11-10T15:28:00+09:00",
+          "score": 97,
           "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
           "ai_rewritten": true,
           "link": {
-            "url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "url": "https://link.coupang.com/a/iyI8z25s60",
             "tracked": true,
-            "matched_keyword": "애플 M4 맥북 프로",
-            "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
+            "matched_keyword": "올리브영 기프트카드",
+            "label": "올리브영 기프트카드 2만원권 (실시간 e쿠폰)",
             "label_kind": "상품"
           }
         },
         {
-          "id": "deal-mini-pc-n100",
+          "id": "deal-coupang-gift-card-10k",
           "region": "kr",
           "target": "ko",
-          "category": "laptops",
-          "category_label": "맥북 · 노트북 · 워크스테이션",
-          "title_raw": "초소형 미니PC 16GB RAM + 512GB SSD (저전력 개발 홈서버용)",
-          "product": "미니PC 16GB N100 저전력 홈서버",
-          "store": "쿠팡 로켓배송",
-          "price": 189000,
-          "original_price": 259000,
-          "discount_pct": 27,
-          "shipping": "로켓배송 무료배송",
-          "rocket": true,
+          "category": "vouchers",
+          "category_label": "모바일 상품권 · e쿠폰",
+          "title_raw": "[모바일] 쿠팡·쿠팡이츠 기프트카드 10,000원권 (쿠팡캐시 100% 전환)",
+          "product": "쿠팡·쿠팡이츠 기프트카드 10,000원권 (모바일 e쿠폰)",
+          "store": "쿠팡 모바일쿠폰",
+          "price": 10000,
+          "original_price": 10000,
+          "discount_pct": 0,
+          "shipping": "결제 즉시 휴대폰 MMS/알림톡 발송",
+          "rocket": false,
           "specs": [
-            "Intel N100 4코어",
-            "16GB DDR5",
-            "512GB NVMe M.2"
+            "쿠팡캐시 10,000원 즉시 전환",
+            "로켓배송·쿠팡이츠 결제 사용",
+            "유효기간 5년"
           ],
           "briefing": [
-            "실구매가: 189,000원 (20만 원 이하 가성비 종결)",
-            "추천: 24시간 도커 컨테이너, 홈서버, 자동화 봇, DB 테스트베드를 돌릴 저전력 머신",
-            "체크: 소비전력 6W 수준으로 한 달 전기요금 1,000원 안팎"
+            "실구매가: 10,000원 (쿠팡캐시 10,000원 1:1 충전형 e쿠폰)",
+            "추천: 친구·동료에게 가볍게 모바일로 선물하거나 쿠팡이츠 배달 시 결제용",
+            "체크: 코드 입력 즉시 쿠팡캐시로 적립되어 와우회원 혜택과 중복 사용 가능"
           ],
-          "audience": "개인 사이드 프로젝트나 홈랩을 클라우드 비용 없이 운영하고 싶은 엔지니어",
-          "published_at": "2026-11-10T15:16:42+09:00",
+          "audience": "쿠팡 로켓배송과 쿠팡이츠 배달을 자주 이용하고 선물용 쿠폰을 찾는 분",
+          "published_at": "2026-11-10T15:28:00+09:00",
           "score": 93,
           "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
           "ai_rewritten": true,
           "link": {
-            "url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "url": "https://link.coupang.com/a/iyJeI3BcT6",
             "tracked": true,
-            "matched_keyword": "미니PC 16GB",
-            "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
+            "matched_keyword": "쿠팡 기프트카드",
+            "label": "쿠팡·쿠팡이츠 기프트카드 (모바일 e쿠폰)",
             "label_kind": "상품"
           }
         }
       ]
     },
-    "monitor-desk": {
-      "label": "모니터 · 암 · 데스크",
-      "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+    "snacks": {
+      "label": "맛있는 과자 · 탕비실 간식",
+      "audience": "사무실 탕비실 간식, 야근 당 충전 및 입 심심할 때 쟁여두는 과자",
       "items": [
         {
-          "id": "deal-lg-ultragear-27",
+          "id": "deal-pepero-sampler-6pack",
           "region": "kr",
           "target": "ko",
-          "category": "monitor-desk",
-          "category_label": "모니터 · 암 · 데스크",
-          "title_raw": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
-          "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
+          "category": "snacks",
+          "category_label": "맛있는 과자 · 탕비실 간식",
+          "title_raw": "롯데 빼빼로 샘플러 6종 선물세트 258g (초코·아몬드·화이트쿠키·크런키·누드 6종 모음)",
+          "product": "롯데 빼빼로 샘플러 6종 세트 258g (빼빼로데이)",
           "store": "쿠팡 로켓배송",
-          "price": 241734,
-          "original_price": 329000,
-          "discount_pct": 26,
-          "shipping": "로켓배송 무료배송",
+          "price": 9300,
+          "original_price": 12000,
+          "discount_pct": 23,
+          "shipping": "내일(수) 새벽 도착 보장",
           "rocket": true,
           "specs": [
-            "27인치 QHD (2560x1440)",
-            "Fast IPS 200Hz",
-            "HDR10"
+            "빼빼로데이 베스트셀러",
+            "6종 인기 맛 전구성",
+            "내일 11/11 새벽 도착 보장"
           ],
           "briefing": [
-            "실구매가: 241,734원 (정가 32.9만 원 대비 역대급 특가)",
-            "추천: 코드 3분할 뷰와 선명한 폰트 가독성이 필요한 개발자 서브/메인 모니터",
-            "체크: 피벗·틸트 지원 스탠드 기본 제공, QHD 해상도로 글자 뭉개짐 없음"
+            "실구매가: 9,300원 (6종 풀세트, 로켓 무료배송 9천 원대)",
+            "추천: 11월 11일 빼빼로데이 선물 및 사무실 동료들과 나눠 먹을 간식",
+            "체크: 쿠팡 로켓배송으로 내일 새벽 문 앞 보장 도착 (무료배송/무료반품)"
           ],
-          "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·풀스택",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 94,
+          "audience": "빼빼로데이 선물 준비 및 사무실 당 충전 간식을 찾는 분",
+          "published_at": "2026-11-10T15:28:00+09:00",
+          "score": 96,
           "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
           "ai_rewritten": true,
           "link": {
-            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "url": "https://link.coupang.com/a/iyJh99DCuW",
             "tracked": true,
-            "matched_keyword": "LG 울트라기어 27인치 QHD",
-            "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
+            "matched_keyword": "빼빼로 샘플러 6종",
+            "label": "롯데 빼빼로 샘플러 6종 세트 258g (새벽배송)",
             "label_kind": "상품"
           }
         },
         {
-          "id": "deal-heavy-duty-monitor-arm",
+          "id": "deal-orion-wow-snack-16",
           "region": "kr",
           "target": "ko",
-          "category": "monitor-desk",
-          "category_label": "모니터 · 암 · 데스크",
-          "title_raw": "고중량 싱글/듀얼 모니터암 거치대 (최대 32인치 9kg 지원)",
-          "product": "고중량 기계식 모니터암 거치대",
+          "category": "snacks",
+          "category_label": "맛있는 과자 · 탕비실 간식",
+          "title_raw": "오리온 와우스낵 선물세트 16팩 (포카칩·꼬북칩·오감자·썬칩 등 인기스낵 16봉)",
+          "product": "오리온 와우스낵 16팩 선물세트 (인기스낵 16봉)",
           "store": "쿠팡 로켓배송",
-          "price": 49900,
-          "original_price": 69000,
-          "discount_pct": 28,
-          "shipping": "로켓배송 무료배송",
+          "price": 10980,
+          "original_price": 14800,
+          "discount_pct": 26,
+          "shipping": "와우 새벽 도착 보장",
           "rocket": true,
           "specs": [
-            "가스 스프링 방식",
-            "VESA 75x75 / 100x100",
-            "케이블 수납형"
+            "인기 스낵 16봉 모음",
+            "포카칩·꼬북칩·오감자·썬칩",
+            "봉당 686원 꼴 가성비"
           ],
           "briefing": [
-            "실구매가: 49,900원 (쿠팡 로켓 특가)",
-            "추천: 거북목 방지를 위해 모니터를 눈높이로 띄우고 데스크 공간을 2배로 넓히려는 분",
-            "체크: 스탠드 다리가 사라져 모니터 아래 키보드·노트 수납 완벽 가능"
+            "실구매가: 10,980원 (16봉 세트, 봉당 680원 대 가성비 종결)",
+            "추천: 사무실 탕비실 서랍에 쟁여두거나 야근·코딩할 때 바삭한 짠맛 땡기는 분",
+            "체크: 쿠팡 로켓배송으로 오늘 주문하면 내일 새벽 사무실/집 문 앞 도착"
           ],
-          "audience": "데스크 셋업을 깔끔하게 정리하고 목·어깨 통증을 줄이려는 개발자",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 91,
+          "audience": "사무실 간식 담당자, 야간 작업 시 짭짤한 스낵을 쟁여두는 분",
+          "published_at": "2026-11-10T15:28:00+09:00",
+          "score": 95,
           "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
           "ai_rewritten": true,
           "link": {
-            "url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "url": "https://link.coupang.com/a/iyJbjsBrye",
             "tracked": true,
-            "matched_keyword": "모니터암",
-            "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
+            "matched_keyword": "오리온 와우스낵 16팩",
+            "label": "오리온 와우스낵 16팩 선물세트 (새벽배송)",
+            "label_kind": "상품"
+          }
+        },
+        {
+          "id": "deal-orion-bichobi-2pack",
+          "region": "kr",
+          "target": "ko",
+          "category": "snacks",
+          "category_label": "맛있는 과자 · 탕비실 간식",
+          "title_raw": "오리온 비쵸비 비스켓 125g 2개입 (통밀 비스킷 사이 두툼한 진짜 통초콜릿)",
+          "product": "오리온 비쵸비 비스켓 125g 2개입",
+          "store": "쿠팡 로켓배송",
+          "price": 4370,
+          "original_price": 5200,
+          "discount_pct": 16,
+          "shipping": "내일 새벽 도착 보장",
+          "rocket": true,
+          "specs": [
+            "통밀 비스킷 + 두툼한 통밀크초콜릿",
+            "개별 포장 5개입 x 2상자",
+            "커피·우유 꿀조합"
+          ],
+          "briefing": [
+            "실구매가: 4,370원 (2상자 세트, 로켓 새벽배송 최저가)",
+            "추천: 얇은 초코 과자와 달리 진짜 두툼한 통초콜릿이 씹히는 고급 간식",
+            "체크: 아메리카노나 라떼랑 찰떡궁합, 품절 잦은 스낵 마니아 원픽"
+          ],
+          "audience": "커피와 함께 곁들일 진짜 초콜릿 디저트를 찾는 직장인",
+          "published_at": "2026-11-10T15:28:00+09:00",
+          "score": 94,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyJdEYzZMO",
+            "tracked": true,
+            "matched_keyword": "오리온 비쵸비",
+            "label": "오리온 비쵸비 125g 2개입 (새벽배송)",
+            "label_kind": "상품"
+          }
+        },
+        {
+          "id": "deal-office-pantry-snack-10",
+          "region": "kr",
+          "target": "ko",
+          "category": "snacks",
+          "category_label": "맛있는 과자 · 탕비실 간식",
+          "title_raw": "사무실 과자 세트 10종(+1) 탕비실 간식 세트 (오예스·초코하임·쿠크다스 모음)",
+          "product": "사무실 과자 세트 10종 탕비실 간식 세트",
+          "store": "쿠팡 무료배송",
+          "price": 27800,
+          "original_price": 35000,
+          "discount_pct": 21,
+          "shipping": "무료배송",
+          "rocket": false,
+          "specs": [
+            "인기 프리미엄 과자 10종 모음",
+            "개별 포장 위생 보관",
+            "오예스·초코하임·쿠크다스"
+          ],
+          "briefing": [
+            "실구매가: 27,800원 (무료배송, 탕비실 인기 스테디셀러 10종 완벽 구성)",
+            "추천: 팀원들 당 떨어질 때 집어먹는 달콤한 초코·비스킷 간식 일괄 구비",
+            "체크: 개별 포장이라 책상 위나 회의실에 두고 하나씩 깔끔하게 먹기 좋음"
+          ],
+          "audience": "회사 탕비실 간식 담당, 팀 간식 재고를 한 번에 채우려는 엔지니어",
+          "published_at": "2026-11-10T15:28:00+09:00",
+          "score": 92,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyJcuOpMhU",
+            "tracked": true,
+            "matched_keyword": "사무실 과자 10종 탕비실 세트",
+            "label": "사무실 과자 10종 탕비실 세트 (무료배송)",
             "label_kind": "상품"
           }
         }
@@ -810,9 +1106,169 @@
         }
       ]
     },
+    "monitor-desk": {
+      "label": "모니터 · 암 · 데스크",
+      "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+      "items": [
+        {
+          "id": "deal-lg-ultragear-27",
+          "region": "kr",
+          "target": "ko",
+          "category": "monitor-desk",
+          "category_label": "모니터 · 암 · 데스크",
+          "title_raw": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
+          "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
+          "store": "쿠팡 로켓배송",
+          "price": 241734,
+          "original_price": 329000,
+          "discount_pct": 26,
+          "shipping": "로켓배송 무료배송",
+          "rocket": true,
+          "specs": [
+            "27인치 QHD (2560x1440)",
+            "Fast IPS 200Hz",
+            "HDR10"
+          ],
+          "briefing": [
+            "실구매가: 241,734원 (정가 32.9만 원 대비 역대급 특가)",
+            "추천: 코드 3분할 뷰와 선명한 폰트 가독성이 필요한 개발자 서브/메인 모니터",
+            "체크: 피벗·틸트 지원 스탠드 기본 제공, QHD 해상도로 글자 뭉개짐 없음"
+          ],
+          "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·풀스택",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 94,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "tracked": true,
+            "matched_keyword": "LG 울트라기어 27인치 QHD",
+            "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
+            "label_kind": "상품"
+          }
+        },
+        {
+          "id": "deal-heavy-duty-monitor-arm",
+          "region": "kr",
+          "target": "ko",
+          "category": "monitor-desk",
+          "category_label": "모니터 · 암 · 데스크",
+          "title_raw": "고중량 싱글/듀얼 모니터암 거치대 (최대 32인치 9kg 지원)",
+          "product": "고중량 기계식 모니터암 거치대",
+          "store": "쿠팡 로켓배송",
+          "price": 49900,
+          "original_price": 69000,
+          "discount_pct": 28,
+          "shipping": "로켓배송 무료배송",
+          "rocket": true,
+          "specs": [
+            "가스 스프링 방식",
+            "VESA 75x75 / 100x100",
+            "케이블 수납형"
+          ],
+          "briefing": [
+            "실구매가: 49,900원 (쿠팡 로켓 특가)",
+            "추천: 거북목 방지를 위해 모니터를 눈높이로 띄우고 데스크 공간을 2배로 넓히려는 분",
+            "체크: 스탠드 다리가 사라져 모니터 아래 키보드·노트 수납 완벽 가능"
+          ],
+          "audience": "데스크 셋업을 깔끔하게 정리하고 목·어깨 통증을 줄이려는 개발자",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 91,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "tracked": true,
+            "matched_keyword": "모니터암",
+            "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
+            "label_kind": "상품"
+          }
+        }
+      ]
+    },
+    "laptops": {
+      "label": "맥북 · 노트북 · 워크스테이션",
+      "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+      "items": [
+        {
+          "id": "deal-apple-m4-macbook-pro",
+          "region": "kr",
+          "target": "ko",
+          "category": "laptops",
+          "category_label": "맥북 · 노트북 · 워크스테이션",
+          "title_raw": "Apple 2024 맥북 프로 14 M4 Pro (로켓배송 카드즉시할인)",
+          "product": "Apple M4 Pro MacBook Pro 14",
+          "store": "쿠팡 로켓배송",
+          "price": 2990000,
+          "original_price": 3290000,
+          "discount_pct": 9,
+          "shipping": "내일 새벽 도착 보장",
+          "rocket": true,
+          "specs": [
+            "M4 Pro 12코어 CPU / 16코어 GPU",
+            "24GB 통합 메모리",
+            "512GB SSD"
+          ],
+          "briefing": [
+            "실구매가: 2,990,000원 (카드사 즉시할인 및 무이자 할부 혜택)",
+            "추천: 로컬 LLM 양자화 모델(Ollama) 추론과 대규모 도커 빌드를 병행하는 백엔드 개발자",
+            "체크: 통합 메모리 대역폭 273GB/s로 컴파일 및 컨테이너 빌드 시간 반토막"
+          ],
+          "audience": "빌드 속도와 로컬 AI 개발 환경을 한 번에 업그레이드하려는 개발자",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 96,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "tracked": true,
+            "matched_keyword": "애플 M4 맥북 프로",
+            "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
+            "label_kind": "상품"
+          }
+        },
+        {
+          "id": "deal-mini-pc-n100",
+          "region": "kr",
+          "target": "ko",
+          "category": "laptops",
+          "category_label": "맥북 · 노트북 · 워크스테이션",
+          "title_raw": "초소형 미니PC 16GB RAM + 512GB SSD (저전력 개발 홈서버용)",
+          "product": "미니PC 16GB N100 저전력 홈서버",
+          "store": "쿠팡 로켓배송",
+          "price": 189000,
+          "original_price": 259000,
+          "discount_pct": 27,
+          "shipping": "로켓배송 무료배송",
+          "rocket": true,
+          "specs": [
+            "Intel N100 4코어",
+            "16GB DDR5",
+            "512GB NVMe M.2"
+          ],
+          "briefing": [
+            "실구매가: 189,000원 (20만 원 이하 가성비 종결)",
+            "추천: 24시간 도커 컨테이너, 홈서버, 자동화 봇, DB 테스트베드를 돌릴 저전력 머신",
+            "체크: 소비전력 6W 수준으로 한 달 전기요금 1,000원 안팎"
+          ],
+          "audience": "개인 사이드 프로젝트나 홈랩을 클라우드 비용 없이 운영하고 싶은 엔지니어",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 93,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "tracked": true,
+            "matched_keyword": "미니PC 16GB",
+            "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
+            "label_kind": "상품"
+          }
+        }
+      ]
+    },
     "afterwork": {
-      "label": "야근 · 생산성 · 커피·간식",
-      "audience": "야근 잦은 개발팀, 사무실 커피·간식 재고를 맡은 분",
+      "label": "야근 · 생산성 · 커피·음료",
+      "audience": "야근 잦은 개발팀, 사무실 커피·음료 재고를 맡은 분",
       "items": [
         {
           "id": "deal-office-coffee-bean-1kg",
@@ -864,6 +1320,22 @@
       "tracked": true
     },
     {
+      "category": "vouchers",
+      "kicker": "Living / Voucher",
+      "title": "올리브영 기프트카드 20,000원권",
+      "desc": "CJ ONE 적립 가능한 실시간 e쿠폰. 화장품·생필품 쇼핑 전 2% 즉시할인 상테크.",
+      "url": "https://link.coupang.com/a/iyI8z25s60",
+      "tracked": true
+    },
+    {
+      "category": "snacks",
+      "kicker": "Pantry / Snack",
+      "title": "롯데 빼빼로 샘플러 6종 세트",
+      "desc": "내일 11/11 빼빼로데이 선물 & 탕비실 당 충전. 6종 인기 맛 모음 로켓 새벽배송.",
+      "url": "https://link.coupang.com/a/iyJh99DCuW",
+      "tracked": true
+    },
+    {
       "category": "tech",
       "kicker": "Fast Charger / GaN",
       "title": "벨킨 100W GaN 초고속 충전기",
@@ -872,27 +1344,11 @@
       "tracked": true
     },
     {
-      "category": "laptops",
-      "kicker": "Workstation / Laptop",
-      "title": "Apple M4 Pro MacBook Pro",
-      "desc": "통합 메모리 대역폭으로 로컬 LLM 추론과 도커 빌드를 한 대에서. 14인치.",
-      "url": "https://link.coupang.com/a/iyxHrMNtyC",
-      "tracked": true
-    },
-    {
-      "category": "monitor-desk",
-      "kicker": "Desk Ergonomics",
-      "title": "고중량 모니터암 거치대",
-      "desc": "모니터를 눈높이로 띄워 거북목 방지. 데스크 하부 공간 확보.",
-      "url": "https://link.coupang.com/a/iyzzXmg6CG",
-      "tracked": true
-    },
-    {
-      "category": "keyboard-mouse",
-      "kicker": "Silent Keyboard",
-      "title": "저소음 적축 기계식 키보드",
-      "desc": "사무실·야간 작업에서도 눈치 보이지 않는 리니어 적축. 손목 피로 최소화.",
-      "url": "https://link.coupang.com/a/iyzxBosAM0",
+      "category": "snacks",
+      "kicker": "Office Bites",
+      "title": "오리온 와우스낵 16팩 세트",
+      "desc": "포카칩·꼬북칩·오감자·썬칩 16봉. 봉당 680원대 탕비실 쟁여두기 베스트셀러.",
+      "url": "https://link.coupang.com/a/iyJbjsBrye",
       "tracked": true
     }
   ],
@@ -901,8 +1357,8 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 11,
-    "tracked_links": 11,
+    "feed": 17,
+    "tracked_links": 17,
     "search_fallback": 0
   }
 }

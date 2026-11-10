@@ -616,11 +616,13 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", -a
 """
 
 CAT_SHORT = {
-    "laptops": "노트북·PC",
-    "monitor-desk": "모니터·데스크",
+    "vouchers": "상품권·쿠폰",
+    "snacks": "과자·스낵",
     "keyboard-mouse": "키보드·마우스",
-    "afterwork": "커피·간식",
     "tech": "테크 장비",
+    "monitor-desk": "모니터·데스크",
+    "laptops": "노트북·PC",
+    "afterwork": "커피·음료",
 }
 
 FACT_ICONS = [
@@ -793,20 +795,22 @@ def generate_ko_html(deals: dict) -> str:
     goldbox = deals.get("goldbox") or {"url": "https://link.coupang.com/a/iyxEbxQMEK", "label": "쿠팡 골드박스"}
     updated = deals.get("generated_at", "")[:10].replace("-", ".") or "2026.11.10"
 
-    feed_cards = "".join(_deal_card(d) for d in feed[:12])
+    feed_cards = "".join(_deal_card(d) for d in feed[:24])
     if not feed_cards:
         feed_cards = ('<p style="color:#94a3b8;font-size:0.92rem;padding:1rem 0;">'
                       '지금 수집된 신규 테크 핫딜이 없습니다. 아래 큐레이션과 골드박스를 확인하세요.</p>')
 
     tabs = _tabs(
         categories,
-        [("monitor-desk", "모니터·데스크"), ("keyboard-mouse", "키보드·마우스"),
-         ("laptops", "노트북·PC"), ("afterwork", "커피·간식")],
-        len(feed[:12]),
+        [("vouchers", "상품권·쿠폰"), ("snacks", "과자·스낵"),
+         ("keyboard-mouse", "키보드·마우스"), ("tech", "테크 장비"),
+         ("monitor-desk", "모니터·데스크"), ("laptops", "노트북·PC"),
+         ("afterwork", "커피·음료")],
+        len(feed[:24]),
     )
 
     cat_html = ""
-    for slug in ("laptops", "monitor-desk", "keyboard-mouse", "afterwork"):
+    for slug in ("vouchers", "snacks", "keyboard-mouse", "tech", "monitor-desk", "laptops", "afterwork"):
         cat = categories.get(slug) or {}
         rows = ""
         for d in cat.get("items", [])[:4]:
@@ -869,7 +873,7 @@ def generate_ko_html(deals: dict) -> str:
           {"@type": "ListItem", "position": i + 1,
            "name": d.get("product", ""),
            "url": (d.get("link") or {}).get("url", "")}
-          for i, d in enumerate(feed[:12])
+          for i, d in enumerate(feed[:24])
       ],
   }, ensure_ascii=False, indent=2)}
   </script>
@@ -899,7 +903,7 @@ def generate_ko_html(deals: dict) -> str:
       지금 사도 되는지 판단할 수 있는 숫자만 남겼습니다.</p>
       <div class="ko-stats">
         <div class="ko-stat"><strong>{len(feed)}건</strong>실시간 핫딜</div>
-        <div class="ko-stat"><strong>4개</strong>장비 카테고리</div>
+        <div class="ko-stat"><strong>{len(categories)}개</strong>핫딜 카테고리</div>
         <div class="ko-stat"><strong>{updated}</strong>업데이트</div>
         <div class="ko-stat"><strong>0원</strong>가입 비용</div>
       </div>
