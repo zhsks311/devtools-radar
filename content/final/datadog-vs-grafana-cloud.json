@@ -81,7 +81,7 @@
     {
       "situation": "Logs are verbose JSON from a dozen services",
       "pick": "Compute both before choosing",
-      "why": "Datadog's index rate is per event and Grafana's is per GB, so 500 GB at 2.5 KB per event bills $550 against $247.50 and at 250 bytes per event the ratio flips toward events."
+      "why": "Datadog's index rate is per event and Grafana's is per GB, so 500 GB at 2.5 KB per event bills $550 against $247.50, and the same 500 GB at 250 bytes per event is 2 billion events, or $5,000 on the index line."
     },
     {
       "situation": "Security, SIEM and audit on one invoice",

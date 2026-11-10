@@ -107,7 +107,7 @@ The reverse move is the expensive direction for a small team: going to Datadog m
 | Five hosts and one person on call | Grafana Cloud | Datadog's licence starts at $75 for five hosts before any custom metrics; Grafana's platform fee is $19 for the account. |
 | You need 15 months of full-resolution metrics | Datadog | Datadog keeps 15 months on Pro; Grafana Cloud Pro lists 13 months for metrics and 30 days for logs and traces. |
 | The custom metrics line is already over $500 | Grafana Cloud | That line is $500 per 10,000 series on Datadog and $65 per 10,000 on Grafana, so the same data crosses a factor of 7.7. |
-| Logs are verbose JSON from a dozen services | Compute both before choosing | Datadog's index rate is per event and Grafana's is per GB, so 500 GB at 2.5 KB per event bills $550 against $247.50 and at 250 bytes per event the ratio flips toward events. |
+| Logs are verbose JSON from a dozen services | Compute both before choosing | Datadog's index rate is per event and Grafana's is per GB, so 500 GB at 2.5 KB per event bills $550 against $247.50, and the same 500 GB at 250 bytes per event is 2 billion events, or $5,000 on the index line. |
 | Security, SIEM and audit on one invoice | Datadog | Cloud SIEM, workload protection and audit trail are on the same price list; Grafana Cloud prices observability and leaves security elsewhere. |
 | Everything is already Prometheus and you self-host Grafana | Grafana Cloud, or keep self-hosting | The remote-write path means no re-instrumentation, and the open-source stack is the same software the paid plan runs. |
 
