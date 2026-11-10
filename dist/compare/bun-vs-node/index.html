@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://devteardown.com/compare/bun-vs-node/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/bun-vs-node/">
   <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/bun-vs-node/">
-  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Bun vs Node.js — 2026 teardown">
   <meta property="og:description" content="Bun&#x27;s own test count says node:http passes 403 of 415 tests, and Node&#x27;s own calendar says v20 died on 24 March 2026. Neither runtime charges a cent, so the bill arrives somewhere e">
   <meta property="og:type" content="article">
@@ -22,15 +22,23 @@
   "@type": "TechArticle",
   "headline": "Bun vs Node.js: a 2026 engineering teardown",
   "description": "Bun's own test count says node:http passes 403 of 415 tests, and Node's own calendar says v20 died on 24 March 2026. Neither runtime charges a cent, so the bill arrives somewhere else.",
-  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTeardown Team"
+    "name": "DevTeardown",
+    "url": "https://devteardown.com/editorial-policy/"
   },
+  "inLanguage": "en",
+  "citation": [
+    "https://bun.com/blog/bun-v1.4",
+    "https://bun.com/blog/bun-joins-anthropic",
+    "https://bun.com/docs/runtime/nodejs-compat",
+    "https://nodejs.org/en/about/previous-releases",
+    "https://nodejs.org/api/typescript.html"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown"
   },
   "mainEntityOfPage": "https://devteardown.com/compare/bun-vs-node/"
 }
@@ -191,7 +199,7 @@ footer p { font-size:.8rem; margin:0; }
     <div class="meta-row">
       <span class="badge badge-blue">Runtimes &amp; Tooling</span>
       <span class="badge badge-gray">Bun vs Node.js</span>
-      <span>Prices verified 2026-11-10</span>
+      <span>Source review recorded 2026-11-10</span>
       <span>·</span>
       <span>4 min read</span>
     </div>
@@ -220,11 +228,11 @@ footer p { font-size:.8rem; margin:0; }
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>JavaScriptCore runtime, rewritten in Rust for 1.4</td><td>Node core plus the npm ecosystem</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>JavaScriptCore runtime, rewritten in Rust for 1.4</td><td>Node core plus the npm ecosystem</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>Free · MIT · no paid tier</td><td>Free · MIT · support past Maintenance LTS via OpenJS partners</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>Yes — a single executable</strong></td><td>Yes — your own machines</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>Bun.serve HTTP and WebSocket server built in</td><td>node:http servers, cluster workers, inspector for tracing</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>Claude Code ships as a Bun executable (Bun&#x27;s statement)</td><td>Type stripping on by default; no type checking</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>Yes — a single executable</strong></td><td>Yes — your own machines</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>Bun.serve HTTP and WebSocket server built in</td><td>node:http servers, cluster workers, inspector for tracing</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>Claude Code ships as a Bun executable (Bun&#x27;s statement)</td><td>Type stripping on by default; no type checking</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>Low: MIT, npm-compatible, runs Node projects</td><td>None: MIT, runs on every platform</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -421,7 +429,7 @@ enum Mode { Dev, Prod }</code></pre>
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: 2026-11-10. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -429,8 +437,8 @@ enum Mode { Dev, Prod }</code></pre>
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+      <p>© 2026 DevTeardown. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
-  </footer>
+  <p style="text-align:center"><a href="/editorial-policy/" lang="en">Editorial &amp; source policy (English)</a></p></footer>
 </body>
 </html>

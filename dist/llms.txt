@@ -1,10 +1,9 @@
 # DevTeardown
 
-> Independent teardowns of developer tools priced in arithmetic, plus a daily tech-deals radar
-> for Korean and global hardware deals. Every number is taken from a vendor price sheet or a
-> source post; derived figures print their formula. No paid placement.
+> Source-based developer-tool comparisons and a multilingual deal catalog.
+> Prices and availability are dated observations, not live quotes or purchase guarantees.
 
-## Teardowns
+## Comparisons
 
 - [Stripe vs Lemon Squeezy / Paddle](https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/): Below roughly $21 per charge, or on any card that is not domestic, the merchant of record is the cheaper invoice, not the expensive one.
 - [Anthropic vs OpenAI](https://devteardown.com/compare/anthropic-vs-openai-api-pricing/): On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached.
@@ -21,12 +20,9 @@
 - [Clerk vs Auth0](https://devteardown.com/compare/clerk-vs-auth0/): Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan.
 - [PlanetScale vs Neon](https://devteardown.com/compare/planetscale-vs-neon/): Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster.
 
-## Deals
+## Catalog and methodology
 
-- [Korean tech deals](https://devteardown.com/ko/): 17 collected hardware deals from 뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.
-- [Global tech deals](https://devteardown.com/deals/): 13 collected deals from retailers and deal sources, with direct product links and dated checks. China listings are not verified discounts.
-
-## Optional
-
-- [Full text for LLMs](https://devteardown.com/llms-full.txt): every teardown verdict and the current deal list.
+- [Unified deal catalog](https://devteardown.com/deals/): English, Korean, Chinese, Japanese, Spanish and French views of the same inventory; country eligibility is separate from language.
+- [Editorial and source policy](https://devteardown.com/editorial-policy/): evidence, limitations, corrections and shopping links.
+- [Comparison summaries](https://devteardown.com/llms-full.txt): abridged article text and recorded deal observations, not full articles or live prices.
 - [Sitemap](https://devteardown.com/sitemap.xml)

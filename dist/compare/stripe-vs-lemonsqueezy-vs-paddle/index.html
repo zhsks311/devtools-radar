@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/">
   <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/">
-  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Stripe vs Lemon Squeezy / Paddle — 2026 teardown">
   <meta property="og:description" content="A thousand subscribers at $20 a month pay $1,520 on an assembled Stripe stack and $1,500 on a merchant of record. The vendor everyone calls expensive is the cheaper one at the pric">
   <meta property="og:type" content="article">
@@ -22,15 +22,23 @@
   "@type": "TechArticle",
   "headline": "Stripe vs Lemon Squeezy / Paddle: a 2026 engineering teardown",
   "description": "A thousand subscribers at $20 a month pay $1,520 on an assembled Stripe stack and $1,500 on a merchant of record. The vendor everyone calls expensive is the cheaper one at the price point most SaaS products actually charge.",
-  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTeardown Team"
+    "name": "DevTeardown",
+    "url": "https://devteardown.com/editorial-policy/"
   },
+  "inLanguage": "en",
+  "citation": [
+    "https://stripe.com/pricing",
+    "https://stripe.com/billing/pricing",
+    "https://stripe.com/tax/pricing",
+    "https://www.lemonsqueezy.com/pricing",
+    "https://www.paddle.com/pricing"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown"
   },
   "mainEntityOfPage": "https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/"
 }
@@ -191,7 +199,7 @@ footer p { font-size:.8rem; margin:0; }
     <div class="meta-row">
       <span class="badge badge-blue">Payments &amp; Billing</span>
       <span class="badge badge-gray">Stripe vs Lemon Squeezy / Paddle</span>
-      <span>Prices verified 2026-11-10</span>
+      <span>Source review recorded 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
@@ -206,7 +214,7 @@ footer p { font-size:.8rem; margin:0; }
 
     <div class="toc">
       <div class="toc-title">In this teardown</div>
-      <ol><li><a href="#s1">The sticker price is one of four meters you will pay</a></li><li><a href="#s2">A merchant of record sells a different invoice, not a cheaper one</a></li><li><a href="#s3">At $20 a month the assembled stack loses by $20</a></li><li><a href="#s4">Every foreign card multiplies the crossover by fourteen</a></li><li><a href="#s5">What the extra points buy, and what they take</a></li><li><a href="#s6">Where each one breaks</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+      <ol><li><a href="#s1">The sticker price is one of four meters you will pay</a></li><li><a href="#s2">A merchant of record sells a different invoice, not a cheaper one</a></li><li><a href="#s3">At $20 a month the assembled stack loses by $20</a></li><li><a href="#s4">International-card fees remove this modeled crossover</a></li><li><a href="#s5">What the extra points buy, and what they take</a></li><li><a href="#s6">Where each one breaks</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
     </div>
 
     <h2>At a glance</h2>
@@ -220,11 +228,11 @@ footer p { font-size:.8rem; margin:0; }
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>Payments, Billing and Tax as separate line items</td><td>Checkout, subscriptions and tax remittance as a single fee</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>Payments, Billing and Tax as separate line items</td><td>Checkout, subscriptions and tax remittance as a single fee</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>2.9% + 30¢ domestic · +1.5% international · Billing 0.7% · Tax 50¢ per transaction</td><td>5% + 50¢ per transaction on both · $0 per month · custom pricing under $10</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>No (Stripe-hosted checkout and portal)</strong></td><td>No (both act as the merchant of record)</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>You are the seller of record: registrations, filings and penalties are yours</td><td>They are the seller: tax collection and remittance sit with them, not you</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>Radar fraud screening included; Smart Disputes takes 30% of a recovered dispute</td><td>Fraud screening and buyer support are inside the 5%, not priced separately</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>No (Stripe-hosted checkout and portal)</strong></td><td>No (both act as the merchant of record)</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>You are the seller of record: registrations, filings and penalties are yours</td><td>They are the seller: tax collection and remittance sit with them, not you</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>Radar fraud screening included; Smart Disputes takes 30% of a recovered dispute</td><td>Fraud screening and buyer support are inside the 5%, not priced separately</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>Low on card data, high on tax history: filings stay in your name</td><td>Medium: subscriptions move through a paid migration, and cards do not transfer</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -251,9 +259,9 @@ footer p { font-size:.8rem; margin:0; }
 <div class="table-wrapper"><table><thead><tr><th>Line</th><th>Assembled Stripe stack</th><th>Merchant of record</th></tr></thead><tbody><tr><td>Payments</td><td>2.9% × $20,000 = $580, plus 1,000 × 30¢ = $300</td><td>—</td></tr><tr><td>Billing</td><td>0.7% × $20,000 = $140</td><td>—</td></tr><tr><td>Tax Basic</td><td>1,000 × 50¢ = $500</td><td>—</td></tr><tr><td>Single fee</td><td>—</td><td>5% × $20,000 = $1,000, plus 1,000 × 50¢ = $500</td></tr><tr><td><strong>Total</strong></td><td><strong>$1,520</strong></td><td><strong>$1,500</strong></td></tr></tbody></table></div>
 <p>Move the price to $100 and keep the same $20,000: Stripe bills $580 + $140 + $160 = $880, the merchant of record bills $1,000 + $100 = $1,100. The crossover is one equation: 3.6% × P + 80¢ = 5% × P + 50¢, so 1.4% × P = 30¢, and P = $21.43.</p>
 
-      <h2 id="s4">4. Every foreign card multiplies the crossover by fourteen</h2>
-      <p>1.5% for an international card turns 3.6% + 80¢ into 5.1% + 80¢. Against 5% + 50¢ the gap becomes 0.1% × P − 30¢, so the merchant of record wins until a single charge passes $300.</p>
-<div class="table-wrapper"><table><thead><tr><th>Card</th><th>Stripe stack</th><th>Merchant of record</th><th>Cheaper</th></tr></thead><tbody><tr><td>Domestic</td><td>3.6% + 80¢</td><td>5% + 50¢</td><td>Stripe above $21.43</td></tr><tr><td>International</td><td>5.1% + 80¢</td><td>5% + 50¢</td><td>MoR below $300</td></tr><tr><td>International, non-USD</td><td>6.6% + 80¢</td><td>5% + 50¢</td><td>MoR at every price</td></tr></tbody></table></div>
+      <h2 id="s4">4. International-card fees remove this modeled crossover</h2>
+      <p>1.5% for an international card turns 3.6% + 80¢ into 5.1% + 80¢. The modeled gap against 5% + 50¢ is 0.1% × P + 30¢, always positive. Correction: the earlier $300 crossover used the wrong sign.</p>
+<div class="table-wrapper"><table><thead><tr><th>Card</th><th>Stripe stack</th><th>Merchant of record</th><th>Cheaper</th></tr></thead><tbody><tr><td>Domestic</td><td>3.6% + 80¢</td><td>5% + 50¢</td><td>Stripe above $21.43</td></tr><tr><td>International</td><td>5.1% + 80¢</td><td>5% + 50¢</td><td>MoR at every positive price in this model</td></tr><tr><td>International, non-USD</td><td>6.6% + 80¢</td><td>5% + 50¢</td><td>MoR at every price</td></tr></tbody></table></div>
 <p>The third row is the one people miss. A euro customer paying with a euro card costs 6.6% + 80¢, which is more than the fee that supposedly includes filing for thirty countries. Currency conversion is charged on top of the international card fee, so both can land on one charge.</p>
 
       <h2 id="s5">5. What the extra points buy, and what they take</h2>
@@ -425,7 +433,7 @@ return transaction.id;</code></pre>
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: 2026-11-10. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -433,8 +441,8 @@ return transaction.id;</code></pre>
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+      <p>© 2026 DevTeardown. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
-  </footer>
+  <p style="text-align:center"><a href="/editorial-policy/" lang="en">Editorial &amp; source policy (English)</a></p></footer>
 </body>
 </html>

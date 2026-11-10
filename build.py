@@ -12,7 +12,7 @@ from urllib.parse import urlsplit
 from tools.validate_data import validate_items
 
 BASE_URL = "https://devteardown.com"
-SITE_NAME = "DevTools Radar"
+SITE_NAME = "DevTeardown"
 ROOT = Path(__file__).resolve().parent
 DIST_DIR = ROOT / "dist"
 DATA_PATH = ROOT / "data" / "tools.json"
@@ -297,47 +297,30 @@ def first_sentence(markdown: str) -> str:
 
 
 def generate_llms_txt(items, ko_deals, en_deals) -> str:
-    """llmstxt.org 형식: AI 검색엔진이 읽는 사이트 디렉토리."""
-    lines = [
-        "# DevTeardown",
-        "",
-        "> Independent teardowns of developer tools priced in arithmetic, plus a daily tech-deals radar",
-        "> for Korean and global hardware deals. Every number is taken from a vendor price sheet or a",
-        "> source post; derived figures print their formula. No paid placement.",
-        "",
-        "## Teardowns",
-        "",
-    ]
+    """Optional plain-text directory; not a search indexing requirement."""
+    lines = ["# DevTeardown", "", "> Source-based developer-tool comparisons and a multilingual deal catalog.",
+             "> Prices and availability are dated observations, not live quotes or purchase guarantees.", "", "## Comparisons", ""]
     for item in items:
         lines.append(f"- [{item['tool_a']['name']} vs {item['tool_b']['name']}]({BASE_URL}/compare/{item['slug']}/): "
                      f"{first_sentence(item.get('verdict_summary', ''))}")
-    lines += [
-        "",
-        "## Deals",
-        "",
-        f"- [Korean tech deals]({BASE_URL}/ko/): {len(ko_deals.get('feed', []))} collected hardware deals from "
-        "뽐뿌, 클리앙, 퀘이사존, 에펨코리아 and 폴센트, with source price and shipping.",
-        f"- [Global tech deals]({BASE_URL}/deals/): {len(en_deals.get('feed', []))} collected deals from "
-        "retailers and deal sources, with direct product links and dated checks. China listings are not verified discounts.",
-        "",
-        "## Optional",
-        "",
-        f"- [Full text for LLMs]({BASE_URL}/llms-full.txt): every teardown verdict and the current deal list.",
-        f"- [Sitemap]({BASE_URL}/sitemap.xml)",
-    ]
+    lines += ["", "## Catalog and methodology", "",
+              f"- [Unified deal catalog]({BASE_URL}/deals/): English, Korean, Chinese, Japanese, Spanish and French views of the same inventory; country eligibility is separate from language.",
+              f"- [Editorial and source policy]({BASE_URL}/editorial-policy/): evidence, limitations, corrections and shopping links.",
+              f"- [Comparison summaries]({BASE_URL}/llms-full.txt): abridged article text and recorded deal observations, not full articles or live prices.",
+              f"- [Sitemap]({BASE_URL}/sitemap.xml)"]
     return "\n".join(lines) + "\n"
 
 
 def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
     """LLM 인용용 전문: 테어다운 요약 + 현재 딜 목록."""
-    out = ["# DevTeardown — full text for LLMs", "",
-           "Source: https://devteardown.com · Updated: " + datetime.date.today().isoformat(), ""]
+    out = ["# DevTeardown — comparison summaries and deal observations", "",
+           "Source: https://devteardown.com · Export generated: " + datetime.date.today().isoformat(), ""]
     for item in items:
         a, b = item["tool_a"]["name"], item["tool_b"]["name"]
         out += [
             f"## {a} vs {b}",
             f"URL: {BASE_URL}/compare/{item['slug']}/",
-            f"Category: {item['category']} · Prices verified: {item.get('last_verified', '')}",
+            f"Category: {item['category']} · Recorded source review: {item.get('last_verified', '')}",
             "",
             "Verdict: " + first_sentence(item.get("verdict_summary", "")),
             "",
@@ -1124,9 +1107,10 @@ def generate_comparison_html(item):
         "@type": "TechArticle",
         "headline": f"{a['name']} vs {b['name']}: a 2026 engineering teardown",
         "description": item["hook"].replace('"', "'"),
-        "dateModified": updated,
         "datePublished": item.get("published", updated),
-        "author": {"@type": "Organization", "name": "DevTeardown Team"},
+        "author": {"@type": "Organization", "name": "DevTeardown", "url": BASE_URL + "/editorial-policy/"},
+        "inLanguage": "en",
+        "citation": [src for src in item.get("sources", []) if isinstance(src, str) and src.startswith("https://")],
         "publisher": {"@type": "Organization", "name": SITE_NAME},
         "mainEntityOfPage": f"{BASE_URL}/compare/{slug}/",
     }
@@ -1293,7 +1277,7 @@ def generate_comparison_html(item):
     <div class="meta-row">
       <span class="badge badge-blue">{html.escape(item['category'])}</span>
       <span class="badge badge-gray">{html.escape(a['name'])} vs {html.escape(b['name'])}</span>
-      <span>Prices verified {html.escape(updated)}</span>
+      <span>Source review recorded {html.escape(updated)}</span>
       <span>·</span>
       <span>{rt}</span>
     </div>
@@ -1322,11 +1306,11 @@ def generate_comparison_html(item):
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>{html.escape(a['db'])}</td><td>{html.escape(b['db'])}</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>{html.escape(a['db'])}</td><td>{html.escape(b['db'])}</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>{html.escape(a['pricing'])}</td><td>{html.escape(b['pricing'])}</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>{html.escape(a['self_host'])}</strong></td><td>{html.escape(b['self_host'])}</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>{html.escape(a['realtime'])}</td><td>{html.escape(b['realtime'])}</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>{html.escape(a['ai_readiness'])}</td><td>{html.escape(b['ai_readiness'])}</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>{html.escape(a['self_host'])}</strong></td><td>{html.escape(b['self_host'])}</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>{html.escape(a['realtime'])}</td><td>{html.escape(b['realtime'])}</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>{html.escape(a['ai_readiness'])}</td><td>{html.escape(b['ai_readiness'])}</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>{html.escape(a['lock_in'])}</td><td>{html.escape(b['lock_in'])}</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -1391,7 +1375,7 @@ def generate_comparison_html(item):
     {DEALS_SECTION_HTML}
 
     <div class="updated-note">
-      Prices and limits verified on {html.escape(updated)}. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: {html.escape(updated)}. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -1510,6 +1494,8 @@ def render_site(items, output, deals, en_deals):
 
     from site_i18n import write_unified
     write_unified(DIST_DIR, items, deals, en_deals)
+    from site_seo import finalize_seo
+    finalize_seo(Path(DIST_DIR), items, SHARED_CSS)
     print(f"Rendered {len(items) + 7} pages")
 
 

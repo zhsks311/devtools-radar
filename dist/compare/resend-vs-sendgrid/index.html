@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://devteardown.com/compare/resend-vs-sendgrid/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/resend-vs-sendgrid/">
   <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/resend-vs-sendgrid/">
-  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Resend vs SendGrid — 2026 teardown">
   <meta property="og:description" content="At 100,000 emails a month, Resend&#x27;s Pro plan is $35 and SendGrid&#x27;s Essentials plan is $34.95. Both vendors then charge exactly $55 more for the next rung, and none of that $55 buys">
   <meta property="og:type" content="article">
@@ -22,15 +22,23 @@
   "@type": "TechArticle",
   "headline": "Resend vs SendGrid: a 2026 engineering teardown",
   "description": "At 100,000 emails a month, Resend's Pro plan is $35 and SendGrid's Essentials plan is $34.95. Both vendors then charge exactly $55 more for the next rung, and none of that $55 buys an extra email: it buys the tier where a dedicated IP becomes possible.",
-  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTeardown Team"
+    "name": "DevTeardown",
+    "url": "https://devteardown.com/editorial-policy/"
   },
+  "inLanguage": "en",
+  "citation": [
+    "https://resend.com/pricing",
+    "https://www.twilio.com/en-us/products/email-api/pricing",
+    "https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai",
+    "https://resend.com/docs",
+    "https://www.twilio.com/docs/sendgrid"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown"
   },
   "mainEntityOfPage": "https://devteardown.com/compare/resend-vs-sendgrid/"
 }
@@ -191,7 +199,7 @@ footer p { font-size:.8rem; margin:0; }
     <div class="meta-row">
       <span class="badge badge-blue">Email Infrastructure</span>
       <span class="badge badge-gray">Resend vs SendGrid</span>
-      <span>Prices verified 2026-11-10</span>
+      <span>Source review recorded 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
@@ -220,11 +228,11 @@ footer p { font-size:.8rem; margin:0; }
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>Transactional email API with React Email templates and inbound parsing</td><td>Email API with dynamic templates, subusers and dedicated IPs</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>Transactional email API with React Email templates and inbound parsing</td><td>Email API with dynamic templates, subusers and dedicated IPs</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>Free 3,000/mo · Pro $20 for 50k, $35 for 100k · Scale $90 for 100k to $1,150 for 2.5M</td><td>60-day trial · Essentials $19.95 for 50k, $34.95 for 100k · Pro $89.95 for 100k to $1,099 for 2.5M</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>No (managed sending infrastructure and shared IPs)</strong></td><td>No (Twilio-managed sending infrastructure)</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>Batch sending and webhooks on every plan; 5 endpoints on Pro, 10 on Scale</td><td>Event webhook on every plan: 1 endpoint on trial, 2 on Essentials, 5 on Pro</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>100 AI credits a month on Pro, 500 on Scale; 10,000 automation runs included</td><td>Address validation included with Pro: 2,500 checks, 5,000 on Premier</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>No (managed sending infrastructure and shared IPs)</strong></td><td>No (Twilio-managed sending infrastructure)</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>Batch sending and webhooks on every plan; 5 endpoints on Pro, 10 on Scale</td><td>Event webhook on every plan: 1 endpoint on trial, 2 on Essentials, 5 on Pro</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>100 AI credits a month on Pro, 500 on Scale; 10,000 automation runs included</td><td>Address validation included with Pro: 2,500 checks, 5,000 on Premier</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>Low: SMTP and REST, and domain reputation travels with your DNS</td><td>Medium: templates, subusers and IP warm-up history live in the product</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -429,7 +437,7 @@ await sgMail.send({
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: 2026-11-10. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -437,8 +445,8 @@ await sgMail.send({
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+      <p>© 2026 DevTeardown. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
-  </footer>
+  <p style="text-align:center"><a href="/editorial-policy/" lang="en">Editorial &amp; source policy (English)</a></p></footer>
 </body>
 </html>

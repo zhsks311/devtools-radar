@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
   <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
-  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Anthropic vs OpenAI — 2026 teardown">
   <meta property="og:description" content="Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one">
   <meta property="og:type" content="article">
@@ -22,15 +22,23 @@
   "@type": "TechArticle",
   "headline": "Anthropic vs OpenAI: a 2026 engineering teardown",
   "description": "Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one tokenizer counts about 30% more tokens for the same text.",
-  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTeardown Team"
+    "name": "DevTeardown",
+    "url": "https://devteardown.com/editorial-policy/"
   },
+  "inLanguage": "en",
+  "citation": [
+    "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    "https://platform.openai.com/docs/pricing",
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+    "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+    "https://claude.com/pricing"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown"
   },
   "mainEntityOfPage": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/"
 }
@@ -191,7 +199,7 @@ footer p { font-size:.8rem; margin:0; }
     <div class="meta-row">
       <span class="badge badge-blue">AI &amp; LLM APIs</span>
       <span class="badge badge-gray">Anthropic vs OpenAI</span>
-      <span>Prices verified 2026-11-10</span>
+      <span>Source review recorded 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
@@ -220,11 +228,11 @@ footer p { font-size:.8rem; margin:0; }
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>Claude API: messages, prompt caching and batch in one price sheet</td><td>GPT API: tokens, cached input, Batch and Flex as separate rate cards</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>Claude API: messages, prompt caching and batch in one price sheet</td><td>GPT API: tokens, cached input, Batch and Flex as separate rate cards</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>Sonnet 5.5 $2 / $10 · Opus 5.5 $4 / $20 · Haiku 5.5 $0.10 / $0.50 per MTok</td><td>GPT-6.1 Sol $2 / $10 · GPT-6 Astra $10 / $50 · GPT-6 Luna $0.10 / $0.50 per MTok</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>No (first-party API, Bedrock and Google Cloud endpoints)</strong></td><td>No (first-party API and Azure-hosted deployments)</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>Cache reads at 0.1x, or 0.05x on Opus 5.5 and Sonnet 5.5; writes 1.25x for 5m and 2x for 1h</td><td>Cached input at 0.05x; writes 1.25x for 30 minutes and 2.5x for 12 hours</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>Batch halves both sides; fast mode doubles; US-only inference adds 1.1x</td><td>Batch and Flex halve both sides; long context doubles input and multiplies output by 1.5</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>No (first-party API, Bedrock and Google Cloud endpoints)</strong></td><td>No (first-party API and Azure-hosted deployments)</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>Cache reads at 0.1x, or 0.05x on Opus 5.5 and Sonnet 5.5; writes 1.25x for 5m and 2x for 1h</td><td>Cached input at 0.05x; writes 1.25x for 30 minutes and 2.5x for 12 hours</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>Batch halves both sides; fast mode doubles; US-only inference adds 1.1x</td><td>Batch and Flex halve both sides; long context doubles input and multiplies output by 1.5</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>Medium: model deprecations retire SKUs, and cache breakpoints are vendor-specific</td><td>Medium: batch files and assistants are per-vendor objects with no export</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -427,7 +435,7 @@ console.log(res.usage?.input_tokens_details);</code></pre>
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: 2026-11-10. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -435,8 +443,8 @@ console.log(res.usage?.input_tokens_details);</code></pre>
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+      <p>© 2026 DevTeardown. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
-  </footer>
+  <p style="text-align:center"><a href="/editorial-policy/" lang="en">Editorial &amp; source policy (English)</a></p></footer>
 </body>
 </html>

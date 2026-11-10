@@ -50,14 +50,14 @@ Take 1,000 subscribers at $20, all domestic cards, $20,000 of volume, and assume
 
 Move the price to $100 and keep the same $20,000: Stripe bills $580 + $140 + $160 = $880, the merchant of record bills $1,000 + $100 = $1,100. The crossover is one equation: 3.6% × P + 80¢ = 5% × P + 50¢, so 1.4% × P = 30¢, and P = $21.43.
 
-## 4. Every foreign card multiplies the crossover by fourteen
+## 4. International-card fees remove this modeled crossover
 
-1.5% for an international card turns 3.6% + 80¢ into 5.1% + 80¢. Against 5% + 50¢ the gap becomes 0.1% × P − 30¢, so the merchant of record wins until a single charge passes $300.
+1.5% for an international card turns 3.6% + 80¢ into 5.1% + 80¢. The modeled gap against 5% + 50¢ is 0.1% × P + 30¢, always positive. Correction: the earlier $300 crossover used the wrong sign.
 
 | Card | Stripe stack | Merchant of record | Cheaper |
 |---|---|---|---|
 | Domestic | 3.6% + 80¢ | 5% + 50¢ | Stripe above $21.43 |
-| International | 5.1% + 80¢ | 5% + 50¢ | MoR below $300 |
+| International | 5.1% + 80¢ | 5% + 50¢ | MoR at every positive price in this model |
 | International, non-USD | 6.6% + 80¢ | 5% + 50¢ | MoR at every price |
 
 The third row is the one people miss. A euro customer paying with a euro card costs 6.6% + 80¢, which is more than the fee that supposedly includes filing for thirty countries. Currency conversion is charged on top of the international card fee, so both can land on one charge.

@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://devteardown.com/compare/supabase-vs-firebase/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/supabase-vs-firebase/">
   <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/supabase-vs-firebase/">
-  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Supabase vs Firebase — 2026 teardown">
   <meta property="og:description" content="Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The scree">
   <meta property="og:type" content="article">
@@ -22,15 +22,23 @@
   "@type": "TechArticle",
   "headline": "Supabase vs Firebase: a 2026 engineering teardown",
   "description": "Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The screen is identical; the only thing that changed is what the vendor counts.",
-  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTeardown Team"
+    "name": "DevTeardown",
+    "url": "https://devteardown.com/editorial-policy/"
   },
+  "inLanguage": "en",
+  "citation": [
+    "https://supabase.com/pricing",
+    "https://supabase.com/docs/guides/realtime/postgres-changes",
+    "https://firebase.google.com/docs/firestore/pricing",
+    "https://cloud.google.com/firestore/pricing",
+    "https://supabase.com/kb/guides/migrate-from-firestore-data"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown"
   },
   "mainEntityOfPage": "https://devteardown.com/compare/supabase-vs-firebase/"
 }
@@ -191,7 +199,7 @@ footer p { font-size:.8rem; margin:0; }
     <div class="meta-row">
       <span class="badge badge-blue">Backend &amp; Database</span>
       <span class="badge badge-gray">Supabase vs Firebase</span>
-      <span>Prices verified 2026-11-10</span>
+      <span>Source review recorded 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
@@ -220,11 +228,11 @@ footer p { font-size:.8rem; margin:0; }
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>PostgreSQL (relational + pgvector)</td><td>Firestore (NoSQL document store)</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>PostgreSQL (relational + pgvector)</td><td>Firestore (NoSQL document store)</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>Free: 500 MB, 2 projects · Pro $25 + $10/project compute</td><td>Daily free quota · reads $0.03 / writes $0.09 per 100k</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>Yes (Docker stack)</strong></td><td>No (proprietary GCP)</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>Postgres Changes (CDC, row-level-security aware)</td><td>Snapshot listeners — a read per changed document</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>pgvector in the same database as your app data</td><td>kNN vector search, billed per 100-entry index batch</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>Yes (Docker stack)</strong></td><td>No (proprietary GCP)</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>Postgres Changes (CDC, row-level-security aware)</td><td>Snapshot listeners — a read per changed document</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>pgvector in the same database as your app data</td><td>kNN vector search, billed per 100-entry index batch</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>Low: standard Postgres, dump and leave</td><td>High: rules, SDKs, and no SQL export path</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -425,7 +433,7 @@ for (const doc of snap.docs) {
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: 2026-11-10. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -433,8 +441,8 @@ for (const doc of snap.docs) {
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+      <p>© 2026 DevTeardown. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
-  </footer>
+  <p style="text-align:center"><a href="/editorial-policy/" lang="en">Editorial &amp; source policy (English)</a></p></footer>
 </body>
 </html>

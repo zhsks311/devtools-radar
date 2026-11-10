@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/">
   <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/">
   <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/">
-  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="AWS Lambda vs Cloudflare Workers — 2026 teardown">
   <meta property="og:description" content="One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bill">
   <meta property="og:type" content="article">
@@ -22,15 +22,23 @@
   "@type": "TechArticle",
   "headline": "AWS Lambda vs Cloudflare Workers: a 2026 engineering teardown",
   "description": "One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bills the waiting.",
-  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10",
   "author": {
     "@type": "Organization",
-    "name": "DevTeardown Team"
+    "name": "DevTeardown",
+    "url": "https://devteardown.com/editorial-policy/"
   },
+  "inLanguage": "en",
+  "citation": [
+    "https://aws.amazon.com/lambda/pricing/",
+    "https://developers.cloudflare.com/workers/platform/pricing/",
+    "https://developers.cloudflare.com/workers/platform/limits/",
+    "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
+    "https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "DevTools Radar"
+    "name": "DevTeardown"
   },
   "mainEntityOfPage": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/"
 }
@@ -191,7 +199,7 @@ footer p { font-size:.8rem; margin:0; }
     <div class="meta-row">
       <span class="badge badge-blue">Serverless &amp; Edge</span>
       <span class="badge badge-gray">AWS Lambda vs Cloudflare Workers</span>
-      <span>Prices verified 2026-11-10</span>
+      <span>Source review recorded 2026-11-10</span>
       <span>·</span>
       <span>5 min read</span>
     </div>
@@ -220,11 +228,11 @@ footer p { font-size:.8rem; margin:0; }
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Core engine</strong></td><td>Event Functions bill duration in GB-seconds; Web Functions bill active CPU plus memory</td><td>V8 isolates at the edge: CPU time is the only compute meter</td></tr>
+          <tr><td><strong>Product foundation</strong></td><td>Event Functions bill duration in GB-seconds; Web Functions bill active CPU plus memory</td><td>V8 isolates at the edge: CPU time is the only compute meter</td></tr>
           <tr><td><strong>Pricing model</strong></td><td>Event: $0.20/M requests + $0.0000133334/GB-s Arm · Web: $0.30/M + $0.0000276944/vCPU-s + $0.0000036667/GB-s</td><td>$5/mo minimum · 10M requests included then $0.30/M · 30M CPU-ms included then $0.02/M</td></tr>
-          <tr><td><strong>Self-hostable</strong></td><td><strong>No (AWS-managed, VPC and IAM integrated)</strong></td><td>No managed equivalent; workerd is open source</td></tr>
-          <tr><td><strong>Realtime and concurrency</strong></td><td>Free tier 1M requests and 400,000 GB-s; 10,240 MB memory ceiling</td><td>Free: 100,000 requests/day and 10 ms CPU per invocation; paid: 5-minute CPU ceiling</td></tr>
-          <tr><td><strong>AI and vector readiness</strong></td><td>Durable functions at $8 per million operations; streaming priced per GB written</td><td>Durable Objects, KV, Queues and Workflows meter separately; static assets are free</td></tr>
+          <tr><td><strong>Hosting and deployment</strong></td><td><strong>No (AWS-managed, VPC and IAM integrated)</strong></td><td>No managed equivalent; workerd is open source</td></tr>
+          <tr><td><strong>Runtime and integration</strong></td><td>Free tier 1M requests and 400,000 GB-s; 10,240 MB memory ceiling</td><td>Free: 100,000 requests/day and 10 ms CPU per invocation; paid: 5-minute CPU ceiling</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>Durable functions at $8 per million operations; streaming priced per GB written</td><td>Durable Objects, KV, Queues and Workflows meter separately; static assets are free</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>Medium: event sources, IAM and VPC wiring are AWS-shaped</td><td>Low on compute, higher on state: Durable Objects hold data inside the product</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -416,7 +424,7 @@ export default {
 
 
     <div class="updated-note">
-      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      Source review date recorded in this article: 2026-11-10. This is not a live price or checkout check. Prices can change. If a number here looks wrong,
       the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
       measured benchmarks.
     </div>
@@ -424,8 +432,8 @@ export default {
 
   <footer>
     <div class="container">
-      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+      <p>© 2026 DevTeardown. Developer tool comparisons. Shopping links are marked separately.</p>
     </div>
-  </footer>
+  <p style="text-align:center"><a href="/editorial-policy/" lang="en">Editorial &amp; source policy (English)</a></p></footer>
 </body>
 </html>
