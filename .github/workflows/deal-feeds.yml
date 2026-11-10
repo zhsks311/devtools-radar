@@ -1,0 +1,46 @@
+name: Check official deal feeds
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/collect_deal_feeds.py'
+      - 'config/deal_sources.json'
+      - '.github/workflows/deal-feeds.yml'
+permissions:
+  contents: read
+concurrency:
+  group: deal-feed-collection
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        with:
+          path: .feed-cache
+          key: feed-state-${{ github.run_id }}
+          restore-keys: feed-state-
+      - run: python tools/collect_deal_feeds.py --output collection-output --previous .feed-cache/status.json
+      - if: always()
+        run: |
+          mkdir -p .feed-cache
+          if [ -f collection-output/status.json ]; then cp collection-output/* .feed-cache/; fi
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-deal-feeds-${{ github.run_id }}
+          path: collection-output/
+          retention-days: 7
+      - if: always()
+        run: |
+          echo '## Deal source collection' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Read-only collection. Curated product prices, countries and images are not auto-published.' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f collection-output/status.json ]; then cat collection-output/status.json >> "$GITHUB_STEP_SUMMARY"; fi

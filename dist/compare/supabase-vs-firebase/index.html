@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supabase vs Firebase (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The scree">
+  <link rel="canonical" href="https://devteardown.com/compare/supabase-vs-firebase/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/supabase-vs-firebase/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/supabase-vs-firebase/">
+  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:title" content="Supabase vs Firebase — 2026 teardown">
+  <meta property="og:description" content="Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The scree">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://devteardown.com/compare/supabase-vs-firebase/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Supabase vs Firebase: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one P">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Supabase vs Firebase: a 2026 engineering teardown",
+  "description": "Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The screen is identical; the only thing that changed is what the vendor counts.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTeardown Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://devteardown.com/compare/supabase-vs-firebase/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I park a Supabase Free project for a demo that sits idle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not reliably: Free projects are paused after 1 week of inactivity, and Free allows only 2 active projects. Pro projects are never paused for inactivity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does offset pagination save reads on Firestore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Firestore bills a read for every skipped document, so offset 10 returning 1 document costs 11 reads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will Supabase Realtime leak rows a user shouldn't see?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Postgres Changes subscriptions are RLS-aware, so clients receive only rows they are allowed to select. Supabase's docs also document Broadcast as an alternative way to subscribe to database changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Firestore vector search billed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "kNN vector search bills one read per batch of up to 100 vector index entries. That is a tenth of the 1,000-entry batch size used for regular index entry reads."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://devteardown.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Supabase vs Firebase",
+      "item": "https://devteardown.com/compare/supabase-vs-firebase/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
+<body>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
+
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">Backend &amp; Database</span>
+      <span class="badge badge-gray">Supabase vs Firebase</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+
+    <h1>Supabase vs Firebase</h1>
+    <div class="lead"><p>Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The screen is identical; the only thing that changed is what the vendor counts.</p></div>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p>If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project. If your app fits Firestore&#x27;s daily free quota of 50,000 reads, 20,000 writes and 20,000 deletes, stay where you are, because leaving costs a schema project and a password path the migration repo still marks incomplete.</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">The billing unit decides what code you may write</a></li><li><a href="#s2">A listener is a meter, not a subscription</a></li><li><a href="#s3">On Supabase the ceiling is capacity, not a per-read meter</a></li><li><a href="#s4">Index entry reads are the Firestore line item nobody quotes</a></li><li><a href="#s5">Migration is a schema project with a script attached</a></li><li><a href="#s6">Pick by bill shape first, then by blockers</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Supabase <span class="badge badge-blue">Open source</span></th>
+            <th>Firebase <span class="badge badge-green">Managed Google</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>PostgreSQL (relational + pgvector)</td><td>Firestore (NoSQL document store)</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Free: 500 MB, 2 projects · Pro $25 + $10/project compute</td><td>Daily free quota · reads $0.03 / writes $0.09 per 100k</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>Yes (Docker stack)</strong></td><td>No (proprietary GCP)</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>Postgres Changes (CDC, row-level-security aware)</td><td>Snapshot listeners — a read per changed document</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>pgvector in the same database as your app data</td><td>kNN vector search, billed per 100-entry index batch</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Low: standard Postgres, dump and leave</td><td>High: rules, SDKs, and no SQL export path</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://supabase.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Supabase →</a></td>
+            <td><a href="https://firebase.google.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Firebase →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. The billing unit decides what code you may write</h2>
+      <p><strong>Supabase sells a machine.</strong> You rent a Postgres instance, a disk and a connection ceiling, and reads inside them are free. <strong>Firebase sells events.</strong> Every document read, write, index batch and listener update is a line on the invoice, with a daily free quota on top.</p>
+<p>What each philosophy forbids:</p>
+<ul><li><strong>Firestore forbids JOINs.</strong> A relation becomes duplicated fields or an extra round trip, and the extra reads are billed.</li><li><strong>Supabase forbids cheap concurrency.</strong> The $10 Micro instance stops at 60 direct and 200 pooled connections. The ceiling is purchasable rather than absolute — 12,000 pooled connections at $3,730 — but you buy it per project.</li></ul>
+<div class="table-wrapper"><table><thead><tr><th>Meter</th><th>Unit price</th><th>Pattern it punishes</th></tr></thead><tbody><tr><td>Firestore reads</td><td>$0.03 / 100,000</td><td>Live listeners on hot documents</td></tr><tr><td>Firestore writes</td><td>$0.09 / 100,000</td><td>Per-keystroke saves, chatty counters</td></tr><tr><td>Supabase disk</td><td>$0.125/GB over 8 GB</td><td>Keeping everything forever</td></tr><tr><td>Supabase compute</td><td>$10 to $3,730/month per project</td><td>Many connections, many projects</td></tr></tbody></table></div>
+
+      <h2 id="s2">2. A listener is a meter, not a subscription</h2>
+      <p>A listener is not a free subscription. Firestore bills a read each time a document enters or updates in a live listener&#x27;s result set, and one more when a change pushes it out. The meter runs while nobody clicks. Don&#x27;t pick Firestore for a screen that stays open all day.</p>
+<p>Take 50 users, each watching 100 documents that change 20 times a minute:</p>
+<pre><code class="language-python">users, docs, changes_per_min = 50, 100, 20
+reads = users * docs * changes_per_min * 60 * 24 * 30
+print(reads)                   # 4.32B events, zero clicks
+print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota</code></pre>
+<p>That is a gross read charge at the us-central1 rate, before free-quota adjustments. One Pro Micro project costs $25/month inside its quotas — which says nothing about whether that instance can carry the load, only that the bill stops tracking the watching. Reconnects make it worse:</p>
+<ul><li>Offline persistence <strong>off</strong>: every reconnect is billed like a brand-new query.</li><li>Persistence <strong>on</strong> but disconnected for more than 30 minutes: same bill.</li></ul>
+
+      <h2 id="s3">3. On Supabase the ceiling is capacity, not a per-read meter</h2>
+      <p>Postgres Changes is a database event stream, and you opt in per table:</p>
+<blockquote><p>Add a table to the publication: <code>alter publication supabase_realtime add table your_table_name;</code></p></blockquote>
+<p>Nothing in that stream is metered per read. What runs out is the instance: its compute tier and its connection and pooler limits. Compute is billed per project, separately from the plan.</p>
+<div class="table-wrapper"><table><thead><tr><th>Compute</th><th>Monthly compute</th><th>Direct / pooled database connections</th></tr></thead><tbody><tr><td>Micro</td><td>$10</td><td>60 / 200</td></tr><tr><td>Small</td><td>$15</td><td>90 / 400</td></tr><tr><td>Medium</td><td>$60</td><td>120 / 600</td></tr><tr><td>Large</td><td>$110</td><td>160 / 800</td></tr><tr><td>XL</td><td>$210</td><td>240 / 1,000</td></tr><tr><td>16XL</td><td>$3,730</td><td>500 / 12,000</td></tr></tbody></table></div>
+<blockquote><p>You stop paying for spikes and start paying for headroom. Size for peak connections: Pro&#x27;s $10/month credit covers one Micro, and every extra project adds its own compute.</p></blockquote>
+
+      <h2 id="s4">4. Index entry reads are the Firestore line item nobody quotes</h2>
+      <ul><li>One read per batch of up to 1,000 index entries a query reads.</li><li>A query with <strong>one</strong> range field pays nothing for index entries. Zero range fields are also exempt. Add a second range field and billing starts.</li><li><code>count()</code>, <code>sum()</code> and <code>avg()</code> bill index reads, with a 1-document-read minimum even at zero entries.</li></ul>
+<p>Firestore&#x27;s own docs give the example: <code>count()</code> over 1,500 index entries bills 2 document reads.</p>
+<blockquote><p>Ten million plain reads cost $3.00 at the listed rate. The <code>count()</code> in your page header is a different bill.</p></blockquote>
+<p>Audit any query that combines two range fields before it ships.</p>
+
+      <h2 id="s5">5. Migration is a schema project with a script attached</h2>
+      <p><code>supabase-community/firebase-to-supabase</code> on GitHub is community tooling, not an official CLI. What it does:</p>
+<ol><li><code>firestore2json.js</code> exports a collection; <code>json2supabase.js</code> loads it into a table. One collection, one table.</li><li>Fields are flattened to <code>text</code>, <code>numeric</code>, <code>boolean</code> or <code>jsonb</code>.</li><li>Splitting nested JSON into related tables needs custom hooks you write.</li></ol>
+<p>Auth is the sharper edge. <code>firestoreusers2json</code> and <code>import_users</code> move users, importing hashes with Firestore&#x27;s SCRYPT parameters (<code>base64_signer_key</code>, <code>base64_salt_separator</code>, <code>rounds</code>, <code>mem_cost</code>).</p>
+<blockquote><p>Verifying an existing Firebase password on first login needs a middleware the repo itself marks <strong>work in progress</strong>. The AWS Lambda variant is listed as TBD.</p></blockquote>
+<p>Until that middleware exists, plan for blocked logins at cutover and decide in advance whether you force a password reset.</p>
+
+      <h2 id="s6">6. Pick by bill shape first, then by blockers</h2>
+      <p>Choose Supabase when modeled Firestore charges exceed the plan and compute cost and the workload fits the selected tier and quotas. Keep Firestore when all free allowances fit:</p>
+<ul><li>50,000 reads, 20,000 writes and 20,000 deletes per day.</li><li>1 GiB stored, 10 GiB/month outbound; one free database per project.</li></ul>
+<p>Check today, in this order:</p>
+<ol><li>Multiply listeners × documents per listener × changes per minute × (60 × 24 × 30) minutes, then × $0.03 per 100,000.</li><li>Find every hot-path query with two range fields or a <code>count()</code>.</li><li>On Supabase, compare peak database connections to Micro&#x27;s 60 direct / 200 pooled.</li><li>Check whether first-login existing-password verification blocks migration.</li></ol>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">Firestore: hypothetical continuous dashboard, 50 users watching 100 documents each changing 20 times/minute</div>
+          <div class="cost-formula">50 × 100 × 20 × 60 × 24 × 30 = 4.32 billion read events/month; 4.32 billion ÷ 100,000 = 43,200 batches; 43,200 × $0.03 = $1,296</div>
+          <div class="cost-result">≈ $1,296/month</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Supabase Pro: one Micro project, subject to capacity and included quotas</div>
+          <div class="cost-formula">$25 (plan) + $10 (Micro) − $10 (included compute credits)</div>
+          <div class="cost-result">$25/month for one Pro Micro project within included quotas; egress beyond 250 GB costs $0.09/GB</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Supabase&#x27;s official billing example: Pro org, 2 Micro projects</div>
+          <div class="cost-formula">$25 (plan) + $10 (project 1) + $10 (project 2) − $10 (credits)</div>
+          <div class="cost-result">$35/month within included quotas</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Firestore: 10 million plain document reads</div>
+          <div class="cost-formula">10,000,000 reads ÷ 100,000 reads/batch = 100 batches; 100 × $0.03 = $3.00</div>
+          <div class="cost-result">$3.00 at the listed read rate, before allowances</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Live dashboard whose modeled Firestore charges exceed Supabase costs, within the selected tier and quotas</td><td class="matrix-pick">Supabase</td><td>One Pro Micro project costs $25/month within included quotas after the compute credit; listener updates count as Firestore reads. Check capacity separately.</td></tr><tr><td>Quiet app within every relevant Firestore free allowance</td><td class="matrix-pick">Firestore</td><td>Stay when reads, writes, deletes, stored data and outbound transfer all fit: 50,000 reads, 20,000 writes and 20,000 deletes daily, 1 GiB stored, 10 GiB/month outbound and one free database per project.</td></tr><tr><td>Relational reporting requiring JOINs, with migration schema work accepted</td><td class="matrix-pick">Supabase</td><td>Firestore has no JOINs. Supabase supports SQL JOINs; splitting nested JSON into related tables during migration requires custom hooks.</td></tr><tr><td>Offline app whose Firestore usage and reconnect charges fit its budget</td><td class="matrix-pick">Firestore with offline persistence on</td><td>With persistence off, every Firestore reconnect is billed like a brand-new query. With it on, disconnections longer than 30 minutes trigger that billing.</td></tr><tr><td>Database connection demand fits 16XL and its cost fits the budget</td><td class="matrix-pick">Supabase</td><td>16XL offers 500 direct / 12,000 pooled database connections at $3,730/month compute, separately from the plan; larger sizes are available by request.</td></tr><tr><td>Agency whose verified total Firestore usage charges are lower than the Supabase setup</td><td class="matrix-pick">Firestore</td><td>Compare client workloads against the $35/month Pro total for 2 Micro projects within included quotas. Every extra Supabase project adds its own compute line, $10 for each Micro.</td></tr><tr><td>Existing Firebase password verification at first login is required, but its migration dependency is unresolved</td><td class="matrix-pick">Stay on Firebase</td><td>First-login verification of Firebase passwords depends on middleware the migration repo marks work in progress.</td></tr><tr><td>Aggregate-call charges remain below the Supabase setup cost</td><td class="matrix-pick">Firestore</td><td>Firestore&#x27;s count() bills index reads on every call, with a 1-document-read minimum. A count over 1,500 index entries bills 2 document reads; compare call volume at $0.03 per 100,000 reads against $25/month for one Supabase Pro Micro project within included quotas.</td></tr></tbody>
+      </table></div>
+
+    <h2>Code and configuration</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Supabase</span>
+        <pre><code>// Relational read in one round trip. Free-tier note:
+// the nested select is a JOIN, so 50 comments cost 0 extra reads.
+const { data, error } = await supabase
+  .from(&#x27;posts&#x27;)
+  .select(&#x27;id, title, comments(id, body, user_id)&#x27;)
+  .eq(&#x27;published&#x27;, true)
+  .order(&#x27;created_at&#x27;, { ascending: false })
+  .limit(20);
+// Here it breaks: anon key + missing RLS policy = empty array, not an error.
+if (error) throw error;</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Firebase</span>
+        <pre><code>// N+1 by design: comments are a second query per post.
+const q = query(collection(db, &#x27;posts&#x27;), where(&#x27;published&#x27;, &#x27;==&#x27;, true));
+const snap = await getDocs(q);           // 20 reads
+for (const doc of snap.docs) {
+  // Denormalise, or pay: 20 more queries = 20 more billed reads
+  const comments = await getDocs(collection(doc.ref, &#x27;comments&#x27;));
+}
+// Here it breaks: a live listener on this collection bills a read on
+// every document update, for every listener, for as long as the tab is open.</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Supabase</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>One invoice for compute, disk and connections — reads inside the instance are not metered</li><li>pgvector lives in the same Postgres as your rows, so RAG needs no second system</li><li>Standard Postgres: SQL, JOINs, transactions, triggers, and pg_dump as an exit door</li><li>The connection ceiling is purchasable: 200 pooled connections on $10 Micro up to 12,000 on $3,730</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>You buy headroom, not usage: peak connections decide the tier, and idle capacity still bills</li><li>Every extra project adds its own compute line ($10 for a Micro) even on one Pro plan</li><li>Free projects are paused after a week of inactivity, which kills demo and staging projects</li><li>Realtime subscriber capacity is not on the price sheet; you size by connection and compute limits</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Firebase</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Offline persistence and multi-platform SDKs that work when the network does not</li><li>No connection pool to size: events are metered, not sockets</li><li>A daily free quota of 50,000 reads and 20,000 writes per project</li><li>Listeners bill only for documents that change in the result set, not for every poll</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>A dashboard left open all day is a recurring read charge: 50 users can pass $1,296/month</li><li>Reconnects are billed like brand-new queries — with persistence off, every one of them</li><li>Index entry reads are a second meter: a second range field starts billing</li><li>No JOIN, and the export tool flattens one collection to one table, so schema design lands on you</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p><code>supabase-community/firebase-to-supabase</code> is community tooling, not an official CLI. <code>firestore2json.js</code> exports one collection, <code>json2supabase.js</code> loads it into one table, and fields are flattened to text, numeric, boolean or jsonb — splitting nested JSON into related tables is a hook you write. Auth is the harder half: <code>firestoreusers2json</code> and <code>import_users</code> carry passwords over as SCRYPT hash parameters, and verifying a user&#x27;s existing Firebase password on first login needs middleware the repo still marks work in progress. Budget the schema work, not the script.</p></div>
+      </div>
+
+    <h2 id="faq">Common questions</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Can I park a Supabase Free project for a demo that sits idle?</div>
+          <div class="faq-a">Not reliably: Free projects are paused after 1 week of inactivity, and Free allows only 2 active projects. Pro projects are never paused for inactivity.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Does offset pagination save reads on Firestore?</div>
+          <div class="faq-a">No. Firestore bills a read for every skipped document, so offset 10 returning 1 document costs 11 reads.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Will Supabase Realtime leak rows a user shouldn&#x27;t see?</div>
+          <div class="faq-a">Postgres Changes subscriptions are RLS-aware, so clients receive only rows they are allowed to select. Supabase&#x27;s docs also document Broadcast as an alternative way to subscribe to database changes.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How is Firestore vector search billed?</div>
+          <div class="faq-a">kNN vector search bills one read per batch of up to 100 vector index entries. That is a tenth of the 1,000-entry batch size used for regular index entry reads.</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://supabase.com/pricing" rel="noopener nofollow" target="_blank">https://supabase.com/pricing</a><br><a href="https://supabase.com/docs/guides/realtime/postgres-changes" rel="noopener nofollow" target="_blank">https://supabase.com/docs/guides/realtime/postgres-changes</a><br><a href="https://firebase.google.com/docs/firestore/pricing" rel="noopener nofollow" target="_blank">https://firebase.google.com/docs/firestore/pricing</a><br><a href="https://cloud.google.com/firestore/pricing" rel="noopener nofollow" target="_blank">https://cloud.google.com/firestore/pricing</a><br><a href="https://supabase.com/kb/guides/migrate-from-firestore-data" rel="noopener nofollow" target="_blank">https://supabase.com/kb/guides/migrate-from-firestore-data</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../vercel-vs-cloudflare-pages/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Vercel vs Cloudflare Pages</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The same penalty-table reading, applied to hosting: which line your workload inflates.</p>
+          </a>
+          <a class="card" href="../notion-vs-obsidian/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Notion vs Obsidian</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Another free tier that is really a history and API budget.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://supabase.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Supabase →</a>
+      <a href="https://firebase.google.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Firebase →</a>
+    </div>
+
+    
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
+      </p>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
+
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+    </div>
+  </footer>
+</body>
+</html>

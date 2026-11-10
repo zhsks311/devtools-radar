@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datadog vs Grafana Cloud (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud&#x27;s Pro plan. The difference is not the per-series rate. It is that only one of them puts t">
+  <link rel="canonical" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
+  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:title" content="Datadog vs Grafana Cloud — 2026 teardown">
+  <meta property="og:description" content="Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud&#x27;s Pro plan. The difference is not the per-series rate. It is that only one of them puts t">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Datadog vs Grafana Cloud: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance.">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Datadog vs Grafana Cloud: a 2026 engineering teardown",
+  "description": "Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud's Pro plan. The difference is not the per-series rate. It is that only one of them puts the hosts on the invoice.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTeardown Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://devteardown.com/compare/datadog-vs-grafana-cloud/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are Grafana Cloud's tier prices marginal or flat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marginal. Each new band bills at a lower rate for the usage inside it, so the blended rate falls as the account grows: $6.50 per 1,000 to 100,000, then $5.90, then $5.50."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What exactly is a custom metric on Datadog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A unique metric name plus tag combination, averaged hourly across the month. Adding a tag with many values multiplies the count even if the metric name never changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Grafana Cloud charge per host?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Pro plan is a $19 platform fee per account. Host hours appear for Kubernetes monitoring at $0.01 per host hour, which is a separate product from infrastructure metrics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep 30-day logs on Grafana Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Pro includes 30 days of log retention inside the platform fee, with 50 GB of ingest included and $0.55 per GB across the process, write and retain meters after that."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://devteardown.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Datadog vs Grafana Cloud",
+      "item": "https://devteardown.com/compare/datadog-vs-grafana-cloud/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
+<body>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
+
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">Monitoring &amp; Observability</span>
+      <span class="badge badge-gray">Datadog vs Grafana Cloud</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+
+    <h1>Datadog vs Grafana Cloud</h1>
+    <div class="lead"><p>Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud&#x27;s Pro plan. The difference is not the per-series rate. It is that only one of them puts the hosts on the invoice.</p></div>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p>Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance. Datadog wins where the workflow is the product: one agent, one APM trace, one security screen, and a team that already knows where to click. If your custom metrics line is a typo away from $10,000, the migration pays for itself in a quarter.</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">One sells a host, the other sells a series</a></li><li><a href="#s2">The custom metrics line is the one that grows without a deploy</a></li><li><a href="#s3">Two shops, and the same four numbers</a></li><li><a href="#s4">Logs: one vendor counts bytes, the other counts events</a></li><li><a href="#s5">Both vendors now discount you for deleting tags</a></li><li><a href="#s6">What the switch actually costs</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Datadog <span class="badge badge-blue">Per host</span></th>
+            <th>Grafana Cloud <span class="badge badge-green">Per series</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>SaaS telemetry: infrastructure, APM, logs, security and RUM</td><td>Managed Prometheus, Loki, Tempo and Mimir behind Grafana dashboards</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Infrastructure Pro $15/host/mo annual ($18 monthly) · custom metrics $5 per 100 · logs $0.10/GB + $1.70 per 1M at 15 days</td><td>Pro $19/mo platform fee · 10,000 series and 50 GB logs included · $6.50 per 1k series after</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>No (hosted SaaS, agent-based collection)</strong></td><td>Yes (Grafana, Loki, Mimir and Tempo are open source)</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>15 months of full-resolution metrics; 15-day log and trace search</td><td>13 months of metrics on Pro; 30 days for logs, traces, profiles and k6 tests</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>Bits AI credits from $500, with per-action credit estimates</td><td>AI Assistant and Adaptive Telemetry included on Free and Pro</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>High: dashboards, monitors and APM traces have no export to another backend</td><td>Low: Prometheus remote write in, dashboards and data out</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://www.datadoghq.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Datadog →</a></td>
+            <td><a href="https://grafana.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Grafana Cloud →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. One sells a host, the other sells a series</h2>
+      <p>Datadog&#x27;s infrastructure line is a licence: $15 per host per month billed annually, $18 month-to-month, and every licence carries 100 custom metrics. Grafana Cloud&#x27;s Pro plan is a $19 platform fee for the whole account, with 10,000 active series and 50 GB of logs inside it.</p>
+<p>That is the whole philosophical difference, and it decides the invoice shape:</p>
+<ul><li><strong>Datadog:</strong> cost grows with machines first, then with the cardinality of what you send from them.</li><li><strong>Grafana Cloud:</strong> cost is flat until you pass the account-level allowances, then grows with data volume only.</li></ul>
+<p>Neither page hides this. It is written in the billing unit, which is the one line worth reading before the price.</p>
+
+      <h2 id="s2">2. The custom metrics line is the one that grows without a deploy</h2>
+      <p>Per unit, Datadog&#x27;s custom metrics cost $5 per 100 per month, which is $50 per 1,000. Grafana Cloud&#x27;s first paid band is $6.50 per 1,000, then $5.90 above 100,000 and $5.50 above 200,000.</p>
+<div class="table-wrapper"><table><thead><tr><th>Meter</th><th>Datadog Infrastructure Pro</th><th>Grafana Cloud Pro</th></tr></thead><tbody><tr><td>Base</td><td>$15 per host per month, annual</td><td>$19 per account per month</td></tr><tr><td>Included series</td><td>100 per host</td><td>10,000 per account</td></tr><tr><td>Series beyond that</td><td>$5 per 100</td><td>$6.50 per 1,000</td></tr><tr><td>Effective per 1,000</td><td>$50.00</td><td>$6.50</td></tr></tbody></table></div>
+<p>Datadog&#x27;s rate is 7.7 times Grafana&#x27;s, and the allotment it ships with is 100 times smaller. Those two numbers pull in opposite directions, so the bill depends on whether your cardinality scales with hosts or with users.</p>
+
+      <h2 id="s3">3. Two shops, and the same four numbers</h2>
+      <p>Shop one: 20 hosts, 5,000 custom series.</p>
+<div class="table-wrapper"><table><thead><tr><th>Line</th><th>Datadog</th><th>Grafana Cloud</th></tr></thead><tbody><tr><td>Platform or hosts</td><td>20 × $15 = $300</td><td>$19</td></tr><tr><td>Billable series</td><td>5,000 − 2,000 = 3,000</td><td>0 (5,000 under 10,000)</td></tr><tr><td>Series cost</td><td>30 × $5 = $150</td><td>$0</td></tr><tr><td><strong>Total</strong></td><td><strong>$450</strong></td><td><strong>$19</strong></td></tr></tbody></table></div>
+<p>Shop two: 20 hosts, 200,000 custom series, which is what a <code>user_id</code> tag does to a counter.</p>
+<div class="table-wrapper"><table><thead><tr><th>Line</th><th>Datadog</th><th>Grafana Cloud</th></tr></thead><tbody><tr><td>Platform or hosts</td><td>$300</td><td>$19</td></tr><tr><td>Billable series</td><td>198,000</td><td>190,000</td></tr><tr><td>Series cost</td><td>1,980 × $5 = $9,900</td><td>90,000 × $6.50/1k + 100,000 × $5.90/1k = $1,175</td></tr><tr><td><strong>Total</strong></td><td><strong>$10,200</strong></td><td><strong>$1,194</strong></td></tr></tbody></table></div>
+<p>The second table is the one that arrives without a deploy, a migration or a new service. It arrives the week someone adds a tag.</p>
+
+      <h2 id="s4">4. Logs: one vendor counts bytes, the other counts events</h2>
+      <p>This is where the two sheets stop being directly comparable. Datadog charges $0.10 per ingested GB, then $1.70 per million indexed events at 15-day retention or $2.50 at 30-day. Grafana charges three meters per GB: $0.05 to process, $0.40 to write and $0.10 to retain, with 50 GB included.</p>
+<p>Take 500 GB a month at roughly 2.5 KB per event, or 200 million events, indexed for 30 days.</p>
+<div class="table-wrapper"><table><thead><tr><th>Meter</th><th>Datadog</th><th>Grafana Cloud</th></tr></thead><tbody><tr><td>Ingest</td><td>500 GB × $0.10 = $50</td><td>450 GB × $0.05 = $22.50</td></tr><tr><td>Index and retain</td><td>200M × $2.50/M = $500</td><td>450 GB × $0.40 = $180</td></tr><tr><td>Retention</td><td>included in the index rate</td><td>450 GB × $0.10 = $45</td></tr><tr><td><strong>Total</strong></td><td><strong>$550</strong></td><td><strong>$247.50</strong></td></tr></tbody></table></div>
+<p>The event meter rewards fat logs and the byte meter rewards few of them. The same 500 GB is $550 or $247.50 depending on which unit your logging happens to satisfy.</p>
+
+      <h2 id="s5">5. Both vendors now discount you for deleting tags</h2>
+      <p>Datadog sells Metrics without Limits, which splits one number into two: ingested custom metrics at $0.10 per 100, and indexed ones at $5 per 100. Grafana ships Adaptive Metrics, which aggregates and drops unused series, and the page states the claim as the vendor&#x27;s own: up to 80%.</p>
+<p>Read that as an admission. When a vendor builds a product whose only job is to delete time series before they reach the meter, the meter is cardinality, and the vendor knows the cardinality is often junk.</p>
+<p>The practical move costs nothing:</p>
+<ol><li>Sort your metrics by tag value count, not by metric name.</li><li>Drop any tag whose values scale with users, carts or request ids.</li><li>Re-count before you negotiate a discount, because the discount is priced on the number you can already fix.</li></ol>
+
+      <h2 id="s6">6. What the switch actually costs</h2>
+      <p>Grafana Cloud speaks Prometheus for metrics, Loki for logs and Tempo for traces, so an application already instrumented with a Prometheus client can point at a remote write endpoint and stop. Datadog&#x27;s agent, dashboards, monitors and APM traces do not translate: every dashboard is a rebuild, and every monitor needs a PromQL equivalent.</p>
+<p>Retention also moves. Datadog keeps full-resolution metrics for 15 months on Pro; Grafana&#x27;s Pro plan lists 13 months for metrics and 30 days for logs, traces, profiles and k6 tests.</p>
+<p>The reverse move is the expensive direction for a small team: going to Datadog means adopting a per-host licence where Grafana charged per account, so the same twenty hosts start at $300 before a single custom metric.</p>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">20 hosts, 5,000 custom series</div>
+          <div class="cost-formula">Datadog: 20 × $15 = $300, plus (5,000 − 20 × 100) = 3,000 series ÷ 100 × $5 = $150. Grafana: $19 platform fee, 5,000 under the 10,000 allowance</div>
+          <div class="cost-result">$450 on Datadog against $19 on Grafana Cloud Pro</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">20 hosts, 200,000 custom series</div>
+          <div class="cost-formula">Datadog: $300 + (200,000 − 2,000) ÷ 100 × $5 = $9,900. Grafana: $19 + 90,000 × $6.50/1,000 = $585 + 100,000 × $5.90/1,000 = $590</div>
+          <div class="cost-result">$10,200 on Datadog against $1,194 on Grafana Cloud Pro</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">500 GB of logs a month, 200M events, 30-day retention</div>
+          <div class="cost-formula">Datadog: 500 × $0.10 = $50 ingest, plus 200M ÷ 1M × $2.50 = $500 indexed. Grafana: 450 GB over the 50 GB allowance × ($0.05 + $0.40 + $0.10) = $247.50</div>
+          <div class="cost-result">$550 on Datadog against $247.50 on Grafana Cloud Pro</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">30 hosts with APM on Datadog</div>
+          <div class="cost-formula">30 × ($15 infrastructure + $31 APM) = 30 × $46 = $1,380 per month at annual rates</div>
+          <div class="cost-result">$1,380 before logs, traces or RUM; Grafana Cloud Pro has no per-host infrastructure line</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Series count scales with users, not hosts</td><td class="matrix-pick">Grafana Cloud</td><td>At 200,000 series the series meter bills $9,900 on Datadog against $1,175 on Grafana, and the 10,000-series allowance is account-wide.</td></tr><tr><td>A team already living in Datadog APM and security</td><td class="matrix-pick">Datadog</td><td>At 30 hosts the infrastructure plus APM licence is $1,380, and rebuilding dashboards and monitors is the hidden cost of leaving.</td></tr><tr><td>Five hosts and one person on call</td><td class="matrix-pick">Grafana Cloud</td><td>Datadog&#x27;s licence starts at $75 for five hosts before any custom metrics; Grafana&#x27;s platform fee is $19 for the account.</td></tr><tr><td>You need 15 months of full-resolution metrics</td><td class="matrix-pick">Datadog</td><td>Datadog keeps 15 months on Pro; Grafana Cloud Pro lists 13 months for metrics and 30 days for logs and traces.</td></tr><tr><td>The custom metrics line is already over $500</td><td class="matrix-pick">Grafana Cloud</td><td>That line is $500 per 10,000 series on Datadog and $65 per 10,000 on Grafana, so the same data crosses a factor of 7.7.</td></tr><tr><td>Logs are verbose JSON from a dozen services</td><td class="matrix-pick">Compute both before choosing</td><td>Datadog&#x27;s index rate is per event and Grafana&#x27;s is per GB, so 500 GB at 2.5 KB per event bills $550 against $247.50, and the same 500 GB at 250 bytes per event is 2 billion events, or $5,000 on the index line.</td></tr><tr><td>Security, SIEM and audit on one invoice</td><td class="matrix-pick">Datadog</td><td>Cloud SIEM, workload protection and audit trail are on the same price list; Grafana Cloud prices observability and leaves security elsewhere.</td></tr><tr><td>Everything is already Prometheus and you self-host Grafana</td><td class="matrix-pick">Grafana Cloud, or keep self-hosting</td><td>The remote-write path means no re-instrumentation, and the open-source stack is the same software the paid plan runs.</td></tr></tbody>
+      </table></div>
+
+    <h2>Code and configuration</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Datadog</span>
+        <pre><code># Every tag value pair is its own billable series on Datadog.
+from datadog import statsd
+
+def checkout(cart_id: str, user_id: str, items: int) -&gt; None:
+    statsd.increment(&quot;checkout.completed&quot;, tags=[f&quot;user_id:{user_id}&quot;])
+    statsd.gauge(&quot;checkout.items&quot;, items, tags=[f&quot;cart_id:{cart_id}&quot;])
+# Breaks when: user_id has 50,000 values. That is 50,000 custom series,
+# against an allowance of 100 per host — 500 hosts&#x27; worth of licence for one tag.</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Grafana Cloud</span>
+        <pre><code># Same job, same mistake: cardinality is the meter, not the vendor.
+from prometheus_client import Counter, Gauge, start_http_server
+
+checkout = Counter(&quot;checkout_completed_total&quot;, &quot;Checkouts&quot;, [&quot;user_id&quot;])
+items = Gauge(&quot;checkout_items&quot;, &quot;Items per cart&quot;, [&quot;cart_id&quot;])
+start_http_server(9100)
+
+checkout.labels(user_id=&quot;u_123&quot;).inc()  # one time series per label value
+# Breaks first here: 50,000 user_id values are 50,000 series on Grafana Cloud too,
+# and the 10,000-series allowance ends long before the first page of users.</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Datadog</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>One agent covers infrastructure, APM, logs and security, so the product surface is the reason teams stay</li><li>100 custom metrics ride along with every host licence, which covers a well-behaved service</li><li>Metrics without Limits decouples ingest from index, so you can keep sending and stop paying full price</li><li>15 months of full-resolution retention on Pro is the longest on either price sheet</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>The host licence bills machines you did not grow, so a fleet of small instances pays per instance</li><li>Custom metrics at $5 per 100 is $50 per 1,000, after an allowance of just 100 per host</li><li>Logs are metered twice, on ingest and on indexed events, and the event count follows log size</li><li>APM is a second per-host licence at $31, so a monitored host is $46 before logs</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Grafana Cloud</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>The account-level fee means machines are free: twenty hosts cost the same as two</li><li>10,000 included series cover most small deployments with no custom-metric line at all</li><li>Tiered marginal rates mean the effective price falls as volume grows, to $5.50 per 1,000</li><li>Prometheus, Loki and Tempo are open source, so the paid plan runs software you can also host</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>The series rate is cheaper but the 10,000-series allowance is shared by every metric in the account</li><li>Traces, profiles and logs all meter GB, so a verbose log line is a billable byte</li><li>There is no Datadog-equivalent APM product on the Pro sheet, so trace-based debugging is a rebuild</li><li>Metrics retention is 13 months against Datadog&#x27;s 15, which matters for year-over-year comparisons</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p>Self-hosted or Grafana Cloud, the instrumentation is the portable part: a Prometheus client library pushes to a remote-write endpoint, and the same client keeps working on either. Datadog&#x27;s agent can also forward to a Prometheus-compatible backend, so the first phase is usually dual-writing while you rebuild dashboards.</p>
+<p>The rebuild is the cost. Datadog dashboards, monitors and APM traces have no export format for Grafana, and every alert needs a PromQL translation with its own threshold review. Plan the monitor rewrite as its own project; the metrics are the easy half, which is why teams that switch usually run both systems for a quarter.</p></div>
+      </div>
+
+    <h2 id="faq">Common questions</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Are Grafana Cloud&#x27;s tier prices marginal or flat?</div>
+          <div class="faq-a">Marginal. Each new band bills at a lower rate for the usage inside it, so the blended rate falls as the account grows: $6.50 per 1,000 to 100,000, then $5.90, then $5.50.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What exactly is a custom metric on Datadog?</div>
+          <div class="faq-a">A unique metric name plus tag combination, averaged hourly across the month. Adding a tag with many values multiplies the count even if the metric name never changes.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Does Grafana Cloud charge per host?</div>
+          <div class="faq-a">The Pro plan is a $19 platform fee per account. Host hours appear for Kubernetes monitoring at $0.01 per host hour, which is a separate product from infrastructure metrics.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I keep 30-day logs on Grafana Cloud?</div>
+          <div class="faq-a">Yes. Pro includes 30 days of log retention inside the platform fee, with 50 GB of ingest included and $0.55 per GB across the process, write and retain meters after that.</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://www.datadoghq.com/pricing/" rel="noopener nofollow" target="_blank">https://www.datadoghq.com/pricing/</a><br><a href="https://www.datadoghq.com/pricing/list/" rel="noopener nofollow" target="_blank">https://www.datadoghq.com/pricing/list/</a><br><a href="https://docs.datadoghq.com/account_management/billing/custom_metrics/" rel="noopener nofollow" target="_blank">https://docs.datadoghq.com/account_management/billing/custom_metrics/</a><br><a href="https://grafana.com/pricing/" rel="noopener nofollow" target="_blank">https://grafana.com/pricing/</a><br><a href="https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/" rel="noopener nofollow" target="_blank">https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../aws-lambda-vs-cloudflare-workers/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">AWS Lambda vs Cloudflare Workers</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Another invoice where the billing unit, not the price, decides the total.</p>
+          </a>
+          <a class="card" href="../stripe-vs-lemonsqueezy-vs-paddle/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Stripe vs Lemon Squeezy / Paddle</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Four meters on one invoice, and the sticker price covers one of them.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://www.datadoghq.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Datadog →</a>
+      <a href="https://grafana.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Grafana Cloud →</a>
+    </div>
+
+    
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
+      </p>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
+
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+    </div>
+  </footer>
+</body>
+</html>

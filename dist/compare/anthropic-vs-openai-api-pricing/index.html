@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic vs OpenAI (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one">
+  <link rel="canonical" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
+  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:title" content="Anthropic vs OpenAI — 2026 teardown">
+  <meta property="og:description" content="Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://devteardown.com/compare/anthropic-vs-openai-api-pricing/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Anthropic vs OpenAI: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached.">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Anthropic vs OpenAI: a 2026 engineering teardown",
+  "description": "Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one tokenizer counts about 30% more tokens for the same text.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTeardown Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is prompt caching automatic on both?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Anthropic takes a cache_control marker on the block you want cached, and OpenAI caches a stable prefix automatically with no marker to place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the batch discount and the cache discount combine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Anthropic the page says cache multipliers stack with the batch discount. OpenAI publishes separate Batch and Flex tables at the same rates, and fast mode is excluded from batch on Anthropic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the 30% tokenizer note change?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It raises the effective price per unit of source text by about 30% on Claude 4.7 and later, against a sheet whose per-token rates are otherwise identical to the competitor's."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a cache write ever a loss?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The 1.25x short write needs a read to pay for itself and the 2x or 2.5x long write needs two or three, so a job that reads the prefix once bills more with caching than without."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://devteardown.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Anthropic vs OpenAI",
+      "item": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
+<body>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
+
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">AI &amp; LLM APIs</span>
+      <span class="badge badge-gray">Anthropic vs OpenAI</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+
+    <h1>Anthropic vs OpenAI</h1>
+    <div class="lead"><p>Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one tokenizer counts about 30% more tokens for the same text.</p></div>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p>On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer&#x27;s 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">Two sheets, one identical sticker</a></li><li><a href="#s2">The tokenizer changes the invoice before your prompt does</a></li><li><a href="#s3">Caching is a break-even test, not a discount</a></li><li><a href="#s4">Batch is the one line where both sheets agree</a></li><li><a href="#s5">Long prompts are where the sheets stop being comparable</a></li><li><a href="#s6">Three add-ons that quietly change the unit</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Anthropic <span class="badge badge-blue">Cache breakpoints</span></th>
+            <th>OpenAI <span class="badge badge-green">Automatic caching</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Claude API: messages, prompt caching and batch in one price sheet</td><td>GPT API: tokens, cached input, Batch and Flex as separate rate cards</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Sonnet 5.5 $2 / $10 · Opus 5.5 $4 / $20 · Haiku 5.5 $0.10 / $0.50 per MTok</td><td>GPT-6.1 Sol $2 / $10 · GPT-6 Astra $10 / $50 · GPT-6 Luna $0.10 / $0.50 per MTok</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>No (first-party API, Bedrock and Google Cloud endpoints)</strong></td><td>No (first-party API and Azure-hosted deployments)</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>Cache reads at 0.1x, or 0.05x on Opus 5.5 and Sonnet 5.5; writes 1.25x for 5m and 2x for 1h</td><td>Cached input at 0.05x; writes 1.25x for 30 minutes and 2.5x for 12 hours</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>Batch halves both sides; fast mode doubles; US-only inference adds 1.1x</td><td>Batch and Flex halve both sides; long context doubles input and multiplies output by 1.5</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium: model deprecations retire SKUs, and cache breakpoints are vendor-specific</td><td>Medium: batch files and assistants are per-vendor objects with no export</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://claude.com/pricing?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Anthropic →</a></td>
+            <td><a href="https://openai.com/api/pricing/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">OpenAI →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. Two sheets, one identical sticker</h2>
+      <p>The flagship rows of both price sheets match to the cent, and so do the cache reads.</p>
+<div class="table-wrapper"><table><thead><tr><th>Per million tokens</th><th>Claude Sonnet 5.5</th><th>GPT-6.1 Sol</th></tr></thead><tbody><tr><td>Input</td><td>$2.00</td><td>$2.00</td></tr><tr><td>Output</td><td>$10.00</td><td>$10.00</td></tr><tr><td>Cached input (hit)</td><td>$0.10</td><td>$0.10</td></tr><tr><td>5m or 30m cache write</td><td>$2.50 (1.25x)</td><td>$2.50 (1.25x)</td></tr><tr><td>Batch input / output</td><td>$1.00 / $5.00</td><td>$1.00 / $5.00</td></tr></tbody></table></div>
+<p>Anthropic&#x27;s Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI&#x27;s GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision.</p>
+
+      <h2 id="s2">2. The tokenizer changes the invoice before your prompt does</h2>
+      <p>Anthropic&#x27;s pricing page carries a note most price sheets would leave out: Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text.</p>
+<p>So the sticker is $2 per million tokens, and the bill is $2 per million tokens of Claude&#x27;s counting. For text that costs $2.00 per million source tokens on a standard tokenizer, the same text costs $2.00 × 1.3 = $2.60.</p>
+<p>That is a 30% difference on the largest line of a RAG or agent bill, and it does not appear anywhere in a side-by-side table that compares per-token prices. The note also says the exact increase depends on the content, so treat 1.3 as a working multiplier, not a constant.</p>
+
+      <h2 id="s3">3. Caching is a break-even test, not a discount</h2>
+      <p>Both vendors sell the same shape: pay more to write a prefix, pay less to read it. The multipliers are where they part.</p>
+<div class="table-wrapper"><table><thead><tr><th>Cache operation</th><th>Anthropic</th><th>OpenAI</th></tr></thead><tbody><tr><td>Write, short</td><td>1.25x, 5 minutes</td><td>1.25x, 30 minutes</td></tr><tr><td>Write, long</td><td>2x, 1 hour</td><td>2.5x, 12 hours</td></tr><tr><td>Read (hit)</td><td>0.1x, or 0.05x on 5.5 models</td><td>0.05x</td></tr></tbody></table></div>
+<p>A cached prefix costs 1.25 + 0.1n to serve n requests, against n uncached. The break-even is n = 1.39, so the second request already wins, and ten requests cost 2.25 instead of 10, a 77.5% cut on the input line. The long windows are worse deals for short runs: 2x + 0.1n beats n only from the third request, and OpenAI&#x27;s 2.5x write needs three reads before it pays.</p>
+
+      <h2 id="s4">4. Batch is the one line where both sheets agree</h2>
+      <p>Both vendors halve input and output for asynchronous work. Anthropic publishes the batch rows separately; OpenAI prints a Batch table and a separate Flex table at the same numbers.</p>
+<div class="table-wrapper"><table><thead><tr><th>Batch, per million</th><th>Claude Sonnet 5.5</th><th>Claude Opus 5.5</th><th>GPT-6.1 Sol</th></tr></thead><tbody><tr><td>Input</td><td>$1.00</td><td>$2.00</td><td>$1.00</td></tr><tr><td>Output</td><td>$5.00</td><td>$10.00</td><td>$5.00</td></tr></tbody></table></div>
+<p>Anthropic&#x27;s page says its cache multipliers stack with the batch discount. That combination is the cheapest published way to process a large, stable corpus: a cached prefix at 0.1x inside a batch, on a job that can wait. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.</p>
+
+      <h2 id="s5">5. Long prompts are where the sheets stop being comparable</h2>
+      <p>Both vendors reprice the prompt once it gets long, and they do it in different shapes.</p>
+<div class="table-wrapper"><table><thead><tr><th>Prompt size</th><th>GPT-6.1 Sol</th><th>Claude Haiku 5.5</th></tr></thead><tbody><tr><td>Short context, input</td><td>$2.00</td><td>$0.10 up to 100,000 tokens</td></tr><tr><td>Long context, input</td><td>$4.00</td><td>$0.50 over 100,000 tokens</td></tr><tr><td>Long context, output</td><td>$15.00</td><td>$2.50 over 100,000 tokens</td></tr></tbody></table></div>
+<p>OpenAI&#x27;s long-context row doubles input and multiplies output by 1.5. Anthropic&#x27;s Haiku sheet lists two rows, one for prompts up to 100,000 tokens and one for prompts over it, at five times the rate, and it does not print a marginal split.</p>
+<p>A 200,000-token prompt therefore bills at 0.2 × $0.50 = $0.10 on the over-100k row against $0.02 if the same prompt fit under the line. That cliff, not the per-token sticker, is what a document pipeline hits when someone pastes a whole contract set.</p>
+
+      <h2 id="s6">6. Three add-ons that quietly change the unit</h2>
+      <p>Fast mode on both sides doubles the sticker: Opus 5.5 goes to $8 input and $40 output, GPT-6.1 Sol to $4 and $20. Anthropic notes that fast mode is not available with the Batch API, so the two savings cannot be stacked.</p>
+<p>Data residency is a multiplier rather than a tier. Sending Claude 4.6 or later to US-only inference applies 1.1x to every token category, cache writes and reads included.</p>
+<p>The third is the cache window, and it is easy to lose money on. A 12-hour write costs 2.5x, so a job that runs twice a day should skip caching entirely rather than pay 2.5x for a prefix it reads once. Check the read count before enabling it: three reads is where the long window starts to earn.</p>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">100k requests, 16k cached prefix, 4k fresh input, 500 output</div>
+          <div class="cost-formula">Sonnet 5.5 or GPT-6.1 Sol: writes 10,000 × 16,000 = 160M × $2.50 = $400; hits 90,000 × 16,000 = 1,440M × $0.10 = $144; fresh 100,000 × 4,000 = 400M × $2 = $800; output 100,000 × 500 = 50M × $10 = $500</div>
+          <div class="cost-result">$1,844 on either vendor at list price, before the tokenizer</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">The same workload through a tokenizer that counts 30% more</div>
+          <div class="cost-formula">$1,844 × 1.3 = $2,397.20, applying Anthropic&#x27;s stated ~30% token increase</div>
+          <div class="cost-result">$2,397 against $1,844 for identical text, a 30% difference on a sheet whose per-token prices match</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Cache break-even on a shared prefix</div>
+          <div class="cost-formula">1.25 + 0.10n &lt; n, so n &gt; 1.39; at n = 10 the cost is 1.25 + 1.00 = 2.25 against 10 uncached</div>
+          <div class="cost-result">Profitable from the second request; 77.5% off the input line by the tenth</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Long window write on a twice-daily job</div>
+          <div class="cost-formula">OpenAI 12h: 2.5 write + 0.10 read = 2.60, against 2 × 1.00 = 2.00 uncached. Anthropic 1h: 2.0 write + 0.10 read = 2.10, against 2.00</div>
+          <div class="cost-result">2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor&#x27;s long window</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>A long, stable system prompt at high volume</td><td class="matrix-pick">Either; decide on the tokenizer</td><td>Both bill the prefix at 1.25x to write and 0.10x or 0.05x to read, so a 30% token difference decides more than the cache terms do.</td></tr><tr><td>Prompts that regularly pass 100,000 tokens</td><td class="matrix-pick">Weigh the long-context row first</td><td>OpenAI doubles input and multiplies output by 1.5 past the boundary; Haiku 5.5 lists a rate five times higher for prompts over 100,000 tokens.</td></tr><tr><td>Nightly batch of a few hundred thousand jobs</td><td class="matrix-pick">Batch API on either</td><td>Both halve input and output, and a single nightly pass has no cache to read from, so a cold write only adds 25%.</td></tr><tr><td>A job that runs every 12 hours over one corpus</td><td class="matrix-pick">No cache at all</td><td>The 12-hour write costs 2.5x and the 1-hour write has expired by the next run; two uncached passes cost 2.0 against 2.6.</td></tr><tr><td>Output-heavy generation, 500+ tokens per call</td><td class="matrix-pick">GPT-6.1 Sol over Opus 5.5</td><td>Output is 5x input on both sheets, so the $10 against $20 output rate dominates the bill long before the input line does.</td></tr><tr><td>Streaming that a user is watching</td><td class="matrix-pick">Fast mode, at 2x</td><td>Opus 5.5 moves to $8 and $40 and GPT-6.1 Sol to $4 and $20, and fast mode cannot be combined with batch.</td></tr><tr><td>Data must stay in the US</td><td class="matrix-pick">Price the 1.1x before comparing</td><td>US-only inference multiplies every Claude token category by 1.1, cache writes and reads included, which changes a close comparison.</td></tr><tr><td>A prototype with prompts under 100,000 tokens</td><td class="matrix-pick">Claude Haiku 5.5</td><td>$0.10 input and $0.50 output per million is a twentieth of the flagship rows, and the over-100k rate only applies when the prompt crosses the line.</td></tr></tbody>
+      </table></div>
+
+    <h2>Code and configuration</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Anthropic</span>
+        <pre><code>// Anthropic bills the prefix once: the breakpoint is a marker, not a hint.
+import Anthropic from &quot;@anthropic-ai/sdk&quot;;
+const client = new Anthropic();
+
+const msg = await client.messages.create({
+  model: &quot;claude-sonnet-5-5&quot;,
+  max_tokens: 512,
+  system: [{
+    type: &quot;text&quot;,
+    text: SYSTEM_PROMPT,
+    cache_control: { type: &quot;ephemeral&quot; }, // 1.25x write, then 0.10x reads
+  }],
+  messages: [{ role: &quot;user&quot;, content: question }],
+});
+// Breaks when: the breakpoint sits after a timestamp or a user id. Every request
+// then writes a new prefix and pays 1.25x instead of reading at 0.10x.
+console.log(msg.usage);</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">OpenAI</span>
+        <pre><code>// OpenAI caches automatically: there is no marker, only a prefix to keep stable.
+import OpenAI from &quot;openai&quot;;
+const client = new OpenAI();
+
+const res = await client.responses.create({
+  model: &quot;gpt-6.1-sol&quot;,
+  input: [
+    { role: &quot;system&quot;, content: SYSTEM_PROMPT }, // byte-identical every call
+    { role: &quot;user&quot;, content: question },
+  ],
+});
+// Breaks when: the system prompt is assembled with a date or a request id.
+// A changed prefix is a cache miss billed at the full $2 per million.
+console.log(res.usage?.input_tokens_details);</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Anthropic</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Two cache windows on every model, 5 minutes and 1 hour, priced at 1.25x and 2x</li><li>Cache reads cost 0.05x on Opus 5.5 and Sonnet 5.5, cheaper than the standard 0.1x row</li><li>The batch and cache multipliers stack, which is the cheapest published path for a stable corpus</li><li>Haiku 5.5 starts at $0.10 input for prompts under 100,000 tokens, with a documented higher row above it</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>The 4.7-and-later tokenizer produces about 30% more tokens for the same text, which the per-token price hides</li><li>The over-100,000-token Haiku row is five times the rate and is printed as a whole-prompt rate</li><li>Fast mode doubles the sheet and cannot be stacked with the batch discount</li><li>US-only inference applies 1.1x to cache writes and reads, not just to fresh input</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">OpenAI</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Caching needs no marker: keep the prefix byte-identical and the discount applies</li><li>A 12-hour cache window exists, which suits jobs spread over a working day</li><li>Flex is priced at the batch rate, so the discount is available without the queue</li><li>Long context is priced as a multiplier on the same row, so the jump is visible before you hit it</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>The 12-hour write costs 2.5x, so it needs three reads before it beats paying full price</li><li>Long context doubles input and multiplies output by 1.5, which lands on the most expensive line</li><li>A single changed byte in the prefix is a silent cache miss at full input price</li><li>Fast mode doubles the sheet and is a separate rate card from the standard one</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p>Moving between the two APIs is mostly a prompt rewrite, because the cache is the part that does not travel: Anthropic takes an explicit breakpoint marker, OpenAI caches a stable prefix automatically. Re-measure your token counts on the new tokenizer before you migrate pricing assumptions, since the same text will not bill the same number of tokens.</p>
+<p>Everything asynchronous needs resubmission. Batch jobs, files and fine-tuned endpoints are per-vendor objects with no portable format, and model deprecations retire a SKU you may still be calling, so keep the model name in configuration rather than in code.</p></div>
+      </div>
+
+    <h2 id="faq">Common questions</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Is prompt caching automatic on both?</div>
+          <div class="faq-a">No. Anthropic takes a cache_control marker on the block you want cached, and OpenAI caches a stable prefix automatically with no marker to place.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do the batch discount and the cache discount combine?</div>
+          <div class="faq-a">On Anthropic the page says cache multipliers stack with the batch discount. OpenAI publishes separate Batch and Flex tables at the same rates, and fast mode is excluded from batch on Anthropic.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What does the 30% tokenizer note change?</div>
+          <div class="faq-a">It raises the effective price per unit of source text by about 30% on Claude 4.7 and later, against a sheet whose per-token rates are otherwise identical to the competitor&#x27;s.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is a cache write ever a loss?</div>
+          <div class="faq-a">Yes. The 1.25x short write needs a read to pay for itself and the 2x or 2.5x long write needs two or three, so a job that reads the prefix once bills more with caching than without.</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://docs.anthropic.com/en/docs/about-claude/pricing" rel="noopener nofollow" target="_blank">https://docs.anthropic.com/en/docs/about-claude/pricing</a><br><a href="https://platform.openai.com/docs/pricing" rel="noopener nofollow" target="_blank">https://platform.openai.com/docs/pricing</a><br><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching" rel="noopener nofollow" target="_blank">https://platform.claude.com/docs/en/build-with-claude/prompt-caching</a><br><a href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" rel="noopener nofollow" target="_blank">https://platform.claude.com/docs/en/build-with-claude/batch-processing</a><br><a href="https://claude.com/pricing" rel="noopener nofollow" target="_blank">https://claude.com/pricing</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../datadog-vs-grafana-cloud/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Datadog vs Grafana Cloud</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The same discipline on a monitoring invoice: find the meter, then print the formula.</p>
+          </a>
+          <a class="card" href="../aws-lambda-vs-cloudflare-workers/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">AWS Lambda vs Cloudflare Workers</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">When the bill depends on whether you charge for waiting or for working.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://claude.com/pricing?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Anthropic →</a>
+      <a href="https://openai.com/api/pricing/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore OpenAI →</a>
+    </div>
+
+    
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
+      </p>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
+
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+    </div>
+  </footer>
+</body>
+</html>

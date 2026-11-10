@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Lambda vs Cloudflare Workers (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bill">
+  <link rel="canonical" href="https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/">
+  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:title" content="AWS Lambda vs Cloudflare Workers — 2026 teardown">
+  <meta property="og:description" content="One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bill">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AWS Lambda vs Cloudflare Workers: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call.">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "AWS Lambda vs Cloudflare Workers: a 2026 engineering teardown",
+  "description": "One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bills the waiting.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTeardown Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Workers really charge nothing for duration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The pricing page states there is no charge or limit for duration and no charge for data transfer or bandwidth. Only CPU milliseconds and requests are metered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Lambda Web Functions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A second Lambda billing model that charges per request, per vCPU-second of active CPU and per GB-second of memory for as long as the execution environment exists."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which free tier is bigger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lambda's, in dollar terms at low volume: 1 million requests and 400,000 GB-seconds against Workers' 10 million requests and 30 million CPU-milliseconds on the $5 plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a cold start billed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Event Functions the initialisation runs inside the billed duration, and SnapStart adds its own cache and restore charges. Workers does not bill duration at all."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://devteardown.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AWS Lambda vs Cloudflare Workers",
+      "item": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
+<body>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
+
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">Serverless &amp; Edge</span>
+      <span class="badge badge-gray">AWS Lambda vs Cloudflare Workers</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+
+    <h1>AWS Lambda vs Cloudflare Workers</h1>
+    <div class="lead"><p>One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bills the waiting.</p></div>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p>For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call. For a request that works, the two converge, and Lambda&#x27;s free tier and memory ceiling win back the low end. The bill is a statement about your code&#x27;s shape, not about the vendors&#x27; rates.</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">Two vendors, three meters, two definitions of work</a></li><li><a href="#s2">A GB-second is a memory meter wearing a clock</a></li><li><a href="#s3">The bills cross at about 7.5 million requests</a></li><li><a href="#s4">Lambda&#x27;s second sheet splits the same request in two</a></li><li><a href="#s5">Where Lambda wins on the same sheet</a></li><li><a href="#s6">The exit door has a rewrite behind it</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>AWS Lambda <span class="badge badge-blue">GB-seconds</span></th>
+            <th>Cloudflare Workers <span class="badge badge-green">CPU-ms</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Event Functions bill duration in GB-seconds; Web Functions bill active CPU plus memory</td><td>V8 isolates at the edge: CPU time is the only compute meter</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Event: $0.20/M requests + $0.0000133334/GB-s Arm · Web: $0.30/M + $0.0000276944/vCPU-s + $0.0000036667/GB-s</td><td>$5/mo minimum · 10M requests included then $0.30/M · 30M CPU-ms included then $0.02/M</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>No (AWS-managed, VPC and IAM integrated)</strong></td><td>No managed equivalent; workerd is open source</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>Free tier 1M requests and 400,000 GB-s; 10,240 MB memory ceiling</td><td>Free: 100,000 requests/day and 10 ms CPU per invocation; paid: 5-minute CPU ceiling</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>Durable functions at $8 per million operations; streaming priced per GB written</td><td>Durable Objects, KV, Queues and Workflows meter separately; static assets are free</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium: event sources, IAM and VPC wiring are AWS-shaped</td><td>Low on compute, higher on state: Durable Objects hold data inside the product</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://aws.amazon.com/lambda/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">AWS Lambda →</a></td>
+            <td><a href="https://workers.cloudflare.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Cloudflare Workers →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. Two vendors, three meters, two definitions of work</h2>
+      <p>Lambda now publishes two price sheets. Event Functions bill requests plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, memory at $0.0000036667 per GB-second for as long as the environment exists, and $0.30 per million requests.</p>
+<p>Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. The page is explicit that there is no charge for duration, for egress or for bandwidth.</p>
+<div class="table-wrapper"><table><thead><tr><th>Meter</th><th>Lambda Event</th><th>Lambda Web</th><th>Workers</th></tr></thead><tbody><tr><td>Requests</td><td>$0.20/M</td><td>$0.30/M</td><td>$0.30/M</td></tr><tr><td>Duration</td><td>GB-seconds</td><td>memory GB-s, whole life</td><td>none</td></tr><tr><td>CPU</td><td>inside duration</td><td>$0.0000276944/vCPU-s</td><td>$0.02/M CPU-ms</td></tr></tbody></table></div>
+
+      <h2 id="s2">2. A GB-second is a memory meter wearing a clock</h2>
+      <p>Duration billing multiplies wall time by allocated memory, and both factors are yours to set. A 512 MB function that takes 200 ms bills 0.5 GB × 0.2 s = 0.1 GB-s per request. At 100 million requests that is 10 million GB-seconds, or $133.34 on Arm at $0.0000133334.</p>
+<p>Workers bills the 10 ms of actual work instead: 100 million × 10 ms = 1,000 million CPU-milliseconds, which is 970 million after the 30 million included, at $0.02 per million CPU-ms = $19.40.</p>
+<p>So the ratio between the two vendors is not a rate difference. It is the fraction of the request that is CPU: 10 ms of 200 ms is 5%, and that 5% is what Workers meters. Make the handler heavier and the gap narrows; make it wait on a database and the gap widens.</p>
+
+      <h2 id="s3">3. The bills cross at about 7.5 million requests</h2>
+      <p>Same shape everywhere below: 200 ms duration, 512 MB, 10 ms of CPU, one function.</p>
+<div class="table-wrapper"><table><thead><tr><th>Requests/month</th><th>Lambda Event (Arm)</th><th>Workers</th><th>Cheaper</th></tr></thead><tbody><tr><td>5M</td><td>$0.80 + $1.33 = $2.13</td><td>$5.00 + $0.40 = $5.40</td><td>Lambda</td></tr><tr><td>7.5M</td><td>$1.30 + $4.67 = $5.97</td><td>$5.00 + $0.90 = $5.90</td><td>Workers, by 7¢</td></tr><tr><td>10M</td><td>$1.80 + $8.00 = $9.80</td><td>$5.00 + $1.40 = $6.40</td><td>Workers</td></tr><tr><td>50M</td><td>$9.80 + $61.33 = $71.13</td><td>$5.00 + $12.00 + $9.40 = $26.40</td><td>Workers</td></tr><tr><td>100M</td><td>$19.80 + $128.00 = $147.80</td><td>$5.00 + $27.00 + $19.40 = $51.40</td><td>Workers</td></tr></tbody></table></div>
+<p>The crossover is a free-tier artefact, not a policy: 1 million requests and 400,000 GB-seconds are free on Lambda, and 30 million CPU-ms are free on Workers. Below roughly 7.5 million requests the Lambda allowance is worth more than the CPU savings. Above it, the $5 plan floor disappears into the noise.</p>
+
+      <h2 id="s4">4. Lambda&#x27;s second sheet splits the same request in two</h2>
+      <p>Web Functions are AWS&#x27;s answer to active-CPU billing, and they price the same 100 million requests differently.</p>
+<div class="table-wrapper"><table><thead><tr><th>Line</th><th>Lambda Event</th><th>Lambda Web</th><th>Workers</th></tr></thead><tbody><tr><td>Requests</td><td>$19.80</td><td>$30.00</td><td>$27.00</td></tr><tr><td>Compute</td><td>10M GB-s = $128.00</td><td>1M vCPU-s = $27.69, 1.296M GB-s = $4.75</td><td>970M CPU-ms = $19.40</td></tr><tr><td>Plan floor</td><td>—</td><td>—</td><td>$5.00</td></tr><tr><td><strong>Total</strong></td><td><strong>$147.80</strong></td><td><strong>$62.45</strong></td><td><strong>$51.40</strong></td></tr></tbody></table></div>
+<p>Web Functions bill $62.45 for the same traffic, 42% of the Event price, and still 21% above the Workers bill. The memory meter is why: it bills the environment for its whole life, idle time included, and AWS&#x27;s own examples quietly assume exactly one environment stays up for the entire month.</p>
+
+      <h2 id="s5">5. Where Lambda wins on the same sheet</h2>
+      <p>The free tier, for one. Five million requests a month cost $2.13 on Lambda and $5.40 on Workers, and a hobby project that sends three million costs $2.73 by AWS&#x27;s own worked example.</p>
+<p>Memory ceiling is the second. Lambda allocates up to 10,240 MB per function, which covers a model that will not fit in a V8 isolate. Workers caps a single invocation at 5 minutes of CPU, 30 seconds by default.</p>
+<p>The third is everything around the function: VPC access, IAM, SQS, Kinesis, Step Functions and the rest of the event-source catalogue. On an AWS shop, the compute line is frequently cheaper than the integration you would rewrite to leave it.</p>
+
+      <h2 id="s6">6. The exit door has a rewrite behind it</h2>
+      <p>Workers runs JavaScript on V8 with a fetch-shaped API. A Lambda handler that imports a native module, spawns a process or needs a writable filesystem does not run there, and the 5-minute CPU cap is not negotiable with a support ticket.</p>
+<p>The reverse move is easier and still not free: Workers&#x27; egress is $0 and Lambda&#x27;s is not, so a byte-heavy service that moves back to Lambda picks up a data transfer line it never had.</p>
+<p>Price the traffic, not the platform. If your p50 request spends most of its time waiting on a database, the CPU meter is the cheaper meter and the rewrite is the only real cost. If your requests are heavy, synchronous and mostly compute, the two bills converge and the free tier decides.</p>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">100M requests at 200 ms, 512 MB, 10 ms CPU</div>
+          <div class="cost-formula">Lambda Event Arm: 100M × 0.2 s × 0.5 GB = 10M GB-s, minus 400k free = 9.6M × $0.0000133334 = $128.00, plus 99M × $0.20/M = $19.80. Workers: (100M − 10M) × $0.30/M = $27.00, plus (1,000M − 30M) CPU-ms × $0.02/M = $19.40, plus $5.00</div>
+          <div class="cost-result">$147.80 on Lambda against $51.40 on Workers</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">The same traffic on Lambda Web Functions</div>
+          <div class="cost-formula">100M × 10 ms = 1M vCPU-s × $0.0000276944 = $27.69; 0.5 GB × 2,592,000 s = 1,296,000 GB-s × $0.0000036667 = $4.75; 100M × $0.30/M = $30.00</div>
+          <div class="cost-result">$62.45, 58% below Lambda&#x27;s own Event price for identical traffic</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Cross-over against Lambda&#x27;s free tier</div>
+          <div class="cost-formula">Lambda: (R − 1M) × $0.20/M + (R × 0.1 − 400k) × $0.0000133334. Workers: $5 + (R × 10 − 30M) × $0.02/M</div>
+          <div class="cost-result">Equal at about 7.5M requests a month; below that Lambda&#x27;s free allowance wins, above it the CPU meter does</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Replacing a 200 ms wait with a 1 s wait</div>
+          <div class="cost-formula">At 10M requests: Lambda 10M × 1 s × 0.5 GB = 5M GB-s − 400k = 4.6M × $0.0000133334 = $61.33 + $1.80. Workers CPU is unchanged at 10M × 200 ms = 2,000M − 30M × $0.02/M = $39.40 + $5</div>
+          <div class="cost-result">$63.13 against $44.40: the slower request costs Lambda $53 more and Workers nothing</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Under about 5 million requests a month</td><td class="matrix-pick">Lambda Event Functions</td><td>The 1M-request and 400,000 GB-second free allowances cover the whole job: 5M requests at 200 ms and 512 MB price at $2.13 against $5.40 on Workers.</td></tr><tr><td>100 million requests that mostly wait on I/O</td><td class="matrix-pick">Workers</td><td>The same shape prices at $51.40 against $147.80, because 10 ms of CPU out of a 200 ms request is all Workers meters.</td></tr><tr><td>A function that needs 10 GB of memory</td><td class="matrix-pick">Lambda</td><td>Lambda allocates up to 10,240 MB; Workers caps a single invocation at 5 minutes of CPU and runs in an isolate with a far smaller footprint.</td></tr><tr><td>Long-lived streaming to a browser</td><td class="matrix-pick">Lambda Web Functions</td><td>Active-CPU billing ignores the wait: AWS&#x27;s own LLM streaming example prices 5M requests of 3 s at $33.94, against $101.00 as Event Functions.</td></tr><tr><td>Byte-heavy responses at the edge</td><td class="matrix-pick">Workers</td><td>Workers charges nothing for egress or bandwidth, and static asset requests are free and unlimited.</td></tr><tr><td>SQS, Kinesis, VPC and IAM already wired into the app</td><td class="matrix-pick">Lambda</td><td>The compute line is often the small one; rewriting event sources and IAM to leave AWS costs more than the difference on the invoice.</td></tr><tr><td>A cron job every hour, minutes of CPU each</td><td class="matrix-pick">Workers</td><td>Cloudflare&#x27;s own example prices 720 invocations at 180,000 ms CPU each at $6.99, and duration is not a meter at all.</td></tr><tr><td>Traffic so spiky that one environment cannot serve it</td><td class="matrix-pick">Lambda Event Functions</td><td>Web Functions bill memory for the life of every environment, and the pricing examples quietly assume exactly one environment runs all month.</td></tr></tbody>
+      </table></div>
+
+    <h2>Code and configuration</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">AWS Lambda</span>
+        <pre><code>// Event Function: the meter starts at invocation and runs through the wait.
+export const handler = async (event) =&gt; {
+  const user = await db.users.findUnique({ where: { id: event.userId } }); // 180 ms here
+  const digest = render(user);                                            // 10 ms here
+  return { statusCode: 200, body: digest };
+};
+// Breaks when: the lookup takes 1 s. You are billed 1.01 s of 512 MB, so the wait
+// is 99% of the invoice. Web Functions bill only the 10 ms of active CPU.</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Cloudflare Workers</span>
+        <pre><code>// Workers: nothing here is billed by the clock, only the CPU this code burns.
+export default {
+  async fetch(request, env) {
+    const userId = new URL(request.url).searchParams.get(&quot;id&quot;);
+    const user = await env.DB.prepare(&quot;SELECT * FROM users WHERE id = ?&quot;)
+      .bind(userId).first();            // 180 ms of waiting, not billed
+    return new Response(render(user), {
+      headers: { &quot;content-type&quot;: &quot;text/html&quot; },
+    });
+  },
+};
+// Breaks when: render() parses a 5 MB XML feed on every request. CPU is the meter,
+// and the 30M CPU-ms allowance is 30 million milliseconds of exactly that.</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">AWS Lambda</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Free tier covers a small service outright: 1M requests and 400,000 GB-seconds each month</li><li>Up to 10,240 MB of memory per function, which a V8 isolate cannot match</li><li>Event Functions, MicroVMs, Web Functions and durable functions are all one integration</li><li>The event-source catalogue is the reason teams stay: SQS, Kinesis and Step Functions in one IAM model</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>GB-second billing multiplies wall time by memory, so a request that waits still bills</li><li>Web Functions fix the wait but bill memory for the life of every environment, idle included</li><li>Requests cost $0.20/M on Event Functions and $0.30/M on Web Functions, above Workers&#x27; $0.30 after 10M included</li><li>Data transfer is metered, so a byte-heavy response is a billable event</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Cloudflare Workers</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>No charge for duration, egress or bandwidth, which removes the line that surprises AWS bills</li><li>The $5 plan includes 10M requests and 30M CPU-ms, enough for a real product to start</li><li>Static asset requests are free and unlimited, so a Worker-fronted site pays for the API only</li><li>Caching at the edge cuts CPU without cutting the request, and only the request is billed</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>A 5-minute CPU ceiling per invocation, 30 seconds by default, with no ticket that lifts it</li><li>The runtime is not a container: native modules, spawned processes and writable disks do not run</li><li>Memory is an isolate-sized budget rather than a configurable 10 GB</li><li>At very low volume the $5 floor is more than Lambda&#x27;s free tier charges</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p>Lambda to Workers is a runtime rewrite: the handler becomes a fetch listener, environment variables become bindings, and anything that needs a native module, a spawned process or a writable disk has no equivalent. State moves to Durable Objects or KV, which bill separately.</p>
+<p>Workers to Lambda is smaller but not free: package the code, replace KV and Durable Objects with a database, and accept that egress is metered again. In both directions the traffic analysis comes first, because the arithmetic only favours one vendor when you know the request duration and the CPU share of it.</p></div>
+      </div>
+
+    <h2 id="faq">Common questions</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Does Workers really charge nothing for duration?</div>
+          <div class="faq-a">The pricing page states there is no charge or limit for duration and no charge for data transfer or bandwidth. Only CPU milliseconds and requests are metered.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What are Lambda Web Functions?</div>
+          <div class="faq-a">A second Lambda billing model that charges per request, per vCPU-second of active CPU and per GB-second of memory for as long as the execution environment exists.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Which free tier is bigger?</div>
+          <div class="faq-a">Lambda&#x27;s, in dollar terms at low volume: 1 million requests and 400,000 GB-seconds against Workers&#x27; 10 million requests and 30 million CPU-milliseconds on the $5 plan.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is a cold start billed?</div>
+          <div class="faq-a">On Event Functions the initialisation runs inside the billed duration, and SnapStart adds its own cache and restore charges. Workers does not bill duration at all.</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://aws.amazon.com/lambda/pricing/" rel="noopener nofollow" target="_blank">https://aws.amazon.com/lambda/pricing/</a><br><a href="https://developers.cloudflare.com/workers/platform/pricing/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/workers/platform/pricing/</a><br><a href="https://developers.cloudflare.com/workers/platform/limits/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/workers/platform/limits/</a><br><a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html" rel="noopener nofollow" target="_blank">https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html</a><br><a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html" rel="noopener nofollow" target="_blank">https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../datadog-vs-grafana-cloud/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Datadog vs Grafana Cloud</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The same reading exercise on a monitoring bill: find the unit, then the formula.</p>
+          </a>
+          <a class="card" href="../anthropic-vs-openai-api-pricing/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Anthropic vs OpenAI API pricing</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Two vendors, identical stickers, and the invoice decided by a token count.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://aws.amazon.com/lambda/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try AWS Lambda →</a>
+      <a href="https://workers.cloudflare.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Cloudflare Workers →</a>
+    </div>
+
+    
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
+      </p>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
+
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+    </div>
+  </footer>
+</body>
+</html>

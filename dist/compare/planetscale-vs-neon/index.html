@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlanetScale vs Neon (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="Suspended compute costs $0 on Neon; PlanetScale&#x27;s smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h =">
+  <link rel="canonical" href="https://devteardown.com/compare/planetscale-vs-neon/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/planetscale-vs-neon/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/planetscale-vs-neon/">
+  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:title" content="PlanetScale vs Neon — 2026 teardown">
+  <meta property="og:description" content="Suspended compute costs $0 on Neon; PlanetScale&#x27;s smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h =">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://devteardown.com/compare/planetscale-vs-neon/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PlanetScale vs Neon: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster.">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "PlanetScale vs Neon: a 2026 engineering teardown",
+  "description": "Suspended compute costs $0 on Neon; PlanetScale's smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35/month before storage, versus $15/month for PlanetScale PS-5 HA.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTeardown Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://devteardown.com/compare/planetscale-vs-neon/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Neon Launch come with an uptime SLA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No; Launch has no SLA. The uptime SLA, HIPAA with a BAA, SOC 2 and ISO 27001/27701 arrive with Scale, along with private networking at $0.01/GB."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does 100 GB of storage cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Neon Launch it is 100 × $0.35 = $35/month. PlanetScale includes 10 GB per instance and bills the rest at a region volume rate it publishes only through an endpoint, on the primary and both replicas of an HA cluster."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much egress is included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neon Launch includes 500 GB per project, then $0.10/GB. PlanetScale includes 100 GB/month on a production branch and 10 GB on development branches and PS-5 non-HA, then a region rate it does not print; ingress is free. At 1,024 GB on Neon Launch: 1,024 − 500 = 524 GB × $0.10 = $52.40/month; PlanetScale's overage rate is region-dependent and not printed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do PlanetScale backups add charges?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PlanetScale runs automated backups every 12 hours and includes backup and WAL storage up to twice disk size; overage costs $0.023 per GB-month on compressed size."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://devteardown.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "PlanetScale vs Neon",
+      "item": "https://devteardown.com/compare/planetscale-vs-neon/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
+<body>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
+
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">Backend &amp; Database</span>
+      <span class="badge badge-gray">PlanetScale vs Neon</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+
+    <h1>PlanetScale vs Neon</h1>
+    <div class="lead"><p>Suspended compute costs $0 on Neon; PlanetScale&#x27;s smallest HA Postgres cluster has a $15 monthly compute charge even when idle. Keep 0.25 CU awake on Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35/month before storage, versus $15/month for PlanetScale PS-5 HA.</p></div>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p>Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it.</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">PlanetScale rents you a machine; Neon bills the hours it is awake</a></li><li><a href="#s2">The $0 database out-bills the $15 cluster once it never sleeps</a></li><li><a href="#s3">Who should NOT pick Neon: existing Vitess-based MySQL deployments</a></li><li><a href="#s4">Who should NOT pick PlanetScale: projects with a $0 budget</a></li><li><a href="#s5">Neki adds sharded Postgres, but its preview excludes production</a></li><li><a href="#s6">Pick from measured compute, branch and data charges</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>PlanetScale <span class="badge badge-blue">Clusters</span></th>
+            <th>Neon <span class="badge badge-green">CU-hours</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Postgres (single node, HA, Neki sharding) and Vitess for MySQL</td><td>Lakebase Postgres with branching, Data API, Functions and Object Storage</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>No free plan · Postgres $5/mo single node, $15/mo HA, Neki from $30/shard</td><td>Free plan · Launch $0.106/CU-hour · Scale $0.222/CU-hour</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>No (managed on AWS, GCP and Azure)</strong></td><td>No (managed, Databricks)</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>3-node HA clusters; Neki shards run 1 primary and 2 replicas each</td><td>Up to 10,000 pooled connections per compute; scale to zero after 5 minutes</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>MCP and Insights in the platform (vendor description)</td><td>Managed Better Auth and an AI Gateway with prepaid credits</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium: Postgres or MySQL underneath, managed control plane on top</td><td>Medium: Postgres underneath, but branches and services are Neon&#x27;s</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://planetscale.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">PlanetScale →</a></td>
+            <td><a href="https://neon.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Neon →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. PlanetScale rents you a machine; Neon bills the hours it is awake</h2>
+      <p>For Postgres with idle periods or many branches, compare billed CU-hours with dedicated clusters; existing Vitess-based MySQL still has an engine constraint.</p>
+<blockquote><p>PlanetScale: capacity is a cluster you rent. Neon: compute is CU-hours, meaning compute size × hours running on Lakebase Postgres.</p></blockquote>
+<ul><li>PlanetScale charges for idle cluster capacity; storage, backups and egress can add charges. Each branch runs on its own separately billed dedicated cluster.</li><li>Neon&#x27;s paid plans charge for CU-hours used, while suspended compute costs $0. Its pricing describes Lakebase Postgres as “from Databricks”.</li></ul>
+<p>PlanetScale&#x27;s docs say it plainly: there is no free plan.</p>
+<blockquote><p>Figures below are AWS us-east-1 list prices checked 10 November 2026, or arithmetic on them; nothing is benchmarked.</p></blockquote>
+
+      <h2 id="s2">2. The $0 database out-bills the $15 cluster once it never sleeps</h2>
+      <p>The bottom of each price list:</p>
+<div class="table-wrapper"><table><thead><tr><th>Entry</th><th>Monthly</th><th>What you get</th></tr></thead><tbody><tr><td>Neon Free</td><td>$0</td><td>100 CU-hours, 1 GB storage per project</td></tr><tr><td>PlanetScale PS-5, single node</td><td>$5</td><td>1/16 vCPU, 512 MiB</td></tr><tr><td>PlanetScale PS-5 HA</td><td>$15</td><td>1 primary + 2 replicas</td></tr></tbody></table></div>
+<p>Now keep a 0.25 CU Neon compute awake all month on Launch: 0.25 × 730 h = 182.5 CU-hours × $0.106 = $19.35, before storage.</p>
+<blockquote><p>Compute only: $19.35 − $15 = $4.35 more than PlanetScale&#x27;s three-node cluster; capacity is not equivalent.</p></blockquote>
+<pre><code class="language-python"># Awake hours/month before 0.25 CU on Neon Launch out-bills PS-5 HA.
+CU, RATE, PS5_HA = 0.25, 0.106, 15.00
+break_even = PS5_HA / (CU * RATE)
+print(f&quot;approximately {break_even:.2f} of 730 hours&quot;)
+# Assumes 0.25 CU runs throughout the awake hours.</code></pre>
+
+      <h2 id="s3">3. Who should NOT pick Neon: existing Vitess-based MySQL deployments</h2>
+      <p>Now one CU, awake all month:</p>
+<div class="table-wrapper"><table><thead><tr><th>Option</th><th>Compute formula</th><th>Monthly</th></tr></thead><tbody><tr><td>Neon Launch, 1 CU</td><td>1 × 730 × $0.106</td><td>$77.38</td></tr><tr><td>Neon Scale, 1 CU</td><td>1 × 730 × $0.222</td><td>$162.06</td></tr><tr><td>PlanetScale PS-80 HA</td><td>fixed cluster, arm64</td><td>$148</td></tr></tbody></table></div>
+<p>Not identical machines. A CU is about 4 GB RAM; PS-80 is listed at 1 vCPU and 8 GiB plus two replicas.</p>
+<ul><li>Scale&#x27;s compute crossover: $148 ÷ (1 CU × $0.222/CU-hour) ≈ 666.67 h; choose PS-80 only if its capacity suits the workload.</li><li>Neon&#x27;s own typical-cost rows answer &quot;how many hours?&quot;: intermittent load (140 CU-hours + 1 GB) is $15 on Launch, high load (3,000 CU-hours + 100 GB) is $353 on Launch and $701 on Scale.</li><li>PlanetScale&#x27;s SKU ladder answers &quot;which size?&quot;, from PS-5 at $15 to PS-2560 at $4,529 HA on arm64.</li></ul>
+<blockquote><p>Do not pick Neon if you must retain Vitess-based MySQL; Launch also lacks an uptime SLA. Compare billed CU-hours with the cluster charge before attributing savings to suspension.</p></blockquote>
+
+      <h2 id="s4">4. Who should NOT pick PlanetScale: projects with a $0 budget</h2>
+      <p>On PlanetScale every branch runs on its own dedicated cluster, billed separately and prorated to the millisecond. On Neon Launch a branch is a line item: 10 per project included, then $1.50 per branch-month, prorated hourly.</p>
+<div class="table-wrapper"><table><thead><tr><th>20 branches alive all month</th><th>Formula</th><th>Component/month</th></tr></thead><tbody><tr><td>Neon Launch</td><td>10 included + 10 × $1.50</td><td>$15 extra-branch fees</td></tr><tr><td>PlanetScale, PS-5 HA each</td><td>20 × $15</td><td>$300 cluster compute</td></tr></tbody></table></div>
+<ul><li>Add running compute and data storage on Neon; add storage, backups and transfer on PlanetScale.</li><li>Millisecond proration helps PlanetScale with short-lived branches: one PS-5 HA branch costs $15 ÷ 730 h ≈ $0.02 per hour.</li><li>Use actual branch lifetimes. Launch suspension after five minutes can be disabled.</li></ul>
+<p>Do not pick PlanetScale for a $0 budget; every database requires a paid subscription.</p>
+
+      <h2 id="s5">5. Neki adds sharded Postgres, but its preview excludes production</h2>
+      <p>Neki is PlanetScale&#x27;s sharded Postgres, in platform preview since 10 September 2026. PlanetScale says preview is not for production, and that &quot;some of those changes will be breaking&quot;.</p>
+<blockquote><p>Apps reach it through a Neki router over the Postgres wire protocol.</p></blockquote>
+<ul><li>No single-node configuration: the smallest arm64 shard is PS-10 at $30, 1 primary and 2 replicas across 3 availability zones.</li><li>Routers start at $6 (NKR-0). Production router compute = router rate × observed routers ÷ 3; the rate covers the three-router baseline, one per AZ.</li><li>Four PS-20 shards plus NKR-20 routers: 4 × $50 + $170 × 3 ÷ 3 = $370/month, before storage, backups and network usage.</li></ul>
+
+      <h2 id="s6">6. Pick from measured compute, branch and data charges</h2>
+      <p>Choose Neon when measured CU-hours plus branch, storage and transfer charges beat PlanetScale&#x27;s total. Choose PlanetScale for suitable always-on cluster compute or an existing Vitess-shaped MySQL estate.</p>
+<p>Check this today:</p>
+<ol><li>Pull last month&#x27;s awake hours per Neon compute. For compute only: $15 ÷ (0.25 CU × $0.106/CU-hour) ≈ 566.04 h on Launch.</li><li>Count branches alive at once and how long each lives, and price them as PlanetScale clusters before copying the habit.</li><li>Check suspension configuration and billed CU-hours; add storage, backups and transfer before choosing.</li><li>Do not run production workloads on Neki&#x27;s platform preview; evaluate it only outside production.</li></ol>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">Always-on small database, Neon Launch vs PlanetScale PS-5 HA</div>
+          <div class="cost-formula">Neon Launch: 0.25 CU × 730 h = 182.5 CU-hours × $0.106/CU-hour = $19.35/month; PlanetScale PS-5 HA: $15/month cluster compute</div>
+          <div class="cost-result">$19.35/month vs $15/month, compute only; different capacity, with storage and other charges separate</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">One CU all month, Neon Launch / Neon Scale vs PlanetScale PS-80 HA (arm64)</div>
+          <div class="cost-formula">Neon Launch: 1 CU × 730 h = 730 CU-hours × $0.106/CU-hour = $77.38; Neon Scale: 730 CU-hours × $0.222/CU-hour = $162.06; PlanetScale PS-80 HA arm64: $148/month</div>
+          <div class="cost-result">Compute only: Launch $77.38; Scale $162.06; PS-80 $148/month. Not equivalent capacity; use PS-80 only if it suits the workload.</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">20 branches alive all month</div>
+          <div class="cost-formula">Neon Launch: 20 branches = 10 included + 10 × $1.50 = $15/month extra-branch fees; PlanetScale: 20 × $15 = $300/month (PS-5 HA each), prorated to the millisecond</div>
+          <div class="cost-result">Neon: $15 extra-branch fees plus running compute and data storage; PlanetScale: $300 cluster compute plus storage, backups and transfer. Not total bills.</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Neki platform preview — not production: four PS-20 shards plus routers</div>
+          <div class="cost-formula">Neki is a platform preview, not production. Shards: 4 × $50 = $200; production router compute = router rate × observed routers ÷ 3 = $170 (NKR-20) × 3 ÷ 3 = $170; $200 + $170 = $370/month</div>
+          <div class="cost-result">Neki is a platform preview, not production. $370/month before storage, backups and network usage.</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Dev and test databases idle overnight, one branch per pull request</td><td class="matrix-pick">Neon Launch</td><td>Suspended compute bills $0 and branches past the included 10 cost $1.50 per branch-month instead of a cluster each. Running compute, data storage and transfer remain separate.</td></tr><tr><td>Always-on database comparing compute charges only</td><td class="matrix-pick">PlanetScale Postgres HA</td><td>For compute only, 0.25 CU × 730 h = 182.5 CU-hours × $0.106 = $19.35 on Neon Launch, versus $15 for PlanetScale PS-5 HA; storage and other charges remain separate, and capacity must suit the workload.</td></tr><tr><td>Existing Vitess-shaped MySQL estate</td><td class="matrix-pick">PlanetScale (Vitess)</td><td>Neon&#x27;s pricing lists only Lakebase Postgres, so leaving Vitess would be an engine migration, not a vendor switch.</td></tr><tr><td>Side project or prototype with a $0 budget</td><td class="matrix-pick">Neon Free</td><td>PlanetScale has no free plan, while Neon Free is permanent, needs no card and includes 100 CU-hours per project.</td></tr><tr><td>Considering Neki for production sharding</td><td class="matrix-pick">Do not use Neki</td><td>Neki is a platform preview and PlanetScale says not to run production on it.</td></tr><tr><td>Compliance-bound production (HIPAA BAA, uptime SLA) with traffic that idles for hours</td><td class="matrix-pick">Neon Scale</td><td>Scale includes self-serve HIPAA with a BAA and an SLA; suspended compute costs $0, while running compute costs $0.222/CU-hour. Suspension is configurable from 1 minute to always on.</td></tr><tr><td>Comparing one always-on Neon Scale CU with PS-80 HA compute prices</td><td class="matrix-pick">PlanetScale PS-80 HA, only if its capacity suits the workload</td><td>Compute charges cross at $148 ÷ (1 CU × $0.222/CU-hour) ≈ 666.67 h; this compares prices, not equivalent workload capacity.</td></tr><tr><td>Need Launch&#x27;s compute ceiling exceeded by a fixed-size deployment</td><td class="matrix-pick">Neon Scale</td><td>Launch autoscaling stops at 16 CU, while Scale offers fixed sizes up to 56 CU (224 GB RAM).</td></tr></tbody>
+      </table></div>
+
+    <h2>Code and configuration</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">PlanetScale</span>
+        <pre><code># PlanetScale bills the cluster, prorated to the millisecond.
+# PS-5 HA = 1 primary + 2 replicas, $15/month per branch, awake or not.
+# 20 branches for pull requests: 20 x $15 = $300/month.
+# Here it breaks: a branch is not metadata, it is a second cluster,
+# so preview environments get priced like production ones.</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Neon</span>
+        <pre><code># Neon bills compute size x hours awake; suspended compute is $0.
+# Launch: $0.106 per CU-hour. 0.25 CU awake all month:
+0.25 * 730 * 0.106   # 19.35, before storage
+# Here it breaks: a health check every few minutes keeps leaving
+# the compute awake, so the invoice tracks uptime, not traffic.</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">PlanetScale</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>A fixed cluster charge: PS-5 HA is $15/month whether the database sleeps or not</li><li>Every branch is its own cluster, so a schema change never touches production</li><li>Postgres, Neki&#x27;s sharded Postgres and Vitess for MySQL on one platform</li><li>Backups included up to 2x disk size and run automatically every 12 hours</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>No free plan anywhere: the cheapest database is $5/month single node</li><li>A branch is a second cluster, so 20 PS-5 HA branches bill $300/month</li><li>Storage past 10 GB per instance bills at a region rate the docs expose only through an endpoint</li><li>Neki is a platform preview, and PlanetScale says not to run production on it</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Neon</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Suspended compute costs $0, so a database that sleeps most of the day costs almost nothing</li><li>A permanent free plan: 100 CU-hours, 1 GB storage and 100 projects</li><li>Branches cost $1.50 a month after 10 included, which makes a preview per pull request affordable</li><li>Storage at $0.35/GB-month and 500 GB egress included per project on Launch</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>An always-on 0.25 CU costs 0.25 x 730 x $0.106 = $19.35/month, above a $15 cluster</li><li>One CU running all month is $77.38 on Launch and $162.06 on Scale</li><li>Storage, instant restore, extra branches and egress are separate lines on the same invoice</li><li>Scale doubles the CU rate for the same compute shape</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p>Neon to PlanetScale gives up brevity: branches become clusters, scale-to-zero disappears and the cheapest HA Postgres is $15/month. PlanetScale to Neon restarts the clock — CU-hours accrue while the database is awake, so the setting to watch is the suspension timer rather than a cluster size, and storage plus egress move onto the same invoice. Dump and restore with pg_dump in both directions; both are Postgres underneath.</p></div>
+      </div>
+
+    <h2 id="faq">Common questions</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Does Neon Launch come with an uptime SLA?</div>
+          <div class="faq-a">No; Launch has no SLA. The uptime SLA, HIPAA with a BAA, SOC 2 and ISO 27001/27701 arrive with Scale, along with private networking at $0.01/GB.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What does 100 GB of storage cost?</div>
+          <div class="faq-a">On Neon Launch it is 100 × $0.35 = $35/month. PlanetScale includes 10 GB per instance and bills the rest at a region volume rate it publishes only through an endpoint, on the primary and both replicas of an HA cluster.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How much egress is included?</div>
+          <div class="faq-a">Neon Launch includes 500 GB per project, then $0.10/GB. PlanetScale includes 100 GB/month on a production branch and 10 GB on development branches and PS-5 non-HA, then a region rate it does not print; ingress is free. At 1,024 GB on Neon Launch: 1,024 − 500 = 524 GB × $0.10 = $52.40/month; PlanetScale&#x27;s overage rate is region-dependent and not printed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">When do PlanetScale backups add charges?</div>
+          <div class="faq-a">PlanetScale runs automated backups every 12 hours and includes backup and WAL storage up to twice disk size; overage costs $0.023 per GB-month on compressed size.</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://planetscale.com/pricing" rel="noopener nofollow" target="_blank">https://planetscale.com/pricing</a><br><a href="https://planetscale.com/docs/postgres/pricing" rel="noopener nofollow" target="_blank">https://planetscale.com/docs/postgres/pricing</a><br><a href="https://planetscale.com/docs/planetscale-plans" rel="noopener nofollow" target="_blank">https://planetscale.com/docs/planetscale-plans</a><br><a href="https://planetscale.com/blog/introducing-neki" rel="noopener nofollow" target="_blank">https://planetscale.com/blog/introducing-neki</a><br><a href="https://planetscale.com/changelog/neki" rel="noopener nofollow" target="_blank">https://planetscale.com/changelog/neki</a><br><a href="https://neon.com/pricing" rel="noopener nofollow" target="_blank">https://neon.com/pricing</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../prisma-vs-drizzle/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Prisma vs Drizzle</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The ORM that now shares a payroll with one side of this comparison.</p>
+          </a>
+          <a class="card" href="../supabase-vs-firebase/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Supabase vs Firebase</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Metered reads against a flat instance: the ancestor of this arithmetic.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://planetscale.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try PlanetScale →</a>
+      <a href="https://neon.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Neon →</a>
+    </div>
+
+    
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
+      </p>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
+
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notion vs Obsidian (2026): Cost, Limits and the Decision Matrix</title>
+  <meta name="description" content="On Notion Free, page history stops at 7 days; Business keeps 90, and an Obsidian vault under git has no plan-imposed cutoff at all. For ten people that is 10 × $20 × 12 = $2,400/ye">
+  <link rel="canonical" href="https://devteardown.com/compare/notion-vs-obsidian/">
+  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/notion-vs-obsidian/">
+  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/notion-vs-obsidian/">
+  <meta property="og:site_name" content="DevTools Radar">
+  <meta property="og:title" content="Notion vs Obsidian — 2026 teardown">
+  <meta property="og:description" content="On Notion Free, page history stops at 7 days; Business keeps 90, and an Obsidian vault under git has no plan-imposed cutoff at all. For ten people that is 10 × $20 × 12 = $2,400/ye">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://devteardown.com/compare/notion-vs-obsidian/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Notion vs Obsidian: cost, limits and the decision matrix">
+  <meta name="twitter:description" content="Choose Notion Business if you need granular database permissions or private teamspaces: for 10 people, 10 × $20 × 12 = $2,400/year, including Notion Agent but not Custom Agent cred">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Notion vs Obsidian: a 2026 engineering teardown",
+  "description": "On Notion Free, page history stops at 7 days; Business keeps 90, and an Obsidian vault under git has no plan-imposed cutoff at all. For ten people that is 10 × $20 × 12 = $2,400/year of Notion Business against 10 × $4 × 12 = $480/year of Sync, and the difference buys a permission model you either need or do not.",
+  "dateModified": "2026-11-10",
+  "datePublished": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DevTeardown Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DevTools Radar"
+  },
+  "mainEntityOfPage": "https://devteardown.com/compare/notion-vs-obsidian/"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Obsidian Sync end-to-end encrypted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Obsidian lists AES-256 end-to-end encryption for Sync, and Sync comes with a 7-day no-questions refund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a school or nonprofit pay less for Obsidian?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Obsidian gives a 40% education/nonprofit discount on Sync and Publish. Sync and Publish also have a 7-day no-questions refund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to hand-write retry logic for Notion's 429s?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not in JavaScript: Notion's JS SDK retries for you and obeys `Retry-After`. Overloads can also come back as HTTP 529 with `service_overload`."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Notion plan lists zero data retention with LLM providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zero data retention with LLM providers is listed as an Enterprise feature, alongside SCIM and audit log. Lower plans do not list it. That retention policy does not establish whether workspace content is sent to them."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Comparisons",
+      "item": "https://devteardown.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notion vs Obsidian",
+      "item": "https://devteardown.com/compare/notion-vs-obsidian/"
+    }
+  ]
+}
+  </script>
+  <style>
+:root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
+  --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:2rem; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.container,.header-inner { max-width:1000px; margin:0 auto; padding:2rem 1.5rem; }
+header { border-bottom:1px solid var(--border); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-top:1.25rem; padding-bottom:1.25rem; }
+.logo { color:var(--text); font-weight:750; text-decoration:none; font-size:1.16rem; letter-spacing:-.04em; white-space:nowrap; }
+.logo span { color:var(--primary); margin-left:.25rem; font-weight:450; }
+.nav-link { color:var(--text-muted); font-size:.82rem; text-decoration:none; }
+a { color:var(--primary); text-underline-offset:3px; }
+a:hover { text-decoration:underline; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+h1,h2,h3,h4,strong { color:var(--text); }
+h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:400; line-height:1.12; letter-spacing:-.045em; margin:.9rem 0 1.3rem; }
+h2 { font-size:1.35rem; margin:2.8rem 0 1rem; line-height:1.35; letter-spacing:-.025em; }
+h3 { font-size:1.05rem; margin:1.6rem 0 .6rem; line-height:1.45; }
+h4 { margin:1.4rem 0 .4rem; }
+p { margin-bottom:1rem; }
+ul,ol { margin:0 0 1.1rem 1.35rem; }
+li { margin-bottom:.35rem; }
+.lead { color:var(--text-muted); font-size:1.08rem; max-width:700px; line-height:1.8; }
+.lead p { color:inherit; font-size:inherit; }
+.badge { display:inline-block; font-size:.73rem; font-weight:500; letter-spacing:.02em; color:var(--text-muted); }
+.badge-blue,.badge-green { color:var(--primary); }
+.badge-gray { color:var(--text-muted); }
+.badge-warn { color:var(--warn); }
+.meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; font-size:.8rem; color:var(--text-muted); }
+.table-wrapper { overflow-x:auto; margin:1.5rem 0 2rem; border-top:2px solid var(--text); border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+th,td { padding:.85rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { background:var(--surface-raised); font-weight:600; }
+.btn { display:inline-block; padding:.65rem 1rem; font-size:.88rem; text-decoration:none; border:1px solid var(--border); text-align:center; }
+.btn-primary { background:var(--primary); color:var(--surface); border-color:var(--primary); }
+.btn-outline { color:var(--primary); }
+.card { padding:1.3rem; border:1px solid var(--border); }
+a.card { display:block; text-decoration:none; }
+a.card:hover { border-color:var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1.2rem; margin:1.5rem 0; }
+.index-intro { padding:2rem 0 2.5rem; border-bottom:2px solid var(--text); }
+.eyebrow,.section-label { color:var(--primary); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+.index-intro h1 { max-width:650px; }
+.index-list { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; }
+a.index-entry { display:block; color:inherit; text-decoration:none; border-bottom:1px solid var(--border); padding:1.7rem 0; }
+.index-entry h2 { font-family:Georgia,"Times New Roman",serif; font-size:1.6rem; font-weight:400; margin:.55rem 0 .65rem; }
+.index-entry:hover h2 { color:var(--primary); text-decoration:underline; text-underline-offset:5px; }
+.index-entry p { font-size:.9rem; color:var(--text-muted); margin:0; }
+.entry-meta { display:flex; justify-content:space-between; gap:1rem; color:var(--text-muted); font-size:.73rem; }
+.verdict-box { border-left:3px solid var(--primary); background:var(--surface-raised); padding:1.2rem 1.5rem; margin:1.6rem 0; }
+.verdict-box .label,.toc-title { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.74rem; color:var(--primary); margin-bottom:.5rem; }
+.verdict-box p:last-child { margin-bottom:0; }
+.toc { border-block:1px solid var(--border); padding:1rem 0; margin:2rem 0; }
+.toc ol { margin-bottom:0; }
+.toc a { color:var(--text-muted); font-size:.9rem; }
+.pros-cons-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+.pros-box,.cons-box { padding:.8rem 0; }
+.pros-box ul,.cons-box ul { margin:.6rem 0 0 1.1rem; font-size:.9rem; }
+pre { background:#252d29; color:#e8ede5; padding:1.2rem; overflow-x:auto; font-size:.82rem; line-height:1.6; margin:1rem 0; tab-size:2; }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.87em; background:var(--surface-raised); color:var(--primary); padding:.1rem .25rem; overflow-wrap:anywhere; }
+pre code { color:inherit; background:none; padding:0; overflow-wrap:normal; }
+blockquote,.migration-box { border-left:2px solid var(--border); padding:.5rem 1.2rem; margin:1.4rem 0; }
+.faq-item { border-bottom:1px solid var(--border); padding:1.1rem 0; }
+.faq-q { font-weight:600; margin-bottom:.4rem; }
+.faq-a { font-size:.94rem; color:var(--text-muted); }
+.cost-row { display:grid; gap:.35rem; padding:1rem 0; border-bottom:1px solid var(--border); }
+.cost-label { font-weight:600; }
+.cost-formula { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.82rem; color:var(--text-muted); overflow-wrap:anywhere; }
+.cost-result,.matrix-pick { color:var(--primary); font-weight:600; }
+.sources-list { font-size:.86rem; overflow-wrap:anywhere; }
+.updated-note,.method-note { font-size:.82rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:2.5rem; padding-top:1.2rem; }
+.gear-note { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.2rem; }
+.gear-note h3 { margin:0 0 .5rem; font-size:.9rem; }
+.gear-note p { font-size:.82rem; color:var(--text-muted); }
+.gear-links { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+footer { border-top:1px solid var(--border); margin-top:3rem; color:var(--text-muted); }
+footer p { font-size:.8rem; margin:0; }
+@media(max-width:680px) {
+  .container,.header-inner { padding:1.25rem; }
+  .header-inner { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .header-inner>div { flex-wrap:wrap; }
+  .index-intro { padding:1.5rem 0 2rem; }
+  .index-list,.pros-cons-grid { grid-template-columns:1fr; }
+  th,td { padding:.65rem; min-width:120px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{margin-left:auto;font-size:14px}.lang[aria-current]{font-weight:bold;text-decoration-thickness:3px}</style></head>
+<body>
+  <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><nav class="languages" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page">English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko">한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh">中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja">日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es">Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr">Français</a></nav></header>
+
+  <p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main class="container">
+    <div class="meta-row">
+      <span class="badge badge-blue">Knowledge &amp; Notes</span>
+      <span class="badge badge-gray">Notion vs Obsidian</span>
+      <span>Prices verified 2026-11-10</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+
+    <h1>Notion vs Obsidian</h1>
+    <div class="lead"><p>On Notion Free, page history stops at 7 days; Business keeps 90, and an Obsidian vault under git has no plan-imposed cutoff at all. For ten people that is 10 × $20 × 12 = $2,400/year of Notion Business against 10 × $4 × 12 = $480/year of Sync, and the difference buys a permission model you either need or do not.</p></div>
+
+    <div class="verdict-box">
+      <div class="label">Verdict</div>
+      <p>Choose Notion Business if you need granular database permissions or private teamspaces: for 10 people, 10 × $20 × 12 = $2,400/year, including Notion Agent but not Custom Agent credits. Choose Obsidian for local Markdown notes if you can forgo permissions and built-in multi-user editing: the app costs $0, while Sync for 10 people costs 10 × $4 × 12 = $480/year billed annually. Plain files under git avoid a plan-imposed history cutoff.</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">In this teardown</div>
+      <ol><li><a href="#s1">Notion sells a server with a meter; Obsidian sells a folder with a pipe</a></li><li><a href="#s2">Friday recovery: does the version you need still exist?</a></li><li><a href="#s3">Bases adds views, not permissions: who should not pick Obsidian</a></li><li><a href="#s4">Notion&#x27;s agent is real, and so is its meter</a></li><li><a href="#s5">For ten people, $2,400 a year buys permissions or it buys nothing</a></li><li><a href="#s6">Choose by permissions, then test recovery</a></li><li><a href="#cost">Cost arithmetic</a></li><li><a href="#matrix">Decision matrix</a></li><li><a href="#migration">Migration path</a></li><li><a href="#faq">FAQ</a></li></ol>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Notion <span class="badge badge-blue">Team workspace</span></th>
+            <th>Obsidian <span class="badge badge-green">Local-first</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core engine</strong></td><td>Relational databases, formulas, rollups (server-side)</td><td>Local Markdown + frontmatter; Bases views as a core plugin</td></tr>
+          <tr><td><strong>Pricing model</strong></td><td>Free · Plus $10 · Business $20 per member</td><td>Free · Sync $4/user · Publish $8/site</td></tr>
+          <tr><td><strong>Self-hostable</strong></td><td><strong>No (Notion cloud)</strong></td><td>Yes — it is your disk</td></tr>
+          <tr><td><strong>Realtime and concurrency</strong></td><td>Multiplayer editing and live cursors</td><td>No built-in co-editing; shared vaults via Sync</td></tr>
+          <tr><td><strong>AI and vector readiness</strong></td><td>Notion Agent in Business; Custom Agents metered</td><td>No server-side agent; bring your own script or plugin</td></tr>
+          <tr><td><strong>Lock-in risk</strong></td><td>Medium-high: export is a conversion, history is a plan tier</td><td>None: plain files, git history you own</td></tr>
+          <tr>
+            <td><strong>Vendor</strong></td>
+            <td><a href="https://www.notion.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Notion →</a></td>
+            <td><a href="https://obsidian.md/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem;">Obsidian →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <h2 id="s1">1. Notion sells a server with a meter; Obsidian sells a folder with a pipe</h2>
+      <p><strong>Obsidian sells a folder.</strong> Plain Markdown on your disk, no server, no meter, and the app itself is free without limits. <strong>Notion sells shared state.</strong> Permissions, databases and agents live on their servers, and everything around them carries a budget: page history, uploads, API calls, agent credits.</p>
+<p><strong>Obsidian: notes are files on your disk</strong>, and Obsidian states the app is free without limits, with no telemetry.</p>
+<ul><li><strong>Notion makes history a plan feature.</strong> Notion page history is 7 days on Free, 30 on Plus and 90 on Business.</li><li>Obsidian has no permission model, no server-side agent and no built-in multi-user editing; collaboration requires Sync shared vaults or third-party tooling.</li></ul>
+
+      <h2 id="s2">2. Friday recovery: does the version you need still exist?</h2>
+      <p>On Friday afternoon, test recovery before choosing a plan: does the version from before the mistaken edit still exist?</p>
+<div class="table-wrapper"><table><thead><tr><th>Plan</th><th>Price</th><th>Page history</th></tr></thead><tbody><tr><td>Free</td><td>$0/member</td><td>7 days</td></tr><tr><td>Plus</td><td>$10/member/month</td><td>30 days</td></tr><tr><td>Business</td><td>$20/member/month</td><td>90 days</td></tr></tbody></table></div>
+<p>The pattern this punishes is the slow mistake. Choose a window that covers how long a mistake could go unnoticed.</p>
+<p>The rest of Free&#x27;s ceiling sits in the same place:</p>
+<ul><li>File uploads capped at <strong>5 MB</strong> (Plus raises it to 5 GB).</li><li><strong>10 external guests</strong>.</li><li>A Free-plan workspace block limit that Notion announced for 2026-09-08.</li></ul>
+<p>Obsidian has no window to buy. A vault is plain files, so <code>git log</code> keeps every committed version for as long as you keep the repo.</p>
+
+      <h2 id="s3">3. Bases adds views, not permissions: who should not pick Obsidian</h2>
+      <p>Bases is a <strong>core plugin</strong>, not a community add-on. It renders database views over frontmatter properties, and the data stays in your Markdown files.</p>
+<ul><li>Table and Cards: 1.9</li><li>List and Map: 1.10 (Map needs the Maps plugin)</li><li>Kanban: 1.14</li></ul>
+<p>The <code>.base</code> file is YAML and holds only the view definition:</p>
+<pre><code class="language-yaml">filters:
+  and:
+    - file.inFolder(&quot;Projects&quot;)
+    - file.hasTag(&quot;active&quot;)
+formulas:
+  ratio: &#x27;(price / age).toFixed(2)&#x27;
+views:
+  - type: table
+    order:
+      - file.name
+      - formula.ratio</code></pre>
+<p>Obsidian&#x27;s own docs: &quot;Delete a base and your notes are untouched.&quot; What Bases still does not give you:</p>
+<ul><li><strong>Permissions.</strong> Obsidian has no permission model.</li><li><strong>Server-side computed properties.</strong> Bases does not replace them.</li><li><strong>Multi-user edit.</strong> Shared vaults sync files; there is no built-in co-editing.</li></ul>
+<p>Do not pick Obsidian if you need granular database permissions or built-in multi-user editing.</p>
+
+      <h2 id="s4">4. Notion&#x27;s agent is real, and so is its meter</h2>
+      <p>Notion&#x27;s built-in agent lives on Business at $20/member/month, next to AI Meeting Notes. Free and Plus get an AI trial only.</p>
+<div class="table-wrapper"><table><thead><tr><th>Notion piece</th><th>Billing, per Notion</th></tr></thead><tbody><tr><td>Notion Agent</td><td>Included in Business</td></tr><tr><td>Custom Agents</td><td>&quot;Free to try, then $10 per 1,000 monthly Notion credits&quot;</td></tr><tr><td>Workers</td><td>Beta: custom code for agent tools and sync</td></tr></tbody></table></div>
+<p>Custom Agents are separately metered; do not infer a Business prerequisite. Obsidian has no server-side agent.</p>
+<p>Notion API budgets:</p>
+<ul><li><strong>180 requests per 60-second window per connection</strong>, or <strong>600/minute on Business/Enterprise</strong>; bursts allowed.</li><li>A <strong>per-workspace</strong> budget shared by every connection; its <code>Retry-After</code> can exceed a minute. It scales by plan.</li><li>Data-source queries capped near 3 requests/second per connection.</li></ul>
+<p>Obey <code>Retry-After</code> on HTTP 429 or 529 (<code>service_overload</code>); the JS SDK retries for you.</p>
+
+      <h2 id="s5">5. For ten people, $2,400 a year buys permissions or it buys nothing</h2>
+      <p>Run the 10-person team through both price sheets:</p>
+<ul><li>For 10 people needing Business permissions and Notion Agent, 10 × $20 × 12 = <strong>$2,400/year</strong>.</li><li>For 10 people needing Plus&#x27;s 30-day history, 10 × $10 × 12 = <strong>$1,200/year</strong>.</li><li>For 10 people wanting Obsidian Sync, 10 × $4 × 12 = <strong>$480/year</strong>, billed annually.</li><li>For 10 people choosing Sync plus optional commercial licences, (10 × $4 × 12) + (10 × $50) = <strong>$980/year</strong>.</li></ul>
+<p>Business includes:</p>
+<ul><li>SAML SSO, granular database permissions, private teamspaces.</li><li>90-day page history and the Notion Agent.</li></ul>
+<p>Do not pay for Business solely to store private drafts if you do not need its agent, AI Meeting Notes, SSO, permissions or 90-day page history.</p>
+<blockquote><p>For 10 people, the app bill is $0 with git or iCloud instead of Sync and no optional licences; choosing licences adds 10 × $50 = $500/year.</p></blockquote>
+
+      <h2 id="s6">6. Choose by permissions, then test recovery</h2>
+      <p>Choose Notion Business when granular database permissions or private teamspaces are required; choose Obsidian for local Markdown notes only if you can forgo a permission model and built-in multi-user editing.</p>
+<p>Check these today:</p>
+<ol><li>Open page history on your most important Notion page. Can you recover the version from before a mistaken edit within your plan&#x27;s 7-, 30- or 90-day window?</li><li>Identify the Business permissions, private teamspaces, agent or recovery window you need.</li><li>List every integration calling the Notion API. Check connection, workspace and data-source query budgets before upgrading.</li><li>On Obsidian at work, explicitly accept or decline the optional commercial licence.</li></ol>
+
+      <h2 id="cost">Cost arithmetic at volume</h2>
+      <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
+      so you can replace our assumption with your traffic and redo it.</p>
+      <div class="card" style="padding:0.4rem 1.4rem;">
+        <div class="cost-row">
+          <div class="cost-label">Notion Business, 10 people</div>
+          <div class="cost-formula">For 10 people: 10 × $20 × 12</div>
+          <div class="cost-result">For 10 people, 10 × $20 × 12 = $2,400/year.</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Notion Plus, 10 people</div>
+          <div class="cost-formula">For 10 people: 10 × $10 × 12</div>
+          <div class="cost-result">For 10 people, 10 × $10 × 12 = $1,200/year.</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Obsidian with Sync, 10 people</div>
+          <div class="cost-formula">For 10 people: 10 × $4 × 12 (Sync billed annually)</div>
+          <div class="cost-result">For 10 people, 10 × $4 × 12 = $480/year (Sync billed annually).</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Obsidian Sync plus optional commercial licences, 10 people</div>
+          <div class="cost-formula">For 10 people: (10 × $4 × 12) + (10 × $50) (Sync billed annually)</div>
+          <div class="cost-result">For 10 people, (10 × $4 × 12) + (10 × $50) = $980/year (Sync billed annually).</div>
+        </div></div>
+      <h2 id="matrix">Decision matrix</h2>
+      <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
+      <div class="table-wrapper"><table>
+        <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
+        <tbody><tr><td>Team wiki where some pages must be hidden from some members</td><td class="matrix-pick">Notion Business</td><td>Granular database permissions and private teamspaces are Business features, and Obsidian has no permission model at all.</td></tr><tr><td>Solo engineer keeping private design notes and journals</td><td class="matrix-pick">Obsidian</td><td>The app is free without limits and plain files under git give history no plan can expire.</td></tr><tr><td>Team that wants an agent doing repetitive tasks without anyone&#x27;s laptop running</td><td class="matrix-pick">Notion Custom Agents; Business only if its included Notion Agent is needed</td><td>Choose Business if you need its included Notion Agent; price autonomous repetitive tasks separately with Custom Agents: &quot;Free to try, then $10 per 1,000 monthly Notion credits&quot;. Do not infer a Business prerequisite for Custom Agents.</td></tr><tr><td>Pipeline constrained by Notion API connection throughput</td><td class="matrix-pick">Notion Business only if its higher connection budget meets the requirement</td><td>Business/Enterprise allow 600 requests/minute per connection, versus 180 per 60-second window on other plans; bursts are allowed. A separate plan-scaled workspace budget and roughly 3 data-source queries/second per connection still constrain the pipeline. Obey Retry-After on HTTP 429 or 529; the JS SDK retries for you.</td></tr><tr><td>Team choosing a recovery window for policies and runbooks</td><td class="matrix-pick">Plus for 30 days, Business for 90, or Obsidian with git for no plan-imposed cutoff</td><td>Choose Plus only if 30 days of recovery is enough, Business if you need 90 days, or plain files under git if you need history without a plan-imposed cutoff.</td></tr><tr><td>Notion Free team collaborating with more than 10 outside clients</td><td class="matrix-pick">Rule out Notion Free; verify paid-plan guest capacity before choosing</td><td>Notion Free allows 10 external guests; do not choose a paid plan until its guest capacity meets your client requirement. Obsidian offers collaboration through Sync shared vaults or third-party tooling, without a permission model.</td></tr><tr><td>Team needing only views over local Markdown properties, not permissions or built-in multi-user editing</td><td class="matrix-pick">Obsidian with Bases</td><td>Choose Bases if the requirement is views over local Markdown properties rather than shared editing or permissions; Map additionally requires the Maps plugin.</td></tr><tr><td>Notion team whose pages are stable, permissioned and within their history window</td><td class="matrix-pick">Notion — stay put</td><td>Stay on Notion if its existing permissions and history meet your requirements; Obsidian has no permission model or built-in multi-user editing.</td></tr></tbody>
+      </table></div>
+
+    <h2>Code and configuration</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:0.4rem;">Notion</span>
+        <pre><code>// The API budget is the real constraint: 180 req/min per connection
+// (600 on Business+), plus a shared per-workspace budget.
+async function queryAll(dbId, cursor) {
+  const res = await fetch(`https://api.notion.com/v1/databases/${dbId}/query`, {
+    method: &#x27;POST&#x27;,
+    headers: { Authorization: `Bearer ${process.env.NOTION_TOKEN}`,
+               &#x27;Notion-Version&#x27;: &#x27;2022-06-28&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27; },
+    body: JSON.stringify({ start_cursor: cursor, page_size: 100 }),
+  });
+  // Here it breaks: bursts are allowed, sustained rate is not.
+  if (res.status === 429 || res.status === 529) {
+    const wait = Number(res.headers.get(&#x27;Retry-After&#x27;) || 60);
+    await new Promise(r =&gt; setTimeout(r, wait * 1000));
+  }
+  return res.json();
+}</code></pre>
+      </div>
+      <div>
+        <span class="badge badge-green" style="margin-bottom:0.4rem;">Obsidian</span>
+        <pre><code># A .base file is a saved query. It holds the view, not the data:
+# delete it and your notes are untouched.
+filters:
+  and:
+    - file.inFolder(&quot;Projects&quot;)
+    - file.hasTag(&quot;active&quot;)
+formulas:
+  ratio: &#x27;(price / age).toFixed(2)&#x27;
+views:
+  - type: table
+    order:
+      - file.name
+      - formula.ratio
+# Here it breaks: there is no permission layer. Anyone who has the vault
+# sees every note, including the ones you would have restricted in Notion.</code></pre>
+      </div>
+    </div>
+
+    <h2>What you gain, what you give up</h2>
+    <div class="pros-cons-grid">
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--primary); margin-top:0;">Notion</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Permissions, private teamspaces and SSO in the same place as the content</li><li>Databases with relations, rollups and formulas computed server-side</li><li>Notion Agent and AI Meeting Notes included from Business</li><li>Multiplayer editing with no sync service to run yourself</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>Page history is a plan feature: 7 days Free, 30 Plus, 90 Business</li><li>The API is metered: 180 requests/minute per connection, 600 only on Business and up</li><li>Free caps uploads at 5 MB and guests at 10</li><li>Custom Agents bill per 1,000 Notion credits on top of the seat price</li></ul>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <h3 style="color:var(--accent); margin-top:0;">Obsidian</h3>
+        <div class="pros-box" style="margin-bottom:0.9rem;">
+          <strong style="color:var(--accent); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You gain</strong>
+          <ul><li>Free without limits, no sign-up, no telemetry, data on your own disk</li><li>Bases is a core plugin: table, cards, list, kanban and map views over frontmatter</li><li>History is git history — no plan-imposed cutoff on how far back you can go</li><li>Sync costs $4/user/month with AES-256 end-to-end encryption, and is optional</li></ul>
+        </div>
+        <div class="cons-box">
+          <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
+          <ul><li>No permission model and no built-in multi-user editing</li><li>No server-side agent, no computed properties on a server, no API</li><li>Collaboration arrives only through Sync shared vaults or third-party tooling</li><li>You own the backups, the indexing and the failure modes of your own machine</li></ul>
+        </div>
+      </div>
+    </div>
+
+      <h2 id="migration">Migration path</h2>
+      <div class="migration-box">
+        <strong>What switching actually takes</strong>
+        <div style="margin-top:0.5rem;"><p>Notion to Obsidian is a conversion, not a move: export to Markdown and CSV, then rebuild what the export cannot carry — relations become links or frontmatter, rollups become formulas, and permissions disappear entirely. Obsidian to Notion is worse in the other direction: plain files become blocks, the API becomes a 180-request-per-minute budget, and your git history stops being your history. Decide by which of those two losses you can actually live with.</p></div>
+      </div>
+
+    <h2 id="faq">Common questions</h2>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.4rem 1.4rem;">
+      
+        <div class="faq-item">
+          <div class="faq-q">Is Obsidian Sync end-to-end encrypted?</div>
+          <div class="faq-a">Yes. Obsidian lists AES-256 end-to-end encryption for Sync, and Sync comes with a 7-day no-questions refund.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can a school or nonprofit pay less for Obsidian?</div>
+          <div class="faq-a">Obsidian gives a 40% education/nonprofit discount on Sync and Publish. Sync and Publish also have a 7-day no-questions refund.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I have to hand-write retry logic for Notion&#x27;s 429s?</div>
+          <div class="faq-a">Not in JavaScript: Notion&#x27;s JS SDK retries for you and obeys <code>Retry-After</code>. Overloads can also come back as HTTP 529 with <code>service_overload</code>.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Which Notion plan lists zero data retention with LLM providers?</div>
+          <div class="faq-a">Zero data retention with LLM providers is listed as an Enterprise feature, alongside SCIM and audit log. Lower plans do not list it. That retention policy does not establish whether workspace content is sent to them.</div>
+        </div>
+    </div>
+
+      <h2>Sources &amp; verification</h2>
+      <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
+      Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
+      <div class="card"><p class="sources-list"><a href="https://www.notion.com/pricing" rel="noopener nofollow" target="_blank">https://www.notion.com/pricing</a><br><a href="https://developers.notion.com/reference/request-limits" rel="noopener nofollow" target="_blank">https://developers.notion.com/reference/request-limits</a><br><a href="https://obsidian.md/pricing" rel="noopener nofollow" target="_blank">https://obsidian.md/pricing</a><br><a href="https://obsidian.md/help/bases" rel="noopener nofollow" target="_blank">https://obsidian.md/help/bases</a><br><a href="https://obsidian.md/help/bases/views" rel="noopener nofollow" target="_blank">https://obsidian.md/help/bases/views</a><br></p></div>
+      <h2>Keep reading</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+          <a class="card" href="../cursor-vs-github-copilot/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Cursor vs GitHub Copilot</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">Two vendors, two meters, same question about model and surface ownership.</p>
+          </a>
+          <a class="card" href="../supabase-vs-firebase/" style="padding:1.1rem;">
+            <h3 style="margin:0 0 0.3rem; font-size:1rem; color:var(--text-muted);">Supabase vs Firebase</h3>
+            <p style="margin:0; font-size:0.85rem; color:var(--text-muted);">The clearest case of a free tier that expires the moment your usage pattern changes.</p>
+          </a></div>
+
+    <div style="text-align:center; margin: 3rem 0 1rem;">
+      <a href="https://www.notion.com/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="margin:0.35rem;">Try Notion →</a>
+      <a href="https://obsidian.md/?utm_source=devteardown" target="_blank" rel="noopener nofollow" class="btn btn-outline" style="margin:0.35rem;">Explore Obsidian →</a>
+    </div>
+
+    
+    <aside class="gear-note" aria-label="Affiliate links">
+      <h3>Elsewhere: desk gear</h3>
+      <p>Optional shopping links, separate from the comparisons. Check the seller for current prices and stock.</p>
+      <p class="gear-links">
+        <a href="https://link.coupang.com/a/iyxFRjouBM" target="_blank" rel="noopener nofollow sponsored">Logitech MX Master 3S</a>
+        <a href="https://link.coupang.com/a/iyxHrMNtyC" target="_blank" rel="noopener nofollow sponsored">Apple M4 MacBook Pro</a>
+        <a href="https://link.coupang.com/a/iyxEbxQMEK" target="_blank" rel="noopener nofollow sponsored">Coupang Goldbox</a>
+      </p>
+      <p>These are affiliate links; purchases may earn a commission.<br>
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </aside>
+
+
+    <div class="updated-note">
+      Prices and limits verified on 2026-11-10. Prices can change. If a number here looks wrong,
+      the vendor's own price sheet wins. Derived figures are arithmetic on published unit prices, not
+      measured benchmarks.
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 DevTools Radar. Developer tool comparisons. Shopping links are marked separately.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+{
+  "slug": "bun-vs-node",
+  "hook": "Neither Bun nor Node.js has a price, so neither bill ever reaches procurement. It arrives as 12 node:http tests that Bun, by its own count, still fails, or as a Node major that reaches end-of-life on a date you did not pick.",
+  "sections": [
+    {
+      "title": "Both runtimes cost nothing, so the invoice arrives as labour",
+      "content": "Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-hours on three meters: the release calendar, the compatibility surface and the native-module ABI.\n\n> Checked 10 November 2026 against nodejs.org and Bun's docs. Bun's pass counts are Bun's own figures.\n\nEach philosophy forbids something:\n\n- **Node:** a standards body ships a runtime on a published clock. The clock forbids staying put; your major reaches end-of-life on a date the project picked.\n- **Bun:** one binary ships the whole toolkit. The binary forbids partial upgrades; 1.4.0 (20 August 2026) moved the Rust rewrite, the Node compatibility target and the native ABI in a single release.\n\nNode charges you on someone else's schedule. Bun charges you on the tests it does not pass yet."
+    },
+    {
+      "title": "Node bills you on a date you did not choose",
+      "content": "Node's release page reads like a work schedule:\n\n| Major | Status | Key date |\n|---|---|---|\n| v27 | Alpha | first released 29 Oct 2026 |\n| v26 Lithium | LTS | first released 5 May 2026 |\n| v25 | EOL | 31 Mar 2026 |\n| v24 Krypton | LTS | first released 6 May 2025 |\n| v22 Jod | LTS | first released 24 Apr 2024 |\n| v20 Iron | EOL | 24 Mar 2026 |\n\nTwo rules decide every upgrade:\n\n1. LTS \"typically guarantees that critical bugs will be fixed for a total of 30 months\" (Node's wording).\n2. Starting with v27, every major gets six months of Alpha, six of Current, then LTS.\n\nRead it as a penalty table. It punishes the team that adopts a major and forgets it: v20 lived from 17 Apr 2023 to 24 Mar 2026, about 35 months.\n\n> You keep a Node major for years, and you leave it on the project's date."
+    },
+    {
+      "title": "Node 26 runs TypeScript only as far as erasure reaches",
+      "content": "Type stripping is on by default, stable since v25.2.0 / v24.12.0. It deletes a build step. It does not make Node a compiler.\n\n```ts\n// runs on Node 26 with no flags: every annotation here is erasable\ntype Host = string;\nconst host: Host = process.env.HOST ?? \"localhost\";\nconsole.log(`binding ${host}`);\n```\n\n```ts\n// here it breaks: enum emits runtime code, so erasure has nothing to delete\nenum Mode { Dev, Prod } // ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX\n```\n\nNode 26 also refuses:\n\n- `namespace` with runtime code, parameter properties, import aliases: same error\n- `.tsx` files\n- `paths`, because `tsconfig.json` is ignored\n- TypeScript inside `node_modules`\n- builds without WebAssembly, which the parser needs\n\nThis meter punishes codebases built on enums and path aliases; for them, the build step stays."
+    },
+    {
+      "title": "Bun bills you in the 3% of Node tests it still fails",
+      "content": "Bun says it plainly: \"Bun is not 100% compatible with Node.js yet.\" Its 1.4 counts against the Node 26.3.0 suite:\n\n| Module | Bun 1.4 passes | Not passing |\n|---|---|---|\n| node:http | 403 / 415 | 415 − 403 = 12 |\n| node:fs | 349 / 358 | 358 − 349 = 9 |\n| node:module | 68 / 93 | 93 − 68 = 25 |\n| node:test_runner | 28 / 81 | 81 − 28 = 53 |\n| node:inspector | 22 / 110 | 110 − 22 = 88 |\n| node:sqlite | 18 / 18 | 0 |\n\nOn node:http that is 12 ÷ 415 ≈ 2.9%, the failing 3%. The trend is real: 1.4 made 1,517 more Node tests pass.\n\n> The ABI tax: 1.4 moved the compatibility target from 24.3.0 to 26.3.0. `NODE_MODULE_VERSION` is now 147, so native addons built for Node 24 must be rebuilt.\n\nThis meter punishes repos that ship `.node` binaries or debug through the inspector."
+    },
+    {
+      "title": "Five documented Bun gaps, each tied to the service it breaks",
+      "content": "Bun's compatibility docs name the gaps. Map each to a service you run:\n\n- **HTTP servers tuned for a load balancer.** `http.Server` does not extend `net.Server`, and the `keepAlive` server options are no-ops. Your keep-alive tuning silently does nothing.\n- **mTLS and multi-tenant TLS.** node:https lacks `getPeerCertificate()` and `getCipher()` and does not support `SNICallback`. No reading client certs, no cert per hostname.\n- **Signing code.** BoringSSL-backed node:crypto lacks `ed448`, `x448`, `rsa-pss` and `dsa` keys, has no `secp256k1` curve and no `chacha20-poly1305`.\n- **APM tracing.** `async_hooks` `createHook` is a stub and async ids are always 0; correlation by async id collapses.\n- **`cluster` fleets on macOS or Windows.** HTTP load-balancing across workers only works on Linux, via `SO_REUSEPORT`.\n\nNone of these shows up in a hello-world. All of them show up in production."
+    },
+    {
+      "title": "Who pays for Bun's roadmap matters more than its start-up time",
+      "content": "Anthropic acquired Bun on 2 December 2025. Claude Code ships as a Bun executable (Bun's statement), and Bun's founder wrote then: \"Today, Bun makes $0 in revenue.\" Bun stays MIT.\n\n> The platform-team check is not speed. It is: who pays for this binary's roadmap, and does their product depend on my runtime?\n\n**If the service is your own code plus I/O, Bun wins.** If the repo ships native addons, instruments through the inspector, or needs an EOL date it can put in a roadmap, Node wins.\n\nCheck today:\n\n1. List every `.node` addon in the tree and whether it has a build for `NODE_MODULE_VERSION` 147.\n2. Search the code for `createHook`, `getPeerCertificate` and `SNICallback`.\n3. Write down the EOL date of the Node major running in production."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "situation": "New HTTP API that is your own code plus database and network calls",
+      "pick": "Bun",
+      "why": "Bun's own count puts node:http at 403 of 415 tests, and its documented gaps sit in addons, TLS introspection and async_hooks rather than plain request handling."
+    },
+    {
+      "situation": "Repo with native addons built for Node 24",
+      "pick": "Node, until every addon has a build for NODE_MODULE_VERSION 147",
+      "why": "Bun 1.4 targets Node 26.3.0, so addons built for 24 do not load until rebuilt."
+    },
+    {
+      "situation": "Production tracing through an APM agent built on async_hooks",
+      "pick": "Node",
+      "why": "In Bun, createHook is a stub and async ids are always 0, so the agent cannot correlate work."
+    },
+    {
+      "situation": "mTLS gateway reading client certificates, or a TLS terminator picking certs per hostname",
+      "pick": "Node",
+      "why": "Bun's node:https lacks getPeerCertificate() and does not support SNICallback."
+    },
+    {
+      "situation": "Signing service that needs secp256k1 or ed448 keys",
+      "pick": "Node",
+      "why": "Bun's BoringSSL-backed node:crypto has no secp256k1 curve and no ed448 key type."
+    },
+    {
+      "situation": "Still on Node 20 in production",
+      "pick": "Node 24 or 26 LTS, not a runtime switch",
+      "why": "v20 reached EOL on 24 March 2026, and an LTS move fixes that without adding Bun's compatibility gaps to the same sprint."
+    },
+    {
+      "situation": "Healthy service on Node 22 Jod with no pain points",
+      "pick": "Neither — stay put",
+      "why": "v22 is still LTS and was last updated 20 October 2026, so no date forces a move yet."
+    },
+    {
+      "situation": "Internal scripts and CLIs that currently pull in a separate test runner, linter and formatter",
+      "pick": "Bun",
+      "why": "Bun 1.4 ships bun test --parallel, bun lint, bun fmt and bun check in the same binary."
+    }
+  ],
+  "cost_math": [
+    {
+      "label": "Bun 1.4 node:http compatibility gap",
+      "formula": "415 tests − 403 passing = 12 failing; 12 ÷ 415 ≈ 2.9%",
+      "result": "12 failing node:http tests, about 3% (Bun's own count; neither runtime has a price, so the unit is tests)"
+    },
+    {
+      "label": "Debug-and-test loop gap in Bun 1.4",
+      "formula": "node:inspector 110 − 22 = 88; node:test_runner 81 − 28 = 53; 88 + 53 = 141",
+      "result": "141 tests not passing across the two modules a debugger and test runner touch"
+    },
+    {
+      "label": "Node 20 lifetime against the LTS promise",
+      "formula": "17 Apr 2023 → 24 Mar 2026 ≈ 35 months from first release to EOL, against a documented 30-month fix guarantee",
+      "result": "About 35 months of life, ending on a date the project set"
+    },
+    {
+      "label": "Native addon rebuild tax for Bun 1.4",
+      "formula": "N native addons × 1 rebuild each for NODE_MODULE_VERSION 147 (target moved 24.3.0 → 26.3.0)",
+      "result": "Every addon built for Node 24 needs a new build before Bun 1.4 can load it"
+    }
+  ],
+  "verdict_summary": "If your service is your own code plus I/O, Bun wins: by its own count node:http passes 403 of 415 tests, and its documented gaps sit in native addons, the inspector, TLS introspection and async_hooks. If the repo ships native addons, instruments through the inspector, or needs an EOL date for a roadmap, Node wins. Today, list your addons and write down your production major's EOL date.",
+  "faqs": [
+    {
+      "q": "Does Node 26 type-check TypeScript?",
+      "a": "No: type stripping performs no type checking, so a separate tool is still required. Decorators are a parser error, and `--experimental-transform-types` was removed in v26.0.0."
+    },
+    {
+      "q": "Is Bun faster than Node?",
+      "a": "Bun's own `hello.js` benchmark puts Linux start-up at 5.1 ms for Bun 1.4 versus 27.2 ms for Node.js 26; these are vendor measurements, not independent ones. The same vendor load test shows the Vite dev server peaking at 233 MB on Bun versus 214 MB on Node, so Bun is not lighter everywhere."
+    },
+    {
+      "q": "Can I buy support for a Node major after LTS ends?",
+      "a": "Not from the Node.js project itself. Commercial support past Maintenance LTS is sold by OpenJS Ecosystem Sustainability Program partners."
+    },
+    {
+      "q": "Does Bun's MIT licence cover everything in the binary?",
+      "a": "No: Bun statically links JavaScriptCore/WebKit, which is LGPL-2. That is why Bun's licence file spells out relinking obligations."
+    }
+  ],
+  "sources": [
+    "https://bun.com/blog/bun-v1.4",
+    "https://bun.com/blog/bun-joins-anthropic",
+    "https://bun.com/docs/runtime/nodejs-compat",
+    "https://nodejs.org/en/about/previous-releases",
+    "https://nodejs.org/api/typescript.html"
+  ]
+}
