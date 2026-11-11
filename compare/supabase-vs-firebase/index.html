@@ -6,8 +6,8 @@
   <title>Supabase vs Firebase (2026): Cost, Limits and the Decision Matrix</title>
   <meta name="description" content="Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The scree">
   <link rel="canonical" href="https://devteardown.com/compare/supabase-vs-firebase/">
-  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/supabase-vs-firebase/">
-  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/supabase-vs-firebase/">
+
+
   <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Supabase vs Firebase — 2026 teardown">
   <meta property="og:description" content="Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The scree">
@@ -16,93 +16,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Supabase vs Firebase: cost, limits and the decision matrix">
   <meta name="twitter:description" content="If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one P">
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Supabase vs Firebase: a 2026 engineering teardown",
-  "description": "Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The screen is identical; the only thing that changed is what the vendor counts.",
-  "datePublished": "2026-11-10",
-  "author": {
-    "@type": "Organization",
-    "name": "DevTeardown",
-    "url": "https://devteardown.com/editorial-policy/"
-  },
-  "inLanguage": "en",
-  "citation": [
-    "https://supabase.com/pricing",
-    "https://supabase.com/docs/guides/realtime/postgres-changes",
-    "https://firebase.google.com/docs/firestore/pricing",
-    "https://cloud.google.com/firestore/pricing",
-    "https://supabase.com/kb/guides/migrate-from-firestore-data"
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "DevTeardown"
-  },
-  "mainEntityOfPage": "https://devteardown.com/compare/supabase-vs-firebase/"
-}
-  </script>
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I park a Supabase Free project for a demo that sits idle?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not reliably: Free projects are paused after 1 week of inactivity, and Free allows only 2 active projects. Pro projects are never paused for inactivity."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does offset pagination save reads on Firestore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Firestore bills a read for every skipped document, so offset 10 returning 1 document costs 11 reads."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will Supabase Realtime leak rows a user shouldn't see?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Postgres Changes subscriptions are RLS-aware, so clients receive only rows they are allowed to select. Supabase's docs also document Broadcast as an alternative way to subscribe to database changes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is Firestore vector search billed?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "kNN vector search bills one read per batch of up to 100 vector index entries. That is a tenth of the 1,000-entry batch size used for regular index entry reads."
-      }
-    }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Comparisons",
-      "item": "https://devteardown.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Supabase vs Firebase",
-      "item": "https://devteardown.com/compare/supabase-vs-firebase/"
-    }
-  ]
-}
-  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/supabase-vs-firebase/#article", "headline": "Supabase vs Firebase: a 2026 engineering teardown", "description": "Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The screen is identical; the only thing that changed is what the vendor counts.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://supabase.com/pricing", "https://supabase.com/docs/guides/realtime/postgres-changes", "https://firebase.google.com/docs/firestore/pricing", "https://cloud.google.com/firestore/pricing", "https://supabase.com/kb/guides/migrate-from-firestore-data"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/supabase-vs-firebase/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I park a Supabase Free project for a demo that sits idle?", "acceptedAnswer": {"@type": "Answer", "text": "Not reliably: Free projects are paused after 1 week of inactivity, and Free allows only 2 active projects. Pro projects are never paused for inactivity."}}, {"@type": "Question", "name": "Does offset pagination save reads on Firestore?", "acceptedAnswer": {"@type": "Answer", "text": "No. Firestore bills a read for every skipped document, so offset 10 returning 1 document costs 11 reads."}}, {"@type": "Question", "name": "Will Supabase Realtime leak rows a user shouldn't see?", "acceptedAnswer": {"@type": "Answer", "text": "Postgres Changes subscriptions are RLS-aware, so clients receive only rows they are allowed to select. Supabase's docs also document Broadcast as an alternative way to subscribe to database changes."}}, {"@type": "Question", "name": "How is Firestore vector search billed?", "acceptedAnswer": {"@type": "Answer", "text": "kNN vector search bills one read per batch of up to 100 vector index entries. That is a tenth of the 1,000-entry batch size used for regular index entry reads."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Comparisons", "item": "https://devteardown.com/"}, {"@type": "ListItem", "position": 2, "name": "Supabase vs Firebase", "item": "https://devteardown.com/compare/supabase-vs-firebase/"}]}</script>
   <style>
 :root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
   --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
@@ -191,7 +107,9 @@ footer p { font-size:.8rem; margin:0; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
-<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{position:relative;margin-left:auto;font-size:14px}.languages>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;min-height:44px;padding:8px 12px;border:1px solid #dbe1e8;border-radius:8px;background:#fff;white-space:nowrap}.languages>summary::-webkit-details-marker{display:none}.language-chevron{margin-left:6px}.languages[open] .language-chevron{transform:rotate(180deg)}.unified-header .language-options{position:absolute;right:0;top:calc(100% + 6px);z-index:20;display:grid;gap:2px;min-width:176px;max-width:calc(100vw - 40px);padding:6px;background:#fff;border:1px solid #dbe1e8;border-radius:10px;box-shadow:0 10px 28px #17233320}.language-options .lang{display:block;padding:10px 12px;min-height:44px;border-radius:6px;color:#172333;text-decoration:none}.language-options .lang:hover,.language-options .lang:focus-visible{background:#edf3ff}.lang[aria-current]{font-weight:700;background:#edf3ff}</style></head>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{position:relative;margin-left:auto;font-size:14px}.languages>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;min-height:44px;padding:8px 12px;border:1px solid #dbe1e8;border-radius:8px;background:#fff;white-space:nowrap}.languages>summary::-webkit-details-marker{display:none}.language-chevron{margin-left:6px}.languages[open] .language-chevron{transform:rotate(180deg)}.unified-header .language-options{position:absolute;right:0;top:calc(100% + 6px);z-index:20;display:grid;gap:2px;min-width:176px;max-width:calc(100vw - 40px);padding:6px;background:#fff;border:1px solid #dbe1e8;border-radius:10px;box-shadow:0 10px 28px #17233320}.language-options .lang{display:block;padding:10px 12px;min-height:44px;border-radius:6px;color:#172333;text-decoration:none}.language-options .lang:hover,.language-options .lang:focus-visible{background:#edf3ff}.lang[aria-current]{font-weight:700;background:#edf3ff}</style><link rel="alternate" hreflang="en" href="https://devteardown.com/compare/supabase-vs-firebase/"><link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/supabase-vs-firebase/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, {"@type": "WebSite", "@id": "https://devteardown.com/#website", "name": "DevTeardown", "url": "https://devteardown.com/", "publisher": {"@id": "https://devteardown.com/#publisher"}, "inLanguage": ["en", "ko", "zh", "ja", "es", "fr"]}, {"@type": "WebPage", "@id": "https://devteardown.com/compare/supabase-vs-firebase/#webpage", "url": "https://devteardown.com/compare/supabase-vs-firebase/", "name": "Supabase vs Firebase (2026): Cost, Limits and the Decision Matrix", "inLanguage": "en", "isPartOf": {"@id": "https://devteardown.com/#website"}, "publisher": {"@id": "https://devteardown.com/#publisher"}, "description": "Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The scree", "mainEntity": {"@id": "https://devteardown.com/compare/supabase-vs-firebase/#article"}}]}</script>
+</head>
 <body>
   <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><details class="languages"><summary aria-label="Language: English"><span aria-hidden="true">🇺🇸</span> English <span class="language-chevron" aria-hidden="true">⌄</span></summary><nav class="language-options" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page"><span aria-hidden="true">🇺🇸</span> English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko"><span aria-hidden="true">🇰🇷</span> 한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh"><span aria-hidden="true">🇨🇳</span> 中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja"><span aria-hidden="true">🇯🇵</span> 日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es"><span aria-hidden="true">🇪🇸</span> Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr"><span aria-hidden="true">🇫🇷</span> Français</a></nav></details></header><script>const languageMenu=document.querySelector('.languages');document.addEventListener('click',event=>{if(!languageMenu.contains(event.target))languageMenu.open=false});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&languageMenu.open){languageMenu.open=false;languageMenu.querySelector('summary').focus()}});window.addEventListener('pageshow',()=>{languageMenu.open=false});</script>
 
