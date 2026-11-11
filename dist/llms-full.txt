@@ -1,6 +1,6 @@
 # DevTeardown — comparison summaries and deal observations
 
-Source: https://devteardown.com · Export generated: 2026-11-10
+Source: https://devteardown.com · Export generated: 2026-11-11
 
 ## Stripe vs Lemon Squeezy / Paddle
 URL: https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/

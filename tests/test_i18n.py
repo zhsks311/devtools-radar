@@ -20,3 +20,22 @@ class MultilingualTests(unittest.TestCase):
   s=i.catalogue('en',[d],{});self.assertNotIn('javascript:alert',s);self.assertIn('&lt;script&gt;',s)
  def test_filters_preserve_state(self):
   self.assertIn("params.set('market'",i.JS);self.assertIn("params.set('category'",i.JS);self.assertIn('aria-live="polite"',i.catalogue('en',[],{}))
+
+ def test_language_dropdown(self):
+  for lang in i.LANGS:
+   for report in (False,True):
+    nav=i.nav(lang,report)
+    self.assertIn('<details class="languages">',nav)
+    self.assertIn('aria-label="'+i.LANGUAGE_LABEL[lang]+': '+i.LANGS[lang]+'"',nav)
+    self.assertEqual(nav.count('class="lang"'),6)
+    self.assertEqual(nav.count('aria-current="page"'),1)
+    for code in i.LANGS:
+     self.assertIn(i.FLAGS[code],nav)
+     path=('/' if code=='en' else '/reports/'+code+'/') if report else i.PATHS[code]
+     self.assertIn('href="'+path+'" lang="'+code+'"',nav)
+  self.assertIn("event.key==='Escape'",i.LANGUAGE_JS)
+  self.assertIn('pageshow',i.LANGUAGE_JS)
+ def test_short_korean_heading(self):
+  page=i.catalogue('ko',self.feeds,self.tr)
+  self.assertIn('<h1>핫딜</h1>',page)
+  self.assertNotIn('모든 딜을 한곳에서',page)
