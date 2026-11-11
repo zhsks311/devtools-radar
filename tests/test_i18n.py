@@ -19,7 +19,7 @@ class MultilingualTests(unittest.TestCase):
   d=dict(self.feeds[0]);d['product']='<script>';d['id']='unknown';d['link']={'url':'javascript:alert(1)'}
   s=i.catalogue('en',[d],{});self.assertNotIn('javascript:alert',s);self.assertIn('&lt;script&gt;',s)
  def test_filters_preserve_state(self):
-  self.assertIn("params.set('market'",i.JS);self.assertIn("params.set('category'",i.JS);self.assertIn('aria-live="polite"',i.catalogue('en',[],{}))
+  self.assertIn("[market, 'market']",i.JS);self.assertIn("[cat, 'category']",i.JS);self.assertIn('aria-live="polite"',i.catalogue('en',[],{}))
 
  def test_language_dropdown(self):
   for lang in i.LANGS:
@@ -39,3 +39,14 @@ class MultilingualTests(unittest.TestCase):
   page=i.catalogue('ko',self.feeds,self.tr)
   self.assertIn('<h1>핫딜</h1>',page)
   self.assertNotIn('모든 딜을 한곳에서',page)
+
+ def test_report_navigation_has_one_script_and_local_catalog_link(self):
+  import build,tempfile
+  with tempfile.TemporaryDirectory() as temp:
+   out=Path(temp)/'site'; build.build_site(output=out)
+   for lang in i.LANGS:
+    if lang=='en':continue
+    page=(out/'reports'/lang/'index.html').read_text()
+    self.assertEqual(page.count('const languageMenu='),1)
+    self.assertNotIn('href="/deals/">Browse the product catalog',page)
+    self.assertIn('href="'+i.PATHS[lang]+'"',page)

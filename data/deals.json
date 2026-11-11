@@ -83,7 +83,8 @@
         "discount_pct": 40,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-oliveyoung-gift-card-20k",
@@ -161,7 +162,8 @@
         "discount_pct": 2,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-pepero-sampler-6pack",
@@ -239,7 +241,8 @@
         "discount_pct": 23,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-orion-wow-snack-16",
@@ -317,7 +320,8 @@
         "discount_pct": 26,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-coupang-gift-card-10k",
@@ -395,7 +399,8 @@
         "discount_pct": 0,
         "status": "rejected",
         "reason": "equal_price_not_a_discount"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-orion-bichobi-2pack",
@@ -473,7 +478,8 @@
         "discount_pct": 16,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-office-pantry-snack-10",
@@ -552,7 +558,8 @@
         "discount_pct": 21,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-belkin-100w-gan",
@@ -630,7 +637,8 @@
         "discount_pct": 37,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-lg-ultragear-27",
@@ -709,7 +717,8 @@
         "discount_pct": 26,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-ugreen-100w-gan",
@@ -787,7 +796,8 @@
         "discount_pct": 32,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-artmu-100w-gb102",
@@ -865,7 +875,8 @@
         "discount_pct": 20,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-sony-mdr-3r",
@@ -943,7 +954,8 @@
         "discount_pct": 34,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-apple-m4-macbook-pro",
@@ -1022,7 +1034,8 @@
         "discount_pct": 9,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-silent-mech-keyboard",
@@ -1101,7 +1114,8 @@
         "discount_pct": 23,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-heavy-duty-monitor-arm",
@@ -1180,7 +1194,8 @@
         "discount_pct": 28,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-mini-pc-n100",
@@ -1259,7 +1274,8 @@
         "discount_pct": 27,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     },
     {
       "id": "deal-office-coffee-bean-1kg",
@@ -1338,7 +1354,8 @@
         "discount_pct": 23,
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
-      }
+      },
+      "storefront_country": "KR"
     }
   ],
   "categories": {

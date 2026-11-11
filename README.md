@@ -119,7 +119,7 @@ Run `python3 tools/check.py` before publication. For an authorized live feed che
 
 `site_i18n.py` renders the same curated Korean and international records in six languages.
 English uses `/deals/`; `/ko/`, `/zh/`, `/ja/`, `/es/`, `/fr/` share the same catalogue.
-Market and category filters are combined and retained in the URL when changing language.
+Storefront country, confirmed delivery/activation country and category are independent filters; all three are combined and retained in the URL when changing language. Reset clears only the filters, and Back/Forward restores them.
 `data/deal_localizations.json` contains the translated product summary and purchase caveats.
 The expandable original source record is deliberately not translated or presented as new verification.
 Korean records retain their historical prices; inclusion does not reverify availability.
@@ -144,3 +144,24 @@ purchase button. Do not bypass access restrictions or fabricate product IDs.
 The build/CI fails on unreviewed new records. Review metadata is a human evidence
 attestation, not a live-stock guarantee; a later retailer redirect still requires a
 fresh check. RSS collection remains staging-only and cannot publish unchecked cards.
+
+### Country filter contract
+
+`storefront_country` is an explicit editorial browsing classification (ISO country code or null).
+It describes the observed country-specific store, never the seller’s headquarters or the
+customer’s eligibility. Korean source listings, the DJI/Lenovo China stores and EB Games
+Australia are classified separately; an international digital storefront is not assumed US.
+Product category is independent: a Chinese keyboard is still `keyboard-mouse`, not `china`.
+
+The destination selector uses every member of `purchase_eligibility.countries_confirmed`
+only with dated delivery/activation evidence, a supported reviewed status, and a source URL.
+Empty evidence stays unknown, including China storefront listings and Korean held records.
+Unknown means not verified, not unavailable; an Australian delivery statement does not
+establish New Zealand delivery, payment eligibility or worldwide activation. Country claims
+with invalid codes, missing evidence or future check dates fail the build.
+
+`python tools/check.py` executes the production filter JavaScript in Node across 3,240
+combinations (six languages × storefront × destination × category), including held counts,
+empty states, invalid queries, multi-country membership, reset, language links and history.
+Python 3.11 remains sufficient for rendering; install Node 22+ for the JavaScript checks
+(the test reports a skip if unavailable). CI explicitly installs Node and runs the full gate.

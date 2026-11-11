@@ -598,8 +598,10 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
     cat_label = deal.get("category_label", "")
     cat = html.escape(CAT_SHORT.get(deal.get("category", ""), cat_label) if lang == "ko" else cat_label)
     info = deal.get("purchase_eligibility") or {}
-    market = "CN" if deal.get("category") == "china" else ("AU" if "AU" in info.get("countries_confirmed", []) else "unverified")
-    topic = "hardware" if deal.get("category") == "china" else deal.get("category", "tech")
+    from tools.deal_countries import storefront_country
+    market = storefront_country(deal)
+    market = "unverified" if market == "unknown" else market
+    topic = deal.get("category", "tech")
     evidence = _fact_rows(deal)
     if lang == "en":
         evidence = '<details class="offer-evidence"><summary>Price check & offer details</summary>' + evidence + '</details>'
@@ -1520,6 +1522,10 @@ def build_site(data_path=DATA_PATH, output=DIST_DIR, deals_path=DEALS_DATA_PATH,
     price_errors = validate_deal_prices(deals.get('feed', []) + en_deals.get('feed', []))
     if price_errors:
         raise ValueError('Price registration failed: ' + '; '.join(price_errors))
+    from tools.deal_countries import validate_deal_countries
+    country_errors = validate_deal_countries(deals.get("feed", []) + en_deals.get("feed", []))
+    if country_errors:
+        raise ValueError("Country registration failed: " + "; ".join(country_errors))
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".radar-build-", dir=output.parent) as temp:
         stage = Path(temp) / "site"

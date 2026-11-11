@@ -22,3 +22,12 @@
 - TextSniper/Action: conflicting reference price or license scope; no exact discount assertion.
 - Korean listings: unavailable exact seller identity/current price; keep held, not advertised as current hot deals.
 - Stock or regional eligibility unknown: explicitly unknown, not inferred from language/currency.
+
+## 2026-11-11: country and related catalogue corrections
+- The former single market field mixed source country (KR), storefront country (CN), and delivery evidence (AU). The new independent storefront and destination selectors never infer delivery from currency, category or language. Existing country evidence is unchanged: only the Switch 2 record has AU evidence; all other destinations remain unverified.
+- Explicit storefront classifications use the retained Korean Coupang records, reviewed DJI CN/Lenovo CN product URLs and EB Games Australia product URL. StackSocial remains unclassified rather than assuming US/global eligibility. No checkout, shipping or activation was newly certified by this correction.
+- Lenovo GK10 and LOQ were hidden from their real categories because all China records were forced into hardware. They now appear under keyboards/mice and monitors/desks respectively, including China storefront + category intersections.
+- Linked Lenovo records with unverified current prices keep their product descriptions, not a false claim that product identity is unverified. Current price caveats and historical-price labels remain visible.
+- Koofr’s limit corrected in six translations and source briefing: one code redemption per person in their lifetime, not one per account. Source: https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb. Coupon prices remain advertised/unverified, and source price timestamps were not refreshed.
+- All five localized report pages no longer redeclare the language-menu JavaScript; their lower catalogue link keeps the chosen language.
+- Regression gate covers ISO/evidence validation, multiple destinations, all 3,240 current filter combinations, unknown versus unavailable, held/active counts, URL restore/reset, language switching, report scripts and category assignments.

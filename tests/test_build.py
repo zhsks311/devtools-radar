@@ -41,7 +41,7 @@ class RendererTests(unittest.TestCase):
             self.assertFalse(any(t in ['img','iframe'] for t,a in parser.tags))
     def test_china_listings_are_honest_and_link_to_products(self):
         payload=json.loads((build.ROOT / 'data/deals_en.json').read_text())
-        china=[d for d in payload['feed'] if d.get('category') == 'china']
+        china=[d for d in payload['feed'] if d.get('storefront_country') == 'CN']
         self.assertEqual(len(china), 4)
         self.assertEqual(build._won({'price':29.9, 'currency':'CNY'}), 'CNY 29.90')
         for deal in china:

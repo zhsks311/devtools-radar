@@ -10,8 +10,8 @@
       "id": "dji-osmo-mobile-7-cn",
       "region": "global",
       "target": "en",
-      "category": "china",
-      "category_label": "China storefronts",
+      "category": "hardware",
+      "category_label": "Hardware",
       "title_raw": "DJI Osmo Mobile 7",
       "product": "DJI Osmo Mobile 7",
       "store": "DJI China",
@@ -96,14 +96,15 @@
           "CN storefront CNY349; free shipping and seven-day return advertised; address-specific inventory unverified."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": "CN"
     },
     {
       "id": "lenovo-gk10-rt60-cn",
       "region": "global",
       "target": "en",
-      "category": "china",
-      "category_label": "China storefronts",
+      "category": "keyboard-mouse",
+      "category_label": "Keyboards & mice",
       "title_raw": "Lenovo GK10 RT60 magnetic keyboard · black",
       "product": "Lenovo GK10 RT60 magnetic keyboard · black",
       "store": "Lenovo China",
@@ -181,14 +182,15 @@
           "Current product-page price not available in retrieved page; previously listed homepage price is not independently reverified. Inventory and discount unverified."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": "CN"
     },
     {
       "id": "lenovo-loq-25-10-cn",
       "region": "global",
       "target": "en",
-      "category": "china",
-      "category_label": "China storefronts",
+      "category": "monitor-desk",
+      "category_label": "Monitors & desks",
       "title_raw": "Lenovo LOQ 25-10 · 24.5-inch FHD 280 Hz monitor",
       "product": "Lenovo LOQ 25-10 · 24.5-inch FHD 280 Hz monitor",
       "store": "Lenovo China",
@@ -266,14 +268,15 @@
           "Current product-page price not available in retrieved page; previously listed homepage price is not independently reverified. Inventory and discount unverified."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": "CN"
     },
     {
       "id": "lenovo-c02-cn",
       "region": "global",
       "target": "en",
-      "category": "china",
-      "category_label": "China storefronts",
+      "category": "hardware",
+      "category_label": "Hardware",
       "title_raw": "Lenovo C02 · 7-in-1 cleaning kit",
       "product": "Lenovo C02 · 7-in-1 cleaning kit",
       "store": "Lenovo China",
@@ -351,7 +354,8 @@
           "Current product-page price not available in retrieved page; previously listed homepage price is not independently reverified. Inventory and discount unverified."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": "CN"
     },
     {
       "id": "43ca41d03daa",
@@ -458,7 +462,8 @@
           "Home delivery available displayed; shipping costs and address availability require checkout."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": "AU"
     },
     {
       "id": "de0f62d0487f",
@@ -556,7 +561,8 @@
           "New users only; 1 Mac; version1.6.0; redeem within30days. Minor updates only, major upgrades extra."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": null
     },
     {
       "id": "9caac4280b19",
@@ -654,7 +660,8 @@
           "New users only;1 device;redeem30days; updates included per reseller."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": null
     },
     {
       "id": "bde198764514",
@@ -759,7 +766,8 @@
           "note": "Official geo-rendered PLN price; not same currency, no percentage comparison."
         },
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": null
     },
     {
       "id": "e30c9a510928",
@@ -780,7 +788,7 @@
       "specs": [],
       "briefing": [
         "Key: Cloud file storage, with a one-time purchase.",
-        "Condition: One lifetime subscription per account.",
+        "Condition: Each person can redeem only one code in their lifetime.",
         "Checked: November 10, 2026 · Add to Cart shown",
         "Check: Page advertises $159.99 with KOOFR; checkout not tested. Redeem within 15 days. Lifetime is subject to service and inactivity terms."
       ],
@@ -870,7 +878,8 @@
           "note": "Recurring1TB not identical lifetime product. Reseller810USD suggested price not substantiated."
         },
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": null
     },
     {
       "id": "2f57dcdf2174",
@@ -967,7 +976,8 @@
           "Version11;2devices;redeem30days."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": null
     },
     {
       "id": "3b4097687c74",
@@ -1068,7 +1078,8 @@
           "note": "Family9device license confirmed, dynamic current price unavailable;169.99USD reference unverified."
         },
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": null
     },
     {
       "id": "3b4c5d317572",
@@ -1165,7 +1176,8 @@
           "2devices;Windows1.4.5.5/Mac1.6.1.0;redeem30days;conversion Internet required."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": null
     },
     {
       "id": "0deb259ecfd4",
@@ -1263,7 +1275,8 @@
           "New users only;1device;v4.20.2;redeem30days."
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-      }
+      },
+      "storefront_country": null
     }
   ],
   "picks": [
@@ -2035,7 +2048,7 @@
           "specs": [],
           "briefing": [
             "Key: Cloud file storage, with a one-time purchase.",
-            "Condition: One lifetime subscription per account.",
+            "Condition: Each person can redeem only one code in their lifetime.",
             "Checked: November 10, 2026 · Add to Cart shown",
             "Check: Page advertises $159.99 with KOOFR; checkout not tested. Redeem within 15 days. Lifetime is subject to service and inactivity terms."
           ],
