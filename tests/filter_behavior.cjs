@@ -17,10 +17,18 @@ for (const page of pages) {
   const archived = page.archived.map(dataset=>({dataset, hidden:false}));
   const links = page.links.map(href=>({href:'https://example.test'+href}));
   let url = new URL('https://example.test/deals/?country=INVALID&market=INVALID&category=INVALID&utm_source=test#keep');
+  let historyIndex=0;
+  const historyEntries=[url.href];
+  const history={
+    replaceState(a,b,value){url=new URL(value,url);historyEntries[historyIndex]=url.href},
+    pushState(a,b,value){url=new URL(value,url);historyEntries.splice(++historyIndex);historyEntries.push(url.href)},
+    back(){if(historyIndex>0){url=new URL(historyEntries[--historyIndex]);events.popstate()}},
+    forward(){if(historyIndex<historyEntries.length-1){url=new URL(historyEntries[++historyIndex]);events.popstate()}}
+  };
   const location = {};
   for(const key of ['search','pathname','hash']) Object.defineProperty(location,key,{get:()=>url[key]});
   const context = vm.createContext({URLSearchParams, URL, location,
-    history:{replaceState(a,b,value){url=new URL(value,url)}},
+    history,
     document:{querySelector:selector=>nodes[selector], querySelectorAll(selector){
       return selector==='#active-products .card'?cards:selector==='#held-products .card'?archived:links.map(a=>({
         get href(){return new URL(a.href,url).href}, set href(v){a.href=v}
@@ -30,6 +38,28 @@ for (const page of pages) {
   vm.runInContext(js, context);
   assert.equal(nodes['#country'].value,'all');
   assert.equal(url.search,'?utm_source=test'); assert.equal(url.hash,'#keep');
+  // Actual history traversal, not just manually setting the URL before popstate.
+  assert.equal(historyEntries.length,1);
+  nodes['#market'].value='CN';nodes['#market'].change();
+  nodes['#category'].value='keyboard-mouse';nodes['#category'].change();
+  assert.equal(historyEntries.length,3);
+  nodes['#category'].change(); // repeated event must not create a duplicate history entry
+  assert.equal(historyEntries.length,3);
+  history.back();
+  assert.equal(nodes['#market'].value,'CN');assert.equal(nodes['#category'].value,'all');
+  history.back();
+  assert.equal(nodes['#market'].value,'all');
+  history.forward();history.forward();
+  assert.deepEqual(cards.filter(c=>!c.hidden).map(c=>c.dataset.id),['lenovo-gk10-rt60-cn']);
+  nodes['#reset-filters'].click();
+  history.back();
+  assert.equal(nodes['#market'].value,'CN');assert.equal(nodes['#category'].value,'keyboard-mouse');
+  history.forward();
+  assert.equal(nodes['#market'].value,'all');assert.equal(nodes['#category'].value,'all');
+  const lengthBeforeRestore=historyEntries.length;
+  events.pageshow();events.popstate();
+  assert.equal(historyEntries.length,lengthBeforeRestore);
+  assert.equal(url.search,'?utm_source=test');assert.equal(url.hash,'#keep');
   for(const market of page.selects.market) for(const country of page.selects.country) for(const category of page.selects.category) {
     nodes['#market'].value=market; nodes['#country'].value=country; nodes['#category'].value=category;
     nodes['#country'].change();

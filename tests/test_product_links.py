@@ -37,6 +37,16 @@ class ProductLinkTests(unittest.TestCase):
         feeds=sum([json.loads((root/'data'/f).read_text())['feed'] for f in ['deals.json','deals_en.json']],[])
         self.assertEqual(validate_deal_links(feeds),[])
 
+    def test_future_or_malformed_review_never_publishes_a_link(self):
+        root=Path(__file__).resolve().parents[1]
+        original=json.loads((root/'data/deals_en.json').read_text())['feed'][0]
+        for value in ('9999-01-01T00:00:00Z',None,{},False,'2026-11-10'):
+            with self.subTest(value=value):
+                d=copy.deepcopy(original);d['link_review']['checked_at']=value
+                self.assertFalse(publishable_link(d));self.assertTrue(validate_deal_links([d]))
+                for lang in site_i18n.LANGS:
+                    self.assertNotIn('class="cta"',site_i18n.catalogue(lang,[d],{}))
+
     def test_price_review_and_publication_counts_all_languages(self):
         root=Path(__file__).resolve().parents[1]
         feeds=sum([json.loads((root/'data'/f).read_text())['feed'] for f in ['deals.json','deals_en.json']],[])

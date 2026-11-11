@@ -455,7 +455,12 @@
           "price": 769.95,
           "currency": "AUD",
           "difference": 41.95,
-          "percent": 5.45
+          "percent": 5.45,
+          "reference_kind": "official_srp",
+          "same_product_variant": true,
+          "product_id": "43ca41d03daa",
+          "checked_at": "2026-11-11T04:45:27+00:00",
+          "evidence": "Nintendo Australia states the standalone Nintendo Switch 2 console SRP is AUD 769.95 effective 2026-09-01. EB Games product 325321 is the same standalone console, with displayed public price AUD 728. Address-specific stock, checkout, payment and delivery charges were not verified."
         },
         "conditions": [
           "AUD728 public displayed price; AUD698 is separate paid-member offer, not unrestricted price.",

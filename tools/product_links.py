@@ -2,10 +2,10 @@
 A reviewer must record the final seller URL, exact product/variant match and dated
 source evidence. HTTP 200 alone, a search hit or a blocked request is insufficient.
 """
-import datetime
 import re
 from urllib.parse import urlsplit, parse_qs, unquote
 from tools.validate_data import is_safe_url
+from tools.evidence_dates import observed_timestamp
 
 DETAIL_ROUTES = {
     'www.coupang.com': r'/vp/products/\d+/?',
@@ -30,10 +30,7 @@ def direct_product_url(url):
 def publishable_link(deal):
     link = deal.get('link') or {}
     evidence = deal.get('link_review') or {}
-    try:
-        observed = datetime.datetime.fromisoformat(evidence.get('checked_at', '').replace('Z','+00:00'))
-        if observed.tzinfo is None: return False
-    except (ValueError, TypeError): return False
+    if observed_timestamp(evidence.get('checked_at')) is None: return False
     return (direct_product_url(link.get('url')) and evidence.get('status') == 'verified_detail'
             and evidence.get('url') == link.get('url') and evidence.get('product_match') is True
             and isinstance(evidence.get('evidence'), str) and bool(evidence['evidence'].strip()))

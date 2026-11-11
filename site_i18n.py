@@ -2,7 +2,8 @@
 import html, json, re, datetime
 from pathlib import Path
 from tools.product_links import publishable_link
-from tools.deal_prices import checked_price
+from tools.deal_prices import checked_price, official_srp_comparison
+from tools.evidence_dates import observed_timestamp
 from tools.deal_countries import confirmed_countries, storefront_country
 from xml.sax.saxutils import escape
 LANGS={'en':'English','ko':'한국어','zh':'中文','ja':'日本語','es':'Español','fr':'Français'}
@@ -29,9 +30,16 @@ FILTER_TEXT = {
 COUNTRY_ORDER = ('KR', 'CN', 'AU', 'US', 'JP', 'ES', 'FR')
 def country_name(code, lang):
  return FILTER_TEXT[lang][10 + COUNTRY_ORDER.index(code)] if code in COUNTRY_ORDER else code
-PRICE_CURRENT={'en':'Seller displayed price checked; checkout not verified','ko':'판매페이지 표시가 확인 · 최종 결제 미검증','zh':'已核实卖家标价；结算价未验证','ja':'販売ページの表示価格を確認・決済は未確認','es':'Precio del vendedor comprobado; pago sin verificar','fr':'Prix affiché vérifié ; paiement non vérifié'}
+PRICE_CURRENT={'en':'Recorded seller price; not a live quote or verified checkout','ko':'판매페이지 가격 확인 기록 · 실시간 가격·최종 결제 미검증','zh':'卖家标价记录；非实时报价，结算价未验证','ja':'販売価格の確認記録・リアルタイム価格と決済は未確認','es':'Precio del vendedor registrado; no es una cotización en tiempo real ni un pago verificado','fr':'Prix vendeur relevé ; ni prix en temps réel ni paiement vérifié'}
 DISCOUNT_UNKNOWN={'en':'Discount / historical low not established','ko':'할인·역대 최저가 근거 미확인','zh':'折扣及历史低价未证实','ja':'割引・過去最安値の根拠は未確認','es':'Descuento y mínimo histórico sin acreditar','fr':'Réduction et minimum historique non établis'}
-SRP={'en':'5.45% below official AUD 769.95 RRP; not a proven historical low','ko':'공식 권장가 A$769.95 대비 5.45% 낮음 · 역대 최저 여부 미확인','zh':'比官方建议价 A$769.95 低5.45%；非已证实历史低价','ja':'公式希望価格 A$769.95 より5.45%安い・過去最安の証明なし','es':'5,45% por debajo del PVP oficial A$769,95; no mínimo histórico probado','fr':'5,45 % sous le prix conseillé officiel A$769,95 ; minimum historique non prouvé'}
+SRP={
+'en':'Recorded price is {percent}% below official {currency} {price} RRP; not a proven historical low',
+'ko':'기록된 가격은 공식 권장가 {currency} {price} 대비 {percent}% 낮음 · 역대 최저 여부 미확인',
+'zh':'记录价格比官方建议价 {currency} {price} 低{percent}%；非已证实历史低价',
+'ja':'記録価格は公式希望価格 {currency} {price} より{percent}%安い・過去最安の証明なし',
+'es':'Precio registrado un {percent}% inferior al PVP oficial de {currency} {price}; no mínimo histórico probado',
+'fr':'Prix relevé inférieur de {percent} % au prix conseillé officiel de {currency} {price} ; minimum historique non prouvé'}
+REVIEW_DATE={'en':'Review recorded','ko':'검토 기록일','zh':'审核记录时间','ja':'確認記録日時','es':'Revisión registrada','fr':'Relevé de vérification'}
 NOT_DISCOUNT={'en':'No discount: recorded sale and reference prices are equal','ko':'할인 아님 · 기록된 판매가와 비교가격이 동일','zh':'非折扣：记录售价与参考价相同','ja':'割引ではありません・記録された販売価格と比較価格が同額','es':'Sin descuento: precio registrado igual al de referencia','fr':'Pas de réduction : prix relevé identique au prix de référence'}
 ARCHIVE={'en':'Unverified listings (purchase links withheld)','ko':'검증 보류 상품 기록 (구매 링크 없음)','zh':'未核实商品记录（不提供购买链接）','ja':'未確認の商品記録（購入リンクなし）','es':'Registros sin verificar (sin enlace de compra)','fr':'Fiches non vérifiées (sans lien d’achat)'}
 ARCHIVE_NOTE={'en':'These older records are not active offers. Their exact product links could not be verified; no search links are substituted.','ko':'정확한 상품 링크를 확인하지 못한 이전 기록입니다. 판매 중인 상품 목록과 분리했으며 검색 링크로 대체하지 않습니다.','zh':'这些是历史记录，并非当前优惠。商品链接未能核实，不以搜索链接代替。','ja':'過去の記録であり、現在の販売リストではありません。商品リンクを確認できないため、検索リンクで代用しません。','es':'Son registros anteriores, no ofertas activas. No se sustituyen enlaces de producto sin verificar por búsquedas.','fr':'Ces anciennes fiches ne sont pas des offres actives. Aucun lien de recherche ne remplace un lien produit non vérifié.'}
@@ -50,7 +58,7 @@ def nav(lang, report=False):
  switches=''.join(f'<a class="lang" href="{targets[k]}" lang="{k}" hreflang="{k}"'+(' aria-current="page"' if k==lang else '')+f'><span aria-hidden="true">{FLAGS[k]}</span> {v}</a>' for k,v in LANGS.items())
  report_path=report_paths[lang]
  return f'<header class="unified-header"><a class="brand" href="{PATHS[lang]}">DevTeardown</a><nav aria-label="Navigation"><a href="{PATHS[lang]}">{t[0]}</a><a href="{report_path}">{t[1]}</a></nav><details class="languages"><summary aria-label="{LANGUAGE_LABEL[lang]}: {LANGS[lang]}"><span aria-hidden="true">{FLAGS[lang]}</span> {LANGS[lang]} <span class="language-chevron" aria-hidden="true">⌄</span></summary><nav class="language-options" aria-label="{LANGUAGE_LABEL[lang]}">{switches}</nav></details></header><script>{LANGUAGE_JS}</script>'
-CSS='''*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{position:relative;margin-left:auto;font-size:14px}.languages>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;min-height:44px;padding:8px 12px;border:1px solid #dbe1e8;border-radius:8px;background:#fff;white-space:nowrap}.languages>summary::-webkit-details-marker{display:none}.language-chevron{margin-left:6px}.languages[open] .language-chevron{transform:rotate(180deg)}.unified-header .language-options{position:absolute;right:0;top:calc(100% + 6px);z-index:20;display:grid;gap:2px;min-width:176px;max-width:calc(100vw - 40px);padding:6px;background:#fff;border:1px solid #dbe1e8;border-radius:10px;box-shadow:0 10px 28px #17233320}.language-options .lang{display:block;padding:10px 12px;min-height:44px;border-radius:6px;color:#172333;text-decoration:none}.language-options .lang:hover,.language-options .lang:focus-visible{background:#edf3ff}.lang[aria-current]{font-weight:700;background:#edf3ff}main{max-width:1180px;margin:auto;padding:32px 20px}h1{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:8px 0 16px}.intro{max-width:760px;color:#526071}.filters{display:flex;gap:20px;flex-wrap:wrap;margin:28px 0 12px}.filters label{display:grid;gap:5px;font-weight:600}#reset-filters{font:inherit;padding:8px 12px;border:1px solid #aab6c5;border-radius:8px;background:white;cursor:pointer}button:focus-visible{outline:3px solid #e59400;outline-offset:4px}select{font:inherit;padding:10px 38px 10px 12px;border:1px solid #aab6c5;border-radius:8px;background:white;max-width:100%}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:white;border:1px solid #dbe1e8;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}.card[hidden],.held-archive[hidden]{display:none}.held-archive{margin-top:32px;border-top:1px solid #dbe1e8;padding-top:20px}.held-archive>summary{cursor:pointer;font-weight:650}.held-archive>.grid{margin-top:20px}.product-title{color:inherit;text-decoration:underline;text-underline-offset:4px}.card h2{font-size:20px;line-height:1.35;margin:0}.card p{margin:0}.meta,.notice,.caption{font-size:13px;color:#526071}.price{font-size:26px;font-weight:750;font-variant-numeric:tabular-nums}.cta{background:#164fc6;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;text-align:center;margin-top:auto}.card details{border-top:1px solid #e2e7ed;padding-top:10px;font-size:14px}.card summary{cursor:pointer;font-weight:650}.card details p{margin-top:10px}.original{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.5 system-ui}.card img{height:110px;max-width:100%;object-fit:contain}.card figure{margin:0}footer{margin-top:32px;border-top:1px solid #dbe1e8;padding-top:20px}.count{margin:15px 0}.original-notice{padding:12px 20px;background:#fff3d5} @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.languages{margin-left:auto}}@media(max-width:560px){.grid{grid-template-columns:1fr}.card{padding:20px}.filters{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}select{font-size:14px;width:100%}.unified-header{gap:12px}}'''
+CSS='''*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{position:relative;margin-left:auto;font-size:14px}.languages>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;min-height:44px;padding:8px 12px;border:1px solid #dbe1e8;border-radius:8px;background:#fff;white-space:nowrap}.languages>summary::-webkit-details-marker{display:none}.language-chevron{margin-left:6px}.languages[open] .language-chevron{transform:rotate(180deg)}.unified-header .language-options{position:absolute;right:0;top:calc(100% + 6px);z-index:20;display:grid;gap:2px;min-width:176px;max-width:calc(100vw - 40px);padding:6px;background:#fff;border:1px solid #dbe1e8;border-radius:10px;box-shadow:0 10px 28px #17233320}.language-options .lang{display:block;padding:10px 12px;min-height:44px;border-radius:6px;color:#172333;text-decoration:none}.language-options .lang:hover,.language-options .lang:focus-visible{background:#edf3ff}.lang[aria-current]{font-weight:700;background:#edf3ff}main{max-width:1180px;margin:auto;padding:32px 20px}h1{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:8px 0 16px}.intro{max-width:760px;color:#526071}.filters{display:flex;gap:20px;flex-wrap:wrap;margin:28px 0 12px}.filters label{display:grid;gap:5px;font-weight:600}#reset-filters{font:inherit;padding:8px 12px;border:1px solid #aab6c5;border-radius:8px;background:white;cursor:pointer}button:focus-visible{outline:3px solid #e59400;outline-offset:4px}select{font:inherit;padding:10px 38px 10px 12px;border:1px solid #aab6c5;border-radius:8px;background:white;max-width:100%}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:white;border:1px solid #dbe1e8;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}.card[hidden],.held-archive[hidden]{display:none}.held-archive{margin-top:32px;border-top:1px solid #dbe1e8;padding-top:20px}.held-archive>summary{cursor:pointer;font-weight:650}.held-archive>.grid{margin-top:20px}.product-title{color:inherit;text-decoration:underline;text-underline-offset:4px}.card h2{overflow-wrap:anywhere;font-size:20px;line-height:1.35;margin:0}.card p{margin:0}.meta,.notice,.caption{overflow-wrap:anywhere;font-size:13px;color:#526071}.price{font-size:26px;font-weight:750;font-variant-numeric:tabular-nums}.cta{background:#164fc6;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;text-align:center;margin-top:auto}.card details{border-top:1px solid #e2e7ed;padding-top:10px;font-size:14px}.card summary{cursor:pointer;font-weight:650}.card details p{margin-top:10px}.original{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.5 system-ui}.card img{height:110px;max-width:100%;object-fit:contain}.card figure{margin:0}footer{margin-top:32px;border-top:1px solid #dbe1e8;padding-top:20px}.count{margin:15px 0}.original-notice{padding:12px 20px;background:#fff3d5} @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.languages{margin-left:auto}}@media(max-width:560px){.grid{grid-template-columns:1fr}.card{padding:20px}.filters{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}select{font-size:14px;width:100%}.unified-header{gap:12px}}'''
 JS = """
 const market = document.querySelector('#market');
 const country = document.querySelector('#country');
@@ -72,7 +80,7 @@ function matches(card) {
   return (market.value === 'all' || card.dataset.market === market.value) && destinationMatch &&
     (cat.value === 'all' || card.dataset.category === cat.value);
 }
-function filter() {
+function filter(historyMode = 'replace') {
   let n = 0, hn = 0;
   for (const card of cards) { card.hidden = !matches(card); if (!card.hidden) n++; }
   for (const card of archived) { card.hidden = !matches(card); if (!card.hidden) hn++; }
@@ -85,16 +93,19 @@ function filter() {
   for (const [el, key] of controls) {
     if (el.value === 'all') params.delete(key); else params.set(key, el.value);
   }
-  history.replaceState(null, '', location.pathname + (params.size ? '?' + params : '') + location.hash);
+  const nextURL = location.pathname + (params.size ? '?' + params : '') + location.hash;
+  if (nextURL !== location.pathname + location.search + location.hash) {
+    history[historyMode === 'push' ? 'pushState' : 'replaceState'](null, '', nextURL);
+  }
   const filters = new URLSearchParams();
   for (const [el, key] of controls) if (el.value !== 'all') filters.set(key, el.value);
   for (const a of document.querySelectorAll('.lang')) {
     const url = new URL(a.href); url.search = filters.toString(); a.href = url.pathname + url.search;
   }
 }
-for (const [el] of controls) el.addEventListener('change', filter);
+for (const [el] of controls) el.addEventListener('change', () => filter('push'));
 document.querySelector('#reset-filters').addEventListener('click', () => {
-  for (const [el] of controls) el.value = 'all'; filter(); market.focus();
+  for (const [el] of controls) el.value = 'all'; filter('push'); market.focus();
 });
 window.addEventListener('popstate', () => { restore(); filter(); });
 window.addEventListener('pageshow', () => { restore(); filter(); });
@@ -116,10 +127,13 @@ def catalogue(lang,feeds,translations):
   review=d.get('price_review') or {}; current=checked_price(d)
   if not publishable_link(d): summary=HELD_SUMMARY[lang]
   price_note=f'<p class="notice">{PRICE_CURRENT[lang] if current else PRICE_RECORDED[lang]}</p>'
-  price_note+=f'<p class="notice">{SRP[lang] if review.get("deal_status")=="below_official_srp" else (NOT_DISCOUNT[lang] if review.get("deal_status")=="not_a_discount" else DISCOUNT_UNKNOWN[lang])}</p>'
+  srp=official_srp_comparison(d)
+  savings=SRP[lang].format(percent=srp['percent'],currency=srp['currency'],price=f"{srp['price']:,.2f}") if srp else (NOT_DISCOUNT[lang] if review.get('deal_status')=='not_a_discount' else DISCOUNT_UNKNOWN[lang])
+  price_note+=f'<p class="notice">{e(savings)}</p>'
   comparison=(review.get('comparison') or {}).get('url')
   if comparison: price_note+=f'<a class="meta" href="{e(safe(comparison))}" rel="noopener nofollow">{t[30]}</a>'
-  if review.get('review_completed_at'): price_note+=f'<p class="meta"><time datetime="{e(review["review_completed_at"])}">{e(review["review_completed_at"])}</time></p>' 
+  reviewed=observed_timestamp(review.get('review_completed_at'))
+  if reviewed: price_note+=f'<p class="meta">{e(REVIEW_DATE[lang])}: <time datetime="{e(review["review_completed_at"])}">{reviewed.astimezone(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}</time></p>'
   eligibility=f'<p class="meta">{e(f[0])}: {e(country_name(market,lang) if market!="unknown" else f[2])}</p><p class="meta eligibility">{e(f[1])}: {e(", ".join(country_name(c,lang) for c in countries) if countries else f[3])}</p>'
   info=d.get('purchase_eligibility') or {}
   evidence=f'<p><a href="{e(safe(info.get("evidence_url")))}" rel="noopener nofollow">{e(f[4])}</a> · <time datetime="{e(info.get("checked_at"))}">{e(info.get("checked_at"))}</time></p>' if countries else ''

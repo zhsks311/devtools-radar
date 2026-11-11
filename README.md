@@ -165,3 +165,23 @@ combinations (six languages × storefront × destination × category), including
 empty states, invalid queries, multi-country membership, reset, language links and history.
 Python 3.11 remains sufficient for rendering; install Node 22+ for the JavaScript checks
 (the test reports a skip if unavailable). CI explicitly installs Node and runs the full gate.
+
+
+### Dated price evidence and navigation regressions
+
+Product-link, seller-price, discount and SRP review timestamps must identify a real,
+timezone-aware instant no later than the current UTC time. Missing, malformed and
+future dates fail closed. A recorded price is not a live quote; old observations are
+retained with their original date, never silently refreshed by a build. The catalogue
+shows a readable UTC review time and makes the checkout limitation explicit.
+
+A confirmed seller price requires an observation for that exact seller URL. An official
+SRP comparison additionally requires a dated official source, matching product ID and
+variant, matching currency and a lower checked seller price. The displayed percentage
+is calculated from those amounts (rounded to two decimals), not copied from a status
+label. An SRP comparison is not a historical-low or former-seller-price claim.
+
+Each changed filter and reset adds one browser history entry. Back and Forward undo
+and restore those choices; reload, restored pages and repeated unchanged selections
+never add duplicate entries. Node regression checks exercise actual history traversal,
+as well as the full country/storefront/category combination matrix.
