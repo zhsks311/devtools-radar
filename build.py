@@ -306,15 +306,22 @@ def generate_llms_txt(items, ko_deals, en_deals) -> str:
     lines += ["", "## Catalog and methodology", "",
               f"- [Unified deal catalog]({BASE_URL}/deals/): English, Korean, Chinese, Japanese, Spanish and French views of the same inventory; country eligibility is separate from language.",
               f"- [Editorial and source policy]({BASE_URL}/editorial-policy/): evidence, limitations, corrections and shopping links.",
-              f"- [Comparison summaries]({BASE_URL}/llms-full.txt): abridged article text and recorded deal observations, not full articles or live prices.",
+              f"- [Comparison evidence export]({BASE_URL}/llms-full.txt): article sections, source links and dated offer observations; not live prices.",
               f"- [Sitemap]({BASE_URL}/sitemap.xml)"]
     return "\n".join(lines) + "\n"
 
 
 def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
-    """LLM 인용용 전문: 테어다운 요약 + 현재 딜 목록."""
-    out = ["# DevTeardown — comparison summaries and deal observations", "",
-           "Source: https://devteardown.com · Export generated: " + datetime.date.today().isoformat(), ""]
+    """Optional evidence export using the same publication gates as visible pages."""
+    from tools.product_links import publishable_link
+    from tools.deal_prices import checked_price
+    from tools.deal_countries import confirmed_countries
+    out = ["# DevTeardown — comparison evidence and recorded offers", "",
+           "Source: https://devteardown.com", "",
+           "This is an extract of the linked pages, not a new source review. Recorded dates are not live checks.",
+           "Cost examples are arithmetic on stated assumptions, not measured benchmarks or guaranteed invoices.",
+           "For the complete comparison, use its canonical page and the original vendor sources below.",
+           f"Editorial policy: {BASE_URL}/editorial-policy/", ""]
     for item in items:
         a, b = item["tool_a"]["name"], item["tool_b"]["name"]
         out += [
@@ -322,24 +329,36 @@ def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
             f"URL: {BASE_URL}/compare/{item['slug']}/",
             f"Category: {item['category']} · Recorded source review: {item.get('last_verified', '')}",
             "",
-            "Verdict: " + first_sentence(item.get("verdict_summary", "")),
+            "Verdict: " + item.get("verdict_summary", ""),
             "",
         ]
         for sec in item.get("sections", []):
-            body = re.sub(r"[`*_>#]", "", sec.get("content", ""))
             out.append(f"### {sec['title']}")
-            out.append(re.sub(r"\s+", " ", body).strip()[:900])
+            # Do not cut a price condition or qualification at an arbitrary character limit.
+            out.append(sec.get("content", "").strip())
             out.append("")
-    out += ["## Retained Korean listings (not confirmed current deals)", ""]
-    for d in ko_deals.get("feed", [])[:10]:
-        out.append(f"- {d['product']} — {d.get('price') or 'see source'} KRW at {d.get('store') or 'source'} "
-                   f"({d.get('category_label')}) Historical price, not reverified. {d.get('source', {}).get('url', '')}")
-    out += ["", "## Recorded international product offers (discounts not independently established)", ""]
-    for d in en_deals.get("feed", []):
-        out.append(f"- {d['product']} — {d.get('price')} {d.get('currency')} at {d.get('store') or 'source'} "
-                   f"({d.get('category_label')}) {d.get('link', {}).get('url', '')} "
-                   f"Purchase eligibility: {d.get('purchase_eligibility', {}).get('label', 'unverified')}. "
-                   f"{next((line[7:] for line in d.get('briefing', []) if line.startswith('Check: ')), '')}")
+        out += ["### Source links", *[f"- {source}" for source in item.get("sources", [])], ""]
+    out += ["## Recorded offers with reviewed product links", "",
+            "A reviewed link is not proof of current stock, a discount or completed checkout.",
+            "Prices can change. Countries below refer only to recorded delivery/activation evidence, not payment eligibility.",
+            f"Localized catalog and purchase conditions: {BASE_URL}/deals/", ""]
+    feeds = ko_deals.get("feed", []) + en_deals.get("feed", [])
+    for d in feeds:
+        if not publishable_link(d):
+            continue
+        review = d.get('price_review') or {}
+        price_status = (f"Seller price observation dated {review['review_completed_at']}"
+                        if checked_price(d) else "Retained price; current seller price unverified")
+        countries = ', '.join(confirmed_countries(d)) or 'unverified'
+        out += [f"### {d['product']}",
+                f"Seller: {d.get('store') or 'see product page'}",
+                f"Product URL: {d['link']['url']}",
+                f"Product-link review: {d['link_review']['checked_at']} (not a stock check)",
+                f"Recorded price: {d.get('price')} {d.get('currency', 'KRW')}. {price_status}.",
+                f"Delivery / activation countries with evidence: {countries}.",
+                "Discounts and historical-low claims are not established by this export.", ""]
+    held = sum(not publishable_link(d) for d in feeds)
+    out += [f"{held} held source records are omitted from this export; their purchase links are not verified."]
     return "\n".join(out) + "\n"
 
 
@@ -1102,13 +1121,14 @@ def generate_comparison_html(item):
     schema_article = {
         "@context": "https://schema.org",
         "@type": "TechArticle",
+        "@id": f"{BASE_URL}/compare/{slug}/#article",
         "headline": f"{a['name']} vs {b['name']}: a 2026 engineering teardown",
         "description": item["hook"].replace('"', "'"),
         "datePublished": item.get("published", updated),
-        "author": {"@type": "Organization", "name": "DevTeardown", "url": BASE_URL + "/editorial-policy/"},
+        "author": {"@type": "Organization", "@id": BASE_URL + "/#publisher", "name": "DevTeardown", "url": BASE_URL + "/editorial-policy/"},
         "inLanguage": "en",
         "citation": [src for src in item.get("sources", []) if isinstance(src, str) and src.startswith("https://")],
-        "publisher": {"@type": "Organization", "name": SITE_NAME},
+        "publisher": {"@type": "Organization", "@id": BASE_URL + "/#publisher", "name": SITE_NAME},
         "mainEntityOfPage": f"{BASE_URL}/compare/{slug}/",
     }
     schema_crumb = {
@@ -1464,9 +1484,11 @@ def render_site(items, output, deals, en_deals):
         "User-agent: Googlebot\nAllow: /\n\n"
         "User-agent: Yeti\nAllow: /\n\n"
         "User-agent: Bingbot\nAllow: /\n\n"
-        "# AI search / LLM agents\n"
+        "# AI search and user-requested retrieval\n"
+        "User-agent: OAI-SearchBot\nAllow: /\n\n"
         "User-agent: PerplexityBot\nAllow: /\n\n"
         "User-agent: ChatGPT-User\nAllow: /\n\n"
+        "# Existing model-training crawl policy; separate from search visibility\n"
         "User-agent: GPTBot\nAllow: /\n\n"
         "User-agent: ClaudeBot\nAllow: /\n\n"
         "User-agent: Claude-Web\nAllow: /\n\n"

@@ -24,5 +24,5 @@
 
 - [Unified deal catalog](https://devteardown.com/deals/): English, Korean, Chinese, Japanese, Spanish and French views of the same inventory; country eligibility is separate from language.
 - [Editorial and source policy](https://devteardown.com/editorial-policy/): evidence, limitations, corrections and shopping links.
-- [Comparison summaries](https://devteardown.com/llms-full.txt): abridged article text and recorded deal observations, not full articles or live prices.
+- [Comparison evidence export](https://devteardown.com/llms-full.txt): article sections, source links and dated offer observations; not live prices.
 - [Sitemap](https://devteardown.com/sitemap.xml)

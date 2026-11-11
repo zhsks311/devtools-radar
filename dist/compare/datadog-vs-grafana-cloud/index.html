@@ -6,8 +6,8 @@
   <title>Datadog vs Grafana Cloud (2026): Cost, Limits and the Decision Matrix</title>
   <meta name="description" content="Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud&#x27;s Pro plan. The difference is not the per-series rate. It is that only one of them puts t">
   <link rel="canonical" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
-  <link rel="alternate" hreflang="en" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
-  <link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
+
+
   <meta property="og:site_name" content="DevTeardown">
   <meta property="og:title" content="Datadog vs Grafana Cloud — 2026 teardown">
   <meta property="og:description" content="Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud&#x27;s Pro plan. The difference is not the per-series rate. It is that only one of them puts t">
@@ -16,93 +16,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Datadog vs Grafana Cloud: cost, limits and the decision matrix">
   <meta name="twitter:description" content="Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance.">
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Datadog vs Grafana Cloud: a 2026 engineering teardown",
-  "description": "Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud's Pro plan. The difference is not the per-series rate. It is that only one of them puts the hosts on the invoice.",
-  "datePublished": "2026-11-10",
-  "author": {
-    "@type": "Organization",
-    "name": "DevTeardown",
-    "url": "https://devteardown.com/editorial-policy/"
-  },
-  "inLanguage": "en",
-  "citation": [
-    "https://www.datadoghq.com/pricing/",
-    "https://www.datadoghq.com/pricing/list/",
-    "https://docs.datadoghq.com/account_management/billing/custom_metrics/",
-    "https://grafana.com/pricing/",
-    "https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/"
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "DevTeardown"
-  },
-  "mainEntityOfPage": "https://devteardown.com/compare/datadog-vs-grafana-cloud/"
-}
-  </script>
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Are Grafana Cloud's tier prices marginal or flat?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Marginal. Each new band bills at a lower rate for the usage inside it, so the blended rate falls as the account grows: $6.50 per 1,000 to 100,000, then $5.90, then $5.50."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What exactly is a custom metric on Datadog?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A unique metric name plus tag combination, averaged hourly across the month. Adding a tag with many values multiplies the count even if the metric name never changes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Grafana Cloud charge per host?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Pro plan is a $19 platform fee per account. Host hours appear for Kubernetes monitoring at $0.01 per host hour, which is a separate product from infrastructure metrics."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I keep 30-day logs on Grafana Cloud?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Pro includes 30 days of log retention inside the platform fee, with 50 GB of ingest included and $0.55 per GB across the process, write and retain meters after that."
-      }
-    }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Comparisons",
-      "item": "https://devteardown.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Datadog vs Grafana Cloud",
-      "item": "https://devteardown.com/compare/datadog-vs-grafana-cloud/"
-    }
-  ]
-}
-  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/datadog-vs-grafana-cloud/#article", "headline": "Datadog vs Grafana Cloud: a 2026 engineering teardown", "description": "Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud's Pro plan. The difference is not the per-series rate. It is that only one of them puts the hosts on the invoice.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://www.datadoghq.com/pricing/", "https://www.datadoghq.com/pricing/list/", "https://docs.datadoghq.com/account_management/billing/custom_metrics/", "https://grafana.com/pricing/", "https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/datadog-vs-grafana-cloud/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are Grafana Cloud's tier prices marginal or flat?", "acceptedAnswer": {"@type": "Answer", "text": "Marginal. Each new band bills at a lower rate for the usage inside it, so the blended rate falls as the account grows: $6.50 per 1,000 to 100,000, then $5.90, then $5.50."}}, {"@type": "Question", "name": "What exactly is a custom metric on Datadog?", "acceptedAnswer": {"@type": "Answer", "text": "A unique metric name plus tag combination, averaged hourly across the month. Adding a tag with many values multiplies the count even if the metric name never changes."}}, {"@type": "Question", "name": "Does Grafana Cloud charge per host?", "acceptedAnswer": {"@type": "Answer", "text": "The Pro plan is a $19 platform fee per account. Host hours appear for Kubernetes monitoring at $0.01 per host hour, which is a separate product from infrastructure metrics."}}, {"@type": "Question", "name": "Can I keep 30-day logs on Grafana Cloud?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Pro includes 30 days of log retention inside the platform fee, with 50 GB of ingest included and $0.55 per GB across the process, write and retain meters after that."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Comparisons", "item": "https://devteardown.com/"}, {"@type": "ListItem", "position": 2, "name": "Datadog vs Grafana Cloud", "item": "https://devteardown.com/compare/datadog-vs-grafana-cloud/"}]}</script>
   <style>
 :root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
   --text:#252923; --text-muted:#60665e; --primary:#315c46; --accent:#315c46; --warn:#815a20; --danger:#984732; }
@@ -191,7 +107,9 @@ footer p { font-size:.8rem; margin:0; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
-<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{position:relative;margin-left:auto;font-size:14px}.languages>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;min-height:44px;padding:8px 12px;border:1px solid #dbe1e8;border-radius:8px;background:#fff;white-space:nowrap}.languages>summary::-webkit-details-marker{display:none}.language-chevron{margin-left:6px}.languages[open] .language-chevron{transform:rotate(180deg)}.unified-header .language-options{position:absolute;right:0;top:calc(100% + 6px);z-index:20;display:grid;gap:2px;min-width:176px;max-width:calc(100vw - 40px);padding:6px;background:#fff;border:1px solid #dbe1e8;border-radius:10px;box-shadow:0 10px 28px #17233320}.language-options .lang{display:block;padding:10px 12px;min-height:44px;border-radius:6px;color:#172333;text-decoration:none}.language-options .lang:hover,.language-options .lang:focus-visible{background:#edf3ff}.lang[aria-current]{font-weight:700;background:#edf3ff}</style></head>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#172333;font:16px/1.6 system-ui,sans-serif}a{color:#164fc6}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e59400;outline-offset:4px}.unified-header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:18px max(20px,calc((100% - 1180px)/2));background:white;border-bottom:1px solid #dbe1e8}.brand{font-weight:800;color:#172333;text-decoration:none}.unified-header nav{display:flex;gap:16px;flex-wrap:wrap}.languages{position:relative;margin-left:auto;font-size:14px}.languages>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;min-height:44px;padding:8px 12px;border:1px solid #dbe1e8;border-radius:8px;background:#fff;white-space:nowrap}.languages>summary::-webkit-details-marker{display:none}.language-chevron{margin-left:6px}.languages[open] .language-chevron{transform:rotate(180deg)}.unified-header .language-options{position:absolute;right:0;top:calc(100% + 6px);z-index:20;display:grid;gap:2px;min-width:176px;max-width:calc(100vw - 40px);padding:6px;background:#fff;border:1px solid #dbe1e8;border-radius:10px;box-shadow:0 10px 28px #17233320}.language-options .lang{display:block;padding:10px 12px;min-height:44px;border-radius:6px;color:#172333;text-decoration:none}.language-options .lang:hover,.language-options .lang:focus-visible{background:#edf3ff}.lang[aria-current]{font-weight:700;background:#edf3ff}</style><link rel="alternate" hreflang="en" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/"><link rel="alternate" hreflang="x-default" href="https://devteardown.com/compare/datadog-vs-grafana-cloud/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, {"@type": "WebSite", "@id": "https://devteardown.com/#website", "name": "DevTeardown", "url": "https://devteardown.com/", "publisher": {"@id": "https://devteardown.com/#publisher"}, "inLanguage": ["en", "ko", "zh", "ja", "es", "fr"]}, {"@type": "WebPage", "@id": "https://devteardown.com/compare/datadog-vs-grafana-cloud/#webpage", "url": "https://devteardown.com/compare/datadog-vs-grafana-cloud/", "name": "Datadog vs Grafana Cloud (2026): Cost, Limits and the Decision Matrix", "inLanguage": "en", "isPartOf": {"@id": "https://devteardown.com/#website"}, "publisher": {"@id": "https://devteardown.com/#publisher"}, "description": "Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud's Pro plan. The difference is not the per-series rate. It is that only one of them puts t", "mainEntity": {"@id": "https://devteardown.com/compare/datadog-vs-grafana-cloud/#article"}}]}</script>
+</head>
 <body>
   <header class="unified-header"><a class="brand" href="/deals/">DevTeardown</a><nav aria-label="Navigation"><a href="/deals/">Deals</a><a href="/">Tool comparisons</a></nav><details class="languages"><summary aria-label="Language: English"><span aria-hidden="true">🇺🇸</span> English <span class="language-chevron" aria-hidden="true">⌄</span></summary><nav class="language-options" aria-label="Language"><a class="lang" href="/" lang="en" hreflang="en" aria-current="page"><span aria-hidden="true">🇺🇸</span> English</a><a class="lang" href="/reports/ko/" lang="ko" hreflang="ko"><span aria-hidden="true">🇰🇷</span> 한국어</a><a class="lang" href="/reports/zh/" lang="zh" hreflang="zh"><span aria-hidden="true">🇨🇳</span> 中文</a><a class="lang" href="/reports/ja/" lang="ja" hreflang="ja"><span aria-hidden="true">🇯🇵</span> 日本語</a><a class="lang" href="/reports/es/" lang="es" hreflang="es"><span aria-hidden="true">🇪🇸</span> Español</a><a class="lang" href="/reports/fr/" lang="fr" hreflang="fr"><span aria-hidden="true">🇫🇷</span> Français</a></nav></details></header><script>const languageMenu=document.querySelector('.languages');document.addEventListener('click',event=>{if(!languageMenu.contains(event.target))languageMenu.open=false});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&languageMenu.open){languageMenu.open=false;languageMenu.querySelector('summary').focus()}});window.addEventListener('pageshow',()=>{languageMenu.open=false});</script>
 

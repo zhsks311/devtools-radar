@@ -2,12 +2,21 @@
 import html, json, re, datetime
 from pathlib import Path
 from tools.product_links import publishable_link
+from tools.affiliate_links import verified_aliexpress_url
 from tools.deal_prices import checked_price, official_srp_comparison
 from tools.evidence_dates import observed_timestamp
 from tools.deal_countries import confirmed_countries, storefront_country
 from xml.sax.saxutils import escape
 LANGS={'en':'English','ko':'한국어','zh':'中文','ja':'日本語','es':'Español','fr':'Français'}
 FLAGS={'en':'🇺🇸','ko':'🇰🇷','zh':'🇨🇳','ja':'🇯🇵','es':'🇪🇸','fr':'🇫🇷'}
+AFFILIATE_DISCLOSURE = {
+ 'en': 'Paid link: DevTeardown may earn a commission if you buy through this link.',
+ 'ko': '제휴 광고: 이 링크를 통해 구매하면 DevTeardown이 수수료를 받을 수 있습니다.',
+ 'zh': '推广链接：通过此链接购买，DevTeardown 可能获得佣金。',
+ 'ja': '広告リンク：このリンク経由で購入すると、DevTeardown が紹介料を受け取る場合があります。',
+ 'es': 'Enlace de afiliado: DevTeardown puede recibir una comisión si compras a través de este enlace.',
+ 'fr': 'Lien affilié : DevTeardown peut recevoir une commission si vous achetez via ce lien.',
+}
 LANGUAGE_LABEL={'en':'Language','ko':'언어 선택','zh':'选择语言','ja':'言語を選択','es':'Elegir idioma','fr':'Choisir la langue'}
 PATHS={k:('/deals/' if k=='en' else f'/{k}/') for k in LANGS}
 # Labels intentionally translate the interface, not the underlying evidence.
@@ -123,7 +132,13 @@ def catalogue(lang,feeds,translations):
   if media.get('path'):
    image=f'<figure><img src="{e(safe(media["path"]))}" alt="{e(title)}" loading="lazy"><figcaption class="caption">{e(media.get("caption",""))} <a href="{e(safe(media.get("credit_url","")))}">{e(media.get("credit",""))}</a></figcaption></figure>'
   source=d.get('source') or {};src=f'<a href="{e(safe(source.get("url","")))}" rel="noopener nofollow">{t[30]}</a>' if source.get('url') else ''
-  cta=(f'<a class="cta" href="{e(link["url"])}" rel="noopener nofollow{" sponsored" if link.get("tracked") else ""}">{t[11]}</a>' if publishable_link(d) else f'<p class="notice link-held" role="status">{HELD[lang]}</p>')
+  linked=publishable_link(d)
+  promotion=verified_aliexpress_url(d) if linked else None
+  destination=promotion or link.get('url','')
+  tracked=bool(promotion or link.get('tracked'))
+  link_rel='noopener nofollow' + (' sponsored' if tracked else '')
+  disclosure=f'<p class="notice affiliate-disclosure">{e(AFFILIATE_DISCLOSURE[lang])}</p>' if linked and tracked else ''
+  cta=(f'{disclosure}<a class="cta" href="{e(destination)}" rel="{link_rel}">{t[11]}</a>' if linked else f'<p class="notice link-held" role="status">{HELD[lang]}</p>')
   review=d.get('price_review') or {}; current=checked_price(d)
   if not publishable_link(d): summary=HELD_SUMMARY[lang]
   price_note=f'<p class="notice">{PRICE_CURRENT[lang] if current else PRICE_RECORDED[lang]}</p>'
@@ -137,7 +152,7 @@ def catalogue(lang,feeds,translations):
   eligibility=f'<p class="meta">{e(f[0])}: {e(country_name(market,lang) if market!="unknown" else f[2])}</p><p class="meta eligibility">{e(f[1])}: {e(", ".join(country_name(c,lang) for c in countries) if countries else f[3])}</p>'
   info=d.get('purchase_eligibility') or {}
   evidence=f'<p><a href="{e(safe(info.get("evidence_url")))}" rel="noopener nofollow">{e(f[4])}</a> · <time datetime="{e(info.get("checked_at"))}">{e(info.get("checked_at"))}</time></p>' if countries else ''
-  linked_title=f'<a class="product-title" href="{e(link["url"])}" rel="noopener nofollow">{e(title)}</a>' if publishable_link(d) else e(title)
+  linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}">{e(title)}</a>' if linked else e(title)
   (cards if publishable_link(d) else held_cards).append(f'''<article class="card" data-id="{e(d['id'])}" data-market="{market}" data-countries="{e(' '.join(countries))}" data-category="{e(cat)}">{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p>{e(summary)}</p><div class="price">{e(price)}</div>{price_note}{eligibility}<details><summary>{t[12]}</summary><p>{e(conditions)}</p>{evidence}<p class="notice">{t[13]}</p></details><details><summary>{t[17]}</summary><pre class="original" lang="{'ko' if d.get('region')=='kr' else 'en'}">{e(json.dumps(record,ensure_ascii=False,indent=2))}</pre>{src}</details>{cta}</article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  storefronts=sorted({storefront_country(d) for d in feeds}-{"unknown"})

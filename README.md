@@ -185,3 +185,13 @@ Each changed filter and reset adds one browser history entry. Back and Forward u
 and restore those choices; reload, restored pages and repeated unchanged selections
 never add duplicate entries. Node regression checks exercise actual history traversal,
 as well as the full country/storefront/category combination matrix.
+
+### AliExpress affiliate support
+
+Reviewed owner-issued promotion links can be attached separately from canonical
+seller URLs without changing product, price or country evidence. Both product
+anchors get `rel="sponsored"`, with a commission disclosure in all six languages.
+Unverified promotion links are held; no tracking ID or product is invented.
+No AliExpress links are activated in the supplied catalogue. See
+[`docs/aliexpress-affiliate.md`](docs/aliexpress-affiliate.md) for activation,
+validation, safe credential handling and official references.

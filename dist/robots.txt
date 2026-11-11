@@ -8,13 +8,17 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# AI search / LLM agents
+# AI search and user-requested retrieval
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+# Existing model-training crawl policy; separate from search visibility
 User-agent: GPTBot
 Allow: /
 
