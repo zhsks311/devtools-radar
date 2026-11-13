@@ -50,3 +50,14 @@ class MultilingualTests(unittest.TestCase):
     self.assertEqual(page.count('const languageMenu='),1)
     self.assertNotIn('href="/deals/">Browse the product catalog',page)
     self.assertIn('href="'+i.PATHS[lang]+'"',page)
+
+ def test_search_is_accessible_localized_and_escaped(self):
+  for lang in i.LANGS:
+   page=i.catalogue(lang,self.feeds,self.tr)
+   self.assertIn('<label for="product-search">'+i.SEARCH_LABEL[lang],page)
+   self.assertIn('id="product-search" type="search"',page)
+   self.assertEqual(page.count('data-search='),len(self.feeds))
+  d=dict(self.feeds[0]);d['id']='search-escape';d['product']='"<script>bad</script>';d['store']='" onfocus="bad'
+  page=i.catalogue('en',[d],{})
+  self.assertIn('data-search="&quot;&lt;script&gt;',page)
+  self.assertNotIn(' onfocus="bad',page)

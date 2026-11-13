@@ -12,6 +12,7 @@ for (const page of pages) {
   for (const id of ['count','archive-count','empty','reset-filters']) {
     nodes['#'+id] = {hidden:false, dataset:{label:'products'}, addEventListener(type, fn){this[type]=fn}};
   }
+  nodes['#product-search'] = {value:'', addEventListener(type, fn){this[type]=fn}};
   nodes['.held-archive'] = {hidden:false};
   const cards = page.cards.map(dataset=>({dataset, hidden:false}));
   const archived = page.archived.map(dataset=>({dataset, hidden:false}));
@@ -38,6 +39,22 @@ for (const page of pages) {
   vm.runInContext(js, context);
   assert.equal(nodes['#country'].value,'all');
   assert.equal(url.search,'?utm_source=test'); assert.equal(url.hash,'#keep');
+  // Search must combine with filters, survive restoration/language changes and escape no markup.
+  nodes['#product-search'].value='  LeNoVo  GK10 ';nodes['#product-search'].input();
+  assert.deepEqual(cards.filter(c=>!c.hidden).map(c=>c.dataset.id),['lenovo-gk10-rt60-cn']);
+  assert.equal(url.searchParams.get('q'),'LeNoVo  GK10');
+  for(const link of links) assert.equal(new URL(link.href,url).searchParams.get('q'),'LeNoVo  GK10');
+  nodes['#country'].value='AU';nodes['#country'].change();
+  assert.equal(cards.filter(c=>!c.hidden).length,0);
+  nodes['#reset-filters'].click();
+  assert.equal(nodes['#product-search'].value,'');assert.equal(url.searchParams.has('q'),false);
+  url=new URL('https://example.test/deals/?q=ＬＥＮＯＶＯ&utm_source=test#keep');events.popstate();
+  assert(cards.filter(c=>!c.hidden).length>0);
+  assert(cards.filter(c=>!c.hidden).every(c=>c.dataset.search.toLowerCase().includes('lenovo')));
+  nodes['#product-search'].value='<script>';nodes['#product-search'].input();
+  assert.equal(cards.filter(c=>!c.hidden).length,0);
+  nodes['#reset-filters'].click();
+  historyEntries.splice(0,historyEntries.length,url.href);historyIndex=0;
   // Actual history traversal, not just manually setting the URL before popstate.
   assert.equal(historyEntries.length,1);
   nodes['#market'].value='CN';nodes['#market'].change();

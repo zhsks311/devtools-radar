@@ -21,7 +21,7 @@ class FilterParser(HTMLParser):
         if a.get('id') in ('active-products', 'held-products'): self.area = a['id']
         if tag == 'article' and a.get('class') == 'card':
             (self.cards if self.area == 'active-products' else self.archived).append({
-                'id': a['data-id'], 'market': a['data-market'],
+                'id': a['data-id'], 'search': a['data-search'], 'market': a['data-market'],
                 'countries': a['data-countries'], 'category': a['data-category']})
         if tag == 'select':
             self.select = a['id']; self.selects[self.select] = []
