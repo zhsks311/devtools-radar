@@ -116,18 +116,22 @@ There is no universal source-token unit shared by the two vendors. Count the sam
 
 The $1,844 example below assumes equal billed token counts in each category. It is arithmetic, not a measured identical-text benchmark. The separate input-only sensitivity case deliberately leaves the $500 output line unchanged and is not a prediction for either vendor.
 
-Correction, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. The other rate examples retain their original verification date.
+Correction, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. Cache controls, hit rates and reuse arithmetic were also corrected on this date; other rates retain their original verification date.
 
 ### Caching is a break-even test, not a discount
-Both vendors sell the same shape: pay more to write a prefix, pay less to read it. The multipliers are where they part.
+For standard short-context Sonnet 5.5 and GPT-6.1 Sol, the hit rate is $0.10 / $2.00 = 0.05x; other models differ.
 
-| Cache operation | Anthropic | OpenAI |
+| Cache operation | Sonnet 5.5 | GPT-6.1 Sol |
 |---|---|---|
-| Write, short | 1.25x, 5 minutes | 1.25x, 30 minutes |
-| Write, long | 2x, 1 hour | 2.5x, 12 hours |
-| Read (hit) | 0.1x, or 0.05x on 5.5 models | 0.05x |
+| Short write | 1.25x, 5m | 1.25x, 30m |
+| Long write | 2x, 1h | 2.5x, 12h |
+| Hit | 0.05x | 0.05x |
 
-A cached prefix costs 1.25 + 0.1n to serve n requests, against n uncached. The break-even is n = 1.39, so the second request already wins, and ten requests cost 2.25 instead of 10, a 77.5% cut on the input line. The long windows are worse deals for short runs: 2x + 0.1n beats n only from the third request, and OpenAI's 2.5x write needs three reads before it pays.
+Let n be total requests, including the cold first request. One write and n-1 successful full-prefix reads cost w + r(n-1), not w + rn. This excludes fresh input and output and assumes no intervening expiry, prefix change or rewrite.
+
+Short writes: 1.25 + 0.05(n-1) < n means n > 1.2632. At ten requests, 1.25 + 0.05 × 9 = 1.70 versus 10 uncached: 83% less for this prefix alone. With a 0.1x model the corresponding total is 2.15, a 78.5% reduction.
+
+Long writes at 0.05x reads need three total requests (one write, two hits): Sonnet costs 2.10 and Sol costs 2.60 versus 3 uncached. Never count an expired entry as a hit.
 
 ### Batch is the one line where both sheets agree
 Both vendors halve input and output for asynchronous work. Anthropic publishes the batch rows separately; OpenAI prints a Batch table and a separate Flex table at the same numbers.
@@ -137,7 +141,7 @@ Both vendors halve input and output for asynchronous work. Anthropic publishes t
 | Input | $1.00 | $2.00 | $1.00 |
 | Output | $5.00 | $10.00 | $5.00 |
 
-Anthropic's page says its cache multipliers stack with the batch discount. That combination is the cheapest published way to process a large, stable corpus: a cached prefix at 0.1x inside a batch, on a job that can wait. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.
+Anthropic's page says its cache multipliers stack with the batch discount. For Sonnet 5.5, apply the 0.05x hit multiplier to the applicable batch input rate only for an actual cache hit; a batch does not guarantee reuse. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.
 
 ### Long prompts are where the sheets stop being comparable
 Both vendors reprice the prompt once it gets long, and they do it in different shapes.
@@ -157,7 +161,11 @@ Fast mode on both sides doubles the sticker: Opus 5.5 goes to $8 input and $40 o
 
 Data residency is a multiplier rather than a tier. Sending Claude 4.6 or later to US-only inference applies 1.1x to every token category, cache writes and reads included.
 
-The third is the cache window, and it is easy to lose money on. A 12-hour write costs 2.5x, so a job that runs twice a day should skip caching entirely rather than pay 2.5x for a prefix it reads once. Check the read count before enabling it: three reads is where the long window starts to earn.
+For exactly two requests 12 hours apart, with no intervening reuse: Anthropic's 1-hour entry has expired: two cold writes cost 2 + 2 = 4 prefix units, not 2 + a cache read. 
+
+For GPT-6.1 Sol, a successful 12-hour-cache hit would cost 2.5 + 0.05 = 2.55 across the pair; two cold writes cost 5. Both exceed two uncached passes at 2. 
+
+This is not a long-run forecast: measure hits, writes and refreshes before extrapolating.
 
 ### Source links
 - https://platform.claude.com/docs/en/about-claude/pricing
@@ -165,6 +173,7 @@ The third is the cache window, and it is easy to lose money on. A 12-hour write 
 - https://platform.claude.com/docs/en/build-with-claude/prompt-caching
 - https://platform.claude.com/docs/en/build-with-claude/batch-processing
 - https://claude.com/pricing
+- https://developers.openai.com/api/docs/guides/prompt-caching
 
 ## Datadog vs Grafana Cloud
 URL: https://devteardown.com/compare/datadog-vs-grafana-cloud/

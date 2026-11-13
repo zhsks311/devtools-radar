@@ -16,8 +16,8 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Anthropic vs OpenAI: cost, limits and the decision matrix">
   <meta name="twitter:description" content="The named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens.">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/#article", "headline": "Anthropic vs OpenAI: a 2026 engineering teardown", "description": "Claude Sonnet 5.5 and GPT-6.1 Sol list the same standard rate: $2 per million input tokens and $10 per million output. Equal rates do not establish equal costs for the same documents. Count each model separately; there is no measured Claude-versus-GPT token ratio established here.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://platform.claude.com/docs/en/about-claude/pricing", "https://developers.openai.com/api/docs/pricing", "https://platform.claude.com/docs/en/build-with-claude/prompt-caching", "https://platform.claude.com/docs/en/build-with-claude/batch-processing", "https://claude.com/pricing"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is prompt caching automatic on both?", "acceptedAnswer": {"@type": "Answer", "text": "No. Anthropic takes a cache_control marker on the block you want cached, and OpenAI caches a stable prefix automatically with no marker to place."}}, {"@type": "Question", "name": "Do the batch discount and the cache discount combine?", "acceptedAnswer": {"@type": "Answer", "text": "On Anthropic the page says cache multipliers stack with the batch discount. OpenAI publishes separate Batch and Flex tables at the same rates, and fast mode is excluded from batch on Anthropic."}}, {"@type": "Question", "name": "Does the 30% tokenizer note mean Claude costs 30% more than GPT?", "acceptedAnswer": {"@type": "Answer", "text": "No. Anthropic compares newer and earlier Claude tokenizers, not Claude with GPT. The difference depends on content. Measure each target model on the same input and account for generated output separately; this article provides no measured cross-vendor ratio."}}, {"@type": "Question", "name": "Is a cache write ever a loss?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The 1.25x short write needs a read to pay for itself and the 2x or 2.5x long write needs two or three, so a job that reads the prefix once bills more with caching than without."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/#article", "headline": "Anthropic vs OpenAI: a 2026 engineering teardown", "description": "Claude Sonnet 5.5 and GPT-6.1 Sol list the same standard rate: $2 per million input tokens and $10 per million output. Equal rates do not establish equal costs for the same documents. Count each model separately; there is no measured Claude-versus-GPT token ratio established here.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://platform.claude.com/docs/en/about-claude/pricing", "https://developers.openai.com/api/docs/pricing", "https://platform.claude.com/docs/en/build-with-claude/prompt-caching", "https://platform.claude.com/docs/en/build-with-claude/batch-processing", "https://claude.com/pricing", "https://developers.openai.com/api/docs/guides/prompt-caching"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is prompt caching automatic on both?", "acceptedAnswer": {"@type": "Answer", "text": "Anthropic Messages requires opt-in: use top-level cache_control for automatic breakpoint placement, or block-level cache_control for explicit boundaries. GPT-6.1 Sol supports implicit caching by default and explicit-only controls. Automatic placement does not guarantee a hit."}}, {"@type": "Question", "name": "Do the batch discount and the cache discount combine?", "acceptedAnswer": {"@type": "Answer", "text": "On Anthropic the page says cache multipliers stack with the batch discount. OpenAI publishes separate Batch and Flex tables at the same rates, and fast mode is excluded from batch on Anthropic."}}, {"@type": "Question", "name": "Does the 30% tokenizer note mean Claude costs 30% more than GPT?", "acceptedAnswer": {"@type": "Answer", "text": "No. Anthropic compares newer and earlier Claude tokenizers, not Claude with GPT. The difference depends on content. Measure each target model on the same input and account for generated output separately; this article provides no measured cross-vendor ratio."}}, {"@type": "Question", "name": "Is a cache write ever a loss?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. For Sonnet 5.5 and GPT-6.1 Sol, count one cold write plus n-1 hits across n requests, with a 0.05x hit rate. Short writes need two total requests; long writes need three. Expiry or changed prefixes add writes, not discounted reads."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Comparisons", "item": "https://devteardown.com/"}, {"@type": "ListItem", "position": 2, "name": "Anthropic vs OpenAI", "item": "https://devteardown.com/compare/anthropic-vs-openai-api-pricing/"}]}</script>
   <style>
 :root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
@@ -170,17 +170,19 @@ footer p { font-size:.8rem; margin:0; }
       <p>Anthropic describes a tokenizer change between newer and earlier Claude models, not between Claude and GPT. Its approximate 30% increase depends on the text and workload. That note cannot establish a fixed Claude-versus-OpenAI price premium.</p>
 <p>There is no universal source-token unit shared by the two vendors. Count the same representative input with each target model, then record actual output usage separately. Generated answers may differ in length, reasoning usage and quality; an input-token ratio does not predict output tokens.</p>
 <p>The $1,844 example below assumes equal billed token counts in each category. It is arithmetic, not a measured identical-text benchmark. The separate input-only sensitivity case deliberately leaves the $500 output line unchanged and is not a prediction for either vendor.</p>
-<p>Correction, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. The other rate examples retain their original verification date.</p>
+<p>Correction, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. Cache controls, hit rates and reuse arithmetic were also corrected on this date; other rates retain their original verification date.</p>
 
       <h2 id="s3">3. Caching is a break-even test, not a discount</h2>
-      <p>Both vendors sell the same shape: pay more to write a prefix, pay less to read it. The multipliers are where they part.</p>
-<div class="table-wrapper"><table><thead><tr><th>Cache operation</th><th>Anthropic</th><th>OpenAI</th></tr></thead><tbody><tr><td>Write, short</td><td>1.25x, 5 minutes</td><td>1.25x, 30 minutes</td></tr><tr><td>Write, long</td><td>2x, 1 hour</td><td>2.5x, 12 hours</td></tr><tr><td>Read (hit)</td><td>0.1x, or 0.05x on 5.5 models</td><td>0.05x</td></tr></tbody></table></div>
-<p>A cached prefix costs 1.25 + 0.1n to serve n requests, against n uncached. The break-even is n = 1.39, so the second request already wins, and ten requests cost 2.25 instead of 10, a 77.5% cut on the input line. The long windows are worse deals for short runs: 2x + 0.1n beats n only from the third request, and OpenAI&#x27;s 2.5x write needs three reads before it pays.</p>
+      <p>For standard short-context Sonnet 5.5 and GPT-6.1 Sol, the hit rate is $0.10 / $2.00 = 0.05x; other models differ.</p>
+<div class="table-wrapper"><table><thead><tr><th>Cache operation</th><th>Sonnet 5.5</th><th>GPT-6.1 Sol</th></tr></thead><tbody><tr><td>Short write</td><td>1.25x, 5m</td><td>1.25x, 30m</td></tr><tr><td>Long write</td><td>2x, 1h</td><td>2.5x, 12h</td></tr><tr><td>Hit</td><td>0.05x</td><td>0.05x</td></tr></tbody></table></div>
+<p>Let n be total requests, including the cold first request. One write and n-1 successful full-prefix reads cost w + r(n-1), not w + rn. This excludes fresh input and output and assumes no intervening expiry, prefix change or rewrite.</p>
+<p>Short writes: 1.25 + 0.05(n-1) &lt; n means n &gt; 1.2632. At ten requests, 1.25 + 0.05 × 9 = 1.70 versus 10 uncached: 83% less for this prefix alone. With a 0.1x model the corresponding total is 2.15, a 78.5% reduction.</p>
+<p>Long writes at 0.05x reads need three total requests (one write, two hits): Sonnet costs 2.10 and Sol costs 2.60 versus 3 uncached. Never count an expired entry as a hit.</p>
 
       <h2 id="s4">4. Batch is the one line where both sheets agree</h2>
       <p>Both vendors halve input and output for asynchronous work. Anthropic publishes the batch rows separately; OpenAI prints a Batch table and a separate Flex table at the same numbers.</p>
 <div class="table-wrapper"><table><thead><tr><th>Batch, per million</th><th>Claude Sonnet 5.5</th><th>Claude Opus 5.5</th><th>GPT-6.1 Sol</th></tr></thead><tbody><tr><td>Input</td><td>$1.00</td><td>$2.00</td><td>$1.00</td></tr><tr><td>Output</td><td>$5.00</td><td>$10.00</td><td>$5.00</td></tr></tbody></table></div>
-<p>Anthropic&#x27;s page says its cache multipliers stack with the batch discount. That combination is the cheapest published way to process a large, stable corpus: a cached prefix at 0.1x inside a batch, on a job that can wait. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.</p>
+<p>Anthropic&#x27;s page says its cache multipliers stack with the batch discount. For Sonnet 5.5, apply the 0.05x hit multiplier to the applicable batch input rate only for an actual cache hit; a batch does not guarantee reuse. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.</p>
 
       <h2 id="s5">5. Long prompts are where the sheets stop being comparable</h2>
       <p>Both vendors reprice the prompt once it gets long, and they do it in different shapes.</p>
@@ -191,7 +193,9 @@ footer p { font-size:.8rem; margin:0; }
       <h2 id="s6">6. Three add-ons that quietly change the unit</h2>
       <p>Fast mode on both sides doubles the sticker: Opus 5.5 goes to $8 input and $40 output, GPT-6.1 Sol to $4 and $20. Anthropic notes that fast mode is not available with the Batch API, so the two savings cannot be stacked.</p>
 <p>Data residency is a multiplier rather than a tier. Sending Claude 4.6 or later to US-only inference applies 1.1x to every token category, cache writes and reads included.</p>
-<p>The third is the cache window, and it is easy to lose money on. A 12-hour write costs 2.5x, so a job that runs twice a day should skip caching entirely rather than pay 2.5x for a prefix it reads once. Check the read count before enabling it: three reads is where the long window starts to earn.</p>
+<p>For exactly two requests 12 hours apart, with no intervening reuse: Anthropic&#x27;s 1-hour entry has expired: two cold writes cost 2 + 2 = 4 prefix units, not 2 + a cache read.</p>
+<p>For GPT-6.1 Sol, a successful 12-hour-cache hit would cost 2.5 + 0.05 = 2.55 across the pair; two cold writes cost 5. Both exceed two uncached passes at 2.</p>
+<p>This is not a long-run forecast: measure hits, writes and refreshes before extrapolating.</p>
 
       <h2 id="cost">Cost arithmetic at volume</h2>
       <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
@@ -200,7 +204,7 @@ footer p { font-size:.8rem; margin:0; }
         <div class="cost-row">
           <div class="cost-label">100k requests, 16k cached prefix, 4k fresh input, 500 output</div>
           <div class="cost-formula">Sonnet 5.5 or GPT-6.1 Sol: writes 10,000 × 16,000 = 160M × $2.50 = $400; hits 90,000 × 16,000 = 1,440M × $0.10 = $144; fresh 100,000 × 4,000 = 400M × $2 = $800; output 100,000 × 500 = 50M × $10 = $500</div>
-          <div class="cost-result">$1,844 with the stated equal billed token counts and rates; not a measured same-text comparison</div>
+          <div class="cost-result">$1,844 with the stated equal billed token counts and rates; not a measured same-text comparison; assumes fresh input lies after the explicit cache breakpoint and is not written</div>
         </div>
         <div class="cost-row">
           <div class="cost-label">Hypothetical sensitivity: 30% more input-category tokens, output unchanged</div>
@@ -208,27 +212,27 @@ footer p { font-size:.8rem; margin:0; }
           <div class="cost-result">$403.20 above the $1,844 baseline (21.87%). Assumed input change only, not an observed Claude-versus-GPT difference.</div>
         </div>
         <div class="cost-row">
-          <div class="cost-label">Cache break-even on a shared prefix</div>
-          <div class="cost-formula">1.25 + 0.10n &lt; n, so n &gt; 1.39; at n = 10 the cost is 1.25 + 1.00 = 2.25 against 10 uncached</div>
-          <div class="cost-result">Profitable from the second request; 77.5% off the input line by the tenth</div>
+          <div class="cost-label">One write plus n-1 reads of one unchanged prefix</div>
+          <div class="cost-formula">Sonnet 5.5 / GPT-6.1 Sol short write: 1.25 + 0.05(n-1) &lt; n; n &gt; 1.2632. At n=10: 1.25 + 9 × 0.05 = 1.70 versus 10. Long write at n=3: Sonnet 2 + 2 × 0.05 = 2.10; Sol 2.5 + 2 × 0.05 = 2.60 versus 3.</div>
+          <div class="cost-result">Short window saves 83% on the cached prefix over ten requests. Long windows break even at three total requests, assuming two successful hits.</div>
         </div>
         <div class="cost-row">
-          <div class="cost-label">Long window write on a twice-daily job</div>
-          <div class="cost-formula">OpenAI 12h: 2.5 write + 0.10 read = 2.60, against 2 × 1.00 = 2.00 uncached. Anthropic 1h: 2.0 write + 0.10 read = 2.10, against 2.00</div>
-          <div class="cost-result">2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor&#x27;s long window</div>
+          <div class="cost-label">Exactly two requests 12 hours apart, no intervening reuse</div>
+          <div class="cost-formula">Sonnet 1h: two expired/cold writes, 2 + 2 = 4. Sol 12h if hit: 2.5 + 0.05 = 2.55; if miss and rewritten: 2.5 + 2.5 = 5. Uncached: 1 + 1 = 2.</div>
+          <div class="cost-result">A 1-hour entry cannot be assumed to hit after 12 hours. Even the illustrative Sol hit costs more than two uncached passes; not a long-run schedule forecast.</div>
         </div></div>
       <h2 id="matrix">Decision matrix</h2>
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>A long, stable system prompt at high volume</td><td class="matrix-pick">Measure both on your workload</td><td>Compare measured input, cache-write, cache-hit and output usage at the applicable rates. The Claude tokenizer note does not supply a GPT comparison ratio.</td></tr><tr><td>Prompts that regularly pass 100,000 tokens</td><td class="matrix-pick">Weigh the long-context row first</td><td>OpenAI doubles input and multiplies output by 1.5 past the boundary; Haiku 5.5 lists a rate five times higher for prompts over 100,000 tokens.</td></tr><tr><td>Nightly batch of a few hundred thousand jobs</td><td class="matrix-pick">Batch API on either</td><td>Both halve input and output, and a single nightly pass has no cache to read from, so a cold write only adds 25%.</td></tr><tr><td>A job that runs every 12 hours over one corpus</td><td class="matrix-pick">No cache at all</td><td>The 12-hour write costs 2.5x and the 1-hour write has expired by the next run; two uncached passes cost 2.0 against 2.6.</td></tr><tr><td>Output-heavy generation, 500+ tokens per call</td><td class="matrix-pick">GPT-6.1 Sol over Opus 5.5</td><td>Output is 5x input on both sheets, so the $10 against $20 output rate dominates the bill long before the input line does.</td></tr><tr><td>Streaming that a user is watching</td><td class="matrix-pick">Fast mode, at 2x</td><td>Opus 5.5 moves to $8 and $40 and GPT-6.1 Sol to $4 and $20, and fast mode cannot be combined with batch.</td></tr><tr><td>Data must stay in the US</td><td class="matrix-pick">Price the 1.1x before comparing</td><td>US-only inference multiplies every Claude token category by 1.1, cache writes and reads included, which changes a close comparison.</td></tr><tr><td>A prototype with prompts under 100,000 tokens</td><td class="matrix-pick">Claude Haiku 5.5</td><td>$0.10 input and $0.50 output per million is a twentieth of the flagship rows, and the over-100k rate only applies when the prompt crosses the line.</td></tr></tbody>
+        <tbody><tr><td>A long, stable system prompt at high volume</td><td class="matrix-pick">Measure both on your workload</td><td>Compare measured input, cache-write, cache-hit and output usage at the applicable rates. The Claude tokenizer note does not supply a GPT comparison ratio.</td></tr><tr><td>Prompts that regularly pass 100,000 tokens</td><td class="matrix-pick">Weigh the long-context row first</td><td>OpenAI doubles input and multiplies output by 1.5 past the boundary; Haiku 5.5 lists a rate five times higher for prompts over 100,000 tokens.</td></tr><tr><td>Nightly batch of a few hundred thousand jobs</td><td class="matrix-pick">Batch API on either</td><td>Both halve input and output, and a single nightly pass has no cache to read from, so a cold write only adds 25%.</td></tr><tr><td>Only two requests, 12 hours apart, no intervening reuse</td><td class="matrix-pick">Compare against uncached input</td><td>Sonnet 1h writes cost 4 prefix units after expiry; Sol 12h costs 2.55 with one hit or 5 with a rewrite, versus 2 uncached. A recurring workload needs its own observed hit/write history.</td></tr><tr><td>Output-heavy generation, 500+ tokens per call</td><td class="matrix-pick">GPT-6.1 Sol over Opus 5.5</td><td>Output is 5x input on both sheets, so the $10 against $20 output rate dominates the bill long before the input line does.</td></tr><tr><td>Streaming that a user is watching</td><td class="matrix-pick">Fast mode, at 2x</td><td>Opus 5.5 moves to $8 and $40 and GPT-6.1 Sol to $4 and $20, and fast mode cannot be combined with batch.</td></tr><tr><td>Data must stay in the US</td><td class="matrix-pick">Price the 1.1x before comparing</td><td>US-only inference multiplies every Claude token category by 1.1, cache writes and reads included, which changes a close comparison.</td></tr><tr><td>A prototype with prompts under 100,000 tokens</td><td class="matrix-pick">Claude Haiku 5.5</td><td>$0.10 input and $0.50 output per million is a twentieth of the flagship rows, and the over-100k rate only applies when the prompt crosses the line.</td></tr></tbody>
       </table></div>
 
     <h2>Code and configuration</h2>
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
         <span class="badge badge-blue" style="margin-bottom:0.4rem;">Anthropic</span>
-        <pre><code>// Anthropic bills the prefix once: the breakpoint is a marker, not a hint.
+        <pre><code>// Explicit system-prefix caching; top-level cache_control is another opt-in option.
 import Anthropic from &quot;@anthropic-ai/sdk&quot;;
 const client = new Anthropic();
 
@@ -238,29 +242,29 @@ const msg = await client.messages.create({
   system: [{
     type: &quot;text&quot;,
     text: SYSTEM_PROMPT,
-    cache_control: { type: &quot;ephemeral&quot; }, // 1.25x write, then 0.10x reads
+    cache_control: { type: &quot;ephemeral&quot; }, // 1.25x write, then 0.05x reads
   }],
   messages: [{ role: &quot;user&quot;, content: question }],
 });
 // Breaks when: the breakpoint sits after a timestamp or a user id. Every request
-// then writes a new prefix and pays 1.25x instead of reading at 0.10x.
+// then writes a new prefix and pays 1.25x instead of reading at 0.05x.
 console.log(msg.usage);</code></pre>
       </div>
       <div>
         <span class="badge badge-green" style="margin-bottom:0.4rem;">OpenAI</span>
-        <pre><code>// OpenAI caches automatically: there is no marker, only a prefix to keep stable.
+        <pre><code>// Explicit-only mode keeps the fresh question outside the cached prefix.
 import OpenAI from &quot;openai&quot;;
 const client = new OpenAI();
-
 const res = await client.responses.create({
   model: &quot;gpt-6.1-sol&quot;,
+  prompt_cache_options: { mode: &quot;explicit&quot;, ttl: &quot;30m&quot; },
   input: [
-    { role: &quot;system&quot;, content: SYSTEM_PROMPT }, // byte-identical every call
+    { role: &quot;developer&quot;, content: [{ type: &quot;input_text&quot;, text: SYSTEM_PROMPT,
+      prompt_cache_breakpoint: { mode: &quot;explicit&quot; } }] },
     { role: &quot;user&quot;, content: question },
   ],
 });
-// Breaks when: the system prompt is assembled with a date or a request id.
-// A changed prefix is a cache miss billed at the full $2 per million.
+// Without a reusable prefix, explicit mode with no breakpoints avoids writes.
 console.log(res.usage?.input_tokens_details);</code></pre>
       </div>
     </div>
@@ -286,7 +290,7 @@ console.log(res.usage?.input_tokens_details);</code></pre>
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
-          <ul><li>The 12-hour write costs 2.5x, so it needs three reads before it beats paying full price</li><li>Long context doubles input and multiplies output by 1.5, which lands on the most expensive line</li><li>A single changed byte in the prefix is a silent cache miss at full input price</li><li>Fast mode doubles the sheet and is a separate rate card from the standard one</li></ul>
+          <ul><li>The 12-hour write needs two successful reads (three total requests) to beat uncached input at the Sol 0.05x hit rate</li><li>The long-context tier raises both input and output rates</li><li>Changing the cached prefix can require a new write; inspect actual cache usage</li><li>Fast mode uses a separate, higher rate card</li></ul>
         </div>
       </div>
     </div>
@@ -294,8 +298,8 @@ console.log(res.usage?.input_tokens_details);</code></pre>
       <h2 id="migration">Migration path</h2>
       <div class="migration-box">
         <strong>What switching actually takes</strong>
-        <div style="margin-top:0.5rem;"><p>Moving between the two APIs is mostly a prompt rewrite, because the cache is the part that does not travel: Anthropic takes an explicit breakpoint marker, OpenAI caches a stable prefix automatically. Re-measure your token counts on the new tokenizer before you migrate pricing assumptions, since the same text will not bill the same number of tokens.</p>
-<p>Everything asynchronous needs resubmission. Batch jobs, files and fine-tuned endpoints are per-vendor objects with no portable format, and model deprecations retire a SKU you may still be calling, so keep the model name in configuration rather than in code.</p></div>
+        <div style="margin-top:0.5rem;"><p>Caching controls are not interchangeable. Anthropic Messages is opt-in: top-level cache_control selects an automatic moving breakpoint; block-level cache_control selects explicit breakpoints. GPT-6.1 Sol supports implicit caching and explicit-only breakpoints. Re-measure token usage on migration, rather than transferring an assumed token ratio.</p>
+<p>The worked bill uses explicit boundaries around the stable prefix, leaving fresh input outside the write. Batch jobs, files and model-specific configuration also need review when switching providers.</p></div>
       </div>
 
     <h2 id="faq">Common questions</h2>
@@ -303,7 +307,7 @@ console.log(res.usage?.input_tokens_details);</code></pre>
       
         <div class="faq-item">
           <div class="faq-q">Is prompt caching automatic on both?</div>
-          <div class="faq-a">No. Anthropic takes a cache_control marker on the block you want cached, and OpenAI caches a stable prefix automatically with no marker to place.</div>
+          <div class="faq-a">Anthropic Messages requires opt-in: use top-level cache_control for automatic breakpoint placement, or block-level cache_control for explicit boundaries. GPT-6.1 Sol supports implicit caching by default and explicit-only controls. Automatic placement does not guarantee a hit.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Do the batch discount and the cache discount combine?</div>
@@ -315,14 +319,14 @@ console.log(res.usage?.input_tokens_details);</code></pre>
         </div>
         <div class="faq-item">
           <div class="faq-q">Is a cache write ever a loss?</div>
-          <div class="faq-a">Yes. The 1.25x short write needs a read to pay for itself and the 2x or 2.5x long write needs two or three, so a job that reads the prefix once bills more with caching than without.</div>
+          <div class="faq-a">Yes. For Sonnet 5.5 and GPT-6.1 Sol, count one cold write plus n-1 hits across n requests, with a 0.05x hit rate. Short writes need two total requests; long writes need three. Expiry or changed prefixes add writes, not discounted reads.</div>
         </div>
     </div>
 
       <h2>Sources &amp; verification</h2>
       <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
       Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
-      <div class="card"><p class="sources-list"><a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="noopener nofollow" target="_blank">https://platform.claude.com/docs/en/about-claude/pricing</a><br><a href="https://developers.openai.com/api/docs/pricing" rel="noopener nofollow" target="_blank">https://developers.openai.com/api/docs/pricing</a><br><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching" rel="noopener nofollow" target="_blank">https://platform.claude.com/docs/en/build-with-claude/prompt-caching</a><br><a href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" rel="noopener nofollow" target="_blank">https://platform.claude.com/docs/en/build-with-claude/batch-processing</a><br><a href="https://claude.com/pricing" rel="noopener nofollow" target="_blank">https://claude.com/pricing</a><br></p></div>
+      <div class="card"><p class="sources-list"><a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="noopener nofollow" target="_blank">https://platform.claude.com/docs/en/about-claude/pricing</a><br><a href="https://developers.openai.com/api/docs/pricing" rel="noopener nofollow" target="_blank">https://developers.openai.com/api/docs/pricing</a><br><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching" rel="noopener nofollow" target="_blank">https://platform.claude.com/docs/en/build-with-claude/prompt-caching</a><br><a href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" rel="noopener nofollow" target="_blank">https://platform.claude.com/docs/en/build-with-claude/batch-processing</a><br><a href="https://claude.com/pricing" rel="noopener nofollow" target="_blank">https://claude.com/pricing</a><br><a href="https://developers.openai.com/api/docs/guides/prompt-caching" rel="noopener nofollow" target="_blank">https://developers.openai.com/api/docs/guides/prompt-caching</a><br></p></div>
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../datadog-vs-grafana-cloud/" style="padding:1.1rem;">

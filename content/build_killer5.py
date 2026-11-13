@@ -46,6 +46,7 @@ FACTS = {
         ("Claude Opus 5.5", "$4 / $20 per MTok; writes $5 and $8; cache hit $0.20; batch $2 / $10", "https://docs.anthropic.com/en/docs/about-claude/pricing"),
         ("Claude Haiku 5.5", "$0.10 / $0.50 per MTok for prompts up to 100,000 tokens; $0.50 / $2.50 for prompts over it", "https://docs.anthropic.com/en/docs/about-claude/pricing"),
         ("Claude cache multipliers", "5m write 1.25x, 1h write 2x, read 0.1x (0.05x on Opus 5.5 and Sonnet 5.5); multipliers stack with batch", "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"),
+        ("Cache control correction, 2026-11-13", "Anthropic Messages opts in with top-level automatic or block-level explicit cache_control; n requests are one write plus n-1 hits; expiry requires a new write", "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"),
         ("Claude tokenizer", "Newer Claude tokenizers count approximately 30% more than earlier Claude tokenizers, depending on content; this is not a comparison with GPT", "https://docs.anthropic.com/en/docs/about-claude/pricing"),
         ("Claude modifiers", "Fast mode doubles the rate and is unavailable with Batch; US-only inference applies 1.1x to every token category", "https://docs.anthropic.com/en/docs/about-claude/pricing"),
         ("GPT-6.1 Sol", "$2 input / $10 output per MTok; cached input $0.10; 30m write $2.50; 12h write $5.00; batch and flex $1 / $5", "https://platform.openai.com/docs/pricing"),
