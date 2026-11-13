@@ -6,7 +6,7 @@
 ## Comparisons
 
 - [Stripe vs Lemon Squeezy / Paddle](https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/): Below roughly $21 per charge, or on any card that is not domestic, the merchant of record is the cheaper invoice, not the expensive one.
-- [Anthropic vs OpenAI](https://devteardown.com/compare/anthropic-vs-openai-api-pricing/): On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached.
+- [Anthropic vs OpenAI](https://devteardown.com/compare/anthropic-vs-openai-api-pricing/): The named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens.
 - [Datadog vs Grafana Cloud](https://devteardown.com/compare/datadog-vs-grafana-cloud/): Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance.
 - [AWS Lambda vs Cloudflare Workers](https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/): For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call.
 - [Resend vs SendGrid](https://devteardown.com/compare/resend-vs-sendgrid/): Under 50,000 emails the two vendors are the same product at the same price, and the free tier is the only real difference.

@@ -1,12 +1,12 @@
 # Anthropic vs OpenAI — a 2026 cost teardown
 
-> Claude Sonnet 5.5 and GPT-6.1 Sol list the same price: $2 per million input tokens and $10 per million output. The same thousand documents do not cost the same on both, because one tokenizer counts about 30% more tokens for the same text.
+> Claude Sonnet 5.5 and GPT-6.1 Sol list the same standard rate: $2 per million input tokens and $10 per million output. Equal rates do not establish equal costs for the same documents. Count each model separately; there is no measured Claude-versus-GPT token ratio established here.
 
 *Prices verified 2026-11-10. Category: AI & LLM APIs. Author: DevTeardown Team.*
 
 ## Verdict
 
-On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer's 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.
+The named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens. That does not make the same task equally expensive. Measure token usage, output quality, cache hits and retries on a representative sample. Apply the selected model, context and service-tier rates to those measurements; do not multiply a vendor bill by an assumed tokenizer premium.
 
 ## 1. Two sheets, one identical sticker
 
@@ -22,13 +22,15 @@ The flagship rows of both price sheets match to the cent, and so do the cache re
 
 Anthropic's Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI's GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision.
 
-## 2. The tokenizer changes the invoice before your prompt does
+## 2. The tokenizer note is not a cross-vendor benchmark
 
-Anthropic's pricing page carries a note most price sheets would leave out: Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text.
+Anthropic describes a tokenizer change between newer and earlier Claude models, not between Claude and GPT. Its approximate 30% increase depends on the text and workload. That note cannot establish a fixed Claude-versus-OpenAI price premium.
 
-So the sticker is $2 per million tokens, and the bill is $2 per million tokens of Claude's counting. For text that costs $2.00 per million source tokens on a standard tokenizer, the same text costs $2.00 × 1.3 = $2.60.
+There is no universal source-token unit shared by the two vendors. Count the same representative input with each target model, then record actual output usage separately. Generated answers may differ in length, reasoning usage and quality; an input-token ratio does not predict output tokens.
 
-That is a 30% difference on the largest line of a RAG or agent bill, and it does not appear anywhere in a side-by-side table that compares per-token prices. The note also says the exact increase depends on the content, so treat 1.3 as a working multiplier, not a constant.
+The $1,844 example below assumes equal billed token counts in each category. It is arithmetic, not a measured identical-text benchmark. The separate input-only sensitivity case deliberately leaves the $500 output line unchanged and is not a prediction for either vendor.
+
+Correction, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. The other rate examples retain their original verification date.
 
 ## 3. Caching is a break-even test, not a discount
 
@@ -79,8 +81,8 @@ The third is the cache window, and it is easy to lose money on. A 12-hour write 
 
 | Label | Formula | Result |
 |---|---|---|
-| 100k requests, 16k cached prefix, 4k fresh input, 500 output | Sonnet 5.5 or GPT-6.1 Sol: writes 10,000 × 16,000 = 160M × $2.50 = $400; hits 90,000 × 16,000 = 1,440M × $0.10 = $144; fresh 100,000 × 4,000 = 400M × $2 = $800; output 100,000 × 500 = 50M × $10 = $500 | $1,844 on either vendor at list price, before the tokenizer |
-| The same workload through a tokenizer that counts 30% more | $1,844 × 1.3 = $2,397.20, applying Anthropic's stated ~30% token increase | $2,397 against $1,844 for identical text, a 30% difference on a sheet whose per-token prices match |
+| 100k requests, 16k cached prefix, 4k fresh input, 500 output | Sonnet 5.5 or GPT-6.1 Sol: writes 10,000 × 16,000 = 160M × $2.50 = $400; hits 90,000 × 16,000 = 1,440M × $0.10 = $144; fresh 100,000 × 4,000 = 400M × $2 = $800; output 100,000 × 500 = 50M × $10 = $500 | $1,844 with the stated equal billed token counts and rates; not a measured same-text comparison |
+| Hypothetical sensitivity: 30% more input-category tokens, output unchanged | Input categories: ($400 writes + $144 hits + $800 fresh input) × 1.30 = $1,747.20; unchanged output $500; total $2,247.20 | $403.20 above the $1,844 baseline (21.87%). Assumed input change only, not an observed Claude-versus-GPT difference. |
 | Cache break-even on a shared prefix | 1.25 + 0.10n < n, so n > 1.39; at n = 10 the cost is 1.25 + 1.00 = 2.25 against 10 uncached | Profitable from the second request; 77.5% off the input line by the tenth |
 | Long window write on a twice-daily job | OpenAI 12h: 2.5 write + 0.10 read = 2.60, against 2 × 1.00 = 2.00 uncached. Anthropic 1h: 2.0 write + 0.10 read = 2.10, against 2.00 | 2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor's long window |
 
@@ -88,7 +90,7 @@ The third is the cache window, and it is easy to lose money on. A 12-hour write 
 
 | If this is you | Take | Because |
 |---|---|---|
-| A long, stable system prompt at high volume | Either; decide on the tokenizer | Both bill the prefix at 1.25x to write and 0.10x or 0.05x to read, so a 30% token difference decides more than the cache terms do. |
+| A long, stable system prompt at high volume | Measure both on your workload | Compare measured input, cache-write, cache-hit and output usage at the applicable rates. The Claude tokenizer note does not supply a GPT comparison ratio. |
 | Prompts that regularly pass 100,000 tokens | Weigh the long-context row first | OpenAI doubles input and multiplies output by 1.5 past the boundary; Haiku 5.5 lists a rate five times higher for prompts over 100,000 tokens. |
 | Nightly batch of a few hundred thousand jobs | Batch API on either | Both halve input and output, and a single nightly pass has no cache to read from, so a cold write only adds 25%. |
 | A job that runs every 12 hours over one corpus | No cache at all | The 12-hour write costs 2.5x and the 1-hour write has expired by the next run; two uncached passes cost 2.0 against 2.6. |
@@ -111,16 +113,16 @@ No. Anthropic takes a cache_control marker on the block you want cached, and Ope
 **Do the batch discount and the cache discount combine?**  
 On Anthropic the page says cache multipliers stack with the batch discount. OpenAI publishes separate Batch and Flex tables at the same rates, and fast mode is excluded from batch on Anthropic.
 
-**What does the 30% tokenizer note change?**  
-It raises the effective price per unit of source text by about 30% on Claude 4.7 and later, against a sheet whose per-token rates are otherwise identical to the competitor's.
+**Does the 30% tokenizer note mean Claude costs 30% more than GPT?**  
+No. Anthropic compares newer and earlier Claude tokenizers, not Claude with GPT. The difference depends on content. Measure each target model on the same input and account for generated output separately; this article provides no measured cross-vendor ratio.
 
 **Is a cache write ever a loss?**  
 Yes. The 1.25x short write needs a read to pay for itself and the 2x or 2.5x long write needs two or three, so a job that reads the prefix once bills more with caching than without.
 
 ## Sources
 
-- https://docs.anthropic.com/en/docs/about-claude/pricing
-- https://platform.openai.com/docs/pricing
+- https://platform.claude.com/docs/en/about-claude/pricing
+- https://developers.openai.com/api/docs/pricing
 - https://platform.claude.com/docs/en/build-with-claude/prompt-caching
 - https://platform.claude.com/docs/en/build-with-claude/batch-processing
 - https://claude.com/pricing

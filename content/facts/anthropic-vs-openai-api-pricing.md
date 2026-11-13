@@ -14,7 +14,7 @@ the vendor's claim.
   source: https://docs.anthropic.com/en/docs/about-claude/pricing
 - **Claude cache multipliers** — 5m write 1.25x, 1h write 2x, read 0.1x (0.05x on Opus 5.5 and Sonnet 5.5); multipliers stack with batch  
   source: https://platform.claude.com/docs/en/build-with-claude/prompt-caching
-- **Claude tokenizer** — Claude 4.7 and later use a tokenizer producing approximately 30% more tokens for the same text  
+- **Claude tokenizer** — Newer Claude tokenizers count approximately 30% more than earlier Claude tokenizers, depending on content; this is not a comparison with GPT  
   source: https://docs.anthropic.com/en/docs/about-claude/pricing
 - **Claude modifiers** — Fast mode doubles the rate and is unavailable with Batch; US-only inference applies 1.1x to every token category  
   source: https://docs.anthropic.com/en/docs/about-claude/pricing
@@ -31,15 +31,15 @@ the vendor's claim.
 
 ## Derived arithmetic used in the article (formula printed in the text)
 
-- **100k requests, 16k cached prefix, 4k fresh input, 500 output** — Sonnet 5.5 or GPT-6.1 Sol: writes 10,000 × 16,000 = 160M × $2.50 = $400; hits 90,000 × 16,000 = 1,440M × $0.10 = $144; fresh 100,000 × 4,000 = 400M × $2 = $800; output 100,000 × 500 = 50M × $10 = $500 ⇒ $1,844 on either vendor at list price, before the tokenizer
-- **The same workload through a tokenizer that counts 30% more** — $1,844 × 1.3 = $2,397.20, applying Anthropic's stated ~30% token increase ⇒ $2,397 against $1,844 for identical text, a 30% difference on a sheet whose per-token prices match
+- **100k requests, 16k cached prefix, 4k fresh input, 500 output** — Sonnet 5.5 or GPT-6.1 Sol: writes 10,000 × 16,000 = 160M × $2.50 = $400; hits 90,000 × 16,000 = 1,440M × $0.10 = $144; fresh 100,000 × 4,000 = 400M × $2 = $800; output 100,000 × 500 = 50M × $10 = $500 ⇒ $1,844 with the stated equal billed token counts and rates; not a measured same-text comparison
+- **Hypothetical sensitivity: 30% more input-category tokens, output unchanged** — Input categories: ($400 writes + $144 hits + $800 fresh input) × 1.30 = $1,747.20; unchanged output $500; total $2,247.20 ⇒ $403.20 above the $1,844 baseline (21.87%). Assumed input change only, not an observed Claude-versus-GPT difference.
 - **Cache break-even on a shared prefix** — 1.25 + 0.10n < n, so n > 1.39; at n = 10 the cost is 1.25 + 1.00 = 2.25 against 10 uncached ⇒ Profitable from the second request; 77.5% off the input line by the tenth
 - **Long window write on a twice-daily job** — OpenAI 12h: 2.5 write + 0.10 read = 2.60, against 2 × 1.00 = 2.00 uncached. Anthropic 1h: 2.0 write + 0.10 read = 2.10, against 2.00 ⇒ 2.6 against 2.0: caching a prefix read twice costs more than not caching it under either vendor's long window
 
 ## Sources
 
-- https://docs.anthropic.com/en/docs/about-claude/pricing
-- https://platform.openai.com/docs/pricing
+- https://platform.claude.com/docs/en/about-claude/pricing
+- https://developers.openai.com/api/docs/pricing
 - https://platform.claude.com/docs/en/build-with-claude/prompt-caching
 - https://platform.claude.com/docs/en/build-with-claude/batch-processing
 - https://claude.com/pricing

@@ -94,7 +94,7 @@ Price three things before you choose: your average charge, the share of cards th
 URL: https://devteardown.com/compare/anthropic-vs-openai-api-pricing/
 Category: AI & LLM APIs · Recorded source review: 2026-11-10
 
-Verdict: On the flagship row the two sheets are the same page: $2 in, $10 out, $0.10 cached. The choice is decided by three things that are not on that row, the tokenizer's 30% count, the long-context shape, and how many times your prefix is actually read. If your prompts stay under 100,000 tokens and your cache is warm, you are choosing a vendor on arithmetic that differs by a few percent; if they cross the line, you are choosing on a cliff.
+Verdict: The named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens. That does not make the same task equally expensive. Measure token usage, output quality, cache hits and retries on a representative sample. Apply the selected model, context and service-tier rates to those measurements; do not multiply a vendor bill by an assumed tokenizer premium.
 
 ### Two sheets, one identical sticker
 The flagship rows of both price sheets match to the cent, and so do the cache reads.
@@ -109,12 +109,14 @@ The flagship rows of both price sheets match to the cent, and so do the cache re
 
 Anthropic's Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI's GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision.
 
-### The tokenizer changes the invoice before your prompt does
-Anthropic's pricing page carries a note most price sheets would leave out: Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text.
+### The tokenizer note is not a cross-vendor benchmark
+Anthropic describes a tokenizer change between newer and earlier Claude models, not between Claude and GPT. Its approximate 30% increase depends on the text and workload. That note cannot establish a fixed Claude-versus-OpenAI price premium.
 
-So the sticker is $2 per million tokens, and the bill is $2 per million tokens of Claude's counting. For text that costs $2.00 per million source tokens on a standard tokenizer, the same text costs $2.00 × 1.3 = $2.60.
+There is no universal source-token unit shared by the two vendors. Count the same representative input with each target model, then record actual output usage separately. Generated answers may differ in length, reasoning usage and quality; an input-token ratio does not predict output tokens.
 
-That is a 30% difference on the largest line of a RAG or agent bill, and it does not appear anywhere in a side-by-side table that compares per-token prices. The note also says the exact increase depends on the content, so treat 1.3 as a working multiplier, not a constant.
+The $1,844 example below assumes equal billed token counts in each category. It is arithmetic, not a measured identical-text benchmark. The separate input-only sensitivity case deliberately leaves the $500 output line unchanged and is not a prediction for either vendor.
+
+Correction, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. The other rate examples retain their original verification date.
 
 ### Caching is a break-even test, not a discount
 Both vendors sell the same shape: pay more to write a prefix, pay less to read it. The multipliers are where they part.
@@ -158,8 +160,8 @@ Data residency is a multiplier rather than a tier. Sending Claude 4.6 or later t
 The third is the cache window, and it is easy to lose money on. A 12-hour write costs 2.5x, so a job that runs twice a day should skip caching entirely rather than pay 2.5x for a prefix it reads once. Check the read count before enabling it: three reads is where the long window starts to earn.
 
 ### Source links
-- https://docs.anthropic.com/en/docs/about-claude/pricing
-- https://platform.openai.com/docs/pricing
+- https://platform.claude.com/docs/en/about-claude/pricing
+- https://developers.openai.com/api/docs/pricing
 - https://platform.claude.com/docs/en/build-with-claude/prompt-caching
 - https://platform.claude.com/docs/en/build-with-claude/batch-processing
 - https://claude.com/pricing
