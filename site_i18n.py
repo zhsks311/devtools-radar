@@ -2,6 +2,7 @@
 import html, json, re, datetime
 from pathlib import Path
 from tools.product_links import publishable_link
+from tools.deal_candidates import candidate_cards
 from tools.affiliate_links import verified_aliexpress_url
 from tools.deal_prices import checked_price, official_srp_comparison
 from tools.evidence_dates import observed_timestamp
@@ -129,8 +130,8 @@ window.addEventListener('popstate', () => { restore(); filter(); });
 window.addEventListener('pageshow', () => { restore(); filter(); });
 restore(); filter();
 """
-def catalogue(lang,feeds,translations):
- t=LABELS[lang]; f=FILTER_TEXT[lang]; cards=[]; held_cards=[]
+def catalogue(lang,feeds,translations,discoveries=False):
+ t=LABELS[lang]; f=FILTER_TEXT[lang]; cards=candidate_cards(lang) if discoveries else []; held_cards=[]
  for d in feeds:
   loc=translations.get(d['id'],{}).get(lang,{})
   title=loc.get('product',d.get('product','')); summary=loc.get('summary',''); conditions=loc.get('conditions',t[10]); conditions=' '.join(conditions) if isinstance(conditions,list) else conditions
@@ -174,7 +175,7 @@ def write_unified(output,items,deals,en_deals):
  output=Path(output);trans=json.loads((Path(__file__).parent/'data/deal_localizations.json').read_text())
  feeds=list(deals.get('feed',[]))+list(en_deals.get('feed',[]))
  for lang,path in PATHS.items():
-  dest=output/path.strip('/');dest.mkdir(exist_ok=True,parents=True);(dest/'index.html').write_text(catalogue(lang,feeds,trans),encoding='utf-8')
+  dest=output/path.strip('/');dest.mkdir(exist_ok=True,parents=True);(dest/'index.html').write_text(catalogue(lang,feeds,trans,discoveries=True),encoding='utf-8')
  # Comparison content stays English; do not claim unrelated deal pages are translations.
  for page in [output/'index.html',*output.glob('compare/*/index.html')]:
   text=page.read_text();text=re.sub(r'<header>.*?</header>',nav('en',True),text,flags=re.S)
