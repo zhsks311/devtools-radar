@@ -195,3 +195,13 @@ Unverified promotion links are held; no tracking ID or product is invented.
 No AliExpress links are activated in the supplied catalogue. See
 [`docs/aliexpress-affiliate.md`](docs/aliexpress-affiliate.md) for activation,
 validation, safe credential handling and official references.
+
+### Discovery counts and destination navigation
+
+The active catalogue can include explicitly labeled source-reported discoveries.
+They are counted separately from products whose seller detail links were checked;
+the existence of a constructed item URL is not link verification. Counts update
+with every filter/search and empty copy is neutral. The destination-unverified
+shortcut changes only the destination filter, retaining search/category/storefront
+and browser history. It never places unknown destinations into a named country.
+Regression checks include all six languages with the five real discovery records.

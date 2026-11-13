@@ -19,9 +19,9 @@ class FilterParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if a.get('id') in ('active-products', 'held-products'): self.area = a['id']
-        if tag == 'article' and a.get('class') == 'card':
+        if tag == 'article' and 'card' in a.get('class', '').split():
             (self.cards if self.area == 'active-products' else self.archived).append({
-                'id': a['data-id'], 'search': a['data-search'], 'market': a['data-market'],
+                'id': a['data-id'], 'kind': a.get('data-kind', 'verified'), 'search': a['data-search'], 'market': a['data-market'],
                 'countries': a['data-countries'], 'category': a['data-category']})
         if tag == 'select':
             self.select = a['id']; self.selects[self.select] = []
@@ -85,7 +85,7 @@ class CountryTests(unittest.TestCase):
     def test_filter_javascript_all_combinations_and_navigation(self):
         pages = []
         for lang in site_i18n.LANGS:
-            p = FilterParser(); p.feed(site_i18n.catalogue(lang, self.feed, self.tr))
+            p = FilterParser(); p.feed(site_i18n.catalogue(lang, self.feed, self.tr, discoveries=True))
             pages.append({'lang': lang, 'cards': p.cards, 'archived': p.archived,
                           'selects': p.selects, 'links': p.links})
         result = subprocess.run(['node', str(ROOT / 'tests/filter_behavior.cjs')],

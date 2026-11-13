@@ -9,8 +9,8 @@ for (const page of pages) {
     nodes['#'+id] = {value:'all', options:values.map(value=>({value})),
       addEventListener(type, listener){this[type]=listener}, focus(){this.focused=true}};
   }
-  for (const id of ['count','archive-count','empty','reset-filters']) {
-    nodes['#'+id] = {hidden:false, dataset:{label:'products'}, addEventListener(type, fn){this[type]=fn}};
+  for (const id of ['count','archive-count','empty','reset-filters','unknown-destinations']) {
+    nodes['#'+id] = {hidden:false, dataset:{label:'verified',discoveryLabel:'discoveries'}, addEventListener(type, fn){this[type]=fn}};
   }
   nodes['#product-search'] = {value:'', addEventListener(type, fn){this[type]=fn}};
   nodes['.held-archive'] = {hidden:false};
@@ -54,6 +54,20 @@ for (const page of pages) {
   nodes['#product-search'].value='<script>';nodes['#product-search'].input();
   assert.equal(cards.filter(c=>!c.hidden).length,0);
   nodes['#reset-filters'].click();
+  // Unknown-destination shortcut preserves the query and does not claim Korean delivery.
+  nodes['#product-search'].value='AliExpress';nodes['#product-search'].input();
+  assert.equal(nodes['#count'].textContent,'0 verified · 5 discoveries');
+  nodes['#country'].value='KR';nodes['#country'].change();
+  assert.equal(nodes['#count'].textContent,'0 verified · 0 discoveries');
+  assert.equal(nodes['#empty'].hidden,false);
+  nodes['#unknown-destinations'].click();
+  assert.equal(nodes['#country'].value,'unknown');
+  assert.equal(nodes['#product-search'].value,'AliExpress');
+  assert.equal(nodes['#count'].textContent,'0 verified · 5 discoveries');
+  assert.equal(nodes['#empty'].hidden,true);
+  history.back();assert.equal(nodes['#country'].value,'KR');
+  history.forward();assert.equal(nodes['#country'].value,'unknown');
+  nodes['#reset-filters'].click();
   historyEntries.splice(0,historyEntries.length,url.href);historyIndex=0;
   // Actual history traversal, not just manually setting the URL before popstate.
   assert.equal(historyEntries.length,1);
@@ -85,7 +99,8 @@ for (const page of pages) {
     const expected=page.cards.filter(matches).map(d=>d.id), held=page.archived.filter(matches).map(d=>d.id);
     assert.deepEqual(cards.filter(d=>!d.hidden).map(d=>d.dataset.id),expected);
     assert.deepEqual(archived.filter(d=>!d.hidden).map(d=>d.dataset.id),held);
-    assert.equal(nodes['#count'].textContent,expected.length+' products');
+    const discoveries=page.cards.filter(d=>matches(d)&&d.kind==='discovery').length;
+    assert.equal(nodes['#count'].textContent,(expected.length-discoveries)+' verified · '+discoveries+' discoveries');
     assert.equal(nodes['#archive-count'].textContent,held.length);
     assert.equal(nodes['#empty'].hidden,expected.length>0);
     assert.equal(nodes['.held-archive'].hidden,held.length===0);
@@ -98,7 +113,7 @@ for (const page of pages) {
   }
   nodes['#reset-filters'].click();
   assert.equal(nodes['#reset-filters'].hidden,true);
-  assert.equal(nodes['#count'].textContent,'13 products');
+  assert.equal(nodes['#count'].textContent,'13 verified · 5 discoveries');
   assert.equal(url.search,'?utm_source=test'); assert.equal(url.hash,'#keep');
   url=new URL('https://example.test/deals/?market=CN&category=keyboard-mouse&country=unknown'); events.popstate();
   assert.deepEqual(cards.filter(c=>!c.hidden).map(c=>c.dataset.id),['lenovo-gk10-rt60-cn']);
