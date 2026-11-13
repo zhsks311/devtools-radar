@@ -31,3 +31,8 @@
 - Koofr’s limit corrected in six translations and source briefing: one code redemption per person in their lifetime, not one per account. Source: https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb. Coupon prices remain advertised/unverified, and source price timestamps were not refreshed.
 - All five localized report pages no longer redeclare the language-menu JavaScript; their lower catalogue link keeps the chosen language.
 - Regression gate covers ISO/evidence validation, multiple destinations, all 3,240 current filter combinations, unknown versus unavailable, held/active counts, URL restore/reset, language switching, report scripts and category assignments.
+
+## Category filtering
+- Give discovery records a specific category (for example, keyboards use `keyboard-mouse`), not a hard-coded generic category.
+- `hardware` includes keyboards/mice, laptops, and monitors/desks. Specific categories remain exact; software and gaming are not implicitly hardware.
+- Check a product search with both its specific and broad category, plus known/unknown destination filters. Categorization never verifies price or shipping.

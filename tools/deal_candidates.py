@@ -24,6 +24,7 @@ def load_candidates(path=None):
             or d.get('url') != f'https://www.aliexpress.com/item/{pid}.html'
             or d.get('source_url') != f'https://www.pricearchive.org/aliexpress.com/item/{pid}'
             or observed_timestamp(d.get('observed_at')) is None
+            or d.get('category') not in {'hardware', 'keyboard-mouse', 'laptops', 'monitor-desk'}
             or d.get('status') != 'source_reported_candidate'
             or d.get('current_price') is not None or d.get('discount') is not None
             or d.get('shipping_countries') != [] or not d.get('product') or not d.get('evidence')):
@@ -37,5 +38,5 @@ def candidate_cards(lang):
     cards=[]
     for d in load_candidates():
         title=d.get('product_ko') if lang=='ko' else d['product']
-        cards.append(f'''<article class="card discovery-candidate" data-kind="discovery" data-id="{e(d['id'])}" data-search="{e(d['product']+' '+d.get('product_ko','')+' AliExpress 알리익스프레스')}" data-market="unknown" data-countries="" data-category="hardware"><div class="meta">{e(t[0])}</div><h2><a href="{e(d['url'])}" rel="noopener nofollow">{e(title)}</a></h2><p class="price">{e(t[1])}</p><p class="notice">{e(t[2])}</p><p class="meta">{e(t[5])}: <time datetime="{e(d['observed_at'])}">{e(d['observed_at'][:16].replace('T',' '))} UTC</time></p><p><a href="{e(d['source_url'])}" rel="noopener nofollow">{e(t[4])}: PriceArchive</a></p><a class="cta" href="{e(d['url'])}" rel="noopener nofollow">{e(t[3])}</a></article>''')
+        cards.append(f'''<article class="card discovery-candidate" data-kind="discovery" data-id="{e(d['id'])}" data-search="{e(d['product']+' '+d.get('product_ko','')+' AliExpress 알리익스프레스')}" data-market="unknown" data-countries="" data-category="{e(d['category'])}"><div class="meta">{e(t[0])}</div><h2><a href="{e(d['url'])}" rel="noopener nofollow">{e(title)}</a></h2><p class="price">{e(t[1])}</p><p class="notice">{e(t[2])}</p><p class="meta">{e(t[5])}: <time datetime="{e(d['observed_at'])}">{e(d['observed_at'][:16].replace('T',' '))} UTC</time></p><p><a href="{e(d['source_url'])}" rel="noopener nofollow">{e(t[4])}: PriceArchive</a></p><a class="cta" href="{e(d['url'])}" rel="noopener nofollow">{e(t[3])}</a></article>''')
     return cards

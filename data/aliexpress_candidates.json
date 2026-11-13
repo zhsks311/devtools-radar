@@ -12,7 +12,8 @@
     "current_price": null,
     "discount": null,
     "shipping_countries": [],
-    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking."
+    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking.",
+    "category": "keyboard-mouse"
   },
   {
     "id": "ali-candidate-1005008448321383",
@@ -27,7 +28,8 @@
     "current_price": null,
     "discount": null,
     "shipping_countries": [],
-    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking."
+    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking.",
+    "category": "hardware"
   },
   {
     "id": "ali-candidate-1005005814179114",
@@ -42,7 +44,8 @@
     "current_price": null,
     "discount": null,
     "shipping_countries": [],
-    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking."
+    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking.",
+    "category": "hardware"
   },
   {
     "id": "ali-candidate-1005008446541075",
@@ -57,7 +60,8 @@
     "current_price": null,
     "discount": null,
     "shipping_countries": [],
-    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking."
+    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking.",
+    "category": "hardware"
   },
   {
     "id": "ali-candidate-1005009418411818",
@@ -72,6 +76,7 @@
     "current_price": null,
     "discount": null,
     "shipping_countries": [],
-    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking."
+    "evidence": "Third-party product identity and AliExpress item ID observed. Canonical item URL built from that ID; seller page, variant, current price, stock and shipping not checked. No affiliate tracking.",
+    "category": "hardware"
   }
 ]

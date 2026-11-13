@@ -99,7 +99,8 @@ function matches(card) {
   const destinationMatch = country.value === 'all' || (country.value === 'unknown'
     ? destinations.length === 0 : destinations.includes(country.value));
   return searchMatch && (market.value === 'all' || card.dataset.market === market.value) && destinationMatch &&
-    (cat.value === 'all' || card.dataset.category === cat.value);
+    (cat.value === 'all' || card.dataset.category === cat.value ||
+      (cat.value === 'hardware' && ['keyboard-mouse', 'laptops', 'monitor-desk'].includes(card.dataset.category)));
 }
 function filter(historyMode = 'replace') {
   let n = 0, hn = 0, dn = 0;

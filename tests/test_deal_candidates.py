@@ -26,7 +26,7 @@ class CandidateTests(unittest.TestCase):
                 self.assertNotIn('<del',card)
                 self.assertNotIn('s.click',card)
     def test_unverified_fields_fail_closed(self):
-        for key,value in [('current_price',12),('discount',50),('shipping_countries',['KR']),('url','https://www.aliexpress.com/search?q=foo'),('observed_at','2099-01-01T00:00:00Z')]:
+        for key,value in [('category','unknown'),('category',None),('current_price',12),('discount',50),('shipping_countries',['KR']),('url','https://www.aliexpress.com/search?q=foo'),('observed_at','2099-01-01T00:00:00Z')]:
             rows=copy.deepcopy(load_candidates());rows[0][key]=value
             with tempfile.TemporaryDirectory() as temp:
                 path=Path(temp)/'test.json';path.write_text(json.dumps(rows))
@@ -43,3 +43,10 @@ class CandidateTests(unittest.TestCase):
             self.assertIn(site_i18n.EMPTY_LABEL[lang],page)
             self.assertIn(site_i18n.UNKNOWN_SHORTCUT[lang],page)
             self.assertEqual(page.count('data-kind="discovery"'),5)
+
+    def test_keyboard_has_specific_category(self):
+        rows=load_candidates()
+        self.assertEqual(rows[0]['category'],'keyboard-mouse')
+        for lang in TEXT:
+            self.assertIn('data-category="keyboard-mouse"', candidate_cards(lang)[0])
+            self.assertIn('data-category="hardware"', candidate_cards(lang)[1])

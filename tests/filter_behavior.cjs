@@ -68,6 +68,18 @@ for (const page of pages) {
   history.back();assert.equal(nodes['#country'].value,'KR');
   history.forward();assert.equal(nodes['#country'].value,'unknown');
   nodes['#reset-filters'].click();
+  // A keyboard discovery belongs in its specific category and the broad hardware group.
+  nodes['#product-search'].value='AJAZZ';nodes['#product-search'].input();
+  for (const category of ['keyboard-mouse','hardware']) {
+    nodes['#category'].value=category;nodes['#category'].change();
+    assert.deepEqual(cards.filter(c=>!c.hidden).map(c=>c.dataset.id),['ali-candidate-1005007135778855']);
+    assert.equal(nodes['#count'].textContent,'0 verified · 1 discoveries');
+    nodes['#country'].value='KR';nodes['#country'].change();
+    assert.equal(cards.filter(c=>!c.hidden).length,0);
+    nodes['#unknown-destinations'].click();
+    assert.equal(cards.filter(c=>!c.hidden).length,1);
+  }
+  nodes['#reset-filters'].click();
   historyEntries.splice(0,historyEntries.length,url.href);historyIndex=0;
   // Actual history traversal, not just manually setting the URL before popstate.
   assert.equal(historyEntries.length,1);
@@ -94,7 +106,7 @@ for (const page of pages) {
   for(const market of page.selects.market) for(const country of page.selects.country) for(const category of page.selects.category) {
     nodes['#market'].value=market; nodes['#country'].value=country; nodes['#category'].value=category;
     nodes['#country'].change();
-    const matches = d => (market==='all'||d.market===market) && (category==='all'||d.category===category) &&
+    const matches = d => (market==='all'||d.market===market) && (category==='all'||d.category===category||(category==='hardware'&&['keyboard-mouse','laptops','monitor-desk'].includes(d.category))) &&
       (country==='all'||(country==='unknown'?d.countries==='':d.countries.split(' ').includes(country)));
     const expected=page.cards.filter(matches).map(d=>d.id), held=page.archived.filter(matches).map(d=>d.id);
     assert.deepEqual(cards.filter(d=>!d.hidden).map(d=>d.dataset.id),expected);
