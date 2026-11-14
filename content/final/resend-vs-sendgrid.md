@@ -63,7 +63,7 @@ Both authenticate sending with DKIM, SPF and DMARC, and both include a REST API,
 | Event webhooks | 5 on Pro, 10 on Scale | 2 on Essentials, 5 on Pro |
 | SSO | $150/mo add-on on Scale | Included in Pro |
 
-An agency managing dozens of client domains should price the domain line before the email line: Resend's add-on covers 100 extra domains for $20, and SendGrid's inclusion has no printed ceiling.
+Resend retains idempotency keys for 24 hours only. Same-key retries require the identical payload. A 409 payload conflict needs correction; a concurrent request needs bounded backoff. Keep durable send state and reconcile ambiguous outcomes after long outages, not blind resends.
 
 ## 5. A trial ending is not an automatic subscription
 
@@ -136,27 +136,49 @@ Resend lists inbound email with webhooks on every plan, and SendGrid lists an In
 - https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan
 - https://help.twilio.com/articles/47846436523419
 - https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans
+- https://resend.com/docs/dashboard/emails/idempotency-keys
+- https://resend.com/docs/api-reference/errors
 
 ## Same task, two SDKs
 
 **Resend**
 
 ```
-// Resend: the idempotency key is what stops a retry from sending twice.
-import { Resend } from "resend";
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const { data, error } = await resend.emails.send(
-  {
-    from: "billing@example.com",
-    to: order.email,
-    subject: `Receipt for ${order.id}`,
-    react: Receipt({ order }),
-  },
-  { idempotencyKey: `receipt-${order.id}` },
-);
-// Breaks when: the key is built from Date.now(). A retry after a 429 is then a
-// second email, and there is no deduplication on the receiving side.
+// One attempt, not an outbox implementation. Never call directly from a browser.
+// Caller must atomically claim a durable outbox row BEFORE the first send and
+// persist its immutable payload, key, firstAttemptAt and attempt outcomes.
+// Use one event/version key, not Date.now(); retries must reuse the exact payload.
+// Resend retains keys for 24 hours, not forever. Acceptance is not delivery.
+export async function attemptEmail(resend, row, now = Date.now()) {
+  if (row.acceptedId) return { acceptedId: row.acceptedId, alreadyRecorded: true };
+  const age = now - row.firstAttemptAt;
+  // Stop 5 minutes early to allow for clock skew / requests in flight.
+  if (!Number.isFinite(age) || age < 0 || age >= 23 * 3600000 + 55 * 60000) {
+    throw new Error('reconcile_required: do not blindly resend after the 24-hour window');
+  }
+  if (!row.key || row.key.length > 256 || !row.payload) throw new Error('invalid_outbox_row');
+  let response;
+  try {
+    response = await resend.emails.send(row.payload, { idempotencyKey: row.key });
+  } catch {
+    throw new Error('unknown_outcome: reconcile; bounded same-key retry only within the window');
+  }
+  const { data, error } = response;
+  if (error) {
+    if (error.name === 'invalid_idempotent_request') {
+      throw new Error('payload_conflict: stop; do not mint a new key to bypass this 409');
+    }
+    if (error.name === 'concurrent_idempotent_requests') {
+      throw new Error('in_progress: defer with bounded backoff and recheck the window');
+    }
+    throw new Error(`send_failed: ${error.name}; inspect before any retry`);
+  }
+  if (!data?.id) throw new Error('unknown_outcome: missing acceptance id; reconcile');
+  return { acceptedId: data.id }; // Caller must durably save this before acking its job.
+}
+// On long outages, check durable state plus provider logs/webhooks before deciding
+// whether to resend. A crash after acceptance but before saving the id is ambiguous.
+// If reconciliation cannot resolve it, hold for review; this is not exactly-once delivery.
 ```
 
 **SendGrid**

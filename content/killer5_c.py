@@ -77,9 +77,10 @@ RESEND = {'slug': 'resend-vs-sendgrid',
                           '| Event webhooks | 5 on Pro, 10 on Scale | 2 on Essentials, 5 on Pro |\n'
                           '| SSO | $150/mo add-on on Scale | Included in Pro |\n'
                           '\n'
-                          'An agency managing dozens of client domains should price the domain '
-                          "line before the email line: Resend's add-on covers 100 extra domains "
-                          "for $20, and SendGrid's inclusion has no printed ceiling."},
+                          'Resend retains idempotency keys for 24 hours only. Same-key retries '
+                          'require the identical payload. A 409 payload conflict needs correction; '
+                          'a concurrent request needs bounded backoff. Keep durable send state and '
+                          'reconcile ambiguous outcomes after long outages, not blind resends.'},
               {'title': 'A trial ending is not an automatic subscription',
                'content': 'Correction, November 14, 2026: the earlier article wrongly described '
                           'automatic SendGrid paid conversion and continuous per-email Resend '
@@ -213,7 +214,9 @@ RESEND = {'slug': 'resend-vs-sendgrid',
              'https://resend.com/changelog/pay-as-you-go-pricing',
              'https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan',
              'https://help.twilio.com/articles/47846436523419',
-             'https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans'],
+             'https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans',
+             'https://resend.com/docs/dashboard/emails/idempotency-keys',
+             'https://resend.com/docs/api-reference/errors'],
  'related': [{'slug': 'stripe-vs-lemonsqueezy-vs-paddle',
               'name': 'Stripe vs Lemon Squeezy / Paddle',
               'why': 'The same $55-style feature step, one decimal place larger.'},
@@ -245,24 +248,61 @@ RESEND = {'slug': 'resend-vs-sendgrid',
                      'rather than volume',
                      "The 200,000 rung costs $0.80 per 1,000, more than twice the 100,000 rung's "
                      'rate'],
-            'code_example': '// Resend: the idempotency key is what stops a retry from sending '
-                            'twice.\n'
-                            'import { Resend } from "resend";\n'
-                            'const resend = new Resend(process.env.RESEND_API_KEY);\n'
-                            '\n'
-                            'const { data, error } = await resend.emails.send(\n'
-                            '  {\n'
-                            '    from: "billing@example.com",\n'
-                            '    to: order.email,\n'
-                            '    subject: `Receipt for ${order.id}`,\n'
-                            '    react: Receipt({ order }),\n'
-                            '  },\n'
-                            '  { idempotencyKey: `receipt-${order.id}` },\n'
-                            ');\n'
-                            '// Breaks when: the key is built from Date.now(). A retry after a 429 '
-                            'is then a\n'
-                            '// second email, and there is no deduplication on the receiving '
-                            'side.'},
+            'code_example': '// One attempt, not an outbox implementation. Never call directly '
+                            'from a browser.\n'
+                            '// Caller must atomically claim a durable outbox row BEFORE the first '
+                            'send and\n'
+                            '// persist its immutable payload, key, firstAttemptAt and attempt '
+                            'outcomes.\n'
+                            '// Use one event/version key, not Date.now(); retries must reuse the '
+                            'exact payload.\n'
+                            '// Resend retains keys for 24 hours, not forever. Acceptance is not '
+                            'delivery.\n'
+                            'export async function attemptEmail(resend, row, now = Date.now()) {\n'
+                            '  if (row.acceptedId) return { acceptedId: row.acceptedId, '
+                            'alreadyRecorded: true };\n'
+                            '  const age = now - row.firstAttemptAt;\n'
+                            '  // Stop 5 minutes early to allow for clock skew / requests in '
+                            'flight.\n'
+                            '  if (!Number.isFinite(age) || age < 0 || age >= 23 * 3600000 + 55 * '
+                            '60000) {\n'
+                            "    throw new Error('reconcile_required: do not blindly resend after "
+                            "the 24-hour window');\n"
+                            '  }\n'
+                            '  if (!row.key || row.key.length > 256 || !row.payload) throw new '
+                            "Error('invalid_outbox_row');\n"
+                            '  let response;\n'
+                            '  try {\n'
+                            '    response = await resend.emails.send(row.payload, { '
+                            'idempotencyKey: row.key });\n'
+                            '  } catch {\n'
+                            "    throw new Error('unknown_outcome: reconcile; bounded same-key "
+                            "retry only within the window');\n"
+                            '  }\n'
+                            '  const { data, error } = response;\n'
+                            '  if (error) {\n'
+                            "    if (error.name === 'invalid_idempotent_request') {\n"
+                            "      throw new Error('payload_conflict: stop; do not mint a new key "
+                            "to bypass this 409');\n"
+                            '    }\n'
+                            "    if (error.name === 'concurrent_idempotent_requests') {\n"
+                            "      throw new Error('in_progress: defer with bounded backoff and "
+                            "recheck the window');\n"
+                            '    }\n'
+                            '    throw new Error(`send_failed: ${error.name}; inspect before any '
+                            'retry`);\n'
+                            '  }\n'
+                            "  if (!data?.id) throw new Error('unknown_outcome: missing acceptance "
+                            "id; reconcile');\n"
+                            '  return { acceptedId: data.id }; // Caller must durably save this '
+                            'before acking its job.\n'
+                            '}\n'
+                            '// On long outages, check durable state plus provider logs/webhooks '
+                            'before deciding\n'
+                            '// whether to resend. A crash after acceptance but before saving the '
+                            'id is ambiguous.\n'
+                            '// If reconciliation cannot resolve it, hold for review; this is not '
+                            'exactly-once delivery.'},
  'tool_b': {'name': 'SendGrid',
             'tagline': 'Per-block pricing where Pro includes the dedicated IP',
             'db': 'Email API with dynamic templates, subusers and dedicated IPs',
@@ -281,7 +321,8 @@ RESEND = {'slug': 'resend-vs-sendgrid',
                      'Subuser management makes it a fit for agencies and multi-brand senders',
                      'The ladder keeps falling to $0.44 per 1,000 at 2,500,000, undercutting '
                      'Resend at the top'],
-            'cons': ['Standard direct-signup trial: sending stops after 60 days unless you explicitly upgrade; partner or existing paid accounts can differ',
+            'cons': ['Standard direct-signup trial: sending stops after 60 days unless you '
+                     'explicitly upgrade; partner or existing paid accounts can differ',
                      'The 50,000 tier charges $1.33 per 1,000 beyond its volume, so 80,000 emails '
                      'bills $59.85 against $34.95 for the next tier',
                      'Essentials keeps 3 days of searchable activity against 7 on Pro, which can '

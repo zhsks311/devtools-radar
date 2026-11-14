@@ -403,7 +403,7 @@ Both authenticate sending with DKIM, SPF and DMARC, and both include a REST API,
 | Event webhooks | 5 on Pro, 10 on Scale | 2 on Essentials, 5 on Pro |
 | SSO | $150/mo add-on on Scale | Included in Pro |
 
-An agency managing dozens of client domains should price the domain line before the email line: Resend's add-on covers 100 extra domains for $20, and SendGrid's inclusion has no printed ceiling.
+Resend retains idempotency keys for 24 hours only. Same-key retries require the identical payload. A 409 payload conflict needs correction; a concurrent request needs bounded backoff. Keep durable send state and reconcile ambiguous outcomes after long outages, not blind resends.
 
 ### A trial ending is not an automatic subscription
 Correction, November 14, 2026: the earlier article wrongly described automatic SendGrid paid conversion and continuous per-email Resend overage billing. The calculations and FAQ are corrected.
@@ -431,6 +431,8 @@ Check three numbers before choosing: your monthly volume rounded up to the rung 
 - https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan
 - https://help.twilio.com/articles/47846436523419
 - https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans
+- https://resend.com/docs/dashboard/emails/idempotency-keys
+- https://resend.com/docs/api-reference/errors
 
 ## Supabase vs Firebase
 URL: https://devteardown.com/compare/supabase-vs-firebase/
