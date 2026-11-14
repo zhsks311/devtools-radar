@@ -15,8 +15,8 @@
   <meta property="og:url" content="https://devteardown.com/compare/bun-vs-node/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bun vs Node.js: cost, limits and the decision matrix">
-  <meta name="twitter:description" content="Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a native addon in your tree has no build">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/bun-vs-node/#article", "headline": "Bun vs Node.js: a 2026 engineering teardown", "description": "Bun's own test count says node:http passes 403 of 415 tests, and Node's own calendar says v20 died on 24 March 2026. Neither runtime charges a cent, so the bill arrives somewhere else.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://bun.com/blog/bun-v1.4", "https://bun.com/blog/bun-joins-anthropic", "https://bun.com/docs/runtime/nodejs-compat", "https://nodejs.org/en/about/previous-releases", "https://nodejs.org/api/typescript.html"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/bun-vs-node/"}</script>
+  <meta name="twitter:description" content="Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a required native addon fails on the tar">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/bun-vs-node/#article", "headline": "Bun vs Node.js: a 2026 engineering teardown", "description": "Bun's own test count says node:http passes 403 of 415 tests, and Node's own calendar says v20 died on 24 March 2026. Neither runtime charges a cent, so the bill arrives somewhere else.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://bun.com/blog/bun-v1.4", "https://bun.com/blog/bun-joins-anthropic", "https://bun.com/docs/runtime/nodejs-compat", "https://nodejs.org/en/about/previous-releases", "https://nodejs.org/api/typescript.html", "https://nodejs.org/learn/modules/abi-stability", "https://bun.com/docs/runtime/node-api"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/bun-vs-node/"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Node 26 type-check TypeScript?", "acceptedAnswer": {"@type": "Answer", "text": "No: type stripping performs no type checking, so a separate tool is still required. Decorators are a parser error, and `--experimental-transform-types` was removed in v26.0.0."}}, {"@type": "Question", "name": "Is Bun faster than Node?", "acceptedAnswer": {"@type": "Answer", "text": "Bun's own `hello.js` benchmark puts Linux start-up at 5.1 ms for Bun 1.4 versus 27.2 ms for Node.js 26; these are vendor measurements, not independent ones. Separately, Bun's peak-memory figures under load, with 1,000,000 requests and 64 connections, put the Vite dev server at 233 MB on Bun versus 214 MB on Node, so Bun is not lighter everywhere."}}, {"@type": "Question", "name": "Can I buy support for a Node major after LTS ends?", "acceptedAnswer": {"@type": "Answer", "text": "Not from the Node.js project itself. Commercial support past Maintenance LTS is sold by OpenJS Ecosystem Sustainability Program partners."}}, {"@type": "Question", "name": "Does Bun's MIT licence cover everything in the binary?", "acceptedAnswer": {"@type": "Answer", "text": "No: Bun statically links JavaScriptCore/WebKit, which is LGPL-2. That is why Bun's licence file spells out relinking obligations."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Comparisons", "item": "https://devteardown.com/"}, {"@type": "ListItem", "position": 2, "name": "Bun vs Node.js", "item": "https://devteardown.com/compare/bun-vs-node/"}]}</script>
   <style>
@@ -119,7 +119,7 @@ footer p { font-size:.8rem; margin:0; }
       <span class="badge badge-gray">Bun vs Node.js</span>
       <span>Source review recorded 2026-11-10</span>
       <span>·</span>
-      <span>4 min read</span>
+      <span>5 min read</span>
     </div>
 
     <h1>Bun vs Node.js</h1>
@@ -127,7 +127,7 @@ footer p { font-size:.8rem; margin:0; }
 
     <div class="verdict-box">
       <div class="label">Verdict</div>
-      <p>Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a native addon in your tree has no build for NODE_MODULE_VERSION 147. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.</p>
+      <p>Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a required native addon fails on the target runtime. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.</p>
     </div>
 
     <div class="toc">
@@ -165,7 +165,7 @@ footer p { font-size:.8rem; margin:0; }
       <p>Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-hours on three meters: the release calendar, the compatibility surface and the native-module ABI.</p>
 <blockquote><p>For teams maintaining a Node service: as of 10 November 2026, both runtimes have no price.</p></blockquote>
 <ul><li><strong>Node:</strong> Node publishes a release calendar; v26 Lithium, v24 Krypton and v22 Jod are LTS.</li><li><strong>Bun:</strong> 1.4.0 (20 August 2026) combined the Rust rewrite with the compatibility-target move from 24.3.0 to 26.3.0 and native ABI 147.</li></ul>
-<p>For Bun 1.4, check whether your native addons have builds for <code>NODE_MODULE_VERSION</code> 147.</p>
+<p>Identify whether each native addon uses stable Node-API or a version-specific V8/native ABI; test the actual package on Bun, OS and architecture.</p>
 
       <h2 id="s2">2. Node bills you on a date you did not choose</h2>
       <p>Node&#x27;s release page reads like a work schedule:</p>
@@ -190,7 +190,7 @@ console.log(`binding ${host}`);</code></pre>
       <p>Bun says it plainly: &quot;Bun is not 100% compatible with Node.js yet.&quot; Bun&#x27;s own 1.4 counts against the Node 26.3.0 suite:</p>
 <div class="table-wrapper"><table><thead><tr><th>Module</th><th>Bun 1.4 passes</th><th>Not passing</th></tr></thead><tbody><tr><td>node:http</td><td>403 / 415</td><td>415 − 403 = 12</td></tr><tr><td>node:fs</td><td>349 / 358</td><td>358 − 349 = 9</td></tr><tr><td>node:module</td><td>68 / 93</td><td>93 − 68 = 25</td></tr><tr><td>node:test_runner</td><td>28 / 81</td><td>81 − 28 = 53</td></tr><tr><td>node:inspector</td><td>22 / 110</td><td>110 − 22 = 88</td></tr><tr><td>node:sqlite</td><td>18 / 18</td><td>18 − 18 = 0</td></tr></tbody></table></div>
 <p>On node:http that is 12 ÷ 415 ≈ 2.9%, the failing 3%. Bun says 1.4 made 1,517 more Node tests pass.</p>
-<blockquote><p>The ABI tax: 1.4 moved the compatibility target from 24.3.0 to 26.3.0. <code>NODE_MODULE_VERSION</code> is now 147, so native addons built for Node 24 must be rebuilt.</p></blockquote>
+<blockquote><p>Native compatibility is not one blanket rebuild rule. Node-API provides ABI stability across Node versions, unlike addons tied to V8 or a version-specific native ABI. Bun implements Node-API independently, so Node-API compatibility and package dependencies still need testing; a Node version number alone does not prove a rebuild is required.</p></blockquote>
 <p>Check required inspector APIs; module pass counts are not application coverage.</p>
 
       <h2 id="s5">5. Who should not pick Bun: teams requiring missing APIs</h2>
@@ -202,7 +202,7 @@ console.log(`binding ${host}`);</code></pre>
       <p>Anthropic acquired Bun on 2 December 2025. Claude Code ships as a Bun executable (Bun&#x27;s statement), and Bun&#x27;s founder wrote then: &quot;Today, Bun makes $0 in revenue.&quot; Bun stays MIT.</p>
 <p>The acquisition changes who pays for Bun&#x27;s roadmap. It does not change the licence, and it does not change the API surface you have to test.</p>
 <p>Check today:</p>
-<ol><li>List every <code>.node</code> addon in the tree and whether it has a build for <code>NODE_MODULE_VERSION</code> 147.</li><li>Check required HTTP APIs, <code>createHook</code>, distinct async IDs, <code>getPeerCertificate</code> and <code>SNICallback</code> against Bun&#x27;s gaps.</li><li>Write down the EOL date of the Node major running in production.</li></ol>
+<ol><li>List every <code>.node</code> addon, identify Node-API versus version-specific ABI dependencies, and test supported binaries on the target runtime, OS and architecture.</li><li>Check required HTTP APIs, <code>createHook</code>, distinct async IDs, <code>getPeerCertificate</code> and <code>SNICallback</code> against Bun&#x27;s gaps.</li><li>Write down the EOL date of the Node major running in production.</li></ol>
 
       <h2 id="cost">Cost arithmetic at volume</h2>
       <p>These are computed from the published unit prices, not measured. Each row prints its own formula,
@@ -222,17 +222,12 @@ console.log(`binding ${host}`);</code></pre>
           <div class="cost-label">Node 20 EOL-to-LTS decision</div>
           <div class="cost-formula">17 Apr 2023 → 24 Mar 2026 ≈ 35 months from first release to EOL; this is not the LTS fix window</div>
           <div class="cost-result">Move production off EOL Node 20 to Node 24 or 26 LTS; the documented 30-month LTS fix guarantee is a separate interval.</div>
-        </div>
-        <div class="cost-row">
-          <div class="cost-label">Native addon rebuild tax for Bun 1.4</div>
-          <div class="cost-formula">N native addons × 1 rebuild each for NODE_MODULE_VERSION 147 (target moved 24.3.0 → 26.3.0)</div>
-          <div class="cost-result">Every addon built for Node 24 needs a new build before Bun 1.4 can load it</div>
         </div></div>
       <h2 id="matrix">Decision matrix</h2>
       <p>Rows are the situation you are actually in. Pick the row before you read the pricing page again.</p>
       <div class="table-wrapper"><table>
         <thead><tr><th>If this is you</th><th>Take</th><th>Because</th></tr></thead>
-        <tbody><tr><td>HTTP service considering Bun after checking required server APIs</td><td class="matrix-pick">Bun only if required APIs are supported and the service passes its checks; otherwise retain Node</td><td>Bun&#x27;s own node:http count is 403 / 415; check unsupported server options, http.Server inheritance and listen(handle), not just the pass count.</td></tr><tr><td>Repo with native addons built for Node 24</td><td class="matrix-pick">Node, until every addon has a build for NODE_MODULE_VERSION 147</td><td>Bun 1.4 targets Node 26.3.0, so addons built for 24 do not load until rebuilt.</td></tr><tr><td>Production tracing agent requiring createHook or distinct async IDs</td><td class="matrix-pick">Node</td><td>Keep Node if your tracing agent requires createHook or distinct async IDs: Bun documents the hook as a stub and async IDs as always 0.</td></tr><tr><td>TLS gateway requiring getPeerCertificate() or SNICallback</td><td class="matrix-pick">Node</td><td>Bun&#x27;s node:https lacks getPeerCertificate() and does not support SNICallback.</td></tr><tr><td>Signing service that needs secp256k1 or ed448 keys</td><td class="matrix-pick">Node</td><td>Bun&#x27;s BoringSSL-backed node:crypto has no secp256k1 curve and no ed448 key type.</td></tr><tr><td>Still on Node 20 in production</td><td class="matrix-pick">Node 24 or 26 LTS, not a runtime switch</td><td>v20 reached EOL on 24 March 2026, and an LTS move fixes that without adding Bun&#x27;s compatibility gaps to the same sprint.</td></tr><tr><td>Healthy service on Node 22 Jod with no pain points</td><td class="matrix-pick">Neither — stay put</td><td>v22 is still LTS and was last updated 20 October 2026, so no date forces a move yet.</td></tr><tr><td>Internal scripts and CLIs that currently pull in a separate test runner, linter and formatter</td><td class="matrix-pick">Bun</td><td>Bun 1.4 ships bun test --parallel, bun lint, bun fmt and bun check in the same binary.</td></tr></tbody>
+        <tbody><tr><td>HTTP service considering Bun after checking required server APIs</td><td class="matrix-pick">Bun only if required APIs are supported and the service passes its checks; otherwise retain Node</td><td>Bun&#x27;s own node:http count is 403 / 415; check unsupported server options, http.Server inheritance and listen(handle), not just the pass count.</td></tr><tr><td>Repo with native addons built for Node 24</td><td class="matrix-pick">Test addon API and runtime compatibility before migrating</td><td>Stable Node-API addons are not automatically invalidated by a Node major change. V8/legacy addons can require compatible builds; Bun support and external dependencies must be checked per package.</td></tr><tr><td>Production tracing agent requiring createHook or distinct async IDs</td><td class="matrix-pick">Node</td><td>Keep Node if your tracing agent requires createHook or distinct async IDs: Bun documents the hook as a stub and async IDs as always 0.</td></tr><tr><td>TLS gateway requiring getPeerCertificate() or SNICallback</td><td class="matrix-pick">Node</td><td>Bun&#x27;s node:https lacks getPeerCertificate() and does not support SNICallback.</td></tr><tr><td>Signing service that needs secp256k1 or ed448 keys</td><td class="matrix-pick">Node</td><td>Bun&#x27;s BoringSSL-backed node:crypto has no secp256k1 curve and no ed448 key type.</td></tr><tr><td>Still on Node 20 in production</td><td class="matrix-pick">Node 24 or 26 LTS, not a runtime switch</td><td>v20 reached EOL on 24 March 2026, and an LTS move fixes that without adding Bun&#x27;s compatibility gaps to the same sprint.</td></tr><tr><td>Healthy service on Node 22 Jod with no pain points</td><td class="matrix-pick">Neither — stay put</td><td>v22 is still LTS and was last updated 20 October 2026, so no date forces a move yet.</td></tr><tr><td>Internal scripts and CLIs that currently pull in a separate test runner, linter and formatter</td><td class="matrix-pick">Bun</td><td>Bun 1.4 ships bun test --parallel, bun lint, bun fmt and bun check in the same binary.</td></tr></tbody>
       </table></div>
 
     <h2>Code and configuration</h2>
@@ -245,7 +240,7 @@ import { Database } from &quot;bun:sqlite&quot;;   // built in, no addon to comp
 const db = new Database(&quot;:memory:&quot;);
 db.run(&quot;create table t (id integer primary key, name text)&quot;);
 // Here it breaks: a native addon built for Node 24 will not load,
-// because Bun 1.4 reports NODE_MODULE_VERSION 147.</code></pre>
+// distinguishing Node-API from version-specific native ABI.</code></pre>
       </div>
       <div>
         <span class="badge badge-green" style="margin-bottom:0.4rem;">Node.js</span>
@@ -269,7 +264,7 @@ enum Mode { Dev, Prod }</code></pre>
         </div>
         <div class="cons-box">
           <strong style="color:var(--danger); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em;">You give up</strong>
-          <ul><li>node:http passes 403 of 415 of Node&#x27;s own tests, and http.Server does not extend net.Server</li><li>node:https lacks getPeerCertificate() and getCipher(), and SNICallback is unsupported</li><li>NODE_MODULE_VERSION 147 means addons built for Node 24 must be rebuilt</li><li>Bun&#x27;s own memory table shows the Vite dev server at 233 MB vs 214 MB on Node</li></ul>
+          <ul><li>node:http passes 403 of 415 of Node&#x27;s own tests, and http.Server does not extend net.Server</li><li>node:https lacks getPeerCertificate() and getCipher(), and SNICallback is unsupported</li><li>Node-API stability differs from version-specific native ABI; test each addon on the target runtime</li><li>Bun&#x27;s own memory table shows the Vite dev server at 233 MB vs 214 MB on Node</li></ul>
         </div>
       </div>
       <div class="card" style="padding:1.2rem;">
@@ -288,7 +283,7 @@ enum Mode { Dev, Prod }</code></pre>
       <h2 id="migration">Migration path</h2>
       <div class="migration-box">
         <strong>What switching actually takes</strong>
-        <div style="margin-top:0.5rem;"><p>Moving to Bun starts with <code>bun install</code> reading the same package.json, but every native addon needs a build for NODE_MODULE_VERSION 147 before it loads, so the hook stampede is the first thing to schedule. Moving back is not automatic either: Bun&#x27;s compatibility docs list the API gaps you will meet — getPeerCertificate(), SNICallback, async_hooks — and there is no tool that rewrites handlers around them. Run the service test suite under both runtimes before either direction, then keep the loser&#x27;s addon builds around for a release or two.</p></div>
+        <div style="margin-top:0.5rem;"><p>Classify native addons by Node-API versus version-specific V8/native ABI, then test actual binaries on Bun and Node for your OS and architecture. Rebuild or replace only incompatible packages. Exercise required HTTP, TLS and async-hooks APIs before changing production runtimes.</p></div>
       </div>
 
     <h2 id="faq">Common questions</h2>
@@ -315,7 +310,7 @@ enum Mode { Dev, Prod }</code></pre>
       <h2>Sources &amp; verification</h2>
       <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
       Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
-      <div class="card"><p class="sources-list"><a href="https://bun.com/blog/bun-v1.4" rel="noopener nofollow" target="_blank">https://bun.com/blog/bun-v1.4</a><br><a href="https://bun.com/blog/bun-joins-anthropic" rel="noopener nofollow" target="_blank">https://bun.com/blog/bun-joins-anthropic</a><br><a href="https://bun.com/docs/runtime/nodejs-compat" rel="noopener nofollow" target="_blank">https://bun.com/docs/runtime/nodejs-compat</a><br><a href="https://nodejs.org/en/about/previous-releases" rel="noopener nofollow" target="_blank">https://nodejs.org/en/about/previous-releases</a><br><a href="https://nodejs.org/api/typescript.html" rel="noopener nofollow" target="_blank">https://nodejs.org/api/typescript.html</a><br></p></div>
+      <div class="card"><p class="sources-list"><a href="https://bun.com/blog/bun-v1.4" rel="noopener nofollow" target="_blank">https://bun.com/blog/bun-v1.4</a><br><a href="https://bun.com/blog/bun-joins-anthropic" rel="noopener nofollow" target="_blank">https://bun.com/blog/bun-joins-anthropic</a><br><a href="https://bun.com/docs/runtime/nodejs-compat" rel="noopener nofollow" target="_blank">https://bun.com/docs/runtime/nodejs-compat</a><br><a href="https://nodejs.org/en/about/previous-releases" rel="noopener nofollow" target="_blank">https://nodejs.org/en/about/previous-releases</a><br><a href="https://nodejs.org/api/typescript.html" rel="noopener nofollow" target="_blank">https://nodejs.org/api/typescript.html</a><br><a href="https://nodejs.org/learn/modules/abi-stability" rel="noopener nofollow" target="_blank">https://nodejs.org/learn/modules/abi-stability</a><br><a href="https://bun.com/docs/runtime/node-api" rel="noopener nofollow" target="_blank">https://bun.com/docs/runtime/node-api</a><br></p></div>
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../docker-vs-podman/" style="padding:1.1rem;">

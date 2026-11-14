@@ -12,12 +12,12 @@
 - [Resend vs SendGrid](https://devteardown.com/compare/resend-vs-sendgrid/): For a small service within 3,000 emails a month and 100 a day, Resend offers an ongoing free option.
 - [Supabase vs Firebase](https://devteardown.com/compare/supabase-vs-firebase/): The flat-$25 realtime comparison is withdrawn.
 - [Vercel vs Cloudflare Pages](https://devteardown.com/compare/vercel-vs-cloudflare-pages/): The previous automatic recommendation to leave Vercel above a traffic threshold is withdrawn.
-- [Cursor vs GitHub Copilot](https://devteardown.com/compare/cursor-vs-github-copilot/): Teams content with Grok should choose Cursor, from $8 Plus; teams whose review runs through GitHub PRs should choose Copilot Pro at $10/user/month or above.
+- [Cursor vs GitHub Copilot](https://devteardown.com/compare/cursor-vs-github-copilot/): For individuals, compare Cursor Plus/Premium with Copilot Pro/Pro+ using the models and usage you need.
 - [Notion vs Obsidian](https://devteardown.com/compare/notion-vs-obsidian/): Choose Notion Business if you need granular database permissions or private teamspaces: for 10 people, 10 × $20 × 12 = $2,400/year, including Notion Agent but not Custom Agent credits.
-- [Bun vs Node.js](https://devteardown.com/compare/bun-vs-node/): Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a native addon in your tree has no build for NODEMODULEVERSION 147.
+- [Bun vs Node.js](https://devteardown.com/compare/bun-vs-node/): Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a required native addon fails on the target runtime.
 - [Prisma vs Drizzle](https://devteardown.com/compare/prisma-vs-drizzle/): Pick Drizzle if a generated client is the thing you refuse to add and you can pin 1.0.0-rc.5 having read its breaking notes.
 - [Docker vs Podman](https://devteardown.com/compare/docker-vs-podman/): Pick Podman if your company sits under both free-use limits and you can fund the port, or if you are past them and want per-seat × headcount off the budget.
-- [Clerk vs Auth0](https://devteardown.com/compare/clerk-vs-auth0/): Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan.
+- [Clerk vs Auth0](https://devteardown.com/compare/clerk-vs-auth0/): Pick Clerk if most of your sign-ups never return at least 24 hours after signup, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan.
 - [PlanetScale vs Neon](https://devteardown.com/compare/planetscale-vs-neon/): Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster.
 
 ## Catalog and methodology
