@@ -511,87 +511,70 @@ Firestore free allowances include 50,000 reads, 20,000 writes and 20,000 deletes
 
 ## Vercel vs Cloudflare Pages
 URL: https://devteardown.com/compare/vercel-vs-cloudflare-pages/
-Category: Hosting & Edge · Recorded source review: 2026-11-10
+Category: Hosting & Edge · Recorded source review: 2026-11-14
 
-Verdict: Teams whose transfer passes 1 TB or whose requests pass 10M a month should pick Cloudflare Pages if every asset fits 25 MiB: 3 TB means $307.20 of Vercel overage against $0. Teams inside Pro's 1 TB and 10M CDN requests should stay on Vercel. Teams eyeing Pages should today compare their monthly builds with its 500 / 5,000 / 20,000 limits and their largest asset with its 25 MiB ceiling.
+Verdict: The previous automatic recommendation to leave Vercel above a traffic threshold is withdrawn. Compare actual CDN billing mode, complete usage costs and runtime compatibility. Vercel’s extended function duration and Cloudflare’s trigger-specific CPU limits must be checked independently; neither a CDN tier nor an isolated request price is an all-in quote.
 
-### Vercel runs your framework; Cloudflare runs your requests
-Vercel runs your framework and bills for what it delivers. Cloudflare runs your requests and bills for what they execute.
+### Identify the CDN billing mode before doing arithmetic
+Correction, November 14, 2026: the previous fixed transfer surcharge and migration recommendation are withdrawn. They treated legacy usage-based CDN assumptions as universal and mixed transfer units without verifying the account’s billing mode.
 
-- Vercel: past Pro's 1 TB Fast Data Transfer and 10M CDN requests, every GB costs from $0.15 and every million requests from $2.
-- Cloudflare: egress costs $0, but Workers Paid charges $0.30 per million requests past 10M and $0.02 per million CPU-ms past 30M.
+Vercel’s September 2026 Flat Rate CDN announcement says new Pro teams default to that mode; existing teams can switch. Its included tier is 1M CDN requests and 1 TB transfer, not a universal 10M-request allowance.
 
-Prices are the vendors' listed rates as of 10 November 2026; Vercel's overages are starting rates, and examples credited to Cloudflare are Cloudflare's own.
+The announced additional $20/month tier includes 10M requests and 50 TB; $100/month includes 50M and 50 TB. These are CDN capacity tiers, not full hosting invoices.
 
-> At 3 TB a month the gap is $307.20 of Vercel transfer overage; at 50M requests it is $80 versus $12 of request overage.
+Usage-based teams have a different regional bill. Read the actual team subscription, capacity, spike-protection and fair-use terms before quoting a total; Cloudflare’s Workers request meter is not interchangeable with Vercel CDN requests.
 
-Before moving, check each handler against Workers' listed limits: 10 ms CPU per invocation on Free, and a 30-second default with a 5-minute maximum of CPU time on Paid.
+### Waiting uses no active CPU, but it is not a free deployment
+Fluid compute separates active CPU, provisioned memory and invocation charges. Network waiting need not consume active CPU, but memory, delivery and other services can still cost money.
 
-### An idle await no longer chooses the winner
-Fluid compute, the default for new Vercel projects, bills active CPU rather than wall time, and Workers bills CPU-ms. An idle `await` burns no CPU meter on either; it does not make the whole deployment free.
+Workers Standard charges a $5 monthly minimum with 10M requests and 30M CPU-ms included, then $0.30 per million requests and $0.02 per million CPU-ms. Other Cloudflare products have their own meters.
 
-- Vercel Fluid compute: Active CPU starts at $0.128/vCPU-hour.
-- Vercel says provisioned memory is billed in GB-hours at less than 10% of the Active CPU rate.
+Do not compare a CDN-only price with an application total. Classify static delivery, dynamic invocations, CPU, memory, storage, database access and logs separately; apply only the allowances available to that account.
 
-In-function concurrency lets concurrent requests share one instance; Vercel claims up to 85% savings from it and up to 90% from Active CPU pricing.
+Neither a normalized CPU rate nor a low average response time proves the same code performs equivalently on both runtimes. Measure the deployed handler and include retries and background work.
 
-> Workers Paid includes 30M CPU-ms a month; Vercel bills Active CPU and provisioned memory as separate metered lines.
+### Vercel duration is not a universal five-minute maximum
+On Fluid compute, the documented baseline is 300 seconds by default, with Hobby capped at 300 and Pro/Enterprise ordinarily up to 800 seconds. The extended-duration beta allows up to 1,800 seconds for supported Node.js, Bun and Python versions on Pro/Enterprise.
 
-Waiting on an external API no longer establishes a CPU-price reason to migrate; inspect transfer and request counts before touching the runtime.
+Above 800 seconds, configure each function in code or vercel.json; the project-level default does not enable that duration. Current docs support Secure Compute and Static IPs, but exclude BYOC above 800 seconds during beta.
 
-### The penalty moved to bytes and requests
-Vercel penalizes byte-heavy delivery and request fan-out after allowances; Cloudflare penalizes uncached CPU work and paid requests, not egress.
+A duration limit measures elapsed execution, not just active CPU. Non-Fluid projects, other runtimes and upstream/client connection timeouts need separate checks. Inspect the deployed function’s configuration rather than assuming an advertised maximum applies.
 
-| Monthly workload | Vercel Pro | Cloudflare Workers Paid |
-|---|---|---|
-| 3 TB transfer | 2,048 GB over × $0.15/GB = $307.20 | $0 egress |
-| 50M requests, overage | 40M CDN requests × $2/M = $80 | 40M × $0.30/M = $12 |
-| Same, with plan floor | $20 × 1 seat + $80 = $100 | $5 + $12 = $17 |
-| 1M CPU-ms | $0.128 ÷ 3.6M × 1M ≈ $0.0356, before memory | $0.02 after 30M included |
+### Cloudflare CPU and wall time depend on the trigger
+Workers Paid HTTP CPU defaults to 30 seconds and can be configured up to 5 minutes. Paid Cron has 30 seconds CPU below a one-hour schedule interval, or 15 minutes CPU at intervals of at least one hour.
 
-The request rows apply only to requests that run a Worker; Vercel's line counts CDN requests, while Cloudflare static asset requests are free and unlimited.
+Queue consumers default to 30 seconds CPU, configurable to 5 minutes; their separate wall-clock limit is 15 minutes. A 15-minute elapsed-time allowance does not authorize 15 minutes of CPU.
 
-> Teams serving 3 TB a month or 50M Worker requests should not pick Vercel Pro: they pay $307.20 against $0, or $100 against $17 before CPU.
+These execution limits are separate from Pages deployment limits. Pages documents a 25 MiB asset limit and a 20-minute build timeout; a build or static asset is not a Worker invocation.
 
-### The asset limit can stop the deployment first
-Consider a static export containing a downloadable asset larger than 25 MiB. Cloudflare Pages rejects that deployment shape on its asset ceiling; cheap transfer cannot rescue it.
+Check Free, legacy and account-specific settings separately. A long background job should be assessed for runtime, retry and queue behavior, not selected from a single maximum-duration number.
 
-- Pages builds per month: 500 Free / 5,000 Pro / 20,000 Business, with 1 / 5 / 20 concurrent; 20,000 files per site on Free; 100 projects per account.
-- Pages: 20-minute build timeout; 25 MiB maximum per asset.
+### Cache location changes which meter runs
+Static asset delivery, a cache hit before Worker execution and a cache lookup inside a Worker can have different invocation counts. Do not assume every cache hit bills exactly the same request and CPU lines.
 
-Exceeding an included traffic allowance raises a bill; exceeding an asset ceiling breaks the deployment plan. Teams whose build runs past 20 minutes should not pick Pages until the build is split, and teams deploying more than 500 times a month need Pages Pro's 5,000.
+For a simple uncached hypothetical workload, 50M metered Worker requests with 7 ms CPU each cost $5 + $12 request overage + $6.40 CPU overage = $23.40. This excludes other services and assumes all included usage remains available.
 
-> Shrink or remove every asset over 25 MiB before targeting Pages; a Vercel function that needs more than 5 minutes must be split, or checked against Workers' 5-minute CPU-time cap.
+If a cache prevents invocation, recalculate both request count and CPU from actual executions. If code still runs, measure its CPU rather than setting it to zero. Validate cache safety for authentication and personalized responses before crediting savings.
 
-### Caching cuts Cloudflare's CPU line; requests still bill
-Cloudflare charges $0 for egress, but Pages Functions still bill as Workers requests and CPU-ms. D1 and R2 carry their own line items.
+### Choose with a complete bill and a deployment test
+Do not migrate merely because traffic passes an old request or transfer threshold. Existing Vercel subscriptions and newer Flat Rate CDN teams can have materially different delivery bills.
 
-Cloudflare's own example uses 100M requests at 7 ms CPU each; Workers Caching at 80% hits changes the CPU bill:
+Compare the same workload and period, using explicit units and the account’s actual rates. Add seats, compute, storage and database costs, plus migration and maintenance effort.
 
-- Without caching: (100M × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $13.40.
-- With caching: (100M × (1 − 80%) × 7 − 30M) CPU-ms × $0.02/M CPU-ms = $2.20.
+For Pages, test framework compatibility, large assets and build duration. For Vercel, verify function runtime, Fluid compute, configured duration and CDN mode; for Workers, separate HTTP, Cron and Queue limits.
 
-Cache hits still cost a request, but no CPU in Cloudflare's example.
-
-> The request line stays at (100M − 10M) × $0.30/M = $27.00, so the cached total is $5.00 + $27.00 + $2.20 = $34.20 against $45.40 uncached.
-
-Only count that saving for responses your app can safely reuse; a lower hit rate moves the bill back toward $45.40.
-
-### Above 1 TB or 10M requests, Vercel Pro is the expensive host
-- A team above 1 TB or 10M CDN requests a month should move to Cloudflare Pages: at 3 TB that removes $307.20 of overage.
-- A team whose Vercel deployment works inside both Pro allowances should stay: the bill to beat is $20 per seat plus Active CPU and memory.
-- A team with CPU-heavy handlers inside Workers' CPU cap should move: $0.02 per million CPU-ms beats Vercel's starting ≈ $0.0356.
-- A team adding seats faster than traffic pays Vercel $20 per seat against Workers Paid's $5 per-account minimum; it should move after confirming Pages Pro and Business prices.
-
-> Pages allows 500 builds a month on Free, and each build must finish within 20 minutes.
-
-Count seats at $20 each, check your longest build against Pages' 20-minute timeout and check your largest asset against 25 MiB.
+Keep the current platform when its measured total and operational fit are better. The public figures here are reference conditions, not a quote for an inspected customer account.
 
 ### Source links
 - https://vercel.com/pricing
 - https://vercel.com/blog/introducing-active-cpu-pricing-for-fluid-compute
 - https://developers.cloudflare.com/workers/platform/pricing/
 - https://developers.cloudflare.com/pages/platform/limits/
+- https://vercel.com/changelog/flat-rate-cdn-is-now-ga-for-pro-teams
+- https://vercel.com/docs/functions/configuring-functions/duration
+- https://vercel.com/changelog/vercel-functions-can-now-run-up-to-30-minutes
+- https://developers.cloudflare.com/queues/platform/limits/
+- https://developers.cloudflare.com/workers/platform/limits/
 
 ## Cursor vs GitHub Copilot
 URL: https://devteardown.com/compare/cursor-vs-github-copilot/
