@@ -175,9 +175,9 @@ This is not a long-run forecast: measure hits, writes and refreshes before extra
 
 ## Datadog vs Grafana Cloud
 URL: https://devteardown.com/compare/datadog-vs-grafana-cloud/
-Category: Monitoring & Observability · Recorded source review: 2026-11-10
+Category: Monitoring & Observability · Recorded source review: 2026-11-14
 
-Verdict: Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance. Datadog wins where the workflow is the product: one agent, one APM trace, one security screen, and a team that already knows where to click. If your custom metrics line is a typo away from $10,000, the migration pays for itself in a quarter.
+Verdict: The modeled metrics bills favor Grafana Cloud, especially at high cardinality. That is not a complete migration cost: collector configuration, dashboards, alerts and non-metric signals need validation. Datadog may fit a team that relies on its integrated workflows; compare actual usage and transition work rather than assuming a fixed payback period.
 
 ### One sells a host, the other sells a series
 Datadog's infrastructure line is a licence: $15 per host per month billed annually, $18 month-to-month, and every licence carries 100 custom metrics. Grafana Cloud's Pro plan is a $19 platform fee for the whole account, with 10,000 active series and 50 GB of logs inside it.
@@ -248,11 +248,13 @@ The practical move costs nothing:
 3. Re-count before you negotiate a discount, because the discount is priced on the number you can already fix.
 
 ### What the switch actually costs
-Grafana Cloud speaks Prometheus for metrics, Loki for logs and Tempo for traces, so an application already instrumented with a Prometheus client can point at a remote write endpoint and stop. Datadog's agent, dashboards, monitors and APM traces do not translate: every dashboard is a rebuild, and every monitor needs a PromQL equivalent.
+Correction, November 14, 2026: a standard Prometheus client exposes metrics for scraping; it does not directly send to a remote_write endpoint. Pricing figures retain their November 10 check and were not re-quoted in this technical correction.
 
-Retention also moves. Datadog keeps full-resolution metrics for 15 months on Pro; Grafana's Pro plan lists 13 months for metrics and 30 days for logs, traces, profiles and k6 tests.
+Typical metrics path: application /metrics → Prometheus scrape + remote_write → Grafana Cloud Metrics. With Alloy: application /metrics → prometheus.scrape → prometheus.remote_write → the destination. Configure the collector’s targets, endpoint and authentication; changing application instrumentation alone is insufficient.
 
-The reverse move is the expensive direction for a small team: going to Datadog means adopting a per-host licence where Grafana charged per account, so the same twenty hosts start at $300 before a single custom metric.
+Metrics compatibility does not migrate Datadog dashboards, monitor semantics, logs or traces automatically. Inventory each signal and verify the required collector/exporter path before cutover.
+
+Retention also needs review: the listed Datadog Pro metrics window is 15 months, while Grafana Pro lists 13 months for metrics and 30 days for logs and traces. Compare query results and alerts, not only whether samples arrive.
 
 ### Source links
 - https://www.datadoghq.com/pricing/
@@ -260,6 +262,10 @@ The reverse move is the expensive direction for a small team: going to Datadog m
 - https://docs.datadoghq.com/account_management/billing/custom_metrics/
 - https://grafana.com/pricing/
 - https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/
+- https://prometheus.io/docs/guides/go-application/
+- https://prometheus.io/docs/prometheus/latest/prometheus_agent/
+- https://grafana.com/docs/alloy/latest/collect/prometheus-metrics/
+- https://grafana.com/docs/alloy/latest/reference/components/prometheus/prometheus.remote_write/
 
 ## AWS Lambda vs Cloudflare Workers
 URL: https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/

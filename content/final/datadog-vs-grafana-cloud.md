@@ -2,11 +2,11 @@
 
 > Twenty hosts and 5,000 custom series bill $450 a month on Datadog and $19 on Grafana Cloud's Pro plan. The difference is not the per-series rate. It is that only one of them puts the hosts on the invoice.
 
-*Prices verified 2026-11-10. Category: Monitoring & Observability. Author: DevTeardown Team.*
+*Prices verified 2026-11-14. Category: Monitoring & Observability. Author: DevTeardown Team.*
 
 ## Verdict
 
-Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance. Datadog wins where the workflow is the product: one agent, one APM trace, one security screen, and a team that already knows where to click. If your custom metrics line is a typo away from $10,000, the migration pays for itself in a quarter.
+The modeled metrics bills favor Grafana Cloud, especially at high cardinality. That is not a complete migration cost: collector configuration, dashboards, alerts and non-metric signals need validation. Datadog may fit a team that relies on its integrated workflows; compare actual usage and transition work rather than assuming a fixed payback period.
 
 ## 1. One sells a host, the other sells a series
 
@@ -83,11 +83,13 @@ The practical move costs nothing:
 
 ## 6. What the switch actually costs
 
-Grafana Cloud speaks Prometheus for metrics, Loki for logs and Tempo for traces, so an application already instrumented with a Prometheus client can point at a remote write endpoint and stop. Datadog's agent, dashboards, monitors and APM traces do not translate: every dashboard is a rebuild, and every monitor needs a PromQL equivalent.
+Correction, November 14, 2026: a standard Prometheus client exposes metrics for scraping; it does not directly send to a remote_write endpoint. Pricing figures retain their November 10 check and were not re-quoted in this technical correction.
 
-Retention also moves. Datadog keeps full-resolution metrics for 15 months on Pro; Grafana's Pro plan lists 13 months for metrics and 30 days for logs, traces, profiles and k6 tests.
+Typical metrics path: application /metrics → Prometheus scrape + remote_write → Grafana Cloud Metrics. With Alloy: application /metrics → prometheus.scrape → prometheus.remote_write → the destination. Configure the collector’s targets, endpoint and authentication; changing application instrumentation alone is insufficient.
 
-The reverse move is the expensive direction for a small team: going to Datadog means adopting a per-host licence where Grafana charged per account, so the same twenty hosts start at $300 before a single custom metric.
+Metrics compatibility does not migrate Datadog dashboards, monitor semantics, logs or traces automatically. Inventory each signal and verify the required collector/exporter path before cutover.
+
+Retention also needs review: the listed Datadog Pro metrics window is 15 months, while Grafana Pro lists 13 months for metrics and 30 days for logs and traces. Compare query results and alerts, not only whether samples arrive.
 
 ## Cost arithmetic at volume
 
@@ -109,13 +111,15 @@ The reverse move is the expensive direction for a small team: going to Datadog m
 | The custom metrics line is already over $500 | Grafana Cloud | That line is $500 per 10,000 series on Datadog and $65 per 10,000 on Grafana, so the same data crosses a factor of 7.7. |
 | Logs are verbose JSON from a dozen services | Compute both before choosing | Datadog's index rate is per event and Grafana's is per GB, so 500 GB at 2.5 KB per event bills $550 against $247.50, and the same 500 GB at 250 bytes per event is 2 billion events, or $5,000 on the index line. |
 | Security, SIEM and audit on one invoice | Datadog | Cloud SIEM, workload protection and audit trail are on the same price list; Grafana Cloud prices observability and leaves security elsewhere. |
-| Everything is already Prometheus and you self-host Grafana | Grafana Cloud, or keep self-hosting | The remote-write path means no re-instrumentation, and the open-source stack is the same software the paid plan runs. |
+| Everything is already Prometheus and you self-host Grafana | Grafana Cloud, or keep self-hosting | Existing instrumentation may be reusable, but configure Prometheus or Alloy scraping and remote_write, then verify labels, queries, alerts and destination limits before switching. |
 
 ## Migration path
 
-Self-hosted or Grafana Cloud, the instrumentation is the portable part: a Prometheus client library pushes to a remote-write endpoint, and the same client keeps working on either. Datadog's agent can also forward to a Prometheus-compatible backend, so the first phase is usually dual-writing while you rebuild dashboards.
+Keep compatible instrumentation, then build and test the collection pipeline. The Python client example below exposes a scrape target on port 9100; it is a cardinality anti-pattern demonstration, not a complete remote_write setup. Prometheus scrapes that target and forwards via remote_write, or Alloy connects prometheus.scrape to prometheus.remote_write.
 
-The rebuild is the cost. Datadog dashboards, monitors and APM traces have no export format for Grafana, and every alert needs a PromQL translation with its own threshold review. Plan the monitor rewrite as its own project; the metrics are the easy half, which is why teams that switch usually run both systems for a quarter.
+Use the destination’s documented endpoint, tenant/account identifier and scoped authentication. Verify metric names, label mapping, histogram compatibility, scrape interval, sample timestamps, cardinality and ingestion limits. Watch failed sends, queue/WAL health, gaps and duplicate series during a limited parallel run.
+
+Do not assume the Datadog Agent is a generic Prometheus remote_write forwarder. Confirm supported collection/export for each actual integration; logs and traces require their own paths. Review dashboards, alert queries and thresholds against observed results, establish rollback criteria, and retire the old path only after validation. No fixed quarter-long overlap or payback period is established here.
 
 ## Questions that change the decision
 
@@ -128,8 +132,8 @@ A unique metric name plus tag combination, averaged hourly across the month. Add
 **Does Grafana Cloud charge per host?**  
 The Pro plan is a $19 platform fee per account. Host hours appear for Kubernetes monitoring at $0.01 per host hour, which is a separate product from infrastructure metrics.
 
-**Can I keep 30-day logs on Grafana Cloud?**  
-Yes. Pro includes 30 days of log retention inside the platform fee, with 50 GB of ingest included and $0.55 per GB across the process, write and retain meters after that.
+**Does a Prometheus client push directly to Grafana Cloud remote_write?**  
+Not in the standard scrape-based setup. The client exposes /metrics; Prometheus scrapes it and forwards with remote_write, or Alloy uses prometheus.scrape feeding prometheus.remote_write. Configure the collector’s destination and authentication, then validate labels, gaps, duplicates, queries and alerts. The application example alone is not a complete pipeline.
 
 ## Sources
 
@@ -138,6 +142,10 @@ Yes. Pro includes 30 days of log retention inside the platform fee, with 50 GB o
 - https://docs.datadoghq.com/account_management/billing/custom_metrics/
 - https://grafana.com/pricing/
 - https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/
+- https://prometheus.io/docs/guides/go-application/
+- https://prometheus.io/docs/prometheus/latest/prometheus_agent/
+- https://grafana.com/docs/alloy/latest/collect/prometheus-metrics/
+- https://grafana.com/docs/alloy/latest/reference/components/prometheus/prometheus.remote_write/
 
 ## Same task, two SDKs
 

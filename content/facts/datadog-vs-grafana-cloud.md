@@ -1,4 +1,4 @@
-# FACT SHEET — datadog-vs-grafana-cloud (verified 2026-11-10)
+# FACT SHEET — datadog-vs-grafana-cloud (verified 2026-11-14)
 
 Rules: use ONLY numbers and product names from this sheet. Derived arithmetic must show its formula.
 Never invent a benchmark, a cold-start figure, or a feature. Vendor marketing claims must be labelled as
@@ -26,6 +26,8 @@ the vendor's claim.
   source: https://grafana.com/pricing/
 - **Grafana Adaptive Metrics** — Vendor claim: optimise metrics by up to 80% through aggregation and cardinality work  
   source: https://grafana.com/pricing/
+- **Technical correction 2026-11-14; pricing remains checked 2026-11-10** — Client exposes metrics; Prometheus or Alloy scrapes and remote-writes. No generic Datadog Agent forwarding or automatic dashboard/alert migration assumed.  
+  source: https://grafana.com/docs/alloy/latest/collect/prometheus-metrics/
 
 ## Derived arithmetic used in the article (formula printed in the text)
 
@@ -41,3 +43,7 @@ the vendor's claim.
 - https://docs.datadoghq.com/account_management/billing/custom_metrics/
 - https://grafana.com/pricing/
 - https://grafana.com/docs/grafana-cloud/adaptive-telemetry/adaptive-metrics/
+- https://prometheus.io/docs/guides/go-application/
+- https://prometheus.io/docs/prometheus/latest/prometheus_agent/
+- https://grafana.com/docs/alloy/latest/collect/prometheus-metrics/
+- https://grafana.com/docs/alloy/latest/reference/components/prometheus/prometheus.remote_write/
