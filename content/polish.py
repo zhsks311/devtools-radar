@@ -12,25 +12,7 @@ BASE = "/workspace/devtools-radar/content/final"
 EDITS = {
     # Supabase final article owns corrected Realtime billing; no legacy overwrite.
 
-    "vercel-vs-cloudflare-pages": {
-        "hook": "Both hosts now meter CPU time, so an idle `await` is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel — 3 TB a month adds 2,048 GB × $0.15 = $307.20 — against CPU milliseconds on Cloudflare, where egress costs $0.",
-        "replace": [
-            (
-                "confirm an existing project actually runs on it. An idle",
-                "An idle",
-            ),
-            (
-                "> Vercel Pro includes no CPU; Workers Paid includes 30M CPU-ms a month.",
-                "> Workers Paid includes 30M CPU-ms a month; Vercel bills Active CPU and provisioned memory as separate metered lines.",
-            ),
-            (
-                "Vercel Pro includes no CPU\n",
-                "",
-            ),
-        ],
-        "verdict": None,
-        "drop_matrix": ["A request handler that runs longer than 5 minutes"],
-    },
+    # Hosting final article owns corrected CDN modes and duration limits.
 
     "cursor-vs-github-copilot": {
         "hook": "The $20 all-you-can-eat AI editor is gone, and its replacement is an $8 tier that only runs Grok and a $30 tier where Claude and GPT tokens bill on top. Both Cursor and GitHub Copilot are now agent-first and credit-metered, and each one restricts its entry tier in a different place.",

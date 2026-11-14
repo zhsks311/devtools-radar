@@ -101,99 +101,91 @@ META = {
         "related": [],
     },
 
-    "vercel-vs-cloudflare-pages": {
-        "category": "Hosting & Edge",
-        "tool_a": {
-            "name": "Vercel",
-            "tagline": "The framework vendor that runs your framework",
-            "db": "Serverless functions on Fluid compute",
-            "pricing": "Hobby $0 · Pro $20/seat: 1 TB transfer, 10M requests",
-            "self_host": "No (Vercel infrastructure)",
-            "realtime": "Streaming responses and ISR revalidation",
-            "ai_readiness": "Fluid compute targets inference and agent workloads",
-            "lock_in": "Medium: framework and platform coupling",
-            "badge": "Framework-native",
-            "cta_url": "https://vercel.com/?utm_source=devtoolsradar",
-            "pros": [
-                "Your framework deploys as written; no runtime port to a different JS environment",
-                "Fluid compute bills execution time, so an idle await on an external API costs no CPU",
-                "In-function concurrency shares one instance across concurrent requests",
-                "Per-project previews and ISR in the same product as the build pipeline",
-            ],
-            "cons": [
-                "Transfer is metered: 2 TB over the Pro allowance is 2,048 GB × $0.15 = $307.20",
-                "CDN requests bill past 10M/month at $2 per million — fan-out is expensive",
-                "Price is per seat, so a growing team raises the floor before traffic does",
-                "Active CPU is a separate metered line on top of the seat price",
-            ],
-            "code_example": (
-                "// Vercel: the framework's own handler, deployed unchanged.\n"
-                "export const maxDuration = 60; // seconds; the platform caps it\n"
-                "export async function POST(req: Request) {\n"
-                "  const { prompt } = await req.json();\n"
-                "  // Active CPU bills while this code runs, not while it waits:\n"
-                "  const upstream = await fetch('https://api.example.com/v1/chat', {\n"
-                "    method: 'POST',\n"
-                "    body: JSON.stringify({ prompt }),\n"
-                "    headers: { 'content-type': 'application/json' },\n"
-                "  });\n"
-                "  // Here it breaks: default duration limits kill long streams. Set maxDuration\n"
-                "  // and check the platform ceiling before shipping a 5-minute job.\n"
-                "  return new Response(upstream.body, { headers: { 'content-type': 'text/event-stream' } });\n"
-                "}"
-            ),
-        },
-        "tool_b": {
-            "name": "Cloudflare Pages",
-            "tagline": "The network vendor that runs your requests",
-            "db": "Workers runtime + Pages static assets",
-            "pricing": "Pages free · Workers Paid from $5/account, $0 egress",
-            "self_host": "No (Cloudflare network)",
-            "realtime": "WebSocket upgrade bills one request; messages bill nothing",
-            "ai_readiness": "CPU-metered runtime; 30M CPU-ms included per month",
-            "lock_in": "Medium-high: Workers runtime, per-product line items",
-            "badge": "Zero egress",
-            "cta_url": "https://pages.cloudflare.com/?utm_source=devtoolsradar",
-            "pros": [
-                "Egress is free by policy: 3 TB a month costs $0 where Vercel adds $307.20",
-                "Requests after 10M cost $0.30/million, against $2/million on Vercel Pro",
-                "Static asset requests are free and unlimited; cache hits cost a request but no CPU",
-                "WebSocket messages are not billed as requests — only the upgrade is",
-            ],
-            "cons": [
-                "Your handlers run on the Workers runtime, so the port is real work, not a config change",
-                "Hard ceilings that stop a deployment instead of billing you: 25 MiB per asset, 20-minute builds",
-                "Pages Free allows 500 builds a month and 20,000 files per site",
-                "CPU time is capped per invocation: 30 seconds default, 5 minutes maximum",
-            ],
-            "code_example": (
-                "// Cloudflare: the Worker handler, not the framework's.\n"
-                "export default {\n"
-                "  async fetch(request, env, ctx) {\n"
-                "    const { prompt } = await request.json();\n"
-                "    // CPU-ms bills only while this isolate executes.\n"
-                "    const upstream = await fetch('https://api.example.com/v1/chat', {\n"
-                "      method: 'POST',\n"
-                "      body: JSON.stringify({ prompt }),\n"
-                "      headers: { 'content-type': 'application/json' },\n"
-                "    });\n"
-                "    // Here it breaks: no Node APIs by default. Anything importing fs, net or\n"
-                "    // a native addon needs nodejs_compat, and some libraries never port.\n"
-                "    return new Response(upstream.body, { headers: { 'content-type': 'text/event-stream' } });\n"
-                "  },\n"
-                "};"
-            ),
-        },
-        "migration_guide": (
-            "Moving from Vercel to Pages means rewriting handlers for the Workers runtime, not flipping a "
-            "setting: no Node defaults, and anything importing fs or net needs the compatibility flag. Move "
-            "the static build first (it costs nothing to serve), measure the handlers' CPU per request against "
-            "the 30-second default and 5-minute cap, then check your largest asset against 25 MiB and your "
-            "build against the 20-minute timeout. Going the other way, port back to Node and expect the "
-            "transfer line to reappear the first month traffic passes 1 TB."
-        ),
-        "related": [],
-    },
+    "vercel-vs-cloudflare-pages": {'category': 'Hosting & Edge',
+ 'tool_a': {'name': 'Vercel',
+            'tagline': 'The framework vendor that runs your framework',
+            'db': 'Serverless functions on Fluid compute',
+            'pricing': 'Verify Pro CDN billing mode; Flat Rate includes 1M requests/1 TB with '
+                       'capacity tiers',
+            'self_host': 'No (Vercel infrastructure)',
+            'realtime': 'Streaming responses and ISR revalidation',
+            'ai_readiness': 'Fluid compute targets inference and agent workloads',
+            'lock_in': 'Medium: framework and platform coupling',
+            'badge': 'Framework-native',
+            'cta_url': 'https://vercel.com/?utm_source=devtoolsradar',
+            'pros': ['Your framework deploys as written; no runtime port to a different JS '
+                     'environment',
+                     'Fluid compute bills execution time, so an idle await on an external API '
+                     'costs no CPU',
+                     'In-function concurrency shares one instance across concurrent requests',
+                     'Per-project previews and ISR in the same product as the build pipeline'],
+            'cons': ['Flat Rate CDN and usage-based billing require different cost models',
+                     'Function duration depends on runtime, plan and deployed configuration',
+                     'Price is per seat, so a growing team raises the floor before traffic does',
+                     'Active CPU is a separate metered line on top of the seat price'],
+            'code_example': "// Vercel: the framework's own handler, deployed unchanged.\n"
+                            'export const maxDuration = 60; // seconds; the platform caps it\n'
+                            'export async function POST(req: Request) {\n'
+                            '  const { prompt } = await req.json();\n'
+                            '  // Active CPU bills while this code runs, not while it waits:\n'
+                            "  const upstream = await fetch('https://api.example.com/v1/chat', {\n"
+                            "    method: 'POST',\n"
+                            '    body: JSON.stringify({ prompt }),\n'
+                            "    headers: { 'content-type': 'application/json' },\n"
+                            '  });\n'
+                            '  // Here it breaks: default duration limits kill long streams. Set '
+                            'maxDuration\n'
+                            '  // and check the platform ceiling before shipping a 5-minute job.\n'
+                            "  return new Response(upstream.body, { headers: { 'content-type': "
+                            "'text/event-stream' } });\n"
+                            '}'},
+ 'tool_b': {'name': 'Cloudflare Pages',
+            'tagline': 'The network vendor that runs your requests',
+            'db': 'Workers runtime + Pages static assets',
+            'pricing': 'Pages free · Workers Paid from $5/account, $0 egress',
+            'self_host': 'No (Cloudflare network)',
+            'realtime': 'WebSocket upgrade bills one request; messages bill nothing',
+            'ai_readiness': 'CPU-metered runtime; 30M CPU-ms included per month',
+            'lock_in': 'Medium-high: Workers runtime, per-product line items',
+            'badge': 'Zero egress',
+            'cta_url': 'https://pages.cloudflare.com/?utm_source=devtoolsradar',
+            'pros': ['Workers Standard has no egress charge; other products meter separately',
+                     'Workers Standard request overage is $0.30/M beyond 10M included',
+                     'Static delivery and cache behavior can change invocation counts; measure '
+                     'actual execution',
+                     'WebSocket messages are not billed as requests — only the upgrade is'],
+            'cons': ['Your handlers run on the Workers runtime, so the port is real work, not a '
+                     'config change',
+                     'Hard ceilings that stop a deployment instead of billing you: 25 MiB per '
+                     'asset, 20-minute builds',
+                     'Pages Free allows 500 builds a month and 20,000 files per site',
+                     'Paid HTTP CPU up to 5 min; Cron and Queue limits differ, with separate '
+                     'wall-time limits'],
+            'code_example': "// Cloudflare: the Worker handler, not the framework's.\n"
+                            'export default {\n'
+                            '  async fetch(request, env, ctx) {\n'
+                            '    const { prompt } = await request.json();\n'
+                            '    // CPU-ms bills only while this isolate executes.\n'
+                            "    const upstream = await fetch('https://api.example.com/v1/chat', "
+                            '{\n'
+                            "      method: 'POST',\n"
+                            '      body: JSON.stringify({ prompt }),\n'
+                            "      headers: { 'content-type': 'application/json' },\n"
+                            '    });\n'
+                            '    // Here it breaks: no Node APIs by default. Anything importing '
+                            'fs, net or\n'
+                            '    // a native addon needs nodejs_compat, and some libraries never '
+                            'port.\n'
+                            "    return new Response(upstream.body, { headers: { 'content-type': "
+                            "'text/event-stream' } });\n"
+                            '  },\n'
+                            '};'},
+ 'migration_guide': 'Test the framework adapter, runtime APIs, state bindings and cache behavior '
+                    'before moving. Compare actual account billing modes and measured usage; '
+                    'validate deployed function duration, Worker trigger limits, Pages build '
+                    'timeout and asset sizes. Do not assume traffic above 1 TB creates the same '
+                    'bill on every Vercel team.',
+ 'related': []},
 
     "cursor-vs-github-copilot": {
         "category": "AI Coding",
