@@ -1175,7 +1175,7 @@ Check today:
 URL: https://devteardown.com/compare/planetscale-vs-neon/
 Category: Backend & Database · Recorded source review: 2026-11-10
 
-Verdict: Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it.
+Verdict: Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it. Neon Free is capped at 1 GB Postgres per project and 20 GB account total, not 100 GB across 100 projects.
 
 ### PlanetScale rents you a machine; Neon bills the hours it is awake
 For Postgres with idle periods or many branches, compare billed CU-hours with dedicated clusters; existing Vitess-based MySQL still has an engine constraint.
@@ -1190,11 +1190,11 @@ PlanetScale's docs say it plainly: there is no free plan.
 > Figures below are AWS us-east-1 list prices checked 10 November 2026, or arithmetic on them; nothing is benchmarked.
 
 ### The $0 database out-bills the $15 cluster once it never sleeps
-The bottom of each price list:
+Free storage has two independent caps: 1 GB per project and 20 GB across all Free projects. 100 projects does not mean 100 GB. Object Storage has a separate allowance.
 
 | Entry | Monthly | What you get |
 |---|---|---|
-| Neon Free | $0 | 100 CU-hours, 1 GB storage per project |
+| Neon Free | $0 | 100 CU-hours/month/project; 1 GB Postgres/project, 20 GB account total |
 | PlanetScale PS-5, single node | $5 | 1/16 vCPU, 512 MiB |
 | PlanetScale PS-5 HA | $15 | 1 primary + 2 replicas |
 
@@ -1267,6 +1267,7 @@ Check this today:
 - https://planetscale.com/blog/introducing-neki
 - https://planetscale.com/changelog/neki
 - https://neon.com/pricing
+- https://neon.com/docs/introduction/plans
 
 ## Recorded offers with reviewed product links
 
