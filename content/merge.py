@@ -298,24 +298,7 @@ META = {
                 "Free caps uploads at 5 MB and guests at 10",
                 "Custom Agents bill per 1,000 Notion credits on top of the seat price",
             ],
-            "code_example": (
-                "// The API budget is the real constraint: 180 req/min per connection\n"
-                "// (600 on Business+), plus a shared per-workspace budget.\n"
-                "async function queryAll(dbId, cursor) {\n"
-                "  const res = await fetch(`https://api.notion.com/v1/databases/${dbId}/query`, {\n"
-                "    method: 'POST',\n"
-                "    headers: { Authorization: `Bearer ${process.env.NOTION_TOKEN}`,\n"
-                "               'Notion-Version': '2022-06-28', 'content-type': 'application/json' },\n"
-                "    body: JSON.stringify({ start_cursor: cursor, page_size: 100 }),\n"
-                "  });\n"
-                "  // Here it breaks: bursts are allowed, sustained rate is not.\n"
-                "  if (res.status === 429 || res.status === 529) {\n"
-                "    const wait = Number(res.headers.get('Retry-After') || 60);\n"
-                "    await new Promise(r => setTimeout(r, wait * 1000));\n"
-                "  }\n"
-                "  return res.json();\n"
-                "}"
-            ),
+            "code_example": (Path(__file__).parent / "examples" / "notion-query.mjs").read_text().strip(),
         },
         "tool_b": {
             "name": "Obsidian",
