@@ -7,7 +7,7 @@
 
 - [Stripe vs Lemon Squeezy / Paddle](https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/): There is no single merchant-of-record invoice.
 - [Anthropic vs OpenAI](https://devteardown.com/compare/anthropic-vs-openai-api-pricing/): The named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens.
-- [Datadog vs Grafana Cloud](https://devteardown.com/compare/datadog-vs-grafana-cloud/): Grafana Cloud wins every version of this bill where the data is the problem, and the margin is an order of magnitude once cardinality passes the 10,000-series allowance.
+- [Datadog vs Grafana Cloud](https://devteardown.com/compare/datadog-vs-grafana-cloud/): The modeled metrics bills favor Grafana Cloud, especially at high cardinality.
 - [AWS Lambda vs Cloudflare Workers](https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/): For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call.
 - [Resend vs SendGrid](https://devteardown.com/compare/resend-vs-sendgrid/): For a small service within 3,000 emails a month and 100 a day, Resend offers an ongoing free option.
 - [Supabase vs Firebase](https://devteardown.com/compare/supabase-vs-firebase/): If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project.
