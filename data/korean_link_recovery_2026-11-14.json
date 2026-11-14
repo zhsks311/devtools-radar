@@ -1,0 +1,153 @@
+{
+  "checked_at": "2026-11-14T12:43:08.562400+00:00",
+  "restored_ids": [
+    "deal-belkin-100w-gan",
+    "deal-ugreen-100w-gan",
+    "deal-artmu-100w-gb102"
+  ],
+  "verified_details": [
+    {
+      "id": "deal-belkin-100w-gan",
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-14T12:43:08.562400+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+        "product_match": true,
+        "evidence": "Seller detail shows WCH025kr1.5WHB6 white option, KRW39,900 and purchase UI. Belkin official seller; domestic delivery only."
+      },
+      "price_review": {
+        "id": "deal-belkin-100w-gan",
+        "product": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+        "recorded_price": 39900,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 39900,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+            "result": "Seller detail shows WCH025kr1.5WHB6 white option, KRW39,900 and purchase UI. Belkin official seller; domestic delivery only.",
+            "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+          }
+        ],
+        "limitations": [
+          "No independently verified historical-low or previous-price comparison.",
+          "Address-specific stock, checkout, billing eligibility and final total not verified."
+        ],
+        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+        "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+        "payment": "Payment and billing restrictions not verified.",
+        "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+        "returns": "Seller return terms and exclusions apply; no free-return claim.",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+        "checked_at": "2026-11-14"
+      }
+    },
+    {
+      "id": "deal-ugreen-100w-gan",
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-14T12:43:08.562400+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+        "product_match": true,
+        "evidence": "Seller detail explicitly identifies U-25093 and KRW65,100 base price with purchase UI. Optional advertised 5% coupon price KRW61,850 is not the unconditional price. Domestic delivery only."
+      },
+      "price_review": {
+        "id": "deal-ugreen-100w-gan",
+        "product": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+        "recorded_price": 60900,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 65100,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+            "result": "Seller detail explicitly identifies U-25093 and KRW65,100 base price with purchase UI. Optional advertised 5% coupon price KRW61,850 is not the unconditional price. Domestic delivery only.",
+            "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+          }
+        ],
+        "limitations": [
+          "No independently verified historical-low or previous-price comparison.",
+          "Address-specific stock, checkout, billing eligibility and final total not verified.",
+          "Seller advertises 5% coupon KRW61,850; eligibility not tested and excluded from main price."
+        ],
+        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+        "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+        "payment": "Payment and billing restrictions not verified.",
+        "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+        "returns": "Seller return terms and exclusions apply; no free-return claim.",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+        "checked_at": "2026-11-14"
+      }
+    },
+    {
+      "id": "deal-artmu-100w-gb102",
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-14T12:43:08.562400+00:00",
+        "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+        "product_match": true,
+        "evidence": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout."
+      },
+      "price_review": {
+        "id": "deal-artmu-100w-gb102",
+        "product": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+        "seller_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+        "recorded_price": 35700,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 35700,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "result": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout.",
+            "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+          }
+        ],
+        "limitations": [
+          "No independently verified historical-low or previous-price comparison.",
+          "Address-specific stock, checkout, billing eligibility and final total not verified."
+        ],
+        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "전국지역 택배 무료배송 안내. 블랙 선택; 화이트 옵션은 품절 표시. 주소별 재고·최종 주문 미확인.",
+        "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+        "payment": "Payment and billing restrictions not verified.",
+        "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+        "returns": "Seller return terms and exclusions apply; no free-return claim.",
+        "evidence_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+        "checked_at": "2026-11-14"
+      }
+    }
+  ],
+  "still_held": 14,
+  "limits": [
+    "No completed checkout.",
+    "No discount or historical-low claim.",
+    "Remaining Coupang links are not restored from search results, guessed product IDs or blocked content."
+  ],
+  "sony_type_evidence": "https://www.sony.co.kr/electronics/support/wired-headphones-headband/mdr-3r/specifications"
+}

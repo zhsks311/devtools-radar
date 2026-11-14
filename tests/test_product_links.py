@@ -2,6 +2,7 @@ import copy
 import json
 import unittest
 from pathlib import Path
+from tools.deal_prices import checked_price
 from tools.product_links import direct_product_url, publishable_link, validate_deal_links
 import site_i18n
 
@@ -53,8 +54,8 @@ class ProductLinkTests(unittest.TestCase):
         tr=json.loads((root/'data/deal_localizations.json').read_text())
         for lang in site_i18n.LANGS:
             page=site_i18n.catalogue(lang,feeds,tr)
-            self.assertEqual(page.count('class="cta"'),13)
-            self.assertEqual(page.count('class="notice link-held"'),17)
-            self.assertEqual(page.count(site_i18n.PRICE_CURRENT[lang]),10)
-            self.assertEqual(page.count(site_i18n.PRICE_RECORDED[lang]),20)
+            self.assertEqual(page.count('class="cta"'),sum(publishable_link(d) for d in feeds))
+            self.assertEqual(page.count('class="notice link-held"'),sum(not publishable_link(d) for d in feeds))
+            self.assertEqual(page.count(site_i18n.PRICE_CURRENT[lang]),sum(checked_price(d) for d in feeds))
+            self.assertEqual(page.count(site_i18n.PRICE_RECORDED[lang]),sum(not checked_price(d) for d in feeds))
             self.assertNotIn('href="https://link.coupang.com/',page)

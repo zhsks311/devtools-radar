@@ -61,12 +61,12 @@ class DiscountTests(unittest.TestCase):
      self.assertNotIn('9.09%',page);self.assertIn(site_i18n.DISCOUNT_UNKNOWN[lang],page)
   d['price']=800;d['price_review']['verified_price']=800
   self.assertIsNone(official_srp_comparison(d))
- def test_all_thirty_and_six_languages(self):
+ def test_all_registered_products_and_six_languages(self):
   feed=sum([json.loads((ROOT/'data'/f).read_text())['feed'] for f in ('deals.json','deals_en.json')],[])
-  self.assertEqual(len(feed),30);self.assertEqual(validate_deal_prices(feed),[])
+  self.assertEqual(len(feed),32);self.assertEqual(validate_deal_prices(feed),[])
   for lang in site_i18n.LANGS:
    page=site_i18n.catalogue(lang,feed,{})
-   self.assertEqual(page.count('<article class="card"'),30)
+   self.assertEqual(page.count('<article class="card"'),len(feed))
    self.assertNotIn('<s>',page);self.assertNotIn('flag-discount',page)
    self.assertIn(site_i18n.NOT_DISCOUNT[lang],page)
   for d in feed:self.assertNotIn('<s>',build._deal_card(d))

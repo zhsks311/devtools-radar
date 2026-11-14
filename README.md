@@ -213,3 +213,13 @@ write/review/revise prompts instead of replaying old article-specific instructio
 `python tools/check_editorial_evidence.py --slug <slug>` for the selected reviewed revision.
 Legacy articles have not been automatically certified or removed; the general build currently
 checks structure and regressions only. Passing CI is not proof of factual correctness.
+
+### Complete comparison metadata
+
+Comparison descriptions are reviewed, article-specific summaries in `article_metadata.py`
+(or an explicit article `meta_description`), never character-sliced hooks. Description,
+Open Graph and Twitter metadata use the same complete plain-text sentence. New articles
+need a summary; the build rejects missing, overlong or visibly truncated text. The 60–180
+character editorial budget is not a search-engine display guarantee. Output checks compare
+all three fields exactly, and regressions independently corrupt description and OG fields.
+These checks do not establish factual correctness, indexing, ranking or AI citation.

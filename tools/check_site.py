@@ -132,6 +132,24 @@ def check_site(output, data):
             target=output/clean.lstrip('/') if clean.startswith('/') else page.parent/clean
             if not target.suffix:target=target/'index.html'
             if not target.exists():errors.append(f'{page.relative_to(output)}: broken local link {href}')
+    # Check exact reviewed summaries as well as shape: punctuation alone cannot
+    # establish that prose is accurate or that a word was not silently sliced.
+    sys.path.insert(0, str(ROOT))
+    from article_metadata import article_description, validate_description
+    for item in items:
+        url=BASE+'/compare/'+item['slug']+'/'
+        page=pages.get(url)
+        if page is None: continue
+        try: expected_description=article_description(item)
+        except ValueError as exc:
+            errors.append(url+': '+str(exc)); continue
+        for field in ('description', 'og:description', 'twitter:description'):
+            values=page.metadata.get(field, [])
+            if values != [expected_description]:
+                errors.append(url+': '+field+' must match the complete reviewed summary')
+            for value in values:
+                try: validate_description(value)
+                except ValueError as exc: errors.append(url+': '+field+': '+str(exc))
     root=ET.parse(output/'sitemap.xml').getroot()
     sitemap={e.text for e in root.iter('{'+NS+'}loc')}
     for slug in expected:

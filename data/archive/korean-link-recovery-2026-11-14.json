@@ -1,0 +1,322 @@
+{
+  "archived_at": "2026-11-14T12:43:08.562400+00:00",
+  "reason": "Old Coupang records preserved before replacing only independently verified exact-product offers; Sony product type corrected without restoring unverified offer.",
+  "feed": [
+    {
+      "id": "deal-belkin-100w-gan",
+      "region": "kr",
+      "target": "ko",
+      "category": "tech",
+      "category_label": "테크 장비 · 충전기",
+      "title_raw": "벨킨 부스트차지 100W USB-C PD3.2 AVS GaN PPS 초고속 충전기 WCH025kr",
+      "product": "벨킨 부스트차지 100W GaN 초고속 충전기",
+      "store": "쿠팡 로켓배송",
+      "price": 39900,
+      "shipping": "로켓배송 무료반품",
+      "rocket": true,
+      "specs": [
+        "100W 단일출력",
+        "PD3.2 AVS",
+        "GaN 초소형"
+      ],
+      "briefing": [
+        "실구매가: 39,900원 (정가 63,900원에서 37% 특가)",
+        "추천: 맥북 프로 14/16인치와 스마트폰을 벽돌 충전기 없이 고속 충전하려는 개발자",
+        "체크: 접지 설계로 맥북 메탈 바디 미세전류 찌릿함 방지"
+      ],
+      "audience": "맥북 프로·아이패드를 매일 휴대하는 이동형 개발자",
+      "published_at": "2026-11-10T15:16:42+09:00",
+      "score": 95,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyIrM2GlPg",
+        "tracked": true,
+        "matched_keyword": "벨킨 100W GaN 충전기",
+        "label": "벨킨 100W GaN 초고속 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:52.505917+00:00",
+        "url": "https://link.coupang.com/a/iyIrM2GlPg",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyIrM2GlPg",
+        "tracked": true,
+        "matched_keyword": "벨킨 100W GaN 충전기",
+        "label": "벨킨 100W GaN 초고속 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-belkin-100w-gan",
+        "product": "벨킨 부스트차지 100W GaN 초고속 충전기",
+        "seller_url": "https://link.coupang.com/a/iyIrM2GlPg",
+        "recorded_price": 39900,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyIrM2GlPg",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+      },
+      "historical_claims": {
+        "original_price": 63900,
+        "discount_pct": 37,
+        "status": "rejected",
+        "reason": "comparison_evidence_unverified"
+      },
+      "storefront_country": "KR"
+    },
+    {
+      "id": "deal-ugreen-100w-gan",
+      "region": "kr",
+      "target": "ko",
+      "category": "tech",
+      "category_label": "테크 장비 · 충전기",
+      "title_raw": "유그린 넥소드 프로 GaN 100W PD PPS 멀티 고속충전기 U-25093",
+      "product": "유그린 넥소드 프로 GaN 100W 3포트 멀티충전기",
+      "store": "쿠팡 로켓배송",
+      "price": 60900,
+      "shipping": "내일 새벽 도착 보장",
+      "rocket": true,
+      "specs": [
+        "3포트 멀티(2C1A)",
+        "단일 100W",
+        "지능형 전력 배분"
+      ],
+      "briefing": [
+        "실구매가: 60,900원 (정가 89,900원, 32% 와우할인)",
+        "추천: 데스크 위 케이블을 하나로 통합해 노트북+폰+워치를 동시 충전하려는 사람",
+        "체크: 컴팩트한 사이즈로 출장·카페 작업 시 가방 무게 대폭 감소"
+      ],
+      "audience": "데스크 위 멀티탭을 깔끔하게 정리하고 싶은 엔지니어",
+      "published_at": "2026-11-10T15:16:42+09:00",
+      "score": 92,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyIsS5yg2e",
+        "tracked": true,
+        "matched_keyword": "유그린 100W GaN 충전기",
+        "label": "유그린 100W GaN 3포트 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:58.954509+00:00",
+        "url": "https://link.coupang.com/a/iyIsS5yg2e",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyIsS5yg2e",
+        "tracked": true,
+        "matched_keyword": "유그린 100W GaN 충전기",
+        "label": "유그린 100W GaN 3포트 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-ugreen-100w-gan",
+        "product": "유그린 넥소드 프로 GaN 100W 3포트 멀티충전기",
+        "seller_url": "https://link.coupang.com/a/iyIsS5yg2e",
+        "recorded_price": 60900,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyIsS5yg2e",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+      },
+      "historical_claims": {
+        "original_price": 89900,
+        "discount_pct": 32,
+        "status": "rejected",
+        "reason": "comparison_evidence_unverified"
+      },
+      "storefront_country": "KR"
+    },
+    {
+      "id": "deal-artmu-100w-gb102",
+      "region": "kr",
+      "target": "ko",
+      "category": "tech",
+      "category_label": "테크 장비 · 충전기",
+      "title_raw": "아트뮤 PD 3.2 100W AVS GaN 접지 멀티 초고속 충전기 GB102",
+      "product": "아트뮤 PD 3.2 100W 접지 2포트 멀티충전기",
+      "store": "쿠팡 로켓배송",
+      "price": 35700,
+      "shipping": "로켓배송 무료배송",
+      "rocket": true,
+      "specs": [
+        "한국형 접지 플러그",
+        "100W 단일 / 동시 65W+35W",
+        "AVS GaN"
+      ],
+      "briefing": [
+        "실구매가: 35,700원 (쿠팡 로켓배송 최저가)",
+        "추천: 국내 콘센트 규격에 딱 맞는 흔들림 없는 접지 충전기를 찾는 개발자",
+        "체크: 누전 차단 및 기기 보호 회로 탑재, 맥북 터치패드 오작동 완벽 방지"
+      ],
+      "audience": "맥북 충전 중 트랙패드 튐이나 미세전류가 거슬리는 분",
+      "published_at": "2026-11-10T15:16:42+09:00",
+      "score": 91,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyItY3nD1U",
+        "tracked": true,
+        "matched_keyword": "아트뮤 100W 접지 충전기",
+        "label": "아트뮤 100W 접지 초고속 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:58.976568+00:00",
+        "url": "https://link.coupang.com/a/iyItY3nD1U",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyItY3nD1U",
+        "tracked": true,
+        "matched_keyword": "아트뮤 100W 접지 충전기",
+        "label": "아트뮤 100W 접지 초고속 충전기 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-artmu-100w-gb102",
+        "product": "아트뮤 PD 3.2 100W 접지 2포트 멀티충전기",
+        "seller_url": "https://link.coupang.com/a/iyItY3nD1U",
+        "recorded_price": 35700,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyItY3nD1U",
+            "result": "product_route_unverified",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+      },
+      "historical_claims": {
+        "original_price": 44800,
+        "discount_pct": 20,
+        "status": "rejected",
+        "reason": "comparison_evidence_unverified"
+      },
+      "storefront_country": "KR"
+    },
+    {
+      "id": "deal-sony-mdr-3r",
+      "region": "kr",
+      "target": "ko",
+      "category": "tech",
+      "category_label": "테크 장비 · 음향",
+      "title_raw": "소니 MDR-3R 스튜디오 모니터링 이어폰",
+      "product": "소니 MDR-3R 모니터링 이어폰",
+      "store": "쿠팡 로켓배송",
+      "price": 78640,
+      "shipping": "로켓배송 무료배송",
+      "rocket": true,
+      "specs": [
+        "플랫한 사운드 밸런스",
+        "초경량 4.2g",
+        "노이즈 패시브 차음"
+      ],
+      "briefing": [
+        "실구매가: 78,640원 (정가 11.9만 원 대비 34% 할인)",
+        "추천: 헤드셋 무게에 목·정수리가 아파 가벼운 유선 이어폰을 찾는 코더",
+        "체크: 배터리 방전 걱정 없이 하루 종일 꽂고 집중 코딩 가능"
+      ],
+      "audience": "오랜 시간 음악이나 백색소음을 들으며 딥워크하는 엔지니어",
+      "published_at": "2026-11-10T15:16:42+09:00",
+      "score": 89,
+      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "ai_rewritten": true,
+      "link": {
+        "url": "https://link.coupang.com/a/iyzv0uG1N6",
+        "tracked": true,
+        "matched_keyword": "소니 MDR-3R",
+        "label": "소니 MDR-3R 이어폰 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "link_review": {
+        "status": "held",
+        "checked_at": "2026-11-10T11:58:59.083195+00:00",
+        "url": "https://link.coupang.com/a/iyzv0uG1N6",
+        "product_match": false,
+        "evidence": "",
+        "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+      },
+      "link_original": {
+        "url": "https://link.coupang.com/a/iyzv0uG1N6",
+        "tracked": true,
+        "matched_keyword": "소니 MDR-3R",
+        "label": "소니 MDR-3R 이어폰 (로켓배송)",
+        "label_kind": "상품"
+      },
+      "price_review": {
+        "id": "deal-sony-mdr-3r",
+        "product": "소니 MDR-3R 모니터링 이어폰",
+        "seller_url": "https://link.coupang.com/a/iyzv0uG1N6",
+        "recorded_price": 78640,
+        "currency": "KRW",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
+        "evidence": [
+          {
+            "url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "result": "search_result",
+            "provenance": "link worker current direct request audit"
+          }
+        ],
+        "limitations": [
+          "Current exact product, option, seller price and inventory could not be verified.",
+          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+        ],
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+      },
+      "historical_claims": {
+        "original_price": 119000,
+        "discount_pct": 34,
+        "status": "rejected",
+        "reason": "comparison_evidence_unverified"
+      },
+      "storefront_country": "KR"
+    }
+  ]
+}

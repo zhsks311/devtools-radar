@@ -125,7 +125,7 @@ for (const page of pages) {
   }
   nodes['#reset-filters'].click();
   assert.equal(nodes['#reset-filters'].hidden,true);
-  assert.equal(nodes['#count'].textContent,'13 verified · 5 discoveries');
+  assert.equal(nodes['#count'].textContent,(page.cards.filter(d=>d.kind!=='discovery').length+' verified · '+page.cards.filter(d=>d.kind==='discovery').length+' discoveries'));
   assert.equal(url.search,'?utm_source=test'); assert.equal(url.hash,'#keep');
   url=new URL('https://example.test/deals/?market=CN&category=keyboard-mouse&country=unknown'); events.popstate();
   assert.deepEqual(cards.filter(c=>!c.hidden).map(c=>c.dataset.id),['lenovo-gk10-rt60-cn']);

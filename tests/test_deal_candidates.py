@@ -38,8 +38,8 @@ class CandidateTests(unittest.TestCase):
         tr=json.loads((ROOT/'data/deal_localizations.json').read_text())
         for lang in TEXT:
             page=site_i18n.catalogue(lang,feed,tr,discoveries=True)
-            self.assertIn('13 '+site_i18n.FILTER_TEXT[lang][7]+' · 5 '+site_i18n.DISCOVERY_LABEL[lang],page)
-            self.assertNotIn('18 '+site_i18n.FILTER_TEXT[lang][7],page)
+            self.assertIn('18 '+site_i18n.FILTER_TEXT[lang][7]+' · 5 '+site_i18n.DISCOVERY_LABEL[lang],page)
+            self.assertNotIn('23 '+site_i18n.FILTER_TEXT[lang][7],page)
             self.assertIn(site_i18n.EMPTY_LABEL[lang],page)
             self.assertIn(site_i18n.UNKNOWN_SHORTCUT[lang],page)
             self.assertEqual(page.count('data-kind="discovery"'),5)

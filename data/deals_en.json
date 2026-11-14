@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T09:17:39.786222+00:00",
+  "generated_at": "2026-11-14T12:44:20.414842+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -1282,6 +1282,170 @@
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       },
       "storefront_country": null
+    },
+    {
+      "id": "mail-backup-x-individual-v2",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "Mail Backup X Individual v2 · lifetime / 2 devices",
+      "product": "Mail Backup X Individual v2 · lifetime / 2 devices",
+      "store": "StackSocial",
+      "storefront_country": null,
+      "price": 49.99,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "New users only; two devices; redeem within 30 days; macOS 10.13+ or Windows 8+. Updates included. Country eligibility not stated. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD40.00 untested; not used as main price."
+      ],
+      "audience": "New users who meet seller activation conditions.",
+      "source": {
+        "id": "stacksocial",
+        "label": "StackSocial product detail",
+        "url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-14",
+      "score": null,
+      "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital licence; no physical delivery.",
+        "activation": "New users only; two devices; redeem within 30 days; macOS 10.13+ or Windows 8+. Updates included. Country eligibility not stated. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD40.00 untested; not used as main price.",
+        "payment": "Billing country, tax and final checkout not tested.",
+        "tax": "Displayed USD price; final tax and total require checkout.",
+        "returns": "Unredeemed licence: store credit within 30 days; redeemed licence: final sale.",
+        "evidence_url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription",
+        "checked_at": "2026-11-14"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-14T12:44:20.414842+00:00",
+        "url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription",
+        "product_match": true,
+        "evidence": "Seller detail retrieved 2026-11-14 12:42 UTC confirms Mail Backup X Individual v2 · lifetime / 2 devices, USD49.99, Add to Cart and licence terms. Checkout and optional coupon not tested."
+      },
+      "price_review": {
+        "id": "mail-backup-x-individual-v2",
+        "product": "Mail Backup X Individual v2 · lifetime / 2 devices",
+        "seller_url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription",
+        "recorded_price": 49.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 49.99,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription",
+            "result": "Seller detail retrieved 2026-11-14 12:42 UTC confirms Mail Backup X Individual v2 · lifetime / 2 devices, USD49.99, Add to Cart and licence terms. Checkout and optional coupon not tested."
+          }
+        ],
+        "conditions": [
+          "New users only; two devices; redeem within 30 days; macOS 10.13+ or Windows 8+. Updates included. Country eligibility not stated. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD40.00 untested; not used as main price."
+        ],
+        "limitations": [
+          "No independent previous-price or historical-low evidence.",
+          "Checkout, optional coupon, tax, billing-country eligibility untested."
+        ],
+        "review_completed_at": "2026-11-14T12:44:20.414842+00:00"
+      }
+    },
+    {
+      "id": "babbel-lifetime-all-languages",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "Babbel · lifetime access to 14 languages",
+      "product": "Babbel · lifetime access to 14 languages",
+      "store": "StackSocial",
+      "storefront_country": null,
+      "price": 249.0,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "New US users only. 14 languages; redeem on the web within 30 days, then use on mobile. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD199.20 untested; not used as main price."
+      ],
+      "audience": "New users who meet seller activation conditions.",
+      "source": {
+        "id": "stacksocial",
+        "label": "StackSocial product detail",
+        "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-14",
+      "score": null,
+      "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "US"
+        ],
+        "status": "verified_activation",
+        "delivery": "Digital licence; no physical delivery.",
+        "activation": "New US users only. 14 languages; redeem on the web within 30 days, then use on mobile. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD199.20 untested; not used as main price.",
+        "payment": "Billing country, tax and final checkout not tested.",
+        "tax": "Displayed USD price; final tax and total require checkout.",
+        "returns": "Unredeemed licence: store credit within 30 days; redeemed licence: final sale.",
+        "evidence_url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+        "checked_at": "2026-11-14"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-14T12:44:20.414842+00:00",
+        "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+        "product_match": true,
+        "evidence": "Seller detail retrieved 2026-11-14 12:42 UTC confirms Babbel · lifetime access to 14 languages, USD249.00, Add to Cart and licence terms. Checkout and optional coupon not tested."
+      },
+      "price_review": {
+        "id": "babbel-lifetime-all-languages",
+        "product": "Babbel · lifetime access to 14 languages",
+        "seller_url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+        "recorded_price": 249.0,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 249.0,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+            "result": "Seller detail retrieved 2026-11-14 12:42 UTC confirms Babbel · lifetime access to 14 languages, USD249.00, Add to Cart and licence terms. Checkout and optional coupon not tested."
+          }
+        ],
+        "conditions": [
+          "New US users only. 14 languages; redeem on the web within 30 days, then use on mobile. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD199.20 untested; not used as main price."
+        ],
+        "limitations": [
+          "No independent previous-price or historical-low evidence.",
+          "Checkout, optional coupon, tax, billing-country eligibility untested."
+        ],
+        "review_completed_at": "2026-11-14T12:44:20.414842+00:00"
+      }
     }
   ],
   "picks": [
@@ -2165,7 +2329,7 @@
     }
   },
   "stats": {
-    "feed": 13,
+    "feed": 15,
     "sources": 4
   }
 }

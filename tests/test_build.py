@@ -66,7 +66,7 @@ class RendererTests(unittest.TestCase):
         self.assertEqual(len(cards),len(payload['feed']))
         self.assertEqual(sum(a['data-country']=='CN' for a in cards),4)
         self.assertEqual(sum(a['data-country']=='AU' for a in cards),1)
-        self.assertEqual(sum(a['data-country']=='unverified' for a in cards),8)
+        self.assertEqual(sum(a['data-country']=='unverified' for a in cards),10)
         self.assertEqual(sum(a['data-topic']=='cloud' for a in cards),1)
         self.assertFalse(any('open' in a for t,a in parser.tags if t=='details'))
         for d in payload['feed']:

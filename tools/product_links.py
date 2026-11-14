@@ -24,9 +24,19 @@ def direct_product_url(url):
         if u.scheme != 'https' or u.port not in (None, 443): return False
     except ValueError: return False
     path = unquote(u.path).lower()
-    query = {k.lower() for k in parse_qs(u.query)}
+    query_values = {}
+    for key, values in parse_qs(u.query, keep_blank_values=True).items():
+        query_values.setdefault(key.lower(), []).extend(values)
+    query = set(query_values)
     if query & {'q','query','keyword','keywords','search','searchtext','searchquery','redirect','url','target'}: return False
     if u.hostname in ALIEXPRESS_PRODUCT_HOSTS: return aliexpress_product_url(url)
+    # These sellers identify a product in the query, never accept the generic page.
+    query_routes = {'item.gmarket.co.kr': ('/item', 'goodscode'),
+                    'artmu.co.kr': ('/product/detail.html', 'product_no')}
+    if u.hostname in query_routes:
+        route, key = query_routes[u.hostname]
+        values = query_values.get(key, [])
+        return path == route and len(values) == 1 and bool(re.fullmatch(r'[0-9]+', values[0]))
     pattern = DETAIL_ROUTES.get(u.hostname)
     return bool(pattern and re.fullmatch(pattern, path))
 

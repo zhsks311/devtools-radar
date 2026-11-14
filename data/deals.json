@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-10T15:31:06+09:00",
+  "generated_at": "2026-11-14T12:43:08.562400+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
     "lang": "ko"
   },
-  "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+  "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
     {
       "id": "deal-mx-master-3s",
@@ -567,41 +567,41 @@
       "target": "ko",
       "category": "tech",
       "category_label": "테크 장비 · 충전기",
-      "title_raw": "벨킨 부스트차지 100W USB-C PD3.2 AVS GaN PPS 초고속 충전기 WCH025kr",
-      "product": "벨킨 부스트차지 100W GaN 초고속 충전기",
-      "store": "쿠팡 로켓배송",
+      "title_raw": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+      "product": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+      "store": "Gmarket · 벨킨공식판매원",
       "price": 39900,
-      "shipping": "로켓배송 무료반품",
-      "rocket": true,
+      "shipping": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+      "rocket": false,
       "specs": [
-        "100W 단일출력",
-        "PD3.2 AVS",
-        "GaN 초소형"
+        "USB-C 1포트",
+        "최대 100W",
+        "PD 3.2 AVS"
       ],
       "briefing": [
-        "실구매가: 39,900원 (정가 63,900원에서 37% 특가)",
-        "추천: 맥북 프로 14/16인치와 스마트폰을 벽돌 충전기 없이 고속 충전하려는 개발자",
-        "체크: 접지 설계로 맥북 메탈 바디 미세전류 찌릿함 방지"
+        "판매처 표시가격: 39,900원 (2026-11-14 확인). 쿠팡 이전 상품 기록이 아닌 위 판매처 기준.",
+        "USB-C 1포트; 최대 100W; PD 3.2 AVS",
+        "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+        "결제·주소별 재고·최종 금액은 미확인. 할인·역대 최저가 근거 없음."
       ],
-      "audience": "맥북 프로·아이패드를 매일 휴대하는 이동형 개발자",
+      "audience": "",
       "published_at": "2026-11-10T15:16:42+09:00",
-      "score": 95,
-      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
+      "score": null,
+      "disclosure": "제휴 추적 없는 판매자 직접 링크. 판매 페이지 표시가격을 확인했으며 최저가·할인율·결제 완료를 보장하지 않습니다.",
+      "ai_rewritten": false,
       "link": {
-        "url": "https://link.coupang.com/a/iyIrM2GlPg",
-        "tracked": true,
-        "matched_keyword": "벨킨 100W GaN 충전기",
-        "label": "벨킨 100W GaN 초고속 충전기 (로켓배송)",
-        "label_kind": "상품"
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+        "label_kind": "retailer"
       },
       "link_review": {
-        "status": "held",
-        "checked_at": "2026-11-10T11:58:52.505917+00:00",
-        "url": "https://link.coupang.com/a/iyIrM2GlPg",
-        "product_match": false,
-        "evidence": "",
-        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+        "status": "verified_detail",
+        "checked_at": "2026-11-14T12:43:08.562400+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+        "product_match": true,
+        "evidence": "Seller detail shows WCH025kr1.5WHB6 white option, KRW39,900 and purchase UI. Belkin official seller; domestic delivery only."
       },
       "link_original": {
         "url": "https://link.coupang.com/a/iyIrM2GlPg",
@@ -612,25 +612,25 @@
       },
       "price_review": {
         "id": "deal-belkin-100w-gan",
-        "product": "벨킨 부스트차지 100W GaN 초고속 충전기",
-        "seller_url": "https://link.coupang.com/a/iyIrM2GlPg",
+        "product": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
         "recorded_price": 39900,
         "currency": "KRW",
-        "price_status": "unverified",
-        "verified_price": null,
-        "deal_status": "unverified",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 39900,
+        "deal_status": "regular_price_or_discount_unproven",
         "evidence": [
           {
-            "url": "https://link.coupang.com/a/iyIrM2GlPg",
-            "result": "product_route_unverified",
-            "provenance": "link worker current direct request audit"
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+            "result": "Seller detail shows WCH025kr1.5WHB6 white option, KRW39,900 and purchase UI. Belkin official seller; domestic delivery only.",
+            "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
           }
         ],
         "limitations": [
-          "Current exact product, option, seller price and inventory could not be verified.",
-          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+          "No independently verified historical-low or previous-price comparison.",
+          "Address-specific stock, checkout, billing eligibility and final total not verified."
         ],
-        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
       },
       "historical_claims": {
         "original_price": 63900,
@@ -638,7 +638,30 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-14",
+      "price_source": "retailer_product_page",
+      "source": {
+        "id": "deal-belkin-100w-gan-seller",
+        "label": "Gmarket · 벨킨공식판매원 actual product detail",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+        "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+        "payment": "Payment and billing restrictions not verified.",
+        "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+        "returns": "Seller return terms and exclusions apply; no free-return claim.",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+        "checked_at": "2026-11-14"
+      }
     },
     {
       "id": "deal-lg-ultragear-27",
@@ -726,41 +749,40 @@
       "target": "ko",
       "category": "tech",
       "category_label": "테크 장비 · 충전기",
-      "title_raw": "유그린 넥소드 프로 GaN 100W PD PPS 멀티 고속충전기 U-25093",
-      "product": "유그린 넥소드 프로 GaN 100W 3포트 멀티충전기",
-      "store": "쿠팡 로켓배송",
-      "price": 60900,
-      "shipping": "내일 새벽 도착 보장",
-      "rocket": true,
+      "title_raw": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+      "product": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+      "store": "Gmarket · 에이스네트웍",
+      "price": 65100,
+      "shipping": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+      "rocket": false,
       "specs": [
-        "3포트 멀티(2C1A)",
-        "단일 100W",
-        "지능형 전력 배분"
+        "USB-C 2포트 + USB-A 1포트",
+        "단일 최대 100W"
       ],
       "briefing": [
-        "실구매가: 60,900원 (정가 89,900원, 32% 와우할인)",
-        "추천: 데스크 위 케이블을 하나로 통합해 노트북+폰+워치를 동시 충전하려는 사람",
-        "체크: 컴팩트한 사이즈로 출장·카페 작업 시 가방 무게 대폭 감소"
+        "판매처 표시가격: 65,100원 (2026-11-14 확인). 쿠팡 이전 상품 기록이 아닌 위 판매처 기준.",
+        "USB-C 2포트 + USB-A 1포트; 단일 최대 100W",
+        "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+        "결제·주소별 재고·최종 금액은 미확인. 할인·역대 최저가 근거 없음."
       ],
-      "audience": "데스크 위 멀티탭을 깔끔하게 정리하고 싶은 엔지니어",
+      "audience": "",
       "published_at": "2026-11-10T15:16:42+09:00",
-      "score": 92,
-      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
+      "score": null,
+      "disclosure": "제휴 추적 없는 판매자 직접 링크. 판매 페이지 표시가격을 확인했으며 최저가·할인율·결제 완료를 보장하지 않습니다.",
+      "ai_rewritten": false,
       "link": {
-        "url": "https://link.coupang.com/a/iyIsS5yg2e",
-        "tracked": true,
-        "matched_keyword": "유그린 100W GaN 충전기",
-        "label": "유그린 100W GaN 3포트 충전기 (로켓배송)",
-        "label_kind": "상품"
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+        "label_kind": "retailer"
       },
       "link_review": {
-        "status": "held",
-        "checked_at": "2026-11-10T11:58:58.954509+00:00",
-        "url": "https://link.coupang.com/a/iyIsS5yg2e",
-        "product_match": false,
-        "evidence": "",
-        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+        "status": "verified_detail",
+        "checked_at": "2026-11-14T12:43:08.562400+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+        "product_match": true,
+        "evidence": "Seller detail explicitly identifies U-25093 and KRW65,100 base price with purchase UI. Optional advertised 5% coupon price KRW61,850 is not the unconditional price. Domestic delivery only."
       },
       "link_original": {
         "url": "https://link.coupang.com/a/iyIsS5yg2e",
@@ -771,25 +793,26 @@
       },
       "price_review": {
         "id": "deal-ugreen-100w-gan",
-        "product": "유그린 넥소드 프로 GaN 100W 3포트 멀티충전기",
-        "seller_url": "https://link.coupang.com/a/iyIsS5yg2e",
+        "product": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
         "recorded_price": 60900,
         "currency": "KRW",
-        "price_status": "unverified",
-        "verified_price": null,
-        "deal_status": "unverified",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 65100,
+        "deal_status": "regular_price_or_discount_unproven",
         "evidence": [
           {
-            "url": "https://link.coupang.com/a/iyIsS5yg2e",
-            "result": "product_route_unverified",
-            "provenance": "link worker current direct request audit"
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+            "result": "Seller detail explicitly identifies U-25093 and KRW65,100 base price with purchase UI. Optional advertised 5% coupon price KRW61,850 is not the unconditional price. Domestic delivery only.",
+            "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
           }
         ],
         "limitations": [
-          "Current exact product, option, seller price and inventory could not be verified.",
-          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+          "No independently verified historical-low or previous-price comparison.",
+          "Address-specific stock, checkout, billing eligibility and final total not verified.",
+          "Seller advertises 5% coupon KRW61,850; eligibility not tested and excluded from main price."
         ],
-        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
       },
       "historical_claims": {
         "original_price": 89900,
@@ -797,7 +820,30 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-14",
+      "price_source": "retailer_product_page",
+      "source": {
+        "id": "deal-ugreen-100w-gan-seller",
+        "label": "Gmarket · 에이스네트웍 actual product detail",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+        "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+        "payment": "Payment and billing restrictions not verified.",
+        "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+        "returns": "Seller return terms and exclusions apply; no free-return claim.",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+        "checked_at": "2026-11-14"
+      }
     },
     {
       "id": "deal-artmu-100w-gb102",
@@ -805,41 +851,42 @@
       "target": "ko",
       "category": "tech",
       "category_label": "테크 장비 · 충전기",
-      "title_raw": "아트뮤 PD 3.2 100W AVS GaN 접지 멀티 초고속 충전기 GB102",
-      "product": "아트뮤 PD 3.2 100W 접지 2포트 멀티충전기",
-      "store": "쿠팡 로켓배송",
+      "title_raw": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+      "product": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+      "store": "Artmu 공식몰",
       "price": 35700,
-      "shipping": "로켓배송 무료배송",
-      "rocket": true,
+      "shipping": "전국지역 택배 무료배송 안내. 블랙 선택; 화이트 옵션은 품절 표시. 주소별 재고·최종 주문 미확인.",
+      "rocket": false,
       "specs": [
-        "한국형 접지 플러그",
-        "100W 단일 / 동시 65W+35W",
-        "AVS GaN"
+        "USB-C 2포트 + USB-A 1포트",
+        "PD 3.2 AVS",
+        "최대 100W",
+        "한국형 접지"
       ],
       "briefing": [
-        "실구매가: 35,700원 (쿠팡 로켓배송 최저가)",
-        "추천: 국내 콘센트 규격에 딱 맞는 흔들림 없는 접지 충전기를 찾는 개발자",
-        "체크: 누전 차단 및 기기 보호 회로 탑재, 맥북 터치패드 오작동 완벽 방지"
+        "판매처 표시가격: 35,700원 (2026-11-14 확인). 쿠팡 이전 상품 기록이 아닌 위 판매처 기준.",
+        "USB-C 2포트 + USB-A 1포트; PD 3.2 AVS; 최대 100W; 한국형 접지",
+        "전국지역 택배 무료배송 안내. 블랙 선택; 화이트 옵션은 품절 표시. 주소별 재고·최종 주문 미확인.",
+        "결제·주소별 재고·최종 금액은 미확인. 할인·역대 최저가 근거 없음."
       ],
-      "audience": "맥북 충전 중 트랙패드 튐이나 미세전류가 거슬리는 분",
+      "audience": "",
       "published_at": "2026-11-10T15:16:42+09:00",
-      "score": 91,
-      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-      "ai_rewritten": true,
+      "score": null,
+      "disclosure": "제휴 추적 없는 판매자 직접 링크. 판매 페이지 표시가격을 확인했으며 최저가·할인율·결제 완료를 보장하지 않습니다.",
+      "ai_rewritten": false,
       "link": {
-        "url": "https://link.coupang.com/a/iyItY3nD1U",
-        "tracked": true,
-        "matched_keyword": "아트뮤 100W 접지 충전기",
-        "label": "아트뮤 100W 접지 초고속 충전기 (로켓배송)",
-        "label_kind": "상품"
+        "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+        "tracked": false,
+        "matched_keyword": null,
+        "label": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+        "label_kind": "retailer"
       },
       "link_review": {
-        "status": "held",
-        "checked_at": "2026-11-10T11:58:58.976568+00:00",
-        "url": "https://link.coupang.com/a/iyItY3nD1U",
-        "product_match": false,
-        "evidence": "",
-        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+        "status": "verified_detail",
+        "checked_at": "2026-11-14T12:43:08.562400+00:00",
+        "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+        "product_match": true,
+        "evidence": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout."
       },
       "link_original": {
         "url": "https://link.coupang.com/a/iyItY3nD1U",
@@ -850,25 +897,25 @@
       },
       "price_review": {
         "id": "deal-artmu-100w-gb102",
-        "product": "아트뮤 PD 3.2 100W 접지 2포트 멀티충전기",
-        "seller_url": "https://link.coupang.com/a/iyItY3nD1U",
+        "product": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+        "seller_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
         "recorded_price": 35700,
         "currency": "KRW",
-        "price_status": "unverified",
-        "verified_price": null,
-        "deal_status": "unverified",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 35700,
+        "deal_status": "regular_price_or_discount_unproven",
         "evidence": [
           {
-            "url": "https://link.coupang.com/a/iyItY3nD1U",
-            "result": "product_route_unverified",
-            "provenance": "link worker current direct request audit"
+            "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "result": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout.",
+            "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
           }
         ],
         "limitations": [
-          "Current exact product, option, seller price and inventory could not be verified.",
-          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+          "No independently verified historical-low or previous-price comparison.",
+          "Address-specific stock, checkout, billing eligibility and final total not verified."
         ],
-        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
       },
       "historical_claims": {
         "original_price": 44800,
@@ -876,7 +923,30 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-14",
+      "price_source": "retailer_product_page",
+      "source": {
+        "id": "deal-artmu-100w-gb102-seller",
+        "label": "Artmu 공식몰 actual product detail",
+        "url": "https://artmu.co.kr/product/detail.html?product_no=2942"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "전국지역 택배 무료배송 안내. 블랙 선택; 화이트 옵션은 품절 표시. 주소별 재고·최종 주문 미확인.",
+        "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+        "payment": "Payment and billing restrictions not verified.",
+        "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+        "returns": "Seller return terms and exclusions apply; no free-return claim.",
+        "evidence_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+        "checked_at": "2026-11-14"
+      }
     },
     {
       "id": "deal-sony-mdr-3r",
@@ -884,21 +954,15 @@
       "target": "ko",
       "category": "tech",
       "category_label": "테크 장비 · 음향",
-      "title_raw": "소니 MDR-3R 스튜디오 모니터링 이어폰",
-      "product": "소니 MDR-3R 모니터링 이어폰",
+      "title_raw": "소니 MDR-3R 유선 헤드폰",
+      "product": "소니 MDR-3R 유선 헤드폰",
       "store": "쿠팡 로켓배송",
       "price": 78640,
       "shipping": "로켓배송 무료배송",
       "rocket": true,
-      "specs": [
-        "플랫한 사운드 밸런스",
-        "초경량 4.2g",
-        "노이즈 패시브 차음"
-      ],
+      "specs": [],
       "briefing": [
-        "실구매가: 78,640원 (정가 11.9만 원 대비 34% 할인)",
-        "추천: 헤드셋 무게에 목·정수리가 아파 가벼운 유선 이어폰을 찾는 코더",
-        "체크: 배터리 방전 걱정 없이 하루 종일 꽂고 집중 코딩 가능"
+        "이전 이어폰·4.2g·스튜디오 모니터 용도 표기는 근거가 없어 삭제했습니다. 실제 MDR-3R은 헤드폰입니다. 이전 판매처·가격·구매 조건은 미검증 상태로 보류합니다."
       ],
       "audience": "오랜 시간 음악이나 백색소음을 들으며 딥워크하는 엔지니어",
       "published_at": "2026-11-10T15:16:42+09:00",
@@ -1373,8 +1437,6 @@
           "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
           "store": "쿠팡 실시간e쿠폰",
           "price": 19600,
-          "original_price": 20000,
-          "discount_pct": 2,
           "shipping": "결제 즉시 문자/카카오톡 발송",
           "rocket": false,
           "specs": [
@@ -1398,7 +1460,51 @@
             "matched_keyword": "올리브영 기프트카드",
             "label": "올리브영 기프트카드 2만원권 (실시간 e쿠폰)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:40.903697+00:00",
+            "url": "https://link.coupang.com/a/iyI8z25s60",
+            "product_match": false,
+            "evidence": "쿠팡!",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyI8z25s60",
+            "tracked": true,
+            "matched_keyword": "올리브영 기프트카드",
+            "label": "올리브영 기프트카드 2만원권 (실시간 e쿠폰)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-oliveyoung-gift-card-20k",
+            "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
+            "seller_url": "https://link.coupang.com/a/iyI8z25s60",
+            "recorded_price": 19600,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyI8z25s60",
+                "result": "product_route_unverified",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 20000,
+            "discount_pct": 2,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         },
         {
           "id": "deal-coupang-gift-card-10k",
@@ -1410,8 +1516,6 @@
           "product": "쿠팡·쿠팡이츠 기프트카드 10,000원권 (모바일 e쿠폰)",
           "store": "쿠팡 모바일쿠폰",
           "price": 10000,
-          "original_price": 10000,
-          "discount_pct": 0,
           "shipping": "결제 즉시 휴대폰 MMS/알림톡 발송",
           "rocket": false,
           "specs": [
@@ -1435,7 +1539,51 @@
             "matched_keyword": "쿠팡 기프트카드",
             "label": "쿠팡·쿠팡이츠 기프트카드 (모바일 e쿠폰)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:40.905752+00:00",
+            "url": "https://link.coupang.com/a/iyJeI3BcT6",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyJeI3BcT6",
+            "tracked": true,
+            "matched_keyword": "쿠팡 기프트카드",
+            "label": "쿠팡·쿠팡이츠 기프트카드 (모바일 e쿠폰)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-coupang-gift-card-10k",
+            "product": "쿠팡·쿠팡이츠 기프트카드 10,000원권 (모바일 e쿠폰)",
+            "seller_url": "https://link.coupang.com/a/iyJeI3BcT6",
+            "recorded_price": 10000,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "not_a_discount",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyJeI3BcT6",
+                "result": "product_route_unverified",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 10000,
+            "discount_pct": 0,
+            "status": "rejected",
+            "reason": "equal_price_not_a_discount"
+          },
+          "storefront_country": "KR"
         }
       ]
     },
@@ -1453,8 +1601,6 @@
           "product": "롯데 빼빼로 샘플러 6종 세트 258g (빼빼로데이)",
           "store": "쿠팡 로켓배송",
           "price": 9300,
-          "original_price": 12000,
-          "discount_pct": 23,
           "shipping": "내일(수) 새벽 도착 보장",
           "rocket": true,
           "specs": [
@@ -1478,7 +1624,51 @@
             "matched_keyword": "빼빼로 샘플러 6종",
             "label": "롯데 빼빼로 샘플러 6종 세트 258g (새벽배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:40.904316+00:00",
+            "url": "https://link.coupang.com/a/iyJh99DCuW",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyJh99DCuW",
+            "tracked": true,
+            "matched_keyword": "빼빼로 샘플러 6종",
+            "label": "롯데 빼빼로 샘플러 6종 세트 258g (새벽배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-pepero-sampler-6pack",
+            "product": "롯데 빼빼로 샘플러 6종 세트 258g (빼빼로데이)",
+            "seller_url": "https://link.coupang.com/a/iyJh99DCuW",
+            "recorded_price": 9300,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyJh99DCuW",
+                "result": "product_route_unverified",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 12000,
+            "discount_pct": 23,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         },
         {
           "id": "deal-orion-wow-snack-16",
@@ -1490,8 +1680,6 @@
           "product": "오리온 와우스낵 16팩 선물세트 (인기스낵 16봉)",
           "store": "쿠팡 로켓배송",
           "price": 10980,
-          "original_price": 14800,
-          "discount_pct": 26,
           "shipping": "와우 새벽 도착 보장",
           "rocket": true,
           "specs": [
@@ -1515,7 +1703,51 @@
             "matched_keyword": "오리온 와우스낵 16팩",
             "label": "오리온 와우스낵 16팩 선물세트 (새벽배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:40.904742+00:00",
+            "url": "https://link.coupang.com/a/iyJbjsBrye",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyJbjsBrye",
+            "tracked": true,
+            "matched_keyword": "오리온 와우스낵 16팩",
+            "label": "오리온 와우스낵 16팩 선물세트 (새벽배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-orion-wow-snack-16",
+            "product": "오리온 와우스낵 16팩 선물세트 (인기스낵 16봉)",
+            "seller_url": "https://link.coupang.com/a/iyJbjsBrye",
+            "recorded_price": 10980,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyJbjsBrye",
+                "result": "product_route_unverified",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 14800,
+            "discount_pct": 26,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         },
         {
           "id": "deal-orion-bichobi-2pack",
@@ -1527,8 +1759,6 @@
           "product": "오리온 비쵸비 비스켓 125g 2개입",
           "store": "쿠팡 로켓배송",
           "price": 4370,
-          "original_price": 5200,
-          "discount_pct": 16,
           "shipping": "내일 새벽 도착 보장",
           "rocket": true,
           "specs": [
@@ -1552,7 +1782,51 @@
             "matched_keyword": "오리온 비쵸비",
             "label": "오리온 비쵸비 125g 2개입 (새벽배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:52.092073+00:00",
+            "url": "https://link.coupang.com/a/iyJdEYzZMO",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyJdEYzZMO",
+            "tracked": true,
+            "matched_keyword": "오리온 비쵸비",
+            "label": "오리온 비쵸비 125g 2개입 (새벽배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-orion-bichobi-2pack",
+            "product": "오리온 비쵸비 비스켓 125g 2개입",
+            "seller_url": "https://link.coupang.com/a/iyJdEYzZMO",
+            "recorded_price": 4370,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyJdEYzZMO",
+                "result": "product_route_unverified",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 5200,
+            "discount_pct": 16,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         },
         {
           "id": "deal-office-pantry-snack-10",
@@ -1564,8 +1838,6 @@
           "product": "사무실 과자 세트 10종 탕비실 간식 세트",
           "store": "쿠팡 무료배송",
           "price": 27800,
-          "original_price": 35000,
-          "discount_pct": 21,
           "shipping": "무료배송",
           "rocket": false,
           "specs": [
@@ -1589,7 +1861,52 @@
             "matched_keyword": "사무실 과자 10종 탕비실 세트",
             "label": "사무실 과자 10종 탕비실 세트 (무료배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:52.263279+00:00",
+            "url": "https://link.coupang.com/a/iyJcuOpMhU",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyJcuOpMhU",
+            "tracked": true,
+            "matched_keyword": "사무실 과자 10종 탕비실 세트",
+            "label": "사무실 과자 10종 탕비실 세트 (무료배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-office-pantry-snack-10",
+            "product": "사무실 과자 세트 10종 탕비실 간식 세트",
+            "seller_url": "https://link.coupang.com/a/iyJcuOpMhU",
+            "recorded_price": 27800,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyJcuOpMhU",
+                "result": "product_route_unverified",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 35000,
+            "discount_pct": 21,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         }
       ]
     },
@@ -1607,8 +1924,6 @@
           "product": "로지텍 MX Master 3S (로켓직구)",
           "store": "쿠팡 로켓직구",
           "price": 95220,
-          "original_price": 159000,
-          "discount_pct": 40,
           "shipping": "와우 무료배송",
           "rocket": true,
           "specs": [
@@ -1632,7 +1947,51 @@
             "matched_keyword": "로지텍 MX Master 3S",
             "label": "로지텍 MX Master 3S 로켓직구 (와우 무료배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:40.903008+00:00",
+            "url": "https://link.coupang.com/a/iyBYu25xw4",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyBYu25xw4",
+            "tracked": true,
+            "matched_keyword": "로지텍 MX Master 3S",
+            "label": "로지텍 MX Master 3S 로켓직구 (와우 무료배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-mx-master-3s",
+            "product": "로지텍 MX Master 3S (로켓직구)",
+            "seller_url": "https://link.coupang.com/a/iyBYu25xw4",
+            "recorded_price": 95220,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyBYu25xw4",
+                "result": "product_route_unverified",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 159000,
+            "discount_pct": 40,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         },
         {
           "id": "deal-silent-mech-keyboard",
@@ -1644,8 +2003,6 @@
           "product": "저소음 적축 기계식 키보드",
           "store": "쿠팡 로켓배송",
           "price": 68900,
-          "original_price": 89000,
-          "discount_pct": 23,
           "shipping": "로켓배송 무료배송",
           "rocket": true,
           "specs": [
@@ -1669,7 +2026,52 @@
             "matched_keyword": "기계식 키보드 저소음",
             "label": "저소음 적축 기계식 키보드 (로켓배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:59.585804+00:00",
+            "url": "https://link.coupang.com/a/iyzxBosAM0",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzxBosAM0",
+            "tracked": true,
+            "matched_keyword": "기계식 키보드 저소음",
+            "label": "저소음 적축 기계식 키보드 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-silent-mech-keyboard",
+            "product": "저소음 적축 기계식 키보드",
+            "seller_url": "https://link.coupang.com/a/iyzxBosAM0",
+            "recorded_price": 68900,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzxBosAM0",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 89000,
+            "discount_pct": 23,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         }
       ]
     },
@@ -1683,35 +2085,100 @@
           "target": "ko",
           "category": "tech",
           "category_label": "테크 장비 · 충전기",
-          "title_raw": "벨킨 부스트차지 100W USB-C PD3.2 AVS GaN PPS 초고속 충전기 WCH025kr",
-          "product": "벨킨 부스트차지 100W GaN 초고속 충전기",
-          "store": "쿠팡 로켓배송",
+          "title_raw": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+          "product": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+          "store": "Gmarket · 벨킨공식판매원",
           "price": 39900,
-          "original_price": 63900,
-          "discount_pct": 37,
-          "shipping": "로켓배송 무료반품",
-          "rocket": true,
+          "shipping": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+          "rocket": false,
           "specs": [
-            "100W 단일출력",
-            "PD3.2 AVS",
-            "GaN 초소형"
+            "USB-C 1포트",
+            "최대 100W",
+            "PD 3.2 AVS"
           ],
           "briefing": [
-            "실구매가: 39,900원 (정가 63,900원에서 37% 특가)",
-            "추천: 맥북 프로 14/16인치와 스마트폰을 벽돌 충전기 없이 고속 충전하려는 개발자",
-            "체크: 접지 설계로 맥북 메탈 바디 미세전류 찌릿함 방지"
+            "판매처 표시가격: 39,900원 (2026-11-14 확인). 쿠팡 이전 상품 기록이 아닌 위 판매처 기준.",
+            "USB-C 1포트; 최대 100W; PD 3.2 AVS",
+            "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+            "결제·주소별 재고·최종 금액은 미확인. 할인·역대 최저가 근거 없음."
           ],
-          "audience": "맥북 프로·아이패드를 매일 휴대하는 이동형 개발자",
+          "audience": "",
           "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 95,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
+          "score": null,
+          "disclosure": "제휴 추적 없는 판매자 직접 링크. 판매 페이지 표시가격을 확인했으며 최저가·할인율·결제 완료를 보장하지 않습니다.",
+          "ai_rewritten": false,
           "link": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-14T12:43:08.562400+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+            "product_match": true,
+            "evidence": "Seller detail shows WCH025kr1.5WHB6 white option, KRW39,900 and purchase UI. Belkin official seller; domestic delivery only."
+          },
+          "link_original": {
             "url": "https://link.coupang.com/a/iyIrM2GlPg",
             "tracked": true,
             "matched_keyword": "벨킨 100W GaN 충전기",
             "label": "벨킨 100W GaN 초고속 충전기 (로켓배송)",
             "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-belkin-100w-gan",
+            "product": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
+            "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+            "recorded_price": 39900,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 39900,
+            "deal_status": "regular_price_or_discount_unproven",
+            "evidence": [
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+                "result": "Seller detail shows WCH025kr1.5WHB6 white option, KRW39,900 and purchase UI. Belkin official seller; domestic delivery only.",
+                "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+              }
+            ],
+            "limitations": [
+              "No independently verified historical-low or previous-price comparison.",
+              "Address-specific stock, checkout, billing eligibility and final total not verified."
+            ],
+            "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+          },
+          "historical_claims": {
+            "original_price": 63900,
+            "discount_pct": 37,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-14",
+          "price_source": "retailer_product_page",
+          "source": {
+            "id": "deal-belkin-100w-gan-seller",
+            "label": "Gmarket · 벨킨공식판매원 actual product detail",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "KR"
+            ],
+            "status": "retailer_delivery_statement",
+            "delivery": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+            "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+            "payment": "Payment and billing restrictions not verified.",
+            "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+            "returns": "Seller return terms and exclusions apply; no free-return claim.",
+            "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+            "checked_at": "2026-11-14"
           }
         },
         {
@@ -1720,35 +2187,100 @@
           "target": "ko",
           "category": "tech",
           "category_label": "테크 장비 · 충전기",
-          "title_raw": "유그린 넥소드 프로 GaN 100W PD PPS 멀티 고속충전기 U-25093",
-          "product": "유그린 넥소드 프로 GaN 100W 3포트 멀티충전기",
-          "store": "쿠팡 로켓배송",
-          "price": 60900,
-          "original_price": 89900,
-          "discount_pct": 32,
-          "shipping": "내일 새벽 도착 보장",
-          "rocket": true,
+          "title_raw": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+          "product": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+          "store": "Gmarket · 에이스네트웍",
+          "price": 65100,
+          "shipping": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+          "rocket": false,
           "specs": [
-            "3포트 멀티(2C1A)",
-            "단일 100W",
-            "지능형 전력 배분"
+            "USB-C 2포트 + USB-A 1포트",
+            "단일 최대 100W"
           ],
           "briefing": [
-            "실구매가: 60,900원 (정가 89,900원, 32% 와우할인)",
-            "추천: 데스크 위 케이블을 하나로 통합해 노트북+폰+워치를 동시 충전하려는 사람",
-            "체크: 컴팩트한 사이즈로 출장·카페 작업 시 가방 무게 대폭 감소"
+            "판매처 표시가격: 65,100원 (2026-11-14 확인). 쿠팡 이전 상품 기록이 아닌 위 판매처 기준.",
+            "USB-C 2포트 + USB-A 1포트; 단일 최대 100W",
+            "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+            "결제·주소별 재고·최종 금액은 미확인. 할인·역대 최저가 근거 없음."
           ],
-          "audience": "데스크 위 멀티탭을 깔끔하게 정리하고 싶은 엔지니어",
+          "audience": "",
           "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 92,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
+          "score": null,
+          "disclosure": "제휴 추적 없는 판매자 직접 링크. 판매 페이지 표시가격을 확인했으며 최저가·할인율·결제 완료를 보장하지 않습니다.",
+          "ai_rewritten": false,
           "link": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-14T12:43:08.562400+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+            "product_match": true,
+            "evidence": "Seller detail explicitly identifies U-25093 and KRW65,100 base price with purchase UI. Optional advertised 5% coupon price KRW61,850 is not the unconditional price. Domestic delivery only."
+          },
+          "link_original": {
             "url": "https://link.coupang.com/a/iyIsS5yg2e",
             "tracked": true,
             "matched_keyword": "유그린 100W GaN 충전기",
             "label": "유그린 100W GaN 3포트 충전기 (로켓배송)",
             "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-ugreen-100w-gan",
+            "product": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
+            "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+            "recorded_price": 60900,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 65100,
+            "deal_status": "regular_price_or_discount_unproven",
+            "evidence": [
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+                "result": "Seller detail explicitly identifies U-25093 and KRW65,100 base price with purchase UI. Optional advertised 5% coupon price KRW61,850 is not the unconditional price. Domestic delivery only.",
+                "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+              }
+            ],
+            "limitations": [
+              "No independently verified historical-low or previous-price comparison.",
+              "Address-specific stock, checkout, billing eligibility and final total not verified.",
+              "Seller advertises 5% coupon KRW61,850; eligibility not tested and excluded from main price."
+            ],
+            "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+          },
+          "historical_claims": {
+            "original_price": 89900,
+            "discount_pct": 32,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-14",
+          "price_source": "retailer_product_page",
+          "source": {
+            "id": "deal-ugreen-100w-gan-seller",
+            "label": "Gmarket · 에이스네트웍 actual product detail",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "KR"
+            ],
+            "status": "retailer_delivery_statement",
+            "delivery": "국내배송 전용. 기본 무료배송, 제주 3,000원·도서산간 5,000원 추가.",
+            "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+            "payment": "Payment and billing restrictions not verified.",
+            "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+            "returns": "Seller return terms and exclusions apply; no free-return claim.",
+            "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+            "checked_at": "2026-11-14"
           }
         },
         {
@@ -1757,35 +2289,101 @@
           "target": "ko",
           "category": "tech",
           "category_label": "테크 장비 · 충전기",
-          "title_raw": "아트뮤 PD 3.2 100W AVS GaN 접지 멀티 초고속 충전기 GB102",
-          "product": "아트뮤 PD 3.2 100W 접지 2포트 멀티충전기",
-          "store": "쿠팡 로켓배송",
+          "title_raw": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+          "product": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+          "store": "Artmu 공식몰",
           "price": 35700,
-          "original_price": 44800,
-          "discount_pct": 20,
-          "shipping": "로켓배송 무료배송",
-          "rocket": true,
+          "shipping": "전국지역 택배 무료배송 안내. 블랙 선택; 화이트 옵션은 품절 표시. 주소별 재고·최종 주문 미확인.",
+          "rocket": false,
           "specs": [
-            "한국형 접지 플러그",
-            "100W 단일 / 동시 65W+35W",
-            "AVS GaN"
+            "USB-C 2포트 + USB-A 1포트",
+            "PD 3.2 AVS",
+            "최대 100W",
+            "한국형 접지"
           ],
           "briefing": [
-            "실구매가: 35,700원 (쿠팡 로켓배송 최저가)",
-            "추천: 국내 콘센트 규격에 딱 맞는 흔들림 없는 접지 충전기를 찾는 개발자",
-            "체크: 누전 차단 및 기기 보호 회로 탑재, 맥북 터치패드 오작동 완벽 방지"
+            "판매처 표시가격: 35,700원 (2026-11-14 확인). 쿠팡 이전 상품 기록이 아닌 위 판매처 기준.",
+            "USB-C 2포트 + USB-A 1포트; PD 3.2 AVS; 최대 100W; 한국형 접지",
+            "전국지역 택배 무료배송 안내. 블랙 선택; 화이트 옵션은 품절 표시. 주소별 재고·최종 주문 미확인.",
+            "결제·주소별 재고·최종 금액은 미확인. 할인·역대 최저가 근거 없음."
           ],
-          "audience": "맥북 충전 중 트랙패드 튐이나 미세전류가 거슬리는 분",
+          "audience": "",
           "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 91,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
+          "score": null,
+          "disclosure": "제휴 추적 없는 판매자 직접 링크. 판매 페이지 표시가격을 확인했으며 최저가·할인율·결제 완료를 보장하지 않습니다.",
+          "ai_rewritten": false,
           "link": {
+            "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-14T12:43:08.562400+00:00",
+            "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "product_match": true,
+            "evidence": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout."
+          },
+          "link_original": {
             "url": "https://link.coupang.com/a/iyItY3nD1U",
             "tracked": true,
             "matched_keyword": "아트뮤 100W 접지 충전기",
             "label": "아트뮤 100W 접지 초고속 충전기 (로켓배송)",
             "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-artmu-100w-gb102",
+            "product": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
+            "seller_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "recorded_price": 35700,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 35700,
+            "deal_status": "regular_price_or_discount_unproven",
+            "evidence": [
+              {
+                "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+                "result": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout.",
+                "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+              }
+            ],
+            "limitations": [
+              "No independently verified historical-low or previous-price comparison.",
+              "Address-specific stock, checkout, billing eligibility and final total not verified."
+            ],
+            "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+          },
+          "historical_claims": {
+            "original_price": 44800,
+            "discount_pct": 20,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-14",
+          "price_source": "retailer_product_page",
+          "source": {
+            "id": "deal-artmu-100w-gb102-seller",
+            "label": "Artmu 공식몰 actual product detail",
+            "url": "https://artmu.co.kr/product/detail.html?product_no=2942"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "KR"
+            ],
+            "status": "retailer_delivery_statement",
+            "delivery": "전국지역 택배 무료배송 안내. 블랙 선택; 화이트 옵션은 품절 표시. 주소별 재고·최종 주문 미확인.",
+            "activation": "Physical charger; compatible plug, device and power cable must be checked.",
+            "payment": "Payment and billing restrictions not verified.",
+            "tax": "Displayed KRW price; final amount and any regional freight require checkout.",
+            "returns": "Seller return terms and exclusions apply; no free-return claim.",
+            "evidence_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "checked_at": "2026-11-14"
           }
         },
         {
@@ -1794,23 +2392,15 @@
           "target": "ko",
           "category": "tech",
           "category_label": "테크 장비 · 음향",
-          "title_raw": "소니 MDR-3R 스튜디오 모니터링 이어폰",
-          "product": "소니 MDR-3R 모니터링 이어폰",
+          "title_raw": "소니 MDR-3R 유선 헤드폰",
+          "product": "소니 MDR-3R 유선 헤드폰",
           "store": "쿠팡 로켓배송",
           "price": 78640,
-          "original_price": 119000,
-          "discount_pct": 34,
           "shipping": "로켓배송 무료배송",
           "rocket": true,
-          "specs": [
-            "플랫한 사운드 밸런스",
-            "초경량 4.2g",
-            "노이즈 패시브 차음"
-          ],
+          "specs": [],
           "briefing": [
-            "실구매가: 78,640원 (정가 11.9만 원 대비 34% 할인)",
-            "추천: 헤드셋 무게에 목·정수리가 아파 가벼운 유선 이어폰을 찾는 코더",
-            "체크: 배터리 방전 걱정 없이 하루 종일 꽂고 집중 코딩 가능"
+            "이전 이어폰·4.2g·스튜디오 모니터 용도 표기는 근거가 없어 삭제했습니다. 실제 MDR-3R은 헤드폰입니다. 이전 판매처·가격·구매 조건은 미검증 상태로 보류합니다."
           ],
           "audience": "오랜 시간 음악이나 백색소음을 들으며 딥워크하는 엔지니어",
           "published_at": "2026-11-10T15:16:42+09:00",
@@ -1823,7 +2413,51 @@
             "matched_keyword": "소니 MDR-3R",
             "label": "소니 MDR-3R 이어폰 (로켓배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:59.083195+00:00",
+            "url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "tracked": true,
+            "matched_keyword": "소니 MDR-3R",
+            "label": "소니 MDR-3R 이어폰 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-sony-mdr-3r",
+            "product": "소니 MDR-3R 모니터링 이어폰",
+            "seller_url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "recorded_price": 78640,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzv0uG1N6",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 119000,
+            "discount_pct": 34,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         }
       ]
     },
@@ -1841,8 +2475,6 @@
           "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
           "store": "쿠팡 로켓배송",
           "price": 241734,
-          "original_price": 329000,
-          "discount_pct": 26,
           "shipping": "로켓배송 무료배송",
           "rocket": true,
           "specs": [
@@ -1866,7 +2498,52 @@
             "matched_keyword": "LG 울트라기어 27인치 QHD",
             "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:52.615449+00:00",
+            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "tracked": true,
+            "matched_keyword": "LG 울트라기어 27인치 QHD",
+            "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-lg-ultragear-27",
+            "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
+            "seller_url": "https://link.coupang.com/a/iyztqGf2zc",
+            "recorded_price": 241734,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyztqGf2zc",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 329000,
+            "discount_pct": 26,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         },
         {
           "id": "deal-heavy-duty-monitor-arm",
@@ -1878,8 +2555,6 @@
           "product": "고중량 기계식 모니터암 거치대",
           "store": "쿠팡 로켓배송",
           "price": 49900,
-          "original_price": 69000,
-          "discount_pct": 28,
           "shipping": "로켓배송 무료배송",
           "rocket": true,
           "specs": [
@@ -1903,7 +2578,52 @@
             "matched_keyword": "모니터암",
             "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:59:04.097743+00:00",
+            "url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "tracked": true,
+            "matched_keyword": "모니터암",
+            "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-heavy-duty-monitor-arm",
+            "product": "고중량 기계식 모니터암 거치대",
+            "seller_url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "recorded_price": 49900,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzzXmg6CG",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 69000,
+            "discount_pct": 28,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         }
       ]
     },
@@ -1921,8 +2641,6 @@
           "product": "Apple M4 Pro MacBook Pro 14",
           "store": "쿠팡 로켓배송",
           "price": 2990000,
-          "original_price": 3290000,
-          "discount_pct": 9,
           "shipping": "내일 새벽 도착 보장",
           "rocket": true,
           "specs": [
@@ -1946,7 +2664,52 @@
             "matched_keyword": "애플 M4 맥북 프로",
             "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:59.278769+00:00",
+            "url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "tracked": true,
+            "matched_keyword": "애플 M4 맥북 프로",
+            "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-apple-m4-macbook-pro",
+            "product": "Apple M4 Pro MacBook Pro 14",
+            "seller_url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "recorded_price": 2990000,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyxHrMNtyC",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 3290000,
+            "discount_pct": 9,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         },
         {
           "id": "deal-mini-pc-n100",
@@ -1958,8 +2721,6 @@
           "product": "미니PC 16GB N100 저전력 홈서버",
           "store": "쿠팡 로켓배송",
           "price": 189000,
-          "original_price": 259000,
-          "discount_pct": 27,
           "shipping": "로켓배송 무료배송",
           "rocket": true,
           "specs": [
@@ -1983,7 +2744,52 @@
             "matched_keyword": "미니PC 16GB",
             "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:59:04.149450+00:00",
+            "url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "tracked": true,
+            "matched_keyword": "미니PC 16GB",
+            "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-mini-pc-n100",
+            "product": "미니PC 16GB N100 저전력 홈서버",
+            "seller_url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "recorded_price": 189000,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzyHkgEOi",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 259000,
+            "discount_pct": 27,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         }
       ]
     },
@@ -2001,8 +2807,6 @@
           "product": "사무실 대용량 원두 1kg (고소한 블렌드)",
           "store": "쿠팡 로켓배송",
           "price": 16900,
-          "original_price": 22000,
-          "discount_pct": 23,
           "shipping": "로켓배송 무료배송",
           "rocket": true,
           "specs": [
@@ -2026,7 +2830,52 @@
             "matched_keyword": "고소한 원두 1kg",
             "label": "고소한 원두 1kg 대용량 (로켓배송)",
             "label_kind": "상품"
-          }
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:59:04.155777+00:00",
+            "url": "https://link.coupang.com/a/iyzuKorRTw",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzuKorRTw",
+            "tracked": true,
+            "matched_keyword": "고소한 원두 1kg",
+            "label": "고소한 원두 1kg 대용량 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-office-coffee-bean-1kg",
+            "product": "사무실 대용량 원두 1kg (고소한 블렌드)",
+            "seller_url": "https://link.coupang.com/a/iyzuKorRTw",
+            "recorded_price": 16900,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzuKorRTw",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 22000,
+            "discount_pct": 23,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR"
         }
       ]
     }
@@ -2079,7 +2928,9 @@
   },
   "stats": {
     "feed": 17,
-    "tracked_links": 17,
-    "search_fallback": 0
+    "tracked_links": 14,
+    "search_fallback": 0,
+    "verified_product_links": 3,
+    "held_product_links": 14
   }
 }

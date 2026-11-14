@@ -41,7 +41,7 @@ class CountryTests(unittest.TestCase):
     def test_storefront_does_not_grant_country_eligibility(self):
         self.assertEqual(validate_deal_countries(self.feed), [])
         for d in self.feed:
-            self.assertEqual(confirmed_countries(d), ('AU',) if d['id'] == '43ca41d03daa' else ())
+            self.assertEqual(confirmed_countries(d), ({'43ca41d03daa': ('AU',), 'deal-belkin-100w-gan': ('KR',), 'deal-ugreen-100w-gan': ('KR',), 'deal-artmu-100w-gb102': ('KR',), 'babbel-lifetime-all-languages': ('US',)}.get(d['id'], ())))
         d = {'region': 'kr', 'category': 'china', 'currency': 'USD', 'target': 'en'}
         self.assertEqual(confirmed_countries(d), ())
         self.assertEqual(storefront_country(d), 'unknown')
@@ -66,7 +66,7 @@ class CountryTests(unittest.TestCase):
             self.assertEqual(cards['lenovo-gk10-rt60-cn']['market'], 'CN')
             self.assertEqual(cards['lenovo-gk10-rt60-cn']['countries'], '')
             self.assertEqual(cards['43ca41d03daa']['countries'], 'AU')
-            self.assertEqual(len(p.cards), 13); self.assertEqual(len(p.archived), 17)
+            self.assertEqual(len(p.cards), sum(publishable_link(d) for d in self.feed)); self.assertEqual(len(p.archived), sum(not publishable_link(d) for d in self.feed))
             self.assertEqual(set(p.selects), {'market', 'country', 'category'})
             self.assertIn('unknown', p.selects['country'])
             self.assertIn('KR', p.selects['country'])

@@ -1,3 +1,4 @@
+from article_metadata import article_description
 import os
 import re
 import json
@@ -1255,18 +1256,18 @@ def generate_comparison_html(item):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{html.escape(a['name'])} vs {html.escape(b['name'])} (2026): Cost, Limits and the Decision Matrix</title>
-  <meta name="description" content="{html.escape(item['hook'][:180], quote=True)}">
+  <meta name="description" content="{html.escape(article_description(item), quote=True)}">
   <link rel="canonical" href="{BASE_URL}/compare/{slug}/">
   <link rel="alternate" hreflang="en" href="{BASE_URL}/compare/{slug}/">
   <link rel="alternate" hreflang="x-default" href="{BASE_URL}/compare/{slug}/">
   <meta property="og:site_name" content="{SITE_NAME}">
   <meta property="og:title" content="{html.escape(a['name'])} vs {html.escape(b['name'])} — 2026 teardown">
-  <meta property="og:description" content="{html.escape(item['hook'][:180], quote=True)}">
+  <meta property="og:description" content="{html.escape(article_description(item), quote=True)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{BASE_URL}/compare/{slug}/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{html.escape(a['name'])} vs {html.escape(b['name'])}: cost, limits and the decision matrix">
-  <meta name="twitter:description" content="{html.escape(first_sentence(item['verdict_summary'])[:180], quote=True)}">
+  <meta name="twitter:description" content="{html.escape(article_description(item), quote=True)}">
   <script type="application/ld+json">
   {_json_ld(schema_article, ensure_ascii=False, indent=2)}
   </script>
