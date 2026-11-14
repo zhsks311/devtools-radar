@@ -10,7 +10,7 @@
 - [Datadog vs Grafana Cloud](https://devteardown.com/compare/datadog-vs-grafana-cloud/): The modeled metrics bills favor Grafana Cloud, especially at high cardinality.
 - [AWS Lambda vs Cloudflare Workers](https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/): For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call.
 - [Resend vs SendGrid](https://devteardown.com/compare/resend-vs-sendgrid/): For a small service within 3,000 emails a month and 100 a day, Resend offers an ongoing free option.
-- [Supabase vs Firebase](https://devteardown.com/compare/supabase-vs-firebase/): If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project.
+- [Supabase vs Firebase](https://devteardown.com/compare/supabase-vs-firebase/): The flat-$25 realtime comparison is withdrawn.
 - [Vercel vs Cloudflare Pages](https://devteardown.com/compare/vercel-vs-cloudflare-pages/): Teams whose transfer passes 1 TB or whose requests pass 10M a month should pick Cloudflare Pages if every asset fits 25 MiB: 3 TB means $307.20 of Vercel overage against $0.
 - [Cursor vs GitHub Copilot](https://devteardown.com/compare/cursor-vs-github-copilot/): Teams content with Grok should choose Cursor, from $8 Plus; teams whose review runs through GitHub PRs should choose Copilot Pro at $10/user/month or above.
 - [Notion vs Obsidian](https://devteardown.com/compare/notion-vs-obsidian/): Choose Notion Business if you need granular database permissions or private teamspaces: for 10 people, 10 × $20 × 12 = $2,400/year, including Notion Agent but not Custom Agent credits.

@@ -10,60 +10,7 @@ import os
 BASE = "/workspace/devtools-radar/content/final"
 
 EDITS = {
-    "supabase-vs-firebase": {
-        "hook": "Fifty users watching a hundred documents that change twenty times a minute cost about $1,296 a month in Firestore reads, and a flat $25 on one Supabase Pro Micro project. The screen is identical; the only thing that changed is what the vendor counts.",
-        "replace": [
-            (
-                "For live-dashboard builders; rates verified 2026-11-10.\n\n- **Supabase sells a machine.** Pro also meters usage: 250 GB egress included, then $0.09/GB.\n- **Firebase sells events.** Listener updates count as reads, subject to free quotas.",
-                "**Supabase sells a machine.** You rent a Postgres instance, a disk and a connection ceiling, and reads inside them are free. **Firebase sells events.** Every document read, write, index batch and listener update is a line on the invoice, with a daily free quota on top.",
-            ),
-            (
-                "- **Supabase forbids infinite concurrency.** The $10 Micro instance stops at 60 direct / 200 pooled connections.\n\nPooled connections run from 200 on $10 Micro to 12,000 on $3,730 16XL; the ceiling is purchasable, not absolute. Larger sizes are available by request.",
-                "- **Supabase forbids cheap concurrency.** The $10 Micro instance stops at 60 direct and 200 pooled connections. The ceiling is purchasable rather than absolute — 12,000 pooled connections at $3,730 — but you buy it per project.",
-            ),
-            (
-                "## Who should NOT pick Firestore: listener charges beyond budget",
-                "## A listener is a meter, not a subscription",
-            ),
-            (
-                "The meter runs while nobody clicks.\n\n> Don't pick Firestore for listener-heavy workloads when modeled charges exceed a Supabase tier that fits your capacity and quotas.\n\nTake 50 users",
-                "The meter runs while nobody clicks. Don't pick Firestore for a screen that stays open all day.\n\nTake 50 users",
-            ),
-            (
-                "print(reads / 100_000 * 0.03)  # Allowances not deducted",
-                "print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota",
-            ),
-            (
-                "One Supabase Pro Micro project costs $25/month within included quotas; capacity is unproven. Reconnects make Firestore worse:",
-                "That is a gross read charge at the us-central1 rate before free-quota adjustments, and one Pro Micro project costs $25/month inside its quotas — which says nothing about whether that instance can carry the workload, only that the bill stops tracking the watching. Reconnects make it worse:",
-            ),
-            (
-                "## Who should NOT pick Supabase: capacity beyond budget",
-                "## On Supabase the ceiling is capacity, not a per-read meter",
-            ),
-            (
-                "That stream has no per-read meter. Database capacity is constrained by the compute instance and its connection/pooler limits. Compute is billed per project, separately from the plan.",
-                "Nothing in that stream is metered per read. What runs out is the instance: its compute tier and its connection and pooler limits. Compute is billed per project, separately from the plan.",
-            ),
-            (
-                "> Don't pick Supabase if the tier your peak database connections require exceeds your budget. Pro's $10/month credit covers one Micro; an extra Micro project adds $10/month.",
-                "> You stop paying for spikes and start paying for headroom. Size for peak connections: Pro's $10/month credit covers one Micro, and every extra project adds its own compute.",
-            ),
-            (
-                "> At the listed read rate, 10,000,000 reads cost $3.00 before allowances; a minimum charge alone is not a reason to migrate.",
-                "> Ten million plain reads cost $3.00 at the listed rate. The `count()` in your page header is a different bill.",
-            ),
-            (
-                "Treat that verification requirement as an unresolved migration dependency.",
-                "Until that middleware exists, plan for blocked logins at cutover and decide in advance whether you force a password reset.",
-            ),
-            (
-                "## Choose by modeled charges, quota fit and migration blockers",
-                "## Pick by bill shape first, then by blockers",
-            ),
-        ],
-        "verdict": "If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project. If your app fits Firestore's daily free quota of 50,000 reads, 20,000 writes and 20,000 deletes, stay where you are, because leaving costs a schema project and a password path the migration repo still marks incomplete.",
-    },
+    # Supabase final article owns corrected Realtime billing; no legacy overwrite.
 
     "vercel-vs-cloudflare-pages": {
         "hook": "Both hosts now meter CPU time, so an idle `await` is free on either and paying for idle time no longer separates them. What separates them is transfer and requests on Vercel — 3 TB a month adds 2,048 GB × $0.15 = $307.20 — against CPU milliseconds on Cloudflare, where egress costs $0.",
