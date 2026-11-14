@@ -2043,7 +2043,7 @@
       "pricing": "Personal $0 · Pro $9/$11 annual/monthly · Team $15/$16 up to 100 users · Business $24 per user/month",
       "self_host": "Yes for Engine and Moby; Desktop carries the subscription agreement",
       "realtime": "Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes",
-      "ai_readiness": "Hardened Images free for developers, from $5k/repo in production",
+      "ai_readiness": "DHI Community is free for production; Select adds compliance variants and patching SLA",
       "lock_in": "Medium: Compose and image tooling are standard, the desktop is licensed",
       "badge": "Licensed desktop",
       "cta_url": "https://www.docker.com/?utm_source=devteardown",
@@ -2056,7 +2056,7 @@
       "cons": [
         "Free use is a company-size test: cross either limit and every commercial seat is paid at once",
         "Government entities pay for Docker Desktop regardless of size",
-        "Production Hardened Images start at $5k per repository, which dwarfs seat revenue for a small team",
+        "DHI Community has no patching SLA; optional Select starts at $5k/repository for added compliance and support scope",
         "Business lists $24/user/month; confirm extras and negotiated terms"
       ],
       "code_example": "# The engine is open source; Docker Desktop is the licensed surface.\n$ docker run --rm -v \"$PWD\":/app -w /app node:24 npm ci\n# Here it breaks: past 250 employees or $10M revenue, every\n# commercial Desktop seat must be on Pro, Team or Business.\n$ docker buildx bake --set \"*.cache-from=type=registry\""
@@ -2096,8 +2096,8 @@
         "content": "Docker Desktop is free for qualifying small businesses with **fewer than 250 employees AND less than $10 million annual revenue**. Government entities require a paid subscription. Eligibility is not determined by developer-seat count alone.\n\n| Plan | USD/user/month | Scope |\n|---|---|---|\n| Personal | $0 | Eligible free use |\n| Pro | $9 annual billing; $11 monthly | Individual professional |\n| Team | $15 annual billing; $16 monthly | Up to 100 users |\n| Business | $24 listed per user/month | Enterprise controls; no user cap listed |\n\nA 200-user Business estimate is 200 × $24 = $4,800/month, or $57,600 for 12 months at that rate, before taxes and extras. This is a list-price illustration, not a negotiated quote. A 200-user Team estimate is not valid because it exceeds Team's published user limit."
       },
       {
-        "title": "Docker's money buys meters, and each meter is its own decision",
-        "content": "Past the seat, paid plans attach meters, at Docker's prices:\n\n| Item | Price | Decision it forces |\n|---|---|---|\n| Build Cloud | base minutes per plan | Do builds fit the allocation? |\n| Testcontainers Cloud | $3/100 min prepaid, $4/100 on demand | Steady enough to prepay? |\n| Docker Hardened Images | free for developers; production with compliance support starts at $5k/repo | How many repos ship? |\n| Docker Offload | licences on Team and Business | Worth the sales call it requires? |\n\nA Team subscription includes 500 Testcontainers Cloud runtime minutes per month, not per seat. For 4,000 total minutes, billable excess is 3,500 minutes: 35 × $4 = $140 on demand, or 35 × $3 = $105 purchased in advance. Seat charges are separate; purchased minutes expire at the end of the subscription period.\n\n- DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.\n- Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period."
+        "title": "Hardened Images production use does not require Select",
+        "content": "DHI Community is free for production use as well as development. It includes hardened images, SBOMs and provenance, but no guaranteed patch turnaround. Desktop licensing is a separate question.\n\n| DHI plan | Cost basis | Additional scope |\n|---|---|---|\n| Community | Free | Production-ready base images |\n| Select | Starts at $5k/repository | Compliance variants and patching SLA |\n| Enterprise | Quote | Additional customization; optional ELS |\n\nSelect is optional, not a production licence. Docker advertises FIPS/STIG variants and a critical-CVE remediation SLA with Select. Confirm repository scope, billing period, taxes and contract price before budgeting. Enterprise's Extended Lifecycle Support is an add-on, not included merely by choosing Enterprise.\n\nTestcontainers Cloud is separate: Team includes 500 runtime minutes/month per subscription. For 4,000 total minutes, 3,500 excess costs $140 on demand or $105 prepaid at the published block rates, excluding seats. Purchased minutes expire; do not prepay unused capacity."
       },
       {
         "title": "Who should not pick Podman: teams without socket ownership",
@@ -2129,9 +2129,9 @@
         "result": "$140 vs $105 incremental runtime cost, excluding seats; purchased minutes expire"
       },
       {
-        "label": "Docker Hardened Images production with compliance support, 12 repositories",
-        "formula": "12 × $5,000 (starting price) = $60,000/year",
-        "result": "$60,000/year floor, before Business seats; enterprise DHI is quote-only and required for end-of-life software security"
+        "label": "DHI production deployment: choose support scope before pricing",
+        "formula": "Community image access: $0. Select: advertised starting price $5k/repository; confirm billing period and quote.",
+        "result": "No universal $60,000/year production floor for 12 repositories; Select and ELS are optional paid scopes."
       }
     ],
     "decision_matrix": [
@@ -2180,8 +2180,8 @@
     "migration_guide": "Moving to Podman is one environment variable for CLI and Compose tooling plus two work items: handlers that use Docker-only API surface, and a decision about who may open the socket on each build host. Moving back is the same variable unset, which is why teams often keep both — Docker for the licensed platform services, Podman on machines that only need a runtime.",
     "faqs": [
       {
-        "q": "What happens if a Docker invoice is unpaid?",
-        "a": "An unpaid invoice starts a 15-day grace period."
+        "q": "Must we buy DHI Select to use hardened images in production?",
+        "a": "No. DHI Community provides production-ready images at no charge. Select adds compliance variants and an SLA for patching; Community has no guaranteed remediation timeline. Enterprise and its optional Extended Lifecycle Support have separate scope and pricing. Docker Desktop subscription eligibility remains separate."
       },
       {
         "q": "Is Docker Desktop free for our open-source work?",
@@ -2202,7 +2202,10 @@
       "https://docs.docker.com/subscription-billing/plans/docker/",
       "https://podman.io/",
       "https://podman-desktop.io/",
-      "https://docs.podman.io/en/latest/markdown/podman-system-service.1.html"
+      "https://docs.podman.io/en/latest/markdown/podman-system-service.1.html",
+      "https://docs.docker.com/dhi/",
+      "https://docs.docker.com/subscription-billing/plans/dhi/",
+      "https://docs.docker.com/dhi/explore/responsibility/"
     ],
     "related": [
       {

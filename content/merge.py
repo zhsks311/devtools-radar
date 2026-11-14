@@ -535,7 +535,7 @@ META = {
             "pricing": "Personal $0 · Pro $9/$11 annual/monthly · Team $15/$16 up to 100 users · Business $24 per user/month",
             "self_host": "Yes for Engine and Moby; Desktop carries the subscription agreement",
             "realtime": "Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes",
-            "ai_readiness": "Hardened Images free for developers, from $5k/repo in production",
+            "ai_readiness": "DHI Community is free for production; Select adds compliance variants and patching SLA",
             "lock_in": "Medium: Compose and image tooling are standard, the desktop is licensed",
             "badge": "Licensed desktop",
             "cta_url": "https://www.docker.com/?utm_source=devtoolsradar",
@@ -548,7 +548,7 @@ META = {
             "cons": [
                 "Free use is a company-size test: cross either limit and every commercial seat is paid at once",
                 "Government entities pay for Docker Desktop regardless of size",
-                "Production Hardened Images start at $5k per repository, which dwarfs seat revenue for a small team",
+                "DHI Community has no patching SLA; optional Select starts at $5k/repository for added compliance and support scope",
                 "Business lists $24/user/month; confirm extras and negotiated terms",
             ],
             "code_example": (

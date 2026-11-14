@@ -18,3 +18,14 @@ class ScopeCorrectionTests(unittest.TestCase):
  def test_node_api_is_not_blanket_rebuild(self):
   for a in self.articles('bun-vs-node'):
    t=json.dumps(a);self.assertIn('Node-API',t);self.assertIn('ABI stability',t);self.assertNotIn('every addon has a build',t);self.assertNotIn('Every addon built for Node 24',t);self.assertNotIn('needs a build for NODE_MODULE_VERSION',t)
+ def test_dhi_community_production_scope(self):
+  for a in self.articles('docker-vs-podman'):
+   t=json.dumps(a)
+   self.assertIn('Community is free for production',t)
+   self.assertIn('Select is optional, not a production licence',t)
+   self.assertNotIn('from $5k/repo in production',t)
+   self.assertNotIn('$60,000/year floor',t)
+  html=(ROOT/'dist/compare/docker-vs-podman/index.html').read_text()
+  self.assertIn('Must we buy DHI Select',html)
+  self.assertNotIn('Production Hardened Images start',html)
+  self.assertIn('Select is optional, not a production licence',(ROOT/'dist/llms-full.txt').read_text())

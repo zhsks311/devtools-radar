@@ -1007,20 +1007,18 @@ Docker Desktop is free for qualifying small businesses with **fewer than 250 emp
 
 A 200-user Business estimate is 200 × $24 = $4,800/month, or $57,600 for 12 months at that rate, before taxes and extras. This is a list-price illustration, not a negotiated quote. A 200-user Team estimate is not valid because it exceeds Team's published user limit.
 
-### Docker's money buys meters, and each meter is its own decision
-Past the seat, paid plans attach meters, at Docker's prices:
+### Hardened Images production use does not require Select
+DHI Community is free for production use as well as development. It includes hardened images, SBOMs and provenance, but no guaranteed patch turnaround. Desktop licensing is a separate question.
 
-| Item | Price | Decision it forces |
+| DHI plan | Cost basis | Additional scope |
 |---|---|---|
-| Build Cloud | base minutes per plan | Do builds fit the allocation? |
-| Testcontainers Cloud | $3/100 min prepaid, $4/100 on demand | Steady enough to prepay? |
-| Docker Hardened Images | free for developers; production with compliance support starts at $5k/repo | How many repos ship? |
-| Docker Offload | licences on Team and Business | Worth the sales call it requires? |
+| Community | Free | Production-ready base images |
+| Select | Starts at $5k/repository | Compliance variants and patching SLA |
+| Enterprise | Quote | Additional customization; optional ELS |
 
-A Team subscription includes 500 Testcontainers Cloud runtime minutes per month, not per seat. For 4,000 total minutes, billable excess is 3,500 minutes: 35 × $4 = $140 on demand, or 35 × $3 = $105 purchased in advance. Seat charges are separate; purchased minutes expire at the end of the subscription period.
+Select is optional, not a production licence. Docker advertises FIPS/STIG variants and a critical-CVE remediation SLA with Select. Confirm repository scope, billing period, taxes and contract price before budgeting. Enterprise's Extended Lifecycle Support is an add-on, not included merely by choosing Enterprise.
 
-- DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.
-- Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period.
+Testcontainers Cloud is separate: Team includes 500 runtime minutes/month per subscription. For 4,000 total minutes, 3,500 excess costs $140 on demand or $105 prepaid at the published block rates, excluding seats. Purchased minutes expire; do not prepay unused capacity.
 
 ### Who should not pick Podman: teams without socket ownership
 Podman's licence bill is $0. Its `podman system service` provides Docker v1.40 compatibility beside the native Libpod API. Socket-activated by systemd, it exits after 5 idle seconds by default.
@@ -1070,6 +1068,9 @@ Check today:
 - https://podman.io/
 - https://podman-desktop.io/
 - https://docs.podman.io/en/latest/markdown/podman-system-service.1.html
+- https://docs.docker.com/dhi/
+- https://docs.docker.com/subscription-billing/plans/dhi/
+- https://docs.docker.com/dhi/explore/responsibility/
 
 ## Clerk vs Auth0
 URL: https://devteardown.com/compare/clerk-vs-auth0/
