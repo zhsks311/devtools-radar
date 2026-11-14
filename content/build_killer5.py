@@ -124,7 +124,7 @@ FACTS = {
   '100,000 requests per day, 10 ms CPU per invocation, no charge for duration',
   'https://developers.cloudflare.com/workers/platform/pricing/'),
  ('Workers limits',
-  'No charge for duration, egress or bandwidth; 5 minutes of CPU per invocation, 30 seconds by '
+  'No charge for duration, egress or bandwidth; paid HTTP CPU up to 5 minutes, 30 seconds by '
   'default; static asset requests free and unlimited',
   'https://developers.cloudflare.com/workers/platform/pricing/'),
  ('Workers worked examples',

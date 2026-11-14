@@ -20,7 +20,7 @@ the vendor's claim.
   source: https://developers.cloudflare.com/workers/platform/pricing/
 - **Workers free** — 100,000 requests per day, 10 ms CPU per invocation, no charge for duration  
   source: https://developers.cloudflare.com/workers/platform/pricing/
-- **Workers limits** — No charge for duration, egress or bandwidth; 5 minutes of CPU per invocation, 30 seconds by default; static asset requests free and unlimited  
+- **Workers limits** — No charge for duration, egress or bandwidth; paid HTTP CPU up to 5 minutes, 30 seconds by default; static asset requests free and unlimited  
   source: https://developers.cloudflare.com/workers/platform/pricing/
 - **Workers worked examples** — 15M at 7 ms = $8.00; 100M at 7 ms = $45.40; 100M with 80% cache hits = $34.20; 720 cron runs at 180,000 ms = $6.99  
   source: https://developers.cloudflare.com/workers/platform/pricing/
