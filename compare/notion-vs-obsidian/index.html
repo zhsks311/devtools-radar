@@ -16,8 +16,8 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Notion vs Obsidian: cost, limits and the decision matrix">
   <meta name="twitter:description" content="Choose Notion Business if you need granular database permissions or private teamspaces: for 10 people, 10 × $20 × 12 = $2,400/year, including Notion Agent but not Custom Agent cred">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/notion-vs-obsidian/#article", "headline": "Notion vs Obsidian: a 2026 engineering teardown", "description": "On Notion Free, page history stops at 7 days; Business keeps 90, and an Obsidian vault under git has no plan-imposed cutoff at all. For ten people that is 10 × $20 × 12 = $2,400/year of Notion Business against 10 × $4 × 12 = $480/year of Sync, and the difference buys a permission model you either need or do not.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://www.notion.com/pricing", "https://developers.notion.com/reference/request-limits", "https://obsidian.md/pricing", "https://obsidian.md/help/bases", "https://obsidian.md/help/bases/views"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/notion-vs-obsidian/"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Obsidian Sync end-to-end encrypted?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Obsidian lists AES-256 end-to-end encryption for Sync, and Sync comes with a 7-day no-questions refund."}}, {"@type": "Question", "name": "Can a school or nonprofit pay less for Obsidian?", "acceptedAnswer": {"@type": "Answer", "text": "Obsidian gives a 40% education/nonprofit discount on Sync and Publish. Sync and Publish also have a 7-day no-questions refund."}}, {"@type": "Question", "name": "Do I have to hand-write retry logic for Notion's 429s?", "acceptedAnswer": {"@type": "Answer", "text": "Not in JavaScript: Notion's JS SDK retries for you and obeys `Retry-After`. Overloads can also come back as HTTP 529 with `service_overload`."}}, {"@type": "Question", "name": "Which Notion plan lists zero data retention with LLM providers?", "acceptedAnswer": {"@type": "Answer", "text": "Zero data retention with LLM providers is listed as an Enterprise feature, alongside SCIM and audit log. Lower plans do not list it. That retention policy does not establish whether workspace content is sent to them."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/notion-vs-obsidian/#article", "headline": "Notion vs Obsidian: a 2026 engineering teardown", "description": "On Notion Free, page history stops at 7 days; Business keeps 90, and an Obsidian vault under git has no plan-imposed cutoff at all. For ten people that is 10 × $20 × 12 = $2,400/year of Notion Business against 10 × $4 × 12 = $480/year of Sync, and the difference buys a permission model you either need or do not.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://www.notion.com/pricing", "https://developers.notion.com/reference/request-limits", "https://obsidian.md/pricing", "https://obsidian.md/help/bases", "https://obsidian.md/help/bases/views", "https://developers.notion.com/reference/query-a-data-source"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/notion-vs-obsidian/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Obsidian Sync end-to-end encrypted?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Obsidian lists AES-256 end-to-end encryption for Sync, and Sync comes with a 7-day no-questions refund."}}, {"@type": "Question", "name": "Can a school or nonprofit pay less for Obsidian?", "acceptedAnswer": {"@type": "Answer", "text": "Obsidian gives a 40% education/nonprofit discount on Sync and Publish. Sync and Publish also have a 7-day no-questions refund."}}, {"@type": "Question", "name": "Does the queryAll example export all Notion content?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reads rows from one accessible data source using API version 2026-03-11, follows next_cursor, and retries 429/529 up to four times per page. Restricted access, permanent errors, invalid cursors and exhausted limits throw. It does not fetch nested blocks or every workspace page, and concurrent edits prevent snapshot guarantees. API-capped queries (10,000 results) also throw and require partitioning."}}, {"@type": "Question", "name": "Which Notion plan lists zero data retention with LLM providers?", "acceptedAnswer": {"@type": "Answer", "text": "Zero data retention with LLM providers is listed as an Enterprise feature, alongside SCIM and audit log. Lower plans do not list it. That retention policy does not establish whether workspace content is sent to them."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Comparisons", "item": "https://devteardown.com/"}, {"@type": "ListItem", "position": 2, "name": "Notion vs Obsidian", "item": "https://devteardown.com/compare/notion-vs-obsidian/"}]}</script>
   <style>
 :root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
@@ -199,7 +199,7 @@ views:
 <p>Custom Agents are separately metered; do not infer a Business prerequisite. Obsidian has no server-side agent.</p>
 <p>Notion API budgets:</p>
 <ul><li><strong>180 requests per 60-second window per connection</strong>, or <strong>600/minute on Business/Enterprise</strong>; bursts allowed.</li><li>A <strong>per-workspace</strong> budget shared by every connection; its <code>Retry-After</code> can exceed a minute. It scales by plan.</li><li>Data-source queries capped near 3 requests/second per connection.</li></ul>
-<p>Obey <code>Retry-After</code> on HTTP 429 or 529 (<code>service_overload</code>); the JS SDK retries for you.</p>
+<p>The read-only example queries one data source, follows cursors and retries 429/529 within bounds. It throws on failure rather than returning partial data. Concurrent jobs need a shared queue.</p>
 
       <h2 id="s5">5. For ten people, $2,400 a year buys permissions or it buys nothing</h2>
       <p>Run the 10-person team through both price sheets:</p>
@@ -249,22 +249,56 @@ views:
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
         <span class="badge badge-blue" style="margin-bottom:0.4rem;">Notion</span>
-        <pre><code>// The API budget is the real constraint: 180 req/min per connection
-// (600 on Business+), plus a shared per-workspace budget.
-async function queryAll(dbId, cursor) {
-  const res = await fetch(`https://api.notion.com/v1/databases/${dbId}/query`, {
-    method: &#x27;POST&#x27;,
-    headers: { Authorization: `Bearer ${process.env.NOTION_TOKEN}`,
-               &#x27;Notion-Version&#x27;: &#x27;2022-06-28&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27; },
-    body: JSON.stringify({ start_cursor: cursor, page_size: 100 }),
-  });
-  // Here it breaks: bursts are allowed, sustained rate is not.
-  if (res.status === 429 || res.status === 529) {
-    const wait = Number(res.headers.get(&#x27;Retry-After&#x27;) || 60);
-    await new Promise(r =&gt; setTimeout(r, wait * 1000));
+        <pre><code>// Node 22+. Read-only data-source query, not a full workspace export.
+// Pass a data_source_id, not a database_id, and a server-side token.
+// Sequential calls only; concurrent jobs still need a shared rate-limit queue.
+export async function queryAll(dataSourceId, token, {
+  fetchImpl = fetch, sleep = ms =&gt; new Promise(r =&gt; setTimeout(r, ms)),
+  random = Math.random, maxPages = 1000,
+} = {}) {
+  const results = [], seen = new Set();
+  let cursor;
+  for (let page = 0; page &lt; maxPages; page++) {
+    let body;
+    for (let attempt = 0; ; attempt++) {
+      const res = await fetchImpl(
+        `https://api.notion.com/v1/data_sources/${encodeURIComponent(dataSourceId)}/query`,
+        { method: &#x27;POST&#x27;, signal: AbortSignal.timeout(30000),
+          headers: { Authorization: `Bearer ${token}`,
+            &#x27;Notion-Version&#x27;: &#x27;2026-03-11&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
+          body: JSON.stringify({ page_size: 100, ...(cursor ? { start_cursor: cursor } : {}) }) });
+      body = await res.json();
+      if (res.ok) break;
+      const blocked = body.additional_data?.rate_limit_reason === &#x27;public_api_request_blocked&#x27;;
+      if (![429, 529].includes(res.status) || blocked || attempt &gt;= 4) {
+        throw new Error(`Notion HTTP ${res.status}: ${body.code ?? &#x27;unknown_error&#x27;}`);
+      }
+      const raw = res.headers.get(&#x27;Retry-After&#x27;) ?? body.additional_data?.retry_after;
+      const seconds = raw != null &amp;&amp; /^\d+$/.test(String(raw)) ? Number(raw) : 0;
+      const wait = Math.max(seconds * 1000, 1000 * 2 ** attempt) + random() * 250;
+      // Never shorten a server wait: stop and let the caller reschedule instead.
+      if (!Number.isFinite(wait) || wait &gt; 300000) throw new Error(&#x27;Retry wait exceeds 5 minutes; reschedule&#x27;);
+      await sleep(wait); // The loop retries the identical page, not the next cursor.
+    }
+    if (!Array.isArray(body.results) || typeof body.has_more !== &#x27;boolean&#x27;) {
+      throw new Error(&#x27;Invalid paginated response&#x27;);
+    }
+    if (body.request_status?.type === &#x27;incomplete&#x27;) {
+      throw new Error(&#x27;Query capped at 10,000 results; partition the query&#x27;);
+    }
+    results.push(...body.results);
+    if (!body.has_more) return results;
+    if (typeof body.next_cursor !== &#x27;string&#x27; || !body.next_cursor || seen.has(body.next_cursor)) {
+      throw new Error(&#x27;Missing or repeated pagination cursor&#x27;);
+    }
+    seen.add(body.next_cursor);
+    cursor = body.next_cursor;
+    await sleep(350);
   }
-  return res.json();
-}</code></pre>
+  throw new Error(&#x27;Page limit reached; no complete result returned&#x27;);
+}
+// Network/timeout/JSON errors propagate. No silent partial results.
+// Live edits can alter pagination: this is not a transactionally consistent snapshot.</code></pre>
       </div>
       <div>
         <span class="badge badge-green" style="margin-bottom:0.4rem;">Obsidian</span>
@@ -330,8 +364,8 @@ views:
           <div class="faq-a">Obsidian gives a 40% education/nonprofit discount on Sync and Publish. Sync and Publish also have a 7-day no-questions refund.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Do I have to hand-write retry logic for Notion&#x27;s 429s?</div>
-          <div class="faq-a">Not in JavaScript: Notion&#x27;s JS SDK retries for you and obeys <code>Retry-After</code>. Overloads can also come back as HTTP 529 with <code>service_overload</code>.</div>
+          <div class="faq-q">Does the queryAll example export all Notion content?</div>
+          <div class="faq-a">No. It reads rows from one accessible data source using API version 2026-03-11, follows next_cursor, and retries 429/529 up to four times per page. Restricted access, permanent errors, invalid cursors and exhausted limits throw. It does not fetch nested blocks or every workspace page, and concurrent edits prevent snapshot guarantees. API-capped queries (10,000 results) also throw and require partitioning.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Which Notion plan lists zero data retention with LLM providers?</div>
@@ -342,7 +376,7 @@ views:
       <h2>Sources &amp; verification</h2>
       <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
       Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
-      <div class="card"><p class="sources-list"><a href="https://www.notion.com/pricing" rel="noopener nofollow" target="_blank">https://www.notion.com/pricing</a><br><a href="https://developers.notion.com/reference/request-limits" rel="noopener nofollow" target="_blank">https://developers.notion.com/reference/request-limits</a><br><a href="https://obsidian.md/pricing" rel="noopener nofollow" target="_blank">https://obsidian.md/pricing</a><br><a href="https://obsidian.md/help/bases" rel="noopener nofollow" target="_blank">https://obsidian.md/help/bases</a><br><a href="https://obsidian.md/help/bases/views" rel="noopener nofollow" target="_blank">https://obsidian.md/help/bases/views</a><br></p></div>
+      <div class="card"><p class="sources-list"><a href="https://www.notion.com/pricing" rel="noopener nofollow" target="_blank">https://www.notion.com/pricing</a><br><a href="https://developers.notion.com/reference/request-limits" rel="noopener nofollow" target="_blank">https://developers.notion.com/reference/request-limits</a><br><a href="https://obsidian.md/pricing" rel="noopener nofollow" target="_blank">https://obsidian.md/pricing</a><br><a href="https://obsidian.md/help/bases" rel="noopener nofollow" target="_blank">https://obsidian.md/help/bases</a><br><a href="https://obsidian.md/help/bases/views" rel="noopener nofollow" target="_blank">https://obsidian.md/help/bases/views</a><br><a href="https://developers.notion.com/reference/query-a-data-source" rel="noopener nofollow" target="_blank">https://developers.notion.com/reference/query-a-data-source</a><br></p></div>
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../cursor-vs-github-copilot/" style="padding:1.1rem;">

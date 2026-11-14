@@ -743,7 +743,7 @@ Notion API budgets:
 - A **per-workspace** budget shared by every connection; its `Retry-After` can exceed a minute. It scales by plan.
 - Data-source queries capped near 3 requests/second per connection.
 
-Obey `Retry-After` on HTTP 429 or 529 (`service_overload`); the JS SDK retries for you.
+The read-only example queries one data source, follows cursors and retries 429/529 within bounds. It throws on failure rather than returning partial data. Concurrent jobs need a shared queue.
 
 ### For ten people, $2,400 a year buys permissions or it buys nothing
 Run the 10-person team through both price sheets:
@@ -778,6 +778,7 @@ Check these today:
 - https://obsidian.md/pricing
 - https://obsidian.md/help/bases
 - https://obsidian.md/help/bases/views
+- https://developers.notion.com/reference/query-a-data-source
 
 ## Bun vs Node.js
 URL: https://devteardown.com/compare/bun-vs-node/
