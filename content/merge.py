@@ -626,13 +626,7 @@ META = {
                 "Protect checks meter at $0.002 after 10,000 free, so attack traffic is a billable event",
                 "Business is a $300/mo step mostly for SOC 2, seats and 30-day logs",
             ],
-            "code_example": (
-                "// Clerk bills a retained user, not a session: retention requires a return at least 24 hours after signup.\n"
-                "const { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\n"
-                "// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,\n"
-                "// and Hobby gives one grace month before requests stop being served.\n"
-                "if (totalCount > 50_000) console.warn(totalCount, \"MRU — check the plan\");"
-            ),
+            "code_example": "// Server-side inventory count, not a billing-usage measurement.\nconst { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\nconsole.log({ registeredUsers: totalCount });\n// Do not compare totalCount with an MRU allowance.\n// MRU requires qualifying activity in the billing month after the first 24 hours.\n// A last-sign-in or creation-date filter alone is not an MRU billing meter.\n// Use Clerk's reported billing usage to reconcile the actual MRU charge.",
         },
         "tool_b": {
             "name": "Auth0",

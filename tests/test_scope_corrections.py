@@ -29,3 +29,14 @@ class ScopeCorrectionTests(unittest.TestCase):
   self.assertIn('Must we buy DHI Select',html)
   self.assertNotIn('Production Hardened Images start',html)
   self.assertIn('Select is optional, not a production licence',(ROOT/'dist/llms-full.txt').read_text())
+ def test_clerk_inventory_is_not_mru(self):
+  for a in self.articles('clerk-vs-auth0'):
+   code=a['tool_a']['code_example']
+   self.assertIn('registeredUsers: totalCount',code)
+   self.assertIn('not a billing-usage measurement',code)
+   self.assertNotIn('if (totalCount >',code)
+   self.assertIn('filter alone is not an MRU billing meter',code)
+  for p in ['dist/compare/clerk-vs-auth0/index.html','dist/llms-full.txt']:
+   s=(ROOT/p).read_text()
+   self.assertIn('Do not use getUserList().totalCount as MRU',s)
+   self.assertNotIn('MRU — check the plan',s)

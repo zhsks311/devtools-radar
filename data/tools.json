@@ -2249,7 +2249,7 @@
         "Protect checks meter at $0.002 after 10,000 free, so attack traffic is a billable event",
         "Business is a $300/mo step mostly for SOC 2, seats and 30-day logs"
       ],
-      "code_example": "// Clerk bills a retained user, not a session: retention requires a return at least 24 hours after signup.\nconst { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\n// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,\n// and Hobby gives one grace month before requests stop being served.\nif (totalCount > 50_000) console.warn(totalCount, \"MRU — check the plan\");"
+      "code_example": "// Server-side inventory count, not a billing-usage measurement.\nconst { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\nconsole.log({ registeredUsers: totalCount });\n// Do not compare totalCount with an MRU allowance.\n// MRU requires qualifying activity in the billing month after the first 24 hours.\n// A last-sign-in or creation-date filter alone is not an MRU billing meter.\n// Use Clerk's reported billing usage to reconcile the actual MRU charge."
     },
     "tool_b": {
       "name": "Auth0",
@@ -2279,7 +2279,7 @@
     "sections": [
       {
         "title": "Clerk and Auth0 count different people",
-        "content": "Read the unit before the price. Each vendor defines it in its own words:\n\n| Vendor | Unit | Who is counted |\n|---|---|---|\n| Clerk | Monthly Retained User (MRU) | returns at least 24 hours after signup, per app |\n| Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |\n\nClerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.\n\n> A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.\n\nVendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0."
+        "content": "| Vendor | Unit | Who is counted |\n|---|---|---|\n| Clerk | Monthly Retained User (MRU) | returns at least 24 hours after signup, per app |\n| Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |\n\nVendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0.\n\nDo not use getUserList().totalCount as MRU: it counts registered users, not monthly retained activity. A last-sign-in date filter alone is not a billing meter. Reconcile charges against Clerk-reported billing usage."
       },
       {
         "title": "Who should not pick Auth0's paid B2C plans",
@@ -2378,8 +2378,8 @@
         "a": "No. Pro includes 1 SSO connection and charges $75/month for each additional connection; Business costs $300/month or $250/month billed annually and adds a SOC 2 report, 10 dashboard seats and 30-day application and admin logs."
       },
       {
-        "q": "How long does each vendor keep logs on the paid tiers?",
-        "a": "Auth0 keeps 5 days on Essentials, 10 on Professional and 30 on Enterprise. Clerk Pro keeps 7 days of logs and Business keeps 30."
+        "q": "Can getUserList().totalCount measure Clerk MRU billing?",
+        "a": "No. The unfiltered count is registered users in the instance, not Monthly Retained Users. MRU depends on activity during the billing month at least 24 hours after signup. A creation-date or last-sign-in filter alone does not establish billable MRU; use Clerk-reported billing usage rather than treating an inventory count as a quota alert."
       },
       {
         "q": "What does SMS login cost on Clerk?",
@@ -2389,7 +2389,9 @@
     "sources": [
       "https://clerk.com/pricing",
       "https://auth0.com/pricing",
-      "https://auth0.com/pricing.md"
+      "https://auth0.com/pricing.md",
+      "https://clerk.com/docs/reference/backend/user/get-user-list",
+      "https://clerk.com/docs/guides/development/migrating/overview"
     ],
     "related": [
       {
