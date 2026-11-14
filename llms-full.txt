@@ -433,59 +433,39 @@ Check three numbers before choosing: your monthly volume rounded up to the rung 
 
 ## Supabase vs Firebase
 URL: https://devteardown.com/compare/supabase-vs-firebase/
-Category: Backend & Database · Recorded source review: 2026-11-10
+Category: Backend & Database · Recorded source review: 2026-11-14
 
-Verdict: If your bill grows with how often people watch data rather than how much data you keep, Supabase wins: that dashboard is about $1,296/month of Firestore reads against $25 for one Pro Micro project. If your app fits Firestore's daily free quota of 50,000 reads, 20,000 writes and 20,000 deletes, stay where you are, because leaving costs a schema project and a password path the migration repo still marks incomplete.
+Verdict: The flat-$25 realtime comparison is withdrawn. For the stated hypothetical fan-out, Supabase message overage alone is $10,787.50 versus $1,296 in Firestore Standard read charges; both exclude other costs. Choose using complete regional bills, feature requirements and measured capacity, not the presence or absence of a database per-read fee.
 
-### The billing unit decides what code you may write
-**Supabase sells a machine.** You rent a Postgres instance, a disk and a connection ceiling, and reads inside them are free. **Firebase sells events.** Every document read, write, index batch and listener update is a line on the invoice, with a daily free quota on top.
+### Two billing models, both with usage meters
+Correction, November 14, 2026: this article previously treated Supabase Postgres Changes as unmetered and compared a high-fan-out workload with a flat $25 project. Supabase bills Realtime Messages separately from database compute, so that conclusion is withdrawn.
 
-What each philosophy forbids:
+A database query and delivery of a Realtime change are different billing events. Supabase combines plan, compute and usage charges; Firestore Standard meters document operations, among other items.
 
-- **Firestore forbids JOINs.** A relation becomes duplicated fields or an extra round trip, and the extra reads are billed.
-- **Supabase forbids cheap concurrency.** The $10 Micro instance stops at 60 direct and 200 pooled connections. The ceiling is purchasable rather than absolute — 12,000 pooled connections at $3,730 — but you buy it per project.
-
-| Meter | Unit price | Pattern it punishes |
+| Meter | Published unit | Scope |
 |---|---|---|
-| Firestore reads | $0.03 / 100,000 | Live listeners on hot documents |
-| Firestore writes | $0.09 / 100,000 | Per-keystroke saves, chatty counters |
-| Supabase disk | $0.125/GB over 8 GB | Keeping everything forever |
-| Supabase compute | $10 to $3,730/month per project | Many connections, many projects |
+| Firestore Standard reads | $0.03/100,000 | us-central1, not every edition or region |
+| Firestore Standard writes | $0.09/100,000 | Same regional model |
+| Supabase Realtime | 5M messages included on Pro, then $2.50/M | Organization allowance; excess rounded up in 1M packages |
+| Supabase Pro Micro base | $25 + $10 − $10 credit | One project, excludes usage overage |
 
-### A listener is a meter, not a subscription
-A listener is not a free subscription. Firestore bills a read each time a document enters or updates in a live listener's result set, and one more when a change pushes it out. The meter runs while nobody clicks. Don't pick Firestore for a screen that stays open all day.
+### Model deliveries before comparing prices
+Assume 50 clients continuously watch the same 100 documents; every document changes 20 times/minute for 30 days. Each change reaches all 50 clients, with no coalescing, filtering or missed deliveries.
 
-Take 50 users, each watching 100 documents that change 20 times a minute:
+50 × 100 × 20 × 60 × 24 × 30 = 4.32 billion deliveries. Firestore Standard read-only gross cost at the stated rate is $1,296. This is arithmetic, not a load-test result.
 
-```python
-users, docs, changes_per_min = 50, 100, 20
-reads = users * docs * changes_per_min * 60 * 24 * 30
-print(reads)                   # 4.32B events, zero clicks
-print(reads / 100_000 * 0.03)  # 43,200 x $0.03, before free quota
-```
+Firestore bills listener additions and updates, plus removals caused by document changes; deleting a document does not itself add a listener read. Reconnects can reissue billed queries: always with offline persistence disabled, or after more than 30 minutes disconnected with it enabled.
 
-That is a gross read charge at the us-central1 rate, before free-quota adjustments. One Pro Micro project costs $25/month inside its quotas — which says nothing about whether that instance can carry the load, only that the bill stops tracking the watching. Reconnects make it worse:
+Initial reads, reconnects, security-rule and index reads, storage, transfer and taxes are omitted. The underlying 86.4M updates would also incur writes: $77.76 gross at $0.09/100,000. Daily free quotas must be applied by day; unused quota is not a monthly pool.
 
-- Offline persistence **off**: every reconnect is billed like a brand-new query.
-- Persistence **on** but disconnected for more than 30 minutes: same bill.
+### Supabase messages, spend caps and throughput are separate
+Postgres Changes counts one message per receiving client: one change delivered to 50 clients means 50 messages. Broadcast also counts the send plus each receiving client; Presence has its own traffic, so do not substitute one meter for another.
 
-### On Supabase the ceiling is capacity, not a per-read meter
-Postgres Changes is a database event stream, and you opt in per table:
+At 4.32B delivered messages, ceil((4.32B − 5M)/1M) × $2.50 = $10,787.50 overage. Adding the illustrative $25 Pro Micro base gives $10,812.50, before extra compute, egress, connections or other usage.
 
-> Add a table to the publication: `alter publication supabase_realtime add table your_table_name;`
+The model averages 1,666.7 deliveries/s. Published Pro limits are 500 messages/s, or 2,500/s for Pro without a spend cap; peak connections are 500 or 10,000 respectively. These are Realtime limits, not database pooler connections.
 
-Nothing in that stream is metered per read. What runs out is the instance: its compute tier and its connection and pooler limits. Compute is billed per project, separately from the plan.
-
-| Compute | Monthly compute | Direct / pooled database connections |
-|---|---|---|
-| Micro | $10 | 60 / 200 |
-| Small | $15 | 90 / 400 |
-| Medium | $60 | 120 / 600 |
-| Large | $110 | 160 / 800 |
-| XL | $210 | 240 / 1,000 |
-| 16XL | $3,730 | 500 / 12,000 |
-
-> You stop paying for spikes and start paying for headroom. Size for peak connections: Pro's $10/month credit covers one Micro, and every extra project adds its own compute.
+A spend cap covers Realtime quota overage: leaving it on can restrict service, not grant unlimited free delivery. Turning it off permits charges but does not remove throughput limits or prove capacity; validate burst load, payloads, RLS work and actual project settings.
 
 ### Index entry reads are the Firestore line item nobody quotes
 - One read per batch of up to 1,000 index entries a query reads.
@@ -499,11 +479,7 @@ Firestore's own docs give the example: `count()` over 1,500 index entries bills 
 Audit any query that combines two range fields before it ships.
 
 ### Migration is a schema project with a script attached
-`supabase-community/firebase-to-supabase` on GitHub is community tooling, not an official CLI. What it does:
-
-1. `firestore2json.js` exports a collection; `json2supabase.js` loads it into a table. One collection, one table.
-2. Fields are flattened to `text`, `numeric`, `boolean` or `jsonb`.
-3. Splitting nested JSON into related tables needs custom hooks you write.
+`supabase-community/firebase-to-supabase` on GitHub is community tooling, not an official CLI. It exports collections and loads tables; splitting nested JSON into related tables needs custom hooks.
 
 Auth is the sharper edge. `firestoreusers2json` and `import_users` move users, importing hashes with Firestore's SCRYPT parameters (`base64_signer_key`, `base64_salt_separator`, `rounds`, `mem_cost`).
 
@@ -511,18 +487,16 @@ Auth is the sharper edge. `firestoreusers2json` and `import_users` move users, i
 
 Until that middleware exists, plan for blocked logins at cutover and decide in advance whether you force a password reset.
 
-### Pick by bill shape first, then by blockers
-Choose Supabase when modeled Firestore charges exceed the plan and compute cost and the workload fits the selected tier and quotas. Keep Firestore when all free allowances fit:
+### Compare complete bills and prove capacity
+Do not choose either platform from the old $1,296-versus-$25 headline. The corrected model makes Supabase message overage much larger than the Firestore read line, but neither is a full bill or performance guarantee.
 
-- 50,000 reads, 20,000 writes and 20,000 deletes per day.
-- 1 GiB stored, 10 GiB/month outbound; one free database per project.
+1. Measure changes, actual recipients, payload sizes, active hours and reconnects.
+2. Include Supabase Realtime packages and other usage, not only Postgres compute.
+3. Include Firestore writes, query/security-rule reads, storage and network costs for the selected region and edition.
+4. Load-test throughput, burst behavior and authorization overhead before sizing a project.
+5. Consider batching, narrower subscriptions or lower update frequency when product requirements allow.
 
-Check today, in this order:
-
-1. Multiply listeners × documents per listener × changes per minute × (60 × 24 × 30) minutes, then × $0.03 per 100,000.
-2. Find every hot-path query with two range fields or a `count()`.
-3. On Supabase, compare peak database connections to Micro's 60 direct / 200 pooled.
-4. Check whether first-login existing-password verification blocks migration.
+Firestore free allowances include 50,000 reads, 20,000 writes and 20,000 deletes daily, plus storage/network quotas. Supabase’s included Realtime quota is also finite; check consumption across the organization.
 
 ### Source links
 - https://supabase.com/pricing
@@ -530,6 +504,10 @@ Check today, in this order:
 - https://firebase.google.com/docs/firestore/pricing
 - https://cloud.google.com/firestore/pricing
 - https://supabase.com/kb/guides/migrate-from-firestore-data
+- https://supabase.com/docs/guides/platform/manage-your-usage/realtime-messages
+- https://supabase.com/docs/guides/realtime/limits
+- https://supabase.com/docs/guides/platform/cost-control
+- https://firebase.google.com/docs/firestore/compare-editions-for-native-mode
 
 ## Vercel vs Cloudflare Pages
 URL: https://devteardown.com/compare/vercel-vs-cloudflare-pages/
