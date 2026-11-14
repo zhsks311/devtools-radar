@@ -7,11 +7,11 @@ volume you will actually reach, and ends with a decision matrix.
 ## Pipeline
 
 ```
-content/facts/{slug}.md        verified facts only (prices, limits, sources) — written by hand
+content/facts/{slug}.md        research leads (prices, limits, sources), not independent verification
         │
         │  omp --model claude-opus-5-5   (author)
         ▼
-content/draft/{slug}.json      article written under the writing standard, restricted to the fact sheet
+content/draft/{slug}.json      draft checked against official primary sources under the evidence policy
         │
         │  omp --model gpt-6.1-sol       (reviewer — never the author's model)
         ▼
@@ -22,7 +22,7 @@ content/review/{slug}.md       defect list: FACT / META / SLOP / LOGIC / RHYTHM 
 content/final/{slug}.json  →  data/tools.json  →  build.py  →  dist/
 ```
 
-`tools/lint_content.py` is the gate: banned phrases, meta-text, body length, paragraph length, visual
+`tools/lint_content.py` is a structural gate, not a fact checker: banned phrases, meta-text, body length, paragraph length, visual
 anchor density, and the shape of `decision_matrix` / `cost_math` / `faqs`. A file that fails does not ship.
 
 ```bash
@@ -205,3 +205,11 @@ with every filter/search and empty copy is neutral. The destination-unverified
 shortcut changes only the destination filter, retaining search/category/storefront
 and browser history. It never places unknown destinations into a named country.
 Regression checks include all six languages with the five real discovery records.
+
+## Editorial evidence and historical content
+
+Follow [the evidence policy](docs/editorial-evidence-policy.md) for new revisions. Generate fresh
+write/review/revise prompts instead of replaying old article-specific instructions. Run
+`python tools/check_editorial_evidence.py --slug <slug>` for the selected reviewed revision.
+Legacy articles have not been automatically certified or removed; the general build currently
+checks structure and regressions only. Passing CI is not proof of factual correctness.
