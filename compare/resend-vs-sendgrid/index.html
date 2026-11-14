@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Resend vs SendGrid: cost, limits and the decision matrix">
   <meta name="twitter:description" content="For a small service within 3,000 emails a month and 100 a day, Resend offers an ongoing free option.">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/resend-vs-sendgrid/#article", "headline": "Resend vs SendGrid: a 2026 engineering teardown", "description": "Resend and SendGrid offer similar entry prices, but trial expiry and overage billing change the bill. Resend’s paid overages need opt-in and round up in 1,000-email buckets. A standard SendGrid trial ends with sending paused, not an automatic paid subscription.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://resend.com/pricing", "https://www.twilio.com/en-us/products/email-api/pricing", "https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai", "https://resend.com/docs", "https://www.twilio.com/docs/sendgrid", "https://resend.com/changelog/pay-as-you-go-pricing", "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan", "https://help.twilio.com/articles/47846436523419", "https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/resend-vs-sendgrid/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/resend-vs-sendgrid/#article", "headline": "Resend vs SendGrid: a 2026 engineering teardown", "description": "Resend and SendGrid offer similar entry prices, but trial expiry and overage billing change the bill. Resend’s paid overages need opt-in and round up in 1,000-email buckets. A standard SendGrid trial ends with sending paused, not an automatic paid subscription.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://resend.com/pricing", "https://www.twilio.com/en-us/products/email-api/pricing", "https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai", "https://resend.com/docs", "https://www.twilio.com/docs/sendgrid", "https://resend.com/changelog/pay-as-you-go-pricing", "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan", "https://help.twilio.com/articles/47846436523419", "https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans", "https://resend.com/docs/dashboard/emails/idempotency-keys", "https://resend.com/docs/api-reference/errors"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/resend-vs-sendgrid/"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Resend sell a dedicated IP on Pro?", "acceptedAnswer": {"@type": "Answer", "text": "No. The $30 per month add-on is listed for Scale plans, to accounts sending more than 3,000 emails a day. Pro has no IP option."}}, {"@type": "Question", "name": "Does SendGrid automatically charge after the free trial?", "acceptedAnswer": {"@type": "Answer", "text": "No automatic paid conversion is described for the standard new direct-account trial. After 60 days, sending stops unless you choose a paid upgrade. Partner/reseller and already-paid accounts can have different terms; check the actual plan and notices. Older direct free plans were subject to the 2025 retirement transition."}}, {"@type": "Question", "name": "How do Resend overages work?", "acceptedAnswer": {"@type": "Answer", "text": "On an eligible paid transactional plan, enable Transactional Overages in Settings. Additional usage rounds up in 1,000-email buckets at the plan rate. At $20 for 50,000 and $0.90 per bucket, 51,415 emails cost $21.80; 66,001 cost $35.30, above the $35/100,000 tier. Free plans are not eligible. Taxes and other fees are extra. This rounding rule does not establish SendGrid billing behavior."}}, {"@type": "Question", "name": "Do both include inbound email parsing?", "acceptedAnswer": {"@type": "Answer", "text": "Resend lists inbound email with webhooks on every plan, and SendGrid lists an Inbound Parse webhook as part of the Email API feature set."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Comparisons", "item": "https://devteardown.com/"}, {"@type": "ListItem", "position": 2, "name": "Resend vs SendGrid", "item": "https://devteardown.com/compare/resend-vs-sendgrid/"}]}</script>
   <style>
@@ -183,7 +183,7 @@ footer p { font-size:.8rem; margin:0; }
       <h2 id="s4">4. Domain authentication is table stakes; the domain count is not</h2>
       <p>Both authenticate sending with DKIM, SPF and DMARC, and both include a REST API, SMTP relay and official SDKs on every paid plan. The differences are in the quantities.</p>
 <div class="table-wrapper"><table><thead><tr><th>Quantity</th><th>Resend</th><th>SendGrid</th></tr></thead><tbody><tr><td>Custom domains</td><td>3 Free, 10 Pro, 1,000 Scale</td><td>Domain authentication included</td></tr><tr><td>Extra domains</td><td>$20/mo adds 100</td><td>Not a listed line item</td></tr><tr><td>Teammates</td><td>Not metered</td><td>1 on Essentials, 1,000 on Pro</td></tr><tr><td>Event webhooks</td><td>5 on Pro, 10 on Scale</td><td>2 on Essentials, 5 on Pro</td></tr><tr><td>SSO</td><td>$150/mo add-on on Scale</td><td>Included in Pro</td></tr></tbody></table></div>
-<p>An agency managing dozens of client domains should price the domain line before the email line: Resend&#x27;s add-on covers 100 extra domains for $20, and SendGrid&#x27;s inclusion has no printed ceiling.</p>
+<p>Resend retains idempotency keys for 24 hours only. Same-key retries require the identical payload. A 409 payload conflict needs correction; a concurrent request needs bounded backoff. Keep durable send state and reconcile ambiguous outcomes after long outages, not blind resends.</p>
 
       <h2 id="s5">5. A trial ending is not an automatic subscription</h2>
       <p>Correction, November 14, 2026: the earlier article wrongly described automatic SendGrid paid conversion and continuous per-email Resend overage billing. The calculations and FAQ are corrected.</p>
@@ -231,21 +231,41 @@ footer p { font-size:.8rem; margin:0; }
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
         <span class="badge badge-blue" style="margin-bottom:0.4rem;">Resend</span>
-        <pre><code>// Resend: the idempotency key is what stops a retry from sending twice.
-import { Resend } from &quot;resend&quot;;
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const { data, error } = await resend.emails.send(
-  {
-    from: &quot;billing@example.com&quot;,
-    to: order.email,
-    subject: `Receipt for ${order.id}`,
-    react: Receipt({ order }),
-  },
-  { idempotencyKey: `receipt-${order.id}` },
-);
-// Breaks when: the key is built from Date.now(). A retry after a 429 is then a
-// second email, and there is no deduplication on the receiving side.</code></pre>
+        <pre><code>// One attempt, not an outbox implementation. Never call directly from a browser.
+// Caller must atomically claim a durable outbox row BEFORE the first send and
+// persist its immutable payload, key, firstAttemptAt and attempt outcomes.
+// Use one event/version key, not Date.now(); retries must reuse the exact payload.
+// Resend retains keys for 24 hours, not forever. Acceptance is not delivery.
+export async function attemptEmail(resend, row, now = Date.now()) {
+  if (row.acceptedId) return { acceptedId: row.acceptedId, alreadyRecorded: true };
+  const age = now - row.firstAttemptAt;
+  // Stop 5 minutes early to allow for clock skew / requests in flight.
+  if (!Number.isFinite(age) || age &lt; 0 || age &gt;= 23 * 3600000 + 55 * 60000) {
+    throw new Error(&#x27;reconcile_required: do not blindly resend after the 24-hour window&#x27;);
+  }
+  if (!row.key || row.key.length &gt; 256 || !row.payload) throw new Error(&#x27;invalid_outbox_row&#x27;);
+  let response;
+  try {
+    response = await resend.emails.send(row.payload, { idempotencyKey: row.key });
+  } catch {
+    throw new Error(&#x27;unknown_outcome: reconcile; bounded same-key retry only within the window&#x27;);
+  }
+  const { data, error } = response;
+  if (error) {
+    if (error.name === &#x27;invalid_idempotent_request&#x27;) {
+      throw new Error(&#x27;payload_conflict: stop; do not mint a new key to bypass this 409&#x27;);
+    }
+    if (error.name === &#x27;concurrent_idempotent_requests&#x27;) {
+      throw new Error(&#x27;in_progress: defer with bounded backoff and recheck the window&#x27;);
+    }
+    throw new Error(`send_failed: ${error.name}; inspect before any retry`);
+  }
+  if (!data?.id) throw new Error(&#x27;unknown_outcome: missing acceptance id; reconcile&#x27;);
+  return { acceptedId: data.id }; // Caller must durably save this before acking its job.
+}
+// On long outages, check durable state plus provider logs/webhooks before deciding
+// whether to resend. A crash after acceptance but before saving the id is ambiguous.
+// If reconciliation cannot resolve it, hold for review; this is not exactly-once delivery.</code></pre>
       </div>
       <div>
         <span class="badge badge-green" style="margin-bottom:0.4rem;">SendGrid</span>
@@ -323,7 +343,7 @@ await sgMail.send({
       <h2>Sources &amp; verification</h2>
       <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-14</strong>.
       Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
-      <div class="card"><p class="sources-list"><a href="https://resend.com/pricing" rel="noopener nofollow" target="_blank">https://resend.com/pricing</a><br><a href="https://www.twilio.com/en-us/products/email-api/pricing" rel="noopener nofollow" target="_blank">https://www.twilio.com/en-us/products/email-api/pricing</a><br><a href="https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai" rel="noopener nofollow" target="_blank">https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai</a><br><a href="https://resend.com/docs" rel="noopener nofollow" target="_blank">https://resend.com/docs</a><br><a href="https://www.twilio.com/docs/sendgrid" rel="noopener nofollow" target="_blank">https://www.twilio.com/docs/sendgrid</a><br><a href="https://resend.com/changelog/pay-as-you-go-pricing" rel="noopener nofollow" target="_blank">https://resend.com/changelog/pay-as-you-go-pricing</a><br><a href="https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan" rel="noopener nofollow" target="_blank">https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan</a><br><a href="https://help.twilio.com/articles/47846436523419" rel="noopener nofollow" target="_blank">https://help.twilio.com/articles/47846436523419</a><br><a href="https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans" rel="noopener nofollow" target="_blank">https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans</a><br></p></div>
+      <div class="card"><p class="sources-list"><a href="https://resend.com/pricing" rel="noopener nofollow" target="_blank">https://resend.com/pricing</a><br><a href="https://www.twilio.com/en-us/products/email-api/pricing" rel="noopener nofollow" target="_blank">https://www.twilio.com/en-us/products/email-api/pricing</a><br><a href="https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai" rel="noopener nofollow" target="_blank">https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai</a><br><a href="https://resend.com/docs" rel="noopener nofollow" target="_blank">https://resend.com/docs</a><br><a href="https://www.twilio.com/docs/sendgrid" rel="noopener nofollow" target="_blank">https://www.twilio.com/docs/sendgrid</a><br><a href="https://resend.com/changelog/pay-as-you-go-pricing" rel="noopener nofollow" target="_blank">https://resend.com/changelog/pay-as-you-go-pricing</a><br><a href="https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan" rel="noopener nofollow" target="_blank">https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan</a><br><a href="https://help.twilio.com/articles/47846436523419" rel="noopener nofollow" target="_blank">https://help.twilio.com/articles/47846436523419</a><br><a href="https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans" rel="noopener nofollow" target="_blank">https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans</a><br><a href="https://resend.com/docs/dashboard/emails/idempotency-keys" rel="noopener nofollow" target="_blank">https://resend.com/docs/dashboard/emails/idempotency-keys</a><br><a href="https://resend.com/docs/api-reference/errors" rel="noopener nofollow" target="_blank">https://resend.com/docs/api-reference/errors</a><br></p></div>
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../stripe-vs-lemonsqueezy-vs-paddle/" style="padding:1.1rem;">
