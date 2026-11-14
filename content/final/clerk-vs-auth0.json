@@ -1,10 +1,10 @@
 {
   "slug": "clerk-vs-auth0",
-  "hook": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning on a later day after signup per app, so these are not equivalent populations.",
+  "hook": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning at least 24 hours after signup per app, so these are not equivalent populations.",
   "sections": [
     {
       "title": "Clerk and Auth0 count different people",
-      "content": "Read the unit before the price. Each vendor defines it in its own words:\n\n| Vendor | Unit | Who is counted |\n|---|---|---|\n| Clerk | Monthly Retained User (MRU) | visits at least one day after signup, per app |\n| Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |\n\nClerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.\n\n> A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.\n\nVendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0."
+      "content": "Read the unit before the price. Each vendor defines it in its own words:\n\n| Vendor | Unit | Who is counted |\n|---|---|---|\n| Clerk | Monthly Retained User (MRU) | returns at least 24 hours after signup, per app |\n| Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |\n\nClerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.\n\n> A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.\n\nVendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0."
     },
     {
       "title": "Who should not pick Auth0's paid B2C plans",
@@ -20,18 +20,18 @@
     },
     {
       "title": "The 140x gap is correct arithmetic on two different quantities",
-      "content": "Paid-plan estimates at equal numeric inputs, not an identical population. Auth0 counts MAU; Clerk counts MRU.\n\n```python\nTIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350), (7_500, 525),\n         (10_000, 700), (20_000, 1_400), (30_000, 2_100), (40_000, 2_800), (50_000, 3_500)]\n\ndef auth0(mau):  # between tiers you pay the next tier up\n    return next((p for cap, p in TIERS if mau <= cap), None)  # breaks: >50,000 unpriced\n\ndef clerk_pro(mru):  # ignores Clerk's volume discounts\n    return 25 + max(0, mru - 50_000) * 0.02\n\nfor n in (501, 50_000, 100_000):\n    print(n, auth0(n), clerk_pro(n))\n```\n\n> At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 later-day MRU per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who came back on a later day. Not the same crowd.\n\n> At 100,000 MRU, Clerk is 50,000 × $0.02 + $25 = $1,025/month. Auth0's B2C sheet ends at 50,000: \"contact us\"."
+      "content": "Paid-plan estimates at equal numeric inputs, not an identical population. Auth0 counts MAU; Clerk counts MRU.\n\n```python\nTIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350), (7_500, 525),\n         (10_000, 700), (20_000, 1_400), (30_000, 2_100), (40_000, 2_800), (50_000, 3_500)]\n\ndef auth0(mau):  # between tiers you pay the next tier up\n    return next((p for cap, p in TIERS if mau <= cap), None)  # breaks: >50,000 unpriced\n\ndef clerk_pro(mru):  # ignores Clerk's volume discounts\n    return 25 + max(0, mru - 50_000) * 0.02\n\nfor n in (501, 50_000, 100_000):\n    print(n, auth0(n), clerk_pro(n))\n```\n\n> At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 MRU returning at least 24 hours after signup per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who returned at least 24 hours after signup. Not the same crowd.\n\n> At 100,000 MRU, Clerk is 50,000 × $0.02 + $25 = $1,025/month. Auth0's B2C sheet ends at 50,000: \"contact us\"."
     },
     {
       "title": "Pick by who you are billed for, then check the next boundary",
-      "content": "**Choose Clerk Pro if** you need MFA, passkeys or branding removal below 50,000 MRU per app; Hobby excludes them.\n\n> For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, but Essentials and Professional allow only 10 organisations, not 200.\n\n**Choose Auth0 Professional if** you need custom database connections or cross-app SSO; it includes 12 tenants.\n\nCheck today:\n\n1. Price distinct non-internal MAU per Auth0 tenant and later-day MRU per Clerk app, with required plans and add-ons.\n2. Find your Auth0 tier and how many MAU separate you from the next one.\n3. List SSO and Directory Sync connections you will run on 1 January 2027."
+      "content": "**Choose Clerk Pro if** you need MFA, passkeys or branding removal below 50,000 MRU per app; Hobby excludes them.\n\n> For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, and the B2B plan includes unlimited organizations. The 10-organization limit belongs to B2C, not this B2B comparison. MRU and MAU are different populations; compare features and add-ons too.\n\n**Choose Auth0 Professional if** you need custom database connections or cross-app SSO; it includes 12 tenants.\n\nCheck today:\n\n1. Price distinct non-internal MAU per Auth0 tenant and MRU returning at least 24 hours after signup per Clerk app, with required plans and add-ons.\n2. Find your Auth0 tier and how many MAU separate you from the next one.\n3. List SSO and Directory Sync connections you will run on 1 January 2027."
     }
   ],
   "decision_matrix": [
     {
       "situation": "App below 50,000 MRU per app needing MFA, passkeys or branding removal",
       "pick": "Clerk Pro",
-      "why": "Pro includes these features for $25/month; Hobby excludes them. Without a paid-feature requirement, Hobby covers 50,000 MRU per app for $0. Users who never return after day one are never billed."
+      "why": "Pro includes these features for $25/month; Hobby excludes them. Without a paid-feature requirement, Hobby covers 50,000 MRU per app for $0. Users who never return at least 24 hours after signup are never billed."
     },
     {
       "situation": "Side project that needs more than 3 social logins and costs nothing",
@@ -41,12 +41,12 @@
     {
       "situation": "B2C usage beyond Clerk's 50,000 included MRU per app or Auth0's printed 50,000-MAU limit",
       "pick": "Price Clerk Pro overage and request an Auth0 quote",
-      "why": "Clerk Pro lists $0.02/month per MRU beyond 50,000 included per app, with volume discounts; Auth0's printed B2C tiers end at 50,000 MAU, so higher usage needs a quote. Clerk MRU counts later-day returns per app; Auth0 MAU counts non-internal users authenticated that month per tenant."
+      "why": "Clerk Pro lists $0.02/month per MRU beyond 50,000 included per app, with volume discounts; Auth0's printed B2C tiers end at 50,000 MAU, so higher usage needs a quote. Clerk MRU counts returns at least 24 hours after signup per app; Auth0 MAU counts non-internal users authenticated that month per tenant."
     },
     {
       "situation": "Team needing 10 dashboard seats, with 5,000 Clerk MRU and 200 qualifying MRO",
       "pick": "Clerk Business + B2B Authentication Enhanced add-on",
-      "why": "$300 + $100 + (200 − 100) × $1 = $500/month. Each MRO needs at least 2 members, including an MRU that month. Auth0 B2B Essentials is $1,300/month at 5,000 MAU, but Essentials and Professional allow only 10 organizations, so neither serves 200 organizations. MRU counts later-day returns per app; MAU counts non-internal users authenticated that month per tenant."
+      "why": "$300 + $100 + (200 − 100) × $1 = $500/month. Each MRO needs at least 2 members, including an MRU that month. Auth0 B2B Essentials is $1,300/month at 5,000 MAU, and B2B Essentials includes unlimited organizations; B2C's 10-organization limit does not apply. These are different usage units, not an equivalent-population price comparison. MRU counts returns at least 24 hours after signup per app; MAU counts non-internal users authenticated that month per tenant."
     },
     {
       "situation": "Existing user store you cannot migrate yet (bring your own database)",
@@ -91,7 +91,7 @@
       "result": "$500/month"
     }
   ],
-  "verdict_summary": "Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.",
+  "verdict_summary": "Pick Clerk if most of your sign-ups never return at least 24 hours after signup, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.",
   "faqs": [
     {
       "q": "Does Auth0 have a free tier?",
@@ -112,6 +112,57 @@
   ],
   "sources": [
     "https://clerk.com/pricing",
-    "https://auth0.com/pricing"
-  ]
+    "https://auth0.com/pricing",
+    "https://auth0.com/pricing.md"
+  ],
+  "tool_a": {
+    "name": "Clerk",
+    "tagline": "Authentication as a product surface, billed on retained users",
+    "db": "Hosted auth with prebuilt UI, organisations and billing",
+    "pricing": "Hobby $0 · Pro $25/mo ($20 annual) · Business $300/mo ($250 annual)",
+    "self_host": "No (hosted service)",
+    "realtime": "50,000 MRU included per app; sessions from 5 minutes to 10 years on paid",
+    "ai_readiness": "M2M tokens and API keys with monthly verification limits",
+    "lock_in": "Medium: hosted users, full data exports on every plan",
+    "badge": "Retained users",
+    "cta_url": "https://clerk.com/?utm_source=devteardown",
+    "pros": [
+      "50,000 MRU included on Pro, then $0.02 each — a user who never returns is never billed",
+      "Unlimited applications on every plan, including Hobby",
+      "Organisations and B2B authentication are in the same product, with 100 MRO included",
+      "Full data exports on every plan, so leaving is a data move rather than a negotiation"
+    ],
+    "cons": [
+      "The bill hides in add-ons: SSO $75/mo each, Directory Sync $75/mo each from 1 January 2027",
+      "Hobby stops at 50,000 MRU after a one-month grace period",
+      "Protect checks meter at $0.002 after 10,000 free, so attack traffic is a billable event",
+      "Business is a $300/mo step mostly for SOC 2, seats and 30-day logs"
+    ],
+    "code_example": "// Clerk bills a retained user, not a session: retention requires a return at least 24 hours after signup.\nconst { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\n// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,\n// and Hobby gives one grace month before requests stop being served.\nif (totalCount > 50_000) console.warn(totalCount, \"MRU — check the plan\");"
+  },
+  "tool_b": {
+    "name": "Auth0",
+    "tagline": "Identity infrastructure priced in tiers of monthly active users",
+    "db": "Hosted identity platform: connections, tenants, rules",
+    "pricing": "Free 25,000 MAU · Essentials from $35 · Professional from $240 · Enterprise quote",
+    "self_host": "No (hosted); private deployment is an Enterprise add-on",
+    "realtime": "Tenants 1/3/12/unlimited by plan; 3 enterprise connections on B2B Essentials",
+    "ai_readiness": "AI Agents add-on adds 50% to the base price",
+    "lock_in": "High: tenants, connections and rules live inside the product",
+    "badge": "Tiered MAU",
+    "cta_url": "https://auth0.com/?utm_source=devteardown",
+    "pros": [
+      "25,000 MAU free, with 5 organisations, self-service SSO and SCIM included",
+      "B2B Essentials is $150/month for 500 MAU with unlimited organisations",
+      "Enterprise SSO connections included — 3 on Essentials, 5 on Professional — then $100/month each",
+      "Professional adds custom database connections, cross-app SSO and 12 tenants"
+    ],
+    "cons": [
+      "Price is a step function: 501 B2C users bill at the 1,000 tier, $70 instead of $35",
+      "The B2C Professional sheet ends at 20,000 MAU; past that it is a quote or not available",
+      "Custom enterprise SSO on B2C requires Enterprise — not available on Essentials or Professional",
+      "The AI Agents add-on adds 50% to whichever tier it is applied to"
+    ],
+    "code_example": "# Auth0 prices the tier, not the user: 501 MAU bills as 1,000.\nTIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350)]\ndef essentials(mau):\n    return next(p for cap, p in TIERS if mau <= cap)\nprint(essentials(501))  # 70, not 35\n# Here it breaks: above 50,000 B2C MAU the printed sheet ends."
+  }
 }

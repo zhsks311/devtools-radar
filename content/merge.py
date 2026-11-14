@@ -389,7 +389,7 @@ META = {
             "cons": [
                 "node:http passes 403 of 415 of Node's own tests, and http.Server does not extend net.Server",
                 "node:https lacks getPeerCertificate() and getCipher(), and SNICallback is unsupported",
-                "NODE_MODULE_VERSION 147 means addons built for Node 24 must be rebuilt",
+                "Node-API stability differs from version-specific native ABI; test each addon on the target runtime",
                 "Bun's own memory table shows the Vite dev server at 233 MB vs 214 MB on Node",
             ],
             "code_example": (
@@ -399,7 +399,7 @@ META = {
                 "const db = new Database(\":memory:\");\n"
                 "db.run(\"create table t (id integer primary key, name text)\");\n"
                 "// Here it breaks: a native addon built for Node 24 will not load,\n"
-                "// because Bun 1.4 reports NODE_MODULE_VERSION 147."
+                "// distinguish stable Node-API from version-specific ABI."
             ),
         },
         "tool_b": {
@@ -436,8 +436,8 @@ META = {
             ),
         },
         "migration_guide": (
-            "Moving to Bun starts with `bun install` reading the same package.json, but every native addon "
-            "needs a build for NODE_MODULE_VERSION 147 before it loads, so the hook stampede is the first "
+            "Moving to Bun starts with `bun install` reading the same package.json, but native-addon compatibility "
+            "requires distinguishing Node-API stability from version-specific ABI; package testing is the first "
             "thing to schedule. Moving back is not automatic either: Bun's compatibility docs list the API "
             "gaps you will meet — getPeerCertificate(), SNICallback, async_hooks — and there is no tool that "
             "rewrites handlers around them. Run the service test suite under both runtimes before either "
@@ -532,7 +532,7 @@ META = {
             "name": "Docker",
             "tagline": "An open-source engine under a licensed desktop",
             "db": "Docker Engine (Moby) plus the Docker Desktop app",
-            "pricing": "Personal $0 · Pro $9 · Team $15 per user/month · Business quote-only",
+            "pricing": "Personal $0 · Pro $9/$11 annual/monthly · Team $15/$16 up to 100 users · Business $24 per user/month",
             "self_host": "Yes for Engine and Moby; Desktop carries the subscription agreement",
             "realtime": "Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes",
             "ai_readiness": "Hardened Images free for developers, from $5k/repo in production",
@@ -549,7 +549,7 @@ META = {
                 "Free use is a company-size test: cross either limit and every commercial seat is paid at once",
                 "Government entities pay for Docker Desktop regardless of size",
                 "Production Hardened Images start at $5k per repository, which dwarfs seat revenue for a small team",
-                "Business pricing is quote-only, so the biggest line item is the one you cannot see",
+                "Business lists $24/user/month; confirm extras and negotiated terms",
             ],
             "code_example": (
                 "# The engine is open source; Docker Desktop is the licensed surface.\n"
@@ -627,7 +627,7 @@ META = {
                 "Business is a $300/mo step mostly for SOC 2, seats and 30-day logs",
             ],
             "code_example": (
-                "// Clerk bills a retained user, not a session: the first day is free.\n"
+                "// Clerk bills a retained user, not a session: retention requires a return at least 24 hours after signup.\n"
                 "const { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\n"
                 "// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,\n"
                 "// and Hobby gives one grace month before requests stop being served.\n"

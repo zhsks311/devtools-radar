@@ -4,7 +4,7 @@
   "sections": [
     {
       "title": "Both runtimes cost nothing, so the invoice arrives as labour",
-      "content": "Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-hours on three meters: the release calendar, the compatibility surface and the native-module ABI.\n\n> For teams maintaining a Node service: as of 10 November 2026, both runtimes have no price.\n\n- **Node:** Node publishes a release calendar; v26 Lithium, v24 Krypton and v22 Jod are LTS.\n- **Bun:** 1.4.0 (20 August 2026) combined the Rust rewrite with the compatibility-target move from 24.3.0 to 26.3.0 and native ABI 147.\n\nFor Bun 1.4, check whether your native addons have builds for `NODE_MODULE_VERSION` 147."
+      "content": "Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-hours on three meters: the release calendar, the compatibility surface and the native-module ABI.\n\n> For teams maintaining a Node service: as of 10 November 2026, both runtimes have no price.\n\n- **Node:** Node publishes a release calendar; v26 Lithium, v24 Krypton and v22 Jod are LTS.\n- **Bun:** 1.4.0 (20 August 2026) combined the Rust rewrite with the compatibility-target move from 24.3.0 to 26.3.0 and native ABI 147.\n\nIdentify whether each native addon uses stable Node-API or a version-specific V8/native ABI; test the actual package on Bun, OS and architecture."
     },
     {
       "title": "Node bills you on a date you did not choose",
@@ -16,7 +16,7 @@
     },
     {
       "title": "Bun's own node:http count leaves 415 − 403 = 12 tests failing",
-      "content": "Bun says it plainly: \"Bun is not 100% compatible with Node.js yet.\" Bun's own 1.4 counts against the Node 26.3.0 suite:\n\n| Module | Bun 1.4 passes | Not passing |\n|---|---|---|\n| node:http | 403 / 415 | 415 − 403 = 12 |\n| node:fs | 349 / 358 | 358 − 349 = 9 |\n| node:module | 68 / 93 | 93 − 68 = 25 |\n| node:test_runner | 28 / 81 | 81 − 28 = 53 |\n| node:inspector | 22 / 110 | 110 − 22 = 88 |\n| node:sqlite | 18 / 18 | 18 − 18 = 0 |\n\nOn node:http that is 12 ÷ 415 ≈ 2.9%, the failing 3%. Bun says 1.4 made 1,517 more Node tests pass.\n\n> The ABI tax: 1.4 moved the compatibility target from 24.3.0 to 26.3.0. `NODE_MODULE_VERSION` is now 147, so native addons built for Node 24 must be rebuilt.\n\nCheck required inspector APIs; module pass counts are not application coverage."
+      "content": "Bun says it plainly: \"Bun is not 100% compatible with Node.js yet.\" Bun's own 1.4 counts against the Node 26.3.0 suite:\n\n| Module | Bun 1.4 passes | Not passing |\n|---|---|---|\n| node:http | 403 / 415 | 415 − 403 = 12 |\n| node:fs | 349 / 358 | 358 − 349 = 9 |\n| node:module | 68 / 93 | 93 − 68 = 25 |\n| node:test_runner | 28 / 81 | 81 − 28 = 53 |\n| node:inspector | 22 / 110 | 110 − 22 = 88 |\n| node:sqlite | 18 / 18 | 18 − 18 = 0 |\n\nOn node:http that is 12 ÷ 415 ≈ 2.9%, the failing 3%. Bun says 1.4 made 1,517 more Node tests pass.\n\n> Native compatibility is not one blanket rebuild rule. Node-API provides ABI stability across Node versions, unlike addons tied to V8 or a version-specific native ABI. Bun implements Node-API independently, so Node-API compatibility and package dependencies still need testing; a Node version number alone does not prove a rebuild is required.\n\nCheck required inspector APIs; module pass counts are not application coverage."
     },
     {
       "title": "Who should not pick Bun: teams requiring missing APIs",
@@ -24,7 +24,7 @@
     },
     {
       "title": "Bun stays MIT after Anthropic's acquisition; check before migrating",
-      "content": "Anthropic acquired Bun on 2 December 2025. Claude Code ships as a Bun executable (Bun's statement), and Bun's founder wrote then: \"Today, Bun makes $0 in revenue.\" Bun stays MIT.\n\nThe acquisition changes who pays for Bun's roadmap. It does not change the licence, and it does not change the API surface you have to test.\n\nCheck today:\n\n1. List every `.node` addon in the tree and whether it has a build for `NODE_MODULE_VERSION` 147.\n2. Check required HTTP APIs, `createHook`, distinct async IDs, `getPeerCertificate` and `SNICallback` against Bun's gaps.\n3. Write down the EOL date of the Node major running in production."
+      "content": "Anthropic acquired Bun on 2 December 2025. Claude Code ships as a Bun executable (Bun's statement), and Bun's founder wrote then: \"Today, Bun makes $0 in revenue.\" Bun stays MIT.\n\nThe acquisition changes who pays for Bun's roadmap. It does not change the licence, and it does not change the API surface you have to test.\n\nCheck today:\n\n1. List every `.node` addon, identify Node-API versus version-specific ABI dependencies, and test supported binaries on the target runtime, OS and architecture.\n2. Check required HTTP APIs, `createHook`, distinct async IDs, `getPeerCertificate` and `SNICallback` against Bun's gaps.\n3. Write down the EOL date of the Node major running in production."
     }
   ],
   "decision_matrix": [
@@ -35,8 +35,8 @@
     },
     {
       "situation": "Repo with native addons built for Node 24",
-      "pick": "Node, until every addon has a build for NODE_MODULE_VERSION 147",
-      "why": "Bun 1.4 targets Node 26.3.0, so addons built for 24 do not load until rebuilt."
+      "pick": "Test addon API and runtime compatibility before migrating",
+      "why": "Stable Node-API addons are not automatically invalidated by a Node major change. V8/legacy addons can require compatible builds; Bun support and external dependencies must be checked per package."
     },
     {
       "situation": "Production tracing agent requiring createHook or distinct async IDs",
@@ -84,14 +84,9 @@
       "label": "Node 20 EOL-to-LTS decision",
       "formula": "17 Apr 2023 → 24 Mar 2026 ≈ 35 months from first release to EOL; this is not the LTS fix window",
       "result": "Move production off EOL Node 20 to Node 24 or 26 LTS; the documented 30-month LTS fix guarantee is a separate interval."
-    },
-    {
-      "label": "Native addon rebuild tax for Bun 1.4",
-      "formula": "N native addons × 1 rebuild each for NODE_MODULE_VERSION 147 (target moved 24.3.0 → 26.3.0)",
-      "result": "Every addon built for Node 24 needs a new build before Bun 1.4 can load it"
     }
   ],
-  "verdict_summary": "Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a native addon in your tree has no build for NODE_MODULE_VERSION 147. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.",
+  "verdict_summary": "Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a required native addon fails on the target runtime. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.",
   "faqs": [
     {
       "q": "Does Node 26 type-check TypeScript?",
@@ -115,6 +110,59 @@
     "https://bun.com/blog/bun-joins-anthropic",
     "https://bun.com/docs/runtime/nodejs-compat",
     "https://nodejs.org/en/about/previous-releases",
-    "https://nodejs.org/api/typescript.html"
-  ]
+    "https://nodejs.org/api/typescript.html",
+    "https://nodejs.org/learn/modules/abi-stability",
+    "https://bun.com/docs/runtime/node-api"
+  ],
+  "tool_a": {
+    "name": "Bun",
+    "tagline": "One binary: runtime, package manager, test runner, bundler",
+    "db": "JavaScriptCore runtime, rewritten in Rust for 1.4",
+    "pricing": "Free · MIT · no paid tier",
+    "self_host": "Yes — a single executable",
+    "realtime": "Bun.serve HTTP and WebSocket server built in",
+    "ai_readiness": "Claude Code ships as a Bun executable (Bun's statement)",
+    "lock_in": "Low: MIT, npm-compatible, runs Node projects",
+    "badge": "All-in-one",
+    "cta_url": "https://bun.com/?utm_source=devteardown",
+    "pros": [
+      "JavaScript, TypeScript, JSX and bundling from one executable, so no separate tsc, test runner or bundler",
+      "1,517 more Node test-suite tests pass in 1.4, and node:sqlite passes 18 of 18 by Bun's own count",
+      "Bun's own hello.js benchmark: 5.1 ms vs 27.2 ms start-up on Linux, 14.6 MB vs 44.5 MB peak memory",
+      "MIT licensed after the Anthropic acquisition, with the Node compatibility target moved to 26.3.0"
+    ],
+    "cons": [
+      "node:http passes 403 of 415 of Node's own tests, and http.Server does not extend net.Server",
+      "node:https lacks getPeerCertificate() and getCipher(), and SNICallback is unsupported",
+      "Node-API stability differs from version-specific native ABI; test each addon on the target runtime",
+      "Bun's own memory table shows the Vite dev server at 233 MB vs 214 MB on Node"
+    ],
+    "code_example": "// One binary replaces four dev dependencies:\n// bun install, bun test, bun lint and bun fmt are the same executable.\nimport { Database } from \"bun:sqlite\";   // built in, no addon to compile\nconst db = new Database(\":memory:\");\ndb.run(\"create table t (id integer primary key, name text)\");\n// Here it breaks: a native addon built for Node 24 will not load,\n// distinguishing Node-API from version-specific native ABI."
+  },
+  "tool_b": {
+    "name": "Node.js",
+    "tagline": "The runtime with a published release calendar",
+    "db": "Node core plus the npm ecosystem",
+    "pricing": "Free · MIT · support past Maintenance LTS via OpenJS partners",
+    "self_host": "Yes — your own machines",
+    "realtime": "node:http servers, cluster workers, inspector for tracing",
+    "ai_readiness": "Type stripping on by default; no type checking",
+    "lock_in": "None: MIT, runs on every platform",
+    "badge": "Standards runtime",
+    "cta_url": "https://nodejs.org/?utm_source=devteardown",
+    "pros": [
+      "A dated calendar: v26 Lithium and v24 Krypton are LTS, and LTS typically guarantees fixes for 30 months",
+      "Native addons are the default path, and ABI builds target the runtime you actually run",
+      "TypeScript type stripping runs with no build step for erasable syntax",
+      "Nothing to license, and commercial support exists through OpenJS partners after LTS ends"
+    ],
+    "cons": [
+      "Type stripping refuses enum, .tsx, parameter properties, import aliases and tsconfig paths",
+      "TypeScript inside node_modules is refused outright",
+      "Parsing requires WebAssembly, or the parser throws ERR_WEBASSEMBLY_NOT_SUPPORTED",
+      "v20 and v25 both reached end of life in 2026, so the calendar forces migrations"
+    ],
+    "code_example": "// Node 26 strips types; it does not check them or transform them.\ntype Host = string;\nconst host: Host = process.env.HOST ?? \"localhost\";\nconsole.log(`binding ${host}`);\n// Here it breaks: an enum is not erasable, so Node throws\n// ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX before your code runs.\nenum Mode { Dev, Prod }"
+  },
+  "migration_guide": "Classify native addons by Node-API versus version-specific V8/native ABI, then test actual binaries on Bun and Node for your OS and architecture. Rebuild or replace only incompatible packages. Exercise required HTTP, TLS and async-hooks APIs before changing production runtimes."
 }

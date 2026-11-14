@@ -68,3 +68,8 @@ first tier with third-party models, and those are pay-per-token on top.
 - Do not cite the old $20 Pro / $10 all-inclusive numbers as current.
 - Do not state CursorBench methodology you were not given.
 - Do not claim Copilot Free includes PR review or custom instructions.
+
+
+## Targeted correction review — 2026-11-14
+Organization seats: Copilot Business $19/user/month, not personal Pro $10. Source: https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses . Cursor Teams $30+/user/month: https://cursor.com/pricing . Base prices exclude extra usage. A low charge is not proof of request routing.
+Other claims retain their original review date; this is not a full re-verification.

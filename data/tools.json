@@ -1365,11 +1365,11 @@
       },
       {
         "title": "The meters punish different habits",
-        "content": "Cursor's meter punishes third-party model use specifically: no plan includes those tokens, so Claude or GPT work passes through at API list price. Copilot's meter is a single credit pool per user that agent mode, review, cloud and CLI all drain.\n\n| Vendor's monthly offer | Usage that incurs the penalty |\n|---|---|\n| Cursor: $8 Plus; $30 Premium | Plus is Grok-only; Premium adds third-party models at API list price on top |\n| GitHub Copilot: $10 Pro ($15 credits); $39 Pro+ ($70 credits, Opus included); $100 Max ($200 credits) | Agent mode, review, cloud, CLI and app consume the same credit meter |\n\nWhen a Copilot seat exhausts its credits, Pro and above buy extra.\n\n| Buyer | Cursor | GitHub Copilot |\n|---|---|---|\n| 10 seats | Teams 10 × $30 = $300/month | Pro 10 × $10 = $100/month |\n| Claude-dependent developer | Premium $30 plus metered tokens | Pro+ $39 with $70 of credits |\n| Heavy user | Super $100 (15× Plus) | Max $100 ($200 credits) |"
+        "content": "Cursor's meter punishes third-party model use specifically: no plan includes those tokens, so Claude or GPT work passes through at API list price. Copilot's meter is a single credit pool per user that agent mode, review, cloud and CLI all drain.\n\n| Vendor's monthly offer | Usage that incurs the penalty |\n|---|---|\n| Cursor: $8 Plus; $30 Premium | Plus is Grok-only; Premium adds third-party models at API list price on top |\n| GitHub Copilot: $10 Pro ($15 credits); $39 Pro+ ($70 credits, Opus included); $100 Max ($200 credits) | Agent mode, review, cloud, CLI and app consume the same credit meter |\n\nWhen a Copilot seat exhausts its credits, Pro and above buy extra.\n\n| Buyer | Cursor | GitHub Copilot |\n|---|---|---|\n| 10 centrally managed organization seats | Teams 10 × $30+ = $300+/month base | Business 10 × $19 = $190/month base |\n| Claude-dependent developer | Premium $30 plus metered tokens | Pro+ $39 with $70 of credits |\n| Heavy user | Super $100 (15× Plus) | Max $100 ($200 credits) |"
       },
       {
         "title": "Model neutrality now needs a renewal check",
-        "content": "Teams that chose Cursor partly to stay model-agnostic now buy from a company whose model is Grok. Ownership changed the incentive. It does not prove that every request routes to Grok.\n\n> Cursor states that Grok 4.6, the first joint model, scores between 69.9% and 70.8% on CursorBench and 61 on the Artificial Analysis Intelligence Index.\n\nBefore renewing, replay representative repository tasks and record the separately billed third-party usage.\n\n- On Premium, compare the separate third-party token charge with the Claude or GPT work your team believes it ran; a near-zero charge means that work did not run on third-party models.\n- Do not buy Plus if non-Grok access is a requirement; test Premium's unbundled bill before committing."
+        "content": "Teams that chose Cursor partly to stay model-agnostic now buy from a company whose model is Grok. Ownership changed the incentive. It does not prove that every request routes to Grok.\n\n> Cursor states that Grok 4.6, the first joint model, scores between 69.9% and 70.8% on CursorBench and 61 on the Artificial Analysis Intelligence Index.\n\nBefore renewing, replay representative repository tasks and record the separately billed third-party usage.\n\n- On Premium, compare the separate third-party token charge with the Claude or GPT work your team believes it ran; a low bill alone does not establish which model handled a request. Check model selections and available request/usage records before drawing routing conclusions.\n- Do not buy Plus if non-Grok access is a requirement; test Premium's unbundled bill before committing."
       },
       {
         "title": "Copilot Free runs the agent; PR review costs $10",
@@ -1382,9 +1382,9 @@
     ],
     "cost_math": [
       {
-        "label": "10-seat team",
-        "formula": "Copilot Pro 10 × $10 = $100/month vs Cursor Teams 10 × $30 = $300/month",
-        "result": "Cursor Teams costs 3× Copilot Pro for ten seats; Cursor lists Teams at $30+/user, so its figure can rise."
+        "label": "10 centrally managed organization seats, base subscriptions only",
+        "formula": "Copilot Business 10 × $19 = $190/month; Cursor Teams 10 × $30+ = $300+/month",
+        "result": "Cursor starts at least $110/month higher before usage, taxes and extras. Individual Copilot Pro is not the organizational-seat equivalent."
       },
       {
         "label": "One Claude-dependent developer",
@@ -1424,9 +1424,9 @@
         "why": "Pro+ includes premium models including Opus inside $70 of monthly credits for $39, while Cursor bills third-party tokens at API list price on top."
       },
       {
-        "situation": "An existing Cursor team requires model neutrality at renewal",
-        "pick": "Cursor Premium if the third-party bill matches the work; otherwise GitHub Copilot Pro+",
-        "why": "Ownership now favors Grok, so the team must check the separate third-party token charge against the Claude or GPT work it ran."
+        "situation": "An existing Cursor team requires access to particular model providers",
+        "pick": "Verify model access, routing records and organizational controls",
+        "why": "Do not infer routing from a low bill. Compare Cursor Teams with Copilot Business for organization seats; personal plans are a separate buying decision."
       },
       {
         "situation": "One heavy agent user with a $100/month budget",
@@ -1434,7 +1434,7 @@
         "why": "Max includes $200 of credits for $100; Super gives 15× Plus usage, and any third-party tokens still bill at API list price on top."
       }
     ],
-    "verdict_summary": "Teams content with Grok should choose Cursor, from $8 Plus; teams whose review runs through GitHub PRs should choose Copilot Pro at $10/user/month or above. Teams that need Claude should price Cursor Premium's $30 plus list-price tokens against Copilot Pro+'s $39 with $70 of credits.",
+    "verdict_summary": "For individuals, compare Cursor Plus/Premium with Copilot Pro/Pro+ using the models and usage you need. For centrally managed teams, compare Cursor Teams from $30+/user/month with Copilot Business at $19/user/month, then account for usage and controls. A personal Pro subscription is not an organizational-seat substitute.",
     "migration_guide": "Switching editors is cheap; switching billing models is not. From Cursor to Copilot: export your rules to `.github/instructions/*.instructions.md`, check that the workflows you rely on (PR review, assigned work, cloud) sit at Pro or above, and price the Claude/GPT usage you actually run against Pro+ ($39 with $70 of credits). From Copilot to Cursor: budget Premium ($30) plus the list-price third-party tokens, because nothing in the subscription covers them — and confirm that Grok is acceptable for the default path before you renew a team licence.",
     "faqs": [
       {
@@ -1458,7 +1458,8 @@
       "https://cursor.com/blog/joining-spacex",
       "https://cursor.com/pricing",
       "https://github.com/features/copilot/plans",
-      "https://thenextweb.com/news/spacex-cursor-acquisition-official-60-billion"
+      "https://thenextweb.com/news/spacex-cursor-acquisition-official-60-billion",
+      "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses"
     ],
     "related": [
       {
@@ -1685,10 +1686,10 @@
       "cons": [
         "node:http passes 403 of 415 of Node's own tests, and http.Server does not extend net.Server",
         "node:https lacks getPeerCertificate() and getCipher(), and SNICallback is unsupported",
-        "NODE_MODULE_VERSION 147 means addons built for Node 24 must be rebuilt",
+        "Node-API stability differs from version-specific native ABI; test each addon on the target runtime",
         "Bun's own memory table shows the Vite dev server at 233 MB vs 214 MB on Node"
       ],
-      "code_example": "// One binary replaces four dev dependencies:\n// bun install, bun test, bun lint and bun fmt are the same executable.\nimport { Database } from \"bun:sqlite\";   // built in, no addon to compile\nconst db = new Database(\":memory:\");\ndb.run(\"create table t (id integer primary key, name text)\");\n// Here it breaks: a native addon built for Node 24 will not load,\n// because Bun 1.4 reports NODE_MODULE_VERSION 147."
+      "code_example": "// One binary replaces four dev dependencies:\n// bun install, bun test, bun lint and bun fmt are the same executable.\nimport { Database } from \"bun:sqlite\";   // built in, no addon to compile\nconst db = new Database(\":memory:\");\ndb.run(\"create table t (id integer primary key, name text)\");\n// Here it breaks: a native addon built for Node 24 will not load,\n// distinguishing Node-API from version-specific native ABI."
     },
     "tool_b": {
       "name": "Node.js",
@@ -1718,7 +1719,7 @@
     "sections": [
       {
         "title": "Both runtimes cost nothing, so the invoice arrives as labour",
-        "content": "Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-hours on three meters: the release calendar, the compatibility surface and the native-module ABI.\n\n> For teams maintaining a Node service: as of 10 November 2026, both runtimes have no price.\n\n- **Node:** Node publishes a release calendar; v26 Lithium, v24 Krypton and v22 Jod are LTS.\n- **Bun:** 1.4.0 (20 August 2026) combined the Rust rewrite with the compatibility-target move from 24.3.0 to 26.3.0 and native ABI 147.\n\nFor Bun 1.4, check whether your native addons have builds for `NODE_MODULE_VERSION` 147."
+        "content": "Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-hours on three meters: the release calendar, the compatibility surface and the native-module ABI.\n\n> For teams maintaining a Node service: as of 10 November 2026, both runtimes have no price.\n\n- **Node:** Node publishes a release calendar; v26 Lithium, v24 Krypton and v22 Jod are LTS.\n- **Bun:** 1.4.0 (20 August 2026) combined the Rust rewrite with the compatibility-target move from 24.3.0 to 26.3.0 and native ABI 147.\n\nIdentify whether each native addon uses stable Node-API or a version-specific V8/native ABI; test the actual package on Bun, OS and architecture."
       },
       {
         "title": "Node bills you on a date you did not choose",
@@ -1730,7 +1731,7 @@
       },
       {
         "title": "Bun's own node:http count leaves 415 − 403 = 12 tests failing",
-        "content": "Bun says it plainly: \"Bun is not 100% compatible with Node.js yet.\" Bun's own 1.4 counts against the Node 26.3.0 suite:\n\n| Module | Bun 1.4 passes | Not passing |\n|---|---|---|\n| node:http | 403 / 415 | 415 − 403 = 12 |\n| node:fs | 349 / 358 | 358 − 349 = 9 |\n| node:module | 68 / 93 | 93 − 68 = 25 |\n| node:test_runner | 28 / 81 | 81 − 28 = 53 |\n| node:inspector | 22 / 110 | 110 − 22 = 88 |\n| node:sqlite | 18 / 18 | 18 − 18 = 0 |\n\nOn node:http that is 12 ÷ 415 ≈ 2.9%, the failing 3%. Bun says 1.4 made 1,517 more Node tests pass.\n\n> The ABI tax: 1.4 moved the compatibility target from 24.3.0 to 26.3.0. `NODE_MODULE_VERSION` is now 147, so native addons built for Node 24 must be rebuilt.\n\nCheck required inspector APIs; module pass counts are not application coverage."
+        "content": "Bun says it plainly: \"Bun is not 100% compatible with Node.js yet.\" Bun's own 1.4 counts against the Node 26.3.0 suite:\n\n| Module | Bun 1.4 passes | Not passing |\n|---|---|---|\n| node:http | 403 / 415 | 415 − 403 = 12 |\n| node:fs | 349 / 358 | 358 − 349 = 9 |\n| node:module | 68 / 93 | 93 − 68 = 25 |\n| node:test_runner | 28 / 81 | 81 − 28 = 53 |\n| node:inspector | 22 / 110 | 110 − 22 = 88 |\n| node:sqlite | 18 / 18 | 18 − 18 = 0 |\n\nOn node:http that is 12 ÷ 415 ≈ 2.9%, the failing 3%. Bun says 1.4 made 1,517 more Node tests pass.\n\n> Native compatibility is not one blanket rebuild rule. Node-API provides ABI stability across Node versions, unlike addons tied to V8 or a version-specific native ABI. Bun implements Node-API independently, so Node-API compatibility and package dependencies still need testing; a Node version number alone does not prove a rebuild is required.\n\nCheck required inspector APIs; module pass counts are not application coverage."
       },
       {
         "title": "Who should not pick Bun: teams requiring missing APIs",
@@ -1738,7 +1739,7 @@
       },
       {
         "title": "Bun stays MIT after Anthropic's acquisition; check before migrating",
-        "content": "Anthropic acquired Bun on 2 December 2025. Claude Code ships as a Bun executable (Bun's statement), and Bun's founder wrote then: \"Today, Bun makes $0 in revenue.\" Bun stays MIT.\n\nThe acquisition changes who pays for Bun's roadmap. It does not change the licence, and it does not change the API surface you have to test.\n\nCheck today:\n\n1. List every `.node` addon in the tree and whether it has a build for `NODE_MODULE_VERSION` 147.\n2. Check required HTTP APIs, `createHook`, distinct async IDs, `getPeerCertificate` and `SNICallback` against Bun's gaps.\n3. Write down the EOL date of the Node major running in production."
+        "content": "Anthropic acquired Bun on 2 December 2025. Claude Code ships as a Bun executable (Bun's statement), and Bun's founder wrote then: \"Today, Bun makes $0 in revenue.\" Bun stays MIT.\n\nThe acquisition changes who pays for Bun's roadmap. It does not change the licence, and it does not change the API surface you have to test.\n\nCheck today:\n\n1. List every `.node` addon, identify Node-API versus version-specific ABI dependencies, and test supported binaries on the target runtime, OS and architecture.\n2. Check required HTTP APIs, `createHook`, distinct async IDs, `getPeerCertificate` and `SNICallback` against Bun's gaps.\n3. Write down the EOL date of the Node major running in production."
       }
     ],
     "cost_math": [
@@ -1756,11 +1757,6 @@
         "label": "Node 20 EOL-to-LTS decision",
         "formula": "17 Apr 2023 → 24 Mar 2026 ≈ 35 months from first release to EOL; this is not the LTS fix window",
         "result": "Move production off EOL Node 20 to Node 24 or 26 LTS; the documented 30-month LTS fix guarantee is a separate interval."
-      },
-      {
-        "label": "Native addon rebuild tax for Bun 1.4",
-        "formula": "N native addons × 1 rebuild each for NODE_MODULE_VERSION 147 (target moved 24.3.0 → 26.3.0)",
-        "result": "Every addon built for Node 24 needs a new build before Bun 1.4 can load it"
       }
     ],
     "decision_matrix": [
@@ -1771,8 +1767,8 @@
       },
       {
         "situation": "Repo with native addons built for Node 24",
-        "pick": "Node, until every addon has a build for NODE_MODULE_VERSION 147",
-        "why": "Bun 1.4 targets Node 26.3.0, so addons built for 24 do not load until rebuilt."
+        "pick": "Test addon API and runtime compatibility before migrating",
+        "why": "Stable Node-API addons are not automatically invalidated by a Node major change. V8/legacy addons can require compatible builds; Bun support and external dependencies must be checked per package."
       },
       {
         "situation": "Production tracing agent requiring createHook or distinct async IDs",
@@ -1805,8 +1801,8 @@
         "why": "Bun 1.4 ships bun test --parallel, bun lint, bun fmt and bun check in the same binary."
       }
     ],
-    "verdict_summary": "Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a native addon in your tree has no build for NODE_MODULE_VERSION 147. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.",
-    "migration_guide": "Moving to Bun starts with `bun install` reading the same package.json, but every native addon needs a build for NODE_MODULE_VERSION 147 before it loads, so the hook stampede is the first thing to schedule. Moving back is not automatic either: Bun's compatibility docs list the API gaps you will meet — getPeerCertificate(), SNICallback, async_hooks — and there is no tool that rewrites handlers around them. Run the service test suite under both runtimes before either direction, then keep the loser's addon builds around for a release or two.",
+    "verdict_summary": "Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a required native addon fails on the target runtime. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.",
+    "migration_guide": "Classify native addons by Node-API versus version-specific V8/native ABI, then test actual binaries on Bun and Node for your OS and architecture. Rebuild or replace only incompatible packages. Exercise required HTTP, TLS and async-hooks APIs before changing production runtimes.",
     "faqs": [
       {
         "q": "Does Node 26 type-check TypeScript?",
@@ -1830,7 +1826,9 @@
       "https://bun.com/blog/bun-joins-anthropic",
       "https://bun.com/docs/runtime/nodejs-compat",
       "https://nodejs.org/en/about/previous-releases",
-      "https://nodejs.org/api/typescript.html"
+      "https://nodejs.org/api/typescript.html",
+      "https://nodejs.org/learn/modules/abi-stability",
+      "https://bun.com/docs/runtime/node-api"
     ],
     "related": [
       {
@@ -2037,12 +2035,12 @@
     "category": "Containers & Runtime",
     "last_verified": "2026-11-10",
     "published": "2026-11-10",
-    "hook": "Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison is not daemon versus daemonless but which company may run the free one.",
+    "hook": "Docker Desktop commercial eligibility depends on both company size and revenue. Team supports up to 100 users, so a 200-seat estimate must not multiply the Team rate by 200. Podman has no per-seat licence fee, but migration still costs engineering time.",
     "tool_a": {
       "name": "Docker",
       "tagline": "An open-source engine under a licensed desktop",
       "db": "Docker Engine (Moby) plus the Docker Desktop app",
-      "pricing": "Personal $0 · Pro $9 · Team $15 per user/month · Business quote-only",
+      "pricing": "Personal $0 · Pro $9/$11 annual/monthly · Team $15/$16 up to 100 users · Business $24 per user/month",
       "self_host": "Yes for Engine and Moby; Desktop carries the subscription agreement",
       "realtime": "Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes",
       "ai_readiness": "Hardened Images free for developers, from $5k/repo in production",
@@ -2059,7 +2057,7 @@
         "Free use is a company-size test: cross either limit and every commercial seat is paid at once",
         "Government entities pay for Docker Desktop regardless of size",
         "Production Hardened Images start at $5k per repository, which dwarfs seat revenue for a small team",
-        "Business pricing is quote-only, so the biggest line item is the one you cannot see"
+        "Business lists $24/user/month; confirm extras and negotiated terms"
       ],
       "code_example": "# The engine is open source; Docker Desktop is the licensed surface.\n$ docker run --rm -v \"$PWD\":/app -w /app node:24 npm ci\n# Here it breaks: past 250 employees or $10M revenue, every\n# commercial Desktop seat must be on Pro, Team or Business.\n$ docker buildx bake --set \"*.cache-from=type=registry\""
     },
@@ -2095,11 +2093,11 @@
       },
       {
         "title": "Commercial Desktop seats become paid at 250 employees or $10 million revenue",
-        "content": "Docker Desktop is free while a company has **fewer than 250 employees AND less than $10 million** in annual revenue. Both must hold. Government entities pay at any size.\n\n| Commercial company | Docker Desktop bill |\n|---|---|\n| 249 employees, under $10M annual revenue | $0 |\n| 250 employees or $10M+ annual revenue; 200 users choosing Team | 200 × $15 = $3,000/month; $3,000 × 12 = $36,000/year |\n\nThe software did not change between those rows.\n\n| Plan | USD/user/month | Adds |\n|---|---|---|\n| Personal | $0 | — |\n| Pro | $9 | commercial Desktop use, Build Cloud, unlimited private repos |\n| Team | $15 | audit logs, role-based access control |\n| Business | Contact us for pricing | SSO, SCIM, Hardened Docker Desktop, Image Access Management |\n\nBusiness publishes no per-seat price. Docker Team's flat $15 per user/month charges for seats, not container usage."
+        "content": "Docker Desktop is free for qualifying small businesses with **fewer than 250 employees AND less than $10 million annual revenue**. Government entities require a paid subscription. Eligibility is not determined by developer-seat count alone.\n\n| Plan | USD/user/month | Scope |\n|---|---|---|\n| Personal | $0 | Eligible free use |\n| Pro | $9 annual billing; $11 monthly | Individual professional |\n| Team | $15 annual billing; $16 monthly | Up to 100 users |\n| Business | $24 listed per user/month | Enterprise controls; no user cap listed |\n\nA 200-user Business estimate is 200 × $24 = $4,800/month, or $57,600 for 12 months at that rate, before taxes and extras. This is a list-price illustration, not a negotiated quote. A 200-user Team estimate is not valid because it exceeds Team's published user limit."
       },
       {
         "title": "Docker's money buys meters, and each meter is its own decision",
-        "content": "Past the seat, paid plans attach meters, at Docker's prices:\n\n| Item | Price | Decision it forces |\n|---|---|---|\n| Build Cloud | base minutes per plan | Do builds fit the allocation? |\n| Testcontainers Cloud | $3/100 min prepaid, $4/100 on demand | Steady enough to prepay? |\n| Docker Hardened Images | free for developers; production with compliance support starts at $5k/repo | How many repos ship? |\n| Docker Offload | licences on Team and Business | Worth the sales call it requires? |\n\nAt 4,000 Testcontainers minutes a month: 4,000 ÷ 100 = 40 blocks, so 40 × $4 = $160 on demand or 40 × $3 = $120 prepaid.\n\n- DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.\n- Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period."
+        "content": "Past the seat, paid plans attach meters, at Docker's prices:\n\n| Item | Price | Decision it forces |\n|---|---|---|\n| Build Cloud | base minutes per plan | Do builds fit the allocation? |\n| Testcontainers Cloud | $3/100 min prepaid, $4/100 on demand | Steady enough to prepay? |\n| Docker Hardened Images | free for developers; production with compliance support starts at $5k/repo | How many repos ship? |\n| Docker Offload | licences on Team and Business | Worth the sales call it requires? |\n\nA Team subscription includes 500 Testcontainers Cloud runtime minutes per month, not per seat. For 4,000 total minutes, billable excess is 3,500 minutes: 35 × $4 = $140 on demand, or 35 × $3 = $105 purchased in advance. Seat charges are separate; purchased minutes expire at the end of the subscription period.\n\n- DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.\n- Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period."
       },
       {
         "title": "Who should not pick Podman: teams without socket ownership",
@@ -2116,9 +2114,9 @@
     ],
     "cost_math": [
       {
-        "label": "Commercial company below $10 million annual revenue, moving from 249 to 250 employees; 200 Desktop users choosing Team",
-        "formula": "Previously $0 under both free-tier limits; 200 developers × $15 Team = $3,000/month; $3,000 × 12 = $36,000/year",
-        "result": "$36,000/year, previously $0"
+        "label": "200 commercial Desktop users on Business at published list rate",
+        "formula": "200 × $24 = $4,800/month; $4,800 × 12 = $57,600",
+        "result": "$57,600 for 12 months before tax and extras; Team supports only up to 100 users"
       },
       {
         "label": "25 developers: Team vs Pro",
@@ -2126,9 +2124,9 @@
         "result": "$4,500/year vs $2,700/year; Pro drops org audit logs and RBAC"
       },
       {
-        "label": "Testcontainers Cloud at 4,000 minutes/month",
-        "formula": "4,000 ÷ 100 = 40 blocks; 40 × $4 = $160/month on demand; 40 × $3 = $120/month prepaid",
-        "result": "$160/month vs $120/month"
+        "label": "Team subscription with 4,000 total Testcontainers Cloud minutes/month",
+        "formula": "(4,000 − 500 included) ÷ 100 = 35 blocks; 35 × $4 = $140 on demand; 35 × $3 = $105 purchased",
+        "result": "$140 vs $105 incremental runtime cost, excluding seats; purchased minutes expire"
       },
       {
         "label": "Docker Hardened Images production with compliance support, 12 repositories",
@@ -2160,7 +2158,7 @@
       {
         "situation": "The identity team requires SSO, SCIM and Image Access Management",
         "pick": "Docker Business",
-        "why": "Those are documented Business plan gates; request pricing because the page publishes no per-seat figure."
+        "why": "Those are documented Business plan gates; Business lists $24/user/month; confirm usage extras and contract terms."
       },
       {
         "situation": "Large org wants the seat line deleted; its platform team owns CI sockets and can fund Docker-only API rewrites",
@@ -2168,9 +2166,9 @@
         "why": "Licence fees become $0; the funded rewrites and socket-access responsibility stay with the platform team."
       },
       {
-        "situation": "Committed Testcontainers Cloud usage of 4,000 runtime minutes per month",
-        "pick": "Testcontainers Cloud pre-purchase",
-        "why": "4,000 ÷ 100 = 40 blocks; 40 × $3 = $120/month prepaid versus 40 × $4 = $160/month on demand. Choose pre-purchase for this committed usage."
+        "situation": "Team subscription using 4,000 Testcontainers runtime minutes/month",
+        "pick": "Compare excess usage after the included allowance",
+        "why": "Subtract 500 included minutes per subscription: 3,500 excess costs $140 on demand or $105 purchased; do not prepay unused minutes."
       },
       {
         "situation": "Mid-term on an annual Docker Team or Business plan with every seat assigned; a funded Podman migration is planned",
@@ -2224,7 +2222,7 @@
     "category": "Identity & Auth",
     "last_verified": "2026-11-10",
     "published": "2026-11-10",
-    "hook": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning on a later day after signup per app, so these are not equivalent populations.",
+    "hook": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning at least 24 hours after signup per app, so these are not equivalent populations.",
     "tool_a": {
       "name": "Clerk",
       "tagline": "Authentication as a product surface, billed on retained users",
@@ -2248,7 +2246,7 @@
         "Protect checks meter at $0.002 after 10,000 free, so attack traffic is a billable event",
         "Business is a $300/mo step mostly for SOC 2, seats and 30-day logs"
       ],
-      "code_example": "// Clerk bills a retained user, not a session: the first day is free.\nconst { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\n// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,\n// and Hobby gives one grace month before requests stop being served.\nif (totalCount > 50_000) console.warn(totalCount, \"MRU — check the plan\");"
+      "code_example": "// Clerk bills a retained user, not a session: retention requires a return at least 24 hours after signup.\nconst { totalCount } = await clerkClient.users.getUserList({ limit: 1 });\n// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,\n// and Hobby gives one grace month before requests stop being served.\nif (totalCount > 50_000) console.warn(totalCount, \"MRU — check the plan\");"
     },
     "tool_b": {
       "name": "Auth0",
@@ -2278,7 +2276,7 @@
     "sections": [
       {
         "title": "Clerk and Auth0 count different people",
-        "content": "Read the unit before the price. Each vendor defines it in its own words:\n\n| Vendor | Unit | Who is counted |\n|---|---|---|\n| Clerk | Monthly Retained User (MRU) | visits at least one day after signup, per app |\n| Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |\n\nClerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.\n\n> A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.\n\nVendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0."
+        "content": "Read the unit before the price. Each vendor defines it in its own words:\n\n| Vendor | Unit | Who is counted |\n|---|---|---|\n| Clerk | Monthly Retained User (MRU) | returns at least 24 hours after signup, per app |\n| Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |\n\nClerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.\n\n> A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.\n\nVendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0."
       },
       {
         "title": "Who should not pick Auth0's paid B2C plans",
@@ -2294,11 +2292,11 @@
       },
       {
         "title": "The 140x gap is correct arithmetic on two different quantities",
-        "content": "Paid-plan estimates at equal numeric inputs, not an identical population. Auth0 counts MAU; Clerk counts MRU.\n\n```python\nTIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350), (7_500, 525),\n         (10_000, 700), (20_000, 1_400), (30_000, 2_100), (40_000, 2_800), (50_000, 3_500)]\n\ndef auth0(mau):  # between tiers you pay the next tier up\n    return next((p for cap, p in TIERS if mau <= cap), None)  # breaks: >50,000 unpriced\n\ndef clerk_pro(mru):  # ignores Clerk's volume discounts\n    return 25 + max(0, mru - 50_000) * 0.02\n\nfor n in (501, 50_000, 100_000):\n    print(n, auth0(n), clerk_pro(n))\n```\n\n> At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 later-day MRU per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who came back on a later day. Not the same crowd.\n\n> At 100,000 MRU, Clerk is 50,000 × $0.02 + $25 = $1,025/month. Auth0's B2C sheet ends at 50,000: \"contact us\"."
+        "content": "Paid-plan estimates at equal numeric inputs, not an identical population. Auth0 counts MAU; Clerk counts MRU.\n\n```python\nTIERS = [(500, 35), (1_000, 70), (2_500, 175), (5_000, 350), (7_500, 525),\n         (10_000, 700), (20_000, 1_400), (30_000, 2_100), (40_000, 2_800), (50_000, 3_500)]\n\ndef auth0(mau):  # between tiers you pay the next tier up\n    return next((p for cap, p in TIERS if mau <= cap), None)  # breaks: >50,000 unpriced\n\ndef clerk_pro(mru):  # ignores Clerk's volume discounts\n    return 25 + max(0, mru - 50_000) * 0.02\n\nfor n in (501, 50_000, 100_000):\n    print(n, auth0(n), clerk_pro(n))\n```\n\n> At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 MRU returning at least 24 hours after signup per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who returned at least 24 hours after signup. Not the same crowd.\n\n> At 100,000 MRU, Clerk is 50,000 × $0.02 + $25 = $1,025/month. Auth0's B2C sheet ends at 50,000: \"contact us\"."
       },
       {
         "title": "Pick by who you are billed for, then check the next boundary",
-        "content": "**Choose Clerk Pro if** you need MFA, passkeys or branding removal below 50,000 MRU per app; Hobby excludes them.\n\n> For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, but Essentials and Professional allow only 10 organisations, not 200.\n\n**Choose Auth0 Professional if** you need custom database connections or cross-app SSO; it includes 12 tenants.\n\nCheck today:\n\n1. Price distinct non-internal MAU per Auth0 tenant and later-day MRU per Clerk app, with required plans and add-ons.\n2. Find your Auth0 tier and how many MAU separate you from the next one.\n3. List SSO and Directory Sync connections you will run on 1 January 2027."
+        "content": "**Choose Clerk Pro if** you need MFA, passkeys or branding removal below 50,000 MRU per app; Hobby excludes them.\n\n> For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, and the B2B plan includes unlimited organizations. The 10-organization limit belongs to B2C, not this B2B comparison. MRU and MAU are different populations; compare features and add-ons too.\n\n**Choose Auth0 Professional if** you need custom database connections or cross-app SSO; it includes 12 tenants.\n\nCheck today:\n\n1. Price distinct non-internal MAU per Auth0 tenant and MRU returning at least 24 hours after signup per Clerk app, with required plans and add-ons.\n2. Find your Auth0 tier and how many MAU separate you from the next one.\n3. List SSO and Directory Sync connections you will run on 1 January 2027."
       }
     ],
     "cost_math": [
@@ -2327,7 +2325,7 @@
       {
         "situation": "App below 50,000 MRU per app needing MFA, passkeys or branding removal",
         "pick": "Clerk Pro",
-        "why": "Pro includes these features for $25/month; Hobby excludes them. Without a paid-feature requirement, Hobby covers 50,000 MRU per app for $0. Users who never return after day one are never billed."
+        "why": "Pro includes these features for $25/month; Hobby excludes them. Without a paid-feature requirement, Hobby covers 50,000 MRU per app for $0. Users who never return at least 24 hours after signup are never billed."
       },
       {
         "situation": "Side project that needs more than 3 social logins and costs nothing",
@@ -2337,12 +2335,12 @@
       {
         "situation": "B2C usage beyond Clerk's 50,000 included MRU per app or Auth0's printed 50,000-MAU limit",
         "pick": "Price Clerk Pro overage and request an Auth0 quote",
-        "why": "Clerk Pro lists $0.02/month per MRU beyond 50,000 included per app, with volume discounts; Auth0's printed B2C tiers end at 50,000 MAU, so higher usage needs a quote. Clerk MRU counts later-day returns per app; Auth0 MAU counts non-internal users authenticated that month per tenant."
+        "why": "Clerk Pro lists $0.02/month per MRU beyond 50,000 included per app, with volume discounts; Auth0's printed B2C tiers end at 50,000 MAU, so higher usage needs a quote. Clerk MRU counts returns at least 24 hours after signup per app; Auth0 MAU counts non-internal users authenticated that month per tenant."
       },
       {
         "situation": "Team needing 10 dashboard seats, with 5,000 Clerk MRU and 200 qualifying MRO",
         "pick": "Clerk Business + B2B Authentication Enhanced add-on",
-        "why": "$300 + $100 + (200 − 100) × $1 = $500/month. Each MRO needs at least 2 members, including an MRU that month. Auth0 B2B Essentials is $1,300/month at 5,000 MAU, but Essentials and Professional allow only 10 organizations, so neither serves 200 organizations. MRU counts later-day returns per app; MAU counts non-internal users authenticated that month per tenant."
+        "why": "$300 + $100 + (200 − 100) × $1 = $500/month. Each MRO needs at least 2 members, including an MRU that month. Auth0 B2B Essentials is $1,300/month at 5,000 MAU, and B2B Essentials includes unlimited organizations; B2C's 10-organization limit does not apply. These are different usage units, not an equivalent-population price comparison. MRU counts returns at least 24 hours after signup per app; MAU counts non-internal users authenticated that month per tenant."
       },
       {
         "situation": "Existing user store you cannot migrate yet (bring your own database)",
@@ -2365,7 +2363,7 @@
         "why": "Clerk lists HIPAA with BAA only on its annual Enterprise plan. Request its custom annual quote; confirm Auth0's HIPAA and BAA eligibility separately before treating it as an alternative."
       }
     ],
-    "verdict_summary": "Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.",
+    "verdict_summary": "Pick Clerk if most of your sign-ups never return at least 24 hours after signup, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.",
     "migration_guide": "Clerk to Auth0 means exporting users, recreating connections and mapping organisations onto a plan that includes 5 on Free and 10 on paid tiers — well short of 200 without a higher tier. Auth0 to Clerk changes the unit: MAU becomes MRU, so the population you migrate is not the population you are billed for, and users who never return after day one vanish from the invoice.",
     "faqs": [
       {
@@ -2387,7 +2385,8 @@
     ],
     "sources": [
       "https://clerk.com/pricing",
-      "https://auth0.com/pricing"
+      "https://auth0.com/pricing",
+      "https://auth0.com/pricing.md"
     ],
     "related": [
       {

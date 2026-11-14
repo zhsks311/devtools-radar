@@ -2,16 +2,16 @@
 
 Rules: use ONLY numbers and product names from this sheet. Derived arithmetic must show its formula.
 Podman has no price sheet; Docker's licence threshold is the centre of this article. Do not invent a
-Docker Business list price — the pricing page shows "Contact us" and only Pro and Team print a number.
+negotiated Docker Business quote; the published rate is $24/user/month.
 
 ## Docker (sources: https://www.docker.com/pricing/, https://docs.docker.com/subscription-billing/desktop-license/,
 https://docs.docker.com/subscription-billing/plans/docker/)
 
 Prices on the pricing page (USD, per user per month)
 - Docker Personal — $0.
-- Docker Pro — $9.
-- Docker Team — $15.
-- Docker Business — no number on the page; it says "Contact us for pricing".
+- Docker Pro — $9 annual billing; $11 monthly.
+- Docker Team — $15 annual billing; $16 monthly; up to 100 users.
+- Docker Business — $24/user/month published list price.
 - Docker Hardened Images (DHI) — free for every developer; "Starting at $5k/repo" for production use
   with compliance support; enterprise DHI is quote-only and is required for end-of-life software
   security.
@@ -77,17 +77,16 @@ The compatibility layer, and its own warning (podman-system-service man page)
 - The same 25 on Docker Pro: 25 × $9 = $225/month = $2,700/year — but Pro is a personal plan with no
   org audit logs or RBAC, so the saving buys a governance hole.
 - The cliff, not the slope: a company at 249 employees pays $0 for Docker Desktop; at 250 employees
-  (or $10M+ revenue) every commercial Desktop seat is paid at once. 200 developers × $15 = $3,000/month
-  = $36,000/year, and nothing about the software changed.
-- Testcontainers Cloud at 4,000 runtime minutes/month: 4,000 ÷ 100 = 40 blocks; 40 × $4 = $160/month
-  on-demand, or 40 × $3 = $120/month pre-purchased.
+  (or $10M+ revenue) every commercial Desktop seat is paid at once. 200 Business seats × $24 = $4,800/month
+  = $57,600 for 12 months at that rate, before tax and extras, and nothing about the software changed.
+- Testcontainers Cloud at 4,000 runtime minutes/month: on Team subtract 500 included minutes per subscription;
+  (4,000 − 500) ÷ 100 = 35 blocks; $140 on demand or $105 purchased. Purchased minutes expire.
 - DHI production at 12 repositories: 12 × $5,000 = $60,000/year, before any Business seats.
 - Podman's bill for the same 25 developers: $0 in licence fees. The cost is the port: rewriting
   handlers that depend on Docker-only API surface, and the socket security decision above.
 
 ## Do not claim
-- Do not print a Docker Business per-seat price. The page says "Contact us"; do not use $24 or any
-  other figure as Docker's list price.
+- Do not apply Team pricing to 200 seats; Team supports at most 100 users.
 - Do not claim Docker Desktop is free for open source commercial use or for government.
 - Do not claim Podman is a drop-in replacement with no work: the compatibility layer is Docker v1.40,
   the man page documents its limits, and the runtime under it is different.
@@ -96,3 +95,8 @@ The compatibility layer, and its own warning (podman-system-service man page)
   free tier for small companies still exists).
 - Do not claim rootless containers are immune to compromise: Podman's own docs say the API socket is
   arbitrary code execution as that user.
+
+
+## Targeted correction review — 2026-11-14
+Docker pricing confirms Team up to 100 users, Business $24/user/month, and Team Testcontainers allowance 500 minutes/month/subscription. Source: https://www.docker.com/pricing/ . This supersedes prior 200-seat Team and Business quote-only statements.
+Other claims retain their original review date; this is not a full re-verification.

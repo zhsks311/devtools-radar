@@ -1,6 +1,6 @@
 {
   "slug": "docker-vs-podman",
-  "hook": "Docker Desktop is free at 249 employees and paid at 250: 200 developers × $15 = $3,000/month for the same binary. Podman has no seat price at all, which is why the real comparison is not daemon versus daemonless but which company may run the free one.",
+  "hook": "Docker Desktop commercial eligibility depends on both company size and revenue. Team supports up to 100 users, so a 200-seat estimate must not multiply the Team rate by 200. Podman has no per-seat licence fee, but migration still costs engineering time.",
   "sections": [
     {
       "title": "Docker licenses the desktop; Podman has no paid tier",
@@ -8,11 +8,11 @@
     },
     {
       "title": "Commercial Desktop seats become paid at 250 employees or $10 million revenue",
-      "content": "Docker Desktop is free while a company has **fewer than 250 employees AND less than $10 million** in annual revenue. Both must hold. Government entities pay at any size.\n\n| Commercial company | Docker Desktop bill |\n|---|---|\n| 249 employees, under $10M annual revenue | $0 |\n| 250 employees or $10M+ annual revenue; 200 users choosing Team | 200 × $15 = $3,000/month; $3,000 × 12 = $36,000/year |\n\nThe software did not change between those rows.\n\n| Plan | USD/user/month | Adds |\n|---|---|---|\n| Personal | $0 | — |\n| Pro | $9 | commercial Desktop use, Build Cloud, unlimited private repos |\n| Team | $15 | audit logs, role-based access control |\n| Business | Contact us for pricing | SSO, SCIM, Hardened Docker Desktop, Image Access Management |\n\nBusiness publishes no per-seat price. Docker Team's flat $15 per user/month charges for seats, not container usage."
+      "content": "Docker Desktop is free for qualifying small businesses with **fewer than 250 employees AND less than $10 million annual revenue**. Government entities require a paid subscription. Eligibility is not determined by developer-seat count alone.\n\n| Plan | USD/user/month | Scope |\n|---|---|---|\n| Personal | $0 | Eligible free use |\n| Pro | $9 annual billing; $11 monthly | Individual professional |\n| Team | $15 annual billing; $16 monthly | Up to 100 users |\n| Business | $24 listed per user/month | Enterprise controls; no user cap listed |\n\nA 200-user Business estimate is 200 × $24 = $4,800/month, or $57,600 for 12 months at that rate, before taxes and extras. This is a list-price illustration, not a negotiated quote. A 200-user Team estimate is not valid because it exceeds Team's published user limit."
     },
     {
       "title": "Docker's money buys meters, and each meter is its own decision",
-      "content": "Past the seat, paid plans attach meters, at Docker's prices:\n\n| Item | Price | Decision it forces |\n|---|---|---|\n| Build Cloud | base minutes per plan | Do builds fit the allocation? |\n| Testcontainers Cloud | $3/100 min prepaid, $4/100 on demand | Steady enough to prepay? |\n| Docker Hardened Images | free for developers; production with compliance support starts at $5k/repo | How many repos ship? |\n| Docker Offload | licences on Team and Business | Worth the sales call it requires? |\n\nAt 4,000 Testcontainers minutes a month: 4,000 ÷ 100 = 40 blocks, so 40 × $4 = $160 on demand or 40 × $3 = $120 prepaid.\n\n- DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.\n- Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period."
+      "content": "Past the seat, paid plans attach meters, at Docker's prices:\n\n| Item | Price | Decision it forces |\n|---|---|---|\n| Build Cloud | base minutes per plan | Do builds fit the allocation? |\n| Testcontainers Cloud | $3/100 min prepaid, $4/100 on demand | Steady enough to prepay? |\n| Docker Hardened Images | free for developers; production with compliance support starts at $5k/repo | How many repos ship? |\n| Docker Offload | licences on Team and Business | Worth the sales call it requires? |\n\nA Team subscription includes 500 Testcontainers Cloud runtime minutes per month, not per seat. For 4,000 total minutes, billable excess is 3,500 minutes: 35 × $4 = $140 on demand, or 35 × $3 = $105 purchased in advance. Seat charges are separate; purchased minutes expire at the end of the subscription period.\n\n- DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.\n- Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period."
     },
     {
       "title": "Who should not pick Podman: teams without socket ownership",
@@ -51,7 +51,7 @@
     {
       "situation": "The identity team requires SSO, SCIM and Image Access Management",
       "pick": "Docker Business",
-      "why": "Those are documented Business plan gates; request pricing because the page publishes no per-seat figure."
+      "why": "Those are documented Business plan gates; Business lists $24/user/month; confirm usage extras and contract terms."
     },
     {
       "situation": "Large org wants the seat line deleted; its platform team owns CI sockets and can fund Docker-only API rewrites",
@@ -59,9 +59,9 @@
       "why": "Licence fees become $0; the funded rewrites and socket-access responsibility stay with the platform team."
     },
     {
-      "situation": "Committed Testcontainers Cloud usage of 4,000 runtime minutes per month",
-      "pick": "Testcontainers Cloud pre-purchase",
-      "why": "4,000 ÷ 100 = 40 blocks; 40 × $3 = $120/month prepaid versus 40 × $4 = $160/month on demand. Choose pre-purchase for this committed usage."
+      "situation": "Team subscription using 4,000 Testcontainers runtime minutes/month",
+      "pick": "Compare excess usage after the included allowance",
+      "why": "Subtract 500 included minutes per subscription: 3,500 excess costs $140 on demand or $105 purchased; do not prepay unused minutes."
     },
     {
       "situation": "Mid-term on an annual Docker Team or Business plan with every seat assigned; a funded Podman migration is planned",
@@ -71,9 +71,9 @@
   ],
   "cost_math": [
     {
-      "label": "Commercial company below $10 million annual revenue, moving from 249 to 250 employees; 200 Desktop users choosing Team",
-      "formula": "Previously $0 under both free-tier limits; 200 developers × $15 Team = $3,000/month; $3,000 × 12 = $36,000/year",
-      "result": "$36,000/year, previously $0"
+      "label": "200 commercial Desktop users on Business at published list rate",
+      "formula": "200 × $24 = $4,800/month; $4,800 × 12 = $57,600",
+      "result": "$57,600 for 12 months before tax and extras; Team supports only up to 100 users"
     },
     {
       "label": "25 developers: Team vs Pro",
@@ -81,9 +81,9 @@
       "result": "$4,500/year vs $2,700/year; Pro drops org audit logs and RBAC"
     },
     {
-      "label": "Testcontainers Cloud at 4,000 minutes/month",
-      "formula": "4,000 ÷ 100 = 40 blocks; 40 × $4 = $160/month on demand; 40 × $3 = $120/month prepaid",
-      "result": "$160/month vs $120/month"
+      "label": "Team subscription with 4,000 total Testcontainers Cloud minutes/month",
+      "formula": "(4,000 − 500 included) ÷ 100 = 35 blocks; 35 × $4 = $140 on demand; 35 × $3 = $105 purchased",
+      "result": "$140 vs $105 incremental runtime cost, excluding seats; purchased minutes expire"
     },
     {
       "label": "Docker Hardened Images production with compliance support, 12 repositories",
@@ -117,5 +117,55 @@
     "https://podman.io/",
     "https://podman-desktop.io/",
     "https://docs.podman.io/en/latest/markdown/podman-system-service.1.html"
-  ]
+  ],
+  "tool_a": {
+    "name": "Docker",
+    "tagline": "An open-source engine under a licensed desktop",
+    "db": "Docker Engine (Moby) plus the Docker Desktop app",
+    "pricing": "Personal $0 · Pro $9/$11 annual/monthly · Team $15/$16 up to 100 users · Business $24 per user/month",
+    "self_host": "Yes for Engine and Moby; Desktop carries the subscription agreement",
+    "realtime": "Build Cloud minutes per plan; Testcontainers Cloud at $3-4 per 100 minutes",
+    "ai_readiness": "Hardened Images free for developers, from $5k/repo in production",
+    "lock_in": "Medium: Compose and image tooling are standard, the desktop is licensed",
+    "badge": "Licensed desktop",
+    "cta_url": "https://www.docker.com/?utm_source=devteardown",
+    "pros": [
+      "Desktop stays free under 250 employees AND $10M revenue, plus personal, education and non-commercial OSS",
+      "A flat per-user rate with monthly or annual billing, and seats can be removed when people leave",
+      "Team adds audit logs and RBAC; Business adds SSO, SCIM, Hardened Desktop and Image Access Management",
+      "Build Cloud minutes and Testcontainers Cloud arrive on the same contract"
+    ],
+    "cons": [
+      "Free use is a company-size test: cross either limit and every commercial seat is paid at once",
+      "Government entities pay for Docker Desktop regardless of size",
+      "Production Hardened Images start at $5k per repository, which dwarfs seat revenue for a small team",
+      "Business lists $24/user/month; confirm extras and negotiated terms"
+    ],
+    "code_example": "# The engine is open source; Docker Desktop is the licensed surface.\n$ docker run --rm -v \"$PWD\":/app -w /app node:24 npm ci\n# Here it breaks: past 250 employees or $10M revenue, every\n# commercial Desktop seat must be on Pro, Team or Business.\n$ docker buildx bake --set \"*.cache-from=type=registry\""
+  },
+  "tool_b": {
+    "name": "Podman",
+    "tagline": "Daemonless rootless containers under Apache 2.0",
+    "db": "Podman 6.1.4 runtime with Podman Desktop 1.30.5",
+    "pricing": "Free · Apache 2.0 · enterprise support through the Red Hat build",
+    "self_host": "Yes — a local process, not a service",
+    "realtime": "Socket-activated API with one listening socket (--time default 5 s)",
+    "ai_readiness": "GPU acceleration in Podman Desktop (vendor claim)",
+    "lock_in": "Low: Apache 2.0, OCI and Compose compatible",
+    "badge": "No paid tier",
+    "cta_url": "https://podman.io/?utm_source=devteardown",
+    "pros": [
+      "No daemon and no seat: containers run as the invoking user and nothing idles in the background",
+      "Docker v1.40 compatibility layer, so DOCKER_HOST moves most CLI and Compose tooling",
+      "Podman Desktop is CNCF-hosted, Apache 2.0 and vendor-neutral, with Kubernetes and Compose extensions",
+      "Enterprise support exists without a licence tier: Red Hat sells a supported build"
+    ],
+    "cons": [
+      "The API socket is arbitrary code execution as that user, with no way to limit or audit it (Podman's man page)",
+      "Docker-only API surface still needs rewriting, and the compatibility layer is Docker v1.40",
+      "The service command is unavailable where Podman runs directly on a Windows or macOS host",
+      "There is no vendor to call unless you buy the Red Hat build"
+    ],
+    "code_example": "# No daemon to start: each command is a process that runs and exits.\n$ podman run --rm -v \"$PWD\":/app -w /app node:24 npm ci\n# Docker tooling can use the compatibility socket:\n$ systemctl --user start podman.socket\n$ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock\n# Here it breaks: that socket is full access as your user, so\n# never bind it to TCP without mutual TLS."
+  }
 }

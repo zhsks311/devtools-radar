@@ -12,11 +12,11 @@
     },
     {
       "title": "The meters punish different habits",
-      "content": "Cursor's meter punishes third-party model use specifically: no plan includes those tokens, so Claude or GPT work passes through at API list price. Copilot's meter is a single credit pool per user that agent mode, review, cloud and CLI all drain.\n\n| Vendor's monthly offer | Usage that incurs the penalty |\n|---|---|\n| Cursor: $8 Plus; $30 Premium | Plus is Grok-only; Premium adds third-party models at API list price on top |\n| GitHub Copilot: $10 Pro ($15 credits); $39 Pro+ ($70 credits, Opus included); $100 Max ($200 credits) | Agent mode, review, cloud, CLI and app consume the same credit meter |\n\nWhen a Copilot seat exhausts its credits, Pro and above buy extra.\n\n| Buyer | Cursor | GitHub Copilot |\n|---|---|---|\n| 10 seats | Teams 10 × $30 = $300/month | Pro 10 × $10 = $100/month |\n| Claude-dependent developer | Premium $30 plus metered tokens | Pro+ $39 with $70 of credits |\n| Heavy user | Super $100 (15× Plus) | Max $100 ($200 credits) |"
+      "content": "Cursor's meter punishes third-party model use specifically: no plan includes those tokens, so Claude or GPT work passes through at API list price. Copilot's meter is a single credit pool per user that agent mode, review, cloud and CLI all drain.\n\n| Vendor's monthly offer | Usage that incurs the penalty |\n|---|---|\n| Cursor: $8 Plus; $30 Premium | Plus is Grok-only; Premium adds third-party models at API list price on top |\n| GitHub Copilot: $10 Pro ($15 credits); $39 Pro+ ($70 credits, Opus included); $100 Max ($200 credits) | Agent mode, review, cloud, CLI and app consume the same credit meter |\n\nWhen a Copilot seat exhausts its credits, Pro and above buy extra.\n\n| Buyer | Cursor | GitHub Copilot |\n|---|---|---|\n| 10 centrally managed organization seats | Teams 10 × $30+ = $300+/month base | Business 10 × $19 = $190/month base |\n| Claude-dependent developer | Premium $30 plus metered tokens | Pro+ $39 with $70 of credits |\n| Heavy user | Super $100 (15× Plus) | Max $100 ($200 credits) |"
     },
     {
       "title": "Model neutrality now needs a renewal check",
-      "content": "Teams that chose Cursor partly to stay model-agnostic now buy from a company whose model is Grok. Ownership changed the incentive. It does not prove that every request routes to Grok.\n\n> Cursor states that Grok 4.6, the first joint model, scores between 69.9% and 70.8% on CursorBench and 61 on the Artificial Analysis Intelligence Index.\n\nBefore renewing, replay representative repository tasks and record the separately billed third-party usage.\n\n- On Premium, compare the separate third-party token charge with the Claude or GPT work your team believes it ran; a near-zero charge means that work did not run on third-party models.\n- Do not buy Plus if non-Grok access is a requirement; test Premium's unbundled bill before committing."
+      "content": "Teams that chose Cursor partly to stay model-agnostic now buy from a company whose model is Grok. Ownership changed the incentive. It does not prove that every request routes to Grok.\n\n> Cursor states that Grok 4.6, the first joint model, scores between 69.9% and 70.8% on CursorBench and 61 on the Artificial Analysis Intelligence Index.\n\nBefore renewing, replay representative repository tasks and record the separately billed third-party usage.\n\n- On Premium, compare the separate third-party token charge with the Claude or GPT work your team believes it ran; a low bill alone does not establish which model handled a request. Check model selections and available request/usage records before drawing routing conclusions.\n- Do not buy Plus if non-Grok access is a requirement; test Premium's unbundled bill before committing."
     },
     {
       "title": "Copilot Free runs the agent; PR review costs $10",
@@ -54,9 +54,9 @@
       "why": "Pro+ includes premium models including Opus inside $70 of monthly credits for $39, while Cursor bills third-party tokens at API list price on top."
     },
     {
-      "situation": "An existing Cursor team requires model neutrality at renewal",
-      "pick": "Cursor Premium if the third-party bill matches the work; otherwise GitHub Copilot Pro+",
-      "why": "Ownership now favors Grok, so the team must check the separate third-party token charge against the Claude or GPT work it ran."
+      "situation": "An existing Cursor team requires access to particular model providers",
+      "pick": "Verify model access, routing records and organizational controls",
+      "why": "Do not infer routing from a low bill. Compare Cursor Teams with Copilot Business for organization seats; personal plans are a separate buying decision."
     },
     {
       "situation": "One heavy agent user with a $100/month budget",
@@ -66,9 +66,9 @@
   ],
   "cost_math": [
     {
-      "label": "10-seat team",
-      "formula": "Copilot Pro 10 × $10 = $100/month vs Cursor Teams 10 × $30 = $300/month",
-      "result": "Cursor Teams costs 3× Copilot Pro for ten seats; Cursor lists Teams at $30+/user, so its figure can rise."
+      "label": "10 centrally managed organization seats, base subscriptions only",
+      "formula": "Copilot Business 10 × $19 = $190/month; Cursor Teams 10 × $30+ = $300+/month",
+      "result": "Cursor starts at least $110/month higher before usage, taxes and extras. Individual Copilot Pro is not the organizational-seat equivalent."
     },
     {
       "label": "One Claude-dependent developer",
@@ -81,7 +81,7 @@
       "result": "Same price: Super buys 15× Plus volume with third-party tokens still billed on top; Max buys $200 of credits per user."
     }
   ],
-  "verdict_summary": "Teams content with Grok should choose Cursor, from $8 Plus; teams whose review runs through GitHub PRs should choose Copilot Pro at $10/user/month or above. Teams that need Claude should price Cursor Premium's $30 plus list-price tokens against Copilot Pro+'s $39 with $70 of credits.",
+  "verdict_summary": "For individuals, compare Cursor Plus/Premium with Copilot Pro/Pro+ using the models and usage you need. For centrally managed teams, compare Cursor Teams from $30+/user/month with Copilot Business at $19/user/month, then account for usage and controls. A personal Pro subscription is not an organizational-seat substitute.",
   "faqs": [
     {
       "q": "Does Copilot require moving to a particular editor?",
@@ -104,6 +104,57 @@
     "https://cursor.com/blog/joining-spacex",
     "https://cursor.com/pricing",
     "https://github.com/features/copilot/plans",
-    "https://thenextweb.com/news/spacex-cursor-acquisition-official-60-billion"
-  ]
+    "https://thenextweb.com/news/spacex-cursor-acquisition-official-60-billion",
+    "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses"
+  ],
+  "tool_a": {
+    "name": "Cursor",
+    "tagline": "The editor that owns the model — now a SpaceX subsidiary",
+    "db": "Full-repo index + agent (Composer, Grok 4.6)",
+    "pricing": "Plus $8 (Grok only) · Premium $30 + third-party tokens",
+    "self_host": "No (SpaceXAI-hosted models)",
+    "realtime": "Cloud agents and automations from Premium",
+    "ai_readiness": "Own models trained on SpaceX compute",
+    "lock_in": "High: Grok-first routing after the acquisition",
+    "badge": "Grok-native",
+    "cta_url": "https://cursor.com/?utm_source=devteardown",
+    "pros": [
+      "Owns its models, so it optimises the whole loop rather than renting someone's API",
+      "One editor, one bill for indexing, completion, agent and cloud automation",
+      "Premium bundles cloud agents, code hosting via Origin and review via Bugbot",
+      "$8 Plus is the cheapest agentic editor entry point if Grok is enough for you"
+    ],
+    "cons": [
+      "Every third-party model token bills at API list price on top of the subscription",
+      "Plus ($8) cannot run Claude or GPT at all",
+      "Model neutrality ended with the $60B acquisition; Grok is the default",
+      "Published benchmark numbers are the vendor's own (69.9–70.8% CursorBench)"
+    ],
+    "code_example": "// Cursor's agent works on the open repository, so the unit of work\n// is a task, not a suggestion. The bill follows the model you route to.\n// .cursor/rules/backend.mdc — project rules apply to every agent run\n---\ndescription: Backend conventions\nglobs: services/**/*.py\n---\nNever edit migrations by hand; generate them and review the diff.\n// Here it breaks: on Premium, requests routed to Claude or GPT are billed\n// at API list price separately from the $30 subscription — watch the invoice,\n// not just the seat count."
+  },
+  "tool_b": {
+    "name": "GitHub Copilot",
+    "tagline": "The repository vendor that puts AI where review happens",
+    "db": "Repository context + GitHub PR surface",
+    "pricing": "Free · Pro $10 ($15 credits) · Pro+ $39 ($70 credits)",
+    "self_host": "No (GitHub-hosted)",
+    "realtime": "Copilot in the cloud: assign work, get a PR (Pro+)",
+    "ai_readiness": "Premium models incl. Opus on Pro+",
+    "lock_in": "Medium: one credit pool inside GitHub",
+    "badge": "Repo-native",
+    "cta_url": "https://github.com/features/copilot?utm_source=devteardown",
+    "pros": [
+      "Runs in VS Code, Visual Studio, JetBrains, Xcode, Eclipse, Neovim, Zed and on github.com",
+      "Free already includes agent mode and the CLI — the entry tier is usable, not a demo",
+      "One credit meter covers agent, review, cloud and CLI, so spend is predictable per seat",
+      "Review lands where the team already reviews: PRs, file diffs, assigned work"
+    ],
+    "cons": [
+      "PR review, file diff review, custom instructions and cloud assignment all start at $10 Pro",
+      "Pro's $15 of credits is a budget, not an allowance you can ignore",
+      "Agent quality tracks whatever model GitHub routes you to; Opus is Pro+",
+      "You are buying into GitHub's surface — fine in GitHub, awkward outside it"
+    ],
+    "code_example": "// Copilot's advantage is the review surface, not the cursor.\n// .github/instructions/backend.instructions.md — applied to agent work\n---\napplyTo: \"**/*.py\"\n---\n- Generate migrations, never hand-edit them.\n- Every new endpoint needs an integration test.\n// Then assign an issue to Copilot: it opens a PR you review like any other.\n// Here it breaks: on Free, PR review, diff review and custom instructions\n// are unavailable — the agent runs, the review handoff does not."
+  }
 }

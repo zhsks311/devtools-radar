@@ -101,7 +101,7 @@ Feature cliffs worth naming
 
 - B2C at 50,000 users: Auth0 Essentials $3,500/month. Clerk Pro at 50,000 MRU is $25/month because
   the first 50,000 are included. That is 140x — but Auth0 counts every user who authenticated, and
-  Clerk counts only users who came back on a later day, so the two numbers are not the same quantity.
+  Clerk counts only users who returned at least 24 hours after signup, so the two numbers are not the same quantity.
 - Clerk at 100,000 MRU: 50,000 over × $0.02 = $1,000 + $25 = $1,025/month. Auth0 B2C at 100,000 MAU
   has no printed tier — the price sheet ends at 50,000 and becomes "contact us".
 - Auth0's step function: 501 B2C users on Essentials bills at the 1,000 tier, $70/month, double the
@@ -123,3 +123,8 @@ Feature cliffs worth naming
 - Do not present the 140x comparison without the unit caveat above.
 - Do not claim either vendor stores passwords in plaintext or makes migration effortless; that is not
   on either price sheet.
+
+
+## Targeted correction review — 2026-11-14
+Auth0 B2B Essentials includes unlimited organizations; Professional inherits it. B2C organization limits must not be applied to B2B. Source: https://auth0.com/pricing.md . Clerk retention means return at least 24 hours after signup: https://clerk.com/pricing .
+Other claims retain their original review date; this is not a full re-verification.

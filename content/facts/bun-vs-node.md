@@ -19,7 +19,7 @@ Licence and ownership
 Version 1.4 (20 August 2026) — what changed
 - Rewritten from Zig to Rust.
 - Node.js compatibility target bumped from 24.3.0 to 26.3.0; `process.versions.node` reports 26.3.0
-  and `NODE_MODULE_VERSION` is 147, so native addons built for Node 24 must be rebuilt.
+  and `NODE_MODULE_VERSION` is 147. That does not require every Node-API addon to be rebuilt.
 - +1,517 tests from the Node.js test suite now pass (Bun calls it the largest compatibility jump
   since 1.0); over 2,900 issues fixed.
 - Idle CPU down 5x, memory down up to 35%, Linux start-up 50% faster (vendor figures).
@@ -100,8 +100,7 @@ TypeScript in Node (docs for v26.13.0)
 
 - node:http gap: 415 − 403 = 12 failing tests out of 415.
 - node:inspector gap: 110 − 22 = 88 unimplemented tests; node:test_runner: 81 − 28 = 53.
-- Rebuild tax: one major Node compatibility bump (24.3.0 → 26.3.0) changes `NODE_MODULE_VERSION`
-  to 147, so every native addon in your tree needs a build for 147.
+- Distinguish stable Node-API from version-specific V8/native ABI. Test packages, OS, architecture and external dependencies; only affected packages need rebuilding or replacement.
 - Node 20's life: 17 April 2023 → 24 March 2026 is about 35 months from first release, and the
   documented LTS guarantee is 30 months of fixes.
 
@@ -115,3 +114,8 @@ TypeScript in Node (docs for v26.13.0)
   measured fact — Bun's docs phrase the 4x as a design goal.
 - Do not claim Anthropic pays for Bun's development in exchange for a licence fee; the announced
   terms are ownership, not a price sheet.
+
+
+## Targeted correction review — 2026-11-14
+Node-API ABI stability differs from V8/version-specific ABI. Bun independently implements Node-API; test package compatibility, do not mandate a rebuild of every Node24 addon. Sources: https://nodejs.org/learn/modules/abi-stability and https://bun.com/docs/runtime/node-api .
+Other claims retain their original review date; this is not a full re-verification.

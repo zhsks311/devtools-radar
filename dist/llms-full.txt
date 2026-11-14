@@ -580,7 +580,7 @@ Keep the current platform when its measured total and operational fit are better
 URL: https://devteardown.com/compare/cursor-vs-github-copilot/
 Category: AI Coding · Recorded source review: 2026-11-10
 
-Verdict: Teams content with Grok should choose Cursor, from $8 Plus; teams whose review runs through GitHub PRs should choose Copilot Pro at $10/user/month or above. Teams that need Claude should price Cursor Premium's $30 plus list-price tokens against Copilot Pro+'s $39 with $70 of credits.
+Verdict: For individuals, compare Cursor Plus/Premium with Copilot Pro/Pro+ using the models and usage you need. For centrally managed teams, compare Cursor Teams from $30+/user/month with Copilot Business at $19/user/month, then account for usage and controls. A personal Pro subscription is not an organizational-seat substitute.
 
 ### Your editor budget now buys a different contract
 A renewal priced on the old $20 tier now buys either $8 Plus, which is Grok-only, or $30 Premium, where Claude and GPT tokens bill at API list price on top.
@@ -616,7 +616,7 @@ When a Copilot seat exhausts its credits, Pro and above buy extra.
 
 | Buyer | Cursor | GitHub Copilot |
 |---|---|---|
-| 10 seats | Teams 10 × $30 = $300/month | Pro 10 × $10 = $100/month |
+| 10 centrally managed organization seats | Teams 10 × $30+ = $300+/month base | Business 10 × $19 = $190/month base |
 | Claude-dependent developer | Premium $30 plus metered tokens | Pro+ $39 with $70 of credits |
 | Heavy user | Super $100 (15× Plus) | Max $100 ($200 credits) |
 
@@ -627,7 +627,7 @@ Teams that chose Cursor partly to stay model-agnostic now buy from a company who
 
 Before renewing, replay representative repository tasks and record the separately billed third-party usage.
 
-- On Premium, compare the separate third-party token charge with the Claude or GPT work your team believes it ran; a near-zero charge means that work did not run on third-party models.
+- On Premium, compare the separate third-party token charge with the Claude or GPT work your team believes it ran; a low bill alone does not establish which model handled a request. Check model selections and available request/usage records before drawing routing conclusions.
 - Do not buy Plus if non-Grok access is a requirement; test Premium's unbundled bill before committing.
 
 ### Copilot Free runs the agent; PR review costs $10
@@ -660,6 +660,7 @@ Today, list the workflows that need Claude or GPT and price them on both plans.
 - https://cursor.com/pricing
 - https://github.com/features/copilot/plans
 - https://thenextweb.com/news/spacex-cursor-acquisition-official-60-billion
+- https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses
 
 ## Notion vs Obsidian
 URL: https://devteardown.com/compare/notion-vs-obsidian/
@@ -782,7 +783,7 @@ Check these today:
 URL: https://devteardown.com/compare/bun-vs-node/
 Category: Runtimes & Tooling · Recorded source review: 2026-11-10
 
-Verdict: Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a native addon in your tree has no build for NODE_MODULE_VERSION 147. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.
+Verdict: Pick Node if your service needs an API Bun documents as missing — getPeerCertificate(), SNICallback, createHook with real async ids — or if a required native addon fails on the target runtime. Pick Bun if the addons and APIs you depend on survive its 403-of-415 node:http count, because the runtime itself will never appear on an invoice.
 
 ### Both runtimes cost nothing, so the invoice arrives as labour
 Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-hours on three meters: the release calendar, the compatibility surface and the native-module ABI.
@@ -792,7 +793,7 @@ Bun is MIT. Node.js is MIT. Neither sells a paid tier, so the bill is engineer-h
 - **Node:** Node publishes a release calendar; v26 Lithium, v24 Krypton and v22 Jod are LTS.
 - **Bun:** 1.4.0 (20 August 2026) combined the Rust rewrite with the compatibility-target move from 24.3.0 to 26.3.0 and native ABI 147.
 
-For Bun 1.4, check whether your native addons have builds for `NODE_MODULE_VERSION` 147.
+Identify whether each native addon uses stable Node-API or a version-specific V8/native ABI; test the actual package on Bun, OS and architecture.
 
 ### Node bills you on a date you did not choose
 Node's release page reads like a work schedule:
@@ -851,7 +852,7 @@ Bun says it plainly: "Bun is not 100% compatible with Node.js yet." Bun's own 1.
 
 On node:http that is 12 ÷ 415 ≈ 2.9%, the failing 3%. Bun says 1.4 made 1,517 more Node tests pass.
 
-> The ABI tax: 1.4 moved the compatibility target from 24.3.0 to 26.3.0. `NODE_MODULE_VERSION` is now 147, so native addons built for Node 24 must be rebuilt.
+> Native compatibility is not one blanket rebuild rule. Node-API provides ABI stability across Node versions, unlike addons tied to V8 or a version-specific native ABI. Bun implements Node-API independently, so Node-API compatibility and package dependencies still need testing; a Node version number alone does not prove a rebuild is required.
 
 Check required inspector APIs; module pass counts are not application coverage.
 
@@ -873,7 +874,7 @@ The acquisition changes who pays for Bun's roadmap. It does not change the licen
 
 Check today:
 
-1. List every `.node` addon in the tree and whether it has a build for `NODE_MODULE_VERSION` 147.
+1. List every `.node` addon, identify Node-API versus version-specific ABI dependencies, and test supported binaries on the target runtime, OS and architecture.
 2. Check required HTTP APIs, `createHook`, distinct async IDs, `getPeerCertificate` and `SNICallback` against Bun's gaps.
 3. Write down the EOL date of the Node major running in production.
 
@@ -883,6 +884,8 @@ Check today:
 - https://bun.com/docs/runtime/nodejs-compat
 - https://nodejs.org/en/about/previous-releases
 - https://nodejs.org/api/typescript.html
+- https://nodejs.org/learn/modules/abi-stability
+- https://bun.com/docs/runtime/node-api
 
 ## Prisma vs Drizzle
 URL: https://devteardown.com/compare/prisma-vs-drizzle/
@@ -993,23 +996,16 @@ For teams paying for Docker Desktop, or about to. Docker's November 2026 pricing
 > Choose paid Docker Desktop for its plan controls; choose Podman when eliminating licence fees justifies Docker-only API rewrites and socket-security responsibility.
 
 ### Commercial Desktop seats become paid at 250 employees or $10 million revenue
-Docker Desktop is free while a company has **fewer than 250 employees AND less than $10 million** in annual revenue. Both must hold. Government entities pay at any size.
+Docker Desktop is free for qualifying small businesses with **fewer than 250 employees AND less than $10 million annual revenue**. Government entities require a paid subscription. Eligibility is not determined by developer-seat count alone.
 
-| Commercial company | Docker Desktop bill |
-|---|---|
-| 249 employees, under $10M annual revenue | $0 |
-| 250 employees or $10M+ annual revenue; 200 users choosing Team | 200 × $15 = $3,000/month; $3,000 × 12 = $36,000/year |
-
-The software did not change between those rows.
-
-| Plan | USD/user/month | Adds |
+| Plan | USD/user/month | Scope |
 |---|---|---|
-| Personal | $0 | — |
-| Pro | $9 | commercial Desktop use, Build Cloud, unlimited private repos |
-| Team | $15 | audit logs, role-based access control |
-| Business | Contact us for pricing | SSO, SCIM, Hardened Docker Desktop, Image Access Management |
+| Personal | $0 | Eligible free use |
+| Pro | $9 annual billing; $11 monthly | Individual professional |
+| Team | $15 annual billing; $16 monthly | Up to 100 users |
+| Business | $24 listed per user/month | Enterprise controls; no user cap listed |
 
-Business publishes no per-seat price. Docker Team's flat $15 per user/month charges for seats, not container usage.
+A 200-user Business estimate is 200 × $24 = $4,800/month, or $57,600 for 12 months at that rate, before taxes and extras. This is a list-price illustration, not a negotiated quote. A 200-user Team estimate is not valid because it exceeds Team's published user limit.
 
 ### Docker's money buys meters, and each meter is its own decision
 Past the seat, paid plans attach meters, at Docker's prices:
@@ -1021,7 +1017,7 @@ Past the seat, paid plans attach meters, at Docker's prices:
 | Docker Hardened Images | free for developers; production with compliance support starts at $5k/repo | How many repos ship? |
 | Docker Offload | licences on Team and Business | Worth the sales call it requires? |
 
-At 4,000 Testcontainers minutes a month: 4,000 ÷ 100 = 40 blocks, so 40 × $4 = $160 on demand or 40 × $3 = $120 prepaid.
+A Team subscription includes 500 Testcontainers Cloud runtime minutes per month, not per seat. For 4,000 total minutes, billable excess is 3,500 minutes: 35 × $4 = $140 on demand, or 35 × $3 = $105 purchased in advance. Seat charges are separate; purchased minutes expire at the end of the subscription period.
 
 - DHI production with compliance support, 12 repos: 12 × $5,000 = $60,000/year floor. Enterprise DHI is quote-only and required for end-of-life software security.
 - Build Cloud base minutes reset without accumulating; purchased extras expire each period. Buy extras only for work you expect to consume in that period.
@@ -1079,14 +1075,14 @@ Check today:
 URL: https://devteardown.com/compare/clerk-vs-auth0/
 Category: Identity & Auth · Recorded source review: 2026-11-10
 
-Verdict: Pick Clerk if most of your sign-ups never come back a second day, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.
+Verdict: Pick Clerk if most of your sign-ups never return at least 24 hours after signup, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan. Pick Auth0 if your identity programme runs on enterprise SSO, many tenants and custom connections, and budget for the step: 501 B2C users cost $70 on Essentials, the same as 1,000.
 
 ### Clerk and Auth0 count different people
 Read the unit before the price. Each vendor defines it in its own words:
 
 | Vendor | Unit | Who is counted |
 |---|---|---|
-| Clerk | Monthly Retained User (MRU) | visits at least one day after signup, per app |
+| Clerk | Monthly Retained User (MRU) | returns at least 24 hours after signup, per app |
 | Auth0 | Monthly Active User (MAU) | non-internal user authenticated that month, per tenant |
 
 Clerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.
@@ -1154,26 +1150,27 @@ for n in (501, 50_000, 100_000):
     print(n, auth0(n), clerk_pro(n))
 ```
 
-> At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 later-day MRU per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who came back on a later day. Not the same crowd.
+> At 50,000 non-internal MAU per tenant/month, Auth0 is $3,500; at 50,000 MRU returning at least 24 hours after signup per app, Clerk is $25 + 0 × $0.02 = $25. $3,500 / $25 = 140. 140x prices 50,000 people who logged in against 50,000 who returned at least 24 hours after signup. Not the same crowd.
 
 > At 100,000 MRU, Clerk is 50,000 × $0.02 + $25 = $1,025/month. Auth0's B2C sheet ends at 50,000: "contact us".
 
 ### Pick by who you are billed for, then check the next boundary
 **Choose Clerk Pro if** you need MFA, passkeys or branding removal below 50,000 MRU per app; Hobby excludes them.
 
-> For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, but Essentials and Professional allow only 10 organisations, not 200.
+> For 10 dashboard seats, 5,000 MRU and 200 qualifying MRO, Clerk Business costs $300 + $100 + (200 − 100) × $1 = $500/month. Auth0 B2B Essentials is $1,300 at 5,000 MAU, and the B2B plan includes unlimited organizations. The 10-organization limit belongs to B2C, not this B2B comparison. MRU and MAU are different populations; compare features and add-ons too.
 
 **Choose Auth0 Professional if** you need custom database connections or cross-app SSO; it includes 12 tenants.
 
 Check today:
 
-1. Price distinct non-internal MAU per Auth0 tenant and later-day MRU per Clerk app, with required plans and add-ons.
+1. Price distinct non-internal MAU per Auth0 tenant and MRU returning at least 24 hours after signup per Clerk app, with required plans and add-ons.
 2. Find your Auth0 tier and how many MAU separate you from the next one.
 3. List SSO and Directory Sync connections you will run on 1 January 2027.
 
 ### Source links
 - https://clerk.com/pricing
 - https://auth0.com/pricing
+- https://auth0.com/pricing.md
 
 ## PlanetScale vs Neon
 URL: https://devteardown.com/compare/planetscale-vs-neon/

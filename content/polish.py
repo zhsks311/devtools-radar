@@ -45,6 +45,10 @@ EDITS = {
     },
 }
 
+# Reviewed final articles own these corrected claims; never restore legacy copy.
+for _reviewed_slug in ('docker-vs-podman', 'clerk-vs-auth0', 'cursor-vs-github-copilot', 'bun-vs-node'):
+    EDITS.pop(_reviewed_slug, None)
+
 for slug, spec in EDITS.items():
     path = os.path.join(BASE, slug + ".json")
     d = json.load(open(path, encoding="utf-8"))
