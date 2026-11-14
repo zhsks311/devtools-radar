@@ -314,293 +314,309 @@ DATADOG = {'slug': 'datadog-vs-grafana-cloud',
                             'users.'}}
 
 
-WORKERS = {
-    "slug": "aws-lambda-vs-cloudflare-workers",
-    "category": "Serverless & Edge",
-    "last_verified": "2026-11-10",
-    "published": "2026-11-10",
-    "hook": (
-        "One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on "
-        "AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor "
-        "bills the waiting."
-    ),
-    "sections": [
-        {
-            "title": "Two vendors, three meters, two definitions of work",
-            "content": (
-                "Lambda now publishes two price sheets. Event Functions bill requests plus duration "
-                "in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 "
-                "per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, "
-                "memory at $0.0000036667 per GB-second for as long as the environment exists, and "
-                "$0.30 per million requests.\n\n"
-                "Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 "
-                "million included, plus $0.30 per million requests after 10 million on a $5 plan. "
-                "The page is explicit that there is no charge for duration, for egress or for "
-                "bandwidth.\n\n"
-                "| Meter | Lambda Event | Lambda Web | Workers |\n|---|---|---|---|\n"
-                "| Requests | $0.20/M | $0.30/M | $0.30/M |\n"
-                "| Duration | GB-seconds | memory GB-s, whole life | none |\n"
-                "| CPU | inside duration | $0.0000276944/vCPU-s | $0.02/M CPU-ms |"
-            ),
-        },
-        {
-            "title": "A GB-second is a memory meter wearing a clock",
-            "content": (
-                "Duration billing multiplies wall time by allocated memory, and both factors are "
-                "yours to set. A 512 MB function that takes 200 ms bills 0.5 GB × 0.2 s = 0.1 GB-s "
-                "per request. At 100 million requests that is 10 million GB-seconds, or $133.34 on Arm "
-                "at $0.0000133334.\n\n"
-                "Workers bills the 10 ms of actual work instead: 100 million × 10 ms = 1,000 million "
-                "CPU-milliseconds, which is 970 million after the 30 million included, at $0.02 per "
-                "million CPU-ms = $19.40.\n\n"
-                "So the ratio between the two vendors is not a rate difference. It is the fraction of "
-                "the request that is CPU: 10 ms of 200 ms is 5%, and that 5% is what Workers meters. "
-                "Make the handler heavier and the gap narrows; make it wait on a database and the gap "
-                "widens."
-            ),
-        },
-        {
-            "title": "The bills cross at about 7.5 million requests",
-            "content": (
-                "Same shape everywhere below: 200 ms duration, 512 MB, 10 ms of CPU, one function.\n\n"
-                "| Requests/month | Lambda Event (Arm) | Workers | Cheaper |\n|---|---|---|---|\n"
-                "| 5M | $0.80 + $1.33 = $2.13 | $5.00 + $0.40 = $5.40 | Lambda |\n"
-                "| 7.5M | $1.30 + $4.67 = $5.97 | $5.00 + $0.90 = $5.90 | Workers, by 7¢ |\n"
-                "| 10M | $1.80 + $8.00 = $9.80 | $5.00 + $1.40 = $6.40 | Workers |\n"
-                "| 50M | $9.80 + $61.33 = $71.13 | $5.00 + $12.00 + $9.40 = $26.40 | Workers |\n"
-                "| 100M | $19.80 + $128.00 = $147.80 | $5.00 + $27.00 + $19.40 = $51.40 | Workers |\n\n"
-                "The crossover is a free-tier artefact, not a policy: 1 million requests and 400,000 "
-                "GB-seconds are free on Lambda, and 30 million CPU-ms are free on Workers. Below "
-                "roughly 7.5 million requests the Lambda allowance is worth more than the CPU "
-                "savings. Above it, the $5 plan floor disappears into the noise."
-            ),
-        },
-        {
-            "title": "Lambda's second sheet splits the same request in two",
-            "content": (
-                "Web Functions are AWS's answer to active-CPU billing, and they price the same 100 "
-                "million requests differently.\n\n"
-                "| Line | Lambda Event | Lambda Web | Workers |\n|---|---|---|---|\n"
-                "| Requests | $19.80 | $30.00 | $27.00 |\n"
-                "| Compute | 10M GB-s = $128.00 | 1M vCPU-s = $27.69, 1.296M GB-s = $4.75 | 970M CPU-ms = $19.40 |\n"
-                "| Plan floor | — | — | $5.00 |\n"
-                "| **Total** | **$147.80** | **$62.45** | **$51.40** |\n\n"
-                "Web Functions bill $62.45 for the same traffic, 42% of the Event price, and still "
-                "21% above the Workers bill. The memory meter is why: it bills the "
-                "environment for its whole life, idle time included, and AWS's own examples quietly "
-                "assume exactly one environment stays up for the entire month."
-            ),
-        },
-        {
-            "title": "Where Lambda wins on the same sheet",
-            "content": (
-                "The free tier, for one. Five million requests a month cost $2.13 on Lambda and "
-                "$5.40 on Workers, and a hobby project that sends three million costs $2.73 by AWS's "
-                "own worked example.\n\n"
-                "Memory ceiling is the second. Lambda allocates up to 10,240 MB per function, which "
-                "covers a model that will not fit in a V8 isolate. Workers caps a single invocation "
-                "at 5 minutes of CPU, 30 seconds by default.\n\n"
-                "The third is everything around the function: VPC access, IAM, SQS, Kinesis, "
-                "Step Functions and the rest of the event-source catalogue. On an AWS shop, the "
-                "compute line is frequently cheaper than the integration you would rewrite to leave "
-                "it."
-            ),
-        },
-        {
-            "title": "The exit door has a rewrite behind it",
-            "content": (
-                "Workers runs JavaScript on V8 with a fetch-shaped API. A Lambda handler that imports "
-                "a native module, spawns a process or needs a writable filesystem does not run there, "
-                "and the 5-minute CPU cap is not negotiable with a support ticket.\n\n"
-                "The reverse move is easier and still not free: Workers' egress is $0 and Lambda's is "
-                "not, so a byte-heavy service that moves back to Lambda picks up a data transfer line "
-                "it never had.\n\n"
-                "Price the traffic, not the platform. If your p50 request spends most of its time "
-                "waiting on a database, the CPU meter is the cheaper meter and the rewrite is the only "
-                "real cost. If your requests are heavy, synchronous and mostly compute, the two bills "
-                "converge and the free tier decides."
-            ),
-        },
-    ],
-    "cost_math": [
-        {
-            "label": "100M requests at 200 ms, 512 MB, 10 ms CPU",
-            "formula": "Lambda Event Arm: 100M × 0.2 s × 0.5 GB = 10M GB-s, minus 400k free = 9.6M × $0.0000133334 = $128.00, plus 99M × $0.20/M = $19.80. Workers: (100M − 10M) × $0.30/M = $27.00, plus (1,000M − 30M) CPU-ms × $0.02/M = $19.40, plus $5.00",
-            "result": "$147.80 on Lambda against $51.40 on Workers",
-        },
-        {
-            "label": "The same traffic on Lambda Web Functions",
-            "formula": "100M × 10 ms = 1M vCPU-s × $0.0000276944 = $27.69; 0.5 GB × 2,592,000 s = 1,296,000 GB-s × $0.0000036667 = $4.75; 100M × $0.30/M = $30.00",
-            "result": "$62.45, 58% below Lambda's own Event price for identical traffic",
-        },
-        {
-            "label": "Cross-over against Lambda's free tier",
-            "formula": "Lambda: (R − 1M) × $0.20/M + (R × 0.1 − 400k) × $0.0000133334. Workers: $5 + (R × 10 − 30M) × $0.02/M",
-            "result": "Equal at about 7.5M requests a month; below that Lambda's free allowance wins, above it the CPU meter does",
-        },
-        {
-            "label": "Replacing a 200 ms wait with a 1 s wait",
-            "formula": "At 10M requests: Lambda 10M × 1 s × 0.5 GB = 5M GB-s − 400k = 4.6M × $0.0000133334 = $61.33 + $1.80. Workers CPU is unchanged at 10M × 200 ms = 2,000M − 30M × $0.02/M = $39.40 + $5",
-            "result": "$63.13 against $44.40: the slower request costs Lambda $53 more and Workers nothing",
-        },
-    ],
-    "decision_matrix": [
-        {
-            "situation": "Under about 5 million requests a month",
-            "pick": "Lambda Event Functions",
-            "why": "The 1M-request and 400,000 GB-second free allowances cover the whole job: 5M requests at 200 ms and 512 MB price at $2.13 against $5.40 on Workers.",
-        },
-        {
-            "situation": "100 million requests that mostly wait on I/O",
-            "pick": "Workers",
-            "why": "The same shape prices at $51.40 against $147.80, because 10 ms of CPU out of a 200 ms request is all Workers meters.",
-        },
-        {
-            "situation": "A function that needs 10 GB of memory",
-            "pick": "Lambda",
-            "why": "Lambda allocates up to 10,240 MB; Workers caps a single invocation at 5 minutes of CPU and runs in an isolate with a far smaller footprint.",
-        },
-        {
-            "situation": "Long-lived streaming to a browser",
-            "pick": "Lambda Web Functions",
-            "why": "Active-CPU billing ignores the wait: AWS's own LLM streaming example prices 5M requests of 3 s at $33.94, against $101.00 as Event Functions.",
-        },
-        {
-            "situation": "Byte-heavy responses at the edge",
-            "pick": "Workers",
-            "why": "Workers charges nothing for egress or bandwidth, and static asset requests are free and unlimited.",
-        },
-        {
-            "situation": "SQS, Kinesis, VPC and IAM already wired into the app",
-            "pick": "Lambda",
-            "why": "The compute line is often the small one; rewriting event sources and IAM to leave AWS costs more than the difference on the invoice.",
-        },
-        {
-            "situation": "A cron job every hour, minutes of CPU each",
-            "pick": "Workers",
-            "why": "Cloudflare's own example prices 720 invocations at 180,000 ms CPU each at $6.99, and duration is not a meter at all.",
-        },
-        {
-            "situation": "Traffic so spiky that one environment cannot serve it",
-            "pick": "Lambda Event Functions",
-            "why": "Web Functions bill memory for the life of every environment, and the pricing examples quietly assume exactly one environment runs all month.",
-        },
-    ],
-    "verdict_summary": (
-        "For a request that waits, Workers is two to three times cheaper and the gap grows with every "
-        "millisecond you spend on a database call. For a request that works, the two converge, and "
-        "Lambda's free tier and memory ceiling win back the low end. The bill is a statement about "
-        "your code's shape, not about the vendors' rates."
-    ),
-    "migration_guide": (
-        "Lambda to Workers is a runtime rewrite: the handler becomes a fetch listener, environment "
-        "variables become bindings, and anything that needs a native module, a spawned process or a "
-        "writable disk has no equivalent. State moves to Durable Objects or KV, which bill separately.\n\n"
-        "Workers to Lambda is smaller but not free: package the code, replace KV and Durable Objects "
-        "with a database, and accept that egress is metered again. In both directions the traffic "
-        "analysis comes first, because the arithmetic only favours one vendor when you know the "
-        "request duration and the CPU share of it."
-    ),
-    "faqs": [
-        {
-            "q": "Does Workers really charge nothing for duration?",
-            "a": "The pricing page states there is no charge or limit for duration and no charge for data transfer or bandwidth. Only CPU milliseconds and requests are metered.",
-        },
-        {
-            "q": "What are Lambda Web Functions?",
-            "a": "A second Lambda billing model that charges per request, per vCPU-second of active CPU and per GB-second of memory for as long as the execution environment exists.",
-        },
-        {
-            "q": "Which free tier is bigger?",
-            "a": "Lambda's, in dollar terms at low volume: 1 million requests and 400,000 GB-seconds against Workers' 10 million requests and 30 million CPU-milliseconds on the $5 plan.",
-        },
-        {
-            "q": "Is a cold start billed?",
-            "a": "On Event Functions the initialisation runs inside the billed duration, and SnapStart adds its own cache and restore charges. Workers does not bill duration at all.",
-        },
-    ],
-    "sources": [
-        "https://aws.amazon.com/lambda/pricing/",
-        "https://developers.cloudflare.com/workers/platform/pricing/",
-        "https://developers.cloudflare.com/workers/platform/limits/",
-        "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
-        "https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html",
-    ],
-    "related": [
-        {"slug": "datadog-vs-grafana-cloud", "name": "Datadog vs Grafana Cloud", "why": "The same reading exercise on a monitoring bill: find the unit, then the formula."},
-        {"slug": "anthropic-vs-openai-api-pricing", "name": "Anthropic vs OpenAI API pricing", "why": "Two vendors, identical stickers, and the invoice decided by a token count."},
-    ],
-    "tool_a": {
-        "name": "AWS Lambda",
-        "tagline": "Two bills in one product: duration and active CPU",
-        "db": "Event Functions bill duration in GB-seconds; Web Functions bill active CPU plus memory",
-        "pricing": "Event: $0.20/M requests + $0.0000133334/GB-s Arm · Web: $0.30/M + $0.0000276944/vCPU-s + $0.0000036667/GB-s",
-        "self_host": "No (AWS-managed, VPC and IAM integrated)",
-        "realtime": "Free tier 1M requests and 400,000 GB-s; 10,240 MB memory ceiling",
-        "ai_readiness": "Durable functions at $8 per million operations; streaming priced per GB written",
-        "lock_in": "Medium: event sources, IAM and VPC wiring are AWS-shaped",
-        "badge": "GB-seconds",
-        "cta_url": "https://aws.amazon.com/lambda/?utm_source=devteardown",
-        "pros": [
-            "Free tier covers a small service outright: 1M requests and 400,000 GB-seconds each month",
-            "Up to 10,240 MB of memory per function, which a V8 isolate cannot match",
-            "Event Functions, MicroVMs, Web Functions and durable functions are all one integration",
-            "The event-source catalogue is the reason teams stay: SQS, Kinesis and Step Functions in one IAM model",
-        ],
-        "cons": [
-            "GB-second billing multiplies wall time by memory, so a request that waits still bills",
-            "Web Functions fix the wait but bill memory for the life of every environment, idle included",
-            "Requests cost $0.20/M on Event Functions and $0.30/M on Web Functions, above Workers' $0.30 after 10M included",
-            "Data transfer is metered, so a byte-heavy response is a billable event",
-        ],
-        "code_example": (
-            "// Event Function: the meter starts at invocation and runs through the wait.\n"
-            "export const handler = async (event) => {\n"
-            "  const user = await db.users.findUnique({ where: { id: event.userId } }); // 180 ms here\n"
-            "  const digest = render(user);                                            // 10 ms here\n"
-            "  return { statusCode: 200, body: digest };\n"
-            "};\n"
-            "// Breaks when: the lookup takes 1 s. You are billed 1.01 s of 512 MB, so the wait\n"
-            "// is 99% of the invoice. Web Functions bill only the 10 ms of active CPU."
-        ),
-    },
-    "tool_b": {
-        "name": "Cloudflare Workers",
-        "tagline": "A flat $5 and a CPU meter, with no duration line",
-        "db": "V8 isolates at the edge: CPU time is the only compute meter",
-        "pricing": "$5/mo minimum · 10M requests included then $0.30/M · 30M CPU-ms included then $0.02/M",
-        "self_host": "No managed equivalent; workerd is open source",
-        "realtime": "Free: 100,000 requests/day and 10 ms CPU per invocation; paid: 5-minute CPU ceiling",
-        "ai_readiness": "Durable Objects, KV, Queues and Workflows meter separately; static assets are free",
-        "lock_in": "Low on compute, higher on state: Durable Objects hold data inside the product",
-        "badge": "CPU-ms",
-        "cta_url": "https://workers.cloudflare.com/?utm_source=devteardown",
-        "pros": [
-            "No charge for duration, egress or bandwidth, which removes the line that surprises AWS bills",
-            "The $5 plan includes 10M requests and 30M CPU-ms, enough for a real product to start",
-            "Static asset requests are free and unlimited, so a Worker-fronted site pays for the API only",
-            "Caching at the edge cuts CPU without cutting the request, and only the request is billed",
-        ],
-        "cons": [
-            "A 5-minute CPU ceiling per invocation, 30 seconds by default, with no ticket that lifts it",
-            "The runtime is not a container: native modules, spawned processes and writable disks do not run",
-            "Memory is an isolate-sized budget rather than a configurable 10 GB",
-            "At very low volume the $5 floor is more than Lambda's free tier charges",
-        ],
-        "code_example": (
-            "// Workers: nothing here is billed by the clock, only the CPU this code burns.\n"
-            "export default {\n"
-            "  async fetch(request, env) {\n"
-            "    const userId = new URL(request.url).searchParams.get(\"id\");\n"
-            "    const user = await env.DB.prepare(\"SELECT * FROM users WHERE id = ?\")\n"
-            "      .bind(userId).first();            // 180 ms of waiting, not billed\n"
-            "    return new Response(render(user), {\n"
-            "      headers: { \"content-type\": \"text/html\" },\n"
-            "    });\n"
-            "  },\n"
-            "};\n"
-            "// Breaks when: render() parses a 5 MB XML feed on every request. CPU is the meter,\n"
-            "// and the 30M CPU-ms allowance is 30 million milliseconds of exactly that."
-        ),
-    },
-}
+WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
+ 'category': 'Serverless & Edge',
+ 'last_verified': '2026-11-14',
+ 'published': '2026-11-10',
+ 'hook': 'One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on '
+         'AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor '
+         'bills the waiting.',
+ 'sections': [{'title': 'Two vendors, three meters, two definitions of work',
+               'content': 'Lambda now publishes two price sheets. Event Functions bill requests '
+                          'plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, '
+                          '$0.0000166667 on x86, and $0.20 per million requests. Web Functions '
+                          'bill active CPU at $0.0000276944 per vCPU-second, memory at '
+                          '$0.0000036667 per GB-second for as long as the environment exists, and '
+                          '$0.30 per million requests.\n'
+                          '\n'
+                          'Workers bill one thing that matters: CPU milliseconds, $0.02 per '
+                          'million after 30 million included, plus $0.30 per million requests '
+                          'after 10 million on a $5 plan. The page is explicit that there is no '
+                          'charge for duration, for egress or for bandwidth.\n'
+                          '\n'
+                          '| Meter | Lambda Event | Lambda Web | Workers |\n'
+                          '|---|---|---|---|\n'
+                          '| Requests | $0.20/M | $0.30/M | $0.30/M |\n'
+                          '| Duration | GB-seconds | memory GB-s, whole life | none |\n'
+                          '| CPU | inside duration | $0.0000276944/vCPU-s | $0.02/M CPU-ms |'},
+              {'title': 'A GB-second is a memory meter wearing a clock',
+               'content': 'Duration billing multiplies wall time by allocated memory, and both '
+                          'factors are yours to set. A 512 MB function that takes 200 ms bills 0.5 '
+                          'GB × 0.2 s = 0.1 GB-s per request. At 100 million requests that is 10 '
+                          'million GB-seconds, or $133.34 on Arm at $0.0000133334.\n'
+                          '\n'
+                          'Workers bills the 10 ms of actual work instead: 100 million × 10 ms = '
+                          '1,000 million CPU-milliseconds, which is 970 million after the 30 '
+                          'million included, at $0.02 per million CPU-ms = $19.40.\n'
+                          '\n'
+                          'So the ratio between the two vendors is not a rate difference. It is '
+                          'the fraction of the request that is CPU: 10 ms of 200 ms is 5%, and '
+                          'that 5% is what Workers meters. Make the handler heavier and the gap '
+                          'narrows; make it wait on a database and the gap widens.'},
+              {'title': 'The bills cross at about 7.5 million requests',
+               'content': 'Same shape everywhere below: 200 ms duration, 512 MB, 10 ms of CPU, one '
+                          'function.\n'
+                          '\n'
+                          '| Requests/month | Lambda Event (Arm) | Workers | Cheaper |\n'
+                          '|---|---|---|---|\n'
+                          '| 5M | $0.80 + $1.33 = $2.13 | $5.00 + $0.40 = $5.40 | Lambda |\n'
+                          '| 7.5M | $1.30 + $4.67 = $5.97 | $5.00 + $0.90 = $5.90 | Workers, by 7¢ '
+                          '|\n'
+                          '| 10M | $1.80 + $8.00 = $9.80 | $5.00 + $1.40 = $6.40 | Workers |\n'
+                          '| 50M | $9.80 + $61.33 = $71.13 | $5.00 + $12.00 + $9.40 = $26.40 | '
+                          'Workers |\n'
+                          '| 100M | $19.80 + $128.00 = $147.80 | $5.00 + $27.00 + $19.40 = $51.40 '
+                          '| Workers |\n'
+                          '\n'
+                          'The crossover is a free-tier artefact, not a policy: 1 million requests '
+                          'and 400,000 GB-seconds are free on Lambda, and 30 million CPU-ms are '
+                          'free on Workers. Below roughly 7.5 million requests the Lambda '
+                          'allowance is worth more than the CPU savings. Above it, the $5 plan '
+                          'floor disappears into the noise.'},
+              {'title': "Lambda's second sheet splits the same request in two",
+               'content': "Web Functions are AWS's answer to active-CPU billing, and they price "
+                          'the same 100 million requests differently.\n'
+                          '\n'
+                          '| Line | Lambda Event | Lambda Web | Workers |\n'
+                          '|---|---|---|---|\n'
+                          '| Requests | $19.80 | $30.00 | $27.00 |\n'
+                          '| Compute | 10M GB-s = $128.00 | 1M vCPU-s = $27.69, 1.296M GB-s = '
+                          '$4.75 | 970M CPU-ms = $19.40 |\n'
+                          '| Plan floor | — | — | $5.00 |\n'
+                          '| **Total** | **$147.80** | **$62.45** | **$51.40** |\n'
+                          '\n'
+                          'Web Functions bill $62.45 for the same traffic, 42% of the Event price, '
+                          'and still 21% above the Workers bill. The memory meter is why: it bills '
+                          "the environment for its whole life, idle time included, and AWS's own "
+                          'examples quietly assume exactly one environment stays up for the entire '
+                          'month.'},
+              {'title': 'Where Lambda wins on the same sheet',
+               'content': 'The free allowance matters: in the stated 512 MB, 200 ms, 10 ms CPU '
+                          'model, 5 million requests cost $2.13 on Lambda and $5.40 on Workers. '
+                          'This assumes the allowances are not already consumed by other '
+                          'workloads.\n'
+                          '\n'
+                          'Lambda supports up to 10,240 MB. Workers CPU limits vary by trigger; do '
+                          'not treat the HTTP limit as universal:\n'
+                          '\n'
+                          '| Workers Paid invocation | CPU limit | Wall-clock limit |\n'
+                          '|---|---|---|\n'
+                          '| HTTP | 30 s default; configurable to 5 min | No hard limit while '
+                          'client connected |\n'
+                          '| Cron, interval under 1 hour | 30 s | 15 min |\n'
+                          '| Cron, interval at least 1 hour | 15 min | 15 min |\n'
+                          '| Queue consumer | 30 s default; configurable to 5 min | 15 min |\n'
+                          '\n'
+                          'Queue wall time is not CPU time. Free and legacy plans have different '
+                          'limits; verify the deployed configuration. AWS integrations such as '
+                          'VPC, IAM, SQS and Kinesis may also outweigh a small compute-price '
+                          'difference.'},
+              {'title': 'The exit door has a rewrite behind it',
+               'content': 'Correction, November 14, 2026: the wait-only example accidentally '
+                          'substituted 200 ms CPU for its stated 10 ms. At 10 million requests, '
+                          'Workers remains $6.40, not $44.40; the extra wall time changes Lambda’s '
+                          'duration bill only. Workers pricing and trigger limits were rechecked; '
+                          'other AWS figures retain their November 10 source check.\n'
+                          '\n'
+                          'Moving runtimes still requires testing APIs, native dependencies, '
+                          'filesystem behavior and state bindings. Check the actual HTTP, Cron or '
+                          'Queue limit rather than assuming every invocation has a five-minute CPU '
+                          'cap.\n'
+                          '\n'
+                          'The estimate covers one workload with available included usage, not a '
+                          'complete application invoice. Storage, queues, databases, retries and '
+                          'migration work can add costs; measure CPU and elapsed duration '
+                          'separately before choosing.'}],
+ 'cost_math': [{'label': '100M requests at 200 ms, 512 MB, 10 ms CPU',
+                'formula': 'Lambda Event Arm: 100M × 0.2 s × 0.5 GB = 10M GB-s, minus 400k free = '
+                           '9.6M × $0.0000133334 = $128.00, plus 99M × $0.20/M = $19.80. Workers: '
+                           '(100M − 10M) × $0.30/M = $27.00, plus (1,000M − 30M) CPU-ms × $0.02/M '
+                           '= $19.40, plus $5.00',
+                'result': '$147.80 on Lambda against $51.40 on Workers'},
+               {'label': 'The same traffic on Lambda Web Functions',
+                'formula': '100M × 10 ms = 1M vCPU-s × $0.0000276944 = $27.69; 0.5 GB × 2,592,000 '
+                           's = 1,296,000 GB-s × $0.0000036667 = $4.75; 100M × $0.30/M = $30.00',
+                'result': "$62.45, 58% below Lambda's own Event price for identical traffic"},
+               {'label': "Cross-over against Lambda's free tier",
+                'formula': 'Lambda: (R − 1M) × $0.20/M + (R × 0.1 − 400k) × $0.0000133334. '
+                           'Workers: $5 + (R × 10 − 30M) × $0.02/M',
+                'result': "Equal at about 7.5M requests a month; below that Lambda's free "
+                          'allowance wins, above it the CPU meter does'},
+               {'label': 'Wall time rises from 200 ms to 1 s; CPU remains 10 ms',
+                'formula': 'At 10M requests, Lambda Event Arm: (10M × 1 s × 0.5 GB − 400k GB-s) × '
+                           '$0.0000133334 + 9M × $0.20/M = $63.13. Workers: $5 + max(0, 10M − 10M) '
+                           '× $0.30/M + max(0, 10M × 10 ms − 30M CPU-ms) × $0.02/M = $6.40.',
+                'result': 'Lambda rises from $9.80 to $63.13 (+$53.33); Workers stays $6.40. All '
+                          'stated allowances are assumed available; taxes and other services are '
+                          'excluded.'}],
+ 'decision_matrix': [{'situation': 'Under about 5 million requests a month',
+                      'pick': 'Lambda Event Functions',
+                      'why': 'The 1M-request and 400,000 GB-second free allowances cover the whole '
+                             'job: 5M requests at 200 ms and 512 MB price at $2.13 against $5.40 '
+                             'on Workers.'},
+                     {'situation': '100 million requests that mostly wait on I/O',
+                      'pick': 'Workers',
+                      'why': 'The same shape prices at $51.40 against $147.80, because 10 ms of '
+                             'CPU out of a 200 ms request is all Workers meters.'},
+                     {'situation': 'A function that needs 10 GB of memory',
+                      'pick': 'Lambda',
+                      'why': 'Lambda supports up to 10,240 MB; Workers uses a much smaller isolate '
+                             'memory budget. CPU limits are separate and depend on the invocation '
+                             'type.'},
+                     {'situation': 'Long-lived streaming to a browser',
+                      'pick': 'Lambda Web Functions',
+                      'why': "Active-CPU billing ignores the wait: AWS's own LLM streaming example "
+                             'prices 5M requests of 3 s at $33.94, against $101.00 as Event '
+                             'Functions.'},
+                     {'situation': 'Byte-heavy responses at the edge',
+                      'pick': 'Workers',
+                      'why': 'Workers charges nothing for egress or bandwidth, and static asset '
+                             'requests are free and unlimited.'},
+                     {'situation': 'SQS, Kinesis, VPC and IAM already wired into the app',
+                      'pick': 'Lambda',
+                      'why': 'The compute line is often the small one; rewriting event sources and '
+                             'IAM to leave AWS costs more than the difference on the invoice.'},
+                     {'situation': 'A cron job every hour, minutes of CPU each',
+                      'pick': 'Workers',
+                      'why': 'At an hourly interval, paid Cron permits up to 15 minutes CPU and 15 '
+                             'minutes wall time. The 720-invocation × 180,000 ms example is $5 + '
+                             '(129.6M − 30M) × $0.02/M = $6.992, about $6.99, assuming no other '
+                             'usage or services.'},
+                     {'situation': 'Traffic so spiky that one environment cannot serve it',
+                      'pick': 'Lambda Event Functions',
+                      'why': 'Web Functions bill memory for the life of every environment, and the '
+                             'pricing examples quietly assume exactly one environment runs all '
+                             'month.'}],
+ 'verdict_summary': 'For a request that waits, Workers is two to three times cheaper and the gap '
+                    'grows with every millisecond you spend on a database call. For a request that '
+                    "works, the two converge, and Lambda's free tier and memory ceiling win back "
+                    "the low end. The bill is a statement about your code's shape, not about the "
+                    "vendors' rates.",
+ 'migration_guide': 'Lambda to Workers is a runtime rewrite: the handler becomes a fetch listener, '
+                    'environment variables become bindings, and anything that needs a native '
+                    'module, a spawned process or a writable disk has no equivalent. State moves '
+                    'to Durable Objects or KV, which bill separately.\n'
+                    '\n'
+                    'Workers to Lambda is smaller but not free: package the code, replace KV and '
+                    'Durable Objects with a database, and accept that egress is metered again. In '
+                    'both directions the traffic analysis comes first, because the arithmetic only '
+                    'favours one vendor when you know the request duration and the CPU share of '
+                    'it.',
+ 'faqs': [{'q': 'Does no duration charge mean Workers has no execution limit?',
+           'a': 'No. Standard Workers bills CPU and requests rather than elapsed duration, but '
+                'trigger limits still apply. Paid HTTP CPU defaults to 30 seconds and can be '
+                'configured to 5 minutes. Paid Cron CPU is 30 seconds below a one-hour interval '
+                'and 15 minutes at intervals of at least one hour. Queue CPU defaults to 30 '
+                'seconds, configurable to 5 minutes; its separate wall-clock limit is 15 minutes.'},
+          {'q': 'What are Lambda Web Functions?',
+           'a': 'A second Lambda billing model that charges per request, per vCPU-second of active '
+                'CPU and per GB-second of memory for as long as the execution environment exists.'},
+          {'q': 'What happens if a request waits longer but still uses 10 ms CPU?',
+           'a': 'In the stated 10M-request paid-plan model with available allowances, increasing '
+                'wall time from 200 ms to 1 s leaves Workers at $6.40. Lambda Event Arm at 512 MB '
+                'rises from $9.80 to $63.13. The old $44.40 Workers result incorrectly used 200 ms '
+                'CPU. These are modeled costs, not measured performance or complete invoices.'},
+          {'q': 'Is a cold start billed?',
+           'a': 'On Event Functions the initialisation runs inside the billed duration, and '
+                'SnapStart adds its own cache and restore charges. Workers does not bill duration '
+                'at all.'}],
+ 'sources': ['https://aws.amazon.com/lambda/pricing/',
+             'https://developers.cloudflare.com/workers/platform/pricing/',
+             'https://developers.cloudflare.com/workers/platform/limits/',
+             'https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html',
+             'https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html',
+             'https://developers.cloudflare.com/queues/platform/limits/'],
+ 'related': [{'slug': 'datadog-vs-grafana-cloud',
+              'name': 'Datadog vs Grafana Cloud',
+              'why': 'The same reading exercise on a monitoring bill: find the unit, then the '
+                     'formula.'},
+             {'slug': 'anthropic-vs-openai-api-pricing',
+              'name': 'Anthropic vs OpenAI API pricing',
+              'why': 'Two vendors, identical stickers, and the invoice decided by a token count.'}],
+ 'tool_a': {'name': 'AWS Lambda',
+            'tagline': 'Two bills in one product: duration and active CPU',
+            'db': 'Event Functions bill duration in GB-seconds; Web Functions bill active CPU plus '
+                  'memory',
+            'pricing': 'Event: $0.20/M requests + $0.0000133334/GB-s Arm · Web: $0.30/M + '
+                       '$0.0000276944/vCPU-s + $0.0000036667/GB-s',
+            'self_host': 'No (AWS-managed, VPC and IAM integrated)',
+            'realtime': 'Free tier 1M requests and 400,000 GB-s; 10,240 MB memory ceiling',
+            'ai_readiness': 'Durable functions at $8 per million operations; streaming priced per '
+                            'GB written',
+            'lock_in': 'Medium: event sources, IAM and VPC wiring are AWS-shaped',
+            'badge': 'GB-seconds',
+            'cta_url': 'https://aws.amazon.com/lambda/?utm_source=devteardown',
+            'pros': ['Free tier covers a small service outright: 1M requests and 400,000 '
+                     'GB-seconds each month',
+                     'Up to 10,240 MB of memory per function, which a V8 isolate cannot match',
+                     'Event Functions, MicroVMs, Web Functions and durable functions are all one '
+                     'integration',
+                     'The event-source catalogue is the reason teams stay: SQS, Kinesis and Step '
+                     'Functions in one IAM model'],
+            'cons': ['GB-second billing multiplies wall time by memory, so a request that waits '
+                     'still bills',
+                     'Web Functions fix the wait but bill memory for the life of every '
+                     'environment, idle included',
+                     'Requests cost $0.20/M on Event Functions and $0.30/M on Web Functions, above '
+                     "Workers' $0.30 after 10M included",
+                     'Data transfer is metered, so a byte-heavy response is a billable event'],
+            'code_example': '// Event Function: the meter starts at invocation and runs through '
+                            'the wait.\n'
+                            'export const handler = async (event) => {\n'
+                            '  const user = await db.users.findUnique({ where: { id: event.userId '
+                            '} }); // 180 ms here\n'
+                            '  const digest = '
+                            'render(user);                                            // 10 ms '
+                            'here\n'
+                            '  return { statusCode: 200, body: digest };\n'
+                            '};\n'
+                            '// Breaks when: the lookup takes 1 s. You are billed 1.01 s of 512 '
+                            'MB, so the wait\n'
+                            '// is 99% of the invoice. Web Functions bill only the 10 ms of active '
+                            'CPU.'},
+ 'tool_b': {'name': 'Cloudflare Workers',
+            'tagline': 'A flat $5 and a CPU meter, with no duration line',
+            'db': 'V8 isolates at the edge: CPU time is the only compute meter',
+            'pricing': '$5/mo minimum · 10M requests included then $0.30/M · 30M CPU-ms included '
+                       'then $0.02/M',
+            'self_host': 'No managed equivalent; workerd is open source',
+            'realtime': 'Paid HTTP: CPU 30 s default, up to 5 min; paid Cron at least hourly: 15 '
+                        'min CPU; Queue CPU up to 5 min, wall time 15 min',
+            'ai_readiness': 'Durable Objects, KV, Queues and Workflows meter separately; static '
+                            'assets are free',
+            'lock_in': 'Low on compute, higher on state: Durable Objects hold data inside the '
+                       'product',
+            'badge': 'CPU-ms',
+            'cta_url': 'https://workers.cloudflare.com/?utm_source=devteardown',
+            'pros': ['No charge for duration, egress or bandwidth, which removes the line that '
+                     'surprises AWS bills',
+                     'The $5 plan includes 10M requests and 30M CPU-ms, enough for a real product '
+                     'to start',
+                     'Static asset requests are free and unlimited, so a Worker-fronted site pays '
+                     'for the API only',
+                     'Caching at the edge cuts CPU without cutting the request, and only the '
+                     'request is billed'],
+            'cons': ['CPU and wall-clock limits depend on trigger and plan; HTTP defaults to 30 s '
+                     'CPU, configurable to 5 min on Paid',
+                     'The runtime is not a container: native modules, spawned processes and '
+                     'writable disks do not run',
+                     'Memory is an isolate-sized budget rather than a configurable 10 GB',
+                     "At very low volume the $5 floor is more than Lambda's free tier charges"],
+            'code_example': '// Workers: nothing here is billed by the clock, only the CPU this '
+                            'code burns.\n'
+                            'export default {\n'
+                            '  async fetch(request, env) {\n'
+                            '    const userId = new URL(request.url).searchParams.get("id");\n'
+                            '    const user = await env.DB.prepare("SELECT * FROM users WHERE id = '
+                            '?")\n'
+                            '      .bind(userId).first();            // 180 ms of waiting, not '
+                            'billed\n'
+                            '    return new Response(render(user), {\n'
+                            '      headers: { "content-type": "text/html" },\n'
+                            '    });\n'
+                            '  },\n'
+                            '};\n'
+                            '// Breaks when: render() parses a 5 MB XML feed on every request. CPU '
+                            'is the meter,\n'
+                            '// and the 30M CPU-ms allowance is 30 million milliseconds of exactly '
+                            'that.'}}

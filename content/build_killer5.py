@@ -99,17 +99,43 @@ FACTS = {
   'Client exposes metrics; Prometheus or Alloy scrapes and remote-writes. No generic Datadog Agent '
   'forwarding or automatic dashboard/alert migration assumed.',
   'https://grafana.com/docs/alloy/latest/collect/prometheus-metrics/')],
-    "aws-lambda-vs-cloudflare-workers": [
-        ("Lambda Event Functions", "$0.20 per million requests; $0.0000133334 per GB-s on Arm, $0.0000166667 on x86; free tier 1M requests and 400,000 GB-s", "https://aws.amazon.com/lambda/pricing/"),
-        ("Lambda memory", "128 MB to 10,240 MB in 1 MB increments", "https://aws.amazon.com/lambda/pricing/"),
-        ("Lambda Web Functions", "$0.30 per million requests; $0.0000276944 per active vCPU-second; $0.0000036667 per GB-second of memory for the environment's life", "https://aws.amazon.com/lambda/pricing/"),
-        ("Lambda Web example", "LLM streaming endpoint, 5M requests of 3,000 ms with 200 ms active CPU, $33.94; the same page prices SSR at $25.78 and an authorizer at $64.56", "https://aws.amazon.com/lambda/pricing/"),
-        ("Lambda durable functions", "$8.00 per million operations, $0.25 per GB written, $0.15 per GB-month retained", "https://aws.amazon.com/lambda/pricing/"),
-        ("Workers paid", "$5 per month minimum; 10M requests included then $0.30/M; 30M CPU-ms included then $0.02/M", "https://developers.cloudflare.com/workers/platform/pricing/"),
-        ("Workers free", "100,000 requests per day, 10 ms CPU per invocation, no charge for duration", "https://developers.cloudflare.com/workers/platform/pricing/"),
-        ("Workers limits", "No charge for duration, egress or bandwidth; 5 minutes of CPU per invocation, 30 seconds by default; static asset requests free and unlimited", "https://developers.cloudflare.com/workers/platform/pricing/"),
-        ("Workers worked examples", "15M at 7 ms = $8.00; 100M at 7 ms = $45.40; 100M with 80% cache hits = $34.20; 720 cron runs at 180,000 ms = $6.99", "https://developers.cloudflare.com/workers/platform/pricing/"),
-    ],
+    "aws-lambda-vs-cloudflare-workers": [('Lambda Event Functions',
+  '$0.20 per million requests; $0.0000133334 per GB-s on Arm, $0.0000166667 on x86; free tier 1M '
+  'requests and 400,000 GB-s',
+  'https://aws.amazon.com/lambda/pricing/'),
+ ('Lambda memory',
+  '128 MB to 10,240 MB in 1 MB increments',
+  'https://aws.amazon.com/lambda/pricing/'),
+ ('Lambda Web Functions',
+  '$0.30 per million requests; $0.0000276944 per active vCPU-second; $0.0000036667 per GB-second '
+  "of memory for the environment's life",
+  'https://aws.amazon.com/lambda/pricing/'),
+ ('Lambda Web example',
+  'LLM streaming endpoint, 5M requests of 3,000 ms with 200 ms active CPU, $33.94; the same page '
+  'prices SSR at $25.78 and an authorizer at $64.56',
+  'https://aws.amazon.com/lambda/pricing/'),
+ ('Lambda durable functions',
+  '$8.00 per million operations, $0.25 per GB written, $0.15 per GB-month retained',
+  'https://aws.amazon.com/lambda/pricing/'),
+ ('Workers paid',
+  '$5 per month minimum; 10M requests included then $0.30/M; 30M CPU-ms included then $0.02/M',
+  'https://developers.cloudflare.com/workers/platform/pricing/'),
+ ('Workers free',
+  '100,000 requests per day, 10 ms CPU per invocation, no charge for duration',
+  'https://developers.cloudflare.com/workers/platform/pricing/'),
+ ('Workers limits',
+  'No charge for duration, egress or bandwidth; 5 minutes of CPU per invocation, 30 seconds by '
+  'default; static asset requests free and unlimited',
+  'https://developers.cloudflare.com/workers/platform/pricing/'),
+ ('Workers worked examples',
+  '15M at 7 ms = $8.00; 100M at 7 ms = $45.40; 100M with 80% cache hits = $34.20; 720 cron runs at '
+  '180,000 ms = $6.99',
+  'https://developers.cloudflare.com/workers/platform/pricing/'),
+ ('CPU arithmetic and trigger correction 2026-11-14',
+  '10M requests × 10ms CPU yields $6.40 including $5 floor, irrespective of 200ms versus 1s wall '
+  'time. Paid Cron >=1h CPU 15min; Queue CPU default30s/max5min, wall15min. Other AWS prices '
+  'retain November10 verification.',
+  'https://developers.cloudflare.com/queues/platform/limits/')],
     "resend-vs-sendgrid": [('Resend plans',
   'Free 3,000/mo (100/day); Pro $20 for 50k and $35 for 100k; Scale $90 for 100k to $1,150 for '
   '2.5M',

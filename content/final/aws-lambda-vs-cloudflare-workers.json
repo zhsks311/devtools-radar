@@ -1,7 +1,7 @@
 {
   "slug": "aws-lambda-vs-cloudflare-workers",
   "category": "Serverless & Edge",
-  "last_verified": "2026-11-10",
+  "last_verified": "2026-11-14",
   "published": "2026-11-10",
   "hook": "One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bills the waiting.",
   "sections": [
@@ -23,11 +23,11 @@
     },
     {
       "title": "Where Lambda wins on the same sheet",
-      "content": "The free tier, for one. Five million requests a month cost $2.13 on Lambda and $5.40 on Workers, and a hobby project that sends three million costs $2.73 by AWS's own worked example.\n\nMemory ceiling is the second. Lambda allocates up to 10,240 MB per function, which covers a model that will not fit in a V8 isolate. Workers caps a single invocation at 5 minutes of CPU, 30 seconds by default.\n\nThe third is everything around the function: VPC access, IAM, SQS, Kinesis, Step Functions and the rest of the event-source catalogue. On an AWS shop, the compute line is frequently cheaper than the integration you would rewrite to leave it."
+      "content": "The free allowance matters: in the stated 512 MB, 200 ms, 10 ms CPU model, 5 million requests cost $2.13 on Lambda and $5.40 on Workers. This assumes the allowances are not already consumed by other workloads.\n\nLambda supports up to 10,240 MB. Workers CPU limits vary by trigger; do not treat the HTTP limit as universal:\n\n| Workers Paid invocation | CPU limit | Wall-clock limit |\n|---|---|---|\n| HTTP | 30 s default; configurable to 5 min | No hard limit while client connected |\n| Cron, interval under 1 hour | 30 s | 15 min |\n| Cron, interval at least 1 hour | 15 min | 15 min |\n| Queue consumer | 30 s default; configurable to 5 min | 15 min |\n\nQueue wall time is not CPU time. Free and legacy plans have different limits; verify the deployed configuration. AWS integrations such as VPC, IAM, SQS and Kinesis may also outweigh a small compute-price difference."
     },
     {
       "title": "The exit door has a rewrite behind it",
-      "content": "Workers runs JavaScript on V8 with a fetch-shaped API. A Lambda handler that imports a native module, spawns a process or needs a writable filesystem does not run there, and the 5-minute CPU cap is not negotiable with a support ticket.\n\nThe reverse move is easier and still not free: Workers' egress is $0 and Lambda's is not, so a byte-heavy service that moves back to Lambda picks up a data transfer line it never had.\n\nPrice the traffic, not the platform. If your p50 request spends most of its time waiting on a database, the CPU meter is the cheaper meter and the rewrite is the only real cost. If your requests are heavy, synchronous and mostly compute, the two bills converge and the free tier decides."
+      "content": "Correction, November 14, 2026: the wait-only example accidentally substituted 200 ms CPU for its stated 10 ms. At 10 million requests, Workers remains $6.40, not $44.40; the extra wall time changes Lambda’s duration bill only. Workers pricing and trigger limits were rechecked; other AWS figures retain their November 10 source check.\n\nMoving runtimes still requires testing APIs, native dependencies, filesystem behavior and state bindings. Check the actual HTTP, Cron or Queue limit rather than assuming every invocation has a five-minute CPU cap.\n\nThe estimate covers one workload with available included usage, not a complete application invoice. Storage, queues, databases, retries and migration work can add costs; measure CPU and elapsed duration separately before choosing."
     }
   ],
   "cost_math": [
@@ -47,9 +47,9 @@
       "result": "Equal at about 7.5M requests a month; below that Lambda's free allowance wins, above it the CPU meter does"
     },
     {
-      "label": "Replacing a 200 ms wait with a 1 s wait",
-      "formula": "At 10M requests: Lambda 10M × 1 s × 0.5 GB = 5M GB-s − 400k = 4.6M × $0.0000133334 = $61.33 + $1.80. Workers CPU is unchanged at 10M × 200 ms = 2,000M − 30M × $0.02/M = $39.40 + $5",
-      "result": "$63.13 against $44.40: the slower request costs Lambda $53 more and Workers nothing"
+      "label": "Wall time rises from 200 ms to 1 s; CPU remains 10 ms",
+      "formula": "At 10M requests, Lambda Event Arm: (10M × 1 s × 0.5 GB − 400k GB-s) × $0.0000133334 + 9M × $0.20/M = $63.13. Workers: $5 + max(0, 10M − 10M) × $0.30/M + max(0, 10M × 10 ms − 30M CPU-ms) × $0.02/M = $6.40.",
+      "result": "Lambda rises from $9.80 to $63.13 (+$53.33); Workers stays $6.40. All stated allowances are assumed available; taxes and other services are excluded."
     }
   ],
   "decision_matrix": [
@@ -66,7 +66,7 @@
     {
       "situation": "A function that needs 10 GB of memory",
       "pick": "Lambda",
-      "why": "Lambda allocates up to 10,240 MB; Workers caps a single invocation at 5 minutes of CPU and runs in an isolate with a far smaller footprint."
+      "why": "Lambda supports up to 10,240 MB; Workers uses a much smaller isolate memory budget. CPU limits are separate and depend on the invocation type."
     },
     {
       "situation": "Long-lived streaming to a browser",
@@ -86,7 +86,7 @@
     {
       "situation": "A cron job every hour, minutes of CPU each",
       "pick": "Workers",
-      "why": "Cloudflare's own example prices 720 invocations at 180,000 ms CPU each at $6.99, and duration is not a meter at all."
+      "why": "At an hourly interval, paid Cron permits up to 15 minutes CPU and 15 minutes wall time. The 720-invocation × 180,000 ms example is $5 + (129.6M − 30M) × $0.02/M = $6.992, about $6.99, assuming no other usage or services."
     },
     {
       "situation": "Traffic so spiky that one environment cannot serve it",
@@ -98,16 +98,16 @@
   "migration_guide": "Lambda to Workers is a runtime rewrite: the handler becomes a fetch listener, environment variables become bindings, and anything that needs a native module, a spawned process or a writable disk has no equivalent. State moves to Durable Objects or KV, which bill separately.\n\nWorkers to Lambda is smaller but not free: package the code, replace KV and Durable Objects with a database, and accept that egress is metered again. In both directions the traffic analysis comes first, because the arithmetic only favours one vendor when you know the request duration and the CPU share of it.",
   "faqs": [
     {
-      "q": "Does Workers really charge nothing for duration?",
-      "a": "The pricing page states there is no charge or limit for duration and no charge for data transfer or bandwidth. Only CPU milliseconds and requests are metered."
+      "q": "Does no duration charge mean Workers has no execution limit?",
+      "a": "No. Standard Workers bills CPU and requests rather than elapsed duration, but trigger limits still apply. Paid HTTP CPU defaults to 30 seconds and can be configured to 5 minutes. Paid Cron CPU is 30 seconds below a one-hour interval and 15 minutes at intervals of at least one hour. Queue CPU defaults to 30 seconds, configurable to 5 minutes; its separate wall-clock limit is 15 minutes."
     },
     {
       "q": "What are Lambda Web Functions?",
       "a": "A second Lambda billing model that charges per request, per vCPU-second of active CPU and per GB-second of memory for as long as the execution environment exists."
     },
     {
-      "q": "Which free tier is bigger?",
-      "a": "Lambda's, in dollar terms at low volume: 1 million requests and 400,000 GB-seconds against Workers' 10 million requests and 30 million CPU-milliseconds on the $5 plan."
+      "q": "What happens if a request waits longer but still uses 10 ms CPU?",
+      "a": "In the stated 10M-request paid-plan model with available allowances, increasing wall time from 200 ms to 1 s leaves Workers at $6.40. Lambda Event Arm at 512 MB rises from $9.80 to $63.13. The old $44.40 Workers result incorrectly used 200 ms CPU. These are modeled costs, not measured performance or complete invoices."
     },
     {
       "q": "Is a cold start billed?",
@@ -119,7 +119,8 @@
     "https://developers.cloudflare.com/workers/platform/pricing/",
     "https://developers.cloudflare.com/workers/platform/limits/",
     "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
-    "https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html"
+    "https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html",
+    "https://developers.cloudflare.com/queues/platform/limits/"
   ],
   "related": [
     {

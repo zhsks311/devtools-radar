@@ -2,7 +2,7 @@
 
 > One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bills the waiting.
 
-*Prices verified 2026-11-10. Category: Serverless & Edge. Author: DevTeardown Team.*
+*Prices verified 2026-11-14. Category: Serverless & Edge. Author: DevTeardown Team.*
 
 ## Verdict
 
@@ -57,19 +57,26 @@ Web Functions bill $62.45 for the same traffic, 42% of the Event price, and stil
 
 ## 5. Where Lambda wins on the same sheet
 
-The free tier, for one. Five million requests a month cost $2.13 on Lambda and $5.40 on Workers, and a hobby project that sends three million costs $2.73 by AWS's own worked example.
+The free allowance matters: in the stated 512 MB, 200 ms, 10 ms CPU model, 5 million requests cost $2.13 on Lambda and $5.40 on Workers. This assumes the allowances are not already consumed by other workloads.
 
-Memory ceiling is the second. Lambda allocates up to 10,240 MB per function, which covers a model that will not fit in a V8 isolate. Workers caps a single invocation at 5 minutes of CPU, 30 seconds by default.
+Lambda supports up to 10,240 MB. Workers CPU limits vary by trigger; do not treat the HTTP limit as universal:
 
-The third is everything around the function: VPC access, IAM, SQS, Kinesis, Step Functions and the rest of the event-source catalogue. On an AWS shop, the compute line is frequently cheaper than the integration you would rewrite to leave it.
+| Workers Paid invocation | CPU limit | Wall-clock limit |
+|---|---|---|
+| HTTP | 30 s default; configurable to 5 min | No hard limit while client connected |
+| Cron, interval under 1 hour | 30 s | 15 min |
+| Cron, interval at least 1 hour | 15 min | 15 min |
+| Queue consumer | 30 s default; configurable to 5 min | 15 min |
+
+Queue wall time is not CPU time. Free and legacy plans have different limits; verify the deployed configuration. AWS integrations such as VPC, IAM, SQS and Kinesis may also outweigh a small compute-price difference.
 
 ## 6. The exit door has a rewrite behind it
 
-Workers runs JavaScript on V8 with a fetch-shaped API. A Lambda handler that imports a native module, spawns a process or needs a writable filesystem does not run there, and the 5-minute CPU cap is not negotiable with a support ticket.
+Correction, November 14, 2026: the wait-only example accidentally substituted 200 ms CPU for its stated 10 ms. At 10 million requests, Workers remains $6.40, not $44.40; the extra wall time changes Lambda’s duration bill only. Workers pricing and trigger limits were rechecked; other AWS figures retain their November 10 source check.
 
-The reverse move is easier and still not free: Workers' egress is $0 and Lambda's is not, so a byte-heavy service that moves back to Lambda picks up a data transfer line it never had.
+Moving runtimes still requires testing APIs, native dependencies, filesystem behavior and state bindings. Check the actual HTTP, Cron or Queue limit rather than assuming every invocation has a five-minute CPU cap.
 
-Price the traffic, not the platform. If your p50 request spends most of its time waiting on a database, the CPU meter is the cheaper meter and the rewrite is the only real cost. If your requests are heavy, synchronous and mostly compute, the two bills converge and the free tier decides.
+The estimate covers one workload with available included usage, not a complete application invoice. Storage, queues, databases, retries and migration work can add costs; measure CPU and elapsed duration separately before choosing.
 
 ## Cost arithmetic at volume
 
@@ -78,7 +85,7 @@ Price the traffic, not the platform. If your p50 request spends most of its time
 | 100M requests at 200 ms, 512 MB, 10 ms CPU | Lambda Event Arm: 100M × 0.2 s × 0.5 GB = 10M GB-s, minus 400k free = 9.6M × $0.0000133334 = $128.00, plus 99M × $0.20/M = $19.80. Workers: (100M − 10M) × $0.30/M = $27.00, plus (1,000M − 30M) CPU-ms × $0.02/M = $19.40, plus $5.00 | $147.80 on Lambda against $51.40 on Workers |
 | The same traffic on Lambda Web Functions | 100M × 10 ms = 1M vCPU-s × $0.0000276944 = $27.69; 0.5 GB × 2,592,000 s = 1,296,000 GB-s × $0.0000036667 = $4.75; 100M × $0.30/M = $30.00 | $62.45, 58% below Lambda's own Event price for identical traffic |
 | Cross-over against Lambda's free tier | Lambda: (R − 1M) × $0.20/M + (R × 0.1 − 400k) × $0.0000133334. Workers: $5 + (R × 10 − 30M) × $0.02/M | Equal at about 7.5M requests a month; below that Lambda's free allowance wins, above it the CPU meter does |
-| Replacing a 200 ms wait with a 1 s wait | At 10M requests: Lambda 10M × 1 s × 0.5 GB = 5M GB-s − 400k = 4.6M × $0.0000133334 = $61.33 + $1.80. Workers CPU is unchanged at 10M × 200 ms = 2,000M − 30M × $0.02/M = $39.40 + $5 | $63.13 against $44.40: the slower request costs Lambda $53 more and Workers nothing |
+| Wall time rises from 200 ms to 1 s; CPU remains 10 ms | At 10M requests, Lambda Event Arm: (10M × 1 s × 0.5 GB − 400k GB-s) × $0.0000133334 + 9M × $0.20/M = $63.13. Workers: $5 + max(0, 10M − 10M) × $0.30/M + max(0, 10M × 10 ms − 30M CPU-ms) × $0.02/M = $6.40. | Lambda rises from $9.80 to $63.13 (+$53.33); Workers stays $6.40. All stated allowances are assumed available; taxes and other services are excluded. |
 
 ## Decision matrix
 
@@ -86,11 +93,11 @@ Price the traffic, not the platform. If your p50 request spends most of its time
 |---|---|---|
 | Under about 5 million requests a month | Lambda Event Functions | The 1M-request and 400,000 GB-second free allowances cover the whole job: 5M requests at 200 ms and 512 MB price at $2.13 against $5.40 on Workers. |
 | 100 million requests that mostly wait on I/O | Workers | The same shape prices at $51.40 against $147.80, because 10 ms of CPU out of a 200 ms request is all Workers meters. |
-| A function that needs 10 GB of memory | Lambda | Lambda allocates up to 10,240 MB; Workers caps a single invocation at 5 minutes of CPU and runs in an isolate with a far smaller footprint. |
+| A function that needs 10 GB of memory | Lambda | Lambda supports up to 10,240 MB; Workers uses a much smaller isolate memory budget. CPU limits are separate and depend on the invocation type. |
 | Long-lived streaming to a browser | Lambda Web Functions | Active-CPU billing ignores the wait: AWS's own LLM streaming example prices 5M requests of 3 s at $33.94, against $101.00 as Event Functions. |
 | Byte-heavy responses at the edge | Workers | Workers charges nothing for egress or bandwidth, and static asset requests are free and unlimited. |
 | SQS, Kinesis, VPC and IAM already wired into the app | Lambda | The compute line is often the small one; rewriting event sources and IAM to leave AWS costs more than the difference on the invoice. |
-| A cron job every hour, minutes of CPU each | Workers | Cloudflare's own example prices 720 invocations at 180,000 ms CPU each at $6.99, and duration is not a meter at all. |
+| A cron job every hour, minutes of CPU each | Workers | At an hourly interval, paid Cron permits up to 15 minutes CPU and 15 minutes wall time. The 720-invocation × 180,000 ms example is $5 + (129.6M − 30M) × $0.02/M = $6.992, about $6.99, assuming no other usage or services. |
 | Traffic so spiky that one environment cannot serve it | Lambda Event Functions | Web Functions bill memory for the life of every environment, and the pricing examples quietly assume exactly one environment runs all month. |
 
 ## Migration path
@@ -101,14 +108,14 @@ Workers to Lambda is smaller but not free: package the code, replace KV and Dura
 
 ## Questions that change the decision
 
-**Does Workers really charge nothing for duration?**  
-The pricing page states there is no charge or limit for duration and no charge for data transfer or bandwidth. Only CPU milliseconds and requests are metered.
+**Does no duration charge mean Workers has no execution limit?**  
+No. Standard Workers bills CPU and requests rather than elapsed duration, but trigger limits still apply. Paid HTTP CPU defaults to 30 seconds and can be configured to 5 minutes. Paid Cron CPU is 30 seconds below a one-hour interval and 15 minutes at intervals of at least one hour. Queue CPU defaults to 30 seconds, configurable to 5 minutes; its separate wall-clock limit is 15 minutes.
 
 **What are Lambda Web Functions?**  
 A second Lambda billing model that charges per request, per vCPU-second of active CPU and per GB-second of memory for as long as the execution environment exists.
 
-**Which free tier is bigger?**  
-Lambda's, in dollar terms at low volume: 1 million requests and 400,000 GB-seconds against Workers' 10 million requests and 30 million CPU-milliseconds on the $5 plan.
+**What happens if a request waits longer but still uses 10 ms CPU?**  
+In the stated 10M-request paid-plan model with available allowances, increasing wall time from 200 ms to 1 s leaves Workers at $6.40. Lambda Event Arm at 512 MB rises from $9.80 to $63.13. The old $44.40 Workers result incorrectly used 200 ms CPU. These are modeled costs, not measured performance or complete invoices.
 
 **Is a cold start billed?**  
 On Event Functions the initialisation runs inside the billed duration, and SnapStart adds its own cache and restore charges. Workers does not bill duration at all.
@@ -120,6 +127,7 @@ On Event Functions the initialisation runs inside the billed duration, and SnapS
 - https://developers.cloudflare.com/workers/platform/limits/
 - https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html
 - https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html
+- https://developers.cloudflare.com/queues/platform/limits/
 
 ## Same task, two SDKs
 
