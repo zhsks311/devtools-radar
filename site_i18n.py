@@ -192,7 +192,6 @@ def write_unified(output,items,deals,en_deals):
   text=page.read_text();text=re.sub(r'<header>.*?</header>',nav('en',True),text,flags=re.S)
   text=re.sub(r'<link[^>]+hreflang="ko"[^>]*>','',text)
   text=text.replace('</head>',f'<style>{CSS.split("main{")[0]}</style></head>')
-  text=text.replace('<main ', '<p class="original-notice">English comparison articles · 비교글 영어 원문 · 比较文章为英文 · 比較記事は英語 · Artículos en inglés · Articles en anglais</p><main ',1)
   page.write_text(text,encoding='utf-8')
  # Localized report navigation; article content remains explicitly marked English.
  report_text=(output/'index.html').read_text()

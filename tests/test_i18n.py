@@ -61,3 +61,20 @@ class MultilingualTests(unittest.TestCase):
   page=i.catalogue('en',[d],{})
   self.assertIn('data-search="&quot;&lt;script&gt;',page)
   self.assertNotIn(' onfocus="bad',page)
+
+ def test_no_multilingual_banner_on_comparisons_or_report_indexes(self):
+  import build,tempfile
+  with tempfile.TemporaryDirectory() as temp:
+   out=Path(temp)/'site'; build.build_site(output=out)
+   pages=[out/'index.html',*out.glob('compare/*/index.html'),*out.glob('reports/*/index.html')]
+   self.assertGreater(len(pages),1)
+   for path in pages:
+    page=path.read_text()
+    self.assertNotIn('original-notice',page)
+    self.assertNotIn('English comparison articles ·',page)
+    self.assertIn('<details class="languages">',page)
+   for path in out.glob('compare/*/index.html'):
+    page=path.read_text()
+    self.assertIn('<html lang="en">',page)
+    self.assertIn('href="/reports/ko/" lang="ko"',page)
+    self.assertNotIn('hreflang="ko" href="https://devteardown.com/compare/',page)
