@@ -86,17 +86,45 @@ FACTS = {
         ("Workers limits", "No charge for duration, egress or bandwidth; 5 minutes of CPU per invocation, 30 seconds by default; static asset requests free and unlimited", "https://developers.cloudflare.com/workers/platform/pricing/"),
         ("Workers worked examples", "15M at 7 ms = $8.00; 100M at 7 ms = $45.40; 100M with 80% cache hits = $34.20; 720 cron runs at 180,000 ms = $6.99", "https://developers.cloudflare.com/workers/platform/pricing/"),
     ],
-    "resend-vs-sendgrid": [
-        ("Resend plans", "Free 3,000/mo (100/day); Pro $20 for 50k and $35 for 100k; Scale $90 for 100k to $1,150 for 2.5M", "https://resend.com/pricing"),
-        ("Resend overage", "$0.90 per 1,000 beyond the included volume; $0.80, $0.70, $0.65, $0.52, $0.46 on higher Scale rungs", "https://resend.com/pricing"),
-        ("Resend dedicated IP", "$30 per month add-on, Scale only, for accounts sending more than 3,000 emails a day", "https://resend.com/pricing"),
-        ("Resend add-ons", "Domains $20/mo for 100 more; SSO $150/mo on Scale; 3 inboxes included, $1 per extra inbox", "https://resend.com/pricing"),
-        ("Resend marketing", "Priced per contact: free to 1,000, $40 for 5,000, $80 for 10,000, up to $650 for 150,000", "https://resend.com/pricing"),
-        ("SendGrid plans", "60-day trial at 100 emails/day; Essentials from $19.95 (50k) and $34.95 (100k); Pro from $89.95 (100k)", "https://www.twilio.com/en-us/products/email-api/pricing"),
-        ("SendGrid ladder", "Pro $249 for 300k, $499 for 700k, $799 for 1.5M, $1,099 for 2.5M; Premier custom", "https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai"),
-        ("SendGrid overage", "$1.33 per 1,000 on the 50k Essentials tier, $0.88 on 100k Essentials, $1.10 on 100k Pro", "https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai"),
-        ("SendGrid features", "Pro includes 1 dedicated IP, SSO, 1,000 teammates, 2,500 validations and 7 days of searchable activity; Essentials keeps 1 teammate, 2 webhooks and 3 days", "https://www.twilio.com/en-us/products/email-api/pricing"),
-    ],
+    "resend-vs-sendgrid": [('Resend plans',
+  'Free 3,000/mo (100/day); Pro $20 for 50k and $35 for 100k; Scale $90 for 100k to $1,150 for '
+  '2.5M',
+  'https://resend.com/pricing'),
+ ('Resend overage',
+  '$0.90 per 1,000 beyond the included volume; $0.80, $0.70, $0.65, $0.52, $0.46 on higher Scale '
+  'rungs',
+  'https://resend.com/pricing'),
+ ('Resend dedicated IP',
+  '$30 per month add-on, Scale only, for accounts sending more than 3,000 emails a day',
+  'https://resend.com/pricing'),
+ ('Resend add-ons',
+  'Domains $20/mo for 100 more; SSO $150/mo on Scale; 3 inboxes included, $1 per extra inbox',
+  'https://resend.com/pricing'),
+ ('Resend marketing',
+  'Priced per contact: free to 1,000, $40 for 5,000, $80 for 10,000, up to $650 for 150,000',
+  'https://resend.com/pricing'),
+ ('SendGrid plans',
+  '60-day trial at 100 emails/day; Essentials from $19.95 (50k) and $34.95 (100k); Pro from $89.95 '
+  '(100k)',
+  'https://www.twilio.com/en-us/products/email-api/pricing'),
+ ('SendGrid ladder',
+  'Pro $249 for 300k, $499 for 700k, $799 for 1.5M, $1,099 for 2.5M; Premier custom',
+  'https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai'),
+ ('SendGrid overage',
+  '$1.33 per 1,000 on the 50k Essentials tier, $0.88 on 100k Essentials, $1.10 on 100k Pro',
+  'https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai'),
+ ('SendGrid features',
+  'Pro includes 1 dedicated IP, SSO, 1,000 teammates, 2,500 validations and 7 days of searchable '
+  'activity; Essentials keeps 1 teammate, 2 webhooks and 3 days',
+  'https://www.twilio.com/en-us/products/email-api/pricing'),
+ ('Resend bucket billing correction',
+  'Paid transactional plans opt in using Transactional Overages. Round excess usage up in '
+  '1,000-email buckets; 51,415 on 50k/$20 gives $21.80 at $0.90/bucket. Taxes/fees extra.',
+  'https://resend.com/changelog/pay-as-you-go-pricing'),
+ ('SendGrid trial correction',
+  'Standard new direct trial stops sending after 60 days unless upgraded; no automatic paid '
+  'conversion. Partner/reseller terms and account notices must be checked.',
+  'https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan')],
 }
 
 

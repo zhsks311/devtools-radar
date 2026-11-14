@@ -1,4 +1,4 @@
-# FACT SHEET — resend-vs-sendgrid (verified 2026-11-10)
+# FACT SHEET — resend-vs-sendgrid (verified 2026-11-14)
 
 Rules: use ONLY numbers and product names from this sheet. Derived arithmetic must show its formula.
 Never invent a benchmark, a cold-start figure, or a feature. Vendor marketing claims must be labelled as
@@ -24,12 +24,16 @@ the vendor's claim.
   source: https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai
 - **SendGrid features** — Pro includes 1 dedicated IP, SSO, 1,000 teammates, 2,500 validations and 7 days of searchable activity; Essentials keeps 1 teammate, 2 webhooks and 3 days  
   source: https://www.twilio.com/en-us/products/email-api/pricing
+- **Resend bucket billing correction** — Paid transactional plans opt in using Transactional Overages. Round excess usage up in 1,000-email buckets; 51,415 on 50k/$20 gives $21.80 at $0.90/bucket. Taxes/fees extra.  
+  source: https://resend.com/changelog/pay-as-you-go-pricing
+- **SendGrid trial correction** — Standard new direct trial stops sending after 60 days unless upgraded; no automatic paid conversion. Partner/reseller terms and account notices must be checked.  
+  source: https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan
 
 ## Derived arithmetic used in the article (formula printed in the text)
 
 - **100,000 emails a month, no dedicated IP** — Resend Pro $35 ÷ 100,000 emails × 1,000 = $0.35 per 1,000. SendGrid Essentials $34.95 ÷ 100,000 × 1,000 = $0.35 per 1,000 ⇒ $35.00 against $34.95, a five-cent gap at the bottom of the ladder
-- **200,000 emails a month, the rung against the overage** — Resend: 100,000 Pro at $35 + 100,000 × $0.90/1,000 = $125, against the Scale 200,000 rung at $160. SendGrid: $89.95 + 100,000 × $1.10/1,000 = $199.95, against the Pro 300,000 rung at $249 ⇒ $125 on Resend and $199.95 on SendGrid, both cheaper than buying the next rung
-- **Overage break-even on the 50,000 tiers** — Resend: $20 + $0.90 per 1,000 over 50,000 equals $35 at 16,666 extra emails, so 66,666. SendGrid: $19.95 + $1.33 per 1,000 equals $34.95 at 11,278 extra, so 61,278 ⇒ Past roughly 61,000 to 67,000 sends the next tier is cheaper than the overage
+- **200,000 emails a month, the rung against the overage** — Eligible Resend paid plan with Transactional Overages enabled: $35 + ceil(100,000/1,000) × $0.90 = $125. SendGrid published Pro scenario: $89.95 + 100,000 × $1.10/1,000 = $199.95; confirm the account-specific overage schedule. ⇒ Conditional estimates before taxes/add-ons, not automatic access to unlimited sending.
+- **Resend 50,000 tier: first cheaper upgrade point** — $20 + ceil(max(0, volume − 50,000)/1,000) × $0.90. At 66,000: $34.40. At 66,001: $35.30, compared with $35 for 100,000. ⇒ Upgrade first costs less at 66,001 quota-counted emails, with overages enabled; no exact equality. Do not apply this rounding to SendGrid.
 - **The same feature at the same volume** — Resend: Scale $90 + dedicated IP $30 = $120. SendGrid: Pro $89.95 including one dedicated IP ⇒ $120 against $89.95 for 100,000 emails with a dedicated IP, a $30.05 monthly difference
 
 ## Sources
@@ -39,3 +43,7 @@ the vendor's claim.
 - https://aws.amazon.com/marketplace/pp/prodview-dp5xcsvbvixai
 - https://resend.com/docs
 - https://www.twilio.com/docs/sendgrid
+- https://resend.com/changelog/pay-as-you-go-pricing
+- https://www.twilio.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan
+- https://help.twilio.com/articles/47846436523419
+- https://www.twilio.com/en-us/changelog/changes-coming-to-sendgrid-s-free-plans
