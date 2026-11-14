@@ -281,7 +281,7 @@ RESEND = {'slug': 'resend-vs-sendgrid',
                      'Subuser management makes it a fit for agencies and multi-brand senders',
                      'The ladder keeps falling to $0.44 per 1,000 at 2,500,000, undercutting '
                      'Resend at the top'],
-            'cons': ['No free plan: the trial runs 60 days and then the account is on a paid tier',
+            'cons': ['Standard direct-signup trial: sending stops after 60 days unless you explicitly upgrade; partner or existing paid accounts can differ',
                      'The 50,000 tier charges $1.33 per 1,000 beyond its volume, so 80,000 emails '
                      'bills $59.85 against $34.95 for the next tier',
                      'Essentials keeps 3 days of searchable activity against 7 on Pro, which can '
