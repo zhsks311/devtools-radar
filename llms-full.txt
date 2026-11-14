@@ -276,7 +276,7 @@ Verdict: For a request that waits, Workers is two to three times cheaper and the
 ### Two vendors, three meters, two definitions of work
 Lambda now publishes two price sheets. Event Functions bill requests plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, memory at $0.0000036667 per GB-second for as long as the environment exists, and $0.30 per million requests.
 
-Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. The page is explicit that there is no charge for duration, for egress or for bandwidth.
+Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. No Workers duration/egress charge does not make D1 free: database usage, storage and database-count overages meter separately.
 
 | Meter | Lambda Event | Lambda Web | Workers |
 |---|---|---|---|
@@ -344,6 +344,7 @@ The estimate covers one workload with available included usage, not a complete a
 - https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html
 - https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html
 - https://developers.cloudflare.com/queues/platform/limits/
+- https://developers.cloudflare.com/d1/platform/pricing/
 
 ## Resend vs SendGrid
 URL: https://devteardown.com/compare/resend-vs-sendgrid/
