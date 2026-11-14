@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AWS Lambda vs Cloudflare Workers: cost, limits and the decision matrix">
   <meta name="twitter:description" content="For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call.">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/#article", "headline": "AWS Lambda vs Cloudflare Workers: a 2026 engineering teardown", "description": "One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bills the waiting.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://aws.amazon.com/lambda/pricing/", "https://developers.cloudflare.com/workers/platform/pricing/", "https://developers.cloudflare.com/workers/platform/limits/", "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html", "https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html", "https://developers.cloudflare.com/queues/platform/limits/"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/#article", "headline": "AWS Lambda vs Cloudflare Workers: a 2026 engineering teardown", "description": "One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor bills the waiting.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://aws.amazon.com/lambda/pricing/", "https://developers.cloudflare.com/workers/platform/pricing/", "https://developers.cloudflare.com/workers/platform/limits/", "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html", "https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html", "https://developers.cloudflare.com/queues/platform/limits/", "https://developers.cloudflare.com/d1/platform/pricing/"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does no duration charge mean Workers has no execution limit?", "acceptedAnswer": {"@type": "Answer", "text": "No. Standard Workers bills CPU and requests rather than elapsed duration, but trigger limits still apply. Paid HTTP CPU defaults to 30 seconds and can be configured to 5 minutes. Paid Cron CPU is 30 seconds below a one-hour interval and 15 minutes at intervals of at least one hour. Queue CPU defaults to 30 seconds, configurable to 5 minutes; its separate wall-clock limit is 15 minutes."}}, {"@type": "Question", "name": "What are Lambda Web Functions?", "acceptedAnswer": {"@type": "Answer", "text": "A second Lambda billing model that charges per request, per vCPU-second of active CPU and per GB-second of memory for as long as the execution environment exists."}}, {"@type": "Question", "name": "What happens if a request waits longer but still uses 10 ms CPU?", "acceptedAnswer": {"@type": "Answer", "text": "In the stated 10M-request paid-plan model with available allowances, increasing wall time from 200 ms to 1 s leaves Workers at $6.40. Lambda Event Arm at 512 MB rises from $9.80 to $63.13. The old $44.40 Workers result incorrectly used 200 ms CPU. These are modeled costs, not measured performance or complete invoices."}}, {"@type": "Question", "name": "Is a cold start billed?", "acceptedAnswer": {"@type": "Answer", "text": "On Event Functions the initialisation runs inside the billed duration, and SnapStart adds its own cache and restore charges. Workers does not bill duration at all."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Comparisons", "item": "https://devteardown.com/"}, {"@type": "ListItem", "position": 2, "name": "AWS Lambda vs Cloudflare Workers", "item": "https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/"}]}</script>
   <style>
@@ -150,7 +150,7 @@ footer p { font-size:.8rem; margin:0; }
           <tr><td><strong>Pricing model</strong></td><td>Event: $0.20/M requests + $0.0000133334/GB-s Arm · Web: $0.30/M + $0.0000276944/vCPU-s + $0.0000036667/GB-s</td><td>$5/mo minimum · 10M requests included then $0.30/M · 30M CPU-ms included then $0.02/M</td></tr>
           <tr><td><strong>Hosting and deployment</strong></td><td><strong>No (AWS-managed, VPC and IAM integrated)</strong></td><td>No managed equivalent; workerd is open source</td></tr>
           <tr><td><strong>Runtime and integration</strong></td><td>Free tier 1M requests and 400,000 GB-s; 10,240 MB memory ceiling</td><td>Paid HTTP: CPU 30 s default, up to 5 min; paid Cron at least hourly: 15 min CPU; Queue CPU up to 5 min, wall time 15 min</td></tr>
-          <tr><td><strong>AI-related capabilities</strong></td><td>Durable functions at $8 per million operations; streaming priced per GB written</td><td>Durable Objects, KV, Queues and Workflows meter separately; static assets are free</td></tr>
+          <tr><td><strong>AI-related capabilities</strong></td><td>Durable functions at $8 per million operations; streaming priced per GB written</td><td>D1, Durable Objects, KV, Queues and Workflows meter separately; static assets are free</td></tr>
           <tr><td><strong>Lock-in risk</strong></td><td>Medium: event sources, IAM and VPC wiring are AWS-shaped</td><td>Low on compute, higher on state: Durable Objects hold data inside the product</td></tr>
           <tr>
             <td><strong>Vendor</strong></td>
@@ -163,7 +163,7 @@ footer p { font-size:.8rem; margin:0; }
 
       <h2 id="s1">1. Two vendors, three meters, two definitions of work</h2>
       <p>Lambda now publishes two price sheets. Event Functions bill requests plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, memory at $0.0000036667 per GB-second for as long as the environment exists, and $0.30 per million requests.</p>
-<p>Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. The page is explicit that there is no charge for duration, for egress or for bandwidth.</p>
+<p>Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. No Workers duration/egress charge does not make D1 free: database usage, storage and database-count overages meter separately.</p>
 <div class="table-wrapper"><table><thead><tr><th>Meter</th><th>Lambda Event</th><th>Lambda Web</th><th>Workers</th></tr></thead><tbody><tr><td>Requests</td><td>$0.20/M</td><td>$0.30/M</td><td>$0.30/M</td></tr><tr><td>Duration</td><td>GB-seconds</td><td>memory GB-s, whole life</td><td>none</td></tr><tr><td>CPU</td><td>inside duration</td><td>$0.0000276944/vCPU-s</td><td>$0.02/M CPU-ms</td></tr></tbody></table></div>
 
       <h2 id="s2">2. A GB-second is a memory meter wearing a clock</h2>
@@ -233,24 +233,27 @@ export const handler = async (event) =&gt; {
   const digest = render(user);                                            // 10 ms here
   return { statusCode: 200, body: digest };
 };
-// Breaks when: the lookup takes 1 s. You are billed 1.01 s of 512 MB, so the wait
-// is 99% of the invoice. Web Functions bill only the 10 ms of active CPU.</code></pre>
+// If lookup takes 1 s, this Event Function runs about 1.01 s at configured memory.
+// The wait counts toward duration, not just the 10 ms render CPU; requests cost extra.
+// Web Functions instead bill active CPU PLUS environment-lifetime memory,
+// requests and data transfer. 10 ms CPU alone is not their total bill.</code></pre>
       </div>
       <div>
         <span class="badge badge-green" style="margin-bottom:0.4rem;">Cloudflare Workers</span>
-        <pre><code>// Workers: nothing here is billed by the clock, only the CPU this code burns.
+        <pre><code>// Workers compute bills active CPU, plus request charges after allowances.
 export default {
   async fetch(request, env) {
     const userId = new URL(request.url).searchParams.get(&quot;id&quot;);
     const user = await env.DB.prepare(&quot;SELECT * FROM users WHERE id = ?&quot;)
-      .bind(userId).first();            // 180 ms of waiting, not billed
+      .bind(userId).first();            // I/O wait is not Workers CPU time
     return new Response(render(user), {
       headers: { &quot;content-type&quot;: &quot;text/html&quot; },
     });
   },
 };
-// Breaks when: render() parses a 5 MB XML feed on every request. CPU is the meter,
-// and the 30M CPU-ms allowance is 30 million milliseconds of exactly that.</code></pre>
+// D1 separately meters rows read/written, storage and database-count overages.
+// A query can scan many rows even when first() returns one; check indexes.
+// Rendering uses Workers CPU; database allowances are not the CPU allowance.</code></pre>
       </div>
     </div>
 
@@ -311,7 +314,7 @@ export default {
       <h2>Sources &amp; verification</h2>
       <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-14</strong>.
       Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
-      <div class="card"><p class="sources-list"><a href="https://aws.amazon.com/lambda/pricing/" rel="noopener nofollow" target="_blank">https://aws.amazon.com/lambda/pricing/</a><br><a href="https://developers.cloudflare.com/workers/platform/pricing/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/workers/platform/pricing/</a><br><a href="https://developers.cloudflare.com/workers/platform/limits/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/workers/platform/limits/</a><br><a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html" rel="noopener nofollow" target="_blank">https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html</a><br><a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html" rel="noopener nofollow" target="_blank">https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html</a><br><a href="https://developers.cloudflare.com/queues/platform/limits/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/queues/platform/limits/</a><br></p></div>
+      <div class="card"><p class="sources-list"><a href="https://aws.amazon.com/lambda/pricing/" rel="noopener nofollow" target="_blank">https://aws.amazon.com/lambda/pricing/</a><br><a href="https://developers.cloudflare.com/workers/platform/pricing/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/workers/platform/pricing/</a><br><a href="https://developers.cloudflare.com/workers/platform/limits/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/workers/platform/limits/</a><br><a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html" rel="noopener nofollow" target="_blank">https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html</a><br><a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html" rel="noopener nofollow" target="_blank">https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html</a><br><a href="https://developers.cloudflare.com/queues/platform/limits/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/queues/platform/limits/</a><br><a href="https://developers.cloudflare.com/d1/platform/pricing/" rel="noopener nofollow" target="_blank">https://developers.cloudflare.com/d1/platform/pricing/</a><br></p></div>
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../datadog-vs-grafana-cloud/" style="padding:1.1rem;">

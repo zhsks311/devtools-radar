@@ -19,3 +19,14 @@ class WorkersCpuTests(unittest.TestCase):
   html=(ROOT/'dist/compare'/SLUG/'index.html').read_text()
   faq=next(json.loads(s) for s in re.findall(r'<script type="application/ld\+json">(.*?)</script>',html,re.S) if json.loads(s).get('@type')=='FAQPage')
   self.assertEqual([f['acceptedAnswer']['text'] for f in faq['mainEntity']],[f['a'] for f in a['faqs']])
+ def test_code_comment_billing_scope(self):
+  sys.path.insert(0,str(ROOT/'content'))
+  from killer5_b import WORKERS
+  a=next(x for x in json.loads((ROOT/'data/tools.json').read_text()) if x['slug']==SLUG)
+  for name in ['tool_a','tool_b']:self.assertEqual(a[name]['code_example'],WORKERS[name]['code_example'])
+  self.assertIn('PLUS environment-lifetime memory',a['tool_a']['code_example'])
+  self.assertNotIn('bill only the 10 ms',a['tool_a']['code_example'])
+  self.assertIn('D1 separately meters rows read/written',a['tool_b']['code_example'])
+  self.assertNotIn('waiting, not billed',a['tool_b']['code_example'])
+  for p in ['dist/compare/'+SLUG+'/index.html','dist/llms-full.txt']:
+   self.assertIn('does not make D1 free',(ROOT/p).read_text())

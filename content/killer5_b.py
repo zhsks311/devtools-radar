@@ -331,8 +331,9 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                           '\n'
                           'Workers bill one thing that matters: CPU milliseconds, $0.02 per '
                           'million after 30 million included, plus $0.30 per million requests '
-                          'after 10 million on a $5 plan. The page is explicit that there is no '
-                          'charge for duration, for egress or for bandwidth.\n'
+                          'after 10 million on a $5 plan. No Workers duration/egress charge does '
+                          'not make D1 free: database usage, storage and database-count overages '
+                          'meter separately.\n'
                           '\n'
                           '| Meter | Lambda Event | Lambda Web | Workers |\n'
                           '|---|---|---|---|\n'
@@ -525,7 +526,8 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
              'https://developers.cloudflare.com/workers/platform/limits/',
              'https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html',
              'https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html',
-             'https://developers.cloudflare.com/queues/platform/limits/'],
+             'https://developers.cloudflare.com/queues/platform/limits/',
+             'https://developers.cloudflare.com/d1/platform/pricing/'],
  'related': [{'slug': 'datadog-vs-grafana-cloud',
               'name': 'Datadog vs Grafana Cloud',
               'why': 'The same reading exercise on a monitoring bill: find the unit, then the '
@@ -570,10 +572,14 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                             'here\n'
                             '  return { statusCode: 200, body: digest };\n'
                             '};\n'
-                            '// Breaks when: the lookup takes 1 s. You are billed 1.01 s of 512 '
-                            'MB, so the wait\n'
-                            '// is 99% of the invoice. Web Functions bill only the 10 ms of active '
-                            'CPU.'},
+                            '// If lookup takes 1 s, this Event Function runs about 1.01 s at '
+                            'configured memory.\n'
+                            '// The wait counts toward duration, not just the 10 ms render CPU; '
+                            'requests cost extra.\n'
+                            '// Web Functions instead bill active CPU PLUS environment-lifetime '
+                            'memory,\n'
+                            '// requests and data transfer. 10 ms CPU alone is not their total '
+                            'bill.'},
  'tool_b': {'name': 'Cloudflare Workers',
             'tagline': 'A flat $5 and a CPU meter, with no duration line',
             'db': 'V8 isolates at the edge: CPU time is the only compute meter',
@@ -582,8 +588,8 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
             'self_host': 'No managed equivalent; workerd is open source',
             'realtime': 'Paid HTTP: CPU 30 s default, up to 5 min; paid Cron at least hourly: 15 '
                         'min CPU; Queue CPU up to 5 min, wall time 15 min',
-            'ai_readiness': 'Durable Objects, KV, Queues and Workflows meter separately; static '
-                            'assets are free',
+            'ai_readiness': 'D1, Durable Objects, KV, Queues and Workflows meter separately; '
+                            'static assets are free',
             'lock_in': 'Low on compute, higher on state: Durable Objects hold data inside the '
                        'product',
             'badge': 'CPU-ms',
@@ -602,21 +608,23 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                      'writable disks do not run',
                      'Memory is an isolate-sized budget rather than a configurable 10 GB',
                      "At very low volume the $5 floor is more than Lambda's free tier charges"],
-            'code_example': '// Workers: nothing here is billed by the clock, only the CPU this '
-                            'code burns.\n'
+            'code_example': '// Workers compute bills active CPU, plus request charges after '
+                            'allowances.\n'
                             'export default {\n'
                             '  async fetch(request, env) {\n'
                             '    const userId = new URL(request.url).searchParams.get("id");\n'
                             '    const user = await env.DB.prepare("SELECT * FROM users WHERE id = '
                             '?")\n'
-                            '      .bind(userId).first();            // 180 ms of waiting, not '
-                            'billed\n'
+                            '      .bind(userId).first();            // I/O wait is not Workers '
+                            'CPU time\n'
                             '    return new Response(render(user), {\n'
                             '      headers: { "content-type": "text/html" },\n'
                             '    });\n'
                             '  },\n'
                             '};\n'
-                            '// Breaks when: render() parses a 5 MB XML feed on every request. CPU '
-                            'is the meter,\n'
-                            '// and the 30M CPU-ms allowance is 30 million milliseconds of exactly '
-                            'that.'}}
+                            '// D1 separately meters rows read/written, storage and database-count '
+                            'overages.\n'
+                            '// A query can scan many rows even when first() returns one; check '
+                            'indexes.\n'
+                            '// Rendering uses Workers CPU; database allowances are not the CPU '
+                            'allowance.'}}

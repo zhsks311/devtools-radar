@@ -12,7 +12,7 @@ For a request that waits, Workers is two to three times cheaper and the gap grow
 
 Lambda now publishes two price sheets. Event Functions bill requests plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, memory at $0.0000036667 per GB-second for as long as the environment exists, and $0.30 per million requests.
 
-Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. The page is explicit that there is no charge for duration, for egress or for bandwidth.
+Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. No Workers duration/egress charge does not make D1 free: database usage, storage and database-count overages meter separately.
 
 | Meter | Lambda Event | Lambda Web | Workers |
 |---|---|---|---|
@@ -128,6 +128,7 @@ On Event Functions the initialisation runs inside the billed duration, and SnapS
 - https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html
 - https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html
 - https://developers.cloudflare.com/queues/platform/limits/
+- https://developers.cloudflare.com/d1/platform/pricing/
 
 ## Same task, two SDKs
 
@@ -140,24 +141,27 @@ export const handler = async (event) => {
   const digest = render(user);                                            // 10 ms here
   return { statusCode: 200, body: digest };
 };
-// Breaks when: the lookup takes 1 s. You are billed 1.01 s of 512 MB, so the wait
-// is 99% of the invoice. Web Functions bill only the 10 ms of active CPU.
+// If lookup takes 1 s, this Event Function runs about 1.01 s at configured memory.
+// The wait counts toward duration, not just the 10 ms render CPU; requests cost extra.
+// Web Functions instead bill active CPU PLUS environment-lifetime memory,
+// requests and data transfer. 10 ms CPU alone is not their total bill.
 ```
 
 **Cloudflare Workers**
 
 ```
-// Workers: nothing here is billed by the clock, only the CPU this code burns.
+// Workers compute bills active CPU, plus request charges after allowances.
 export default {
   async fetch(request, env) {
     const userId = new URL(request.url).searchParams.get("id");
     const user = await env.DB.prepare("SELECT * FROM users WHERE id = ?")
-      .bind(userId).first();            // 180 ms of waiting, not billed
+      .bind(userId).first();            // I/O wait is not Workers CPU time
     return new Response(render(user), {
       headers: { "content-type": "text/html" },
     });
   },
 };
-// Breaks when: render() parses a 5 MB XML feed on every request. CPU is the meter,
-// and the 30M CPU-ms allowance is 30 million milliseconds of exactly that.
+// D1 separately meters rows read/written, storage and database-count overages.
+// A query can scan many rows even when first() returns one; check indexes.
+// Rendering uses Workers CPU; database allowances are not the CPU allowance.
 ```

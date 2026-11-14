@@ -561,7 +561,7 @@
     "sections": [
       {
         "title": "Two vendors, three meters, two definitions of work",
-        "content": "Lambda now publishes two price sheets. Event Functions bill requests plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, memory at $0.0000036667 per GB-second for as long as the environment exists, and $0.30 per million requests.\n\nWorkers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. The page is explicit that there is no charge for duration, for egress or for bandwidth.\n\n| Meter | Lambda Event | Lambda Web | Workers |\n|---|---|---|---|\n| Requests | $0.20/M | $0.30/M | $0.30/M |\n| Duration | GB-seconds | memory GB-s, whole life | none |\n| CPU | inside duration | $0.0000276944/vCPU-s | $0.02/M CPU-ms |"
+        "content": "Lambda now publishes two price sheets. Event Functions bill requests plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, memory at $0.0000036667 per GB-second for as long as the environment exists, and $0.30 per million requests.\n\nWorkers bill one thing that matters: CPU milliseconds, $0.02 per million after 30 million included, plus $0.30 per million requests after 10 million on a $5 plan. No Workers duration/egress charge does not make D1 free: database usage, storage and database-count overages meter separately.\n\n| Meter | Lambda Event | Lambda Web | Workers |\n|---|---|---|---|\n| Requests | $0.20/M | $0.30/M | $0.30/M |\n| Duration | GB-seconds | memory GB-s, whole life | none |\n| CPU | inside duration | $0.0000276944/vCPU-s | $0.02/M CPU-ms |"
       },
       {
         "title": "A GB-second is a memory meter wearing a clock",
@@ -674,7 +674,8 @@
       "https://developers.cloudflare.com/workers/platform/limits/",
       "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
       "https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html",
-      "https://developers.cloudflare.com/queues/platform/limits/"
+      "https://developers.cloudflare.com/queues/platform/limits/",
+      "https://developers.cloudflare.com/d1/platform/pricing/"
     ],
     "related": [
       {
@@ -711,7 +712,7 @@
         "Requests cost $0.20/M on Event Functions and $0.30/M on Web Functions, above Workers' $0.30 after 10M included",
         "Data transfer is metered, so a byte-heavy response is a billable event"
       ],
-      "code_example": "// Event Function: the meter starts at invocation and runs through the wait.\nexport const handler = async (event) => {\n  const user = await db.users.findUnique({ where: { id: event.userId } }); // 180 ms here\n  const digest = render(user);                                            // 10 ms here\n  return { statusCode: 200, body: digest };\n};\n// Breaks when: the lookup takes 1 s. You are billed 1.01 s of 512 MB, so the wait\n// is 99% of the invoice. Web Functions bill only the 10 ms of active CPU."
+      "code_example": "// Event Function: the meter starts at invocation and runs through the wait.\nexport const handler = async (event) => {\n  const user = await db.users.findUnique({ where: { id: event.userId } }); // 180 ms here\n  const digest = render(user);                                            // 10 ms here\n  return { statusCode: 200, body: digest };\n};\n// If lookup takes 1 s, this Event Function runs about 1.01 s at configured memory.\n// The wait counts toward duration, not just the 10 ms render CPU; requests cost extra.\n// Web Functions instead bill active CPU PLUS environment-lifetime memory,\n// requests and data transfer. 10 ms CPU alone is not their total bill."
     },
     "tool_b": {
       "name": "Cloudflare Workers",
@@ -720,7 +721,7 @@
       "pricing": "$5/mo minimum · 10M requests included then $0.30/M · 30M CPU-ms included then $0.02/M",
       "self_host": "No managed equivalent; workerd is open source",
       "realtime": "Paid HTTP: CPU 30 s default, up to 5 min; paid Cron at least hourly: 15 min CPU; Queue CPU up to 5 min, wall time 15 min",
-      "ai_readiness": "Durable Objects, KV, Queues and Workflows meter separately; static assets are free",
+      "ai_readiness": "D1, Durable Objects, KV, Queues and Workflows meter separately; static assets are free",
       "lock_in": "Low on compute, higher on state: Durable Objects hold data inside the product",
       "badge": "CPU-ms",
       "cta_url": "https://workers.cloudflare.com/?utm_source=devteardown",
@@ -736,7 +737,7 @@
         "Memory is an isolate-sized budget rather than a configurable 10 GB",
         "At very low volume the $5 floor is more than Lambda's free tier charges"
       ],
-      "code_example": "// Workers: nothing here is billed by the clock, only the CPU this code burns.\nexport default {\n  async fetch(request, env) {\n    const userId = new URL(request.url).searchParams.get(\"id\");\n    const user = await env.DB.prepare(\"SELECT * FROM users WHERE id = ?\")\n      .bind(userId).first();            // 180 ms of waiting, not billed\n    return new Response(render(user), {\n      headers: { \"content-type\": \"text/html\" },\n    });\n  },\n};\n// Breaks when: render() parses a 5 MB XML feed on every request. CPU is the meter,\n// and the 30M CPU-ms allowance is 30 million milliseconds of exactly that."
+      "code_example": "// Workers compute bills active CPU, plus request charges after allowances.\nexport default {\n  async fetch(request, env) {\n    const userId = new URL(request.url).searchParams.get(\"id\");\n    const user = await env.DB.prepare(\"SELECT * FROM users WHERE id = ?\")\n      .bind(userId).first();            // I/O wait is not Workers CPU time\n    return new Response(render(user), {\n      headers: { \"content-type\": \"text/html\" },\n    });\n  },\n};\n// D1 separately meters rows read/written, storage and database-count overages.\n// A query can scan many rows even when first() returns one; check indexes.\n// Rendering uses Workers CPU; database allowances are not the CPU allowance."
     }
   },
   {
