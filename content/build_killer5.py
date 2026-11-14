@@ -28,19 +28,27 @@ ARTICLE_KEYS = [
 # Published numbers each article is allowed to use, kept next to the article so the
 # chain from price sheet to prose stays readable.
 FACTS = {
-    "stripe-vs-lemonsqueezy-vs-paddle": [
-        ("Stripe Payments", "2.9% + 30¢ per successful domestic card charge; +0.5% manually entered; +1.5% international; 1.5% if currency conversion is required", "https://stripe.com/pricing"),
-        ("Stripe disputes", "$15.00 per dispute received, $15.00 countered, $15.00 appealed", "https://stripe.com/pricing"),
-        ("Stripe ACH", "0.8% of the amount, $5.00 cap", "https://stripe.com/pricing"),
-        ("Stripe Billing", "0.7% of Billing volume, including transactions processed off Stripe; excludes one-off invoices", "https://stripe.com/billing/pricing"),
-        ("Stripe Tax Basic", "50¢ per transaction where you are registered to collect; each transaction includes 10 calculation API calls, 5¢ each above that", "https://stripe.com/tax/pricing"),
-        ("Stripe Tax Complete", "Tiered by registrations, transactions and filings, up to 10+ registrations and 5,000+ transactions; price not printed (quote)", "https://stripe.com/tax/pricing"),
-        ("Stripe Tax coverage", "Obligation monitoring, registrations in 90+ countries, calculation on 700+ product types, filings in 90+ countries", "https://stripe.com/tax/pricing"),
-        ("Lemon Squeezy", "5% + 50¢ per transaction, $0/month; ecommerce features free; email marketing free to 500 subscribers", "https://www.lemonsqueezy.com/pricing"),
-        ("Lemon Squeezy as MoR", "Takes on the liability of tax collection and calculation and pays the taxes on your behalf", "https://www.lemonsqueezy.com/pricing"),
-        ("Paddle", "5% + 50¢ per Checkout transaction, no monthly fee; custom pricing for products under $10; no lock-in period", "https://www.paddle.com/pricing"),
-        ("Paddle inclusions", "Payments, subscriptions, tax and compliance, fraud protection, buyer support and migration inside the 5%", "https://www.paddle.com/pricing"),
-    ],
+    "stripe-vs-lemonsqueezy-vs-paddle": [('Stripe Payments US',
+  'Domestic cards 2.9% + 30¢; international cards +1.5%; required currency conversion +1%. These '
+  'are not Korean eligibility or account-specific quotes.',
+  'https://stripe.com/pricing'),
+ ('Stripe Billing', 'Pay-as-you-go 0.7% of Billing volume.', 'https://stripe.com/billing/pricing'),
+ ('Stripe Tax Basic US',
+  'No-code 0.5% for applicable registered transactions; API integration 50¢. Alternative '
+  'integration paths. Tax Complete is separately priced with plan limits.',
+  'https://stripe.com/pricing'),
+ ('Lemon Squeezy',
+  'Base 5% + 50¢; subscription +0.5 percentage points; applicable non-US transactions +1.5 and '
+  'PayPal +1.5. Fee base includes tax. Region-dependent payout fees are separate.',
+  'https://docs.lemonsqueezy.com/help/getting-started/fees'),
+ ('Paddle',
+  'Published standard 5% + 50¢ per Checkout transaction, subscriptions included; custom pricing '
+  'may apply. Do not apply Lemon Squeezy surcharges.',
+  'https://www.paddle.com/pricing'),
+ ('Model assumptions',
+  'US standard rates; tax-free total order value; every Stripe charge incurs the selected Tax '
+  'path; no FX, international, PayPal, refund, dispute or payout fees unless explicitly modeled.',
+  'https://stripe.com/pricing')],
     "anthropic-vs-openai-api-pricing": [
         ("Claude Sonnet 5.5", "$2 input / $10 output per MTok; 5m cache write $2.50; 1h write $4; cache hit $0.10; batch $1 / $5", "https://docs.anthropic.com/en/docs/about-claude/pricing"),
         ("Claude Opus 5.5", "$4 / $20 per MTok; writes $5 and $8; cache hit $0.20; batch $2 / $10", "https://docs.anthropic.com/en/docs/about-claude/pricing"),

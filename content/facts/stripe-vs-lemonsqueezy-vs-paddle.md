@@ -1,4 +1,4 @@
-# FACT SHEET — stripe-vs-lemonsqueezy-vs-paddle (verified 2026-11-10)
+# FACT SHEET — stripe-vs-lemonsqueezy-vs-paddle (verified 2026-11-14)
 
 Rules: use ONLY numbers and product names from this sheet. Derived arithmetic must show its formula.
 Never invent a benchmark, a cold-start figure, or a feature. Vendor marketing claims must be labelled as
@@ -6,40 +6,30 @@ the vendor's claim.
 
 ## Published unit prices and limits
 
-- **Stripe Payments** — 2.9% + 30¢ per successful domestic card charge; +0.5% manually entered; +1.5% international; 1.5% if currency conversion is required  
+- **Stripe Payments US** — Domestic cards 2.9% + 30¢; international cards +1.5%; required currency conversion +1%. These are not Korean eligibility or account-specific quotes.  
   source: https://stripe.com/pricing
-- **Stripe disputes** — $15.00 per dispute received, $15.00 countered, $15.00 appealed  
-  source: https://stripe.com/pricing
-- **Stripe ACH** — 0.8% of the amount, $5.00 cap  
-  source: https://stripe.com/pricing
-- **Stripe Billing** — 0.7% of Billing volume, including transactions processed off Stripe; excludes one-off invoices  
+- **Stripe Billing** — Pay-as-you-go 0.7% of Billing volume.  
   source: https://stripe.com/billing/pricing
-- **Stripe Tax Basic** — 50¢ per transaction where you are registered to collect; each transaction includes 10 calculation API calls, 5¢ each above that  
-  source: https://stripe.com/tax/pricing
-- **Stripe Tax Complete** — Tiered by registrations, transactions and filings, up to 10+ registrations and 5,000+ transactions; price not printed (quote)  
-  source: https://stripe.com/tax/pricing
-- **Stripe Tax coverage** — Obligation monitoring, registrations in 90+ countries, calculation on 700+ product types, filings in 90+ countries  
-  source: https://stripe.com/tax/pricing
-- **Lemon Squeezy** — 5% + 50¢ per transaction, $0/month; ecommerce features free; email marketing free to 500 subscribers  
-  source: https://www.lemonsqueezy.com/pricing
-- **Lemon Squeezy as MoR** — Takes on the liability of tax collection and calculation and pays the taxes on your behalf  
-  source: https://www.lemonsqueezy.com/pricing
-- **Paddle** — 5% + 50¢ per Checkout transaction, no monthly fee; custom pricing for products under $10; no lock-in period  
+- **Stripe Tax Basic US** — No-code 0.5% for applicable registered transactions; API integration 50¢. Alternative integration paths. Tax Complete is separately priced with plan limits.  
+  source: https://stripe.com/pricing
+- **Lemon Squeezy** — Base 5% + 50¢; subscription +0.5 percentage points; applicable non-US transactions +1.5 and PayPal +1.5. Fee base includes tax. Region-dependent payout fees are separate.  
+  source: https://docs.lemonsqueezy.com/help/getting-started/fees
+- **Paddle** — Published standard 5% + 50¢ per Checkout transaction, subscriptions included; custom pricing may apply. Do not apply Lemon Squeezy surcharges.  
   source: https://www.paddle.com/pricing
-- **Paddle inclusions** — Payments, subscriptions, tax and compliance, fraud protection, buyer support and migration inside the 5%  
-  source: https://www.paddle.com/pricing
+- **Model assumptions** — US standard rates; tax-free total order value; every Stripe charge incurs the selected Tax path; no FX, international, PayPal, refund, dispute or payout fees unless explicitly modeled.  
+  source: https://stripe.com/pricing
 
 ## Derived arithmetic used in the article (formula printed in the text)
 
-- **1,000 subscribers at $20, domestic cards** — Stripe: 2.9% × $20,000 = $580; 1,000 × 30¢ = $300; Billing 0.7% × $20,000 = $140; Tax Basic 1,000 × 50¢ = $500. MoR: 5% × $20,000 = $1,000; 1,000 × 50¢ = $500 ⇒ $1,520 assembled Stripe stack against $1,500 on either merchant of record
-- **200 subscribers at $100, same $20,000 of volume** — Stripe: 2.9% × $20,000 = $580; 200 × 30¢ = $60; 0.7% × $20,000 = $140; 200 × 50¢ = $100. MoR: 5% × $20,000 = $1,000; 200 × 50¢ = $100 ⇒ $880 on Stripe against $1,100 on a merchant of record, a $220 monthly premium
-- **Break-even price per charge** — 3.6% × P + $0.80 = 5% × P + $0.50, so 1.4% × P = $0.30 and P = $21.43 ⇒ Above $21.43 a charge the assembled stack is cheaper; below it the merchant of record is
-- **A $9 product on a merchant of record** — 5% × $9 = $0.45, plus $0.50 fixed = $0.95 per sale; $0.95 ÷ $9 = 10.6% ⇒ $0.95 of a $9 sale, with half of it coming from the fixed fee alone
+- **1,000 monthly $20 renewals, defined US base model** — Stripe no-code: $580 + $300 + $140 + $100. Stripe API: $580 + $300 + $140 + $500. Lemon Squeezy: 0.055 × $20,000 + $500. Paddle: 0.05 × $20,000 + $500. ⇒ $1,120 / $1,520 / $1,600 / $1,500 respectively; excludes taxes added to the price and other fees.
+- **200 monthly $100 renewals, same $20,000 total** — Stripe no-code: $580 + $60 + $140 + $100 = $880. Stripe API: $580 + $60 + $140 + $100 = $880. Lemon Squeezy: $1,100 + $100. Paddle: $1,000 + $100. ⇒ $880 Stripe on either Tax path; $1,200 Lemon Squeezy; $1,100 Paddle under the same assumptions.
+- **Tax API path crossover only** — Stripe 0.036P + $0.80. Paddle 0.05P + $0.50: P = $0.30 / 0.014. Lemon Squeezy subscription 0.055P + $0.50: P = $0.30 / 0.019. ⇒ $21.43 versus Paddle, $15.79 versus Lemon Squeezy; neither is a universal crossover.
+- **Hypothetical non-US taxed subscription on Lemon Squeezy** — $20 + 20% tax = $24 total; (5% + 0.5% subscription + 1.5% international) × $24 + $0.50 = $2.18. ⇒ $2.18 fee before payout costs; with an additional 1.5-point PayPal fee, $2.54.
 
 ## Sources
 
 - https://stripe.com/pricing
 - https://stripe.com/billing/pricing
 - https://stripe.com/tax/pricing
-- https://www.lemonsqueezy.com/pricing
+- https://docs.lemonsqueezy.com/help/getting-started/fees
 - https://www.paddle.com/pricing
