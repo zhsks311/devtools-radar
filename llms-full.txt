@@ -1279,6 +1279,30 @@ A reviewed link is not proof of current stock, a discount or completed checkout.
 Prices can change. Countries below refer only to recorded delivery/activation evidence, not payment eligibility.
 Localized catalog and purchase conditions: https://devteardown.com/deals/
 
+### 벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트
+Seller: Gmarket · 벨킨공식판매원
+Product URL: https://item.gmarket.co.kr/Item?goodsCode=4758759898
+Product-link review: 2026-11-14T12:43:08.562400+00:00 (not a stock check)
+Recorded price: 39900 KRW. Seller price observation dated 2026-11-14T12:43:08.562400+00:00.
+Delivery / activation countries with evidence: KR.
+Discounts and historical-low claims are not established by this export.
+
+### 유그린 Nexode Pro U-25093 100W 3포트 충전기
+Seller: Gmarket · 에이스네트웍
+Product URL: https://item.gmarket.co.kr/Item?goodsCode=4661908147
+Product-link review: 2026-11-14T12:43:08.562400+00:00 (not a stock check)
+Recorded price: 65100 KRW. Seller price observation dated 2026-11-14T12:43:08.562400+00:00.
+Delivery / activation countries with evidence: KR.
+Discounts and historical-low claims are not established by this export.
+
+### 아트뮤 GB102 블랙 100W 접지 3포트 충전기
+Seller: Artmu 공식몰
+Product URL: https://artmu.co.kr/product/detail.html?product_no=2942
+Product-link review: 2026-11-14T12:43:08.562400+00:00 (not a stock check)
+Recorded price: 35700 KRW. Seller price observation dated 2026-11-14T12:43:08.562400+00:00.
+Delivery / activation countries with evidence: KR.
+Discounts and historical-low claims are not established by this export.
+
 ### DJI Osmo Mobile 7
 Seller: DJI China
 Product URL: https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN
@@ -1383,4 +1407,20 @@ Recorded price: 9.99 USD. Seller price observation dated 2026-11-10T12:02:55.128
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
-17 held source records are omitted from this export; their purchase links are not verified.
+### Mail Backup X Individual v2 · lifetime / 2 devices
+Seller: StackSocial
+Product URL: https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription
+Product-link review: 2026-11-14T12:44:20.414842+00:00 (not a stock check)
+Recorded price: 49.99 USD. Seller price observation dated 2026-11-14T12:44:20.414842+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### Babbel · lifetime access to 14 languages
+Seller: StackSocial
+Product URL: https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages
+Product-link review: 2026-11-14T12:44:20.414842+00:00 (not a stock check)
+Recorded price: 249.0 USD. Seller price observation dated 2026-11-14T12:44:20.414842+00:00.
+Delivery / activation countries with evidence: US.
+Discounts and historical-low claims are not established by this export.
+
+14 held source records are omitted from this export; their purchase links are not verified.
