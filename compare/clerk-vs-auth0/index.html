@@ -16,8 +16,8 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Clerk vs Auth0: cost, limits and the decision matrix">
   <meta name="twitter:description" content="Pick Clerk if most of your sign-ups never return at least 24 hours after signup, because Clerk bills only the ones who do — 50,000 MRU are included on a $25/month Pro plan.">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/clerk-vs-auth0/#article", "headline": "Clerk vs Auth0: a 2026 engineering teardown", "description": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning at least 24 hours after signup per app, so these are not equivalent populations.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://clerk.com/pricing", "https://auth0.com/pricing", "https://auth0.com/pricing.md"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/clerk-vs-auth0/"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Auth0 have a free tier?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: Auth0 Free is $0 up to 25,000 MAU, with 1 tenant, 5 organizations, 1 enterprise connection and 1-day log retention. Self-service SSO and SCIM are included on it."}}, {"@type": "Question", "name": "Do I need Clerk Business to offer SSO?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pro includes 1 SSO connection and charges $75/month for each additional connection; Business costs $300/month or $250/month billed annually and adds a SOC 2 report, 10 dashboard seats and 30-day application and admin logs."}}, {"@type": "Question", "name": "How long does each vendor keep logs on the paid tiers?", "acceptedAnswer": {"@type": "Answer", "text": "Auth0 keeps 5 days on Essentials, 10 on Professional and 30 on Enterprise. Clerk Pro keeps 7 days of logs and Business keeps 30."}}, {"@type": "Question", "name": "What does SMS login cost on Clerk?", "acceptedAnswer": {"@type": "Answer", "text": "SMS authentication is on Pro at $0.01 per SMS for the US and Canada, with international messages at market rate."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "@id": "https://devteardown.com/compare/clerk-vs-auth0/#article", "headline": "Clerk vs Auth0: a 2026 engineering teardown", "description": "At 50,000 Auth0 MAU, B2C Essentials costs $3,500/month; at 50,000 Clerk MRU, Pro costs $25/month: $3,500 / $25 = 140. Auth0 counts non-internal users who authenticated that month per tenant; Clerk counts users returning at least 24 hours after signup per app, so these are not equivalent populations.", "datePublished": "2026-11-10", "author": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown", "url": "https://devteardown.com/editorial-policy/"}, "inLanguage": "en", "citation": ["https://clerk.com/pricing", "https://auth0.com/pricing", "https://auth0.com/pricing.md", "https://clerk.com/docs/reference/backend/user/get-user-list", "https://clerk.com/docs/guides/development/migrating/overview"], "publisher": {"@type": "Organization", "@id": "https://devteardown.com/#publisher", "name": "DevTeardown"}, "mainEntityOfPage": "https://devteardown.com/compare/clerk-vs-auth0/"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Auth0 have a free tier?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: Auth0 Free is $0 up to 25,000 MAU, with 1 tenant, 5 organizations, 1 enterprise connection and 1-day log retention. Self-service SSO and SCIM are included on it."}}, {"@type": "Question", "name": "Do I need Clerk Business to offer SSO?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pro includes 1 SSO connection and charges $75/month for each additional connection; Business costs $300/month or $250/month billed annually and adds a SOC 2 report, 10 dashboard seats and 30-day application and admin logs."}}, {"@type": "Question", "name": "Can getUserList().totalCount measure Clerk MRU billing?", "acceptedAnswer": {"@type": "Answer", "text": "No. The unfiltered count is registered users in the instance, not Monthly Retained Users. MRU depends on activity during the billing month at least 24 hours after signup. A creation-date or last-sign-in filter alone does not establish billable MRU; use Clerk-reported billing usage rather than treating an inventory count as a quota alert."}}, {"@type": "Question", "name": "What does SMS login cost on Clerk?", "acceptedAnswer": {"@type": "Answer", "text": "SMS authentication is on Pro at $0.01 per SMS for the US and Canada, with international messages at market rate."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Comparisons", "item": "https://devteardown.com/"}, {"@type": "ListItem", "position": 2, "name": "Clerk vs Auth0", "item": "https://devteardown.com/compare/clerk-vs-auth0/"}]}</script>
   <style>
 :root { --bg:#f6f4ee; --surface:#fffdf8; --surface-raised:#eeece4; --border:#d7d5cb;
@@ -162,11 +162,9 @@ footer p { font-size:.8rem; margin:0; }
     </div>
 
       <h2 id="s1">1. Clerk and Auth0 count different people</h2>
-      <p>Read the unit before the price. Each vendor defines it in its own words:</p>
-<div class="table-wrapper"><table><thead><tr><th>Vendor</th><th>Unit</th><th>Who is counted</th></tr></thead><tbody><tr><td>Clerk</td><td>Monthly Retained User (MRU)</td><td>returns at least 24 hours after signup, per app</td></tr><tr><td>Auth0</td><td>Monthly Active User (MAU)</td><td>non-internal user authenticated that month, per tenant</td></tr></tbody></table></div>
-<p>Clerk counts the first day free. A signup that never returns is excluded from MRU, but counts toward MAU if non-internal and authenticated.</p>
-<blockquote><p>A consumer app with heavy sign-up churn will look cheap on Clerk, and part of that cheapness is definitional.</p></blockquote>
+      <div class="table-wrapper"><table><thead><tr><th>Vendor</th><th>Unit</th><th>Who is counted</th></tr></thead><tbody><tr><td>Clerk</td><td>Monthly Retained User (MRU)</td><td>returns at least 24 hours after signup, per app</td></tr><tr><td>Auth0</td><td>Monthly Active User (MAU)</td><td>non-internal user authenticated that month, per tenant</td></tr></tbody></table></div>
 <p>Vendor pricing pages, checked on 10 November 2026: Clerk Hobby includes 50,000 MRU per app for $0; Auth0 Free includes 25,000 MAU for $0.</p>
+<p>Do not use getUserList().totalCount as MRU: it counts registered users, not monthly retained activity. A last-sign-in date filter alone is not a billing meter. Reconcile charges against Clerk-reported billing usage.</p>
 
       <h2 id="s2">2. Who should not pick Auth0&#x27;s paid B2C plans</h2>
       <ul><li>Clerk forbids a limitless free tier: Hobby stops at 50,000 MRU per app with no MFA or passkeys, and one month of grace before the app stops working.</li><li>Clerk forbids big free organisations: 100 MRO per app, 20 members each. An MRO has at least 2 members, one of them an MRU that month.</li><li>Auth0 forbids paying for exactly what you use. Between tiers you are billed at the next tier up.</li><li>Avoid Auth0 B2C Essentials and Professional if you need enterprise connections: both list them as &quot;not available&quot;. Free includes 1; custom SSO tiers require Enterprise.</li></ul>
@@ -244,11 +242,13 @@ for n in (501, 50_000, 100_000):
     <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
       <div>
         <span class="badge badge-blue" style="margin-bottom:0.4rem;">Clerk</span>
-        <pre><code>// Clerk bills a retained user, not a session: retention requires a return at least 24 hours after signup.
+        <pre><code>// Server-side inventory count, not a billing-usage measurement.
 const { totalCount } = await clerkClient.users.getUserList({ limit: 1 });
-// Here it breaks: past 50,000 MRU on Pro each extra user is $0.02/month,
-// and Hobby gives one grace month before requests stop being served.
-if (totalCount &gt; 50_000) console.warn(totalCount, &quot;MRU — check the plan&quot;);</code></pre>
+console.log({ registeredUsers: totalCount });
+// Do not compare totalCount with an MRU allowance.
+// MRU requires qualifying activity in the billing month after the first 24 hours.
+// A last-sign-in or creation-date filter alone is not an MRU billing meter.
+// Use Clerk&#x27;s reported billing usage to reconcile the actual MRU charge.</code></pre>
       </div>
       <div>
         <span class="badge badge-green" style="margin-bottom:0.4rem;">Auth0</span>
@@ -305,8 +305,8 @@ print(essentials(501))  # 70, not 35
           <div class="faq-a">No. Pro includes 1 SSO connection and charges $75/month for each additional connection; Business costs $300/month or $250/month billed annually and adds a SOC 2 report, 10 dashboard seats and 30-day application and admin logs.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">How long does each vendor keep logs on the paid tiers?</div>
-          <div class="faq-a">Auth0 keeps 5 days on Essentials, 10 on Professional and 30 on Enterprise. Clerk Pro keeps 7 days of logs and Business keeps 30.</div>
+          <div class="faq-q">Can getUserList().totalCount measure Clerk MRU billing?</div>
+          <div class="faq-a">No. The unfiltered count is registered users in the instance, not Monthly Retained Users. MRU depends on activity during the billing month at least 24 hours after signup. A creation-date or last-sign-in filter alone does not establish billable MRU; use Clerk-reported billing usage rather than treating an inventory count as a quota alert.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">What does SMS login cost on Clerk?</div>
@@ -317,7 +317,7 @@ print(essentials(501))  # 70, not 35
       <h2>Sources &amp; verification</h2>
       <p class="sources-list">Prices and limits were read from these pages on <strong>2026-11-10</strong>.
       Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
-      <div class="card"><p class="sources-list"><a href="https://clerk.com/pricing" rel="noopener nofollow" target="_blank">https://clerk.com/pricing</a><br><a href="https://auth0.com/pricing" rel="noopener nofollow" target="_blank">https://auth0.com/pricing</a><br><a href="https://auth0.com/pricing.md" rel="noopener nofollow" target="_blank">https://auth0.com/pricing.md</a><br></p></div>
+      <div class="card"><p class="sources-list"><a href="https://clerk.com/pricing" rel="noopener nofollow" target="_blank">https://clerk.com/pricing</a><br><a href="https://auth0.com/pricing" rel="noopener nofollow" target="_blank">https://auth0.com/pricing</a><br><a href="https://auth0.com/pricing.md" rel="noopener nofollow" target="_blank">https://auth0.com/pricing.md</a><br><a href="https://clerk.com/docs/reference/backend/user/get-user-list" rel="noopener nofollow" target="_blank">https://clerk.com/docs/reference/backend/user/get-user-list</a><br><a href="https://clerk.com/docs/guides/development/migrating/overview" rel="noopener nofollow" target="_blank">https://clerk.com/docs/guides/development/migrating/overview</a><br></p></div>
       <h2>Keep reading</h2>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
           <a class="card" href="../docker-vs-podman/" style="padding:1.1rem;">
