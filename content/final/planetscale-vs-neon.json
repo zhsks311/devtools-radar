@@ -8,7 +8,7 @@
     },
     {
       "title": "The $0 database out-bills the $15 cluster once it never sleeps",
-      "content": "The bottom of each price list:\n\n| Entry | Monthly | What you get |\n|---|---|---|\n| Neon Free | $0 | 100 CU-hours, 1 GB storage per project |\n| PlanetScale PS-5, single node | $5 | 1/16 vCPU, 512 MiB |\n| PlanetScale PS-5 HA | $15 | 1 primary + 2 replicas |\n\nNow keep a 0.25 CU Neon compute awake all month on Launch: 0.25 × 730 h = 182.5 CU-hours × $0.106 = $19.35, before storage.\n\n> Compute only: $19.35 − $15 = $4.35 more than PlanetScale's three-node cluster; capacity is not equivalent.\n\n```python\n# Awake hours/month before 0.25 CU on Neon Launch out-bills PS-5 HA.\nCU, RATE, PS5_HA = 0.25, 0.106, 15.00\nbreak_even = PS5_HA / (CU * RATE)\nprint(f\"approximately {break_even:.2f} of 730 hours\")\n# Assumes 0.25 CU runs throughout the awake hours.\n```"
+      "content": "Free storage has two independent caps: 1 GB per project and 20 GB across all Free projects. 100 projects does not mean 100 GB. Object Storage has a separate allowance.\n\n| Entry | Monthly | What you get |\n|---|---|---|\n| Neon Free | $0 | 100 CU-hours/month/project; 1 GB Postgres/project, 20 GB account total |\n| PlanetScale PS-5, single node | $5 | 1/16 vCPU, 512 MiB |\n| PlanetScale PS-5 HA | $15 | 1 primary + 2 replicas |\n\nNow keep a 0.25 CU Neon compute awake all month on Launch: 0.25 × 730 h = 182.5 CU-hours × $0.106 = $19.35, before storage.\n\n> Compute only: $19.35 − $15 = $4.35 more than PlanetScale's three-node cluster; capacity is not equivalent.\n\n```python\n# Awake hours/month before 0.25 CU on Neon Launch out-bills PS-5 HA.\nCU, RATE, PS5_HA = 0.25, 0.106, 15.00\nbreak_even = PS5_HA / (CU * RATE)\nprint(f\"approximately {break_even:.2f} of 730 hours\")\n# Assumes 0.25 CU runs throughout the awake hours.\n```"
     },
     {
       "title": "Who should NOT pick Neon: existing Vitess-based MySQL deployments",
@@ -91,11 +91,11 @@
       "result": "Neki is a platform preview, not production. $370/month before storage, backups and network usage."
     }
   ],
-  "verdict_summary": "Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it.",
+  "verdict_summary": "Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it. Neon Free is capped at 1 GB Postgres per project and 20 GB account total, not 100 GB across 100 projects.",
   "faqs": [
     {
-      "q": "Does Neon Launch come with an uptime SLA?",
-      "a": "No; Launch has no SLA. The uptime SLA, HIPAA with a BAA, SOC 2 and ISO 27001/27701 arrive with Scale, along with private networking at $0.01/GB."
+      "q": "What happens at Neon Free storage limits?",
+      "a": "Both the 1 GB/project and 20 GB account-wide Postgres caps apply. Storage-increasing writes, including inserts, updates and deletes, fail until space is freed or the plan is upgraded. Compute remains available for reads or pg_dump; data is not deleted. Unlike storage, exhausted compute or egress allowances suspend compute until reset or upgrade. Object Storage is separate."
     },
     {
       "q": "What does 100 GB of storage cost?",
@@ -116,6 +116,7 @@
     "https://planetscale.com/docs/planetscale-plans",
     "https://planetscale.com/blog/introducing-neki",
     "https://planetscale.com/changelog/neki",
-    "https://neon.com/pricing"
+    "https://neon.com/pricing",
+    "https://neon.com/docs/introduction/plans"
   ]
 }

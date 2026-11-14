@@ -40,3 +40,12 @@ class ScopeCorrectionTests(unittest.TestCase):
    s=(ROOT/p).read_text()
    self.assertIn('Do not use getUserList().totalCount as MRU',s)
    self.assertNotIn('MRU — check the plan',s)
+ def test_neon_free_storage_shared_cap(self):
+  for a in self.articles('planetscale-vs-neon'):
+   t=json.dumps(a)
+   self.assertIn('20 GB account',t)
+   self.assertIn('100 projects does not mean 100 GB',t)
+   self.assertIn('Compute remains available for reads or pg_dump',t)
+   self.assertIn('inserts, updates and deletes',t)
+  for p in ['dist/compare/planetscale-vs-neon/index.html','dist/llms-full.txt']:
+   self.assertIn('20 GB account total',(ROOT/p).read_text())

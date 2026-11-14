@@ -715,7 +715,7 @@ META = {
             "cta_url": "https://neon.com/?utm_source=devtoolsradar",
             "pros": [
                 "Suspended compute costs $0, so a database that sleeps most of the day costs almost nothing",
-                "A permanent free plan: 100 CU-hours, 1 GB storage and 100 projects",
+                "Free: 100 projects; 100 CU-hours/month/project; 1 GB Postgres/project and 20 GB account total",
                 "Branches cost $1.50 a month after 10 included, which makes a preview per pull request affordable",
                 "Storage at $0.35/GB-month and 500 GB egress included per project on Launch",
             ],
