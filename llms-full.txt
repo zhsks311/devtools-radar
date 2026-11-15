@@ -1327,6 +1327,14 @@ Recorded price: 1320 KRW. Seller price observation dated 2026-11-15T13:33:32+00:
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
+### Adobe Creative Cloud All Apps · annual, paid monthly
+Seller: Adobe
+Product URL: https://www.adobe.com/kr/creativecloud.html
+Product-link review: 2026-11-15T17:14:18.828646+00:00 (not a stock check)
+Recorded price: 34800 KRW. Seller price observation dated 2026-11-15T17:14:18.828646+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### DJI Osmo Mobile 7
 Seller: DJI China
 Product URL: https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN
