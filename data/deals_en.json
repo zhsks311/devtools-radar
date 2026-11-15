@@ -1328,7 +1328,8 @@
           "same_product_variant": false,
           "checked_at": "2026-11-15T03:20:15.220096+00:00",
           "license_url": "https://mirillis.com/purchase-faq",
-          "note": "Home USD19.77: private non-commercial. Commercial USD32.95: revenue-producing projects. StackSocial commercial scope unconfirmed; no equivalent-license savings claim."
+          "note": "Home USD19.77: private non-commercial. Commercial USD32.95: revenue-producing projects. StackSocial commercial scope unconfirmed; no equivalent-license savings claim.",
+          "commercial_price": 32.95
         },
         "conditions": [
           "New users only; 1 Windows device; redeem within30 days.",

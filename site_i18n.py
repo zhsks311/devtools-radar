@@ -181,6 +181,9 @@ def catalogue(lang,feeds,translations,discoveries=False):
   link_rel='noopener nofollow' + (' sponsored' if tracked else '')
   disclosure=f'<p class="notice affiliate-disclosure">{e(AFFILIATE_DISCLOSURE[lang])}</p>' if linked and tracked else ''
   cta=(f'{disclosure}<a class="cta" href="{e(destination)}" rel="{link_rel}">{t[11]}</a>' if linked else f'<p class="notice link-held" role="status">{HELD[lang]}</p>')
+  if d['id']=='0deb259ecfd4':
+   from buying_guides import PATHS as GUIDE_PATHS, LABELS as GUIDE_LABELS
+   cta=f'<p><a class="buying-guide-link" href="{GUIDE_PATHS.get(lang,GUIDE_PATHS["en"])}">{e(GUIDE_LABELS[lang])}</a></p>'+cta
   review=d.get('price_review') or {}; current=checked_price(d)
   if not publishable_link(d): summary=HELD_SUMMARY[lang]
   price_note=f'<p class="notice">{PRICE_CURRENT[lang] if current else PRICE_RECORDED[lang]}</p>'
@@ -233,7 +236,9 @@ def write_unified(output,items,deals,en_deals):
   page=re.sub(r'<link[^>]+rel="alternate"[^>]*>','',page)
   page=re.sub(r'<link rel="canonical"[^>]*>',f'<link rel="canonical" href="https://devteardown.com/reports/{lang}/">',page)
   dest=output/'reports'/lang;dest.mkdir(parents=True,exist_ok=True);(dest/'index.html').write_text(page,encoding='utf-8')
- urls=['/']+['/reports/'+k+'/' for k in LANGS if k!='en']+list(PATHS.values())+[f'/compare/{x["slug"]}/' for x in items]
+ from buying_guides import write_guides
+ guide_paths=write_guides(output,feeds)
+ urls=guide_paths+['/']+['/reports/'+k+'/' for k in LANGS if k!='en']+list(PATHS.values())+[f'/compare/{x["slug"]}/' for x in items]
  records=[]
  modified=datetime.date.today().isoformat()
  for path in urls:

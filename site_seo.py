@@ -28,6 +28,9 @@ def language_groups():
 
 
 def alternates_for(path):
+    if path.startswith('/guides/'):
+        from buying_guides import PATHS
+        return dict(PATHS, **{'x-default': PATHS['en']})
     if path.startswith('/compare/'):
         return {'en': path, 'x-default': path}
     return next((group for group in language_groups() if path in group.values()), {})
