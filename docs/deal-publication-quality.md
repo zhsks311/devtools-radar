@@ -27,3 +27,21 @@ code as current. Preserve historical coupon evidence; do not roll its dates
 forward or infer a new campaign. Base product availability and base price require
 separate checks. Remove or mark lapsed coupon prose across six languages when
 expiry is established; this file does not itself schedule or execute a review.
+
+## Revenue readiness, 2026-11-15
+
+`python -m tools.audit_monetization` separates active ordinary destinations from
+published commission destinations and held tracking links. On this audit: 22
+active ordinary links, zero published commission links, 13 held tracking links.
+A programme approval is not a product tracking URL or evidence of attributable
+sales. Never restore a held search/mismatched destination merely to earn fees.
+Obtain owner-issued product-specific links, verify exact destination and programme
+ownership, then apply existing disclosure/rel=sponsored safeguards. Revenue and
+attribution remain unverified until the programme reports actual results.
+
+Product-specific catalogue anchors now provide a shareable return path in six
+languages without sending visitor data, adding trackers or inventing Product
+schema. They are not independent search-indexed product landing pages. Next
+content work should add substantiated buying comparisons and useful conditions,
+not duplicate thin pages or unsupported reviews. Conversion improvements are
+hypotheses until measured; no traffic or revenue uplift is claimed.

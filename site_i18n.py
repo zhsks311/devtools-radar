@@ -130,7 +130,7 @@ function filter(historyMode = 'replace') {
   if (search.value.trim()) filters.set('q', search.value.trim());
   for (const [el, key] of controls) if (el.value !== 'all') filters.set(key, el.value);
   for (const a of document.querySelectorAll('.lang')) {
-    const url = new URL(a.href); url.search = filters.toString(); a.href = url.pathname + url.search;
+    const url = new URL(a.href); url.search = filters.toString(); a.href = url.pathname + url.search + location.hash;
   }
 }
 document.querySelector('#unknown-destinations').addEventListener('click', () => {
@@ -153,6 +153,7 @@ CANDIDATE_SECTION = {
 'es':'Candidatos con precio pendiente · no son ofertas verificadas',
 'fr':'Candidats au prix à vérifier · pas des offres confirmées',
 }
+PRODUCT_PERMALINK = {'en':'Link to this product', 'ko':'이 상품 바로가기', 'zh':'此商品链接', 'ja':'この商品のリンク', 'es':'Enlace a este producto', 'fr':'Lien vers ce produit'}
 def catalogue(lang,feeds,translations,discoveries=False):
  t=LABELS[lang]; f=FILTER_TEXT[lang]; discovery_cards=candidate_cards(lang) if discoveries else []; cards=[]; held_cards=[]; discovery_count=len(discovery_cards)
  for d in feeds:
@@ -166,7 +167,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
   # Keep only catalogue identity and explicitly historical price in public output.
   if not publishable_link(d):
    held_discount = NOT_DISCOUNT[lang] if (d.get('price_review') or {}).get('deal_status') == 'not_a_discount' else DISCOUNT_UNKNOWN[lang]
-   held_cards.append(f'''<article class="card" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="" data-category="{e(cat)}"><div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p>{e(HELD_SUMMARY[lang])}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
+   held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="" data-category="{e(cat)}"><div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p>{e(HELD_SUMMARY[lang])}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
    continue
   record={k:d[k] for k in ('storefront_country','shipping','briefing','purchase_eligibility','source','checked_date','published_at','price_source','disclosure','price_review') if k in d}
   media=d.get('image') or {};image=''
@@ -194,7 +195,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
   info=d.get('purchase_eligibility') or {}
   evidence=f'<p><a href="{e(safe(info.get("evidence_url")))}" rel="noopener nofollow">{e(f[4])}</a> · <time datetime="{e(info.get("checked_at"))}">{e(info.get("checked_at"))}</time></p>' if countries else ''
   linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}">{e(title)}</a>' if linked else e(title)
-  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(countries))}" data-category="{e(cat)}">{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p>{e(summary)}</p><div class="price">{e(price)}</div>{price_note}{eligibility}<details><summary>{t[12]}</summary><p>{e(conditions)}</p>{evidence}<p class="notice">{t[13]}</p></details><details><summary>{t[17]}</summary><pre class="original" lang="{'ko' if d.get('region')=='kr' else 'en'}">{e(json.dumps(record,ensure_ascii=False,indent=2))}</pre>{src}</details>{cta}</article>''')
+  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(countries))}" data-category="{e(cat)}">{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p>{e(summary)}</p><div class="price">{e(price)}</div>{price_note}{eligibility}<details><summary>{t[12]}</summary><p>{e(conditions)}</p>{evidence}<p class="notice">{t[13]}</p></details><details><summary>{t[17]}</summary><pre class="original" lang="{'ko' if d.get('region')=='kr' else 'en'}">{e(json.dumps(record,ensure_ascii=False,indent=2))}</pre>{src}</details>{cta}<p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  storefronts=sorted({storefront_country(d) for d in feeds}-{"unknown"})
  destinations=list(COUNTRY_ORDER)+sorted({c for d in feeds for c in confirmed_countries(d)}-set(COUNTRY_ORDER))
