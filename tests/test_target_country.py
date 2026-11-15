@@ -28,4 +28,4 @@ class TargetCountryTest(unittest.TestCase):
   rows=json.loads(Path('data/deals_en.json').read_text())['feed']
   d=next(x for x in rows if x['id']=='de0f62d0487f')
   self.assertEqual(target_countries(d),('KR',));self.assertEqual(confirmed_countries(d),())
-  self.assertEqual(sum('KR' in target_countries(x) for x in rows),1)
+  self.assertEqual(sum('KR' in target_countries(x) for x in rows),2)

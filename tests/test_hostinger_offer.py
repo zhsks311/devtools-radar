@@ -26,3 +26,16 @@ class HostingerOfferTest(unittest.TestCase):
   self.assertTrue(direct_product_url('https://www.hostinger.com/web-hosting'))
   for url in ('https://www.hostinger.com/','https://www.hostinger.com/black-friday','https://www.hostinger.com/web-hosting?q=plan'):
    self.assertFalse(direct_product_url(url))
+ def test_korean_offer_separate_from_usd(self):
+  from tools.deal_countries import target_countries,confirmed_countries
+  d=next(x for x in json.loads(Path('data/deals_en.json').read_text())['feed'] if x['id']=='hostinger-premium-black-friday-48-months')
+  self.assertEqual(target_countries(d),('KR',));self.assertEqual(confirmed_countries(d),())
+  self.assertEqual(d['price'],95.52);self.assertEqual(d['currency'],'USD')
+  self.assertEqual(15319*48,735312)
+  self.assertEqual(d['alternative_review']['sources'][0]['url'],'https://www.hostinger.com/kr/black-friday-web-hosting-deals')
+  self.assertNotIn('proton',json.dumps(d['alternative_review']).lower())
+  for loc in json.loads(Path('data/deal_localizations.json').read_text())[d['id']].values():
+   for value in ['133,392','15,319','735,312']:
+    self.assertIn(value,loc['buying_note'])
+   for value in ['166,992','200,112']:
+    self.assertNotIn(value,loc['buying_note'])
