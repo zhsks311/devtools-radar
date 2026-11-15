@@ -1347,7 +1347,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: EB Games Australia
 Product URL: https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console
 Product-link review: 2026-11-10T11:59:10.296055+00:00 (not a stock check)
-Recorded price: 728 AUD. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 719 AUD. Seller price observation dated 2026-11-15T12:45:23.055546+00:00.
 Delivery / activation countries with evidence: AU.
 Discounts and historical-low claims are not established by this export.
 
