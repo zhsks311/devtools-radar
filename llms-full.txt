@@ -271,7 +271,7 @@ Retention also needs review: the listed Datadog Pro metrics window is 15 months,
 URL: https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/
 Category: Serverless & Edge · Recorded source review: 2026-11-14
 
-Verdict: For a request that waits, Workers is two to three times cheaper and the gap grows with every millisecond you spend on a database call. For a request that works, the two converge, and Lambda's free tier and memory ceiling win back the low end. The bill is a statement about your code's shape, not about the vendors' rates.
+Verdict: In the stated 512 MB, 200 ms elapsed, 10 ms CPU model with unused allowances, Lambda Event Arm is cheaper at 5M requests ($2.13 vs $5.40). Workers Standard is narrowly cheaper at 7.5M ($5.90 vs $5.97), crossing near 7.45M, and cheaper at 100M ($51.40 vs $147.80). Waiting alone does not establish a winner; volume, memory, CPU, billing model and other services change the result.
 
 ### Two vendors, three meters, two definitions of work
 Lambda now publishes two price sheets. Event Functions bill requests plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, $0.0000166667 on x86, and $0.20 per million requests. Web Functions bill active CPU at $0.0000276944 per vCPU-second, memory at $0.0000036667 per GB-second for as long as the environment exists, and $0.30 per million requests.
@@ -285,14 +285,14 @@ Workers bill one thing that matters: CPU milliseconds, $0.02 per million after 3
 | CPU | inside duration | $0.0000276944/vCPU-s | $0.02/M CPU-ms |
 
 ### A GB-second is a memory meter wearing a clock
-Duration billing multiplies wall time by allocated memory, and both factors are yours to set. A 512 MB function that takes 200 ms bills 0.5 GB × 0.2 s = 0.1 GB-s per request. At 100 million requests that is 10 million GB-seconds, or $133.34 on Arm at $0.0000133334.
+Duration billing multiplies wall time by allocated memory, and both factors are yours to set. A 512 MB function that takes 200 ms bills 0.5 GB × 0.2 s = 0.1 GB-s per request. At 100 million requests that is 10 million GB-seconds, or $133.33 before the allowance on Arm at $0.0000133334.
 
 Workers bills the 10 ms of actual work instead: 100 million × 10 ms = 1,000 million CPU-milliseconds, which is 970 million after the 30 million included, at $0.02 per million CPU-ms = $19.40.
 
-So the ratio between the two vendors is not a rate difference. It is the fraction of the request that is CPU: 10 ms of 200 ms is 5%, and that 5% is what Workers meters. Make the handler heavier and the gap narrows; make it wait on a database and the gap widens.
+Elapsed duration and active CPU are different inputs. Equal performance across runtimes is assumed here, not measured; CPU changes and shared allowances can change the ranking.
 
-### The bills cross at about 7.5 million requests
-Same shape everywhere below: 200 ms duration, 512 MB, 10 ms of CPU, one function.
+### This model crosses near 7.45 million requests
+Same shape everywhere below: 200 ms duration, 512 MB, 10 ms of CPU, one modeled workload on the quoted Arm rate and Workers Standard. All stated allowances are unused; no cache, retries, taxes, discounts or other service charges are included.
 
 | Requests/month | Lambda Event (Arm) | Workers | Cheaper |
 |---|---|---|---|
@@ -302,7 +302,7 @@ Same shape everywhere below: 200 ms duration, 512 MB, 10 ms of CPU, one function
 | 50M | $9.80 + $61.33 = $71.13 | $5.00 + $12.00 + $9.40 = $26.40 | Workers |
 | 100M | $19.80 + $128.00 = $147.80 | $5.00 + $27.00 + $19.40 = $51.40 | Workers |
 
-The crossover is a free-tier artefact, not a policy: 1 million requests and 400,000 GB-seconds are free on Lambda, and 30 million CPU-ms are free on Workers. Below roughly 7.5 million requests the Lambda allowance is worth more than the CPU savings. Above it, the $5 plan floor disappears into the noise.
+The crossover is a free-tier artefact, not a policy: 1 million requests and 400,000 GB-seconds are free on Lambda, and 30 million CPU-ms are free on Workers. Below roughly 7.45 million requests the Lambda allowance is worth more than the CPU savings. This is not a universal traffic threshold.
 
 ### Lambda's second sheet splits the same request in two
 Web Functions are AWS's answer to active-CPU billing, and they price the same 100 million requests differently.
@@ -331,7 +331,7 @@ Lambda supports up to 10,240 MB. Workers CPU limits vary by trigger; do not trea
 Queue wall time is not CPU time. Free and legacy plans have different limits; verify the deployed configuration. AWS integrations such as VPC, IAM, SQS and Kinesis may also outweigh a small compute-price difference.
 
 ### The exit door has a rewrite behind it
-Correction, November 14, 2026: the wait-only example accidentally substituted 200 ms CPU for its stated 10 ms. At 10 million requests, Workers remains $6.40, not $44.40; the extra wall time changes Lambda’s duration bill only. Workers pricing and trigger limits were rechecked; other AWS figures retain their November 10 source check.
+Correction, November 14, 2026: the wait-only example accidentally substituted 200 ms CPU for its stated 10 ms. At 10 million requests, Workers remains $6.40, not $44.40; the extra wall time changes Lambda’s duration bill only. Event Arm rates and the crossover assumptions were rechecked on November 14; unrelated AWS claims retain their earlier source check.
 
 Moving runtimes still requires testing APIs, native dependencies, filesystem behavior and state bindings. Check the actual HTTP, Cron or Queue limit rather than assuming every invocation has a five-minute CPU cap.
 
@@ -534,7 +534,7 @@ Workers Standard charges a $5 monthly minimum with 10M requests and 30M CPU-ms i
 
 Do not compare a CDN-only price with an application total. Classify static delivery, dynamic invocations, CPU, memory, storage, database access and logs separately; apply only the allowances available to that account.
 
-Neither a normalized CPU rate nor a low average response time proves the same code performs equivalently on both runtimes. Measure the deployed handler and include retries and background work.
+Workers WebSockets bill the initial Upgrade request, not each routed message as a request; executed code can still consume CPU. Durable Objects are separate: incoming messages use a 20:1 request-billing ratio, and active non-hibernating objects can incur duration charges. “Messages cost nothing” is not a valid total-cost claim.
 
 ### Vercel duration is not a universal five-minute maximum
 On Fluid compute, the documented baseline is 300 seconds by default, with Hobby capped at 300 and Pro/Enterprise ordinarily up to 800 seconds. The extended-duration beta allows up to 1,800 seconds for supported Node.js, Bun and Python versions on Pro/Enterprise.
@@ -552,12 +552,12 @@ These execution limits are separate from Pages deployment limits. Pages document
 
 Check Free, legacy and account-specific settings separately. A long background job should be assessed for runtime, retry and queue behavior, not selected from a single maximum-duration number.
 
-### Cache location changes which meter runs
-Static asset delivery, a cache hit before Worker execution and a cache lookup inside a Worker can have different invocation counts. Do not assume every cache hit bills exactly the same request and CPU lines.
+### Workers Caching saves CPU, not billed requests
+Workers Caching hits remain billed requests at the normal rate even when the Worker does not execute. This also covers static-asset and worker-to-worker requests served through that cache. Ordinary static-asset delivery outside Workers Caching has a separate free request rule.
 
-For a simple uncached hypothetical workload, 50M metered Worker requests with 7 ms CPU each cost $5 + $12 request overage + $6.40 CPU overage = $23.40. This excludes other services and assumes all included usage remains available.
+At 50M requests and 7 ms CPU per execution, uncached Workers Standard is $23.40. With 80% Workers Caching hits, the request overage stays $12; 10M executions use 70M CPU-ms, costing $0.80 above the 30M allowance. Total: $5 + $12 + $0.80 = $17.80, excluding other services.
 
-If a cache prevents invocation, recalculate both request count and CPU from actual executions. If code still runs, measure its CPU rather than setting it to zero. Validate cache safety for authentication and personalized responses before crediting savings.
+A Cache API lookup inside running code is different: that code executes and consumes CPU. Do not derive billed requests from execution count. Check cache configuration and measured CPU, and never cache private responses as public.
 
 ### Choose with a complete bill and a deployment test
 Do not migrate merely because traffic passes an old request or transfer threshold. Existing Vercel subscriptions and newer Flat Rate CDN teams can have materially different delivery bills.
@@ -578,6 +578,8 @@ Keep the current platform when its measured total and operational fit are better
 - https://vercel.com/changelog/vercel-functions-can-now-run-up-to-30-minutes
 - https://developers.cloudflare.com/queues/platform/limits/
 - https://developers.cloudflare.com/workers/platform/limits/
+- https://developers.cloudflare.com/workers/cache/
+- https://developers.cloudflare.com/durable-objects/platform/pricing/
 
 ## Cursor vs GitHub Copilot
 URL: https://devteardown.com/compare/cursor-vs-github-copilot/
@@ -1179,7 +1181,7 @@ Check today:
 URL: https://devteardown.com/compare/planetscale-vs-neon/
 Category: Backend & Database · Recorded source review: 2026-11-10
 
-Verdict: Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it. Neon Free is capped at 1 GB Postgres per project and 20 GB account total, not 100 GB across 100 projects.
+Verdict: Neon can suit idle databases, but suspended compute is not a zero total bill. Launch includes 10 branches per project; extra branches are listed at $0.002 per branch-hour, with running compute, storage and other usage separate. Compare the full bill with PlanetScale's cluster charges and retain Vitess if MySQL compatibility requires it. Neki remains a non-production preview.
 
 ### PlanetScale rents you a machine; Neon bills the hours it is awake
 For Postgres with idle periods or many branches, compare billed CU-hours with dedicated clusters; existing Vitess-based MySQL still has an engine constraint.
@@ -1232,18 +1234,16 @@ Not identical machines. A CU is about 4 GB RAM; PS-80 is listed at 1 vCPU and 8 
 > Do not pick Neon if you must retain Vitess-based MySQL; Launch also lacks an uptime SLA. Compare billed CU-hours with the cluster charge before attributing savings to suspension.
 
 ### Who should NOT pick PlanetScale: projects with a $0 budget
-On PlanetScale every branch runs on its own dedicated cluster, billed separately and prorated to the millisecond. On Neon Launch a branch is a line item: 10 per project included, then $1.50 per branch-month, prorated hourly.
+PlanetScale bills each branch's dedicated cluster separately. Neon Launch includes 10 branches per project; additional branches are listed at $0.002 per branch-hour on the pricing page.
 
-| 20 branches alive all month | Formula | Component/month |
+| 20 branches in one project, each retained for 730 hours | Formula | Component only |
 |---|---|---|
-| Neon Launch | 10 included + 10 × $1.50 | $15 extra-branch fees |
+| Neon Launch | max(20 − 10, 0) × 730 h × $0.002 | $14.60 extra-branch fees |
 | PlanetScale, PS-5 HA each | 20 × $15 | $300 cluster compute |
 
-- Add running compute and data storage on Neon; add storage, backups and transfer on PlanetScale.
-- Millisecond proration helps PlanetScale with short-lived branches: one PS-5 HA branch costs $15 ÷ 730 h ≈ $0.02 per hour.
-- Use actual branch lifetimes. Launch suspension after five minutes can be disabled.
-
-Do not pick PlanetScale for a $0 budget; every database requires a paid subscription.
+- Neon compute is separate: Launch running compute is $0.106/CU-hour. Suspended compute costs $0, but retaining extra branches can still incur branch fees. Data storage, history and transfer may add charges.
+- Source discrepancy checked 15 November 2026: Neon's plans documentation also describes $1.50/branch-month, prorated hourly. $0.002 × 730 = $1.46, not exactly $1.50. The table uses hourly pricing, not a guaranteed invoice.
+- PlanetScale's $300 is cluster compute, while Neon's $14.60 is only the extra-branch component; these are not equivalent total bills.
 
 ### Neki adds sharded Postgres, but its preview excludes production
 Neki is PlanetScale's sharded Postgres, in platform preview since 10 September 2026. PlanetScale says preview is not for production, and that "some of those changes will be breaking".
