@@ -830,7 +830,7 @@
         "activation": "License activation country restrictions have not been verified.",
         "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
         "tax": "Delivery fees, taxes and final total: check checkout.",
-        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "returns": "Unredeemed licenses: store credit within 15 days of purchase; redeemed licenses final. Not a cash refund.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
       },
@@ -862,6 +862,11 @@
           {
             "url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb",
             "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb",
+            "observed_at": "2026-11-15T06:44:44.072689+00:00",
+            "result": "Seller recheck: USD 199.99 displayed; unredeemed licenses eligible for store credit within 15 days of purchase, redeemed licenses final. Coupon display remains advertised, not checkout verified."
           }
         ],
         "limitations": [
@@ -882,7 +887,8 @@
           "period": "month",
           "note": "Recurring1TB not identical lifetime product. Reseller810USD suggested price not substantiated."
         },
-        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00",
+        "terms_checked_at": "2026-11-15T06:44:44.072689+00:00"
       },
       "storefront_country": null
     },
@@ -1048,7 +1054,7 @@
         "activation": "License activation country restrictions have not been verified.",
         "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
         "tax": "Delivery fees, taxes and final total: check checkout.",
-        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "returns": "Unredeemed licenses: store credit within 30 days of purchase; redeemed licenses final. Not a cash refund.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
       },
@@ -1085,6 +1091,11 @@
             "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
             "observed_at": "2026-11-15T00:55:34.230894+00:00",
             "result": "Seller page price-only recheck: USD 19.99; advertised DEAL20 USD 16.00. Checkout not tested. Other review timestamps preserved."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
+            "observed_at": "2026-11-15T06:44:44.072689+00:00",
+            "result": "Seller recheck: USD 19.99 displayed; unredeemed licenses eligible for store credit within 30 days of purchase, redeemed licenses final. Coupon display remains advertised, not checkout verified."
           }
         ],
         "limitations": [
@@ -1110,7 +1121,8 @@
           "url": "https://adguard.com/en/license.html",
           "note": "Family9device license confirmed, dynamic current price unavailable;169.99USD reference unverified."
         },
-        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+        "review_completed_at": "2026-11-10T12:02:55.128061+00:00",
+        "terms_checked_at": "2026-11-15T06:44:44.072689+00:00"
       },
       "storefront_country": null
     },
