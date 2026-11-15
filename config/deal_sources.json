@@ -57,9 +57,28 @@
       "name": "Ppomppu (Korean community)",
       "enabled": false,
       "url": "https://www.ppomppu.co.kr/ppomppu_rss2.php/",
-      "policy_url": "https://www.ppomppu.co.kr/ppomppu_rss2.php/",
+      "policy_url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&no=4",
       "mode": "blocked",
       "note": "Official RSS directory lookup returned HTTP403 on 2026-11-15. Hot-deal feed endpoint and reuse permission not verified; no bypass and no automatic collection enabled."
+    },
+    {
+      "id": "quasarzone",
+      "name": "Quasarzone (Korean community)",
+      "enabled": false,
+      "url": "https://quasarzone.com/bbs/qb_saleinfo",
+      "mode": "permission_review",
+      "note": "Public list and individual posts readable via search on 2026-11-15; automated collection permission/robots could not be verified. Manual discovery followed by independent seller checks only; no bulk mirroring.",
+      "policy_url": "https://quasarzone.com/terms_of_use",
+      "robots_url": "https://quasarzone.com/robots.txt"
+    },
+    {
+      "id": "fmkorea",
+      "name": "FM Korea (Korean community)",
+      "enabled": false,
+      "url": "https://www.fmkorea.com/hotdeal",
+      "mode": "blocked",
+      "note": "Robots check returned HTTP429 on 2026-11-15; no retries or bypass. Do not enable automatic scraping without verified access and reuse scope.",
+      "policy_url": "https://www.fmkorea.com/robots.txt"
     }
   ]
 }

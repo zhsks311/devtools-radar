@@ -1270,5 +1270,101 @@
       "summary": "Mega MGC Coffee HOT Americano",
       "conditions": "Coupon mobile coréen pour un americano chaud Mega MGC, 1 320 KRW. Valable 93 jours sans prolongation ; 10 par jour. Envoi habituel sous 10 minutes, retard possible. Magasins acceptés/exclus et paiement non vérifiés. Selon le vendeur, coupon inutilisé : remboursement de 100 % avant expiration, 90 % après. Minimum du marché non vérifié."
     }
+  },
+  "proton-mail-plus-black-friday-annual": {
+    "en": {
+      "product": "Proton Mail Plus · first 12 months",
+      "summary": "Black Friday annual offer: USD 29.88 for the first 12 months, not a monthly bill. 15 GB storage, 10 email addresses and 1 custom email domain.",
+      "conditions": "New users: USD 29.88 paid upfront for the first 12 months; automatically renews at USD 47.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified."
+    },
+    "ko": {
+      "product": "Proton Mail Plus · 첫 12개월",
+      "summary": "블랙프라이데이 첫 12개월 선결제 USD 29.88. 월 결제액이 아닙니다.",
+      "conditions": "신규 사용자용. 첫해 USD 29.88, 이후 취소하지 않으면 12개월마다 USD 47.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인."
+    },
+    "zh": {
+      "product": "Proton Mail Plus · 首12个月",
+      "summary": "黑五优惠：首12个月预付29.88美元，并非月付价格。",
+      "conditions": "面向新用户；首年29.88美元，未取消则每12个月自动续费47.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。"
+    },
+    "ja": {
+      "product": "Proton Mail Plus · 最初の12か月",
+      "summary": "ブラックフライデー：最初の12か月分をUSD 29.88で前払い。月払い額ではありません。",
+      "conditions": "新規ユーザー向け。初年度USD 29.88、解約しない場合は12か月ごとにUSD 47.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。"
+    },
+    "es": {
+      "product": "Proton Mail Plus · primeros 12 meses",
+      "summary": "Black Friday: USD 29.88 por adelantado para los primeros 12 meses; no es una cuota mensual.",
+      "conditions": "Para nuevos usuarios. Primer año USD 29.88; renovación automática de USD 47.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar."
+    },
+    "fr": {
+      "product": "Proton Mail Plus · 12 premiers mois",
+      "summary": "Black Friday : 29.88 USD payés à l’avance pour les 12 premiers mois, pas une mensualité.",
+      "conditions": "Nouveaux utilisateurs. Première année 29.88 USD, puis renouvellement automatique à 47.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés."
+    }
+  },
+  "proton-drive-plus-black-friday-annual": {
+    "en": {
+      "product": "Proton Drive Plus · first 12 months",
+      "summary": "Black Friday annual offer: USD 29.88 for the first 12 months, not a monthly bill. 200 GB storage with document and spreadsheet editors.",
+      "conditions": "New users: USD 29.88 paid upfront for the first 12 months; automatically renews at USD 47.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified."
+    },
+    "ko": {
+      "product": "Proton Drive Plus · 첫 12개월",
+      "summary": "블랙프라이데이 첫 12개월 선결제 USD 29.88. 월 결제액이 아닙니다.",
+      "conditions": "신규 사용자용. 첫해 USD 29.88, 이후 취소하지 않으면 12개월마다 USD 47.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인."
+    },
+    "zh": {
+      "product": "Proton Drive Plus · 首12个月",
+      "summary": "黑五优惠：首12个月预付29.88美元，并非月付价格。",
+      "conditions": "面向新用户；首年29.88美元，未取消则每12个月自动续费47.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。"
+    },
+    "ja": {
+      "product": "Proton Drive Plus · 最初の12か月",
+      "summary": "ブラックフライデー：最初の12か月分をUSD 29.88で前払い。月払い額ではありません。",
+      "conditions": "新規ユーザー向け。初年度USD 29.88、解約しない場合は12か月ごとにUSD 47.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。"
+    },
+    "es": {
+      "product": "Proton Drive Plus · primeros 12 meses",
+      "summary": "Black Friday: USD 29.88 por adelantado para los primeros 12 meses; no es una cuota mensual.",
+      "conditions": "Para nuevos usuarios. Primer año USD 29.88; renovación automática de USD 47.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar."
+    },
+    "fr": {
+      "product": "Proton Drive Plus · 12 premiers mois",
+      "summary": "Black Friday : 29.88 USD payés à l’avance pour les 12 premiers mois, pas une mensualité.",
+      "conditions": "Nouveaux utilisateurs. Première année 29.88 USD, puis renouvellement automatique à 47.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés."
+    }
+  },
+  "proton-pass-plus-black-friday-annual": {
+    "en": {
+      "product": "Proton Pass Plus · first 12 months",
+      "summary": "Black Friday annual offer: USD 23.88 for the first 12 months, not a monthly bill. Password manager subscription.",
+      "conditions": "New users: USD 23.88 paid upfront for the first 12 months; automatically renews at USD 35.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified."
+    },
+    "ko": {
+      "product": "Proton Pass Plus · 첫 12개월",
+      "summary": "블랙프라이데이 첫 12개월 선결제 USD 23.88. 월 결제액이 아닙니다.",
+      "conditions": "신규 사용자용. 첫해 USD 23.88, 이후 취소하지 않으면 12개월마다 USD 35.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인."
+    },
+    "zh": {
+      "product": "Proton Pass Plus · 首12个月",
+      "summary": "黑五优惠：首12个月预付23.88美元，并非月付价格。",
+      "conditions": "面向新用户；首年23.88美元，未取消则每12个月自动续费35.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。"
+    },
+    "ja": {
+      "product": "Proton Pass Plus · 最初の12か月",
+      "summary": "ブラックフライデー：最初の12か月分をUSD 23.88で前払い。月払い額ではありません。",
+      "conditions": "新規ユーザー向け。初年度USD 23.88、解約しない場合は12か月ごとにUSD 35.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。"
+    },
+    "es": {
+      "product": "Proton Pass Plus · primeros 12 meses",
+      "summary": "Black Friday: USD 23.88 por adelantado para los primeros 12 meses; no es una cuota mensual.",
+      "conditions": "Para nuevos usuarios. Primer año USD 23.88; renovación automática de USD 35.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar."
+    },
+    "fr": {
+      "product": "Proton Pass Plus · 12 premiers mois",
+      "summary": "Black Friday : 23.88 USD payés à l’avance pour les 12 premiers mois, pas une mensualité.",
+      "conditions": "Nouveaux utilisateurs. Première année 23.88 USD, puis renouvellement automatique à 35.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés."
+    }
   }
 }
