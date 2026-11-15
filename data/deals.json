@@ -1858,7 +1858,7 @@
         "note": "Official Korea offer; individual eligibility and checkout unverified."
       },
       "alternative_review": {
-        "checked_at": "2026-11-15T17:14:18.828646+00:00",
+        "checked_at": "2026-11-15T18:22:23.010859+00:00",
         "sources": [
           {
             "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html",
@@ -1867,8 +1867,17 @@
           {
             "url": "https://www.adobe.com/kr/legal/subscription-terms.html",
             "label": "Adobe cancellation terms"
+          },
+          {
+            "url": "https://www.affinity.studio/download",
+            "label": "Affinity: download / FAQ"
+          },
+          {
+            "url": "https://www.affinity.studio/graphic-design-software",
+            "label": "Affinity: graphic design"
           }
-        ]
+        ],
+        "evidence": "Official Affinity FAQ: individuals can use Pixel, Vector, Layout with free Canva account; Canva AI requires premium plan. Official graphics page describes vector design. No Premiere/full-suite equivalence or tested compatibility/language claims."
       }
     }
   ],
@@ -3775,7 +3784,7 @@
             "note": "Official Korea offer; individual eligibility and checkout unverified."
           },
           "alternative_review": {
-            "checked_at": "2026-11-15T17:14:18.828646+00:00",
+            "checked_at": "2026-11-15T18:22:23.010859+00:00",
             "sources": [
               {
                 "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html",
@@ -3784,8 +3793,17 @@
               {
                 "url": "https://www.adobe.com/kr/legal/subscription-terms.html",
                 "label": "Adobe cancellation terms"
+              },
+              {
+                "url": "https://www.affinity.studio/download",
+                "label": "Affinity: download / FAQ"
+              },
+              {
+                "url": "https://www.affinity.studio/graphic-design-software",
+                "label": "Affinity: graphic design"
               }
-            ]
+            ],
+            "evidence": "Official Affinity FAQ: individuals can use Pixel, Vector, Layout with free Canva account; Canva AI requires premium plan. Official graphics page describes vector design. No Premiere/full-suite equivalence or tested compatibility/language claims."
           }
         }
       ]

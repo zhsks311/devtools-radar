@@ -17,3 +17,12 @@ class AdobeOfferTest(unittest.TestCase):
   self.assertTrue(direct_product_url('https://www.adobe.com/kr/creativecloud.html'))
   for url in ['https://www.adobe.com/','https://www.adobe.com/kr/creativecloud/plans.html','https://www.adobe.com/kr/creativecloud.html?q=foo']:
    self.assertFalse(direct_product_url(url))
+ def test_affinity_advice_preserves_contract(self):
+  d=next(x for x in json.loads(Path('data/deals.json').read_text())['feed'] if x['id']=='adobe-creative-cloud-kr-bf-monthly-annual')
+  sources={x['url'] for x in d['alternative_review']['sources']}
+  self.assertIn('https://www.adobe.com/kr/legal/subscription-terms.html',sources)
+  self.assertIn('https://www.affinity.studio/download',sources)
+  for loc in json.loads(Path('data/deal_localizations.json').read_text())[d['id']].values():
+   for word in ['Affinity','Canva','AI','Premiere']:
+    self.assertIn(word,loc['buying_note'])
+   self.assertIn('10%',loc['conditions']);self.assertIn('14',loc['conditions'])
