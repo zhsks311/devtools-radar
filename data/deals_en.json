@@ -907,7 +907,8 @@
         "Key: Video editing for Windows.",
         "Condition: 2 Windows devices; version 11.",
         "Checked: November 10, 2026 · Add to Cart shown",
-        "Check: Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days."
+        "Check: Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days.",
+        "Coupon campaign evidence: DEAL20 campaign: 9–15 November 2026, seller-stated dates; exclusions apply. Exact end time and time zone are not stated on the campaign page. Coupon application and final total remain untested."
       ],
       "audience": "Check OS, license and regional eligibility before purchase.",
       "source": {
@@ -918,7 +919,7 @@
       "published_at": null,
       "checked_date": "2026-11-10",
       "score": null,
-      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Expiry unknown.",
+      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Base offer expiry unknown; DEAL20 campaign dates are 9–15 November 2026, exact end time/time zone unstated.",
       "ai_rewritten": false,
       "link": {
         "url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
@@ -967,6 +968,11 @@
           {
             "url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
             "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
+            "observed_at": "2026-11-15T00:55:34.230894+00:00",
+            "result": "Seller page price-only recheck: USD 29.99; advertised DEAL20 USD 24.00. Checkout not tested. Other review timestamps preserved."
           }
         ],
         "limitations": [
@@ -975,7 +981,15 @@
         "coupon": {
           "code": "DEAL20",
           "displayed_price": 24,
-          "checkout_verified": false
+          "checkout_verified": false,
+          "valid_from_date": "2026-11-09",
+          "valid_through_date": "2026-11-15",
+          "timezone": null,
+          "ends_at": null,
+          "exclusions_apply": true,
+          "source_url": "https://www.stacksocial.com/collections/20-percent-off-a-and-s",
+          "observed_at": "2026-11-15T00:54:58.669942+00:00",
+          "source_date_text": "Valid 11/9 - 11/15. Exclusions apply."
         },
         "conditions": [
           "Version11;2devices;redeem30days."
@@ -1005,7 +1019,8 @@
         "Key: Ad blocking for a household.",
         "Condition: New users; 9 devices.",
         "Checked: November 10, 2026 · Add to Cart shown",
-        "Check: Page advertises $16 with DEAL20; checkout not tested. Redeem within 30 days."
+        "Check: Page advertises $16 with DEAL20; checkout not tested. Redeem within 30 days.",
+        "Coupon campaign evidence: DEAL20 campaign: 9–15 November 2026, seller-stated dates; exclusions apply. Exact end time and time zone are not stated on the campaign page. Coupon application and final total remain untested."
       ],
       "audience": "Check OS, license and regional eligibility before purchase.",
       "source": {
@@ -1016,7 +1031,7 @@
       "published_at": null,
       "checked_date": "2026-11-10",
       "score": null,
-      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Expiry unknown.",
+      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Base offer expiry unknown; DEAL20 campaign dates are 9–15 November 2026, exact end time/time zone unstated.",
       "ai_rewritten": false,
       "link": {
         "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
@@ -1065,6 +1080,11 @@
           {
             "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
             "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
+            "observed_at": "2026-11-15T00:55:34.230894+00:00",
+            "result": "Seller page price-only recheck: USD 19.99; advertised DEAL20 USD 16.00. Checkout not tested. Other review timestamps preserved."
           }
         ],
         "limitations": [
@@ -1073,7 +1093,15 @@
         "coupon": {
           "code": "DEAL20",
           "displayed_price": 16,
-          "checkout_verified": false
+          "checkout_verified": false,
+          "valid_from_date": "2026-11-09",
+          "valid_through_date": "2026-11-15",
+          "timezone": null,
+          "ends_at": null,
+          "exclusions_apply": true,
+          "source_url": "https://www.stacksocial.com/collections/20-percent-off-a-and-s",
+          "observed_at": "2026-11-15T00:54:58.669942+00:00",
+          "source_date_text": "Valid 11/9 - 11/15. Exclusions apply."
         },
         "conditions": [
           "Family9devices; lifetime; vendor dynamic price not retrieved."
@@ -1107,7 +1135,8 @@
         "Key: PDF conversion and editing.",
         "Condition: Windows 8/10/11 or macOS 12+; 2 devices.",
         "Checked: November 10, 2026 · Add to Cart shown",
-        "Check: Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days."
+        "Check: Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days.",
+        "Coupon campaign evidence: DEAL20 campaign: 9–15 November 2026, seller-stated dates; exclusions apply. Exact end time and time zone are not stated on the campaign page. Coupon application and final total remain untested."
       ],
       "audience": "Check OS, license and regional eligibility before purchase.",
       "source": {
@@ -1118,7 +1147,7 @@
       "published_at": null,
       "checked_date": "2026-11-10",
       "score": null,
-      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Expiry unknown.",
+      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Base offer expiry unknown; DEAL20 campaign dates are 9–15 November 2026, exact end time/time zone unstated.",
       "ai_rewritten": false,
       "link": {
         "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
@@ -1167,6 +1196,11 @@
           {
             "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
             "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+            "observed_at": "2026-11-15T00:55:34.230894+00:00",
+            "result": "Seller page price-only recheck: USD 29.99; advertised DEAL20 USD 24.00. Checkout not tested. Other review timestamps preserved."
           }
         ],
         "limitations": [
@@ -1175,7 +1209,15 @@
         "coupon": {
           "code": "DEAL20",
           "displayed_price": 24,
-          "checkout_verified": false
+          "checkout_verified": false,
+          "valid_from_date": "2026-11-09",
+          "valid_through_date": "2026-11-15",
+          "timezone": null,
+          "ends_at": null,
+          "exclusions_apply": true,
+          "source_url": "https://www.stacksocial.com/collections/20-percent-off-a-and-s",
+          "observed_at": "2026-11-15T00:54:58.669942+00:00",
+          "source_date_text": "Valid 11/9 - 11/15. Exclusions apply."
         },
         "conditions": [
           "2devices;Windows1.4.5.5/Mac1.6.1.0;redeem30days;conversion Internet required."
@@ -1301,7 +1343,8 @@
       "rocket": false,
       "specs": [],
       "briefing": [
-        "New users only; two devices; redeem within 30 days; macOS 10.13+ or Windows 8+. Updates included. Country eligibility not stated. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD40.00 untested; not used as main price."
+        "New users only; two devices; redeem within 30 days; macOS 10.13+ or Windows 8+. Updates included. Country eligibility not stated. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD40.00 untested; not used as main price.",
+        "Coupon campaign evidence: DEAL20 campaign: 9–15 November 2026, seller-stated dates; exclusions apply. Exact end time and time zone are not stated on the campaign page. Coupon application and final total remain untested."
       ],
       "audience": "New users who meet seller activation conditions.",
       "source": {
@@ -1352,6 +1395,11 @@
           {
             "url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription",
             "result": "Seller detail retrieved 2026-11-14 12:42 UTC confirms Mail Backup X Individual v2 · lifetime / 2 devices, USD49.99, Add to Cart and licence terms. Checkout and optional coupon not tested."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription",
+            "observed_at": "2026-11-15T00:55:34.230894+00:00",
+            "result": "Seller page price-only recheck: USD 49.99; advertised DEAL20 USD 40.00. Checkout not tested. Other review timestamps preserved."
           }
         ],
         "conditions": [
@@ -1361,7 +1409,20 @@
           "No independent previous-price or historical-low evidence.",
           "Checkout, optional coupon, tax, billing-country eligibility untested."
         ],
-        "review_completed_at": "2026-11-14T12:44:20.414842+00:00"
+        "review_completed_at": "2026-11-14T12:44:20.414842+00:00",
+        "coupon": {
+          "code": "DEAL20",
+          "checkout_verified": false,
+          "valid_from_date": "2026-11-09",
+          "valid_through_date": "2026-11-15",
+          "timezone": null,
+          "ends_at": null,
+          "exclusions_apply": true,
+          "source_url": "https://www.stacksocial.com/collections/20-percent-off-a-and-s",
+          "observed_at": "2026-11-15T00:54:58.669942+00:00",
+          "source_date_text": "Valid 11/9 - 11/15. Exclusions apply.",
+          "displayed_price": 40
+        }
       }
     },
     {
@@ -1382,7 +1443,8 @@
       "rocket": false,
       "specs": [],
       "briefing": [
-        "New US users only. 14 languages; redeem on the web within 30 days, then use on mobile. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD199.20 untested; not used as main price."
+        "New US users only. 14 languages; redeem on the web within 30 days, then use on mobile. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD199.20 untested; not used as main price.",
+        "Coupon campaign evidence: DEAL20 campaign: 9–15 November 2026, seller-stated dates; exclusions apply. Exact end time and time zone are not stated on the campaign page. Coupon application and final total remain untested."
       ],
       "audience": "New users who meet seller activation conditions.",
       "source": {
@@ -1435,6 +1497,11 @@
           {
             "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
             "result": "Seller detail retrieved 2026-11-14 12:42 UTC confirms Babbel · lifetime access to 14 languages, USD249.00, Add to Cart and licence terms. Checkout and optional coupon not tested."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+            "observed_at": "2026-11-15T00:55:34.230894+00:00",
+            "result": "Seller page price-only recheck: USD 249.00; advertised DEAL20 USD 199.20. Checkout not tested. Other review timestamps preserved."
           }
         ],
         "conditions": [
@@ -1444,7 +1511,20 @@
           "No independent previous-price or historical-low evidence.",
           "Checkout, optional coupon, tax, billing-country eligibility untested."
         ],
-        "review_completed_at": "2026-11-14T12:44:20.414842+00:00"
+        "review_completed_at": "2026-11-14T12:44:20.414842+00:00",
+        "coupon": {
+          "code": "DEAL20",
+          "checkout_verified": false,
+          "valid_from_date": "2026-11-09",
+          "valid_through_date": "2026-11-15",
+          "timezone": null,
+          "ends_at": null,
+          "exclusions_apply": true,
+          "source_url": "https://www.stacksocial.com/collections/20-percent-off-a-and-s",
+          "observed_at": "2026-11-15T00:54:58.669942+00:00",
+          "source_date_text": "Valid 11/9 - 11/15. Exclusions apply.",
+          "displayed_price": 199.2
+        }
       }
     }
   ],

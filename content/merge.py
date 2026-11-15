@@ -144,16 +144,15 @@ META = {
             'db': 'Workers runtime + Pages static assets',
             'pricing': 'Pages free · Workers Paid from $5/account, $0 egress',
             'self_host': 'No (Cloudflare network)',
-            'realtime': 'WebSocket upgrade bills one request; messages bill nothing',
+            'realtime': 'Workers: Upgrade is one request; message CPU and Durable Objects meters are separate',
             'ai_readiness': 'CPU-metered runtime; 30M CPU-ms included per month',
             'lock_in': 'Medium-high: Workers runtime, per-product line items',
             'badge': 'Zero egress',
             'cta_url': 'https://pages.cloudflare.com/?utm_source=devtoolsradar',
             'pros': ['Workers Standard has no egress charge; other products meter separately',
                      'Workers Standard request overage is $0.30/M beyond 10M included',
-                     'Static delivery and cache behavior can change invocation counts; measure '
-                     'actual execution',
-                     'WebSocket messages are not billed as requests — only the upgrade is'],
+                     'Workers Caching hits remain billed requests; CPU falls only when execution is avoided',
+                     'Workers messages are not separate requests; Durable Objects use their own message and duration meters'],
             'cons': ['Your handlers run on the Workers runtime, so the port is real work, not a '
                      'config change',
                      'Hard ceilings that stop a deployment instead of billing you: 25 MiB per '
@@ -699,7 +698,7 @@ META = {
             "pros": [
                 "Suspended compute costs $0, so a database that sleeps most of the day costs almost nothing",
                 "Free: 100 projects; 100 CU-hours/month/project; 1 GB Postgres/project and 20 GB account total",
-                "Branches cost $1.50 a month after 10 included, which makes a preview per pull request affordable",
+                "Launch includes 10 branches per project; extra branches list at $0.002/branch-hour, excluding compute and storage",
                 "Storage at $0.35/GB-month and 500 GB egress included per project on Launch",
             ],
             "cons": [

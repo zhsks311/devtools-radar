@@ -8,7 +8,7 @@
     },
     {
       "title": "Waiting uses no active CPU, but it is not a free deployment",
-      "content": "Fluid compute separates active CPU, provisioned memory and invocation charges. Network waiting need not consume active CPU, but memory, delivery and other services can still cost money.\n\nWorkers Standard charges a $5 monthly minimum with 10M requests and 30M CPU-ms included, then $0.30 per million requests and $0.02 per million CPU-ms. Other Cloudflare products have their own meters.\n\nDo not compare a CDN-only price with an application total. Classify static delivery, dynamic invocations, CPU, memory, storage, database access and logs separately; apply only the allowances available to that account.\n\nNeither a normalized CPU rate nor a low average response time proves the same code performs equivalently on both runtimes. Measure the deployed handler and include retries and background work."
+      "content": "Fluid compute separates active CPU, provisioned memory and invocation charges. Network waiting need not consume active CPU, but memory, delivery and other services can still cost money.\n\nWorkers Standard charges a $5 monthly minimum with 10M requests and 30M CPU-ms included, then $0.30 per million requests and $0.02 per million CPU-ms. Other Cloudflare products have their own meters.\n\nDo not compare a CDN-only price with an application total. Classify static delivery, dynamic invocations, CPU, memory, storage, database access and logs separately; apply only the allowances available to that account.\n\nWorkers WebSockets bill the initial Upgrade request, not each routed message as a request; executed code can still consume CPU. Durable Objects are separate: incoming messages use a 20:1 request-billing ratio, and active non-hibernating objects can incur duration charges. “Messages cost nothing” is not a valid total-cost claim."
     },
     {
       "title": "Vercel duration is not a universal five-minute maximum",
@@ -19,8 +19,8 @@
       "content": "Workers Paid HTTP CPU defaults to 30 seconds and can be configured up to 5 minutes. Paid Cron has 30 seconds CPU below a one-hour schedule interval, or 15 minutes CPU at intervals of at least one hour.\n\nQueue consumers default to 30 seconds CPU, configurable to 5 minutes; their separate wall-clock limit is 15 minutes. A 15-minute elapsed-time allowance does not authorize 15 minutes of CPU.\n\nThese execution limits are separate from Pages deployment limits. Pages documents a 25 MiB asset limit and a 20-minute build timeout; a build or static asset is not a Worker invocation.\n\nCheck Free, legacy and account-specific settings separately. A long background job should be assessed for runtime, retry and queue behavior, not selected from a single maximum-duration number."
     },
     {
-      "title": "Cache location changes which meter runs",
-      "content": "Static asset delivery, a cache hit before Worker execution and a cache lookup inside a Worker can have different invocation counts. Do not assume every cache hit bills exactly the same request and CPU lines.\n\nFor a simple uncached hypothetical workload, 50M metered Worker requests with 7 ms CPU each cost $5 + $12 request overage + $6.40 CPU overage = $23.40. This excludes other services and assumes all included usage remains available.\n\nIf a cache prevents invocation, recalculate both request count and CPU from actual executions. If code still runs, measure its CPU rather than setting it to zero. Validate cache safety for authentication and personalized responses before crediting savings."
+      "title": "Workers Caching saves CPU, not billed requests",
+      "content": "Workers Caching hits remain billed requests at the normal rate even when the Worker does not execute. This also covers static-asset and worker-to-worker requests served through that cache. Ordinary static-asset delivery outside Workers Caching has a separate free request rule.\n\nAt 50M requests and 7 ms CPU per execution, uncached Workers Standard is $23.40. With 80% Workers Caching hits, the request overage stays $12; 10M executions use 70M CPU-ms, costing $0.80 above the 30M allowance. Total: $5 + $12 + $0.80 = $17.80, excluding other services.\n\nA Cache API lookup inside running code is different: that code executes and consumes CPU. Do not derive billed requests from execution count. Check cache configuration and measured CPU, and never cache private responses as public."
     },
     {
       "title": "Choose with a complete bill and a deployment test",
@@ -76,9 +76,9 @@
       "result": "$23.40 modeled base + request + CPU; other services excluded"
     },
     {
-      "label": "Workers request overage only at 50M",
-      "formula": "(50M − 10M)/1M × $0.30 = $12",
-      "result": "$12 is not a complete application bill; CPU and base remain"
+      "label": "Workers Caching: 50M requests, 80% hits, 7 ms per execution",
+      "formula": "Requests: (50M − 10M)/1M × $0.30 = $12; CPU: (10M × 7 − 30M)/1M × $0.02 = $0.80; $5 + $12 + $0.80",
+      "result": "$17.80; cached requests remain metered, only execution CPU falls; other services excluded"
     },
     {
       "label": "Vercel Flat Rate CDN capacity reference",
@@ -119,7 +119,34 @@
     "https://vercel.com/docs/functions/configuring-functions/duration",
     "https://vercel.com/changelog/vercel-functions-can-now-run-up-to-30-minutes",
     "https://developers.cloudflare.com/queues/platform/limits/",
-    "https://developers.cloudflare.com/workers/platform/limits/"
+    "https://developers.cloudflare.com/workers/platform/limits/",
+    "https://developers.cloudflare.com/workers/cache/",
+    "https://developers.cloudflare.com/durable-objects/platform/pricing/"
   ],
-  "last_verified": "2026-11-14"
+  "last_verified": "2026-11-14",
+  "tool_b": {
+    "name": "Cloudflare Pages",
+    "tagline": "The network vendor that runs your requests",
+    "db": "Workers runtime + Pages static assets",
+    "pricing": "Pages free · Workers Paid from $5/account, $0 egress",
+    "self_host": "No (Cloudflare network)",
+    "realtime": "Workers: Upgrade is one request; message CPU and Durable Objects meters are separate",
+    "ai_readiness": "CPU-metered runtime; 30M CPU-ms included per month",
+    "lock_in": "Medium-high: Workers runtime, per-product line items",
+    "badge": "Zero egress",
+    "cta_url": "https://pages.cloudflare.com/?utm_source=devtoolsradar",
+    "pros": [
+      "Workers Standard has no egress charge; other products meter separately",
+      "Workers Standard request overage is $0.30/M beyond 10M included",
+      "Workers Caching hits remain billed requests; CPU falls only when execution is avoided",
+      "Workers messages are not separate requests; Durable Objects use their own message and duration meters"
+    ],
+    "cons": [
+      "Your handlers run on the Workers runtime, so the port is real work, not a config change",
+      "Hard ceilings that stop a deployment instead of billing you: 25 MiB per asset, 20-minute builds",
+      "Pages Free allows 500 builds a month and 20,000 files per site",
+      "Paid HTTP CPU up to 5 min; Cron and Queue limits differ, with separate wall-time limits"
+    ],
+    "code_example": "// Cloudflare: the Worker handler, not the framework's.\nexport default {\n  async fetch(request, env, ctx) {\n    const { prompt } = await request.json();\n    // CPU-ms bills only while this isolate executes.\n    const upstream = await fetch('https://api.example.com/v1/chat', {\n      method: 'POST',\n      body: JSON.stringify({ prompt }),\n      headers: { 'content-type': 'application/json' },\n    });\n    // Here it breaks: no Node APIs by default. Anything importing fs, net or\n    // a native addon needs nodejs_compat, and some libraries never port.\n    return new Response(upstream.body, { headers: { 'content-type': 'text/event-stream' } });\n  },\n};"
+  }
 }

@@ -149,6 +149,13 @@ def catalogue(lang,feeds,translations,discoveries=False):
   search_text=' '.join([d.get('product',''), d.get('store',''), *[entry.get('product','') for entry in translations.get(d['id'],{}).values()]])
   market=storefront_country(d); countries=confirmed_countries(d)
   cat=d.get('category','tech'); link=d.get('link',{}); currency=d.get('currency','KRW');price=d.get('price');price=f'{currency} {price:,.2f}'.rstrip('0').rstrip('.') if isinstance(price,(int,float)) else '—'
+  # Held records are internal audit inputs, not publication evidence. Never serialize
+  # their source/briefing/price_review objects (including rejected search URLs).
+  # Keep only catalogue identity and explicitly historical price in public output.
+  if not publishable_link(d):
+   held_discount = NOT_DISCOUNT[lang] if (d.get('price_review') or {}).get('deal_status') == 'not_a_discount' else DISCOUNT_UNKNOWN[lang]
+   held_cards.append(f'''<article class="card" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="" data-category="{e(cat)}"><div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p>{e(HELD_SUMMARY[lang])}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
+   continue
   record={k:d[k] for k in ('storefront_country','shipping','briefing','purchase_eligibility','source','checked_date','published_at','price_source','disclosure','price_review') if k in d}
   media=d.get('image') or {};image=''
   if media.get('path'):

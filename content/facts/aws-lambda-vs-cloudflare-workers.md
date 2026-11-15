@@ -42,3 +42,7 @@ the vendor's claim.
 - https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html
 - https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html
 - https://developers.cloudflare.com/queues/platform/limits/
+
+
+## Conclusion correction — 2026-11-14
+Using the quoted Event Arm rate, 512 MB, 200 ms billed duration, 10 ms Workers CPU, no caching and unused allowances: Lambda $2.13 vs Workers $5.40 at 5M; $5.97 vs $5.90 at 7.5M; $147.80 vs $51.40 at 100M. Solving the applicable piecewise segment gives approximately 7.45M. Do not claim I/O waiting universally makes Workers two to three times cheaper. Cross-runtime equal timings are assumptions, not measurements. Request/compute totals exclude other services, taxes and discounts. AWS source: https://aws.amazon.com/lambda/pricing/ ; Workers source: https://developers.cloudflare.com/workers/platform/pricing/ .

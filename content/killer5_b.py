@@ -318,9 +318,10 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
  'category': 'Serverless & Edge',
  'last_verified': '2026-11-14',
  'published': '2026-11-10',
- 'hook': 'One hundred million requests that each take 200 ms and use 10 ms of CPU cost $147.80 on '
-         'AWS Lambda and $51.40 on Cloudflare Workers. Nothing about the code differs. One vendor '
-         'bills the waiting.',
+ 'hook': 'At 5M monthly requests, this model favors Lambda Event Arm ($2.13 vs $5.40); at 100M it '
+         'favors Workers Standard ($51.40 vs $147.80). The result assumes 512 MB, 200 ms elapsed '
+         'time, 10 ms Workers CPU and unused allowances. It is modeled pricing, not a '
+         'cross-runtime benchmark.',
  'sections': [{'title': 'Two vendors, three meters, two definitions of work',
                'content': 'Lambda now publishes two price sheets. Event Functions bill requests '
                           'plus duration in GB-seconds: $0.0000133334 per GB-second on Arm, '
@@ -344,19 +345,21 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                'content': 'Duration billing multiplies wall time by allocated memory, and both '
                           'factors are yours to set. A 512 MB function that takes 200 ms bills 0.5 '
                           'GB × 0.2 s = 0.1 GB-s per request. At 100 million requests that is 10 '
-                          'million GB-seconds, or $133.34 on Arm at $0.0000133334.\n'
+                          'million GB-seconds, or $133.33 before the allowance on Arm at '
+                          '$0.0000133334.\n'
                           '\n'
                           'Workers bills the 10 ms of actual work instead: 100 million × 10 ms = '
                           '1,000 million CPU-milliseconds, which is 970 million after the 30 '
                           'million included, at $0.02 per million CPU-ms = $19.40.\n'
                           '\n'
-                          'So the ratio between the two vendors is not a rate difference. It is '
-                          'the fraction of the request that is CPU: 10 ms of 200 ms is 5%, and '
-                          'that 5% is what Workers meters. Make the handler heavier and the gap '
-                          'narrows; make it wait on a database and the gap widens.'},
-              {'title': 'The bills cross at about 7.5 million requests',
+                          'Elapsed duration and active CPU are different inputs. Equal performance '
+                          'across runtimes is assumed here, not measured; CPU changes and shared '
+                          'allowances can change the ranking.'},
+              {'title': 'This model crosses near 7.45 million requests',
                'content': 'Same shape everywhere below: 200 ms duration, 512 MB, 10 ms of CPU, one '
-                          'function.\n'
+                          'modeled workload on the quoted Arm rate and Workers Standard. All '
+                          'stated allowances are unused; no cache, retries, taxes, discounts or '
+                          'other service charges are included.\n'
                           '\n'
                           '| Requests/month | Lambda Event (Arm) | Workers | Cheaper |\n'
                           '|---|---|---|---|\n'
@@ -371,9 +374,9 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                           '\n'
                           'The crossover is a free-tier artefact, not a policy: 1 million requests '
                           'and 400,000 GB-seconds are free on Lambda, and 30 million CPU-ms are '
-                          'free on Workers. Below roughly 7.5 million requests the Lambda '
-                          'allowance is worth more than the CPU savings. Above it, the $5 plan '
-                          'floor disappears into the noise.'},
+                          'free on Workers. Below roughly 7.45 million requests the Lambda '
+                          'allowance is worth more than the CPU savings. This is not a universal '
+                          'traffic threshold.'},
               {'title': "Lambda's second sheet splits the same request in two",
                'content': "Web Functions are AWS's answer to active-CPU billing, and they price "
                           'the same 100 million requests differently.\n'
@@ -416,8 +419,9 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                'content': 'Correction, November 14, 2026: the wait-only example accidentally '
                           'substituted 200 ms CPU for its stated 10 ms. At 10 million requests, '
                           'Workers remains $6.40, not $44.40; the extra wall time changes Lambda’s '
-                          'duration bill only. Workers pricing and trigger limits were rechecked; '
-                          'other AWS figures retain their November 10 source check.\n'
+                          'duration bill only. Event Arm rates and the crossover assumptions were '
+                          'rechecked on November 14; unrelated AWS claims retain their earlier '
+                          'source check.\n'
                           '\n'
                           'Moving runtimes still requires testing APIs, native dependencies, '
                           'filesystem behavior and state bindings. Check the actual HTTP, Cron or '
@@ -438,11 +442,12 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                 'formula': '100M × 10 ms = 1M vCPU-s × $0.0000276944 = $27.69; 0.5 GB × 2,592,000 '
                            's = 1,296,000 GB-s × $0.0000036667 = $4.75; 100M × $0.30/M = $30.00',
                 'result': "$62.45, 58% below Lambda's own Event price for identical traffic"},
-               {'label': "Cross-over against Lambda's free tier",
-                'formula': 'Lambda: (R − 1M) × $0.20/M + (R × 0.1 − 400k) × $0.0000133334. '
-                           'Workers: $5 + (R × 10 − 30M) × $0.02/M',
-                'result': "Equal at about 7.5M requests a month; below that Lambda's free "
-                          'allowance wins, above it the CPU meter does'},
+               {'label': 'Model-specific crossover with unused allowances',
+                'formula': 'Lambda(R) = max(0,R−1M) × $0.20/M + max(0,R×0.1−400k) × $0.0000133334. '
+                           'Workers(R) = $5 + max(0,R−10M) × $0.30/M + max(0,R×10−30M) × $0.02/M. '
+                           'Solve within 4M<R<10M.',
+                'result': 'Approximately 7.45M requests for these assumptions, not a general '
+                          'crossover; 5M favors Lambda, 7.5M narrowly favors Workers.'},
                {'label': 'Wall time rises from 200 ms to 1 s; CPU remains 10 ms',
                 'formula': 'At 10M requests, Lambda Event Arm: (10M × 1 s × 0.5 GB − 400k GB-s) × '
                            '$0.0000133334 + 9M × $0.20/M = $63.13. Workers: $5 + max(0, 10M − 10M) '
@@ -450,11 +455,12 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                 'result': 'Lambda rises from $9.80 to $63.13 (+$53.33); Workers stays $6.40. All '
                           'stated allowances are assumed available; taxes and other services are '
                           'excluded.'}],
- 'decision_matrix': [{'situation': 'Under about 5 million requests a month',
-                      'pick': 'Lambda Event Functions',
-                      'why': 'The 1M-request and 400,000 GB-second free allowances cover the whole '
-                             'job: 5M requests at 200 ms and 512 MB price at $2.13 against $5.40 '
-                             'on Workers.'},
+ 'decision_matrix': [{'situation': '5M monthly requests in the stated 512 MB, 200 ms, 10 ms CPU '
+                                   'model',
+                      'pick': 'Lambda Event Arm on modeled request/compute cost',
+                      'why': 'With unused allowances, Lambda is $2.13 vs Workers Standard $5.40. '
+                             'The allowance reduces the charge; it does not cover all 5M requests. '
+                             'Recalculate for other traffic and workloads.'},
                      {'situation': '100 million requests that mostly wait on I/O',
                       'pick': 'Workers',
                       'why': 'The same shape prices at $51.40 against $147.80, because 10 ms of '
@@ -488,11 +494,12 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                       'why': 'Web Functions bill memory for the life of every environment, and the '
                              'pricing examples quietly assume exactly one environment runs all '
                              'month.'}],
- 'verdict_summary': 'For a request that waits, Workers is two to three times cheaper and the gap '
-                    'grows with every millisecond you spend on a database call. For a request that '
-                    "works, the two converge, and Lambda's free tier and memory ceiling win back "
-                    "the low end. The bill is a statement about your code's shape, not about the "
-                    "vendors' rates.",
+ 'verdict_summary': 'In the stated 512 MB, 200 ms elapsed, 10 ms CPU model with unused allowances, '
+                    'Lambda Event Arm is cheaper at 5M requests ($2.13 vs $5.40). Workers Standard '
+                    'is narrowly cheaper at 7.5M ($5.90 vs $5.97), crossing near 7.45M, and '
+                    'cheaper at 100M ($51.40 vs $147.80). Waiting alone does not establish a '
+                    'winner; volume, memory, CPU, billing model and other services change the '
+                    'result.',
  'migration_guide': 'Lambda to Workers is a runtime rewrite: the handler becomes a fetch listener, '
                     'environment variables become bindings, and anything that needs a native '
                     'module, a spawned process or a writable disk has no equivalent. State moves '
@@ -517,10 +524,11 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                 'wall time from 200 ms to 1 s leaves Workers at $6.40. Lambda Event Arm at 512 MB '
                 'rises from $9.80 to $63.13. The old $44.40 Workers result incorrectly used 200 ms '
                 'CPU. These are modeled costs, not measured performance or complete invoices.'},
-          {'q': 'Is a cold start billed?',
-           'a': 'On Event Functions the initialisation runs inside the billed duration, and '
-                'SnapStart adds its own cache and restore charges. Workers does not bill duration '
-                'at all.'}],
+          {'q': 'Is Workers always cheaper for I/O-heavy requests?',
+           'a': 'No. In this model Lambda Event Arm costs $2.13 at 5M requests versus Workers '
+                'Standard $5.40. At 7.5M Workers is $5.90 versus Lambda $5.97. The crossover is '
+                'near 7.45M only with the stated memory, duration, CPU, prices and unused '
+                'allowances; it is not a measured performance result or an all-in bill.'}],
  'sources': ['https://aws.amazon.com/lambda/pricing/',
              'https://developers.cloudflare.com/workers/platform/pricing/',
              'https://developers.cloudflare.com/workers/platform/limits/',
@@ -559,8 +567,8 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                      'still bills',
                      'Web Functions fix the wait but bill memory for the life of every '
                      'environment, idle included',
-                     'Requests cost $0.20/M on Event Functions and $0.30/M on Web Functions, above '
-                     "Workers' $0.30 after 10M included",
+                     'Event requests list $0.20/M versus Workers Standard $0.30/M; allowances and '
+                     'compute determine the total',
                      'Data transfer is metered, so a byte-heavy response is a billable event'],
             'code_example': '// Event Function: the meter starts at invocation and runs through '
                             'the wait.\n'
@@ -598,10 +606,10 @@ WORKERS = {'slug': 'aws-lambda-vs-cloudflare-workers',
                      'surprises AWS bills',
                      'The $5 plan includes 10M requests and 30M CPU-ms, enough for a real product '
                      'to start',
-                     'Static asset requests are free and unlimited, so a Worker-fronted site pays '
-                     'for the API only',
-                     'Caching at the edge cuts CPU without cutting the request, and only the '
-                     'request is billed'],
+                     'Ordinary static assets have a free request rule; Workers Caching requests '
+                     'are metered',
+                     'Workers Caching hits avoid execution CPU but remain billed requests; other '
+                     'cache paths differ'],
             'cons': ['CPU and wall-clock limits depend on trigger and plan; HTTP defaults to 30 s '
                      'CPU, configurable to 5 min on Paid',
                      'The runtime is not a container: native modules, spawned processes and '

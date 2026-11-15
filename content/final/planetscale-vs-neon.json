@@ -16,7 +16,7 @@
     },
     {
       "title": "Who should NOT pick PlanetScale: projects with a $0 budget",
-      "content": "On PlanetScale every branch runs on its own dedicated cluster, billed separately and prorated to the millisecond. On Neon Launch a branch is a line item: 10 per project included, then $1.50 per branch-month, prorated hourly.\n\n| 20 branches alive all month | Formula | Component/month |\n|---|---|---|\n| Neon Launch | 10 included + 10 × $1.50 | $15 extra-branch fees |\n| PlanetScale, PS-5 HA each | 20 × $15 | $300 cluster compute |\n\n- Add running compute and data storage on Neon; add storage, backups and transfer on PlanetScale.\n- Millisecond proration helps PlanetScale with short-lived branches: one PS-5 HA branch costs $15 ÷ 730 h ≈ $0.02 per hour.\n- Use actual branch lifetimes. Launch suspension after five minutes can be disabled.\n\nDo not pick PlanetScale for a $0 budget; every database requires a paid subscription."
+      "content": "PlanetScale bills each branch's dedicated cluster separately. Neon Launch includes 10 branches per project; additional branches are listed at $0.002 per branch-hour on the pricing page.\n\n| 20 branches in one project, each retained for 730 hours | Formula | Component only |\n|---|---|---|\n| Neon Launch | max(20 − 10, 0) × 730 h × $0.002 | $14.60 extra-branch fees |\n| PlanetScale, PS-5 HA each | 20 × $15 | $300 cluster compute |\n\n- Neon compute is separate: Launch running compute is $0.106/CU-hour. Suspended compute costs $0, but retaining extra branches can still incur branch fees. Data storage, history and transfer may add charges.\n- Source discrepancy checked 15 November 2026: Neon's plans documentation also describes $1.50/branch-month, prorated hourly. $0.002 × 730 = $1.46, not exactly $1.50. The table uses hourly pricing, not a guaranteed invoice.\n- PlanetScale's $300 is cluster compute, while Neon's $14.60 is only the extra-branch component; these are not equivalent total bills."
     },
     {
       "title": "Neki adds sharded Postgres, but its preview excludes production",
@@ -31,7 +31,7 @@
     {
       "situation": "Dev and test databases idle overnight, one branch per pull request",
       "pick": "Neon Launch",
-      "why": "Suspended compute bills $0 and branches past the included 10 cost $1.50 per branch-month instead of a cluster each. Running compute, data storage and transfer remain separate."
+      "why": "Launch includes 10 branches per project, then lists $0.002 per additional branch-hour. Running compute ($0.106/CU-hour), storage and transfer are separate; suspended compute is $0, not a waiver of extra-branch fees."
     },
     {
       "situation": "Always-on database comparing compute charges only",
@@ -81,9 +81,9 @@
       "result": "Compute only: Launch $77.38; Scale $162.06; PS-80 $148/month. Not equivalent capacity; use PS-80 only if it suits the workload."
     },
     {
-      "label": "20 branches alive all month",
-      "formula": "Neon Launch: 20 branches = 10 included + 10 × $1.50 = $15/month extra-branch fees; PlanetScale: 20 × $15 = $300/month (PS-5 HA each), prorated to the millisecond",
-      "result": "Neon: $15 extra-branch fees plus running compute and data storage; PlanetScale: $300 cluster compute plus storage, backups and transfer. Not total bills."
+      "label": "20 branches in one project retained for 730 hours",
+      "formula": "Neon Launch extra-branch fees: max(20 − 10, 0) × 730 h × $0.002/branch-hour = $14.60; PlanetScale PS-5 HA cluster compute: 20 × $15 = $300/month",
+      "result": "Component comparison only: Neon $14.60 excludes running compute, storage, history and transfer; PlanetScale $300 excludes other usage. The Neon plans page's $1.50/branch-month wording differs from the hourly-rate arithmetic; verify the bill."
     },
     {
       "label": "Neki platform preview — not production: four PS-20 shards plus routers",
@@ -91,7 +91,7 @@
       "result": "Neki is a platform preview, not production. $370/month before storage, backups and network usage."
     }
   ],
-  "verdict_summary": "Pick Neon if your databases sleep: suspended compute costs $0, and a branch per pull request costs $1.50 a month instead of a cluster. Pick PlanetScale if production must stay awake on a fixed cluster charge, or you already run Vitess-shaped MySQL — and test Neki outside production only, because its preview excludes it. Neon Free is capped at 1 GB Postgres per project and 20 GB account total, not 100 GB across 100 projects.",
+  "verdict_summary": "Neon can suit idle databases, but suspended compute is not a zero total bill. Launch includes 10 branches per project; extra branches are listed at $0.002 per branch-hour, with running compute, storage and other usage separate. Compare the full bill with PlanetScale's cluster charges and retain Vitess if MySQL compatibility requires it. Neki remains a non-production preview.",
   "faqs": [
     {
       "q": "What happens at Neon Free storage limits?",
@@ -106,8 +106,8 @@
       "a": "Neon Launch includes 500 GB per project, then $0.10/GB. PlanetScale includes 100 GB/month on a production branch and 10 GB on development branches and PS-5 non-HA, then a region rate it does not print; ingress is free. At 1,024 GB on Neon Launch: 1,024 − 500 = 524 GB × $0.10 = $52.40/month; PlanetScale's overage rate is region-dependent and not printed."
     },
     {
-      "q": "When do PlanetScale backups add charges?",
-      "a": "PlanetScale runs automated backups every 12 hours and includes backup and WAL storage up to twice disk size; overage costs $0.023 per GB-month on compressed size."
+      "q": "Does each Neon pull-request branch cost $1.50 per month?",
+      "a": "No flat per-pull-request charge should be assumed. Launch includes 10 branches per project, then the pricing page lists $0.002 per extra branch-hour. Ten extra branches retained for 730 hours yield $14.60 in branch fees alone. The plans documentation separately says $1.50 per branch-month, prorated hourly; the two presentations are not an exact 730-hour conversion. Running compute, storage and other usage are separate."
     }
   ],
   "sources": [

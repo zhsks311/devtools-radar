@@ -36,12 +36,12 @@ These execution limits are separate from Pages deployment limits. Pages document
 
 Check Free, legacy and account-specific settings separately. A long background job should be assessed for runtime, retry and queue behavior, not selected from a single maximum-duration number.
 
-Cache location changes which meter runs
-Static asset delivery, a cache hit before Worker execution and a cache lookup inside a Worker can have different invocation counts. Do not assume every cache hit bills exactly the same request and CPU lines.
+Workers Caching saves CPU, not billed requests
+Workers Caching hits remain billed requests at the normal rate even when the Worker does not execute. This also covers static-asset and worker-to-worker requests served through that cache. Ordinary static-asset delivery outside Workers Caching has a separate free request rule.
 
-For a simple uncached hypothetical workload, 50M metered Worker requests with 7 ms CPU each cost $5 + $12 request overage + $6.40 CPU overage = $23.40. This excludes other services and assumes all included usage remains available.
+At 50M requests and 7 ms CPU per execution, uncached Workers Standard is $23.40. With 80% Workers Caching hits, the request overage stays $12; 10M executions use 70M CPU-ms, costing $0.80 above the 30M allowance. Total: $5 + $12 + $0.80 = $17.80, excluding other services.
 
-If a cache prevents invocation, recalculate both request count and CPU from actual executions. If code still runs, measure its CPU rather than setting it to zero. Validate cache safety for authentication and personalized responses before crediting savings.
+A Cache API lookup inside running code is different: that code executes and consumes CPU. Do not derive billed requests from execution count. Check cache configuration and measured CPU, and never cache private responses as public.
 
 Choose with a complete bill and a deployment test
 Do not migrate merely because traffic passes an old request or transfer threshold. Existing Vercel subscriptions and newer Flat Rate CDN teams can have materially different delivery bills.
@@ -62,3 +62,10 @@ https://vercel.com/docs/functions/configuring-functions/duration
 https://vercel.com/changelog/vercel-functions-can-now-run-up-to-30-minutes
 https://developers.cloudflare.com/queues/platform/limits/
 https://developers.cloudflare.com/workers/platform/limits/
+
+
+## Targeted cache/WebSocket correction — 2026-11-14
+Workers pricing footnotes 2 and 4: https://developers.cloudflare.com/workers/platform/pricing/
+Workers Caching: https://developers.cloudflare.com/workers/cache/
+Durable Objects separate request/duration rules: https://developers.cloudflare.com/durable-objects/platform/pricing/
+The Workers Upgrade is one request; routed WebSocket messages do not add Workers requests. This is not a no-CPU/no-Durable-Objects-cost guarantee. Incoming Durable Object messages have a 20:1 billing ratio, and duration depends on activity/hibernation.

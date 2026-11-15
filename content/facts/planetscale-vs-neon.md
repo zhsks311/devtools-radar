@@ -138,3 +138,9 @@ Neon's own typical monthly costs (Postgres compute + storage only)
   give the shape, not a slogan.
 - Do not invent availability zones, regions or replicas beyond the counts above.
 - Do not claim Vitess and Postgres behave identically on PlanetScale; Vitess is the MySQL product.
+
+## Branch-fee correction — checked 2026-11-15
+- https://neon.com/pricing lists Launch 10 branches/project included, additional $0.002/branch-hour, compute separately $0.106/CU-hour.
+- https://neon.com/docs/introduction/plans uses $1.50/branch-month prorated hourly. Preserve this source discrepancy rather than assert exact equivalence.
+- For 20 branches in one project retained 730 hours, hourly arithmetic is (20-10)*730*0.002=$14.60 in extra-branch fees, not total database cost. Suspension does not delete retained extra branches.
+- Live comparison observed old $1.50-per-PR verdict, $15 fee table and gain bullet. Canonical final and merge metadata corrected; rebuild all outputs before publication.
