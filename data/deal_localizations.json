@@ -931,32 +931,38 @@
     "en": {
       "product": "Action! Screen & Gameplay Recorder",
       "summary": "Record screen activity and gameplay on Windows.",
-      "conditions": "New users; 1 Windows 7/8/8.1/10/11 device; version 4.20.2, redeem within 30 days. Country activation and billing eligibility, taxes and refund terms remain unverified."
+      "conditions": "New users only; one Windows device; seller lists v4.20.2 with updates. Redeem within30 days. Unredeemed codes refundable as store credit within30 days; after redemption sales are final. Checkout and country activation not tested.",
+      "buying_note": "Choose by license, not price alone: StackSocial $9.99 has unconfirmed commercial rights. Mirillis Home $19.77 is non-commercial; Commercial $32.95 covers revenue-producing work. Official optional services may cost extra; taxes and country eligibility are unverified."
     },
     "ko": {
       "product": "Action! 화면·게임 녹화 도구",
       "summary": "Windows에서 화면과 게임 플레이를 녹화하는 도구.",
-      "conditions": "신규 사용자, Windows 7/8/8.1/10/11 기기 1대, 버전 4.20.2, 30일 이내 등록. 국가별 활성화·결제 가능 여부와 세금·환불 조건은 미확인입니다."
+      "conditions": "신규 사용자만, Windows 기기 1대. 판매처는 v4.20.2 및 업데이트 포함으로 표기합니다. 30일 이내 등록. 미등록 코드는 구매 후30일 이내 스토어 크레딧 환불만 가능하며 등록 후 환불 불가. 결제·국가별 활성화는 테스트하지 않았습니다.",
+      "buying_note": "가격보다 사용권을 먼저 확인하세요. StackSocial $9.99는 상업 이용권 미확인입니다. 공식 Home $19.77은 비상업용, Commercial $32.95는 수익 활동용입니다. 공식 선택 부가서비스는 추가 비용이며 세금·한국 구매 및 활성화 가능 여부는 미확인입니다."
     },
     "zh": {
       "product": "Action! 屏幕与游戏录制工具",
       "summary": "在Windows上录制屏幕和游戏画面。",
-      "conditions": "新用户；1台Windows 7/8/8.1/10/11设备；4.20.2版，30天内兑换。 各国激活与付款资格、税费及退款条件尚未核实。"
+      "conditions": "仅限新用户、1台Windows设备；销售页列v4.20.2及更新。30天内兑换。未兑换代码购买后30天内仅退商店余额，兑换后不退。未测试结账或各国激活。",
+      "buying_note": "先比较许可范围：StackSocial $9.99的商业使用权未确认。官方Home $19.77仅限非商业用途；Commercial $32.95允许营利项目。可选服务另收费；税费及各国购买和激活资格未确认。"
     },
     "ja": {
       "product": "Action! 画面・ゲーム録画ソフト",
       "summary": "Windowsで画面やゲームプレイを録画するツール。",
-      "conditions": "新規ユーザー、Windows 7/8/8.1/10/11の1台、バージョン4.20.2、30日以内に引き換え。 国別の有効化・支払い可否、税金、返金条件は未確認です。"
+      "conditions": "新規ユーザー限定、Windows1台。販売ページはv4.20.2と更新を記載。30日以内に引き換え。未引き換えコードは購入後30日以内のストアクレジット返金のみ、引き換え後は返金不可。決済・国別有効化は未検証。",
+      "buying_note": "価格だけでなくライセンスを確認してください。StackSocial $9.99の商用権は未確認。公式Home $19.77は非商用、Commercial $32.95は収益活動向けです。任意サービスは別料金。税金・国別購入と有効化条件は未確認です。"
     },
     "es": {
       "product": "Action! · grabador de pantalla y juegos",
       "summary": "Graba la pantalla y tus partidas en Windows.",
-      "conditions": "Nuevos usuarios; 1 equipo Windows 7/8/8.1/10/11; versión 4.20.2, canje en 30 días. Países de activación y pago, impuestos y condiciones de reembolso sin verificar."
+      "conditions": "Solo nuevos usuarios, un equipo Windows; vendedor indica v4.20.2 y actualizaciones. Canje en30 días. Códigos sin canjear: crédito de tienda en30 días desde compra; canjeados sin devolución. Pago y activación por país no probados.",
+      "buying_note": "Compare licencias, no solo precios: los derechos comerciales de StackSocial por $9.99 no están confirmados. Home oficial $19.77 es no comercial; Commercial $32.95 permite proyectos con ingresos. Servicios opcionales aparte; impuestos y elegibilidad por país sin verificar."
     },
     "fr": {
       "product": "Action! · enregistrement d’écran et de jeux",
       "summary": "Enregistrez l’écran et vos parties sous Windows.",
-      "conditions": "Nouveaux utilisateurs ; 1 appareil Windows 7/8/8.1/10/11 ; version 4.20.2, activation sous 30 jours. Pays d’activation et de facturation, taxes et conditions de remboursement non vérifiés."
+      "conditions": "Nouveaux utilisateurs, un appareil Windows ; vendeur indique v4.20.2 et mises à jour. Activation sous30 jours. Codes non activés : avoir boutique sous30 jours après achat ; après activation aucun remboursement. Paiement et activation par pays non testés.",
+      "buying_note": "Comparez les licences, pas seulement les prix : les droits commerciaux de StackSocial à $9.99 ne sont pas confirmés. Home officiel $19.77 est non commercial ; Commercial $32.95 permet les projets rémunérés. Services facultatifs en supplément ; taxes et éligibilité par pays non vérifiées."
     }
   },
   "mail-backup-x-individual-v2": {

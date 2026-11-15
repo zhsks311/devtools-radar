@@ -188,7 +188,10 @@ def catalogue(lang,feeds,translations,discoveries=False):
   savings=SRP[lang].format(percent=srp['percent'],currency=srp['currency'],price=f"{srp['price']:,.2f}") if srp else (NOT_DISCOUNT[lang] if review.get('deal_status')=='not_a_discount' else DISCOUNT_UNKNOWN[lang])
   price_note+=f'<p class="notice">{e(savings)}</p>'
   comparison=(review.get('comparison') or {}).get('url')
+  if loc.get('buying_note'): price_note+=f'<p class="notice buying-note">{e(loc["buying_note"])}</p>'
   if comparison: price_note+=f'<a class="meta" href="{e(safe(comparison))}" rel="noopener nofollow">{t[30]}</a>'
+  license_url=(review.get('comparison') or {}).get('license_url')
+  if license_url: price_note+=f'<a class="meta license-source" href="{e(safe(license_url))}" rel="noopener nofollow">{t[30]} · Mirillis FAQ</a>'
   reviewed=observed_timestamp(review.get('review_completed_at'))
   if reviewed: price_note+=f'<p class="meta">{e(REVIEW_DATE[lang])}: <time datetime="{e(review["review_completed_at"])}">{reviewed.astimezone(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}</time></p>'
   eligibility=f'<p class="meta">{e(f[0])}: {e(country_name(market,lang) if market!="unknown" else f[2])}</p><p class="meta eligibility">{e(f[1])}: {e(", ".join(country_name(c,lang) for c in countries) if countries else f[3])}</p>'

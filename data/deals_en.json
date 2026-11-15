@@ -1244,10 +1244,10 @@
       "rocket": false,
       "specs": [],
       "briefing": [
-        "Key: Record your screen and gameplay.",
-        "Condition: New users; 1 Windows device; version 4.20.2.",
-        "Checked: November 10, 2026 · Add to Cart shown",
-        "Check: Redeem within 30 days. Windows 7/8/8.1/10/11."
+        "Windows screen/game recorder; seller listing names v4.20.2 with updates included.",
+        "StackSocial USD9.99: new users, one device, redeem within30 days. Commercial license scope is unconfirmed.",
+        "Official Home USD19.77 is non-commercial; Commercial USD32.95 is for revenue-producing work. These are different license conditions, not interchangeable savings.",
+        "Unredeemed StackSocial codes: store credit within30 days; redeemed licenses final. Country eligibility, checkout taxes and final bill untested."
       ],
       "audience": "Check OS, license and regional eligibility before purchase.",
       "source": {
@@ -1256,7 +1256,7 @@
         "url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder"
       },
       "published_at": null,
-      "checked_date": "2026-11-10",
+      "checked_date": "2026-11-15",
       "score": null,
       "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Expiry unknown.",
       "ai_rewritten": false,
@@ -1275,16 +1275,16 @@
         "activation": "License activation country restrictions have not been verified.",
         "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
         "tax": "Delivery fees, taxes and final total: check checkout.",
-        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "returns": "StackSocial: unredeemed licenses may be returned for store credit within30 days; redeemed licenses final.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
       },
       "link_review": {
         "status": "verified_detail",
-        "checked_at": "2026-11-10T11:59:16.145254+00:00",
+        "checked_at": "2026-11-15T03:20:15.220096+00:00",
         "url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder",
         "product_match": true,
-        "evidence": "Seller product title: Action! Screen &amp; Gameplay Recorder: Lifetime Subscription | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+        "evidence": "Direct listing Action! Screen & Gameplay Recorder matches product; USD9.99 displayed. License commercial scope not verified.",
         "reason": "product_detail; "
       },
       "link_original": {
@@ -1302,26 +1302,39 @@
         "currency": "USD",
         "price_status": "seller_page_display_confirmed",
         "verified_price": 9.99,
-        "deal_status": "below_vendor_displayed_price_with_caveat",
+        "deal_status": "license_scope_not_comparable",
         "evidence": [
           {
             "url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder",
-            "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+            "result": "Observed USD9.99, new users,1device,30-day redemption,unredeemed30-day storecredit / redeemed final."
+          },
+          {
+            "url": "https://mirillis.com/store-action-paysafecard",
+            "result": "Home19.77USD / Commercial32.95USD base license, optional extended service2USD separately displayed."
+          },
+          {
+            "url": "https://mirillis.com/purchase-faq",
+            "result": "FAQ distinguishes non-commercial Home from Commercial including revenue-producing projects/YouTubers."
           }
         ],
         "limitations": [
-          "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+          "Price shown on product pages, not completed checkout. Country eligibility including Korea, tax and activation unverified.",
+          "Official checkout has optional extended download/serial reminder service +USD2; displayed base prices are not guaranteed final totals."
         ],
         "comparison": {
-          "url": "https://mirillis.com/store",
+          "url": "https://mirillis.com/store-action-paysafecard",
           "price": 19.77,
           "currency": "USD",
-          "note": "Official current flash-sale price from19.77, not former29.95; license scope must match."
+          "same_product_variant": false,
+          "checked_at": "2026-11-15T03:20:15.220096+00:00",
+          "license_url": "https://mirillis.com/purchase-faq",
+          "note": "Home USD19.77: private non-commercial. Commercial USD32.95: revenue-producing projects. StackSocial commercial scope unconfirmed; no equivalent-license savings claim."
         },
         "conditions": [
-          "New users only;1device;v4.20.2;redeem30days."
+          "New users only; 1 Windows device; redeem within30 days.",
+          "Commercial rights not specified by StackSocial; do not assume equivalent to official Commercial."
         ],
-        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+        "review_completed_at": "2026-11-15T03:20:15.220096+00:00"
       },
       "storefront_country": null
     },
