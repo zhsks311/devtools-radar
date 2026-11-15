@@ -66,8 +66,8 @@ class RendererTests(unittest.TestCase):
         self.assertEqual(len(cards),len(payload['feed']))
         self.assertEqual(sum(a['data-country']=='CN' for a in cards),4)
         self.assertEqual(sum(a['data-country']=='AU' for a in cards),1)
-        self.assertEqual(sum(a['data-country']=='unverified' for a in cards),10)
-        self.assertEqual(sum(a['data-topic']=='cloud' for a in cards),1)
+        self.assertEqual(sum(a['data-country']=='unverified' for a in cards),sum(d.get('storefront_country') is None for d in payload['feed']))
+        self.assertEqual(sum(a['data-topic']=='cloud' for a in cards),sum(d.get('category')=='cloud' for d in payload['feed']))
         self.assertFalse(any('open' in a for t,a in parser.tags if t=='details'))
         for d in payload['feed']:
             for key in ['delivery','activation','payment','tax','returns']:
@@ -122,7 +122,7 @@ class EditorialTests(unittest.TestCase):
         self.assertIn('checkout was not completed',en)
         for deal in build.load_deals(build.DEALS_EN_DATA_PATH)['feed']:
             self.assertEqual(deal['link']['label_kind'], 'retailer')
-            self.assertTrue(deal['link']['url'].startswith(('https://www.stacksocial.com/sales/', 'https://www.ebgames.com.au/product/', 'https://store.dji.com/cn/product/', 'https://item.lenovo.com.cn/product/')))
+            self.assertTrue(deal['link']['url'].startswith(('https://appsumo.com/products/', 'https://www.stacksocial.com/sales/', 'https://www.ebgames.com.au/product/', 'https://store.dji.com/cn/product/', 'https://item.lenovo.com.cn/product/')))
             self.assertIsNone(deal['discount_pct'])
             self.assertIsNone(deal['published_at'])
 

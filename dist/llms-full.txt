@@ -1279,6 +1279,14 @@ A reviewed link is not proof of current stock, a discount or completed checkout.
 Prices can change. Countries below refer only to recorded delivery/activation evidence, not payment eligibility.
 Localized catalog and purchase conditions: https://devteardown.com/deals/
 
+### 올리브영 전용 기프트카드 20,000원권
+Seller: 쿠팡 · 즐거운(스마일콘)
+Product URL: https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536
+Product-link review: 2026-11-15T01:05:55.545403+00:00 (not a stock check)
+Recorded price: 19600 KRW. Seller price observation dated 2026-11-15T01:05:55.545403+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### 벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트
 Seller: Gmarket · 벨킨공식판매원
 Product URL: https://item.gmarket.co.kr/Item?goodsCode=4758759898
@@ -1423,4 +1431,28 @@ Recorded price: 249.0 USD. Seller price observation dated 2026-11-14T12:44:20.41
 Delivery / activation countries with evidence: US.
 Discounts and historical-low claims are not established by this export.
 
-14 held source records are omitted from this export; their purchase links are not verified.
+### SEOAgent · Tier 1
+Seller: StackSocial
+Product URL: https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1
+Product-link review: 2026-11-15T01:04:34.990070+00:00 (not a stock check)
+Recorded price: 69 USD. Seller price observation dated 2026-11-15T01:04:34.990070+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### Moonitor · Solo
+Seller: AppSumo
+Product URL: https://appsumo.com/products/moonitor-uptime-monitoring/
+Product-link review: 2026-11-15T01:04:34.990070+00:00 (not a stock check)
+Recorded price: 45.9 USD. Seller price observation dated 2026-11-15T01:04:34.990070+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### Otter A/B · Tier 1
+Seller: AppSumo
+Product URL: https://appsumo.com/products/otter-ab/
+Product-link review: 2026-11-15T01:04:34.990070+00:00 (not a stock check)
+Recorded price: 67.15 USD. Seller price observation dated 2026-11-15T01:04:34.990070+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+13 held source records are omitted from this export; their purchase links are not verified.

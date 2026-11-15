@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T12:44:20.414842+00:00",
+  "generated_at": "2026-11-15T01:04:34.990070+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -1526,6 +1526,252 @@
           "displayed_price": 199.2
         }
       }
+    },
+    {
+      "id": "seoagent-tier-1",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "SEOAgent · Tier 1",
+      "product": "SEOAgent · Tier 1",
+      "store": "StackSocial",
+      "storefront_country": null,
+      "price": 69,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "1 website; 1,000 monthly credits, no rollover. Research and tracking only; AI article writing/editing excluded. Redeem within 30 days. Unredeemed: 30-day store-credit return; redeemed: final sale.",
+        "Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+      ],
+      "audience": "Users who meet the seller licence terms.",
+      "source": {
+        "id": "stacksocial",
+        "label": "StackSocial product detail",
+        "url": "https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-15",
+      "score": null,
+      "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital licence; no physical delivery.",
+        "activation": "1 website; 1,000 monthly credits, no rollover. Research and tracking only; AI article writing/editing excluded. Redeem within 30 days. Unredeemed: 30-day store-credit return; redeemed: final sale.",
+        "payment": "Billing country, tax and final checkout not tested.",
+        "tax": "Displayed USD price; final tax and total require checkout.",
+        "returns": "1 website; 1,000 monthly credits, no rollover. Research and tracking only; AI article writing/editing excluded. Redeem within 30 days. Unredeemed: 30-day store-credit return; redeemed: final sale.",
+        "evidence_url": "https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1",
+        "checked_at": "2026-11-15"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T01:04:34.990070+00:00",
+        "url": "https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1",
+        "product_match": true,
+        "evidence": "Seller product detail read 2026-11-15T01:04:34.990070+00:00: SEOAgent · Tier 1, USD 69.00, purchase control and plan terms displayed. Features are seller claims; checkout untested."
+      },
+      "price_review": {
+        "id": "seoagent-tier-1",
+        "product": "SEOAgent · Tier 1",
+        "seller_url": "https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1",
+        "recorded_price": 69,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 69,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1",
+            "observed_at": "2026-11-15T01:04:34.990070+00:00",
+            "result": "Seller product detail read 2026-11-15T01:04:34.990070+00:00: SEOAgent · Tier 1, USD 69.00, purchase control and plan terms displayed. Features are seller claims; checkout untested."
+          }
+        ],
+        "conditions": [
+          "1 website; 1,000 monthly credits, no rollover. Research and tracking only; AI article writing/editing excluded. Redeem within 30 days. Unredeemed: 30-day store-credit return; redeemed: final sale."
+        ],
+        "limitations": [
+          "Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+        ],
+        "review_completed_at": "2026-11-15T01:04:34.990070+00:00"
+      }
+    },
+    {
+      "id": "moonitor-solo",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Moonitor · Solo",
+      "product": "Moonitor · Solo",
+      "store": "AppSumo",
+      "storefront_country": null,
+      "price": 45.9,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "20 monitors, 1 team/user, 60-second checks; website/API, ping and SSL monitoring. Lifetime plan, activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back.",
+        "Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+      ],
+      "audience": "Users who meet the seller licence terms.",
+      "source": {
+        "id": "appsumo",
+        "label": "AppSumo product detail",
+        "url": "https://appsumo.com/products/moonitor-uptime-monitoring/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-15",
+      "score": null,
+      "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://appsumo.com/products/moonitor-uptime-monitoring/",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital licence; no physical delivery.",
+        "activation": "20 monitors, 1 team/user, 60-second checks; website/API, ping and SSL monitoring. Lifetime plan, activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back.",
+        "payment": "Billing country, tax and final checkout not tested.",
+        "tax": "Displayed USD price; final tax and total require checkout.",
+        "returns": "20 monitors, 1 team/user, 60-second checks; website/API, ping and SSL monitoring. Lifetime plan, activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back.",
+        "evidence_url": "https://appsumo.com/products/moonitor-uptime-monitoring/",
+        "checked_at": "2026-11-15"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T01:04:34.990070+00:00",
+        "url": "https://appsumo.com/products/moonitor-uptime-monitoring/",
+        "product_match": true,
+        "evidence": "Seller product detail read 2026-11-15T01:04:34.990070+00:00: Moonitor · Solo, USD 45.90, purchase control and plan terms displayed. Features are seller claims; checkout untested."
+      },
+      "price_review": {
+        "id": "moonitor-solo",
+        "product": "Moonitor · Solo",
+        "seller_url": "https://appsumo.com/products/moonitor-uptime-monitoring/",
+        "recorded_price": 45.9,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 45.9,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://appsumo.com/products/moonitor-uptime-monitoring/",
+            "observed_at": "2026-11-15T01:04:34.990070+00:00",
+            "result": "Seller product detail read 2026-11-15T01:04:34.990070+00:00: Moonitor · Solo, USD 45.90, purchase control and plan terms displayed. Features are seller claims; checkout untested."
+          }
+        ],
+        "conditions": [
+          "20 monitors, 1 team/user, 60-second checks; website/API, ping and SSL monitoring. Lifetime plan, activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back."
+        ],
+        "limitations": [
+          "Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+        ],
+        "review_completed_at": "2026-11-15T01:04:34.990070+00:00"
+      }
+    },
+    {
+      "id": "otter-ab-tier-1",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Otter A/B · Tier 1",
+      "product": "Otter A/B · Tier 1",
+      "store": "AppSumo",
+      "storefront_country": null,
+      "price": 67.15,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "1 website, 10 concurrent experiments, unlimited visitors. Lifetime plan; activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back. Not Otter.ai transcription.",
+        "Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+      ],
+      "audience": "Users who meet the seller licence terms.",
+      "source": {
+        "id": "appsumo",
+        "label": "AppSumo product detail",
+        "url": "https://appsumo.com/products/otter-ab/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-15",
+      "score": null,
+      "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://appsumo.com/products/otter-ab/",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital licence; no physical delivery.",
+        "activation": "1 website, 10 concurrent experiments, unlimited visitors. Lifetime plan; activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back. Not Otter.ai transcription.",
+        "payment": "Billing country, tax and final checkout not tested.",
+        "tax": "Displayed USD price; final tax and total require checkout.",
+        "returns": "1 website, 10 concurrent experiments, unlimited visitors. Lifetime plan; activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back. Not Otter.ai transcription.",
+        "evidence_url": "https://appsumo.com/products/otter-ab/",
+        "checked_at": "2026-11-15"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T01:04:34.990070+00:00",
+        "url": "https://appsumo.com/products/otter-ab/",
+        "product_match": true,
+        "evidence": "Seller product detail read 2026-11-15T01:04:34.990070+00:00: Otter A/B · Tier 1, USD 67.15, purchase control and plan terms displayed. Features are seller claims; checkout untested."
+      },
+      "price_review": {
+        "id": "otter-ab-tier-1",
+        "product": "Otter A/B · Tier 1",
+        "seller_url": "https://appsumo.com/products/otter-ab/",
+        "recorded_price": 67.15,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 67.15,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://appsumo.com/products/otter-ab/",
+            "observed_at": "2026-11-15T01:04:34.990070+00:00",
+            "result": "Seller product detail read 2026-11-15T01:04:34.990070+00:00: Otter A/B · Tier 1, USD 67.15, purchase control and plan terms displayed. Features are seller claims; checkout untested."
+          }
+        ],
+        "conditions": [
+          "1 website, 10 concurrent experiments, unlimited visitors. Lifetime plan; activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back. Not Otter.ai transcription."
+        ],
+        "limitations": [
+          "Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+        ],
+        "review_completed_at": "2026-11-15T01:04:34.990070+00:00"
+      }
     }
   ],
   "picks": [
@@ -2409,7 +2655,7 @@
     }
   },
   "stats": {
-    "feed": 15,
-    "sources": 4
+    "feed": 18,
+    "sources": 5
   }
 }

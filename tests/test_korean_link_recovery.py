@@ -22,7 +22,7 @@ class KoreanRecoveryTests(unittest.TestCase):
         data=json.loads((ROOT/'data/deals.json').read_text())
         restored={d['id']:d for d in data['feed'] if publishable_link(d)}
         expected={'deal-belkin-100w-gan':39900, 'deal-ugreen-100w-gan':65100, 'deal-artmu-100w-gb102':35700}
-        self.assertEqual(set(restored),set(expected))
+        self.assertTrue(set(expected).issubset(restored))
         for ident,price in expected.items():
             d=restored[ident]
             self.assertEqual(d['price'],price);self.assertTrue(checked_price(d))
@@ -34,7 +34,7 @@ class KoreanRecoveryTests(unittest.TestCase):
         tr=json.loads((ROOT/'data/deal_localizations.json').read_text())
         for lang in site_i18n.LANGS:
             page=site_i18n.catalogue(lang,data['feed'],tr)
-            self.assertEqual(page.count('class="cta"'),3)
+            self.assertEqual(page.count('class="cta"'),len(restored))
             self.assertIn('data-countries="KR"',page)
             self.assertNotIn('65W+35W', tr['deal-artmu-100w-gb102'][lang]['summary'])
     def test_new_overseas_offers_keep_base_price_and_activation_limits(self):

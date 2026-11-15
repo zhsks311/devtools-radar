@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T12:43:08.562400+00:00",
+  "generated_at": "2026-11-15T01:05:55.545403+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -92,11 +92,11 @@
       "target": "ko",
       "category": "vouchers",
       "category_label": "모바일 상품권 · e쿠폰",
-      "title_raw": "[실시간e쿠폰] [CJONE] 올리브영 기프트카드 20,000원권 (2% 할인 19,600원)",
-      "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
-      "store": "쿠팡 실시간e쿠폰",
+      "title_raw": "[CJONE] 올리브영 기프트카드 2만원권 [0000108399]",
+      "product": "올리브영 전용 기프트카드 20,000원권",
+      "store": "쿠팡 · 즐거운(스마일콘)",
       "price": 19600,
-      "shipping": "결제 즉시 문자/카카오톡 발송",
+      "shipping": "MMS mobile coupon",
       "rocket": false,
       "specs": [
         "CJ ONE 적립/사용 가능",
@@ -104,29 +104,25 @@
         "실시간 바코드 전송"
       ],
       "briefing": [
-        "실구매가: 19,600원 (정가 2만 원에서 2% 즉시할인 e쿠폰)",
-        "추천: 화장품·면도날·영양제·간식 올리브영 쇼핑 전 상테크 생활비 절약",
-        "체크: 결제 완료 즉시 바코드가 발송되어 오프라인 매장 결제 시 바로 사용 가능"
+        "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed."
       ],
       "audience": "올리브영 세일이나 생필품 구매 시 상테크 생활비 할인을 챙기는 분",
       "published_at": "2026-11-10T15:28:00+09:00",
       "score": 97,
-      "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+      "disclosure": "Direct seller link, no affiliate tracking. Current page price observed; checkout and coupon receipt untested. No independently verified lowest price.",
       "ai_rewritten": true,
       "link": {
-        "url": "https://link.coupang.com/a/iyI8z25s60",
-        "tracked": true,
-        "matched_keyword": "올리브영 기프트카드",
-        "label": "올리브영 기프트카드 2만원권 (실시간 e쿠폰)",
-        "label_kind": "상품"
+        "url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
       },
       "link_review": {
-        "status": "held",
-        "checked_at": "2026-11-10T11:58:40.903697+00:00",
-        "url": "https://link.coupang.com/a/iyI8z25s60",
-        "product_match": false,
-        "evidence": "쿠팡!",
-        "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T01:05:55.545403+00:00",
+        "url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+        "product_match": true,
+        "evidence": "Direct seller HTML observed 2026-11-15T01:05:55.545403+00:00: exact 20,000 KRW Olive Young option vendorItemId 70000236938095, displayed salePrice 19600, ON_SALE signal. Checkout, stock fulfilment and receipt not tested."
       },
       "link_original": {
         "url": "https://link.coupang.com/a/iyI8z25s60",
@@ -137,25 +133,25 @@
       },
       "price_review": {
         "id": "deal-oliveyoung-gift-card-20k",
-        "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
-        "seller_url": "https://link.coupang.com/a/iyI8z25s60",
+        "product": "올리브영 전용 기프트카드 20,000원권",
+        "seller_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
         "recorded_price": 19600,
         "currency": "KRW",
-        "price_status": "unverified",
-        "verified_price": null,
-        "deal_status": "unverified",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 19600,
+        "deal_status": "regular_price_or_discount_unproven",
         "evidence": [
           {
-            "url": "https://link.coupang.com/a/iyI8z25s60",
-            "result": "product_route_unverified",
-            "provenance": "link worker current direct request audit"
+            "url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+            "observed_at": "2026-11-15T01:05:55.545403+00:00",
+            "result": "Direct seller HTML observed 2026-11-15T01:05:55.545403+00:00: exact 20,000 KRW Olive Young option vendorItemId 70000236938095, displayed salePrice 19600, ON_SALE signal. Checkout, stock fulfilment and receipt not tested."
           }
         ],
         "limitations": [
-          "Current exact product, option, seller price and inventory could not be verified.",
-          "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+          "Face value is not an independently verified previous market price.",
+          "Order, payment and delivery not tested."
         ],
-        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+        "review_completed_at": "2026-11-15T01:05:55.545403+00:00"
       },
       "historical_claims": {
         "original_price": 20000,
@@ -163,7 +159,27 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-15",
+      "price_source": "retailer_product_page",
+      "source": {
+        "id": "coupang",
+        "label": "Coupang exact Olive Young 20,000 won option",
+        "url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "MMS mobile coupon; recipient requirements untested.",
+        "activation": "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed.",
+        "payment": "Payment and recipient eligibility untested.",
+        "tax": "Final checkout total untested.",
+        "returns": "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed.",
+        "evidence_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+        "checked_at": "2026-11-15"
+      }
     },
     {
       "id": "deal-pepero-sampler-6pack",
@@ -1433,11 +1449,11 @@
           "target": "ko",
           "category": "vouchers",
           "category_label": "모바일 상품권 · e쿠폰",
-          "title_raw": "[실시간e쿠폰] [CJONE] 올리브영 기프트카드 20,000원권 (2% 할인 19,600원)",
-          "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
-          "store": "쿠팡 실시간e쿠폰",
+          "title_raw": "[CJONE] 올리브영 기프트카드 2만원권 [0000108399]",
+          "product": "올리브영 전용 기프트카드 20,000원권",
+          "store": "쿠팡 · 즐거운(스마일콘)",
           "price": 19600,
-          "shipping": "결제 즉시 문자/카카오톡 발송",
+          "shipping": "MMS mobile coupon",
           "rocket": false,
           "specs": [
             "CJ ONE 적립/사용 가능",
@@ -1445,29 +1461,25 @@
             "실시간 바코드 전송"
           ],
           "briefing": [
-            "실구매가: 19,600원 (정가 2만 원에서 2% 즉시할인 e쿠폰)",
-            "추천: 화장품·면도날·영양제·간식 올리브영 쇼핑 전 상테크 생활비 절약",
-            "체크: 결제 완료 즉시 바코드가 발송되어 오프라인 매장 결제 시 바로 사용 가능"
+            "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed."
           ],
           "audience": "올리브영 세일이나 생필품 구매 시 상테크 생활비 할인을 챙기는 분",
           "published_at": "2026-11-10T15:28:00+09:00",
           "score": 97,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "disclosure": "Direct seller link, no affiliate tracking. Current page price observed; checkout and coupon receipt untested. No independently verified lowest price.",
           "ai_rewritten": true,
           "link": {
-            "url": "https://link.coupang.com/a/iyI8z25s60",
-            "tracked": true,
-            "matched_keyword": "올리브영 기프트카드",
-            "label": "올리브영 기프트카드 2만원권 (실시간 e쿠폰)",
-            "label_kind": "상품"
+            "url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+            "tracked": false,
+            "label": "View actual product",
+            "label_kind": "retailer"
           },
           "link_review": {
-            "status": "held",
-            "checked_at": "2026-11-10T11:58:40.903697+00:00",
-            "url": "https://link.coupang.com/a/iyI8z25s60",
-            "product_match": false,
-            "evidence": "쿠팡!",
-            "reason": "Search redirect or exact product could not be established from accessible seller content: product_route_unverified"
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T01:05:55.545403+00:00",
+            "url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+            "product_match": true,
+            "evidence": "Direct seller HTML observed 2026-11-15T01:05:55.545403+00:00: exact 20,000 KRW Olive Young option vendorItemId 70000236938095, displayed salePrice 19600, ON_SALE signal. Checkout, stock fulfilment and receipt not tested."
           },
           "link_original": {
             "url": "https://link.coupang.com/a/iyI8z25s60",
@@ -1478,25 +1490,25 @@
           },
           "price_review": {
             "id": "deal-oliveyoung-gift-card-20k",
-            "product": "올리브영 기프트카드 20,000원권 (실시간 e쿠폰)",
-            "seller_url": "https://link.coupang.com/a/iyI8z25s60",
+            "product": "올리브영 전용 기프트카드 20,000원권",
+            "seller_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
             "recorded_price": 19600,
             "currency": "KRW",
-            "price_status": "unverified",
-            "verified_price": null,
-            "deal_status": "unverified",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 19600,
+            "deal_status": "regular_price_or_discount_unproven",
             "evidence": [
               {
-                "url": "https://link.coupang.com/a/iyI8z25s60",
-                "result": "product_route_unverified",
-                "provenance": "link worker current direct request audit"
+                "url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+                "observed_at": "2026-11-15T01:05:55.545403+00:00",
+                "result": "Direct seller HTML observed 2026-11-15T01:05:55.545403+00:00: exact 20,000 KRW Olive Young option vendorItemId 70000236938095, displayed salePrice 19600, ON_SALE signal. Checkout, stock fulfilment and receipt not tested."
               }
             ],
             "limitations": [
-              "Current exact product, option, seller price and inventory could not be verified.",
-              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+              "Face value is not an independently verified previous market price.",
+              "Order, payment and delivery not tested."
             ],
-            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+            "review_completed_at": "2026-11-15T01:05:55.545403+00:00"
           },
           "historical_claims": {
             "original_price": 20000,
@@ -1504,7 +1516,27 @@
             "status": "rejected",
             "reason": "comparison_evidence_unverified"
           },
-          "storefront_country": "KR"
+          "storefront_country": "KR",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-15",
+          "price_source": "retailer_product_page",
+          "source": {
+            "id": "coupang",
+            "label": "Coupang exact Olive Young 20,000 won option",
+            "url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "MMS mobile coupon; recipient requirements untested.",
+            "activation": "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed.",
+            "payment": "Payment and recipient eligibility untested.",
+            "tax": "Final checkout total untested.",
+            "returns": "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed.",
+            "evidence_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+            "checked_at": "2026-11-15"
+          }
         },
         {
           "id": "deal-coupang-gift-card-10k",

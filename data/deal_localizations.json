@@ -34,33 +34,33 @@
   "deal-oliveyoung-gift-card-20k": {
     "en": {
       "product": "Olive Young ₩20,000 gift card",
-      "summary": "Mobile barcode gift card with a ₩20,000 face value.",
-      "conditions": "Check redemption locations, validity and CJ ONE eligibility. Korean-market listing; current price, stock and address-specific delivery have not been reverified. Check seller terms before purchase."
+      "summary": "Olive Young-only gift card; exact KRW20,000 option.",
+      "conditions": "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed."
     },
     "ko": {
       "product": "올리브영 20,000원 기프트카드",
-      "summary": "액면가 20,000원의 모바일 바코드 기프트카드.",
-      "conditions": "사용 가능 매장·유효기간·CJ ONE 적용 조건을 확인하세요. 한국 판매처 자료이며 현재 가격·재고·주소별 배송은 재검증하지 않았습니다. 구매 전 판매 조건을 확인하세요."
+      "summary": "올리브영 전용 기프트카드 2만원 옵션.",
+      "conditions": "올리브영 전용 2만원권이며 CJ ONE 전 브랜드 상품권이 아닙니다. MMS 발송, 최초 유효기간 1년·CJ ONE 규정에 따라 연장. 미사용은 최초 유효기간 내 100%, 경과 후 구매액 90% 환불. 60% 이상 사용 시 잔액 환불. 재판매·양도 금지. 주문·결제·수신 미검증, 페이지 재고는 보장 아님."
     },
     "zh": {
       "product": "Olive Young 20,000韩元礼品卡",
-      "summary": "面值20,000韩元的手机条码礼品卡。",
-      "conditions": "请核对可用门店、有效期及 CJ ONE 适用条件。 韩国市场商品信息；当前价格、库存和具体地址配送尚未重新核实。购买前请查看卖家条款。"
+      "summary": "Olive Young专用20,000韩元礼卡。",
+      "conditions": "仅限Olive Young的20,000韩元礼卡，并非CJ ONE全品牌券。MMS发送，有效期最初1年，可按CJ ONE规则延期。未使用在原有效期内全额退款，过期后退购买额90%；使用60%后可退余额。禁止转售或转让。下单、付款、接收未测试；库存不保证。"
     },
     "ja": {
       "product": "Olive Young 20,000ウォンのギフトカード",
-      "summary": "額面20,000ウォンのモバイルバーコード式ギフトカード。",
-      "conditions": "利用店舗・有効期限・CJ ONE の適用条件をご確認ください。 韓国向け掲載情報です。現在の価格・在庫・住所別配送は再確認していません。購入前に販売条件をご確認ください。"
+      "summary": "Olive Young専用2万ウォン券。",
+      "conditions": "Olive Young専用2万ウォン券。CJ ONE全ブランド券ではありません。MMS送信、初期有効期限1年、延長はCJ ONE規定によります。未使用は初期期限内100%、期限後購入額90%返金。60%以上利用で残額返金。転売・譲渡禁止。注文・決済・受信未検証、在庫保証なし。"
     },
     "es": {
       "product": "Tarjeta regalo Olive Young de ₩20.000",
-      "summary": "Tarjeta regalo móvil con código de barras y valor de ₩20.000.",
-      "conditions": "Comprueba establecimientos, caducidad y condiciones de CJ ONE. Oferta del mercado coreano; no se han vuelto a verificar el precio, las existencias ni la entrega por dirección. Consulta las condiciones del vendedor."
+      "summary": "Tarjeta de 20.000 KRW exclusiva para Olive Young.",
+      "conditions": "Tarjeta de 20.000 KRW solo para Olive Young, no para todas las marcas CJ ONE. Envío MMS; validez inicial de 1 año, ampliación según CJ ONE. Sin usar: reembolso íntegro durante validez inicial, 90% después; saldo reembolsable tras usar 60%. Sin reventa ni transferencia. Compra, pago y recepción sin probar; stock no garantizado."
     },
     "fr": {
       "product": "Carte cadeau Olive Young de 20 000 ₩",
-      "summary": "Carte cadeau mobile à code-barres, d’une valeur de 20 000 ₩.",
-      "conditions": "Vérifiez les points d’utilisation, la validité et les conditions CJ ONE. Offre du marché coréen ; prix actuel, stock et livraison à une adresse précise non revérifiés. Consultez les conditions du vendeur."
+      "summary": "Carte de 20 000 KRW réservée à Olive Young.",
+      "conditions": "Carte de 20 000 KRW réservée à Olive Young, pas à toutes les marques CJ ONE. Envoi MMS ; validité initiale d’un an, prolongation selon CJ ONE. Inutilisée : remboursement intégral avant expiration initiale, 90 % après ; solde remboursable après utilisation de 60 %. Revente et transfert interdits. Commande, paiement et réception non testés ; stock non garanti."
     }
   },
   "deal-pepero-sampler-6pack": {
@@ -1021,6 +1021,102 @@
       "product": "Babbel · accès à vie à 14 langues",
       "summary": "Abonnement linguistique comprenant actuellement 14 langues.",
       "conditions": "Nouveaux utilisateurs aux États-Unis uniquement. Activation web sous 30 jours, puis accès mobile. Non activé : crédit boutique sous 30 jours ; activé : vente définitive. Coupon DEAL20 non testé. Campagne DEAL20 : du 9 au 15 novembre 2026 selon le vendeur ; exclusions applicables. La page officielle ne précise ni heure exacte ni fuseau de fin. Application du coupon et montant final non testés."
+    }
+  },
+  "seoagent-tier-1": {
+    "en": {
+      "product": "SEOAgent · Tier 1",
+      "summary": "Seller-listed software plan; check the limits below.",
+      "conditions": "1 website; 1,000 monthly credits, no rollover. Research and tracking only; AI article writing/editing excluded. Redeem within 30 days. Unredeemed: 30-day store-credit return; redeemed: final sale. Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+    },
+    "ko": {
+      "product": "SEOAgent · Tier 1",
+      "summary": "판매처에 등록된 소프트웨어 플랜입니다. 아래 이용 한도를 확인하세요.",
+      "conditions": "사이트 1개, 월 1,000크레딧(이월 불가). 조사·추적용이며 AI 글 작성·편집은 제외됩니다. 30일 내 등록. 미등록은 구매 후 30일 내 스토어 크레딧 환불, 등록 후 환불 불가. 한국 활성화·결제 가능 여부, 세금과 최종 결제 금액은 미확인입니다. 할인·최저가의 독립 근거는 없습니다."
+    },
+    "zh": {
+      "product": "SEOAgent · Tier 1",
+      "summary": "卖家列出的软件方案，请查看以下限制。",
+      "conditions": "1个网站，每月1,000积分，不结转。仅研究与跟踪，不含AI写作或编辑。30天内激活；未激活可在购买后30天内退为商店余额，激活后不可退款。 韩国激活、付款资格、税费及结账金额未核实。没有独立折扣或最低价证据。"
+    },
+    "ja": {
+      "product": "SEOAgent · Tier 1",
+      "summary": "販売者が掲載するソフトウェアプラン。下記の制限をご確認ください。",
+      "conditions": "1サイト・月1,000クレジット、繰越不可。調査・追跡専用でAI記事作成・編集は対象外。30日以内に有効化。未使用は購入後30日以内にストア残高で返金、有効化後は返金不可。 韓国での有効化・決済可否、税金と最終金額は未確認。割引・最安値の独立した根拠はありません。"
+    },
+    "es": {
+      "product": "SEOAgent · Tier 1",
+      "summary": "Plan de software anunciado por el vendedor; consulta los límites.",
+      "conditions": "1 sitio y 1.000 créditos mensuales sin acumulación. Investigación y seguimiento; sin redacción ni edición con IA. Activar en 30 días. Sin activar: devolución en crédito de tienda en 30 días; activado: venta definitiva. Activación y pago desde Corea, impuestos y total final sin verificar. Sin pruebas independientes de descuento o precio mínimo."
+    },
+    "fr": {
+      "product": "SEOAgent · Tier 1",
+      "summary": "Offre logicielle du vendeur ; consultez les limites ci-dessous.",
+      "conditions": "1 site, 1 000 crédits mensuels non reportables. Recherche et suivi uniquement, sans rédaction ni édition IA. Activation sous 30 jours. Non activé : avoir boutique sous 30 jours ; activé : vente définitive. Activation et paiement depuis la Corée, taxes et total final non vérifiés. Aucune preuve indépendante de réduction ou de prix minimum."
+    }
+  },
+  "moonitor-solo": {
+    "en": {
+      "product": "Moonitor · Solo",
+      "summary": "Seller-listed software plan; check the limits below.",
+      "conditions": "20 monitors, 1 team/user, 60-second checks; website/API, ping and SSL monitoring. Lifetime plan, activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back. Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+    },
+    "ko": {
+      "product": "Moonitor · Solo",
+      "summary": "판매처에 등록된 소프트웨어 플랜입니다. 아래 이용 한도를 확인하세요.",
+      "conditions": "모니터 20개, 팀/사용자 1개, 60초 간격. 웹사이트/API·Ping·SSL 모니터링. 평생 플랜, 60일 내 활성화. 판매처는 최대 60일 환불을 안내합니다. 초기 Radar 상품이며 We Got Your Back 보장은 제외됩니다. 한국 활성화·결제 가능 여부, 세금과 최종 결제 금액은 미확인입니다. 할인·최저가의 독립 근거는 없습니다."
+    },
+    "zh": {
+      "product": "Moonitor · Solo",
+      "summary": "卖家列出的软件方案，请查看以下限制。",
+      "conditions": "20个监控，1个团队/用户，60秒检查；网站/API、Ping和SSL。终身方案，60天内激活；页面标明最多60天可退款。早期Radar产品，不享有We Got Your Back保障。 韩国激活、付款资格、税费及结账金额未核实。没有独立折扣或最低价证据。"
+    },
+    "ja": {
+      "product": "Moonitor · Solo",
+      "summary": "販売者が掲載するソフトウェアプラン。下記の制限をご確認ください。",
+      "conditions": "監視20件、1チーム/ユーザー、60秒間隔。Web/API・Ping・SSL監視。買い切りプラン、60日以内に有効化。ページは最大60日の返金を案内。初期Radar製品でWe Got Your Back保証の対象外。 韓国での有効化・決済可否、税金と最終金額は未確認。割引・最安値の独立した根拠はありません。"
+    },
+    "es": {
+      "product": "Moonitor · Solo",
+      "summary": "Plan de software anunciado por el vendedor; consulta los límites.",
+      "conditions": "20 monitores, 1 equipo/usuario, comprobaciones cada 60 segundos; web/API, ping y SSL. Acceso vitalicio; activar en 60 días; devolución anunciada hasta 60 días. Producto Radar inicial, sin garantía We Got Your Back. Activación y pago desde Corea, impuestos y total final sin verificar. Sin pruebas independientes de descuento o precio mínimo."
+    },
+    "fr": {
+      "product": "Moonitor · Solo",
+      "summary": "Offre logicielle du vendeur ; consultez les limites ci-dessous.",
+      "conditions": "20 moniteurs, 1 équipe/utilisateur, contrôles toutes les 60 secondes ; web/API, ping et SSL. Accès à vie, activation sous 60 jours ; remboursement annoncé jusqu’à 60 jours. Produit Radar précoce, sans garantie We Got Your Back. Activation et paiement depuis la Corée, taxes et total final non vérifiés. Aucune preuve indépendante de réduction ou de prix minimum."
+    }
+  },
+  "otter-ab-tier-1": {
+    "en": {
+      "product": "Otter A/B · Tier 1",
+      "summary": "Seller-listed software plan; check the limits below.",
+      "conditions": "1 website, 10 concurrent experiments, unlimited visitors. Lifetime plan; activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back. Not Otter.ai transcription. Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+    },
+    "ko": {
+      "product": "Otter A/B · Tier 1",
+      "summary": "판매처에 등록된 소프트웨어 플랜입니다. 아래 이용 한도를 확인하세요.",
+      "conditions": "사이트 1개, 동시 실험 10개, 방문자 무제한. 평생 플랜, 60일 내 활성화. 판매처는 최대 60일 환불을 안내합니다. 초기 Radar 상품이며 We Got Your Back 보장은 제외됩니다. Otter.ai 녹취 서비스와 다릅니다. 한국 활성화·결제 가능 여부, 세금과 최종 결제 금액은 미확인입니다. 할인·최저가의 독립 근거는 없습니다."
+    },
+    "zh": {
+      "product": "Otter A/B · Tier 1",
+      "summary": "卖家列出的软件方案，请查看以下限制。",
+      "conditions": "1个网站，10个同时实验，访客不限。终身方案，60天内激活；页面标明最多60天可退款。早期Radar产品，无We Got Your Back保障。不是Otter.ai转录服务。 韩国激活、付款资格、税费及结账金额未核实。没有独立折扣或最低价证据。"
+    },
+    "ja": {
+      "product": "Otter A/B · Tier 1",
+      "summary": "販売者が掲載するソフトウェアプラン。下記の制限をご確認ください。",
+      "conditions": "1サイト、同時実験10件、訪問者数無制限。買い切り、60日以内に有効化。ページは最大60日の返金を案内。初期Radar製品、We Got Your Back保証対象外。Otter.ai文字起こしとは別製品。 韓国での有効化・決済可否、税金と最終金額は未確認。割引・最安値の独立した根拠はありません。"
+    },
+    "es": {
+      "product": "Otter A/B · Tier 1",
+      "summary": "Plan de software anunciado por el vendedor; consulta los límites.",
+      "conditions": "1 sitio, 10 experimentos simultáneos y visitantes ilimitados. Acceso vitalicio; activar en 60 días; devolución anunciada hasta 60 días. Producto Radar inicial sin We Got Your Back. No es la transcripción Otter.ai. Activación y pago desde Corea, impuestos y total final sin verificar. Sin pruebas independientes de descuento o precio mínimo."
+    },
+    "fr": {
+      "product": "Otter A/B · Tier 1",
+      "summary": "Offre logicielle du vendeur ; consultez les limites ci-dessous.",
+      "conditions": "1 site, 10 expériences simultanées, visiteurs illimités. Accès à vie, activation sous 60 jours ; remboursement annoncé jusqu’à 60 jours. Produit Radar précoce sans We Got Your Back. Distinct de la transcription Otter.ai. Activation et paiement depuis la Corée, taxes et total final non vérifiés. Aucune preuve indépendante de réduction ou de prix minimum."
     }
   }
 }
