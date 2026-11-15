@@ -45,8 +45,10 @@ UNKNOWN_SHORTCUT = {'en':'Browse destination-unverified products','ko':'배송·
 COUNTRY_ORDER = ('KR', 'CN', 'AU', 'US', 'JP', 'ES', 'FR')
 def country_name(code, lang):
  return FILTER_TEXT[lang][10 + COUNTRY_ORDER.index(code)] if code in COUNTRY_ORDER else code
-PRICE_CURRENT={'en':'Recorded seller price; not a live quote or verified checkout','ko':'판매페이지 가격 확인 기록 · 실시간 가격·최종 결제 미검증','zh':'卖家标价记录；非实时报价，结算价未验证','ja':'販売価格の確認記録・リアルタイム価格と決済は未確認','es':'Precio del vendedor registrado; no es una cotización en tiempo real ni un pago verificado','fr':'Prix vendeur relevé ; ni prix en temps réel ni paiement vérifié'}
-DISCOUNT_UNKNOWN={'en':'Discount / historical low not established','ko':'할인·역대 최저가 근거 미확인','zh':'折扣及历史低价未证实','ja':'割引・過去最安値の根拠は未確認','es':'Descuento y mínimo histórico sin acreditar','fr':'Réduction et minimum historique non établis'}
+PRICE_CURRENT={'en':'Price when checked. Confirm the final total at checkout.','ko':'확인 당시 판매가입니다. 결제할 때 가격을 다시 확인하세요.','zh':'这是查看时的标价，请在结账时确认最终价格。','ja':'確認時の価格です。購入時に最終金額をご確認ください。','es':'Precio al consultarlo. Confirma el total al pagar.','fr':'Prix lors de notre consultation. Vérifiez le total avant de payer.'}
+PRICE_DETAILS={'en':'Price details and sources','ko':'가격 확인 내역과 출처','zh':'价格详情与来源','ja':'価格の詳細と出典','es':'Detalles del precio y fuentes','fr':'Détails du prix et sources'}
+DESTINATION_NOTE={'en':'Check delivery or activation availability with the seller.','ko':'배송이나 사용 가능 여부는 판매처에서 확인하세요.','zh':'请向卖家确认配送或激活地区。','ja':'配送・利用可能な地域は販売元でご確認ください。','es':'Consulta al vendedor dónde se puede recibir o activar.','fr':'Vérifiez les pays de livraison ou d’activation auprès du vendeur.'}
+DISCOUNT_UNKNOWN={'en':'Not confirmed as a discount or an all-time low.','ko':'할인이나 역대 최저가로 확인된 상품은 아닙니다.','zh':'尚未确认这是折扣价或历史最低价。','ja':'割引価格や過去最安値とは確認できていません。','es':'No se ha confirmado que sea un descuento ni un mínimo histórico.','fr':'Ni réduction ni prix le plus bas confirmé.'}
 SRP={
 'en':'Recorded price is {percent}% below official {currency} {price} RRP; not a proven historical low',
 'ko':'기록된 가격은 공식 권장가 {currency} {price} 대비 {percent}% 낮음 · 역대 최저 여부 미확인',
@@ -54,7 +56,7 @@ SRP={
 'ja':'記録価格は公式希望価格 {currency} {price} より{percent}%安い・過去最安の証明なし',
 'es':'Precio registrado un {percent}% inferior al PVP oficial de {currency} {price}; no mínimo histórico probado',
 'fr':'Prix relevé inférieur de {percent} % au prix conseillé officiel de {currency} {price} ; minimum historique non prouvé'}
-REVIEW_DATE={'en':'Review recorded','ko':'검토 기록일','zh':'审核记录时间','ja':'確認記録日時','es':'Revisión registrada','fr':'Relevé de vérification'}
+REVIEW_DATE={'en':'Price checked','ko':'가격 확인','zh':'价格查看时间','ja':'確認記録日時','es':'Revisión registrada','fr':'Relevé de vérification'}
 NOT_DISCOUNT={'en':'No discount: recorded sale and reference prices are equal','ko':'할인 아님 · 기록된 판매가와 비교가격이 동일','zh':'非折扣：记录售价与参考价相同','ja':'割引ではありません・記録された販売価格と比較価格が同額','es':'Sin descuento: precio registrado igual al de referencia','fr':'Pas de réduction : prix relevé identique au prix de référence'}
 ARCHIVE={'en':'Unverified listings (purchase links withheld)','ko':'검증 보류 상품 기록 (구매 링크 없음)','zh':'未核实商品记录（不提供购买链接）','ja':'未確認の商品記録（購入リンクなし）','es':'Registros sin verificar (sin enlace de compra)','fr':'Fiches non vérifiées (sans lien d’achat)'}
 ARCHIVE_NOTE={'en':'These older records are not active offers. Their exact product links could not be verified; no search links are substituted.','ko':'정확한 상품 링크를 확인하지 못한 이전 기록입니다. 판매 중인 상품 목록과 분리했으며 검색 링크로 대체하지 않습니다.','zh':'这些是历史记录，并非当前优惠。商品链接未能核实，不以搜索链接代替。','ja':'過去の記録であり、現在の販売リストではありません。商品リンクを確認できないため、検索リンクで代用しません。','es':'Son registros anteriores, no ofertas activas. No se sustituyen enlaces de producto sin verificar por búsquedas.','fr':'Ces anciennes fiches ne sont pas des offres actives. Aucun lien de recherche ne remplace un lien produit non vérifié.'}
@@ -189,27 +191,28 @@ def catalogue(lang,feeds,translations,discoveries=False):
    cta=f'<p><a class="buying-guide-link" href="{GUIDE_PATHS.get(lang,GUIDE_PATHS["en"])}">{e(GUIDE_LABELS[lang])}</a></p>'+cta
   review=d.get('price_review') or {}; current=checked_price(d)
   if not publishable_link(d): summary=HELD_SUMMARY[lang]
-  price_note=f'<p class="notice">{PRICE_CURRENT[lang] if current else PRICE_RECORDED[lang]}</p>'
+  price_context=f'<p class="notice">{PRICE_CURRENT[lang] if current else PRICE_RECORDED[lang]}</p>'
   srp=official_srp_comparison(d)
   savings=SRP[lang].format(percent=srp['percent'],currency=srp['currency'],price=f"{srp['price']:,.2f}") if srp else (NOT_DISCOUNT[lang] if review.get('deal_status')=='not_a_discount' else DISCOUNT_UNKNOWN[lang])
-  price_note+=f'<p class="notice">{e(savings)}</p>'
+  price_note=f'<p class="notice">{e(savings)}</p>'
   comparison=(review.get('comparison') or {}).get('url')
-  if loc.get('buying_note'): price_note+=f'<p class="notice buying-note">{e(loc["buying_note"])}</p>'
+  if loc.get('buying_note'): price_context+=f'<p class="notice buying-note">{e(loc["buying_note"])}</p>'
   alternative=d.get('alternative_review') or {}
   if loc.get('buying_note') and alternative.get('sources'):
-   price_note+='<p class="meta alternative-sources">'+' · '.join(f'<a href="{e(safe(source["url"]))}" rel="noopener nofollow">{e(source["label"])}</a>' for source in alternative['sources'])+f' · {e(alternative.get("checked_at", ""))}</p>'
+   price_context+='<p class="meta alternative-sources">'+' · '.join(f'<a href="{e(safe(source["url"]))}" rel="noopener nofollow">{e(source["label"])}</a>' for source in alternative['sources'])+f' · {e(alternative.get("checked_at", ""))}</p>'
   if comparison: price_note+=f'<a class="meta" href="{e(safe(comparison))}" rel="noopener nofollow">{t[30]}</a>'
   license_url=(review.get('comparison') or {}).get('license_url')
   if license_url: price_note+=f'<a class="meta license-source" href="{e(safe(license_url))}" rel="noopener nofollow">{t[30]} · Mirillis FAQ</a>'
   reviewed=observed_timestamp(review.get('review_completed_at'))
   if reviewed: price_note+=f'<p class="meta">{e(REVIEW_DATE[lang])}: <time datetime="{e(review["review_completed_at"])}">{reviewed.astimezone(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}</time></p>'
-  eligibility=f'<p class="meta">{e(f[0])}: {e(country_name(market,lang) if market!="unknown" else f[2])}</p><p class="meta eligibility">{e(f[1])}: {e(", ".join(country_name(c,lang) for c in countries) if countries else f[3])}</p>'
+  eligibility=(f'<p class="meta">{e(f[0])}: {e(country_name(market,lang))}</p>' if market!='unknown' else '')
+  eligibility+=f'<p class="meta eligibility">{e(f[1])+": "+e(", ".join(country_name(c,lang) for c in countries)) if countries else e(DESTINATION_NOTE[lang])}</p>'
   info=d.get('purchase_eligibility') or {}
   evidence=f'<p><a href="{e(safe(info.get("evidence_url")))}" rel="noopener nofollow">{e(f[4])}</a> · <time datetime="{e(info.get("checked_at"))}">{e(info.get("checked_at"))}</time></p>' if countries else ''
   terms=d.get('service_terms') or {}
   if terms.get('url'): evidence+=f'<p><a class="service-terms-source" href="{e(safe(terms["url"]))}" rel="noopener nofollow">{t[30]}</a></p>'
   linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}"{description}>{e(title)}</a>' if linked else e(title)
-  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(countries))}" data-category="{e(cat)}">{disclosure}{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p>{e(summary)}</p><div class="price">{e(price)}</div>{price_note}{eligibility}<details><summary>{t[12]}</summary><p>{e(conditions)}</p>{evidence}<p class="notice">{t[13]}</p></details><details><summary>{t[17]}</summary><pre class="original" lang="{'ko' if d.get('region')=='kr' else 'en'}">{e(json.dumps(record,ensure_ascii=False,indent=2))}</pre>{src}</details>{cta}<p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
+  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(countries))}" data-category="{e(cat)}">{disclosure}{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p>{e(summary)}</p><div class="price">{e(price)}</div>{price_context}{eligibility}<details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}</details><details><summary>{t[12]}</summary><p>{e(conditions)}</p>{evidence}<p class="notice">{t[13]}</p></details><details><summary>{t[17]}</summary><pre class="original" lang="{'ko' if d.get('region')=='kr' else 'en'}">{e(json.dumps(record,ensure_ascii=False,indent=2))}</pre>{src}</details>{cta}<p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  storefronts=sorted({storefront_country(d) for d in feeds}-{"unknown"})
  destinations=list(COUNTRY_ORDER)+sorted({c for d in feeds for c in confirmed_countries(d)}-set(COUNTRY_ORDER))
