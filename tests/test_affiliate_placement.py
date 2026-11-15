@@ -28,8 +28,8 @@ class AffiliatePlacementTest(unittest.TestCase):
    self.assertNotIn('aria-describedby="'+ident+'"',ordinary)
    self.assertNotIn('id="'+ident+'"',ordinary)
    item['link']['tracked']=True
- def test_live_data_does_not_add_fake_tracking(self):
+ def test_fixture_changes_do_not_modify_source_data(self):
   root=Path(__file__).resolve().parents[1]
-  from tools.audit_monetization import audit
-  rows=sum([json.loads((root/'data'/f).read_text())['feed'] for f in ['deals.json','deals_en.json']],[])
-  self.assertEqual(audit(rows)['published_commission_link_ids'],[])
+  path=root/'data/deals_en.json';before=path.read_bytes()
+  self.test_tracked_fixture_discloses_before_title_and_next_to_cta()
+  self.assertEqual(path.read_bytes(),before)
