@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'keyboardstack.com': r'/',  # Reviewed single-product official page, not a catalogue.
     'appsumo.com': r'/products/[a-z0-9][a-z0-9-]+/?',
     'www.coupang.com': r'/vp/products/\d+/?',
     'www.stacksocial.com': r'/sales/[a-z0-9][a-z0-9-]+/?',

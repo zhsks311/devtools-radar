@@ -1455,4 +1455,20 @@ Recorded price: 67.15 USD. Seller price observation dated 2026-11-15T01:04:34.99
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
+### KeyboardStack Premium · 3 Macs
+Seller: KeyboardStack
+Product URL: https://keyboardstack.com/
+Product-link review: 2026-11-15T12:50:08.861286+00:00 (not a stock check)
+Recorded price: 14.99 USD. Seller price observation dated 2026-11-15T12:50:08.861286+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### NoCodeBackend · Tier 1
+Seller: AppSumo
+Product URL: https://appsumo.com/products/nocodebackend/
+Product-link review: 2026-11-15T12:50:37+00:00 (not a stock check)
+Recorded price: 79 USD. Seller price observation dated 2026-11-15T12:50:37+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 13 held source records are omitted from this export; their purchase links are not verified.

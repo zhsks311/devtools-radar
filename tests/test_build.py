@@ -122,7 +122,8 @@ class EditorialTests(unittest.TestCase):
         self.assertIn('checkout was not completed',en)
         for deal in build.load_deals(build.DEALS_EN_DATA_PATH)['feed']:
             self.assertEqual(deal['link']['label_kind'], 'retailer')
-            self.assertTrue(deal['link']['url'].startswith(('https://appsumo.com/products/', 'https://www.stacksocial.com/sales/', 'https://www.ebgames.com.au/product/', 'https://store.dji.com/cn/product/', 'https://item.lenovo.com.cn/product/')))
+            from tools.product_links import direct_product_url
+            self.assertTrue(direct_product_url(deal['link']['url']))
             self.assertIsNone(deal['discount_pct'])
             self.assertIsNone(deal['published_at'])
 

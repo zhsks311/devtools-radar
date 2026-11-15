@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T01:04:34.990070+00:00",
+  "generated_at": "2026-11-15T12:53:55.570360+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -1854,6 +1854,172 @@
         ],
         "review_completed_at": "2026-11-15T01:04:34.990070+00:00"
       }
+    },
+    {
+      "id": "keyboardstack-premium",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "KeyboardStack Premium · 3 Macs",
+      "product": "KeyboardStack Premium · 3 Macs",
+      "store": "KeyboardStack",
+      "storefront_country": null,
+      "price": 14.99,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "macOS 27+. Premium for 3 Macs, non-transferable; seller promises lifetime updates. Grid Mode and multi-screen support are free: try these before paying. Displayed one-time USD14.99; no coupon needed. Refunds, taxes, checkout and Korean eligibility unverified; no verified end date or historical-low claim."
+      ],
+      "audience": "Users who meet the seller licence terms.",
+      "source": {
+        "id": "keyboardstack",
+        "label": "KeyboardStack official product",
+        "url": "https://keyboardstack.com/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-15",
+      "score": null,
+      "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://keyboardstack.com/",
+        "tracked": false,
+        "label": "View official product",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital software.",
+        "activation": "macOS27+; 3 Macs, non-transferable.",
+        "payment": "Korean billing eligibility and checkout unverified.",
+        "tax": "Final taxes unverified.",
+        "returns": "Refund terms unverified.",
+        "evidence_url": "https://keyboardstack.com/",
+        "checked_at": "2026-11-15T12:50:08.861286+00:00"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T12:50:08.861286+00:00",
+        "url": "https://keyboardstack.com/",
+        "product_match": true,
+        "evidence": "Single-product official page identifies KeyboardStack Premium, USD14.99 one-time, 3 Macs non-transferable, macOS27+, lifetime updates. Checkout untested."
+      },
+      "price_review": {
+        "id": "keyboardstack-premium",
+        "product": "KeyboardStack Premium · 3 Macs",
+        "seller_url": "https://keyboardstack.com/",
+        "recorded_price": 14.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 14.99,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://keyboardstack.com/",
+            "observed_at": "2026-11-15T12:50:08.861286+00:00",
+            "result": "Single-product official page identifies KeyboardStack Premium, USD14.99 one-time, 3 Macs non-transferable, macOS27+, lifetime updates. Checkout untested."
+          }
+        ],
+        "conditions": [
+          "macOS 27+. Premium for 3 Macs, non-transferable; seller promises lifetime updates. Grid Mode and multi-screen support are free: try these before paying. Displayed one-time USD14.99; no coupon needed. Refunds, taxes, checkout and Korean eligibility unverified; no verified end date or historical-low claim."
+        ],
+        "limitations": [
+          "Seller previous price USD29.99 and 50% off not independently verified; no historical-low claim. Final checkout, country eligibility and refund terms unverified."
+        ],
+        "review_completed_at": "2026-11-15T12:50:08.861286+00:00"
+      }
+    },
+    {
+      "id": "nocodebackend-tier-1",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "NoCodeBackend · Tier 1",
+      "product": "NoCodeBackend · Tier 1",
+      "store": "AppSumo",
+      "storefront_country": null,
+      "price": 79,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "New users only; existing accounts cannot redeem or upgrade with this offer. 2 databases, 25,000 records each, unlimited tables/columns and 2 Prehooks. MCP, built-in user authentication, user invites, Smart AI credits, webhooks, custom domains and database snapshots are excluded. Lifetime access with future Starter Plan updates; activate within 60 days. Seller lists refunds within 60 days of purchase, but no We Got Your Back guarantee. Extra record capacity costs more. Country eligibility, including Korea, taxes and final checkout are unverified.",
+        "Check API request and bandwidth limits before relying on this for production; no numeric quotas were verified. This is a seller-displayed price, not an independently verified discount or historical low. Data-center locations do not establish buyer eligibility."
+      ],
+      "audience": "New users needing a database/API plan without built-in user auth or MCP.",
+      "source": {
+        "id": "appsumo",
+        "label": "AppSumo product detail",
+        "url": "https://appsumo.com/products/nocodebackend/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-15",
+      "score": null,
+      "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://appsumo.com/products/nocodebackend/",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital licence; no physical delivery. US/EU data-center availability does not establish buyer eligibility.",
+        "activation": "New users only; existing accounts cannot redeem or upgrade with this offer. Activate within 60 days of purchase. Country restrictions unverified.",
+        "payment": "Billing-country eligibility, including Korea, and final checkout not tested.",
+        "tax": "Displayed USD price; final tax and total require checkout.",
+        "returns": "Listing states refundable within 60 days of purchase. Partner-managed, not vetted by AppSumo and not covered by We Got Your Back.",
+        "evidence_url": "https://appsumo.com/products/nocodebackend/",
+        "checked_at": "2026-11-15"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T12:50:37+00:00",
+        "url": "https://appsumo.com/products/nocodebackend/",
+        "product_match": true,
+        "evidence": "Official AppSumo product detail read at 2026-11-15T12:50:37+00:00: NoCodeBackend Tier 1 displayed USD 79 one-time with Get lifetime access and Buy now controls. Current plan table and FAQ specify 2 databases and 25,000 records per database, 2 Prehooks and listed exclusions. FAQ limits redemption to new users and places MCP and built-in user auth at Tier 2+. No checkout or product runtime test."
+      },
+      "price_review": {
+        "id": "nocodebackend-tier-1",
+        "product": "NoCodeBackend · Tier 1",
+        "seller_url": "https://appsumo.com/products/nocodebackend/",
+        "recorded_price": 79,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 79,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://appsumo.com/products/nocodebackend/",
+            "observed_at": "2026-11-15T12:50:37+00:00",
+            "result": "Official AppSumo product detail read at 2026-11-15T12:50:37+00:00: NoCodeBackend Tier 1 displayed USD 79 one-time with Get lifetime access and Buy now controls. Current plan table and FAQ specify 2 databases and 25,000 records per database, 2 Prehooks and listed exclusions. FAQ limits redemption to new users and places MCP and built-in user auth at Tier 2+. No checkout or product runtime test."
+          }
+        ],
+        "conditions": [
+          "New users only; existing accounts cannot redeem or upgrade with this offer. 2 databases, 25,000 records each, unlimited tables/columns and 2 Prehooks. MCP, built-in user authentication, user invites, Smart AI credits, webhooks, custom domains and database snapshots are excluded. Lifetime access with future Starter Plan updates; activate within 60 days. Seller lists refunds within 60 days of purchase, but no We Got Your Back guarantee. Extra record capacity costs more. Country eligibility, including Korea, taxes and final checkout are unverified."
+        ],
+        "limitations": [
+          "Check API request and bandwidth limits before relying on this for production; no numeric quotas were verified. This is a seller-displayed price, not an independently verified discount or historical low. Data-center locations do not establish buyer eligibility.",
+          "Seller comparison to USD 688 / 89% is not reproduced: equivalent plan, comparison period and prior-price history unverified.",
+          "An older August founder post advertises 50,000 Tier 1 records, conflicting with the current plan table and FAQ. The current 25,000-per-database limit is used; legacy buyer entitlements are not generalized.",
+          "Record expansion packs cost extra; current checkout price for add-ons was not verified."
+        ],
+        "review_completed_at": "2026-11-15T12:50:37+00:00"
+      }
     }
   ],
   "picks": [
@@ -2599,6 +2765,87 @@
             "evidence_url": null,
             "checked_at": "2026-11-10"
           }
+        },
+        {
+          "id": "keyboardstack-premium",
+          "region": "global",
+          "target": "en",
+          "category": "software",
+          "category_label": "Software",
+          "title_raw": "KeyboardStack Premium · 3 Macs",
+          "product": "KeyboardStack Premium · 3 Macs",
+          "store": "KeyboardStack",
+          "storefront_country": null,
+          "price": 14.99,
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "Digital licence",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "macOS 27+. Premium for 3 Macs, non-transferable; seller promises lifetime updates. Grid Mode and multi-screen support are free: try these before paying. Displayed one-time USD14.99; no coupon needed. Refunds, taxes, checkout and Korean eligibility unverified; no verified end date or historical-low claim."
+          ],
+          "audience": "Users who meet the seller licence terms.",
+          "source": {
+            "id": "keyboardstack",
+            "label": "KeyboardStack official product",
+            "url": "https://keyboardstack.com/"
+          },
+          "published_at": null,
+          "checked_date": "2026-11-15",
+          "score": null,
+          "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+          "ai_rewritten": false,
+          "price_source": "retailer_product_page",
+          "link": {
+            "url": "https://keyboardstack.com/",
+            "tracked": false,
+            "label": "View official product",
+            "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Digital software.",
+            "activation": "macOS27+; 3 Macs, non-transferable.",
+            "payment": "Korean billing eligibility and checkout unverified.",
+            "tax": "Final taxes unverified.",
+            "returns": "Refund terms unverified.",
+            "evidence_url": "https://keyboardstack.com/",
+            "checked_at": "2026-11-15T12:50:08.861286+00:00"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T12:50:08.861286+00:00",
+            "url": "https://keyboardstack.com/",
+            "product_match": true,
+            "evidence": "Single-product official page identifies KeyboardStack Premium, USD14.99 one-time, 3 Macs non-transferable, macOS27+, lifetime updates. Checkout untested."
+          },
+          "price_review": {
+            "id": "keyboardstack-premium",
+            "product": "KeyboardStack Premium · 3 Macs",
+            "seller_url": "https://keyboardstack.com/",
+            "recorded_price": 14.99,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 14.99,
+            "deal_status": "comparison_unverified",
+            "evidence": [
+              {
+                "url": "https://keyboardstack.com/",
+                "observed_at": "2026-11-15T12:50:08.861286+00:00",
+                "result": "Single-product official page identifies KeyboardStack Premium, USD14.99 one-time, 3 Macs non-transferable, macOS27+, lifetime updates. Checkout untested."
+              }
+            ],
+            "conditions": [
+              "macOS 27+. Premium for 3 Macs, non-transferable; seller promises lifetime updates. Grid Mode and multi-screen support are free: try these before paying. Displayed one-time USD14.99; no coupon needed. Refunds, taxes, checkout and Korean eligibility unverified; no verified end date or historical-low claim."
+            ],
+            "limitations": [
+              "Seller previous price USD29.99 and 50% off not independently verified; no historical-low claim. Final checkout, country eligibility and refund terms unverified."
+            ],
+            "review_completed_at": "2026-11-15T12:50:08.861286+00:00"
+          }
         }
       ]
     },
@@ -2666,6 +2913,91 @@
             "evidence_url": null,
             "checked_at": "2026-11-10"
           }
+        },
+        {
+          "id": "nocodebackend-tier-1",
+          "region": "global",
+          "target": "en",
+          "category": "cloud",
+          "category_label": "SaaS & cloud",
+          "title_raw": "NoCodeBackend · Tier 1",
+          "product": "NoCodeBackend · Tier 1",
+          "store": "AppSumo",
+          "storefront_country": null,
+          "price": 79,
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "Digital licence",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "New users only; existing accounts cannot redeem or upgrade with this offer. 2 databases, 25,000 records each, unlimited tables/columns and 2 Prehooks. MCP, built-in user authentication, user invites, Smart AI credits, webhooks, custom domains and database snapshots are excluded. Lifetime access with future Starter Plan updates; activate within 60 days. Seller lists refunds within 60 days of purchase, but no We Got Your Back guarantee. Extra record capacity costs more. Country eligibility, including Korea, taxes and final checkout are unverified.",
+            "Check API request and bandwidth limits before relying on this for production; no numeric quotas were verified. This is a seller-displayed price, not an independently verified discount or historical low. Data-center locations do not establish buyer eligibility."
+          ],
+          "audience": "New users needing a database/API plan without built-in user auth or MCP.",
+          "source": {
+            "id": "appsumo",
+            "label": "AppSumo product detail",
+            "url": "https://appsumo.com/products/nocodebackend/"
+          },
+          "published_at": null,
+          "checked_date": "2026-11-15",
+          "score": null,
+          "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
+          "ai_rewritten": false,
+          "price_source": "retailer_product_page",
+          "link": {
+            "url": "https://appsumo.com/products/nocodebackend/",
+            "tracked": false,
+            "label": "View actual product",
+            "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Digital licence; no physical delivery. US/EU data-center availability does not establish buyer eligibility.",
+            "activation": "New users only; existing accounts cannot redeem or upgrade with this offer. Activate within 60 days of purchase. Country restrictions unverified.",
+            "payment": "Billing-country eligibility, including Korea, and final checkout not tested.",
+            "tax": "Displayed USD price; final tax and total require checkout.",
+            "returns": "Listing states refundable within 60 days of purchase. Partner-managed, not vetted by AppSumo and not covered by We Got Your Back.",
+            "evidence_url": "https://appsumo.com/products/nocodebackend/",
+            "checked_at": "2026-11-15"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T12:50:37+00:00",
+            "url": "https://appsumo.com/products/nocodebackend/",
+            "product_match": true,
+            "evidence": "Official AppSumo product detail read at 2026-11-15T12:50:37+00:00: NoCodeBackend Tier 1 displayed USD 79 one-time with Get lifetime access and Buy now controls. Current plan table and FAQ specify 2 databases and 25,000 records per database, 2 Prehooks and listed exclusions. FAQ limits redemption to new users and places MCP and built-in user auth at Tier 2+. No checkout or product runtime test."
+          },
+          "price_review": {
+            "id": "nocodebackend-tier-1",
+            "product": "NoCodeBackend · Tier 1",
+            "seller_url": "https://appsumo.com/products/nocodebackend/",
+            "recorded_price": 79,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 79,
+            "deal_status": "regular_price_or_discount_unproven",
+            "evidence": [
+              {
+                "url": "https://appsumo.com/products/nocodebackend/",
+                "observed_at": "2026-11-15T12:50:37+00:00",
+                "result": "Official AppSumo product detail read at 2026-11-15T12:50:37+00:00: NoCodeBackend Tier 1 displayed USD 79 one-time with Get lifetime access and Buy now controls. Current plan table and FAQ specify 2 databases and 25,000 records per database, 2 Prehooks and listed exclusions. FAQ limits redemption to new users and places MCP and built-in user auth at Tier 2+. No checkout or product runtime test."
+              }
+            ],
+            "conditions": [
+              "New users only; existing accounts cannot redeem or upgrade with this offer. 2 databases, 25,000 records each, unlimited tables/columns and 2 Prehooks. MCP, built-in user authentication, user invites, Smart AI credits, webhooks, custom domains and database snapshots are excluded. Lifetime access with future Starter Plan updates; activate within 60 days. Seller lists refunds within 60 days of purchase, but no We Got Your Back guarantee. Extra record capacity costs more. Country eligibility, including Korea, taxes and final checkout are unverified."
+            ],
+            "limitations": [
+              "Check API request and bandwidth limits before relying on this for production; no numeric quotas were verified. This is a seller-displayed price, not an independently verified discount or historical low. Data-center locations do not establish buyer eligibility.",
+              "Seller comparison to USD 688 / 89% is not reproduced: equivalent plan, comparison period and prior-price history unverified.",
+              "An older August founder post advertises 50,000 Tier 1 records, conflicting with the current plan table and FAQ. The current 25,000-per-database limit is used; legacy buyer entitlements are not generalized.",
+              "Record expansion packs cost extra; current checkout price for add-ons was not verified."
+            ],
+            "review_completed_at": "2026-11-15T12:50:37+00:00"
+          }
         }
       ]
     },
@@ -2682,7 +3014,7 @@
           "title_raw": "Nintendo Switch 2 Console",
           "product": "Nintendo Switch 2 Console",
           "store": "EB Games Australia",
-          "price": 728,
+          "price": 719,
           "price_source": "retailer_product_page",
           "currency": "AUD",
           "original_price": null,
@@ -2693,8 +3025,8 @@
           "briefing": [
             "Key: Nintendo Switch 2 console, sold by EB Games Australia.",
             "Region: Australia; delivery cost calculated at checkout.",
-            "Checked: November 10, 2026 · Home Delivery Available; Add to cart shown.",
-            "Check: A$698 is a paid EB World PLUS member price, not the public price. Local pickup availability depends on store."
+            "Checked: 2026-11-15 · Home Delivery Available; Add to cart shown. Address-specific delivery and checkout untested.",
+            "A$678 is a paid EB World PLUS member price, not the public A$719 price. Local pickup depends on store."
           ],
           "audience": "Check OS, license and regional eligibility before purchase.",
           "source": {
@@ -2703,7 +3035,7 @@
             "url": "https://www.ozbargain.com.au/node/982360"
           },
           "published_at": null,
-          "checked_date": "2026-11-10",
+          "checked_date": "2026-11-15",
           "score": null,
           "disclosure": "Australian offer. No DevTeardown affiliate tracking. Shipping cost and checkout total unverified.",
           "ai_rewritten": false,
@@ -2731,13 +3063,84 @@
               "https://www.ebgames.com.au/terms",
               "https://support.ebgames.com.au/hc/en-us/articles/13814050254735-Do-you-ship-internationally"
             ]
-          }
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-10T11:59:10.296055+00:00",
+            "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+            "product_match": true,
+            "evidence": "Seller product title: Nintendo Switch 2 Console - Nintendo Switch 2 - EB Games Australia. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+            "reason": "product_detail; "
+          },
+          "link_original": {
+            "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View product at EB Games Australia",
+            "label_kind": "retailer"
+          },
+          "price_review": {
+            "id": "43ca41d03daa",
+            "product": "Nintendo Switch 2 Console",
+            "seller_url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+            "recorded_price": 719,
+            "currency": "AUD",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 719,
+            "deal_status": "below_official_srp",
+            "evidence": [
+              {
+                "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+                "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+              },
+              {
+                "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+                "observed_at": "2026-11-15T12:45:23.055546+00:00",
+                "result": "Live browser shows A$719 public price, A$678 explicitly labelled with EB World PLUS; Home Delivery Available and Add to Cart. No sign-in, cart mutation or checkout."
+              }
+            ],
+            "limitations": [
+              "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+            ],
+            "comparison": {
+              "url": "https://www.nintendo.com/au/news-and-articles/price-revision-for-nintendo-switch-2-console/",
+              "type": "current official SRP effective 2026-09-01",
+              "price": 769.95,
+              "currency": "AUD",
+              "difference": 50.95,
+              "percent": 6.62,
+              "reference_kind": "official_srp",
+              "same_product_variant": true,
+              "product_id": "43ca41d03daa",
+              "checked_at": "2026-11-15T12:45:23.055546+00:00",
+              "evidence": "Nintendo Australia official revision page reconfirmed SRP AUD769.95 effective 2026-09-01. EB Games standalone console public price AUD719; paid PLUS offer AUD678 is excluded from SRP comparison. Final delivery and checkout untested."
+            },
+            "conditions": [
+              "AUD719 public displayed price; AUD678 requires paid EB World PLUS membership, not unrestricted price.",
+              "Home delivery available displayed; shipping costs and address availability require checkout."
+            ],
+            "review_completed_at": "2026-11-15T12:45:23.055546+00:00",
+            "previous_observation": {
+              "price": 728,
+              "member_price": 698,
+              "checked_at": "2026-11-10T12:02:55.128061+00:00"
+            },
+            "member_offer": {
+              "price": 678,
+              "currency": "AUD",
+              "requires_paid_membership": true,
+              "program": "EB World PLUS",
+              "checkout_verified": false,
+              "checked_at": "2026-11-15T12:45:23.055546+00:00"
+            }
+          },
+          "storefront_country": "AU"
         }
       ]
     }
   },
   "stats": {
-    "feed": 18,
-    "sources": 5
+    "feed": 20,
+    "sources": 6
   }
 }
