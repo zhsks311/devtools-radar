@@ -51,6 +51,15 @@
       "policy_url": "https://www.smzdm.com/dingyue",
       "mode": "blocked",
       "note": "Official RSS returned 403; no bypass. Reuse permission unconfirmed."
+    },
+    {
+      "id": "ppomppu",
+      "name": "Ppomppu (Korean community)",
+      "enabled": false,
+      "url": "https://www.ppomppu.co.kr/ppomppu_rss2.php/",
+      "policy_url": "https://www.ppomppu.co.kr/ppomppu_rss2.php/",
+      "mode": "blocked",
+      "note": "Official RSS directory lookup returned HTTP403 on 2026-11-15. Hot-deal feed endpoint and reuse permission not verified; no bypass and no automatic collection enabled."
     }
   ]
 }

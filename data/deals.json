@@ -84,7 +84,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386426+00:00",
+        "fulfilment": "cross_border_to_korea",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-oliveyoung-gift-card-20k",
@@ -179,6 +188,15 @@
         "returns": "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed.",
         "evidence_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
         "checked_at": "2026-11-15"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386439+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       }
     },
     {
@@ -258,7 +276,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386444+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-orion-wow-snack-16",
@@ -337,7 +364,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386446+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-coupang-gift-card-10k",
@@ -416,7 +452,16 @@
         "status": "rejected",
         "reason": "equal_price_not_a_discount"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386448+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-orion-bichobi-2pack",
@@ -495,7 +540,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386450+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-office-pantry-snack-10",
@@ -575,14 +629,23 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386453+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-belkin-100w-gan",
       "region": "kr",
       "target": "ko",
-      "category": "tech",
-      "category_label": "테크 장비 · 충전기",
+      "category": "hardware",
+      "category_label": "하드웨어",
       "title_raw": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
       "product": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
       "store": "Gmarket · 벨킨공식판매원",
@@ -677,6 +740,15 @@
         "returns": "Seller return terms and exclusions apply; no free-return claim.",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
         "checked_at": "2026-11-14"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386455+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       }
     },
     {
@@ -757,14 +829,23 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386457+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-ugreen-100w-gan",
       "region": "kr",
       "target": "ko",
-      "category": "tech",
-      "category_label": "테크 장비 · 충전기",
+      "category": "hardware",
+      "category_label": "하드웨어",
       "title_raw": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
       "product": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
       "store": "Gmarket · 에이스네트웍",
@@ -859,14 +940,23 @@
         "returns": "Seller return terms and exclusions apply; no free-return claim.",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
         "checked_at": "2026-11-14"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386459+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       }
     },
     {
       "id": "deal-artmu-100w-gb102",
       "region": "kr",
       "target": "ko",
-      "category": "tech",
-      "category_label": "테크 장비 · 충전기",
+      "category": "hardware",
+      "category_label": "하드웨어",
       "title_raw": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
       "product": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
       "store": "Artmu 공식몰",
@@ -962,6 +1052,15 @@
         "returns": "Seller return terms and exclusions apply; no free-return claim.",
         "evidence_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
         "checked_at": "2026-11-14"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386461+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       }
     },
     {
@@ -1035,7 +1134,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386463+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-apple-m4-macbook-pro",
@@ -1115,7 +1223,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386465+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-silent-mech-keyboard",
@@ -1195,7 +1312,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386467+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-heavy-duty-monitor-arm",
@@ -1275,7 +1401,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386468+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-mini-pc-n100",
@@ -1355,7 +1490,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386470+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     },
     {
       "id": "deal-office-coffee-bean-1kg",
@@ -1435,7 +1579,16 @@
         "status": "rejected",
         "reason": "comparison_evidence_unverified"
       },
-      "storefront_country": "KR"
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "editorial_domestic_catalogue",
+        "reviewed_at": "2026-11-15T13:30:52.386472+00:00",
+        "fulfilment": "domestic",
+        "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      }
     }
   ],
   "categories": {
@@ -1536,6 +1689,15 @@
             "returns": "Olive Young-only KRW20,000 gift card, not a general CJ ONE voucher. Delivered by MMS; initial validity 1 year, extensions subject to CJ ONE rules. Unused: full refund within original validity, 90% after expiry; residual refund after 60% use. No resale or transfer. Order, payment and receipt untested; page stock is not guaranteed.",
             "evidence_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
             "checked_at": "2026-11-15"
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386439+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
           }
         },
         {
@@ -1615,7 +1777,16 @@
             "status": "rejected",
             "reason": "equal_price_not_a_discount"
           },
-          "storefront_country": "KR"
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386448+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
         }
       ]
     },
@@ -1700,7 +1871,16 @@
             "status": "rejected",
             "reason": "comparison_evidence_unverified"
           },
-          "storefront_country": "KR"
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386444+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
         },
         {
           "id": "deal-orion-wow-snack-16",
@@ -1779,7 +1959,16 @@
             "status": "rejected",
             "reason": "comparison_evidence_unverified"
           },
-          "storefront_country": "KR"
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386446+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
         },
         {
           "id": "deal-orion-bichobi-2pack",
@@ -1858,7 +2047,16 @@
             "status": "rejected",
             "reason": "comparison_evidence_unverified"
           },
-          "storefront_country": "KR"
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386450+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
         },
         {
           "id": "deal-office-pantry-snack-10",
@@ -1938,7 +2136,16 @@
             "status": "rejected",
             "reason": "comparison_evidence_unverified"
           },
-          "storefront_country": "KR"
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386453+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
         }
       ]
     },
@@ -2023,7 +2230,16 @@
             "status": "rejected",
             "reason": "comparison_evidence_unverified"
           },
-          "storefront_country": "KR"
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386426+00:00",
+            "fulfilment": "cross_border_to_korea",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
         },
         {
           "id": "deal-silent-mech-keyboard",
@@ -2103,7 +2319,16 @@
             "status": "rejected",
             "reason": "comparison_evidence_unverified"
           },
-          "storefront_country": "KR"
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386467+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
         }
       ]
     },
@@ -2112,11 +2337,562 @@
       "audience": "장비 지름과 데스크 셋업을 고민 중인 엔지니어",
       "items": [
         {
-          "id": "deal-belkin-100w-gan",
+          "id": "deal-sony-mdr-3r",
           "region": "kr",
           "target": "ko",
           "category": "tech",
-          "category_label": "테크 장비 · 충전기",
+          "category_label": "테크 장비 · 음향",
+          "title_raw": "소니 MDR-3R 유선 헤드폰",
+          "product": "소니 MDR-3R 유선 헤드폰",
+          "store": "쿠팡 로켓배송",
+          "price": 78640,
+          "shipping": "로켓배송 무료배송",
+          "rocket": true,
+          "specs": [],
+          "briefing": [
+            "이전 이어폰·4.2g·스튜디오 모니터 용도 표기는 근거가 없어 삭제했습니다. 실제 MDR-3R은 헤드폰입니다. 이전 판매처·가격·구매 조건은 미검증 상태로 보류합니다."
+          ],
+          "audience": "오랜 시간 음악이나 백색소음을 들으며 딥워크하는 엔지니어",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 89,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "tracked": true,
+            "matched_keyword": "소니 MDR-3R",
+            "label": "소니 MDR-3R 이어폰 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:59.083195+00:00",
+            "url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "tracked": true,
+            "matched_keyword": "소니 MDR-3R",
+            "label": "소니 MDR-3R 이어폰 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-sony-mdr-3r",
+            "product": "소니 MDR-3R 모니터링 이어폰",
+            "seller_url": "https://link.coupang.com/a/iyzv0uG1N6",
+            "recorded_price": 78640,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzv0uG1N6",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 119000,
+            "discount_pct": 34,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386463+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
+        }
+      ]
+    },
+    "monitor-desk": {
+      "label": "모니터 · 암 · 데스크",
+      "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
+      "items": [
+        {
+          "id": "deal-lg-ultragear-27",
+          "region": "kr",
+          "target": "ko",
+          "category": "monitor-desk",
+          "category_label": "모니터 · 암 · 데스크",
+          "title_raw": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
+          "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
+          "store": "쿠팡 로켓배송",
+          "price": 241734,
+          "shipping": "로켓배송 무료배송",
+          "rocket": true,
+          "specs": [
+            "27인치 QHD (2560x1440)",
+            "Fast IPS 200Hz",
+            "HDR10"
+          ],
+          "briefing": [
+            "실구매가: 241,734원 (정가 32.9만 원 대비 역대급 특가)",
+            "추천: 코드 3분할 뷰와 선명한 폰트 가독성이 필요한 개발자 서브/메인 모니터",
+            "체크: 피벗·틸트 지원 스탠드 기본 제공, QHD 해상도로 글자 뭉개짐 없음"
+          ],
+          "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·풀스택",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 94,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "tracked": true,
+            "matched_keyword": "LG 울트라기어 27인치 QHD",
+            "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:52.615449+00:00",
+            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyztqGf2zc",
+            "tracked": true,
+            "matched_keyword": "LG 울트라기어 27인치 QHD",
+            "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-lg-ultragear-27",
+            "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
+            "seller_url": "https://link.coupang.com/a/iyztqGf2zc",
+            "recorded_price": 241734,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyztqGf2zc",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 329000,
+            "discount_pct": 26,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386457+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
+        },
+        {
+          "id": "deal-heavy-duty-monitor-arm",
+          "region": "kr",
+          "target": "ko",
+          "category": "monitor-desk",
+          "category_label": "모니터 · 암 · 데스크",
+          "title_raw": "고중량 싱글/듀얼 모니터암 거치대 (최대 32인치 9kg 지원)",
+          "product": "고중량 기계식 모니터암 거치대",
+          "store": "쿠팡 로켓배송",
+          "price": 49900,
+          "shipping": "로켓배송 무료배송",
+          "rocket": true,
+          "specs": [
+            "가스 스프링 방식",
+            "VESA 75x75 / 100x100",
+            "케이블 수납형"
+          ],
+          "briefing": [
+            "실구매가: 49,900원 (쿠팡 로켓 특가)",
+            "추천: 거북목 방지를 위해 모니터를 눈높이로 띄우고 데스크 공간을 2배로 넓히려는 분",
+            "체크: 스탠드 다리가 사라져 모니터 아래 키보드·노트 수납 완벽 가능"
+          ],
+          "audience": "데스크 셋업을 깔끔하게 정리하고 목·어깨 통증을 줄이려는 개발자",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 91,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "tracked": true,
+            "matched_keyword": "모니터암",
+            "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:59:04.097743+00:00",
+            "url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "tracked": true,
+            "matched_keyword": "모니터암",
+            "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-heavy-duty-monitor-arm",
+            "product": "고중량 기계식 모니터암 거치대",
+            "seller_url": "https://link.coupang.com/a/iyzzXmg6CG",
+            "recorded_price": 49900,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzzXmg6CG",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 69000,
+            "discount_pct": 28,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386468+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
+        }
+      ]
+    },
+    "laptops": {
+      "label": "맥북 · 노트북 · 워크스테이션",
+      "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
+      "items": [
+        {
+          "id": "deal-apple-m4-macbook-pro",
+          "region": "kr",
+          "target": "ko",
+          "category": "laptops",
+          "category_label": "맥북 · 노트북 · 워크스테이션",
+          "title_raw": "Apple 2024 맥북 프로 14 M4 Pro (로켓배송 카드즉시할인)",
+          "product": "Apple M4 Pro MacBook Pro 14",
+          "store": "쿠팡 로켓배송",
+          "price": 2990000,
+          "shipping": "내일 새벽 도착 보장",
+          "rocket": true,
+          "specs": [
+            "M4 Pro 12코어 CPU / 16코어 GPU",
+            "24GB 통합 메모리",
+            "512GB SSD"
+          ],
+          "briefing": [
+            "실구매가: 2,990,000원 (카드사 즉시할인 및 무이자 할부 혜택)",
+            "추천: 로컬 LLM 양자화 모델(Ollama) 추론과 대규모 도커 빌드를 병행하는 백엔드 개발자",
+            "체크: 통합 메모리 대역폭 273GB/s로 컴파일 및 컨테이너 빌드 시간 반토막"
+          ],
+          "audience": "빌드 속도와 로컬 AI 개발 환경을 한 번에 업그레이드하려는 개발자",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 96,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "tracked": true,
+            "matched_keyword": "애플 M4 맥북 프로",
+            "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:58:59.278769+00:00",
+            "url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "tracked": true,
+            "matched_keyword": "애플 M4 맥북 프로",
+            "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-apple-m4-macbook-pro",
+            "product": "Apple M4 Pro MacBook Pro 14",
+            "seller_url": "https://link.coupang.com/a/iyxHrMNtyC",
+            "recorded_price": 2990000,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyxHrMNtyC",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 3290000,
+            "discount_pct": 9,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386465+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
+        },
+        {
+          "id": "deal-mini-pc-n100",
+          "region": "kr",
+          "target": "ko",
+          "category": "laptops",
+          "category_label": "맥북 · 노트북 · 워크스테이션",
+          "title_raw": "초소형 미니PC 16GB RAM + 512GB SSD (저전력 개발 홈서버용)",
+          "product": "미니PC 16GB N100 저전력 홈서버",
+          "store": "쿠팡 로켓배송",
+          "price": 189000,
+          "shipping": "로켓배송 무료배송",
+          "rocket": true,
+          "specs": [
+            "Intel N100 4코어",
+            "16GB DDR5",
+            "512GB NVMe M.2"
+          ],
+          "briefing": [
+            "실구매가: 189,000원 (20만 원 이하 가성비 종결)",
+            "추천: 24시간 도커 컨테이너, 홈서버, 자동화 봇, DB 테스트베드를 돌릴 저전력 머신",
+            "체크: 소비전력 6W 수준으로 한 달 전기요금 1,000원 안팎"
+          ],
+          "audience": "개인 사이드 프로젝트나 홈랩을 클라우드 비용 없이 운영하고 싶은 엔지니어",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 93,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "tracked": true,
+            "matched_keyword": "미니PC 16GB",
+            "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:59:04.149450+00:00",
+            "url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "tracked": true,
+            "matched_keyword": "미니PC 16GB",
+            "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-mini-pc-n100",
+            "product": "미니PC 16GB N100 저전력 홈서버",
+            "seller_url": "https://link.coupang.com/a/iyzyHkgEOi",
+            "recorded_price": 189000,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzyHkgEOi",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 259000,
+            "discount_pct": 27,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386470+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
+        }
+      ]
+    },
+    "afterwork": {
+      "label": "야근 · 생산성 · 커피·음료",
+      "audience": "야근 잦은 개발팀, 사무실 커피·음료 재고를 맡은 분",
+      "items": [
+        {
+          "id": "deal-office-coffee-bean-1kg",
+          "region": "kr",
+          "target": "ko",
+          "category": "afterwork",
+          "category_label": "야근 · 생산성 · 커피·간식",
+          "title_raw": "갓 볶은 고소한 원두커피 홀빈 1kg (사무실 에스프레소용)",
+          "product": "사무실 대용량 원두 1kg (고소한 블렌드)",
+          "store": "쿠팡 로켓배송",
+          "price": 16900,
+          "shipping": "로켓배송 무료배송",
+          "rocket": true,
+          "specs": [
+            "아라비카 100%",
+            "시티 로스팅 (다크초콜릿 향)",
+            "1kg 대용량"
+          ],
+          "briefing": [
+            "실구매가: 16,900원 (잔당 300원 꼴 가성비)",
+            "추천: 팀원들과 매일 아침·야근 때 커피머신 돌리는 개발팀 간식 담당자",
+            "체크: 산미 없이 묵직하고 고소한 맛으로 호불호 없는 오피스 베스트셀러"
+          ],
+          "audience": "카페인 수혈이 생존인 야근 잦은 개발팀",
+          "published_at": "2026-11-10T15:16:42+09:00",
+          "score": 88,
+          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+          "ai_rewritten": true,
+          "link": {
+            "url": "https://link.coupang.com/a/iyzuKorRTw",
+            "tracked": true,
+            "matched_keyword": "고소한 원두 1kg",
+            "label": "고소한 원두 1kg 대용량 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "link_review": {
+            "status": "held",
+            "checked_at": "2026-11-10T11:59:04.155777+00:00",
+            "url": "https://link.coupang.com/a/iyzuKorRTw",
+            "product_match": false,
+            "evidence": "",
+            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
+          },
+          "link_original": {
+            "url": "https://link.coupang.com/a/iyzuKorRTw",
+            "tracked": true,
+            "matched_keyword": "고소한 원두 1kg",
+            "label": "고소한 원두 1kg 대용량 (로켓배송)",
+            "label_kind": "상품"
+          },
+          "price_review": {
+            "id": "deal-office-coffee-bean-1kg",
+            "product": "사무실 대용량 원두 1kg (고소한 블렌드)",
+            "seller_url": "https://link.coupang.com/a/iyzuKorRTw",
+            "recorded_price": 16900,
+            "currency": "KRW",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
+            "evidence": [
+              {
+                "url": "https://link.coupang.com/a/iyzuKorRTw",
+                "result": "search_result",
+                "provenance": "link worker current direct request audit"
+              }
+            ],
+            "limitations": [
+              "Current exact product, option, seller price and inventory could not be verified.",
+              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
+              "Product model/specification/variant insufficiently specific to compare like-for-like."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "historical_claims": {
+            "original_price": 22000,
+            "discount_pct": 23,
+            "status": "rejected",
+            "reason": "comparison_evidence_unverified"
+          },
+          "storefront_country": "KR",
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386472+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
+        }
+      ]
+    },
+    "hardware": {
+      "label": "하드웨어",
+      "audience": "충전기와 주변기기",
+      "items": [
+        {
+          "id": "deal-belkin-100w-gan",
+          "region": "kr",
+          "target": "ko",
+          "category": "hardware",
+          "category_label": "하드웨어",
           "title_raw": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
           "product": "벨킨 WCH025kr1.5WHB6 100W USB-C 충전기 · 화이트",
           "store": "Gmarket · 벨킨공식판매원",
@@ -2211,14 +2987,23 @@
             "returns": "Seller return terms and exclusions apply; no free-return claim.",
             "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
             "checked_at": "2026-11-14"
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386455+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
           }
         },
         {
           "id": "deal-ugreen-100w-gan",
           "region": "kr",
           "target": "ko",
-          "category": "tech",
-          "category_label": "테크 장비 · 충전기",
+          "category": "hardware",
+          "category_label": "하드웨어",
           "title_raw": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
           "product": "유그린 Nexode Pro U-25093 100W 3포트 충전기",
           "store": "Gmarket · 에이스네트웍",
@@ -2313,14 +3098,23 @@
             "returns": "Seller return terms and exclusions apply; no free-return claim.",
             "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
             "checked_at": "2026-11-14"
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386459+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
           }
         },
         {
           "id": "deal-artmu-100w-gb102",
           "region": "kr",
           "target": "ko",
-          "category": "tech",
-          "category_label": "테크 장비 · 충전기",
+          "category": "hardware",
+          "category_label": "하드웨어",
           "title_raw": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
           "product": "아트뮤 GB102 블랙 100W 접지 3포트 충전기",
           "store": "Artmu 공식몰",
@@ -2416,498 +3210,16 @@
             "returns": "Seller return terms and exclusions apply; no free-return claim.",
             "evidence_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
             "checked_at": "2026-11-14"
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "editorial_domestic_catalogue",
+            "reviewed_at": "2026-11-15T13:30:52.386461+00:00",
+            "fulfilment": "domestic",
+            "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
           }
-        },
-        {
-          "id": "deal-sony-mdr-3r",
-          "region": "kr",
-          "target": "ko",
-          "category": "tech",
-          "category_label": "테크 장비 · 음향",
-          "title_raw": "소니 MDR-3R 유선 헤드폰",
-          "product": "소니 MDR-3R 유선 헤드폰",
-          "store": "쿠팡 로켓배송",
-          "price": 78640,
-          "shipping": "로켓배송 무료배송",
-          "rocket": true,
-          "specs": [],
-          "briefing": [
-            "이전 이어폰·4.2g·스튜디오 모니터 용도 표기는 근거가 없어 삭제했습니다. 실제 MDR-3R은 헤드폰입니다. 이전 판매처·가격·구매 조건은 미검증 상태로 보류합니다."
-          ],
-          "audience": "오랜 시간 음악이나 백색소음을 들으며 딥워크하는 엔지니어",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 89,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
-          "link": {
-            "url": "https://link.coupang.com/a/iyzv0uG1N6",
-            "tracked": true,
-            "matched_keyword": "소니 MDR-3R",
-            "label": "소니 MDR-3R 이어폰 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "link_review": {
-            "status": "held",
-            "checked_at": "2026-11-10T11:58:59.083195+00:00",
-            "url": "https://link.coupang.com/a/iyzv0uG1N6",
-            "product_match": false,
-            "evidence": "",
-            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
-          },
-          "link_original": {
-            "url": "https://link.coupang.com/a/iyzv0uG1N6",
-            "tracked": true,
-            "matched_keyword": "소니 MDR-3R",
-            "label": "소니 MDR-3R 이어폰 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "price_review": {
-            "id": "deal-sony-mdr-3r",
-            "product": "소니 MDR-3R 모니터링 이어폰",
-            "seller_url": "https://link.coupang.com/a/iyzv0uG1N6",
-            "recorded_price": 78640,
-            "currency": "KRW",
-            "price_status": "unverified",
-            "verified_price": null,
-            "deal_status": "unverified",
-            "evidence": [
-              {
-                "url": "https://link.coupang.com/a/iyzv0uG1N6",
-                "result": "search_result",
-                "provenance": "link worker current direct request audit"
-              }
-            ],
-            "limitations": [
-              "Current exact product, option, seller price and inventory could not be verified.",
-              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims."
-            ],
-            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-          },
-          "historical_claims": {
-            "original_price": 119000,
-            "discount_pct": 34,
-            "status": "rejected",
-            "reason": "comparison_evidence_unverified"
-          },
-          "storefront_country": "KR"
-        }
-      ]
-    },
-    "monitor-desk": {
-      "label": "모니터 · 암 · 데스크",
-      "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·데브옵스",
-      "items": [
-        {
-          "id": "deal-lg-ultragear-27",
-          "region": "kr",
-          "target": "ko",
-          "category": "monitor-desk",
-          "category_label": "모니터 · 암 · 데스크",
-          "title_raw": "LG 울트라기어 27인치 QHD IPS 200Hz 1ms 게이밍모니터",
-          "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
-          "store": "쿠팡 로켓배송",
-          "price": 241734,
-          "shipping": "로켓배송 무료배송",
-          "rocket": true,
-          "specs": [
-            "27인치 QHD (2560x1440)",
-            "Fast IPS 200Hz",
-            "HDR10"
-          ],
-          "briefing": [
-            "실구매가: 241,734원 (정가 32.9만 원 대비 역대급 특가)",
-            "추천: 코드 3분할 뷰와 선명한 폰트 가독성이 필요한 개발자 서브/메인 모니터",
-            "체크: 피벗·틸트 지원 스탠드 기본 제공, QHD 해상도로 글자 뭉개짐 없음"
-          ],
-          "audience": "코드·로그·대시보드를 한 화면에 띄우려는 백엔드·풀스택",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 94,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
-          "link": {
-            "url": "https://link.coupang.com/a/iyztqGf2zc",
-            "tracked": true,
-            "matched_keyword": "LG 울트라기어 27인치 QHD",
-            "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "link_review": {
-            "status": "held",
-            "checked_at": "2026-11-10T11:58:52.615449+00:00",
-            "url": "https://link.coupang.com/a/iyztqGf2zc",
-            "product_match": false,
-            "evidence": "",
-            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
-          },
-          "link_original": {
-            "url": "https://link.coupang.com/a/iyztqGf2zc",
-            "tracked": true,
-            "matched_keyword": "LG 울트라기어 27인치 QHD",
-            "label": "LG 울트라기어 27인치 QHD 모니터 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "price_review": {
-            "id": "deal-lg-ultragear-27",
-            "product": "LG 울트라기어 27인치 QHD IPS 게이밍 모니터",
-            "seller_url": "https://link.coupang.com/a/iyztqGf2zc",
-            "recorded_price": 241734,
-            "currency": "KRW",
-            "price_status": "unverified",
-            "verified_price": null,
-            "deal_status": "unverified",
-            "evidence": [
-              {
-                "url": "https://link.coupang.com/a/iyztqGf2zc",
-                "result": "search_result",
-                "provenance": "link worker current direct request audit"
-              }
-            ],
-            "limitations": [
-              "Current exact product, option, seller price and inventory could not be verified.",
-              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
-              "Product model/specification/variant insufficiently specific to compare like-for-like."
-            ],
-            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-          },
-          "historical_claims": {
-            "original_price": 329000,
-            "discount_pct": 26,
-            "status": "rejected",
-            "reason": "comparison_evidence_unverified"
-          },
-          "storefront_country": "KR"
-        },
-        {
-          "id": "deal-heavy-duty-monitor-arm",
-          "region": "kr",
-          "target": "ko",
-          "category": "monitor-desk",
-          "category_label": "모니터 · 암 · 데스크",
-          "title_raw": "고중량 싱글/듀얼 모니터암 거치대 (최대 32인치 9kg 지원)",
-          "product": "고중량 기계식 모니터암 거치대",
-          "store": "쿠팡 로켓배송",
-          "price": 49900,
-          "shipping": "로켓배송 무료배송",
-          "rocket": true,
-          "specs": [
-            "가스 스프링 방식",
-            "VESA 75x75 / 100x100",
-            "케이블 수납형"
-          ],
-          "briefing": [
-            "실구매가: 49,900원 (쿠팡 로켓 특가)",
-            "추천: 거북목 방지를 위해 모니터를 눈높이로 띄우고 데스크 공간을 2배로 넓히려는 분",
-            "체크: 스탠드 다리가 사라져 모니터 아래 키보드·노트 수납 완벽 가능"
-          ],
-          "audience": "데스크 셋업을 깔끔하게 정리하고 목·어깨 통증을 줄이려는 개발자",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 91,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
-          "link": {
-            "url": "https://link.coupang.com/a/iyzzXmg6CG",
-            "tracked": true,
-            "matched_keyword": "모니터암",
-            "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "link_review": {
-            "status": "held",
-            "checked_at": "2026-11-10T11:59:04.097743+00:00",
-            "url": "https://link.coupang.com/a/iyzzXmg6CG",
-            "product_match": false,
-            "evidence": "",
-            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
-          },
-          "link_original": {
-            "url": "https://link.coupang.com/a/iyzzXmg6CG",
-            "tracked": true,
-            "matched_keyword": "모니터암",
-            "label": "고중량 기계식 모니터암 거치대 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "price_review": {
-            "id": "deal-heavy-duty-monitor-arm",
-            "product": "고중량 기계식 모니터암 거치대",
-            "seller_url": "https://link.coupang.com/a/iyzzXmg6CG",
-            "recorded_price": 49900,
-            "currency": "KRW",
-            "price_status": "unverified",
-            "verified_price": null,
-            "deal_status": "unverified",
-            "evidence": [
-              {
-                "url": "https://link.coupang.com/a/iyzzXmg6CG",
-                "result": "search_result",
-                "provenance": "link worker current direct request audit"
-              }
-            ],
-            "limitations": [
-              "Current exact product, option, seller price and inventory could not be verified.",
-              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
-              "Product model/specification/variant insufficiently specific to compare like-for-like."
-            ],
-            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-          },
-          "historical_claims": {
-            "original_price": 69000,
-            "discount_pct": 28,
-            "status": "rejected",
-            "reason": "comparison_evidence_unverified"
-          },
-          "storefront_country": "KR"
-        }
-      ]
-    },
-    "laptops": {
-      "label": "맥북 · 노트북 · 워크스테이션",
-      "audience": "로컬 LLM·도커 빌드를 노트북 한 대로 돌리려는 개발자",
-      "items": [
-        {
-          "id": "deal-apple-m4-macbook-pro",
-          "region": "kr",
-          "target": "ko",
-          "category": "laptops",
-          "category_label": "맥북 · 노트북 · 워크스테이션",
-          "title_raw": "Apple 2024 맥북 프로 14 M4 Pro (로켓배송 카드즉시할인)",
-          "product": "Apple M4 Pro MacBook Pro 14",
-          "store": "쿠팡 로켓배송",
-          "price": 2990000,
-          "shipping": "내일 새벽 도착 보장",
-          "rocket": true,
-          "specs": [
-            "M4 Pro 12코어 CPU / 16코어 GPU",
-            "24GB 통합 메모리",
-            "512GB SSD"
-          ],
-          "briefing": [
-            "실구매가: 2,990,000원 (카드사 즉시할인 및 무이자 할부 혜택)",
-            "추천: 로컬 LLM 양자화 모델(Ollama) 추론과 대규모 도커 빌드를 병행하는 백엔드 개발자",
-            "체크: 통합 메모리 대역폭 273GB/s로 컴파일 및 컨테이너 빌드 시간 반토막"
-          ],
-          "audience": "빌드 속도와 로컬 AI 개발 환경을 한 번에 업그레이드하려는 개발자",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 96,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
-          "link": {
-            "url": "https://link.coupang.com/a/iyxHrMNtyC",
-            "tracked": true,
-            "matched_keyword": "애플 M4 맥북 프로",
-            "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "link_review": {
-            "status": "held",
-            "checked_at": "2026-11-10T11:58:59.278769+00:00",
-            "url": "https://link.coupang.com/a/iyxHrMNtyC",
-            "product_match": false,
-            "evidence": "",
-            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
-          },
-          "link_original": {
-            "url": "https://link.coupang.com/a/iyxHrMNtyC",
-            "tracked": true,
-            "matched_keyword": "애플 M4 맥북 프로",
-            "label": "Apple M4 Pro MacBook Pro 14 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "price_review": {
-            "id": "deal-apple-m4-macbook-pro",
-            "product": "Apple M4 Pro MacBook Pro 14",
-            "seller_url": "https://link.coupang.com/a/iyxHrMNtyC",
-            "recorded_price": 2990000,
-            "currency": "KRW",
-            "price_status": "unverified",
-            "verified_price": null,
-            "deal_status": "unverified",
-            "evidence": [
-              {
-                "url": "https://link.coupang.com/a/iyxHrMNtyC",
-                "result": "search_result",
-                "provenance": "link worker current direct request audit"
-              }
-            ],
-            "limitations": [
-              "Current exact product, option, seller price and inventory could not be verified.",
-              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
-              "Product model/specification/variant insufficiently specific to compare like-for-like."
-            ],
-            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-          },
-          "historical_claims": {
-            "original_price": 3290000,
-            "discount_pct": 9,
-            "status": "rejected",
-            "reason": "comparison_evidence_unverified"
-          },
-          "storefront_country": "KR"
-        },
-        {
-          "id": "deal-mini-pc-n100",
-          "region": "kr",
-          "target": "ko",
-          "category": "laptops",
-          "category_label": "맥북 · 노트북 · 워크스테이션",
-          "title_raw": "초소형 미니PC 16GB RAM + 512GB SSD (저전력 개발 홈서버용)",
-          "product": "미니PC 16GB N100 저전력 홈서버",
-          "store": "쿠팡 로켓배송",
-          "price": 189000,
-          "shipping": "로켓배송 무료배송",
-          "rocket": true,
-          "specs": [
-            "Intel N100 4코어",
-            "16GB DDR5",
-            "512GB NVMe M.2"
-          ],
-          "briefing": [
-            "실구매가: 189,000원 (20만 원 이하 가성비 종결)",
-            "추천: 24시간 도커 컨테이너, 홈서버, 자동화 봇, DB 테스트베드를 돌릴 저전력 머신",
-            "체크: 소비전력 6W 수준으로 한 달 전기요금 1,000원 안팎"
-          ],
-          "audience": "개인 사이드 프로젝트나 홈랩을 클라우드 비용 없이 운영하고 싶은 엔지니어",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 93,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
-          "link": {
-            "url": "https://link.coupang.com/a/iyzyHkgEOi",
-            "tracked": true,
-            "matched_keyword": "미니PC 16GB",
-            "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "link_review": {
-            "status": "held",
-            "checked_at": "2026-11-10T11:59:04.149450+00:00",
-            "url": "https://link.coupang.com/a/iyzyHkgEOi",
-            "product_match": false,
-            "evidence": "",
-            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
-          },
-          "link_original": {
-            "url": "https://link.coupang.com/a/iyzyHkgEOi",
-            "tracked": true,
-            "matched_keyword": "미니PC 16GB",
-            "label": "미니PC 16GB 저전력 홈서버 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "price_review": {
-            "id": "deal-mini-pc-n100",
-            "product": "미니PC 16GB N100 저전력 홈서버",
-            "seller_url": "https://link.coupang.com/a/iyzyHkgEOi",
-            "recorded_price": 189000,
-            "currency": "KRW",
-            "price_status": "unverified",
-            "verified_price": null,
-            "deal_status": "unverified",
-            "evidence": [
-              {
-                "url": "https://link.coupang.com/a/iyzyHkgEOi",
-                "result": "search_result",
-                "provenance": "link worker current direct request audit"
-              }
-            ],
-            "limitations": [
-              "Current exact product, option, seller price and inventory could not be verified.",
-              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
-              "Product model/specification/variant insufficiently specific to compare like-for-like."
-            ],
-            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-          },
-          "historical_claims": {
-            "original_price": 259000,
-            "discount_pct": 27,
-            "status": "rejected",
-            "reason": "comparison_evidence_unverified"
-          },
-          "storefront_country": "KR"
-        }
-      ]
-    },
-    "afterwork": {
-      "label": "야근 · 생산성 · 커피·음료",
-      "audience": "야근 잦은 개발팀, 사무실 커피·음료 재고를 맡은 분",
-      "items": [
-        {
-          "id": "deal-office-coffee-bean-1kg",
-          "region": "kr",
-          "target": "ko",
-          "category": "afterwork",
-          "category_label": "야근 · 생산성 · 커피·간식",
-          "title_raw": "갓 볶은 고소한 원두커피 홀빈 1kg (사무실 에스프레소용)",
-          "product": "사무실 대용량 원두 1kg (고소한 블렌드)",
-          "store": "쿠팡 로켓배송",
-          "price": 16900,
-          "shipping": "로켓배송 무료배송",
-          "rocket": true,
-          "specs": [
-            "아라비카 100%",
-            "시티 로스팅 (다크초콜릿 향)",
-            "1kg 대용량"
-          ],
-          "briefing": [
-            "실구매가: 16,900원 (잔당 300원 꼴 가성비)",
-            "추천: 팀원들과 매일 아침·야근 때 커피머신 돌리는 개발팀 간식 담당자",
-            "체크: 산미 없이 묵직하고 고소한 맛으로 호불호 없는 오피스 베스트셀러"
-          ],
-          "audience": "카페인 수혈이 생존인 야근 잦은 개발팀",
-          "published_at": "2026-11-10T15:16:42+09:00",
-          "score": 88,
-          "disclosure": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
-          "ai_rewritten": true,
-          "link": {
-            "url": "https://link.coupang.com/a/iyzuKorRTw",
-            "tracked": true,
-            "matched_keyword": "고소한 원두 1kg",
-            "label": "고소한 원두 1kg 대용량 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "link_review": {
-            "status": "held",
-            "checked_at": "2026-11-10T11:59:04.155777+00:00",
-            "url": "https://link.coupang.com/a/iyzuKorRTw",
-            "product_match": false,
-            "evidence": "",
-            "reason": "Search redirect or exact product could not be established from accessible seller content: search_result"
-          },
-          "link_original": {
-            "url": "https://link.coupang.com/a/iyzuKorRTw",
-            "tracked": true,
-            "matched_keyword": "고소한 원두 1kg",
-            "label": "고소한 원두 1kg 대용량 (로켓배송)",
-            "label_kind": "상품"
-          },
-          "price_review": {
-            "id": "deal-office-coffee-bean-1kg",
-            "product": "사무실 대용량 원두 1kg (고소한 블렌드)",
-            "seller_url": "https://link.coupang.com/a/iyzuKorRTw",
-            "recorded_price": 16900,
-            "currency": "KRW",
-            "price_status": "unverified",
-            "verified_price": null,
-            "deal_status": "unverified",
-            "evidence": [
-              {
-                "url": "https://link.coupang.com/a/iyzuKorRTw",
-                "result": "search_result",
-                "provenance": "link worker current direct request audit"
-              }
-            ],
-            "limitations": [
-              "Current exact product, option, seller price and inventory could not be verified.",
-              "Existing original_price and discount_pct have no verified comparison evidence. Suppress discount claims.",
-              "Product model/specification/variant insufficiently specific to compare like-for-like."
-            ],
-            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
-          },
-          "historical_claims": {
-            "original_price": 22000,
-            "discount_pct": 23,
-            "status": "rejected",
-            "reason": "comparison_evidence_unverified"
-          },
-          "storefront_country": "KR"
         }
       ]
     }
@@ -2960,9 +3272,10 @@
   },
   "stats": {
     "feed": 17,
-    "tracked_links": 14,
+    "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 3,
-    "held_product_links": 14
+    "verified_product_links": 4,
+    "held_product_links": 13,
+    "historical_tracked_links": 14
   }
 }

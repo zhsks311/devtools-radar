@@ -707,32 +707,38 @@
     "en": {
       "product": "TextSniper for Mac",
       "summary": "Copy text from images and the screen.",
-      "conditions": "New users only; 1 Mac, macOS 10.15+; redeem within 30 days. Country activation and billing eligibility, taxes and refund terms remain unverified."
+      "conditions": "New users only; 1 Mac, macOS 10.15+; redeem within 30 days. Country activation and billing eligibility, taxes and refund terms remain unverified.",
+      "buying_note": "Also sold in the Korean Mac App Store for KRW 17,000. This StackSocial code is a separate offer; check Korean payment and redemption eligibility."
     },
     "ko": {
       "product": "TextSniper · Mac용",
       "summary": "이미지·화면의 텍스트를 복사하는 도구.",
-      "conditions": "신규 사용자 전용, Mac 1대·macOS 10.15 이상, 30일 이내 등록. 국가별 활성화·결제 가능 여부와 세금·환불 조건은 미확인입니다."
+      "conditions": "신규 사용자 전용, Mac 1대·macOS 10.15 이상, 30일 이내 등록. 국가별 활성화·결제 가능 여부와 세금·환불 조건은 미확인입니다.",
+      "buying_note": "한국 Mac App Store에서도 17,000원에 판매하는 앱입니다. 여기의 StackSocial 코드는 별도 상품이므로 한국 결제·활성화 조건을 확인하세요."
     },
     "zh": {
       "product": "TextSniper · Mac版",
       "summary": "从图片和屏幕提取文字。",
-      "conditions": "仅限新用户；1台Mac，macOS 10.15及以上；30天内兑换。 各国激活与付款资格、税费及退款条件尚未核实。"
+      "conditions": "仅限新用户；1台Mac，macOS 10.15及以上；30天内兑换。 各国激活与付款资格、税费及退款条件尚未核实。",
+      "buying_note": "韩国Mac App Store也以17,000韩元销售此应用。此处StackSocial兑换码是另一项优惠，请确认韩国付款及激活条件。"
     },
     "ja": {
       "product": "TextSniper · Mac用",
       "summary": "画像や画面からテキストをコピーするツール。",
-      "conditions": "新規ユーザー限定、Mac 1台、macOS 10.15以降、30日以内に引き換え。 国別の有効化・支払い可否、税金、返金条件は未確認です。"
+      "conditions": "新規ユーザー限定、Mac 1台、macOS 10.15以降、30日以内に引き換え。 国別の有効化・支払い可否、税金、返金条件は未確認です。",
+      "buying_note": "韓国のMac App Storeでも17,000ウォンで販売されています。こちらのStackSocialコードは別の販売条件なので、韓国での決済・有効化条件をご確認ください。"
     },
     "es": {
       "product": "TextSniper para Mac",
       "summary": "Copia texto de imágenes y de la pantalla.",
-      "conditions": "Solo nuevos usuarios; 1 Mac, macOS 10.15+; canje en 30 días. Países de activación y pago, impuestos y condiciones de reembolso sin verificar."
+      "conditions": "Solo nuevos usuarios; 1 Mac, macOS 10.15+; canje en 30 días. Países de activación y pago, impuestos y condiciones de reembolso sin verificar.",
+      "buying_note": "También se vende en el Mac App Store coreano por 17.000 KRW. Este código de StackSocial es una oferta distinta; confirma las condiciones de pago y canje en Corea."
     },
     "fr": {
       "product": "TextSniper pour Mac",
       "summary": "Copiez du texte depuis des images et l’écran.",
-      "conditions": "Nouveaux utilisateurs uniquement ; 1 Mac, macOS 10.15+ ; à activer sous 30 jours. Pays d’activation et de facturation, taxes et conditions de remboursement non vérifiés."
+      "conditions": "Nouveaux utilisateurs uniquement ; 1 Mac, macOS 10.15+ ; à activer sous 30 jours. Pays d’activation et de facturation, taxes et conditions de remboursement non vérifiés.",
+      "buying_note": "Également vendu sur le Mac App Store coréen à 17 000 KRW. Ce code StackSocial relève d’une offre distincte ; vérifiez les conditions de paiement et d’activation en Corée."
     }
   },
   "9caac4280b19": {

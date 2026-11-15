@@ -61,3 +61,27 @@ def validate_deal_countries(feed):
         elif codes:
             errors.extend(prefix + error for error in _evidence_errors(info))
     return errors
+
+
+def target_countries(deal):
+    """Browsing audience, not a promise of address-specific shipping or stock.
+
+    Korean community leads target Korea unless explicitly overseas-only. Imported
+    goods can still target Korean buyers; storefront and fulfilment are separate.
+    No inference from language, currency, or generic region fields.
+    """
+    from urllib.parse import urlparse
+    info = deal.get('country_targeting') or {}
+    codes = info.get('countries', [])
+    if info.get('basis') in {'editorial_domestic_catalogue', 'reviewed_community_audience', 'reviewed_seller_audience'} and isinstance(codes, list):
+        codes = [c for c in codes if isinstance(c, str) and c in COUNTRY_CODES]
+    else:
+        codes = []
+    source = deal.get('source') or {}
+    host = (urlparse(source.get('url') or '').hostname or '').lower()
+    community = any(host == h or host.endswith('.' + h) for h in ('ppomppu.co.kr', 'fmkorea.com', 'quasarzone.com', 'coolenjoy.net', 'ruliweb.com', 'clien.net'))
+    if community and info.get('fulfilment') != 'overseas_only':
+        codes.append('KR')
+    if info.get('fulfilment') == 'overseas_only':
+        codes = [c for c in codes if c != 'KR']
+    return tuple(sorted(set(codes) | set(confirmed_countries(deal))))

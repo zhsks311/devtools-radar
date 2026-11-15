@@ -585,7 +585,27 @@
         ],
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
       },
-      "storefront_country": null
+      "storefront_country": null,
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "digital",
+        "reviewed_at": "2026-11-15T13:32:45.657539+00:00",
+        "evidence_url": "https://apps.apple.com/kr/app/textsniper/id1528890965?mt=12",
+        "note": "Product sold in Korean Mac App Store for KRW17,000. This identifies a Korean buyer audience, not Korean redemption/payment eligibility for this separate StackSocial offer."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-15T13:32:45.657539+00:00",
+        "sources": [
+          {
+            "label": "Mac App Store · Korea",
+            "url": "https://apps.apple.com/kr/app/textsniper/id1528890965?mt=12"
+          }
+        ],
+        "note": "Separate storefront and licence; do not equate with StackSocial code."
+      }
     },
     {
       "id": "9caac4280b19",
@@ -2453,6 +2473,71 @@
             "returns": "Return/refund rules: check retailer before purchase or activation.",
             "evidence_url": null,
             "checked_at": "2026-11-10"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-10T11:59:10.383172+00:00",
+            "url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+            "product_match": true,
+            "evidence": "Seller product title: TextSniper for Mac: Lifetime Subscription | StackSocial. Product identity only; price, stock, license/variant and country eligibility are not certified by this link check.",
+            "reason": "product_detail; "
+          },
+          "link_original": {
+            "url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+            "tracked": false,
+            "matched_keyword": null,
+            "label": "View product at StackSocial",
+            "label_kind": "retailer"
+          },
+          "price_review": {
+            "id": "de0f62d0487f",
+            "product": "TextSniper for Mac",
+            "seller_url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+            "recorded_price": 3.99,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 3.99,
+            "deal_status": "below_vendor_displayed_price_with_caveat",
+            "evidence": [
+              {
+                "url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+                "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+              }
+            ],
+            "limitations": [
+              "Checkout not tested; taxes/payment/country eligibility and final inventory not verified. No historical-low evidence."
+            ],
+            "comparison": {
+              "url": "https://textsniper.app/",
+              "price": 7.99,
+              "currency": "USD",
+              "note": "Official top buy menu 1Mac7.99 but another CTA6.99; conflicting official price so no exact percentage."
+            },
+            "conditions": [
+              "New users only; 1 Mac; version1.6.0; redeem within30days. Minor updates only, major upgrades extra."
+            ],
+            "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+          },
+          "storefront_country": null,
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "digital",
+            "reviewed_at": "2026-11-15T13:32:45.657539+00:00",
+            "evidence_url": "https://apps.apple.com/kr/app/textsniper/id1528890965?mt=12",
+            "note": "Product sold in Korean Mac App Store for KRW17,000. This identifies a Korean buyer audience, not Korean redemption/payment eligibility for this separate StackSocial offer."
+          },
+          "alternative_review": {
+            "checked_at": "2026-11-15T13:32:45.657539+00:00",
+            "sources": [
+              {
+                "label": "Mac App Store · Korea",
+                "url": "https://apps.apple.com/kr/app/textsniper/id1528890965?mt=12"
+              }
+            ],
+            "note": "Separate storefront and licence; do not equate with StackSocial code."
           }
         },
         {
