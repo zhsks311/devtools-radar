@@ -39,3 +39,12 @@ class HostingerOfferTest(unittest.TestCase):
     self.assertIn(value,loc['buying_note'])
    for value in ['166,992','200,112']:
     self.assertNotIn(value,loc['buying_note'])
+ def test_refund_exceptions_have_dated_source(self):
+  d=next(x for x in json.loads(Path('data/deals_en.json').read_text())['feed'] if x['id']=='hostinger-premium-black-friday-48-months')
+  self.assertFalse(d['refund_review']['korean_order_verified'])
+  self.assertEqual(d['refund_review']['policy_url'],'https://www.hostinger.com/legal/refund-policy')
+  self.assertIn('non-refundable',d['purchase_eligibility']['returns'])
+  words={'ko':'암호화폐','en':'Cryptocurrency','zh':'加密货币','ja':'暗号資産','es':'criptomonedas','fr':'cryptomonnaies'}
+  for lang,loc in json.loads(Path('data/deal_localizations.json').read_text())[d['id']].items():
+   self.assertIn(words[lang],loc['conditions'])
+   self.assertIn('95.52',loc['summary'])

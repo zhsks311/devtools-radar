@@ -2390,7 +2390,7 @@
         "activation": "48-month upfront plan. Market-specific price and account eligibility require confirmation.",
         "payment": "Korean billing and payment eligibility unverified; no checkout performed.",
         "tax": "Final taxes and total unverified.",
-        "returns": "Seller advertises 30-day money-back guarantee; policy and product exclusions apply.",
+        "returns": "The English refund policy permits deducting the supplied free domain’s price from a refund. Cryptocurrency, token and digital-asset payments are non-refundable. Payment-method and regional exceptions apply; actual terms for a Korean order are unverified. Standard hosting refund window is 30 days, subject to exceptions.",
         "evidence_url": "https://www.hostinger.com/web-hosting",
         "checked_at": "2026-11-15"
       },
@@ -2454,6 +2454,10 @@
           {
             "url": "https://www.hostinger.com/kr/black-friday-web-hosting-deals",
             "label": "Hostinger Korea: Premium 48 months"
+          },
+          {
+            "url": "https://www.hostinger.com/legal/refund-policy",
+            "label": "Hostinger: refund policy"
           }
         ],
         "evidence": "Official Korean Premium offer 48 months KRW 133392 prepaid, renewal monthly equivalent 15319 for same term (calculated 735312). Three sites, 20GB, weekly backups match English. Korean mailbox line malformed; no complete term identity claimed. No explicit tax inclusion verified or checkout performed."
@@ -2466,6 +2470,13 @@
         "reviewed_at": "2026-11-15T19:14:58.278041+00:00",
         "fulfilment": "digital",
         "note": "Separate official KRW offer linked for Korean audience; USD offer country eligibility remains unverified."
+      },
+      "refund_review": {
+        "checked_at": "2026-11-15T20:16:02.783219+00:00",
+        "policy_url": "https://www.hostinger.com/legal/refund-policy",
+        "policy_revision_raw": "2026-10-29 16:06:52",
+        "evidence": "The English refund policy permits deducting the supplied free domain’s price from a refund. Cryptocurrency, token and digital-asset payments are non-refundable. Payment-method and regional exceptions apply; actual terms for a Korean order are unverified.",
+        "korean_order_verified": false
       }
     }
   ],
@@ -3860,7 +3871,7 @@
             "activation": "48-month upfront plan. Market-specific price and account eligibility require confirmation.",
             "payment": "Korean billing and payment eligibility unverified; no checkout performed.",
             "tax": "Final taxes and total unverified.",
-            "returns": "Seller advertises 30-day money-back guarantee; policy and product exclusions apply.",
+            "returns": "The English refund policy permits deducting the supplied free domain’s price from a refund. Cryptocurrency, token and digital-asset payments are non-refundable. Payment-method and regional exceptions apply; actual terms for a Korean order are unverified. Standard hosting refund window is 30 days, subject to exceptions.",
             "evidence_url": "https://www.hostinger.com/web-hosting",
             "checked_at": "2026-11-15"
           },
@@ -3924,6 +3935,10 @@
               {
                 "url": "https://www.hostinger.com/kr/black-friday-web-hosting-deals",
                 "label": "Hostinger Korea: Premium 48 months"
+              },
+              {
+                "url": "https://www.hostinger.com/legal/refund-policy",
+                "label": "Hostinger: refund policy"
               }
             ],
             "evidence": "Official Korean Premium offer 48 months KRW 133392 prepaid, renewal monthly equivalent 15319 for same term (calculated 735312). Three sites, 20GB, weekly backups match English. Korean mailbox line malformed; no complete term identity claimed. No explicit tax inclusion verified or checkout performed."
@@ -3936,6 +3951,13 @@
             "reviewed_at": "2026-11-15T19:14:58.278041+00:00",
             "fulfilment": "digital",
             "note": "Separate official KRW offer linked for Korean audience; USD offer country eligibility remains unverified."
+          },
+          "refund_review": {
+            "checked_at": "2026-11-15T20:16:02.783219+00:00",
+            "policy_url": "https://www.hostinger.com/legal/refund-policy",
+            "policy_revision_raw": "2026-10-29 16:06:52",
+            "evidence": "The English refund policy permits deducting the supplied free domain’s price from a refund. Cryptocurrency, token and digital-asset payments are non-refundable. Payment-method and regional exceptions apply; actual terms for a Korean order are unverified.",
+            "korean_order_verified": false
           }
         }
       ]
