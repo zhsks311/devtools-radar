@@ -1206,5 +1206,69 @@
       "conditions": "Nouveaux utilisateurs uniquement ; cette offre ne permet ni activation ni mise à niveau sur un compte existant. 2 bases de données, 25 000 enregistrements chacune, tables/colonnes illimitées et 2 Prehooks. MCP, authentification intégrée, invitations, crédits Smart AI, webhooks, domaine personnalisé et instantanés sont exclus. Accès à vie et futures mises à jour du Starter Plan ; activation sous 60 jours. Le vendeur annonce un remboursement sous 60 jours après achat, sans garantie We Got Your Back. La capacité supplémentaire est payante. Éligibilité par pays, notamment en Corée, taxes et paiement final non vérifiés.",
       "buying_note": "Pour un petit prototype, essayez d’abord Supabase Free : 2 projets actifs, 500 Mo de base de données et une pause après une semaine d’inactivité. Il utilise Postgres, pas MySQL : capacité et nombre d’enregistrements ne sont pas directement comparables. Vérifiez les limites API et de bande passante de NoCodeBackend avant la production."
     }
+  },
+  "anker-p31i-d1202-kr": {
+    "en": {
+      "product": "Anker P31i D1202",
+      "summary": "Anker P31i D1202",
+      "conditions": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+    },
+    "ko": {
+      "product": "Anker P31i D1202",
+      "summary": "Anker P31i D1202",
+      "conditions": "누구나 디지털 7% 중복쿠폰 적용 24,440원. 블랙122·블루266·핑크163개 표시, 화이트 품절. 국내배송만, 기본무료·제주3,000원·도서산간5,000원 추가. ID당5개. 재고 변동 가능. 커뮤니티21,820원 조건과 결제·시장최저가 미검증."
+    },
+    "zh": {
+      "product": "Anker P31i D1202",
+      "summary": "Anker P31i D1202",
+      "conditions": "使用通用数码7%优惠券后24,440韩元。黑色122、蓝色266、粉色163件，白色售罄。仅韩国配送，基本运费免费，济州加3,000韩元，偏远岛屿加5,000；每账号限5件。库存可变。社区21,820韩元条件、结账和市场最低价未验证。"
+    },
+    "ja": {
+      "product": "Anker P31i D1202",
+      "summary": "Anker P31i D1202",
+      "conditions": "共通デジタル7%クーポンで24,440ウォン。黒122・青266・ピンク163、白は売切れ。韓国内のみ、基本送料無料、済州+3,000・離島+5,000ウォン。1アカウント5個まで。在庫変動あり。投稿の21,820ウォン条件・決済・市場最安値は未確認。"
+    },
+    "es": {
+      "product": "Anker P31i D1202",
+      "summary": "Anker P31i D1202",
+      "conditions": "24.440 KRW con cupón digital general del 7%. Negro 122, azul 266, rosa 163; blanco agotado. Solo Corea: envío base gratis, Jeju +3.000 KRW, islas remotas +5.000. Máximo 5 por cuenta. Stock variable. Precio comunitario de 21.820 KRW, pago y mínimo del mercado sin verificar."
+    },
+    "fr": {
+      "product": "Anker P31i D1202",
+      "summary": "Anker P31i D1202",
+      "conditions": "24 440 KRW avec coupon numérique universel de 7 %. Noir 122, bleu 266, rose 163 ; blanc épuisé. Corée uniquement : livraison standard offerte, Jeju +3 000 KRW, îles isolées +5 000. Limite de 5 par compte. Stock variable. Prix communautaire de 21 820 KRW, paiement et minimum du marché non vérifiés."
+    }
+  },
+  "mega-coffee-hot-americano-kr": {
+    "en": {
+      "product": "Mega MGC Coffee HOT Americano",
+      "summary": "Mega MGC Coffee HOT Americano",
+      "conditions": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+    },
+    "ko": {
+      "product": "Mega MGC Coffee HOT Americano",
+      "summary": "Mega MGC Coffee HOT Americano",
+      "conditions": "국내 메가MGC HOT아메리카노 모바일교환권, 표시가1,320원. 93일 유효·연장불가, 하루10개 구매가능 표시. 보통10분내발송·지연가능. 이용/제외매장 및 결제 미검증. 판매처 안내상 미사용은 최초기한전100%·기한후90%환불. 시장최저가 미검증."
+    },
+    "zh": {
+      "product": "Mega MGC Coffee HOT Americano",
+      "summary": "Mega MGC Coffee HOT Americano",
+      "conditions": "韩国Mega MGC热美式手机兑换券，显示1,320韩元。有效93天，不可延期，每天限10张。通常10分钟内发送，可能延迟。适用及排除门店、结账未验证。卖家注明未使用券期限内退100%，过期退90%。非已验证市场最低价。"
+    },
+    "ja": {
+      "product": "Mega MGC Coffee HOT Americano",
+      "summary": "Mega MGC Coffee HOT Americano",
+      "conditions": "韓国Mega MGCホットアメリカーノ電子券、表示1,320ウォン。有効93日、延長不可、1日10枚。通常10分以内送信、遅延あり。利用・除外店舗と決済は未確認。販売者案内では未使用は期限内100%、期限後90%返金。市場最安値未確認。"
+    },
+    "es": {
+      "product": "Mega MGC Coffee HOT Americano",
+      "summary": "Mega MGC Coffee HOT Americano",
+      "conditions": "Cupón móvil coreano de americano caliente Mega MGC, 1.320 KRW. Válido 93 días, sin prórroga; 10 al día. Envío habitual en 10 minutos, posibles retrasos. Tiendas admitidas/excluidas y pago sin verificar. Según vendedor, cupón sin usar: reembolso del 100% antes de caducar y 90% después. Mínimo del mercado no verificado."
+    },
+    "fr": {
+      "product": "Mega MGC Coffee HOT Americano",
+      "summary": "Mega MGC Coffee HOT Americano",
+      "conditions": "Coupon mobile coréen pour un americano chaud Mega MGC, 1 320 KRW. Valable 93 jours sans prolongation ; 10 par jour. Envoi habituel sous 10 minutes, retard possible. Magasins acceptés/exclus et paiement non vérifiés. Selon le vendeur, coupon inutilisé : remboursement de 100 % avant expiration, 90 % après. Minimum du marché non vérifié."
+    }
   }
 }

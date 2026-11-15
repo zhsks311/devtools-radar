@@ -1589,6 +1589,172 @@
         "fulfilment": "domestic",
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       }
+    },
+    {
+      "id": "anker-p31i-d1202-kr",
+      "region": "kr",
+      "target": "ko",
+      "category": "hardware",
+      "category_label": "하드웨어",
+      "title_raw": "Anker P31i D1202",
+      "product": "Anker P31i D1202",
+      "store": "Gmarket · Anker Korea",
+      "price": 24440,
+      "currency": "KRW",
+      "shipping": "Korea domestic shipping",
+      "specs": [],
+      "briefing": [
+        "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-15",
+      "source": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+        "id": "gmarket",
+        "label": "Gmarket seller detail"
+      },
+      "price_source": "retailer_product_page",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T13:31:30+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+        "product_match": true,
+        "evidence": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+      },
+      "price_review": {
+        "id": "anker-p31i-d1202-kr",
+        "product": "Anker P31i D1202",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+        "recorded_price": 24440,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 24440,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+            "observed_at": "2026-11-15T13:31:30+00:00",
+            "result": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+          }
+        ],
+        "limitations": [
+          "Checkout and independent market-low price unverified."
+        ],
+        "review_completed_at": "2026-11-15T13:31:30+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "domestic",
+        "reviewed_at": "2026-11-15T13:31:30+00:00"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified.",
+        "activation": "Not applicable to a physical headset.",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Return terms not independently verified; check seller policy.",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+        "checked_at": "2026-11-15"
+      }
+    },
+    {
+      "id": "mega-coffee-hot-americano-kr",
+      "region": "kr",
+      "target": "ko",
+      "category": "vouchers",
+      "category_label": "상품권",
+      "title_raw": "Mega MGC Coffee HOT Americano",
+      "product": "Mega MGC Coffee HOT Americano",
+      "store": "Gmarket · Coop Marketing",
+      "price": 1320,
+      "currency": "KRW",
+      "shipping": "Korean mobile voucher",
+      "specs": [],
+      "briefing": [
+        "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-15",
+      "source": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+        "id": "gmarket",
+        "label": "Gmarket seller detail"
+      },
+      "price_source": "retailer_product_page",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T13:33:32+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+        "product_match": true,
+        "evidence": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+      },
+      "price_review": {
+        "id": "mega-coffee-hot-americano-kr",
+        "product": "Mega MGC Coffee HOT Americano",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+        "recorded_price": 1320,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 1320,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+            "observed_at": "2026-11-15T13:33:32+00:00",
+            "result": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+          }
+        ],
+        "limitations": [
+          "Checkout and independent market-low price unverified."
+        ],
+        "review_completed_at": "2026-11-15T13:33:32+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "domestic",
+        "reviewed_at": "2026-11-15T13:33:32+00:00"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Mobile delivery, normally within 10 minutes; delays possible.",
+        "activation": "93-day validity, no extension. Check participating and excluded stores before purchase.",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Seller states unused refund 100% before initial expiry, 90% after.",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+        "checked_at": "2026-11-15"
+      }
     }
   ],
   "categories": {
@@ -1786,6 +1952,88 @@
             "reviewed_at": "2026-11-15T13:30:52.386448+00:00",
             "fulfilment": "domestic",
             "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          }
+        },
+        {
+          "id": "mega-coffee-hot-americano-kr",
+          "region": "kr",
+          "target": "ko",
+          "category": "vouchers",
+          "category_label": "상품권",
+          "title_raw": "Mega MGC Coffee HOT Americano",
+          "product": "Mega MGC Coffee HOT Americano",
+          "store": "Gmarket · Coop Marketing",
+          "price": 1320,
+          "currency": "KRW",
+          "shipping": "Korean mobile voucher",
+          "specs": [],
+          "briefing": [
+            "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+          ],
+          "published_at": null,
+          "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-15",
+          "source": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+            "id": "gmarket",
+            "label": "Gmarket seller detail"
+          },
+          "price_source": "retailer_product_page",
+          "storefront_country": "KR",
+          "link": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+            "tracked": false,
+            "label": "View actual product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T13:33:32+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+            "product_match": true,
+            "evidence": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+          },
+          "price_review": {
+            "id": "mega-coffee-hot-americano-kr",
+            "product": "Mega MGC Coffee HOT Americano",
+            "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+            "recorded_price": 1320,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 1320,
+            "deal_status": "regular_price_or_discount_unproven",
+            "evidence": [
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+                "observed_at": "2026-11-15T13:33:32+00:00",
+                "result": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+              }
+            ],
+            "limitations": [
+              "Checkout and independent market-low price unverified."
+            ],
+            "review_completed_at": "2026-11-15T13:33:32+00:00"
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "domestic",
+            "reviewed_at": "2026-11-15T13:33:32+00:00"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Mobile delivery, normally within 10 minutes; delays possible.",
+            "activation": "93-day validity, no extension. Check participating and excluded stores before purchase.",
+            "payment": "Checkout untested",
+            "tax": "Final checkout untested",
+            "returns": "Seller states unused refund 100% before initial expiry, 90% after.",
+            "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+            "checked_at": "2026-11-15"
           }
         }
       ]
@@ -3220,6 +3468,90 @@
             "fulfilment": "domestic",
             "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
           }
+        },
+        {
+          "id": "anker-p31i-d1202-kr",
+          "region": "kr",
+          "target": "ko",
+          "category": "hardware",
+          "category_label": "하드웨어",
+          "title_raw": "Anker P31i D1202",
+          "product": "Anker P31i D1202",
+          "store": "Gmarket · Anker Korea",
+          "price": 24440,
+          "currency": "KRW",
+          "shipping": "Korea domestic shipping",
+          "specs": [],
+          "briefing": [
+            "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+          ],
+          "published_at": null,
+          "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-15",
+          "source": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+            "id": "gmarket",
+            "label": "Gmarket seller detail"
+          },
+          "price_source": "retailer_product_page",
+          "storefront_country": "KR",
+          "link": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+            "tracked": false,
+            "label": "View actual product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T13:31:30+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+            "product_match": true,
+            "evidence": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+          },
+          "price_review": {
+            "id": "anker-p31i-d1202-kr",
+            "product": "Anker P31i D1202",
+            "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+            "recorded_price": 24440,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 24440,
+            "deal_status": "regular_price_or_discount_unproven",
+            "evidence": [
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+                "observed_at": "2026-11-15T13:31:30+00:00",
+                "result": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+              }
+            ],
+            "limitations": [
+              "Checkout and independent market-low price unverified."
+            ],
+            "review_completed_at": "2026-11-15T13:31:30+00:00"
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "domestic",
+            "reviewed_at": "2026-11-15T13:31:30+00:00"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "KR"
+            ],
+            "status": "retailer_delivery_statement",
+            "delivery": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified.",
+            "activation": "Not applicable to a physical headset.",
+            "payment": "Checkout untested",
+            "tax": "Final checkout untested",
+            "returns": "Return terms not independently verified; check seller policy.",
+            "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+            "checked_at": "2026-11-15"
+          }
         }
       ]
     }
@@ -3271,10 +3603,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 17,
+    "feed": 19,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 4,
+    "verified_product_links": 6,
     "held_product_links": 13,
     "historical_tracked_links": 14
   }
