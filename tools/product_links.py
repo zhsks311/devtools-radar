@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'www.adobe.com': r'/kr/creativecloud\.html',  # Exact Creative Cloud suite product, not general plans/search.
     'proton.me': r'/(?:mail|drive|pass)/black-friday/?',  # Product-specific official offers; exact tier reviewed separately.
     'keyboardstack.com': r'/',  # Reviewed single-product official page, not a catalogue.
     'appsumo.com': r'/products/[a-z0-9][a-z0-9-]+/?',

@@ -1384,5 +1384,43 @@
       "conditions": "Nouveaux utilisateurs. Première année 23.88 USD, puis renouvellement automatique à 35.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés.",
       "buying_note": "Pour ce seul service, le forfait individuel coûte moins cher. Pour plusieurs services, comparez Unlimited : 77.88 USD prépayés la première année, puis renouvellement automatique à 119.88 USD/an. Il inclut 500 Go et les fonctions premium de Mail, Drive, VPN et Pass. Cela ne signifie pas que des abonnements séparés sont cumulables."
     }
+  },
+  "adobe-creative-cloud-kr-bf-monthly-annual": {
+    "en": {
+      "product": "Adobe Creative Cloud All Apps · annual, paid monthly",
+      "summary": "KRW 34,800/month including VAT for the first year; 12-month commitment, KRW 417,600 total. Not a cancel-anytime monthly plan.",
+      "conditions": "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified.",
+      "buying_note": "For short-term use, check the early-cancellation cost before subscribing."
+    },
+    "ko": {
+      "product": "Adobe Creative Cloud 모든 앱 · 연간 약정/매월 결제",
+      "summary": "첫해 월 34,800원(VAT 포함), 12개월 합계 417,600원입니다. 언제든 부담 없이 해지하는 월정액이 아니라 1년 약정입니다.",
+      "conditions": "18세 이상 최초 개인 구독자 대상, 1인 1개. 행사 2026-11-13~27, 종료 시각 미공개. 이후 당시 요금으로 자동 갱신(현재 월 87,900원). 최초 주문 14일 이내 전액 환불. 이후 해지 시 사용 기간의 월정액 대비 차액 + 연간 약정 금액의 10%가 청구되며 즉시 서비스 종료. 별도 선불 플랜 396,217원/년과 다른 옵션입니다. 실제 결제·개별 자격은 미확인.",
+      "buying_note": "잠깐 쓸 목적이라면 해지 비용부터 확인하세요."
+    },
+    "zh": {
+      "product": "Adobe Creative Cloud 全部应用 · 年约月付",
+      "summary": "首年每月34,800韩元含税，12个月承诺合计417,600韩元；不是可随意取消的月租。",
+      "conditions": "首次个人订阅者须满18岁，每人一份。活动2026-11-13至27，截止时刻未注明。按届时价格自动续订（目前每月87,900韩元）。首次下单14天内全额退款；之后取消须付已用期间相对月租的差额，加年约金额10%，服务立即结束。396,217韩元/年预付属于另一选项。结账及个人资格未核实。",
+      "buying_note": "若只需短期使用，请先核实提前解约费用。"
+    },
+    "ja": {
+      "product": "Adobe Creative Cloud コンプリート · 年間契約・月払い",
+      "summary": "初年度月34,800ウォン税込、12か月計417,600ウォン。いつでも無料解約できる月額契約ではありません。",
+      "conditions": "18歳以上の初回個人契約者、1人1契約。2026-11-13〜27、終了時刻不明。更新時の料金で自動更新（現在月87,900ウォン）。初回注文14日以内は全額返金。以後は利用期間の月額契約との差額と年間契約額の10%を請求、サービス即終了。年396,217ウォンの前払いは別プラン。決済・個別資格は未確認。",
+      "buying_note": "短期利用なら、契約前に中途解約費用を確認してください。"
+    },
+    "es": {
+      "product": "Adobe Creative Cloud Todas las aplicaciones · anual, pago mensual",
+      "summary": "Primer año: KRW 34,800/mes con IVA; compromiso de 12 meses, total KRW 417,600. No es un plan mensual sin permanencia.",
+      "conditions": "Nuevos suscriptores individuales de 18 años o más, uno por persona. Oferta 2026-11-13–27, hora límite no indicada. Renovación automática a tarifa vigente (ahora KRW 87,900/mes). Reembolso completo dentro de 14 días del pedido inicial. Después: diferencia por el periodo usado respecto a tarifa mensual más 10% del compromiso anual; servicio termina de inmediato. KRW 396,217/año prepagados es otra opción. Pago y elegibilidad individual sin verificar.",
+      "buying_note": "Para uso breve, revisa el coste de cancelación anticipada antes de suscribirte."
+    },
+    "fr": {
+      "product": "Adobe Creative Cloud Toutes les applications · annuel, paiement mensuel",
+      "summary": "Première année : 34,800 KRW/mois TTC, engagement de 12 mois soit 417,600 KRW. Ce n’est pas un forfait mensuel sans engagement.",
+      "conditions": "Première souscription individuelle, 18 ans minimum, une par personne. Offre du 2026-11-13 au 27, heure limite non indiquée. Renouvellement automatique au tarif en vigueur (actuellement 87,900 KRW/mois). Remboursement intégral sous 14 jours après commande initiale. Ensuite : différence avec le tarif mensuel pour la période utilisée plus 10% du montant annuel engagé ; arrêt immédiat du service. Le prépaiement de 396,217 KRW/an est une autre option. Paiement et admissibilité individuelle non vérifiés.",
+      "buying_note": "Pour un usage ponctuel, vérifiez les frais de résiliation anticipée avant de souscrire."
+    }
   }
 }

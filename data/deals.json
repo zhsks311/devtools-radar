@@ -1755,6 +1755,121 @@
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
         "checked_at": "2026-11-15"
       }
+    },
+    {
+      "id": "adobe-creative-cloud-kr-bf-monthly-annual",
+      "region": "kr",
+      "target": "ko",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Adobe Creative Cloud All Apps · annual, paid monthly",
+      "product": "Adobe Creative Cloud All Apps · annual, paid monthly",
+      "store": "Adobe",
+      "storefront_country": "KR",
+      "price": 34800,
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital subscription",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "KRW 34,800/month including VAT for the first year; 12-month commitment, KRW 417,600 total. Not a cancel-anytime monthly plan.",
+        "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified."
+      ],
+      "audience": "Eligible new individual subscribers in Korea",
+      "source": {
+        "id": "adobe-official",
+        "label": "Adobe Korea official offer",
+        "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-15",
+      "score": null,
+      "disclosure": "Direct official link, no affiliate tracking. Annual commitment billed monthly; checkout not tested.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://www.adobe.com/kr/creativecloud.html",
+        "tracked": false,
+        "label": "View official product",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital subscription",
+        "activation": "Eligibility restrictions apply",
+        "payment": "Checkout unverified",
+        "tax": "Displayed price includes VAT",
+        "returns": "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified.",
+        "evidence_url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html",
+        "checked_at": "2026-11-15"
+      },
+      "link_review": {
+        "url": "https://www.adobe.com/kr/creativecloud.html",
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T17:14:18.828646+00:00",
+        "product_match": true,
+        "evidence": "Official Creative Cloud suite page offers KRW 34,800/month VAT included for first year, annual commitment billed monthly, with offer terms linked."
+      },
+      "price_review": {
+        "id": "adobe-creative-cloud-kr-bf-monthly-annual",
+        "product": "Adobe Creative Cloud All Apps · annual, paid monthly",
+        "seller_url": "https://www.adobe.com/kr/creativecloud.html",
+        "recorded_price": 34800,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 34800,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html",
+            "observed_at": "2026-11-15T17:14:18.828646+00:00",
+            "result": "KRW 34,800/month including VAT for the first year; 12-month commitment, KRW 417,600 total. Not a cancel-anytime monthly plan."
+          },
+          {
+            "url": "https://www.adobe.com/kr/legal/subscription-terms.html",
+            "observed_at": "2026-11-15T17:14:18.828646+00:00",
+            "result": "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified."
+          },
+          {
+            "url": "https://www.adobe.com/kr/creativecloud.html",
+            "observed_at": "2026-11-15T17:14:18.828646+00:00",
+            "result": "Official suite product page independently shows 34800 KRW/month VAT included, first-year annual commitment monthly billed."
+          }
+        ],
+        "conditions": [
+          "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified."
+        ],
+        "limitations": [
+          "No historical-low claim; different prepaid plan not combined. No checkout."
+        ],
+        "review_completed_at": "2026-11-15T17:14:18.828646+00:00"
+      },
+      "expires_at": null,
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "reviewed_at": "2026-11-15T17:14:18.828646+00:00",
+        "fulfilment": "digital",
+        "note": "Official Korea offer; individual eligibility and checkout unverified."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-15T17:14:18.828646+00:00",
+        "sources": [
+          {
+            "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html",
+            "label": "Adobe offer terms"
+          },
+          {
+            "url": "https://www.adobe.com/kr/legal/subscription-terms.html",
+            "label": "Adobe cancellation terms"
+          }
+        ]
+      }
     }
   ],
   "categories": {
@@ -3554,6 +3669,126 @@
           }
         }
       ]
+    },
+    "cloud": {
+      "label": "SaaS & cloud",
+      "items": [
+        {
+          "id": "adobe-creative-cloud-kr-bf-monthly-annual",
+          "region": "kr",
+          "target": "ko",
+          "category": "cloud",
+          "category_label": "SaaS & cloud",
+          "title_raw": "Adobe Creative Cloud All Apps · annual, paid monthly",
+          "product": "Adobe Creative Cloud All Apps · annual, paid monthly",
+          "store": "Adobe",
+          "storefront_country": "KR",
+          "price": 34800,
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "Digital subscription",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "KRW 34,800/month including VAT for the first year; 12-month commitment, KRW 417,600 total. Not a cancel-anytime monthly plan.",
+            "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified."
+          ],
+          "audience": "Eligible new individual subscribers in Korea",
+          "source": {
+            "id": "adobe-official",
+            "label": "Adobe Korea official offer",
+            "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html"
+          },
+          "published_at": null,
+          "checked_date": "2026-11-15",
+          "score": null,
+          "disclosure": "Direct official link, no affiliate tracking. Annual commitment billed monthly; checkout not tested.",
+          "ai_rewritten": false,
+          "price_source": "retailer_product_page",
+          "link": {
+            "url": "https://www.adobe.com/kr/creativecloud.html",
+            "tracked": false,
+            "label": "View official product",
+            "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Digital subscription",
+            "activation": "Eligibility restrictions apply",
+            "payment": "Checkout unverified",
+            "tax": "Displayed price includes VAT",
+            "returns": "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified.",
+            "evidence_url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html",
+            "checked_at": "2026-11-15"
+          },
+          "link_review": {
+            "url": "https://www.adobe.com/kr/creativecloud.html",
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T17:14:18.828646+00:00",
+            "product_match": true,
+            "evidence": "Official Creative Cloud suite page offers KRW 34,800/month VAT included for first year, annual commitment billed monthly, with offer terms linked."
+          },
+          "price_review": {
+            "id": "adobe-creative-cloud-kr-bf-monthly-annual",
+            "product": "Adobe Creative Cloud All Apps · annual, paid monthly",
+            "seller_url": "https://www.adobe.com/kr/creativecloud.html",
+            "recorded_price": 34800,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 34800,
+            "deal_status": "comparison_unverified",
+            "evidence": [
+              {
+                "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html",
+                "observed_at": "2026-11-15T17:14:18.828646+00:00",
+                "result": "KRW 34,800/month including VAT for the first year; 12-month commitment, KRW 417,600 total. Not a cancel-anytime monthly plan."
+              },
+              {
+                "url": "https://www.adobe.com/kr/legal/subscription-terms.html",
+                "observed_at": "2026-11-15T17:14:18.828646+00:00",
+                "result": "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified."
+              },
+              {
+                "url": "https://www.adobe.com/kr/creativecloud.html",
+                "observed_at": "2026-11-15T17:14:18.828646+00:00",
+                "result": "Official suite product page independently shows 34800 KRW/month VAT included, first-year annual commitment monthly billed."
+              }
+            ],
+            "conditions": [
+              "Eligible first-time individual subscribers aged 18+, one subscription; offer 2026-11-13–27, cutoff time unspecified. Auto-renews at the then-current rate (now KRW 87,900/month). Full refund within 14 days of initial order. After 14 days: charge for the used-period difference versus monthly subscription rates, plus 10% of the annual commitment; service ends immediately. Separate prepaid offer KRW 396,217/year is not this option. Checkout and individual eligibility unverified."
+            ],
+            "limitations": [
+              "No historical-low claim; different prepaid plan not combined. No checkout."
+            ],
+            "review_completed_at": "2026-11-15T17:14:18.828646+00:00"
+          },
+          "expires_at": null,
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "reviewed_at": "2026-11-15T17:14:18.828646+00:00",
+            "fulfilment": "digital",
+            "note": "Official Korea offer; individual eligibility and checkout unverified."
+          },
+          "alternative_review": {
+            "checked_at": "2026-11-15T17:14:18.828646+00:00",
+            "sources": [
+              {
+                "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html",
+                "label": "Adobe offer terms"
+              },
+              {
+                "url": "https://www.adobe.com/kr/legal/subscription-terms.html",
+                "label": "Adobe cancellation terms"
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "picks": [
@@ -3603,10 +3838,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 19,
+    "feed": 20,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 6,
+    "verified_product_links": 7,
     "held_product_links": 13,
     "historical_tracked_links": 14
   }
