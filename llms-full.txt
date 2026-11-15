@@ -1487,4 +1487,28 @@ Recorded price: 79 USD. Seller price observation dated 2026-11-15T12:50:37+00:00
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
+### Proton Mail Plus · first 12 months
+Seller: Proton
+Product URL: https://proton.me/mail/black-friday
+Product-link review: 2026-11-15T15:08:12.626652+00:00 (not a stock check)
+Recorded price: 29.88 USD. Seller price observation dated 2026-11-15T15:08:12.626652+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### Proton Drive Plus · first 12 months
+Seller: Proton
+Product URL: https://proton.me/drive/black-friday
+Product-link review: 2026-11-15T15:08:12.626652+00:00 (not a stock check)
+Recorded price: 29.88 USD. Seller price observation dated 2026-11-15T15:08:12.626652+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### Proton Pass Plus · first 12 months
+Seller: Proton
+Product URL: https://proton.me/pass/black-friday
+Product-link review: 2026-11-15T15:08:12.626652+00:00 (not a stock check)
+Recorded price: 23.88 USD. Seller price observation dated 2026-11-15T15:08:12.626652+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 13 held source records are omitted from this export; their purchase links are not verified.
