@@ -890,7 +890,13 @@
         "review_completed_at": "2026-11-10T12:02:55.128061+00:00",
         "terms_checked_at": "2026-11-15T06:44:44.072689+00:00"
       },
-      "storefront_country": null
+      "storefront_country": null,
+      "service_terms": {
+        "url": "https://koofr.eu/tos/",
+        "checked_at": "2026-11-15T07:17:11.591160+00:00",
+        "section": "8. Payments, fees and renewals",
+        "inactivity": "After 2 years without logging in, Koofr says it will contact the user to prevent unwanted account deletion. No precise automatic deletion deadline is stated."
+      }
     },
     {
       "id": "2f57dcdf2174",

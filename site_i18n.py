@@ -169,7 +169,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
    held_discount = NOT_DISCOUNT[lang] if (d.get('price_review') or {}).get('deal_status') == 'not_a_discount' else DISCOUNT_UNKNOWN[lang]
    held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="" data-category="{e(cat)}"><div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p>{e(HELD_SUMMARY[lang])}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
    continue
-  record={k:d[k] for k in ('storefront_country','shipping','briefing','purchase_eligibility','source','checked_date','published_at','price_source','disclosure','price_review') if k in d}
+  record={k:d[k] for k in ('storefront_country','shipping','briefing','purchase_eligibility','source','checked_date','published_at','price_source','disclosure','price_review','service_terms') if k in d}
   media=d.get('image') or {};image=''
   if media.get('path'):
    image=f'<figure><img src="{e(safe(media["path"]))}" alt="{e(title)}" loading="lazy"><figcaption class="caption">{e(media.get("caption",""))} <a href="{e(safe(media.get("credit_url","")))}">{e(media.get("credit",""))}</a></figcaption></figure>'
@@ -200,6 +200,8 @@ def catalogue(lang,feeds,translations,discoveries=False):
   eligibility=f'<p class="meta">{e(f[0])}: {e(country_name(market,lang) if market!="unknown" else f[2])}</p><p class="meta eligibility">{e(f[1])}: {e(", ".join(country_name(c,lang) for c in countries) if countries else f[3])}</p>'
   info=d.get('purchase_eligibility') or {}
   evidence=f'<p><a href="{e(safe(info.get("evidence_url")))}" rel="noopener nofollow">{e(f[4])}</a> · <time datetime="{e(info.get("checked_at"))}">{e(info.get("checked_at"))}</time></p>' if countries else ''
+  terms=d.get('service_terms') or {}
+  if terms.get('url'): evidence+=f'<p><a class="service-terms-source" href="{e(safe(terms["url"]))}" rel="noopener nofollow">{t[30]}</a></p>'
   linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}">{e(title)}</a>' if linked else e(title)
   (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(countries))}" data-category="{e(cat)}">{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p>{e(summary)}</p><div class="price">{e(price)}</div>{price_note}{eligibility}<details><summary>{t[12]}</summary><p>{e(conditions)}</p>{evidence}<p class="notice">{t[13]}</p></details><details><summary>{t[17]}</summary><pre class="original" lang="{'ko' if d.get('region')=='kr' else 'en'}">{e(json.dumps(record,ensure_ascii=False,indent=2))}</pre>{src}</details>{cta}<p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
