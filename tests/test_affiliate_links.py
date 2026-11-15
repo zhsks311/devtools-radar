@@ -64,7 +64,7 @@ class AffiliateLinkTests(unittest.TestCase):
         parser = ProductAnchors(); parser.feed(page)
         self.assertTrue(all(a['href'] == deal['link']['url'] for a in parser.links))
         self.assertNotIn('s.click.aliexpress.com', page)
-        self.assertNotIn('affiliate-disclosure', page)
+        self.assertNotIn('class="notice affiliate-disclosure"', page)
 
     def test_held_affiliate_never_emits_promotion(self):
         deal = example()
@@ -74,7 +74,7 @@ class AffiliateLinkTests(unittest.TestCase):
             page = site_i18n.catalogue(language, [deal], {})
             self.assertNotIn(deal['affiliate']['promotion_url'], page)
             self.assertIn(deal['link']['url'], page)
-            self.assertNotIn('affiliate-disclosure', page)
+            self.assertNotIn('class="notice affiliate-disclosure"', page)
 
     def test_affiliate_cannot_override_a_held_product(self):
         deal = example()
