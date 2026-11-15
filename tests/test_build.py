@@ -118,7 +118,7 @@ class EditorialTests(unittest.TestCase):
         self.assertIn('View product →',en)
         self.assertEqual(en.count('<figure class="deal-media">'), 2)
         self.assertIn('App preview; storage shown is illustrative.', en)
-        self.assertIn('A$728', en)
+        self.assertIn('A$719', en)
         self.assertIn('checkout was not completed',en)
         for deal in build.load_deals(build.DEALS_EN_DATA_PATH)['feed']:
             self.assertEqual(deal['link']['label_kind'], 'retailer')

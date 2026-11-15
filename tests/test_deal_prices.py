@@ -44,12 +44,12 @@ class DiscountTests(unittest.TestCase):
     self.assertFalse(checked_price(d));self.assertTrue(validate_deal_prices([d]))
  def test_srp_comparison_uses_verified_numbers_instead_of_fixed_copy(self):
   d=copy.deepcopy(next(d for d in json.loads((ROOT/'data/deals_en.json').read_text())['feed'] if d['id']=='43ca41d03daa'))
-  self.assertEqual(str(official_srp_comparison(d)['percent']),'5.45')
+  self.assertEqual(str(official_srp_comparison(d)['percent']),'6.62')
   d['price']=700;d['price_review']['verified_price']=700
   self.assertEqual(str(official_srp_comparison(d)['percent']),'9.09')
   for lang in site_i18n.LANGS:
    page=site_i18n.catalogue(lang,[d],{})
-   self.assertIn('9.09',page);self.assertNotIn('5.45%',page)
+   self.assertIn('9.09',page);self.assertNotIn('6.62%',page)
   for field,value in [('currency','USD'),('price',699),('same_product_variant',False),
                       ('product_id','other'),('checked_at','9999-01-01T00:00:00Z'),
                       ('evidence',' '),('reference_kind','seller_previous_price'),('url','javascript:alert(1)')]:

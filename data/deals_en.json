@@ -366,7 +366,7 @@
       "title_raw": "Nintendo Switch 2 Console",
       "product": "Nintendo Switch 2 Console",
       "store": "EB Games Australia",
-      "price": 728,
+      "price": 719,
       "price_source": "retailer_product_page",
       "currency": "AUD",
       "original_price": null,
@@ -377,8 +377,8 @@
       "briefing": [
         "Key: Nintendo Switch 2 console, sold by EB Games Australia.",
         "Region: Australia; delivery cost calculated at checkout.",
-        "Checked: November 10, 2026 · Home Delivery Available; Add to cart shown.",
-        "Check: A$698 is a paid EB World PLUS member price, not the public price. Local pickup availability depends on store."
+        "Checked: 2026-11-15 · Home Delivery Available; Add to cart shown. Address-specific delivery and checkout untested.",
+        "A$678 is a paid EB World PLUS member price, not the public A$719 price. Local pickup depends on store."
       ],
       "audience": "Check OS, license and regional eligibility before purchase.",
       "source": {
@@ -387,7 +387,7 @@
         "url": "https://www.ozbargain.com.au/node/982360"
       },
       "published_at": null,
-      "checked_date": "2026-11-10",
+      "checked_date": "2026-11-15",
       "score": null,
       "disclosure": "Australian offer. No DevTeardown affiliate tracking. Shipping cost and checkout total unverified.",
       "ai_rewritten": false,
@@ -435,15 +435,20 @@
         "id": "43ca41d03daa",
         "product": "Nintendo Switch 2 Console",
         "seller_url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
-        "recorded_price": 728,
+        "recorded_price": 719,
         "currency": "AUD",
         "price_status": "seller_page_display_confirmed",
-        "verified_price": 728,
+        "verified_price": 719,
         "deal_status": "below_official_srp",
         "evidence": [
           {
             "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
             "result": "Current web retrieval confirms displayed price and purchase/add-to-cart UI."
+          },
+          {
+            "url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+            "observed_at": "2026-11-15T12:45:23.055546+00:00",
+            "result": "Live browser shows A$719 public price, A$678 explicitly labelled with EB World PLUS; Home Delivery Available and Add to Cart. No sign-in, cart mutation or checkout."
           }
         ],
         "limitations": [
@@ -454,19 +459,32 @@
           "type": "current official SRP effective 2026-09-01",
           "price": 769.95,
           "currency": "AUD",
-          "difference": 41.95,
-          "percent": 5.45,
+          "difference": 50.95,
+          "percent": 6.62,
           "reference_kind": "official_srp",
           "same_product_variant": true,
           "product_id": "43ca41d03daa",
-          "checked_at": "2026-11-11T04:45:27+00:00",
-          "evidence": "Nintendo Australia states the standalone Nintendo Switch 2 console SRP is AUD 769.95 effective 2026-09-01. EB Games product 325321 is the same standalone console, with displayed public price AUD 728. Address-specific stock, checkout, payment and delivery charges were not verified."
+          "checked_at": "2026-11-15T12:45:23.055546+00:00",
+          "evidence": "Nintendo Australia official revision page reconfirmed SRP AUD769.95 effective 2026-09-01. EB Games standalone console public price AUD719; paid PLUS offer AUD678 is excluded from SRP comparison. Final delivery and checkout untested."
         },
         "conditions": [
-          "AUD728 public displayed price; AUD698 is separate paid-member offer, not unrestricted price.",
+          "AUD719 public displayed price; AUD678 requires paid EB World PLUS membership, not unrestricted price.",
           "Home delivery available displayed; shipping costs and address availability require checkout."
         ],
-        "review_completed_at": "2026-11-10T12:02:55.128061+00:00"
+        "review_completed_at": "2026-11-15T12:45:23.055546+00:00",
+        "previous_observation": {
+          "price": 728,
+          "member_price": 698,
+          "checked_at": "2026-11-10T12:02:55.128061+00:00"
+        },
+        "member_offer": {
+          "price": 678,
+          "currency": "AUD",
+          "requires_paid_membership": true,
+          "program": "EB World PLUS",
+          "checkout_verified": false,
+          "checked_at": "2026-11-15T12:45:23.055546+00:00"
+        }
       },
       "storefront_country": "AU"
     },
