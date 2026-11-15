@@ -29,6 +29,6 @@ class LinkedCatalogTests(unittest.TestCase):
             self.assertEqual(len(parser.links),2*len(parser.active))
             self.assertTrue(all(area=='active-products' for area,url in parser.links))
     def test_filters_count_active_and_archive_separately(self):
-        self.assertIn("querySelectorAll('#active-products .card')",site_i18n.JS)
+        self.assertIn("querySelectorAll('#active-products .card, #discovery-products .card')",site_i18n.JS)
         self.assertIn("querySelectorAll('#held-products .card')",site_i18n.JS)
         self.assertIn("querySelector('#archive-count').textContent=hn",site_i18n.JS)

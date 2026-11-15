@@ -9,11 +9,12 @@ for (const page of pages) {
     nodes['#'+id] = {value:'all', options:values.map(value=>({value})),
       addEventListener(type, listener){this[type]=listener}, focus(){this.focused=true}};
   }
-  for (const id of ['count','archive-count','empty','reset-filters','unknown-destinations']) {
+  for (const id of ['count','discovery-count','archive-count','empty','reset-filters','unknown-destinations']) {
     nodes['#'+id] = {hidden:false, dataset:{label:'verified',discoveryLabel:'discoveries'}, addEventListener(type, fn){this[type]=fn}};
   }
   nodes['#product-search'] = {value:'', addEventListener(type, fn){this[type]=fn}};
   nodes['.held-archive'] = {hidden:false};
+  nodes['.discovery-section'] = {hidden:false,open:false};
   const cards = page.cards.map(dataset=>({dataset, hidden:false}));
   const archived = page.archived.map(dataset=>({dataset, hidden:false}));
   const links = page.links.map(href=>({href:'https://example.test'+href}));
@@ -31,7 +32,7 @@ for (const page of pages) {
   const context = vm.createContext({URLSearchParams, URL, location,
     history,
     document:{querySelector:selector=>nodes[selector], querySelectorAll(selector){
-      return selector==='#active-products .card'?cards:selector==='#held-products .card'?archived:links.map(a=>({
+      return selector==='#active-products .card, #discovery-products .card'?cards:selector==='#held-products .card'?archived:links.map(a=>({
         get href(){return new URL(a.href,url).href}, set href(v){a.href=v}
       }));}},
     window:{addEventListener(type,fn){events[type]=fn}}

@@ -50,3 +50,14 @@ class CandidateTests(unittest.TestCase):
         for lang in TEXT:
             self.assertIn('data-category="keyboard-mouse"', candidate_cards(lang)[0])
             self.assertIn('data-category="hardware"', candidate_cards(lang)[1])
+
+    def test_price_unknown_candidates_are_collapsed_outside_normal_products(self):
+        import site_i18n,re
+        for lang in TEXT:
+            page=site_i18n.catalogue(lang,[],{},discoveries=True)
+            active=re.search(r'id="active-products">(.*?)</div>',page,re.S).group(1)
+            self.assertNotIn('discovery-candidate',active)
+            self.assertIn('<details class="discovery-section">',page)
+            self.assertNotIn('<details class="discovery-section" open',page)
+            self.assertIn(site_i18n.CANDIDATE_SECTION[lang],page)
+            for card in candidate_cards(lang):self.assertNotIn('class="price"',card)

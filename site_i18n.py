@@ -82,7 +82,7 @@ const normalizeSearch = value => value.normalize('NFKC').toLowerCase().trim();
 const country = document.querySelector('#country');
 const cat = document.querySelector('#category');
 const controls = [[market, 'market'], [country, 'country'], [cat, 'category']];
-const cards = [...document.querySelectorAll('#active-products .card')];
+const cards = [...document.querySelectorAll('#active-products .card, #discovery-products .card')];
 const archived = [...document.querySelectorAll('#held-products .card')];
 function restore() {
   const q = new URLSearchParams(location.search);
@@ -108,6 +108,10 @@ function filter(historyMode = 'replace') {
   for (const card of archived) { card.hidden = !matches(card); if (!card.hidden) hn++; }
   document.querySelector('#archive-count').textContent=hn;
   document.querySelector('.held-archive').hidden = hn === 0;
+  document.querySelector('#discovery-count').textContent=dn;
+  const discoverySection=document.querySelector('.discovery-section');
+  discoverySection.hidden=dn===0;
+  if (search.value.trim() && dn>0) discoverySection.open=true;
   const count = document.querySelector('#count');
   count.textContent = (n - dn) + ' ' + count.dataset.label + ' · ' + dn + ' ' + count.dataset.discoveryLabel;
   document.querySelector('#unknown-destinations').hidden = country.value === 'unknown';
@@ -141,8 +145,16 @@ window.addEventListener('popstate', () => { restore(); filter(); });
 window.addEventListener('pageshow', () => { restore(); filter(); });
 restore(); filter();
 """
+CANDIDATE_SECTION = {
+'en':'Price pending · research candidates (not deals)',
+'ko':'가격 확인 전 후보 · 핫딜 아님',
+'zh':'待核实价格的候选商品 · 非已确认优惠',
+'ja':'価格確認前の候補・確認済みセールではありません',
+'es':'Candidatos con precio pendiente · no son ofertas verificadas',
+'fr':'Candidats au prix à vérifier · pas des offres confirmées',
+}
 def catalogue(lang,feeds,translations,discoveries=False):
- t=LABELS[lang]; f=FILTER_TEXT[lang]; cards=candidate_cards(lang) if discoveries else []; held_cards=[]; discovery_count=len(cards)
+ t=LABELS[lang]; f=FILTER_TEXT[lang]; discovery_cards=candidate_cards(lang) if discoveries else []; cards=[]; held_cards=[]; discovery_count=len(discovery_cards)
  for d in feeds:
   loc=translations.get(d['id'],{}).get(lang,{})
   title=loc.get('product',d.get('product','')); summary=loc.get('summary',''); conditions=loc.get('conditions',t[10]); conditions=' '.join(conditions) if isinstance(conditions,list) else conditions
@@ -188,7 +200,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
  destinations=list(COUNTRY_ORDER)+sorted({c for d in feeds for c in confirmed_countries(d)}-set(COUNTRY_ORDER))
  schema=json.dumps({'@context':'https://schema.org','@type':'CollectionPage','name':t[2],'url':'https://devteardown.com'+PATHS[lang],'inLanguage':lang,'description':f[9]},ensure_ascii=False).replace('<','\\u003c')
  alternatives=''.join(f'<link rel="alternate" hreflang="{k}" href="https://devteardown.com{p}">' for k,p in PATHS.items())
- return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{t[2]} | DevTeardown</title><meta name="description" content="{e(f[9])}"><meta property="og:type" content="website"><meta property="og:title" content="{e(t[2])} | DevTeardown"><meta property="og:description" content="{e(f[9])}"><meta property="og:url" content="https://devteardown.com{PATHS[lang]}"><meta name="twitter:card" content="summary"><script type="application/ld+json">{schema}</script><link rel="canonical" href="https://devteardown.com{PATHS[lang]}">{alternatives}<link rel="alternate" hreflang="x-default" href="https://devteardown.com/deals/"><style>{CSS}</style></head><body>{nav(lang)}<main><h1>{t[2]}</h1><p class="intro">{e(f[9])}</p><div class="filters"><label for="product-search">{e(SEARCH_LABEL[lang])}<input id="product-search" type="search" autocomplete="off" spellcheck="false"></label><label for="market">{e(f[0])}<select id="market">{options([('all',f[18])]+[(code,country_name(code,lang)) for code in storefronts]+[('unknown',f[2])])}</select></label><label for="country">{e(f[1])}<select id="country" aria-describedby="country-help">{options([('all',f[19])]+[(code,country_name(code,lang)) for code in destinations]+[('unknown',f[3])])}</select></label><label for="category">{t[5]}<select id="category">{options([('all',f[17])]+[(key,t[idx]) for key,idx in CATS.items()])}</select></label></div><p id="country-help" class="notice">{e(f[5])}</p><button type="button" id="unknown-destinations">{e(UNKNOWN_SHORTCUT[lang])}</button> <button type="button" id="reset-filters" hidden>{e(f[6])}</button><p id="count" class="count" role="status" aria-live="polite" data-label="{e(f[7])}" data-discovery-label="{e(DISCOVERY_LABEL[lang])}">{len(cards)-discovery_count} {e(f[7])} · {discovery_count} {e(DISCOVERY_LABEL[lang])}</p><p id="empty" hidden>{e(EMPTY_LABEL[lang])}</p><div class="grid" id="active-products">{''.join(cards)}</div><details class="held-archive"><summary>{ARCHIVE[lang]} · <span id="archive-count">{len(held_cards)}</span></summary><p class="notice">{ARCHIVE_NOTE[lang]}</p><div class="grid" id="held-products">{''.join(held_cards)}</div></details><footer><p class="notice">{t[14]}</p></footer></main><script>{JS}</script></body></html>'''
+ return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{t[2]} | DevTeardown</title><meta name="description" content="{e(f[9])}"><meta property="og:type" content="website"><meta property="og:title" content="{e(t[2])} | DevTeardown"><meta property="og:description" content="{e(f[9])}"><meta property="og:url" content="https://devteardown.com{PATHS[lang]}"><meta name="twitter:card" content="summary"><script type="application/ld+json">{schema}</script><link rel="canonical" href="https://devteardown.com{PATHS[lang]}">{alternatives}<link rel="alternate" hreflang="x-default" href="https://devteardown.com/deals/"><style>{CSS}</style></head><body>{nav(lang)}<main><h1>{t[2]}</h1><p class="intro">{e(f[9])}</p><div class="filters"><label for="product-search">{e(SEARCH_LABEL[lang])}<input id="product-search" type="search" autocomplete="off" spellcheck="false"></label><label for="market">{e(f[0])}<select id="market">{options([('all',f[18])]+[(code,country_name(code,lang)) for code in storefronts]+[('unknown',f[2])])}</select></label><label for="country">{e(f[1])}<select id="country" aria-describedby="country-help">{options([('all',f[19])]+[(code,country_name(code,lang)) for code in destinations]+[('unknown',f[3])])}</select></label><label for="category">{t[5]}<select id="category">{options([('all',f[17])]+[(key,t[idx]) for key,idx in CATS.items()])}</select></label></div><p id="country-help" class="notice">{e(f[5])}</p><button type="button" id="unknown-destinations">{e(UNKNOWN_SHORTCUT[lang])}</button> <button type="button" id="reset-filters" hidden>{e(f[6])}</button><p id="count" class="count" role="status" aria-live="polite" data-label="{e(f[7])}" data-discovery-label="{e(DISCOVERY_LABEL[lang])}">{len(cards)} {e(f[7])} · {discovery_count} {e(DISCOVERY_LABEL[lang])}</p><p id="empty" hidden>{e(EMPTY_LABEL[lang])}</p><div class="grid" id="active-products">{''.join(cards)}</div><details class="discovery-section"><summary>{e(CANDIDATE_SECTION[lang])} · <span id="discovery-count">{discovery_count}</span></summary><div class="grid" id="discovery-products">{''.join(discovery_cards)}</div></details><details class="held-archive"><summary>{ARCHIVE[lang]} · <span id="archive-count">{len(held_cards)}</span></summary><p class="notice">{ARCHIVE_NOTE[lang]}</p><div class="grid" id="held-products">{''.join(held_cards)}</div></details><footer><p class="notice">{t[14]}</p></footer></main><script>{JS}</script></body></html>'''
 def write_unified(output,items,deals,en_deals):
  output=Path(output);trans=json.loads((Path(__file__).parent/'data/deal_localizations.json').read_text())
  feeds=list(deals.get('feed',[]))+list(en_deals.get('feed',[]))

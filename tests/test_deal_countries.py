@@ -18,9 +18,9 @@ class FilterParser(HTMLParser):
         self.cards = []; self.archived = []; self.selects = {}; self.links = []
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
-        if a.get('id') in ('active-products', 'held-products'): self.area = a['id']
+        if a.get('id') in ('active-products', 'discovery-products', 'held-products'): self.area = a['id']
         if tag == 'article' and 'card' in a.get('class', '').split():
-            (self.cards if self.area == 'active-products' else self.archived).append({
+            (self.cards if self.area in ('active-products','discovery-products') else self.archived).append({
                 'id': a['data-id'], 'kind': a.get('data-kind', 'verified'), 'search': a['data-search'], 'market': a['data-market'],
                 'countries': a['data-countries'], 'category': a['data-category']})
         if tag == 'select':
