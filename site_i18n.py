@@ -192,6 +192,9 @@ def catalogue(lang,feeds,translations,discoveries=False):
   price_note+=f'<p class="notice">{e(savings)}</p>'
   comparison=(review.get('comparison') or {}).get('url')
   if loc.get('buying_note'): price_note+=f'<p class="notice buying-note">{e(loc["buying_note"])}</p>'
+  alternative=d.get('alternative_review') or {}
+  if loc.get('buying_note') and alternative.get('sources'):
+   price_note+='<p class="meta alternative-sources">'+' · '.join(f'<a href="{e(safe(source["url"]))}" rel="noopener nofollow">{e(source["label"])}</a>' for source in alternative['sources'])+f' · {e(alternative.get("checked_at", ""))}</p>'
   if comparison: price_note+=f'<a class="meta" href="{e(safe(comparison))}" rel="noopener nofollow">{t[30]}</a>'
   license_url=(review.get('comparison') or {}).get('license_url')
   if license_url: price_note+=f'<a class="meta license-source" href="{e(safe(license_url))}" rel="noopener nofollow">{t[30]} · Mirillis FAQ</a>'

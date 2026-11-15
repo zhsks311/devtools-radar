@@ -1065,32 +1065,38 @@
     "en": {
       "product": "Moonitor · Solo",
       "summary": "Seller-listed software plan; check the limits below.",
-      "conditions": "20 monitors, 1 team/user, 60-second checks; website/API, ping and SSL monitoring. Lifetime plan, activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back. Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
+      "conditions": "20 monitors, 1 team/user, 60-second checks; website/API, ping and SSL monitoring. Lifetime plan, activation within 60 days; listing states refundable up to 60 days. Early-stage Radar product, not covered by We Got Your Back. Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence.",
+      "buying_note": "Try free first: UptimeRobot Free offers 50 monitors at 5-minute intervals; Moonitor Solo lists 20 at 60 seconds. Free has five basic integrations; Slack/Telegram and webhooks require paid UptimeRobot tiers. Moonitor lists all alert channels, including these, but channel quotas and delivery reliability were not tested. SMS/voice is not free on UptimeRobot. Choose by interval and alert needs, not monitor count alone."
     },
     "ko": {
       "product": "Moonitor · Solo",
       "summary": "판매처에 등록된 소프트웨어 플랜입니다. 아래 이용 한도를 확인하세요.",
-      "conditions": "모니터 20개, 팀/사용자 1개, 60초 간격. 웹사이트/API·Ping·SSL 모니터링. 평생 플랜, 60일 내 활성화. 판매처는 최대 60일 환불을 안내합니다. 초기 Radar 상품이며 We Got Your Back 보장은 제외됩니다. 한국 활성화·결제 가능 여부, 세금과 최종 결제 금액은 미확인입니다. 할인·최저가의 독립 근거는 없습니다."
+      "conditions": "모니터 20개, 팀/사용자 1개, 60초 간격. 웹사이트/API·Ping·SSL 모니터링. 평생 플랜, 60일 내 활성화. 판매처는 최대 60일 환불을 안내합니다. 초기 Radar 상품이며 We Got Your Back 보장은 제외됩니다. 한국 활성화·결제 가능 여부, 세금과 최종 결제 금액은 미확인입니다. 할인·최저가의 독립 근거는 없습니다.",
+      "buying_note": "무료부터 비교: UptimeRobot Free는 50개·5분 간격, Moonitor Solo는 판매처 기준 20개·60초 간격입니다. Free 연동은 기본 5종이며 Slack·Telegram 및 웹훅은 UptimeRobot 유료 등급이 필요합니다. Moonitor는 이를 포함한 모든 알림 채널을 표기하지만 채널별 한도·실제 전달 신뢰성은 시험하지 않았습니다. UptimeRobot 문자·음성 알림은 무료가 아닙니다. 개수뿐 아니라 점검 간격과 필요한 알림으로 선택하세요."
     },
     "zh": {
       "product": "Moonitor · Solo",
       "summary": "卖家列出的软件方案，请查看以下限制。",
-      "conditions": "20个监控，1个团队/用户，60秒检查；网站/API、Ping和SSL。终身方案，60天内激活；页面标明最多60天可退款。早期Radar产品，不享有We Got Your Back保障。 韩国激活、付款资格、税费及结账金额未核实。没有独立折扣或最低价证据。"
+      "conditions": "20个监控，1个团队/用户，60秒检查；网站/API、Ping和SSL。终身方案，60天内激活；页面标明最多60天可退款。早期Radar产品，不享有We Got Your Back保障。 韩国激活、付款资格、税费及结账金额未核实。没有独立折扣或最低价证据。",
+      "buying_note": "先比较免费方案：UptimeRobot Free 提供50个监控、5分钟间隔；Moonitor Solo 标示20个、60秒间隔。Free 有5种基础集成；Slack、Telegram及Webhook需要UptimeRobot付费等级。Moonitor标示包含这些在内的全部提醒渠道，但渠道配额及实际送达可靠性未经测试。UptimeRobot短信和语音提醒并非免费。请按间隔及提醒需求选择，不只看数量。"
     },
     "ja": {
       "product": "Moonitor · Solo",
       "summary": "販売者が掲載するソフトウェアプラン。下記の制限をご確認ください。",
-      "conditions": "監視20件、1チーム/ユーザー、60秒間隔。Web/API・Ping・SSL監視。買い切りプラン、60日以内に有効化。ページは最大60日の返金を案内。初期Radar製品でWe Got Your Back保証の対象外。 韓国での有効化・決済可否、税金と最終金額は未確認。割引・最安値の独立した根拠はありません。"
+      "conditions": "監視20件、1チーム/ユーザー、60秒間隔。Web/API・Ping・SSL監視。買い切りプラン、60日以内に有効化。ページは最大60日の返金を案内。初期Radar製品でWe Got Your Back保証の対象外。 韓国での有効化・決済可否、税金と最終金額は未確認。割引・最安値の独立した根拠はありません。",
+      "buying_note": "まず無料プランと比較：UptimeRobot Freeは50件・5分間隔、Moonitor Soloの販売表示は20件・60秒間隔。Freeは基本連携5種で、Slack・TelegramやWebhookにはUptimeRobotの有料プランが必要です。Moonitorはこれらを含む全通知チャネルを掲載していますが、チャネル別上限や実際の配信信頼性は未検証です。UptimeRobotのSMS・音声通知は無料ではありません。件数だけでなく間隔と通知要件で選んでください。"
     },
     "es": {
       "product": "Moonitor · Solo",
       "summary": "Plan de software anunciado por el vendedor; consulta los límites.",
-      "conditions": "20 monitores, 1 equipo/usuario, comprobaciones cada 60 segundos; web/API, ping y SSL. Acceso vitalicio; activar en 60 días; devolución anunciada hasta 60 días. Producto Radar inicial, sin garantía We Got Your Back. Activación y pago desde Corea, impuestos y total final sin verificar. Sin pruebas independientes de descuento o precio mínimo."
+      "conditions": "20 monitores, 1 equipo/usuario, comprobaciones cada 60 segundos; web/API, ping y SSL. Acceso vitalicio; activar en 60 días; devolución anunciada hasta 60 días. Producto Radar inicial, sin garantía We Got Your Back. Activación y pago desde Corea, impuestos y total final sin verificar. Sin pruebas independientes de descuento o precio mínimo.",
+      "buying_note": "Compara primero la opción gratuita: UptimeRobot Free ofrece 50 monitores cada 5 minutos; Moonitor Solo anuncia 20 cada 60 segundos. Free tiene cinco integraciones básicas; Slack/Telegram y webhooks requieren planes de pago de UptimeRobot. Moonitor anuncia todos los canales de alerta, incluidos estos; no probamos sus cuotas ni la fiabilidad de entrega. SMS y voz no son gratis en UptimeRobot. Decide según el intervalo y las alertas, no solo la cantidad."
     },
     "fr": {
       "product": "Moonitor · Solo",
       "summary": "Offre logicielle du vendeur ; consultez les limites ci-dessous.",
-      "conditions": "20 moniteurs, 1 équipe/utilisateur, contrôles toutes les 60 secondes ; web/API, ping et SSL. Accès à vie, activation sous 60 jours ; remboursement annoncé jusqu’à 60 jours. Produit Radar précoce, sans garantie We Got Your Back. Activation et paiement depuis la Corée, taxes et total final non vérifiés. Aucune preuve indépendante de réduction ou de prix minimum."
+      "conditions": "20 moniteurs, 1 équipe/utilisateur, contrôles toutes les 60 secondes ; web/API, ping et SSL. Accès à vie, activation sous 60 jours ; remboursement annoncé jusqu’à 60 jours. Produit Radar précoce, sans garantie We Got Your Back. Activation et paiement depuis la Corée, taxes et total final non vérifiés. Aucune preuve indépendante de réduction ou de prix minimum.",
+      "buying_note": "Comparez d’abord le gratuit : UptimeRobot Free propose 50 moniteurs toutes les 5 minutes ; Moonitor Solo annonce 20 toutes les 60 secondes. Free comprend cinq intégrations de base ; Slack/Telegram et les webhooks exigent des offres payantes UptimeRobot. Moonitor annonce tous ces canaux, mais leurs quotas et la fiabilité de livraison ne sont pas testés. SMS et appels ne sont pas gratuits chez UptimeRobot. Choisissez selon la fréquence et les alertes, pas seulement le nombre."
     }
   },
   "otter-ab-tier-1": {

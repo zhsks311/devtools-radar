@@ -1735,6 +1735,24 @@
           "Korean activation, billing eligibility, taxes and final checkout are unverified. No independent discount or lowest-price evidence."
         ],
         "review_completed_at": "2026-11-15T01:04:34.990070+00:00"
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-15T10:23:02.127859+00:00",
+        "sources": [
+          {
+            "label": "UptimeRobot Free / plans",
+            "url": "https://uptimerobot.com/pricing/"
+          },
+          {
+            "label": "UptimeRobot plan details",
+            "url": "https://uptimerobot.com/pricing.md"
+          },
+          {
+            "label": "Moonitor Solo / AppSumo",
+            "url": "https://appsumo.com/products/moonitor-uptime-monitoring/"
+          }
+        ],
+        "basis": "Published plan comparison, not a reliability test. UptimeRobot Free 50/5min; basic integrations Google Chat, Discord, Pushover, Pushbullet, Splunk; Slack/Telegram Solo+, webhooks Team+. No included SMS/voice credits. Moonitor Solo 20/60sec, all alert channels listed, per-channel quotas unverified. HTML text extraction loses feature availability icons; do not infer Free advanced monitor support from flattened lists. No purchase or runtime test."
       }
     },
     {
