@@ -1625,11 +1625,12 @@
         "label_kind": "retailer"
       },
       "link_review": {
-        "status": "verified_detail",
-        "checked_at": "2026-11-15T13:31:30+00:00",
+        "status": "held",
+        "checked_at": "2026-11-15T18:41:13.623615+00:00",
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
         "product_match": true,
-        "evidence": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+        "evidence": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified.",
+        "reason": "Seller product page now says SOLD OUT and no current product price is displayed. Previous coupon price/stock are historical only."
       },
       "price_review": {
         "id": "anker-p31i-d1202-kr",
@@ -1637,20 +1638,26 @@
         "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
         "recorded_price": 24440,
         "currency": "KRW",
-        "price_status": "seller_page_display_confirmed",
-        "verified_price": 24440,
-        "deal_status": "regular_price_or_discount_unproven",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
         "evidence": [
           {
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
             "observed_at": "2026-11-15T13:31:30+00:00",
             "result": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+          },
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+            "observed_at": "2026-11-15T18:41:13.623615+00:00",
+            "result": "SOLD OUT at seller product detail; current product price absent. Removed from active offers; old price/option quantities retained only as dated audit evidence."
           }
         ],
         "limitations": [
           "Checkout and independent market-low price unverified."
         ],
-        "review_completed_at": "2026-11-15T13:31:30+00:00"
+        "review_completed_at": "2026-11-15T18:41:13.623615+00:00",
+        "previous_verified_price": 24440
       },
       "country_targeting": {
         "countries": [
@@ -1672,6 +1679,18 @@
         "returns": "Return terms not independently verified; check seller policy.",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
         "checked_at": "2026-11-15"
+      },
+      "previous_link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T13:31:30+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+        "product_match": true,
+        "evidence": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+      },
+      "availability_review": {
+        "status": "sold_out",
+        "checked_at": "2026-11-15T18:41:13.623615+00:00",
+        "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305"
       }
     },
     {
@@ -3628,11 +3647,12 @@
             "label_kind": "retailer"
           },
           "link_review": {
-            "status": "verified_detail",
-            "checked_at": "2026-11-15T13:31:30+00:00",
+            "status": "held",
+            "checked_at": "2026-11-15T18:41:13.623615+00:00",
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
             "product_match": true,
-            "evidence": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+            "evidence": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified.",
+            "reason": "Seller product page now says SOLD OUT and no current product price is displayed. Previous coupon price/stock are historical only."
           },
           "price_review": {
             "id": "anker-p31i-d1202-kr",
@@ -3640,20 +3660,26 @@
             "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
             "recorded_price": 24440,
             "currency": "KRW",
-            "price_status": "seller_page_display_confirmed",
-            "verified_price": 24440,
-            "deal_status": "regular_price_or_discount_unproven",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
             "evidence": [
               {
                 "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
                 "observed_at": "2026-11-15T13:31:30+00:00",
                 "result": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+              },
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+                "observed_at": "2026-11-15T18:41:13.623615+00:00",
+                "result": "SOLD OUT at seller product detail; current product price absent. Removed from active offers; old price/option quantities retained only as dated audit evidence."
               }
             ],
             "limitations": [
               "Checkout and independent market-low price unverified."
             ],
-            "review_completed_at": "2026-11-15T13:31:30+00:00"
+            "review_completed_at": "2026-11-15T18:41:13.623615+00:00",
+            "previous_verified_price": 24440
           },
           "country_targeting": {
             "countries": [
@@ -3675,6 +3701,18 @@
             "returns": "Return terms not independently verified; check seller policy.",
             "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
             "checked_at": "2026-11-15"
+          },
+          "previous_link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T13:31:30+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305",
+            "product_match": true,
+            "evidence": "KRW24,440 with the universal 7% digital coupon. Black 122, blue 266, pink 163 shown; white sold out. Korea-only delivery, base shipping free; Jeju +3,000 KRW, remote islands +5,000. Limit 5 per account. Stock may change. Community KRW21,820 price is unverified; checkout and market-low claim unverified."
+          },
+          "availability_review": {
+            "status": "sold_out",
+            "checked_at": "2026-11-15T18:41:13.623615+00:00",
+            "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4620949305"
           }
         }
       ]
@@ -3859,8 +3897,8 @@
     "feed": 20,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 7,
-    "held_product_links": 13,
+    "verified_product_links": 6,
+    "held_product_links": 14,
     "historical_tracked_links": 14
   }
 }

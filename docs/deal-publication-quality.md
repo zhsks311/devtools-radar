@@ -45,3 +45,19 @@ schema. They are not independent search-indexed product landing pages. Next
 content work should add substantiated buying comparisons and useful conditions,
 not duplicate thin pages or unsupported reviews. Conversion improvements are
 hypotheses until measured; no traffic or revenue uplift is claimed.
+
+## Stock correction, 2026-11-15 18:41 UTC
+
+The Anker P31i D1202 Gmarket offer (4620949305) now renders `SOLD OUT`
+without a current item price. Its earlier KRW 24,440 coupon and colour quantities
+are historical observations, not current purchase conditions. Keep the record and
+prior review for audit, but hold the card and clear its verified current price.
+A still-reachable product URL or a delivery estimate is not stock confirmation.
+The regression test must prevent this item returning to the active catalogue
+without a new seller availability/price review. Do not erase history to fix stock.
+
+This pass inspected nine existing seller pages, not the whole catalogue. Seven
+were readable; two Lenovo China pages timed out. The unchanged six were Belkin,
+Ugreen, Mega HOT Americano, AdGuard, Otter A/B and Koofr. Preserve last-good
+review timestamps for unrefreshed or inaccessible products. Displayed coupons
+are conditional and do not establish completed checkout or a market-low price.

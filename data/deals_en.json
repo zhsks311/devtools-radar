@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T15:08:12.626652+00:00",
+  "generated_at": "2026-11-15T18:42:16.768851+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -2343,6 +2343,121 @@
         ],
         "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
       }
+    },
+    {
+      "id": "hostinger-premium-black-friday-48-months",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Hostinger Premium · 48 months prepaid",
+      "product": "Hostinger Premium · 48 months prepaid",
+      "store": "Hostinger",
+      "storefront_country": null,
+      "price": 95.52,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital hosting subscription",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Black Friday offer: USD 95.52 upfront for 48 months (4 years), not a monthly payment. Equivalent to USD 1.99/month.",
+        "Renews at USD 10.99/month for the same 48-month term; 48 × 10.99 = USD 527.52 before any tax or changes. Includes 3 websites, 20 GB SSD and weekly backups. Free domain and 2 mailboxes per website last only 1 year; later fees are not verified. Campaign ends December 14, 2026; exact time and timezone unverified. Market prices vary; existing-customer upgrade offers are separate. Seller advertises a 30-day money-back guarantee, subject to policy. Korean eligibility, taxes and final checkout unverified."
+      ],
+      "audience": "New hosting subscriptions; four-year upfront commitment.",
+      "source": {
+        "id": "hostinger-official",
+        "label": "Hostinger official Premium web-hosting product page",
+        "url": "https://www.hostinger.com/web-hosting"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-15",
+      "score": null,
+      "disclosure": "No affiliate tracking. Four-year introductory commitment, not a monthly charge. Renewal is higher; checkout untested.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://www.hostinger.com/web-hosting",
+        "tracked": false,
+        "label": "View Premium hosting offer",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital hosting; no physical shipping.",
+        "activation": "48-month upfront plan. Market-specific price and account eligibility require confirmation.",
+        "payment": "Korean billing and payment eligibility unverified; no checkout performed.",
+        "tax": "Final taxes and total unverified.",
+        "returns": "Seller advertises 30-day money-back guarantee; policy and product exclusions apply.",
+        "evidence_url": "https://www.hostinger.com/web-hosting",
+        "checked_at": "2026-11-15"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T18:42:16.768851+00:00",
+        "url": "https://www.hostinger.com/web-hosting",
+        "product_match": true,
+        "evidence": "Official product page: Premium, 48 months, USD95.52 paid today, USD1.99 monthly equivalent; renews USD10.99/month for same term. 3 websites,20GB SSD,weekly backups; domain and 2 mailboxes/site free only 1 year. Campaign page ends December14,2026 without exact time."
+      },
+      "price_review": {
+        "id": "hostinger-premium-black-friday-48-months",
+        "product": "Hostinger Premium · 48 months prepaid",
+        "seller_url": "https://www.hostinger.com/web-hosting",
+        "recorded_price": 95.52,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 95.52,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://www.hostinger.com/web-hosting",
+            "observed_at": "2026-11-15T18:42:16.768851+00:00",
+            "result": "Official product page: Premium, 48 months, USD95.52 paid today, USD1.99 monthly equivalent; renews USD10.99/month for same term. 3 websites,20GB SSD,weekly backups; domain and 2 mailboxes/site free only 1 year. Campaign page ends December14,2026 without exact time."
+          },
+          {
+            "url": "https://www.hostinger.com/black-friday",
+            "observed_at": "2026-11-15T18:42:16.768851+00:00",
+            "result": "Official campaign October19–December14,2026; prices vary by market and term; existing customers may get separate upgrade/cross-sell offers."
+          }
+        ],
+        "conditions": [
+          "Renews at USD 10.99/month for the same 48-month term; 48 × 10.99 = USD 527.52 before any tax or changes. Includes 3 websites, 20 GB SSD and weekly backups. Free domain and 2 mailboxes per website last only 1 year; later fees are not verified. Campaign ends December 14, 2026; exact time and timezone unverified. Market prices vary; existing-customer upgrade offers are separate. Seller advertises a 30-day money-back guarantee, subject to policy. Korean eligibility, taxes and final checkout unverified."
+        ],
+        "limitations": [
+          "Vendor85% comparison not independently established; no crossed-out baseline or historical-low claim.",
+          "Expiry date is stated, but exact time/timezone, checkout tax and Korean eligibility remain unverified."
+        ],
+        "review_completed_at": "2026-11-15T18:42:16.768851+00:00",
+        "campaign": {
+          "ends_on": "2026-12-14",
+          "end_time": null,
+          "timezone": null,
+          "source_url": "https://www.hostinger.com/black-friday"
+        },
+        "billing": {
+          "initial_months": 48,
+          "initial_total": 95.52,
+          "monthly_equivalent": 1.99,
+          "renewal_monthly": 10.99,
+          "renewal_months": 48,
+          "renewal_total_calculated": 527.52,
+          "currency": "USD",
+          "checkout_verified": false
+        }
+      },
+      "expires_at": null,
+      "alternative_review": {
+        "checked_at": "2026-11-15T16:23:29.014044+00:00",
+        "sources": [
+          {
+            "url": "https://proton.me/mail/black-friday",
+            "label": "Proton: Mail Plus / Unlimited"
+          }
+        ],
+        "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+      }
     }
   ],
   "picks": [
@@ -3689,6 +3804,121 @@
             ],
             "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
           }
+        },
+        {
+          "id": "hostinger-premium-black-friday-48-months",
+          "region": "global",
+          "target": "en",
+          "category": "cloud",
+          "category_label": "SaaS & cloud",
+          "title_raw": "Hostinger Premium · 48 months prepaid",
+          "product": "Hostinger Premium · 48 months prepaid",
+          "store": "Hostinger",
+          "storefront_country": null,
+          "price": 95.52,
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "Digital hosting subscription",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "Black Friday offer: USD 95.52 upfront for 48 months (4 years), not a monthly payment. Equivalent to USD 1.99/month.",
+            "Renews at USD 10.99/month for the same 48-month term; 48 × 10.99 = USD 527.52 before any tax or changes. Includes 3 websites, 20 GB SSD and weekly backups. Free domain and 2 mailboxes per website last only 1 year; later fees are not verified. Campaign ends December 14, 2026; exact time and timezone unverified. Market prices vary; existing-customer upgrade offers are separate. Seller advertises a 30-day money-back guarantee, subject to policy. Korean eligibility, taxes and final checkout unverified."
+          ],
+          "audience": "New hosting subscriptions; four-year upfront commitment.",
+          "source": {
+            "id": "hostinger-official",
+            "label": "Hostinger official Premium web-hosting product page",
+            "url": "https://www.hostinger.com/web-hosting"
+          },
+          "published_at": null,
+          "checked_date": "2026-11-15",
+          "score": null,
+          "disclosure": "No affiliate tracking. Four-year introductory commitment, not a monthly charge. Renewal is higher; checkout untested.",
+          "ai_rewritten": false,
+          "price_source": "retailer_product_page",
+          "link": {
+            "url": "https://www.hostinger.com/web-hosting",
+            "tracked": false,
+            "label": "View Premium hosting offer",
+            "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Digital hosting; no physical shipping.",
+            "activation": "48-month upfront plan. Market-specific price and account eligibility require confirmation.",
+            "payment": "Korean billing and payment eligibility unverified; no checkout performed.",
+            "tax": "Final taxes and total unverified.",
+            "returns": "Seller advertises 30-day money-back guarantee; policy and product exclusions apply.",
+            "evidence_url": "https://www.hostinger.com/web-hosting",
+            "checked_at": "2026-11-15"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T18:42:16.768851+00:00",
+            "url": "https://www.hostinger.com/web-hosting",
+            "product_match": true,
+            "evidence": "Official product page: Premium, 48 months, USD95.52 paid today, USD1.99 monthly equivalent; renews USD10.99/month for same term. 3 websites,20GB SSD,weekly backups; domain and 2 mailboxes/site free only 1 year. Campaign page ends December14,2026 without exact time."
+          },
+          "price_review": {
+            "id": "hostinger-premium-black-friday-48-months",
+            "product": "Hostinger Premium · 48 months prepaid",
+            "seller_url": "https://www.hostinger.com/web-hosting",
+            "recorded_price": 95.52,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 95.52,
+            "deal_status": "comparison_unverified",
+            "evidence": [
+              {
+                "url": "https://www.hostinger.com/web-hosting",
+                "observed_at": "2026-11-15T18:42:16.768851+00:00",
+                "result": "Official product page: Premium, 48 months, USD95.52 paid today, USD1.99 monthly equivalent; renews USD10.99/month for same term. 3 websites,20GB SSD,weekly backups; domain and 2 mailboxes/site free only 1 year. Campaign page ends December14,2026 without exact time."
+              },
+              {
+                "url": "https://www.hostinger.com/black-friday",
+                "observed_at": "2026-11-15T18:42:16.768851+00:00",
+                "result": "Official campaign October19–December14,2026; prices vary by market and term; existing customers may get separate upgrade/cross-sell offers."
+              }
+            ],
+            "conditions": [
+              "Renews at USD 10.99/month for the same 48-month term; 48 × 10.99 = USD 527.52 before any tax or changes. Includes 3 websites, 20 GB SSD and weekly backups. Free domain and 2 mailboxes per website last only 1 year; later fees are not verified. Campaign ends December 14, 2026; exact time and timezone unverified. Market prices vary; existing-customer upgrade offers are separate. Seller advertises a 30-day money-back guarantee, subject to policy. Korean eligibility, taxes and final checkout unverified."
+            ],
+            "limitations": [
+              "Vendor85% comparison not independently established; no crossed-out baseline or historical-low claim.",
+              "Expiry date is stated, but exact time/timezone, checkout tax and Korean eligibility remain unverified."
+            ],
+            "review_completed_at": "2026-11-15T18:42:16.768851+00:00",
+            "campaign": {
+              "ends_on": "2026-12-14",
+              "end_time": null,
+              "timezone": null,
+              "source_url": "https://www.hostinger.com/black-friday"
+            },
+            "billing": {
+              "initial_months": 48,
+              "initial_total": 95.52,
+              "monthly_equivalent": 1.99,
+              "renewal_monthly": 10.99,
+              "renewal_months": 48,
+              "renewal_total_calculated": 527.52,
+              "currency": "USD",
+              "checkout_verified": false
+            }
+          },
+          "expires_at": null,
+          "alternative_review": {
+            "checked_at": "2026-11-15T16:23:29.014044+00:00",
+            "sources": [
+              {
+                "url": "https://proton.me/mail/black-friday",
+                "label": "Proton: Mail Plus / Unlimited"
+              }
+            ],
+            "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+          }
         }
       ]
     },
@@ -3831,7 +4061,7 @@
     }
   },
   "stats": {
-    "feed": 23,
-    "sources": 7
+    "feed": 24,
+    "sources": 8
   }
 }

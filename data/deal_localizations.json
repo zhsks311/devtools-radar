@@ -1422,5 +1422,37 @@
       "conditions": "Première souscription individuelle, 18 ans minimum, une par personne. Offre du 2026-11-13 au 27, heure limite non indiquée. Renouvellement automatique au tarif en vigueur (actuellement 87,900 KRW/mois). Remboursement intégral sous 14 jours après commande initiale. Ensuite : différence avec le tarif mensuel pour la période utilisée plus 10% du montant annuel engagé ; arrêt immédiat du service. Le prépaiement de 396,217 KRW/an est une autre option. Paiement et admissibilité individuelle non vérifiés.",
       "buying_note": "Photo, vectoriel ou mise en page seulement ? Essayez Affinity : gratuit pour les particuliers avec un compte Canva gratuit ; Canva AI nécessite un forfait premium. Il ne remplace pas Premiere ni toute la suite Adobe. Compatibilité fichiers/plugins et travail en coréen non testés. Vérifiez les frais Adobe pour un usage ponctuel."
     }
+  },
+  "hostinger-premium-black-friday-48-months": {
+    "en": {
+      "product": "Hostinger Premium · 48 months prepaid",
+      "summary": "Black Friday offer: USD 95.52 upfront for 48 months (4 years), not a monthly payment. Equivalent to USD 1.99/month.",
+      "conditions": "Renews at USD 10.99/month for the same 48-month term; 48 × 10.99 = USD 527.52 before any tax or changes. Includes 3 websites, 20 GB SSD and weekly backups. Free domain and 2 mailboxes per website last only 1 year; later fees are not verified. Campaign ends December 14, 2026; exact time and timezone unverified. Market prices vary; existing-customer upgrade offers are separate. Seller advertises a 30-day money-back guarantee, subject to policy. Korean eligibility, taxes and final checkout unverified."
+    },
+    "ko": {
+      "product": "Hostinger Premium · 48개월 선결제",
+      "summary": "48개월(4년) 총 USD 95.52를 먼저 결제합니다. 월환산 USD 1.99이며, 월 결제 상품은 아닙니다.",
+      "conditions": "동일한 48개월 갱신 시 월환산 USD 10.99, 산술합계 USD 527.52(세금·가격 변경 제외)입니다. 웹사이트 3개, SSD 20GB, 주간 백업 포함. 도메인과 사이트당 메일함 2개 무료는 1년뿐이며 이후 요금은 미확인입니다. 행사는 2026년 12월 14일까지지만 종료 시각·시간대는 미공개입니다. 시장별 가격이 다르고 기존 고객 혜택은 별도입니다. 판매자의 30일 환불 보장에는 약관·예외가 적용됩니다. 한국 구매 가능 여부·세금·최종 결제는 미확인입니다."
+    },
+    "zh": {
+      "product": "Hostinger Premium · 预付48个月",
+      "summary": "黑五：48个月（4年）预付总额95.52美元，折合每月1.99美元，并非月付。",
+      "conditions": "按相同48个月期限续费，折合每月10.99美元（计算总额527.52美元，不含税费或变动）。3个网站、20GB SSD、每周备份。域名及每站2个邮箱仅首1年免费，之后费用未核实。活动2026年12月14日结束，时间和时区未知。地区价格不同；老客户优惠另计。卖家30天退款保证有条款和例外。韩国购买资格、税费和结账未核实。"
+    },
+    "ja": {
+      "product": "Hostinger Premium · 48か月前払い",
+      "summary": "ブラックフライデー：48か月（4年）の合計USD95.52を前払い。月換算USD1.99で、月払いではありません。",
+      "conditions": "更新は同じ48か月、月換算USD10.99（計算上合計USD527.52、税・変更を除く）。3サイト、20GB SSD、週次バックアップ。ドメインと各サイト2メールボックス無料は1年のみ、その後料金未確認。2026年12月14日終了、時刻・時間帯不明。地域別価格、既存顧客特典は別。30日返金保証に規約・例外あり。韓国での購入資格、税、決済未確認。"
+    },
+    "es": {
+      "product": "Hostinger Premium · 48 meses prepagados",
+      "summary": "Black Friday: USD95.52 por 48 meses (4 años) pagados por adelantado. Equivale a USD1.99/mes, no es pago mensual.",
+      "conditions": "Renueva al equivalente de USD10.99/mes por otros48 meses (total calculado USD527.52, antes de impuestos o cambios). 3 sitios,20GB SSD y copias semanales. Dominio y2 buzones por sitio gratis solo1 año; tarifas posteriores sin verificar. Finaliza14 de diciembre de2026; hora y zona desconocidas. Precios por mercado; ofertas existentes separadas. Garantía de30 días sujeta a condiciones y exclusiones. Corea, impuestos y pago sin verificar."
+    },
+    "fr": {
+      "product": "Hostinger Premium · 48 mois prépayés",
+      "summary": "Black Friday :95.52 USD payés d’avance pour48 mois (4 ans), soit1.99 USD/mois. Ce n’est pas un paiement mensuel.",
+      "conditions": "Renouvellement équivalent à10.99 USD/mois pour48 mois (total calculé527.52 USD, hors taxes ou changements). 3 sites,20Go SSD et sauvegardes hebdomadaires. Domaine et2 boîtes par site gratuits pendant1 an seulement ; tarifs ultérieurs non vérifiés. Fin le14 décembre2026, heure et fuseau inconnus. Prix selon marché, offres existantes distinctes. Garantie30 jours soumise aux conditions et exclusions. Corée, taxes et paiement non vérifiés."
+    }
   }
 }
