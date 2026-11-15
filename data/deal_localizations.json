@@ -1168,37 +1168,37 @@
       "product": "NoCodeBackend · Tier 1",
       "summary": "Seller-listed lifetime database/API plan for new users; Tier 1 does not include MCP or built-in user authentication.",
       "conditions": "New users only; existing accounts cannot redeem or upgrade with this offer. 2 databases, 25,000 records each, unlimited tables/columns and 2 Prehooks. MCP, built-in user authentication, user invites, Smart AI credits, webhooks, custom domains and database snapshots are excluded. Lifetime access with future Starter Plan updates; activate within 60 days. Seller lists refunds within 60 days of purchase, but no We Got Your Back guarantee. Extra record capacity costs more. Country eligibility, including Korea, taxes and final checkout are unverified.",
-      "buying_note": "Check API request and bandwidth limits before relying on this for production; no numeric quotas were verified. This is a seller-displayed price, not an independently verified discount or historical low. Data-center locations do not establish buyer eligibility."
+      "buying_note": "For a small prototype, try Supabase Free before paying: 2 active projects and a 500 MB database quota, with pausing after a week of inactivity. It uses Postgres, not MySQL; storage quotas and record counts are not directly comparable. Check NoCodeBackend’s API and bandwidth limits before production use."
     },
     "ko": {
       "product": "NoCodeBackend · Tier 1",
       "summary": "신규 사용자용 데이터베이스/API 평생 플랜입니다. Tier 1에는 MCP와 내장 사용자 인증이 포함되지 않습니다.",
       "conditions": "신규 사용자만 가능하며 기존 계정에는 적용·업그레이드할 수 없습니다. 데이터베이스 2개, 각각 레코드 25,000개, 테이블·열 무제한, Prehooks 2개. MCP·내장 사용자 인증·사용자 초대·Smart AI 크레딧·웹훅·사용자 도메인·데이터베이스 스냅샷은 제외됩니다. 평생 이용과 향후 Starter Plan 업데이트, 구매 후 60일 내 활성화. 판매처는 구매 후 60일 내 환불을 안내하지만 We Got Your Back 보장은 제외됩니다. 레코드 용량 추가는 별도 비용입니다. 한국을 포함한 국가별 이용·결제 가능 여부, 세금과 최종 결제는 미확인입니다.",
-      "buying_note": "운영 서비스에 쓰기 전 API 요청·대역폭 한도를 확인하세요. 구체적인 수치 한도는 검증하지 않았습니다. 판매처 표시 가격이며 할인·역대 최저가의 독립 근거는 없습니다. 데이터센터 위치는 구매 가능 국가의 근거가 아닙니다."
+      "buying_note": "작은 시제품이라면 먼저 Supabase 무료 플랜을 써보세요. 활성 프로젝트 2개와 DB 용량 500MB를 제공하며, 일주일간 쓰지 않으면 일시 중지됩니다. MySQL이 아닌 Postgres라 레코드 수와 용량을 그대로 비교할 수는 없습니다. NoCodeBackend를 운영에 쓰려면 API·대역폭 한도도 확인하세요."
     },
     "zh": {
       "product": "NoCodeBackend · Tier 1",
       "summary": "面向新用户的数据库/API终身方案。Tier 1不含MCP或内置用户认证。",
       "conditions": "仅限新用户；现有账户不能使用此优惠兑换或升级。2个数据库，每个25,000条记录，表与列不限，2个Prehooks。不含MCP、内置用户认证、用户邀请、Smart AI积分、Webhook、自定义域名及数据库快照。终身使用并包含未来Starter Plan更新；购买后60天内激活。卖家标明购买后60天内可退款，但不享有We Got Your Back保障。额外记录容量另收费。包括韩国在内的国家使用及付款资格、税费和最终结账均未核实。",
-      "buying_note": "用于生产环境前请核实API请求及带宽限制；具体额度尚未验证。仅为卖家显示价格，没有独立折扣或历史最低价证据。数据中心位置不代表买家购买资格。"
+      "buying_note": "小型原型可先试用 Supabase 免费方案：2个活跃项目、500 MB数据库容量，一周不活动后暂停。它使用Postgres而非MySQL，存储容量不能直接换算为记录数。正式使用NoCodeBackend前请确认API与带宽限制。"
     },
     "ja": {
       "product": "NoCodeBackend · Tier 1",
       "summary": "新規ユーザー向けデータベース/APIの買い切りプラン。Tier 1にはMCPと組み込みユーザー認証は含まれません。",
       "conditions": "新規ユーザー限定。既存アカウントへの適用やアップグレードは不可。データベース2個、各25,000レコード、テーブル・列数無制限、Prehooks 2個。MCP、組み込みユーザー認証、ユーザー招待、Smart AIクレジット、Webhook、独自ドメイン、データベーススナップショットは対象外。無期限アクセスと今後のStarter Plan更新を含み、購入後60日以内に有効化。販売者は購入後60日以内の返金を案内していますが、We Got Your Back保証は対象外。レコード容量追加は別料金。韓国を含む国別の利用・決済可否、税金、最終決済は未確認です。",
-      "buying_note": "本番利用前にAPIリクエスト数と帯域の制限を確認してください。数値上限は未検証です。販売者の表示価格であり、割引や過去最安値の独立した根拠はありません。データセンターの所在地は購入可能国の根拠ではありません。"
+      "buying_note": "小さな試作なら、まずSupabaseの無料プランを。稼働プロジェクト2件、DB容量500 MBで、1週間使わないと一時停止されます。MySQLではなくPostgresなので、容量とレコード数は単純比較できません。NoCodeBackendの本番利用前にAPIと帯域の上限も確認してください。"
     },
     "es": {
       "product": "NoCodeBackend · Tier 1",
       "summary": "Plan vitalicio de base de datos/API para nuevos usuarios. Tier 1 no incluye MCP ni autenticación de usuarios integrada.",
       "conditions": "Solo nuevos usuarios; no se puede aplicar ni actualizar una cuenta existente con esta oferta. 2 bases de datos, 25.000 registros cada una, tablas/columnas ilimitadas y 2 Prehooks. Excluye MCP, autenticación integrada, invitaciones de usuarios, créditos Smart AI, webhooks, dominio propio y snapshots. Acceso vitalicio y futuras actualizaciones del Starter Plan; activar en 60 días. El vendedor anuncia reembolso en los 60 días posteriores a la compra, sin garantía We Got Your Back. La capacidad adicional de registros se paga aparte. Elegibilidad por país, incluida Corea, impuestos y pago final sin verificar.",
-      "buying_note": "Comprueba los límites de solicitudes API y ancho de banda antes de usarlo en producción; no verificamos cuotas numéricas. Es el precio mostrado por el vendedor, no un descuento ni mínimo histórico verificado independientemente. La ubicación de los centros de datos no demuestra la elegibilidad del comprador."
+      "buying_note": "Para un prototipo pequeño, prueba primero Supabase Free: 2 proyectos activos y 500 MB de base de datos; se pausa tras una semana sin actividad. Usa Postgres, no MySQL: capacidad y número de registros no son equivalentes. Confirma los límites API y de ancho de banda de NoCodeBackend antes de usarlo en producción."
     },
     "fr": {
       "product": "NoCodeBackend · Tier 1",
       "summary": "Offre à vie de bases de données/API pour nouveaux utilisateurs. Tier 1 exclut MCP et l’authentification intégrée des utilisateurs.",
       "conditions": "Nouveaux utilisateurs uniquement ; cette offre ne permet ni activation ni mise à niveau sur un compte existant. 2 bases de données, 25 000 enregistrements chacune, tables/colonnes illimitées et 2 Prehooks. MCP, authentification intégrée, invitations, crédits Smart AI, webhooks, domaine personnalisé et instantanés sont exclus. Accès à vie et futures mises à jour du Starter Plan ; activation sous 60 jours. Le vendeur annonce un remboursement sous 60 jours après achat, sans garantie We Got Your Back. La capacité supplémentaire est payante. Éligibilité par pays, notamment en Corée, taxes et paiement final non vérifiés.",
-      "buying_note": "Vérifiez les limites de requêtes API et de bande passante avant un usage en production ; aucun quota chiffré n’a été vérifié. Prix affiché par le vendeur, sans preuve indépendante de réduction ni de minimum historique. Les lieux des centres de données ne prouvent pas l’éligibilité des acheteurs."
+      "buying_note": "Pour un petit prototype, essayez d’abord Supabase Free : 2 projets actifs, 500 Mo de base de données et une pause après une semaine d’inactivité. Il utilise Postgres, pas MySQL : capacité et nombre d’enregistrements ne sont pas directement comparables. Vérifiez les limites API et de bande passante de NoCodeBackend avant la production."
     }
   }
 }

@@ -2019,6 +2019,26 @@
           "Record expansion packs cost extra; current checkout price for add-ons was not verified."
         ],
         "review_completed_at": "2026-11-15T12:50:37+00:00"
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-15T13:20:58.649183+00:00",
+        "sources": [
+          {
+            "label": "Supabase Free",
+            "url": "https://supabase.com/pricing"
+          },
+          {
+            "label": "NoCodeBackend plans & FAQ",
+            "url": "https://appsumo.com/products/nocodebackend/"
+          }
+        ],
+        "free_plan": {
+          "monthly_usd": 0,
+          "active_projects": 2,
+          "database_mb": 500,
+          "inactivity_pause_days": 7
+        },
+        "comparison_caveat": "MySQL record caps and Postgres storage quotas are different measures, not equivalent capacity or a reliability comparison. Current seller table and FAQ both specify 25k records per Tier 1 database; older legacy plan limits are not applied to new buyers."
       }
     }
   ],
@@ -2997,6 +3017,26 @@
               "Record expansion packs cost extra; current checkout price for add-ons was not verified."
             ],
             "review_completed_at": "2026-11-15T12:50:37+00:00"
+          },
+          "alternative_review": {
+            "checked_at": "2026-11-15T13:20:58.649183+00:00",
+            "sources": [
+              {
+                "label": "Supabase Free",
+                "url": "https://supabase.com/pricing"
+              },
+              {
+                "label": "NoCodeBackend plans & FAQ",
+                "url": "https://appsumo.com/products/nocodebackend/"
+              }
+            ],
+            "free_plan": {
+              "monthly_usd": 0,
+              "active_projects": 2,
+              "database_mb": 500,
+              "inactivity_pause_days": 7
+            },
+            "comparison_caveat": "MySQL record caps and Postgres storage quotas are different measures, not equivalent capacity or a reliability comparison. Current seller table and FAQ both specify 25k records per Tier 1 database; older legacy plan limits are not applied to new buyers."
           }
         }
       ]
