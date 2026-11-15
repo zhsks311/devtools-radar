@@ -1311,6 +1311,22 @@ Recorded price: 35700 KRW. Seller price observation dated 2026-11-14T12:43:08.56
 Delivery / activation countries with evidence: KR.
 Discounts and historical-low claims are not established by this export.
 
+### Anker P31i D1202
+Seller: Gmarket · Anker Korea
+Product URL: https://item.gmarket.co.kr/Item?goodsCode=4620949305
+Product-link review: 2026-11-15T13:31:30+00:00 (not a stock check)
+Recorded price: 24440 KRW. Seller price observation dated 2026-11-15T13:31:30+00:00.
+Delivery / activation countries with evidence: KR.
+Discounts and historical-low claims are not established by this export.
+
+### Mega MGC Coffee HOT Americano
+Seller: Gmarket · Coop Marketing
+Product URL: https://item.gmarket.co.kr/Item?goodsCode=4885511021
+Product-link review: 2026-11-15T13:33:32+00:00 (not a stock check)
+Recorded price: 1320 KRW. Seller price observation dated 2026-11-15T13:33:32+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### DJI Osmo Mobile 7
 Seller: DJI China
 Product URL: https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN
