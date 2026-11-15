@@ -2143,7 +2143,17 @@
         ],
         "review_completed_at": "2026-11-15T15:08:12.626652+00:00"
       },
-      "expires_at": null
+      "expires_at": null,
+      "alternative_review": {
+        "checked_at": "2026-11-15T16:23:29.014044+00:00",
+        "sources": [
+          {
+            "url": "https://proton.me/mail/black-friday",
+            "label": "Proton: Mail Plus / Unlimited"
+          }
+        ],
+        "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+      }
     },
     {
       "id": "proton-drive-plus-black-friday-annual",
@@ -2227,7 +2237,17 @@
         ],
         "review_completed_at": "2026-11-15T15:08:12.626652+00:00"
       },
-      "expires_at": null
+      "expires_at": null,
+      "alternative_review": {
+        "checked_at": "2026-11-15T16:23:29.014044+00:00",
+        "sources": [
+          {
+            "url": "https://proton.me/mail/black-friday",
+            "label": "Proton: Mail Plus / Unlimited"
+          }
+        ],
+        "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+      }
     },
     {
       "id": "proton-pass-plus-black-friday-annual",
@@ -2312,7 +2332,17 @@
         ],
         "review_completed_at": "2026-11-15T15:08:12.626652+00:00"
       },
-      "expires_at": null
+      "expires_at": null,
+      "alternative_review": {
+        "checked_at": "2026-11-15T16:23:29.014044+00:00",
+        "sources": [
+          {
+            "url": "https://proton.me/mail/black-friday",
+            "label": "Proton: Mail Plus / Unlimited"
+          }
+        ],
+        "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+      }
     }
   ],
   "picks": [
@@ -3459,7 +3489,17 @@
             ],
             "review_completed_at": "2026-11-15T15:08:12.626652+00:00"
           },
-          "expires_at": null
+          "expires_at": null,
+          "alternative_review": {
+            "checked_at": "2026-11-15T16:23:29.014044+00:00",
+            "sources": [
+              {
+                "url": "https://proton.me/mail/black-friday",
+                "label": "Proton: Mail Plus / Unlimited"
+              }
+            ],
+            "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+          }
         },
         {
           "id": "proton-drive-plus-black-friday-annual",
@@ -3543,7 +3583,17 @@
             ],
             "review_completed_at": "2026-11-15T15:08:12.626652+00:00"
           },
-          "expires_at": null
+          "expires_at": null,
+          "alternative_review": {
+            "checked_at": "2026-11-15T16:23:29.014044+00:00",
+            "sources": [
+              {
+                "url": "https://proton.me/mail/black-friday",
+                "label": "Proton: Mail Plus / Unlimited"
+              }
+            ],
+            "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+          }
         },
         {
           "id": "proton-pass-plus-black-friday-annual",
@@ -3628,7 +3678,17 @@
             ],
             "review_completed_at": "2026-11-15T15:08:12.626652+00:00"
           },
-          "expires_at": null
+          "expires_at": null,
+          "alternative_review": {
+            "checked_at": "2026-11-15T16:23:29.014044+00:00",
+            "sources": [
+              {
+                "url": "https://proton.me/mail/black-friday",
+                "label": "Proton: Mail Plus / Unlimited"
+              }
+            ],
+            "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+          }
         }
       ]
     },

@@ -1275,96 +1275,114 @@
     "en": {
       "product": "Proton Mail Plus · first 12 months",
       "summary": "Black Friday annual offer: USD 29.88 for the first 12 months, not a monthly bill. 15 GB storage, 10 email addresses and 1 custom email domain.",
-      "conditions": "New users: USD 29.88 paid upfront for the first 12 months; automatically renews at USD 47.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified."
+      "conditions": "New users: USD 29.88 paid upfront for the first 12 months; automatically renews at USD 47.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified.",
+      "buying_note": "Need only this service? Keep the cheaper standalone plan. For several services, compare Unlimited: USD 77.88 prepaid for year one, then USD 119.88/year automatically. It includes 500 GB plus premium Mail, Drive, VPN and Pass. This is a plan choice, not a claim that separate subscriptions can be combined."
     },
     "ko": {
       "product": "Proton Mail Plus · 첫 12개월",
       "summary": "블랙프라이데이 첫 12개월 선결제 USD 29.88. 월 결제액이 아닙니다.",
-      "conditions": "신규 사용자용. 첫해 USD 29.88, 이후 취소하지 않으면 12개월마다 USD 47.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인."
+      "conditions": "신규 사용자용. 첫해 USD 29.88, 이후 취소하지 않으면 12개월마다 USD 47.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인.",
+      "buying_note": "이 기능만 필요하면 더 저렴한 단독 플랜을 고르세요. 여러 기능을 쓴다면 Unlimited도 비교해 보세요. 첫해 USD 77.88 선결제, 이후 연 USD 119.88 자동 갱신이며 500GB와 Mail·Drive·VPN·Pass 유료 기능을 포함합니다. 별도 구독들을 합칠 수 있다는 뜻은 아닙니다."
     },
     "zh": {
       "product": "Proton Mail Plus · 首12个月",
       "summary": "黑五优惠：首12个月预付29.88美元，并非月付价格。",
-      "conditions": "面向新用户；首年29.88美元，未取消则每12个月自动续费47.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。"
+      "conditions": "面向新用户；首年29.88美元，未取消则每12个月自动续费47.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。",
+      "buying_note": "只需这一项服务，单项套餐更便宜。需要多项服务可比较 Unlimited：首年预付77.88美元，之后每年自动续费119.88美元，含500GB及Mail、Drive、VPN、Pass高级功能。这是套餐选择，并非声称单独订阅可以合并。"
     },
     "ja": {
       "product": "Proton Mail Plus · 最初の12か月",
       "summary": "ブラックフライデー：最初の12か月分をUSD 29.88で前払い。月払い額ではありません。",
-      "conditions": "新規ユーザー向け。初年度USD 29.88、解約しない場合は12か月ごとにUSD 47.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。"
+      "conditions": "新規ユーザー向け。初年度USD 29.88、解約しない場合は12か月ごとにUSD 47.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。",
+      "buying_note": "この機能だけなら単体プランの方が安価です。複数使うならUnlimitedも比較：初年度77.88米ドル前払い、以後年119.88米ドルで自動更新。500GBとMail・Drive・VPN・Passの有料機能を含みます。個別契約を合算できるという意味ではありません。"
     },
     "es": {
       "product": "Proton Mail Plus · primeros 12 meses",
       "summary": "Black Friday: USD 29.88 por adelantado para los primeros 12 meses; no es una cuota mensual.",
-      "conditions": "Para nuevos usuarios. Primer año USD 29.88; renovación automática de USD 47.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar."
+      "conditions": "Para nuevos usuarios. Primer año USD 29.88; renovación automática de USD 47.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar.",
+      "buying_note": "Si solo necesitas este servicio, el plan individual cuesta menos. Para varios servicios, compara Unlimited: USD 77.88 por adelantado el primer año y renovación automática de USD 119.88/año. Incluye 500 GB y funciones prémium de Mail, Drive, VPN y Pass. No implica que se puedan combinar suscripciones separadas."
     },
     "fr": {
       "product": "Proton Mail Plus · 12 premiers mois",
       "summary": "Black Friday : 29.88 USD payés à l’avance pour les 12 premiers mois, pas une mensualité.",
-      "conditions": "Nouveaux utilisateurs. Première année 29.88 USD, puis renouvellement automatique à 47.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés."
+      "conditions": "Nouveaux utilisateurs. Première année 29.88 USD, puis renouvellement automatique à 47.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés.",
+      "buying_note": "Pour ce seul service, le forfait individuel coûte moins cher. Pour plusieurs services, comparez Unlimited : 77.88 USD prépayés la première année, puis renouvellement automatique à 119.88 USD/an. Il inclut 500 Go et les fonctions premium de Mail, Drive, VPN et Pass. Cela ne signifie pas que des abonnements séparés sont cumulables."
     }
   },
   "proton-drive-plus-black-friday-annual": {
     "en": {
       "product": "Proton Drive Plus · first 12 months",
       "summary": "Black Friday annual offer: USD 29.88 for the first 12 months, not a monthly bill. 200 GB storage with document and spreadsheet editors.",
-      "conditions": "New users: USD 29.88 paid upfront for the first 12 months; automatically renews at USD 47.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified."
+      "conditions": "New users: USD 29.88 paid upfront for the first 12 months; automatically renews at USD 47.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified.",
+      "buying_note": "Need only this service? Keep the cheaper standalone plan. For several services, compare Unlimited: USD 77.88 prepaid for year one, then USD 119.88/year automatically. It includes 500 GB plus premium Mail, Drive, VPN and Pass. This is a plan choice, not a claim that separate subscriptions can be combined."
     },
     "ko": {
       "product": "Proton Drive Plus · 첫 12개월",
       "summary": "블랙프라이데이 첫 12개월 선결제 USD 29.88. 월 결제액이 아닙니다.",
-      "conditions": "신규 사용자용. 첫해 USD 29.88, 이후 취소하지 않으면 12개월마다 USD 47.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인."
+      "conditions": "신규 사용자용. 첫해 USD 29.88, 이후 취소하지 않으면 12개월마다 USD 47.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인.",
+      "buying_note": "이 기능만 필요하면 더 저렴한 단독 플랜을 고르세요. 여러 기능을 쓴다면 Unlimited도 비교해 보세요. 첫해 USD 77.88 선결제, 이후 연 USD 119.88 자동 갱신이며 500GB와 Mail·Drive·VPN·Pass 유료 기능을 포함합니다. 별도 구독들을 합칠 수 있다는 뜻은 아닙니다."
     },
     "zh": {
       "product": "Proton Drive Plus · 首12个月",
       "summary": "黑五优惠：首12个月预付29.88美元，并非月付价格。",
-      "conditions": "面向新用户；首年29.88美元，未取消则每12个月自动续费47.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。"
+      "conditions": "面向新用户；首年29.88美元，未取消则每12个月自动续费47.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。",
+      "buying_note": "只需这一项服务，单项套餐更便宜。需要多项服务可比较 Unlimited：首年预付77.88美元，之后每年自动续费119.88美元，含500GB及Mail、Drive、VPN、Pass高级功能。这是套餐选择，并非声称单独订阅可以合并。"
     },
     "ja": {
       "product": "Proton Drive Plus · 最初の12か月",
       "summary": "ブラックフライデー：最初の12か月分をUSD 29.88で前払い。月払い額ではありません。",
-      "conditions": "新規ユーザー向け。初年度USD 29.88、解約しない場合は12か月ごとにUSD 47.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。"
+      "conditions": "新規ユーザー向け。初年度USD 29.88、解約しない場合は12か月ごとにUSD 47.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。",
+      "buying_note": "この機能だけなら単体プランの方が安価です。複数使うならUnlimitedも比較：初年度77.88米ドル前払い、以後年119.88米ドルで自動更新。500GBとMail・Drive・VPN・Passの有料機能を含みます。個別契約を合算できるという意味ではありません。"
     },
     "es": {
       "product": "Proton Drive Plus · primeros 12 meses",
       "summary": "Black Friday: USD 29.88 por adelantado para los primeros 12 meses; no es una cuota mensual.",
-      "conditions": "Para nuevos usuarios. Primer año USD 29.88; renovación automática de USD 47.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar."
+      "conditions": "Para nuevos usuarios. Primer año USD 29.88; renovación automática de USD 47.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar.",
+      "buying_note": "Si solo necesitas este servicio, el plan individual cuesta menos. Para varios servicios, compara Unlimited: USD 77.88 por adelantado el primer año y renovación automática de USD 119.88/año. Incluye 500 GB y funciones prémium de Mail, Drive, VPN y Pass. No implica que se puedan combinar suscripciones separadas."
     },
     "fr": {
       "product": "Proton Drive Plus · 12 premiers mois",
       "summary": "Black Friday : 29.88 USD payés à l’avance pour les 12 premiers mois, pas une mensualité.",
-      "conditions": "Nouveaux utilisateurs. Première année 29.88 USD, puis renouvellement automatique à 47.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés."
+      "conditions": "Nouveaux utilisateurs. Première année 29.88 USD, puis renouvellement automatique à 47.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés.",
+      "buying_note": "Pour ce seul service, le forfait individuel coûte moins cher. Pour plusieurs services, comparez Unlimited : 77.88 USD prépayés la première année, puis renouvellement automatique à 119.88 USD/an. Il inclut 500 Go et les fonctions premium de Mail, Drive, VPN et Pass. Cela ne signifie pas que des abonnements séparés sont cumulables."
     }
   },
   "proton-pass-plus-black-friday-annual": {
     "en": {
       "product": "Proton Pass Plus · first 12 months",
       "summary": "Black Friday annual offer: USD 23.88 for the first 12 months, not a monthly bill. Password manager subscription.",
-      "conditions": "New users: USD 23.88 paid upfront for the first 12 months; automatically renews at USD 35.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified."
+      "conditions": "New users: USD 23.88 paid upfront for the first 12 months; automatically renews at USD 35.88 every 12 months unless canceled. Existing users receive account-specific offers. Seller advertises a 30-day money-back guarantee. End date and timezone not stated in the reviewed page. Korean eligibility, taxes and final checkout unverified.",
+      "buying_note": "Need only this service? Keep the cheaper standalone plan. For several services, compare Unlimited: USD 77.88 prepaid for year one, then USD 119.88/year automatically. It includes 500 GB plus premium Mail, Drive, VPN and Pass. This is a plan choice, not a claim that separate subscriptions can be combined."
     },
     "ko": {
       "product": "Proton Pass Plus · 첫 12개월",
       "summary": "블랙프라이데이 첫 12개월 선결제 USD 23.88. 월 결제액이 아닙니다.",
-      "conditions": "신규 사용자용. 첫해 USD 23.88, 이후 취소하지 않으면 12개월마다 USD 35.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인."
+      "conditions": "신규 사용자용. 첫해 USD 23.88, 이후 취소하지 않으면 12개월마다 USD 35.88 자동 갱신. 기존 사용자는 계정별 별도 혜택. 판매자는 30일 환불 보장을 안내합니다. 종료일·시간대 미공개, 한국 구매 가능 여부·세금·최종 결제 미확인.",
+      "buying_note": "이 기능만 필요하면 더 저렴한 단독 플랜을 고르세요. 여러 기능을 쓴다면 Unlimited도 비교해 보세요. 첫해 USD 77.88 선결제, 이후 연 USD 119.88 자동 갱신이며 500GB와 Mail·Drive·VPN·Pass 유료 기능을 포함합니다. 별도 구독들을 합칠 수 있다는 뜻은 아닙니다."
     },
     "zh": {
       "product": "Proton Pass Plus · 首12个月",
       "summary": "黑五优惠：首12个月预付23.88美元，并非月付价格。",
-      "conditions": "面向新用户；首年23.88美元，未取消则每12个月自动续费35.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。"
+      "conditions": "面向新用户；首年23.88美元，未取消则每12个月自动续费35.88美元。老用户优惠依账户而定。卖家提供30天退款保证。结束时间及其时区未注明；韩国购买资格、税费和结账未核实。",
+      "buying_note": "只需这一项服务，单项套餐更便宜。需要多项服务可比较 Unlimited：首年预付77.88美元，之后每年自动续费119.88美元，含500GB及Mail、Drive、VPN、Pass高级功能。这是套餐选择，并非声称单独订阅可以合并。"
     },
     "ja": {
       "product": "Proton Pass Plus · 最初の12か月",
       "summary": "ブラックフライデー：最初の12か月分をUSD 23.88で前払い。月払い額ではありません。",
-      "conditions": "新規ユーザー向け。初年度USD 23.88、解約しない場合は12か月ごとにUSD 35.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。"
+      "conditions": "新規ユーザー向け。初年度USD 23.88、解約しない場合は12か月ごとにUSD 35.88で自動更新。既存ユーザーはアカウント別特典。販売者は30日間返金保証を案内。終了日時・時間帯の記載なし。韓国での購入資格、税金、決済は未確認。",
+      "buying_note": "この機能だけなら単体プランの方が安価です。複数使うならUnlimitedも比較：初年度77.88米ドル前払い、以後年119.88米ドルで自動更新。500GBとMail・Drive・VPN・Passの有料機能を含みます。個別契約を合算できるという意味ではありません。"
     },
     "es": {
       "product": "Proton Pass Plus · primeros 12 meses",
       "summary": "Black Friday: USD 23.88 por adelantado para los primeros 12 meses; no es una cuota mensual.",
-      "conditions": "Para nuevos usuarios. Primer año USD 23.88; renovación automática de USD 35.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar."
+      "conditions": "Para nuevos usuarios. Primer año USD 23.88; renovación automática de USD 35.88 cada 12 meses salvo cancelación. Ofertas para usuarios existentes según cuenta. El vendedor anuncia garantía de reembolso de 30 días. Sin fecha ni zona horaria de fin verificadas; elegibilidad en Corea, impuestos y pago final sin verificar.",
+      "buying_note": "Si solo necesitas este servicio, el plan individual cuesta menos. Para varios servicios, compara Unlimited: USD 77.88 por adelantado el primer año y renovación automática de USD 119.88/año. Incluye 500 GB y funciones prémium de Mail, Drive, VPN y Pass. No implica que se puedan combinar suscripciones separadas."
     },
     "fr": {
       "product": "Proton Pass Plus · 12 premiers mois",
       "summary": "Black Friday : 23.88 USD payés à l’avance pour les 12 premiers mois, pas une mensualité.",
-      "conditions": "Nouveaux utilisateurs. Première année 23.88 USD, puis renouvellement automatique à 35.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés."
+      "conditions": "Nouveaux utilisateurs. Première année 23.88 USD, puis renouvellement automatique à 35.88 USD tous les 12 mois sauf résiliation. Offres existantes selon le compte. Le vendeur annonce une garantie de remboursement de 30 jours. Date et fuseau de fin non indiqués ; éligibilité en Corée, taxes et paiement final non vérifiés.",
+      "buying_note": "Pour ce seul service, le forfait individuel coûte moins cher. Pour plusieurs services, comparez Unlimited : 77.88 USD prépayés la première année, puis renouvellement automatique à 119.88 USD/an. Il inclut 500 Go et les fonctions premium de Mail, Drive, VPN et Pass. Cela ne signifie pas que des abonnements séparés sont cumulables."
     }
   }
 }

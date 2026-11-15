@@ -20,3 +20,15 @@ class ProtonRoutesTest(unittest.TestCase):
    self.assertFalse(d['link']['tracked'])
    for lang in site_i18n.LANGS:
     self.assertIn(str(renewal),tr[ident][lang]['conditions']);self.assertIn('12',tr[ident][lang]['product']);self.assertNotIn('NaN',tr[ident][lang]['summary'])
+ def test_unlimited_comparison_keeps_standalone_and_unknowns(self):
+  import json
+  from pathlib import Path
+  d=json.loads(Path('data/deals_en.json').read_text());t=json.loads(Path('data/deal_localizations.json').read_text())
+  for row in d['feed']:
+   if row['id'].startswith('proton-'):
+    self.assertEqual(row['purchase_eligibility']['countries_confirmed'],[])
+    self.assertEqual([s['url'] for s in row['alternative_review']['sources']],['https://proton.me/mail/black-friday'])
+    for lang,loc in t[row['id']].items():
+     for value in ['77.88','119.88','500','Unlimited']:
+      self.assertIn(value,loc['buying_note'])
+    self.assertIn('not annual renewal',row['alternative_review']['evidence'])
