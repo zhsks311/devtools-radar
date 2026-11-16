@@ -1331,7 +1331,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Gmarket
 Product URL: https://item.gmarket.co.kr/Item?goodsCode=2453534320
 Product-link review: 2026-11-16T06:31:06+00:00 (not a stock check)
-Recorded price: 74800 KRW. Seller price observation dated 2026-11-16T06:31:06+00:00.
+Recorded price: 83110 KRW. Seller price observation dated 2026-11-16T20:06:40.255384+00:00.
 Delivery / activation countries with evidence: KR.
 Discounts and historical-low claims are not established by this export.
 
