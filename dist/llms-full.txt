@@ -1311,19 +1311,19 @@ Recorded price: 35700 KRW. Seller price observation dated 2026-11-14T12:43:08.56
 Delivery / activation countries with evidence: KR.
 Discounts and historical-low claims are not established by this export.
 
-### Mega MGC Coffee HOT Americano
-Seller: Gmarket · Coop Marketing
-Product URL: https://item.gmarket.co.kr/Item?goodsCode=4885511021
-Product-link review: 2026-11-15T13:33:32+00:00 (not a stock check)
-Recorded price: 1320 KRW. Seller price observation dated 2026-11-15T13:33:32+00:00.
-Delivery / activation countries with evidence: unverified.
-Discounts and historical-low claims are not established by this export.
-
 ### Adobe Creative Cloud All Apps · annual, paid monthly
 Seller: Adobe
 Product URL: https://www.adobe.com/kr/creativecloud.html
 Product-link review: 2026-11-15T17:14:18.828646+00:00 (not a stock check)
 Recorded price: 34800 KRW. Seller price observation dated 2026-11-15T17:14:18.828646+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### My Little Puppy · Steam
+Seller: Steam
+Product URL: https://store.steampowered.com/app/2102040/
+Product-link review: 2026-11-16T00:39:37+00:00 (not a stock check)
+Recorded price: 17400 KRW. Seller price observation dated 2026-11-16T00:39:37+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1519,4 +1519,4 @@ Recorded price: 95.52 USD. Seller price observation dated 2026-11-15T18:42:16.76
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
-14 held source records are omitted from this export; their purchase links are not verified.
+15 held source records are omitted from this export; their purchase links are not verified.

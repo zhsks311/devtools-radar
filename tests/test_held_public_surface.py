@@ -37,5 +37,6 @@ class HeldPublicSurfaceTests(unittest.TestCase):
   for lang in i.LANGS:
    page=i.catalogue(lang,active,tr)
    self.assertEqual(page.count('class="cta"'),len(active))
-   self.assertEqual(page.count('<pre class="original"'),len(active))
+   self.assertEqual(page.count('<pre class="original"'),0)
+   self.assertEqual(page.count('class="price-evidence"'),len(active))
    self.assertNotIn('class="notice link-held"',page)

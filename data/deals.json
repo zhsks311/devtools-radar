@@ -1728,11 +1728,12 @@
         "label_kind": "retailer"
       },
       "link_review": {
-        "status": "verified_detail",
-        "checked_at": "2026-11-15T13:33:32+00:00",
+        "status": "held",
+        "checked_at": "2026-11-16T00:40:01.889133+00:00",
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
         "product_match": true,
-        "evidence": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+        "evidence": "Seller product detail now says SOLD OUT with no current price. Previous KRW1,320 is historical only.",
+        "reason": "Seller product detail now says SOLD OUT with no current price. Previous KRW1,320 is historical only."
       },
       "price_review": {
         "id": "mega-coffee-hot-americano-kr",
@@ -1740,20 +1741,26 @@
         "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
         "recorded_price": 1320,
         "currency": "KRW",
-        "price_status": "seller_page_display_confirmed",
-        "verified_price": 1320,
-        "deal_status": "regular_price_or_discount_unproven",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
         "evidence": [
           {
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
             "observed_at": "2026-11-15T13:33:32+00:00",
             "result": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+          },
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+            "observed_at": "2026-11-16T00:40:01.889133+00:00",
+            "result": "Seller product detail now says SOLD OUT with no current price. Previous KRW1,320 is historical only."
           }
         ],
         "limitations": [
           "Checkout and independent market-low price unverified."
         ],
-        "review_completed_at": "2026-11-15T13:33:32+00:00"
+        "review_completed_at": "2026-11-16T00:40:01.889133+00:00",
+        "previous_verified_price": 1320
       },
       "country_targeting": {
         "countries": [
@@ -1773,6 +1780,18 @@
         "returns": "Seller states unused refund 100% before initial expiry, 90% after.",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
         "checked_at": "2026-11-15"
+      },
+      "previous_link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-15T13:33:32+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+        "product_match": true,
+        "evidence": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+      },
+      "availability_review": {
+        "status": "sold_out",
+        "checked_at": "2026-11-16T00:40:01.889133+00:00",
+        "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021"
       }
     },
     {
@@ -1898,6 +1917,100 @@
         ],
         "evidence": "Official Affinity FAQ: individuals can use Pixel, Vector, Layout with free Canva account; Canva AI requires premium plan. Official graphics page describes vector design. No Premiere/full-suite equivalence or tested compatibility/language claims."
       }
+    },
+    {
+      "id": "my-little-puppy-steam-kr",
+      "region": "kr",
+      "target": "ko",
+      "category": "gaming",
+      "category_label": "Gaming",
+      "title_raw": "My Little Puppy · Steam",
+      "product": "My Little Puppy · Steam",
+      "store": "Steam",
+      "price": 17400,
+      "currency": "KRW",
+      "shipping": "Digital delivery",
+      "specs": [
+        "Windows",
+        "Korean interface and subtitles",
+        "App 2102040 · package 751340"
+      ],
+      "briefing": [
+        "Korean Steam storefront: KRW17,400, 40% below its displayed KRW29,000 regular price. Base game package 751340, app 2102040. Digital delivery through Steam; account required. Discount ends 2026-11-23 17:00 UTC (November 24, 02:00 KST). Purchase button observed; checkout and account-specific eligibility not tested. Historical market-low price unverified."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-16",
+      "source": {
+        "url": "https://store.steampowered.com/app/2102040/",
+        "name": "Steam official product page"
+      },
+      "price_source": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://store.steampowered.com/app/2102040/",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T00:39:37+00:00",
+        "url": "https://store.steampowered.com/app/2102040/",
+        "product_match": true,
+        "evidence": "Korean Steam storefront: KRW17,400, 40% below its displayed KRW29,000 regular price. Base game package 751340, app 2102040. Digital delivery through Steam; account required. Discount ends 2026-11-23 17:00 UTC (November 24, 02:00 KST). Purchase button observed; checkout and account-specific eligibility not tested. Historical market-low price unverified."
+      },
+      "price_review": {
+        "id": "my-little-puppy-steam-kr",
+        "product": "My Little Puppy · Steam",
+        "seller_url": "https://store.steampowered.com/app/2102040/",
+        "recorded_price": 17400,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 17400,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://store.steampowered.com/app/2102040/",
+            "observed_at": "2026-11-16T00:39:37+00:00",
+            "result": "Korean Steam storefront: KRW17,400, 40% below its displayed KRW29,000 regular price. Base game package 751340, app 2102040. Digital delivery through Steam; account required. Discount ends 2026-11-23 17:00 UTC (November 24, 02:00 KST). Purchase button observed; checkout and account-specific eligibility not tested. Historical market-low price unverified.",
+            "observed_storefront_url": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana"
+          }
+        ],
+        "limitations": [
+          "Checkout and account-specific purchase eligibility untested.",
+          "Historical market low unverified."
+        ],
+        "review_completed_at": "2026-11-16T00:39:37+00:00",
+        "seller_displayed_comparison": {
+          "reference_price": 29000,
+          "sale_price": 17400,
+          "percent": 40,
+          "kind": "seller_current_regular_price",
+          "historical_low_verified": false
+        }
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "digital"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Steam digital download; Korean storefront price verified.",
+        "activation": "Steam account required; account-specific eligibility untested.",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Steam refund eligibility not independently reviewed for this item.",
+        "evidence_url": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana",
+        "checked_at": "2026-11-16"
+      },
+      "expires_at": "2026-11-23T17:00:00Z"
     }
   ],
   "categories": {
@@ -2132,11 +2245,12 @@
             "label_kind": "retailer"
           },
           "link_review": {
-            "status": "verified_detail",
-            "checked_at": "2026-11-15T13:33:32+00:00",
+            "status": "held",
+            "checked_at": "2026-11-16T00:40:01.889133+00:00",
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
             "product_match": true,
-            "evidence": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+            "evidence": "Seller product detail now says SOLD OUT with no current price. Previous KRW1,320 is historical only.",
+            "reason": "Seller product detail now says SOLD OUT with no current price. Previous KRW1,320 is historical only."
           },
           "price_review": {
             "id": "mega-coffee-hot-americano-kr",
@@ -2144,20 +2258,26 @@
             "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
             "recorded_price": 1320,
             "currency": "KRW",
-            "price_status": "seller_page_display_confirmed",
-            "verified_price": 1320,
-            "deal_status": "regular_price_or_discount_unproven",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
             "evidence": [
               {
                 "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
                 "observed_at": "2026-11-15T13:33:32+00:00",
                 "result": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+              },
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+                "observed_at": "2026-11-16T00:40:01.889133+00:00",
+                "result": "Seller product detail now says SOLD OUT with no current price. Previous KRW1,320 is historical only."
               }
             ],
             "limitations": [
               "Checkout and independent market-low price unverified."
             ],
-            "review_completed_at": "2026-11-15T13:33:32+00:00"
+            "review_completed_at": "2026-11-16T00:40:01.889133+00:00",
+            "previous_verified_price": 1320
           },
           "country_targeting": {
             "countries": [
@@ -2177,6 +2297,18 @@
             "returns": "Seller states unused refund 100% before initial expiry, 90% after.",
             "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
             "checked_at": "2026-11-15"
+          },
+          "previous_link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-15T13:33:32+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021",
+            "product_match": true,
+            "evidence": "Korean mobile drink voucher, KRW1,320 displayed. Valid 93 days, no extension; 10 per day shown available. Usually sent within 10 minutes, delays possible. Eligible/excluded stores and checkout unverified. Seller states unused refund 100% before initial expiry, 90% after. Not a verified market low."
+          },
+          "availability_review": {
+            "status": "sold_out",
+            "checked_at": "2026-11-16T00:40:01.889133+00:00",
+            "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021"
           }
         }
       ]
@@ -3845,6 +3977,105 @@
           }
         }
       ]
+    },
+    "gaming": {
+      "label": "Gaming",
+      "items": [
+        {
+          "id": "my-little-puppy-steam-kr",
+          "region": "kr",
+          "target": "ko",
+          "category": "gaming",
+          "category_label": "Gaming",
+          "title_raw": "My Little Puppy · Steam",
+          "product": "My Little Puppy · Steam",
+          "store": "Steam",
+          "price": 17400,
+          "currency": "KRW",
+          "shipping": "Digital delivery",
+          "specs": [
+            "Windows",
+            "Korean interface and subtitles",
+            "App 2102040 · package 751340"
+          ],
+          "briefing": [
+            "Korean Steam storefront: KRW17,400, 40% below its displayed KRW29,000 regular price. Base game package 751340, app 2102040. Digital delivery through Steam; account required. Discount ends 2026-11-23 17:00 UTC (November 24, 02:00 KST). Purchase button observed; checkout and account-specific eligibility not tested. Historical market-low price unverified."
+          ],
+          "published_at": null,
+          "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-16",
+          "source": {
+            "url": "https://store.steampowered.com/app/2102040/",
+            "name": "Steam official product page"
+          },
+          "price_source": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana",
+          "storefront_country": "KR",
+          "link": {
+            "url": "https://store.steampowered.com/app/2102040/",
+            "tracked": false,
+            "label": "View actual product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-16T00:39:37+00:00",
+            "url": "https://store.steampowered.com/app/2102040/",
+            "product_match": true,
+            "evidence": "Korean Steam storefront: KRW17,400, 40% below its displayed KRW29,000 regular price. Base game package 751340, app 2102040. Digital delivery through Steam; account required. Discount ends 2026-11-23 17:00 UTC (November 24, 02:00 KST). Purchase button observed; checkout and account-specific eligibility not tested. Historical market-low price unverified."
+          },
+          "price_review": {
+            "id": "my-little-puppy-steam-kr",
+            "product": "My Little Puppy · Steam",
+            "seller_url": "https://store.steampowered.com/app/2102040/",
+            "recorded_price": 17400,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 17400,
+            "deal_status": "regular_price_or_discount_unproven",
+            "evidence": [
+              {
+                "url": "https://store.steampowered.com/app/2102040/",
+                "observed_at": "2026-11-16T00:39:37+00:00",
+                "result": "Korean Steam storefront: KRW17,400, 40% below its displayed KRW29,000 regular price. Base game package 751340, app 2102040. Digital delivery through Steam; account required. Discount ends 2026-11-23 17:00 UTC (November 24, 02:00 KST). Purchase button observed; checkout and account-specific eligibility not tested. Historical market-low price unverified.",
+                "observed_storefront_url": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana"
+              }
+            ],
+            "limitations": [
+              "Checkout and account-specific purchase eligibility untested.",
+              "Historical market low unverified."
+            ],
+            "review_completed_at": "2026-11-16T00:39:37+00:00",
+            "seller_displayed_comparison": {
+              "reference_price": 29000,
+              "sale_price": 17400,
+              "percent": 40,
+              "kind": "seller_current_regular_price",
+              "historical_low_verified": false
+            }
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "digital"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Steam digital download; Korean storefront price verified.",
+            "activation": "Steam account required; account-specific eligibility untested.",
+            "payment": "Checkout untested",
+            "tax": "Final checkout untested",
+            "returns": "Steam refund eligibility not independently reviewed for this item.",
+            "evidence_url": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana",
+            "checked_at": "2026-11-16"
+          },
+          "expires_at": "2026-11-23T17:00:00Z"
+        }
+      ]
     }
   },
   "picks": [
@@ -3894,11 +4125,11 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 20,
+    "feed": 21,
     "tracked_links": 0,
     "search_fallback": 0,
     "verified_product_links": 6,
-    "held_product_links": 14,
+    "held_product_links": 15,
     "historical_tracked_links": 14
   }
 }

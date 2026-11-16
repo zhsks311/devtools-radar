@@ -61,3 +61,9 @@ were readable; two Lenovo China pages timed out. The unchanged six were Belkin,
 Ugreen, Mega HOT Americano, AdGuard, Otter A/B and Koofr. Preserve last-good
 review timestamps for unrefreshed or inaccessible products. Displayed coupons
 are conditional and do not establish completed checkout or a market-low price.
+
+### 2026-11-16: expired stock must leave active offers
+Gmarket 4885511021 (Mega HOT Americano) now explicitly displays SOLD OUT and no current price. The previous KRW1,320 remains only in historical evidence. The record and Korean audience classification are retained, but all six catalogues hide the purchase link and price in the held archive. This check does not infer stock from the stale daily purchase-limit field.
+
+### 2026-11-16: buyer-facing cards, not internal audit dumps
+Active cards now lead with a specific purpose, visual and purchase action. Raw source JSON stays in the repository and is never rendered into cards, even when expanded. Purchase limitations, renewal/refund terms and dated source links remain in closed, readable sections. Original category illustrations are explicitly labelled and never presented as product screenshots. Existing licensed images are retained. Proton's media-kit reuse terms were located, but asset requests returned 403: no blocked images were copied or hotlinked. Regression tests cover all six languages, illustration coverage and action-before-details order.

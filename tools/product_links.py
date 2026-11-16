@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'store.steampowered.com': r'/app/[0-9]+/?',  # Individual game, never Steam search/category.
     'www.hostinger.com': r'/web-hosting/?',  # Reviewed Premium tier and 48-month term; no generic campaign/search.
     'www.adobe.com': r'/kr/creativecloud\.html',  # Exact Creative Cloud suite product, not general plans/search.
     'proton.me': r'/(?:mail|drive|pass)/black-friday/?',  # Product-specific official offers; exact tier reviewed separately.

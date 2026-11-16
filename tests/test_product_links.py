@@ -56,6 +56,6 @@ class ProductLinkTests(unittest.TestCase):
             page=site_i18n.catalogue(lang,feeds,tr)
             self.assertEqual(page.count('class="cta"'),sum(publishable_link(d) for d in feeds))
             self.assertEqual(page.count('class="notice link-held"'),sum(not publishable_link(d) for d in feeds))
-            self.assertEqual(page.count(site_i18n.PRICE_CURRENT[lang]),sum(checked_price(d) for d in feeds))
-            self.assertEqual(page.count(site_i18n.PRICE_RECORDED[lang]),sum(not checked_price(d) for d in feeds))
+            self.assertEqual(page.count(site_i18n.PRICE_CURRENT[lang]),0)
+            self.assertEqual(page.count(site_i18n.PRICE_RECORDED[lang]),sum(not publishable_link(d) for d in feeds))
             self.assertNotIn('href="https://link.coupang.com/',page)
