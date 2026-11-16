@@ -12,6 +12,8 @@ def illustration(deal,lang):
         art='<rect x="110" y="35" width="140" height="145" rx="18"/><path class="accent" d="M185 65l-28 45h25l-12 40 35-54h-25z"/>'
     elif any(x in text for x in ('gan','gb102','charger')):
         art='<rect x="105" y="70" width="150" height="105" rx="20"/><path d="M155 70V40M205 70V40"/><path class="accent" d="M185 90l-23 32h22l-9 30 27-42h-22z"/>'
+    elif 'elevenlabs-creator' in ident:
+        art='<rect x="35" y="40" width="290" height="140" rx="14"/><path class="accent" d="M70 95v30m25-55v80m25-65v50m25-80v110m25-85v60m25-40v20M235 75l50 35-50 35z"/>'
     elif 'rhino-voice' in ident:
         art='<rect x="45" y="40" width="270" height="140" rx="12"/><rect class="accent" x="90" y="65" width="35" height="60" rx="16"/><path d="M80 100v10q0 30 28 30t28-30v-10M108 140v20M175 80h100M175 110h80M175 140h100"/>'
     elif 'buhobarx' in ident:

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T17:06:12.380616+00:00",
+  "generated_at": "2026-11-16T21:37:12.079241+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -3580,6 +3580,114 @@
         ],
         "network": "Model downloads and signed update checks use network; vendor says dictation/cleanup work offline after model download. Not independently executed."
       }
+    },
+    {
+      "id": "elevenlabs-creator-bf-first-year",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "ElevenLabs Creator · first 12 months",
+      "product": "ElevenLabs Creator · first 12 months",
+      "store": "ElevenLabs",
+      "storefront_country": null,
+      "price": 99,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital subscription",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "AI voiceovers, dubbing and media generation with a monthly credit allowance.",
+        "Official Creator offer: USD99 prepaid for first12months; regular annual reference USD220. Eligibility checked at2026-11-16 00:00UTC: new or upgrading subscribers, excluding existing Creator annual/Pro annual/higher tiers; cancelling does not create eligibility. Offer ends2026-12-01 23:59ET. Renew annually at then-current regular price unless cancelled. Tax extra; country eligibility and checkout untested."
+      ],
+      "audience": "Eligible creators buying an annual subscription",
+      "source": {
+        "id": "elevenlabs-official",
+        "label": "ElevenLabs official Black Friday offer",
+        "url": "https://join.elevenlabs.io/bfcm"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-16",
+      "score": null,
+      "disclosure": "No affiliate tracking; seller price, not guaranteed checkout total.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "price_variant": "Creator annual / eligible new or upgrading subscriber",
+      "link": {
+        "url": "https://join.elevenlabs.io/bfcm",
+        "tracked": false,
+        "label": "View official offer",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T21:37:12.079241+00:00",
+        "url": "https://join.elevenlabs.io/bfcm",
+        "product_match": true,
+        "evidence": "Official Creator offer: USD99 prepaid for first12months; regular annual reference USD220. Eligibility checked at2026-11-16 00:00UTC: new or upgrading subscribers, excluding existing Creator annual/Pro annual/higher tiers; cancelling does not create eligibility. Offer ends2026-12-01 23:59ET. Renew annually at then-current regular price unless cancelled. Tax extra; country eligibility and checkout untested."
+      },
+      "price_review": {
+        "id": "elevenlabs-creator-bf-first-year",
+        "product": "ElevenLabs Creator · first 12 months",
+        "seller_url": "https://join.elevenlabs.io/bfcm",
+        "recorded_price": 99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 99,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://join.elevenlabs.io/bfcm",
+            "observed_at": "2026-11-16T21:37:12.079241+00:00",
+            "result": "Official Creator offer: USD99 prepaid for first12months; regular annual reference USD220. Eligibility checked at2026-11-16 00:00UTC: new or upgrading subscribers, excluding existing Creator annual/Pro annual/higher tiers; cancelling does not create eligibility. Offer ends2026-12-01 23:59ET. Renew annually at then-current regular price unless cancelled. Tax extra; country eligibility and checkout untested."
+          },
+          {
+            "url": "https://join.elevenlabs.io/bfcm/terms",
+            "observed_at": "2026-11-16T21:37:12.079241+00:00",
+            "result": "Official Creator offer: USD99 prepaid for first12months; regular annual reference USD220. Eligibility checked at2026-11-16 00:00UTC: new or upgrading subscribers, excluding existing Creator annual/Pro annual/higher tiers; cancelling does not create eligibility. Offer ends2026-12-01 23:59ET. Renew annually at then-current regular price unless cancelled. Tax extra; country eligibility and checkout untested."
+          }
+        ],
+        "review_completed_at": "2026-11-16T21:37:12.079241+00:00",
+        "limitations": [
+          "No lowest-price claim; seller annual reference only.",
+          "Account eligibility, checkout, tax total, country availability and output quality untested."
+        ]
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital annual subscription",
+        "activation": "Eligible new/upgrading accounts only; offer evaluated from account history.",
+        "payment": "Account and country eligibility untested.",
+        "tax": "Prices exclude taxes, levies and duties.",
+        "returns": "Cancellation stops renewal; no prorated refund claim. Refund eligibility not independently verified.",
+        "evidence_url": "https://join.elevenlabs.io/bfcm/terms",
+        "checked_at": "2026-11-16T21:37:12.079241+00:00"
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "price": 99,
+        "currency": "USD",
+        "observed_at": "2026-11-16T21:37:12.079241+00:00",
+        "source_url": "https://join.elevenlabs.io/bfcm",
+        "evidence": "Official Creator offer: USD99 prepaid for first12months; regular annual reference USD220. Eligibility checked at2026-11-16 00:00UTC: new or upgrading subscribers, excluding existing Creator annual/Pro annual/higher tiers; cancelling does not create eligibility. Offer ends2026-12-01 23:59ET. Renew annually at then-current regular price unless cancelled. Tax extra; country eligibility and checkout untested."
+      },
+      "expires_at": "2026-12-02T04:59:00+00:00",
+      "alternative_review": {
+        "checked_at": "2026-11-16T21:37:12.079241+00:00",
+        "sources": [
+          {
+            "url": "https://join.elevenlabs.io/bfcm/terms",
+            "label": "Offer eligibility and renewal"
+          },
+          {
+            "url": "https://elevenlabs.io/pricing",
+            "label": "Free tier and regular pricing"
+          }
+        ]
+      }
     }
   ],
   "picks": [
@@ -6268,7 +6376,7 @@
     }
   },
   "stats": {
-    "feed": 29,
+    "feed": 30,
     "sources": 11
   }
 }
