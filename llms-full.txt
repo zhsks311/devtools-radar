@@ -1307,7 +1307,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Artmu 공식몰
 Product URL: https://artmu.co.kr/product/detail.html?product_no=2942
 Product-link review: 2026-11-14T12:43:08.562400+00:00 (not a stock check)
-Recorded price: 35700 KRW. Seller price observation dated 2026-11-14T12:43:08.562400+00:00.
+Recorded price: 35700 KRW. Seller price observation dated 2026-11-16T08:56:54.825858+00:00.
 Delivery / activation countries with evidence: KR.
 Discounts and historical-low claims are not established by this export.
 
@@ -1323,7 +1323,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Steam
 Product URL: https://store.steampowered.com/app/2102040/
 Product-link review: 2026-11-16T00:39:37+00:00 (not a stock check)
-Recorded price: 17400 KRW. Seller price observation dated 2026-11-16T00:39:37+00:00.
+Recorded price: 17400 KRW. Seller price observation dated 2026-11-16T08:56:54.825858+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1339,7 +1339,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: DJI China
 Product URL: https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN
 Product-link review: 2026-11-10T12:02:55.128061+00:00 (not a stock check)
-Recorded price: 349 CNY. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 349 CNY. Seller price observation dated 2026-11-16T08:59:08.956Z.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1371,7 +1371,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: EB Games Australia
 Product URL: https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console
 Product-link review: 2026-11-10T11:59:10.296055+00:00 (not a stock check)
-Recorded price: 719 AUD. Seller price observation dated 2026-11-15T12:45:23.055546+00:00.
+Recorded price: 719 AUD. Seller price observation dated 2026-11-16T08:59:19.859Z.
 Delivery / activation countries with evidence: AU.
 Discounts and historical-low claims are not established by this export.
 
@@ -1379,7 +1379,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/textsniper-for-mac
 Product-link review: 2026-11-10T11:59:10.383172+00:00 (not a stock check)
-Recorded price: 3.99 USD. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 3.99 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1387,7 +1387,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/slidepad-mac-app
 Product-link review: 2026-11-10T11:59:11.649043+00:00 (not a stock check)
-Recorded price: 8.99 USD. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 8.99 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1395,7 +1395,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime
 Product-link review: 2026-11-10T11:59:14.004496+00:00 (not a stock check)
-Recorded price: 79.99 USD. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 79.99 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1403,7 +1403,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb
 Product-link review: 2026-11-10T11:59:14.433160+00:00 (not a stock check)
-Recorded price: 199.99 USD. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 199.99 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1411,7 +1411,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2
 Product-link review: 2026-11-10T11:59:15.760342+00:00 (not a stock check)
-Recorded price: 29.99 USD. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 24.97 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1419,7 +1419,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription
 Product-link review: 2026-11-10T11:59:16.121497+00:00 (not a stock check)
-Recorded price: 19.99 USD. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 14.97 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1427,7 +1427,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license
 Product-link review: 2026-11-10T11:59:16.141390+00:00 (not a stock check)
-Recorded price: 29.99 USD. Seller price observation dated 2026-11-10T12:02:55.128061+00:00.
+Recorded price: 29.99 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1435,7 +1435,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder
 Product-link review: 2026-11-15T03:20:15.220096+00:00 (not a stock check)
-Recorded price: 9.99 USD. Seller price observation dated 2026-11-15T03:20:15.220096+00:00.
+Recorded price: 9.99 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1443,7 +1443,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription
 Product-link review: 2026-11-14T12:44:20.414842+00:00 (not a stock check)
-Recorded price: 49.99 USD. Seller price observation dated 2026-11-14T12:44:20.414842+00:00.
+Recorded price: 49.99 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1451,7 +1451,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages
 Product-link review: 2026-11-14T12:44:20.414842+00:00 (not a stock check)
-Recorded price: 249.0 USD. Seller price observation dated 2026-11-14T12:44:20.414842+00:00.
+Recorded price: 249 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: US.
 Discounts and historical-low claims are not established by this export.
 
@@ -1459,7 +1459,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1
 Product-link review: 2026-11-15T01:04:34.990070+00:00 (not a stock check)
-Recorded price: 69 USD. Seller price observation dated 2026-11-15T01:04:34.990070+00:00.
+Recorded price: 69 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1467,7 +1467,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: AppSumo
 Product URL: https://appsumo.com/products/moonitor-uptime-monitoring/
 Product-link review: 2026-11-15T01:04:34.990070+00:00 (not a stock check)
-Recorded price: 45.9 USD. Seller price observation dated 2026-11-15T01:04:34.990070+00:00.
+Recorded price: 45.9 USD. Seller price observation dated 2026-11-16T08:59:34.624Z.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1475,7 +1475,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: AppSumo
 Product URL: https://appsumo.com/products/otter-ab/
 Product-link review: 2026-11-15T01:04:34.990070+00:00 (not a stock check)
-Recorded price: 67.15 USD. Seller price observation dated 2026-11-15T01:04:34.990070+00:00.
+Recorded price: 67.15 USD. Seller price observation dated 2026-11-16T08:59:50.638Z.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1483,7 +1483,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: KeyboardStack
 Product URL: https://keyboardstack.com/
 Product-link review: 2026-11-15T12:50:08.861286+00:00 (not a stock check)
-Recorded price: 14.99 USD. Seller price observation dated 2026-11-15T12:50:08.861286+00:00.
+Recorded price: 14.99 USD. Seller price observation dated 2026-11-16T08:59:09.753121+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1491,7 +1491,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: AppSumo
 Product URL: https://appsumo.com/products/nocodebackend/
 Product-link review: 2026-11-15T12:50:37+00:00 (not a stock check)
-Recorded price: 79 USD. Seller price observation dated 2026-11-15T12:50:37+00:00.
+Recorded price: 79 USD. Seller price observation dated 2026-11-16T09:00:05.648Z.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1499,7 +1499,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Proton
 Product URL: https://proton.me/mail/black-friday
 Product-link review: 2026-11-15T15:08:12.626652+00:00 (not a stock check)
-Recorded price: 29.88 USD. Seller price observation dated 2026-11-15T15:08:12.626652+00:00.
+Recorded price: 29.88 USD. Seller price observation dated 2026-11-16T08:59:09.753121+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1507,7 +1507,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Proton
 Product URL: https://proton.me/drive/black-friday
 Product-link review: 2026-11-15T15:08:12.626652+00:00 (not a stock check)
-Recorded price: 29.88 USD. Seller price observation dated 2026-11-15T15:08:12.626652+00:00.
+Recorded price: 29.88 USD. Seller price observation dated 2026-11-16T08:59:09.753121+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1515,7 +1515,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Proton
 Product URL: https://proton.me/pass/black-friday
 Product-link review: 2026-11-15T15:08:12.626652+00:00 (not a stock check)
-Recorded price: 23.88 USD. Seller price observation dated 2026-11-15T15:08:12.626652+00:00.
+Recorded price: 23.88 USD. Seller price observation dated 2026-11-16T08:59:09.753121+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1523,7 +1523,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Hostinger
 Product URL: https://www.hostinger.com/web-hosting
 Product-link review: 2026-11-15T18:42:16.768851+00:00 (not a stock check)
-Recorded price: 95.52 USD. Seller price observation dated 2026-11-15T18:42:16.768851+00:00.
+Recorded price: 95.52 USD. Seller price observation dated 2026-11-16T08:59:09.753121+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1531,7 +1531,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Chronoid
 Product URL: https://www.chronoid.app/pricing
 Product-link review: 2026-11-16T06:32:36.112834+00:00 (not a stock check)
-Recorded price: 74.5 USD. Seller price observation dated 2026-11-16T06:32:36.112834+00:00.
+Recorded price: 74.5 USD. Seller price observation dated 2026-11-16T08:59:09.753121+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
