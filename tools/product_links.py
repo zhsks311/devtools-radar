@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'apps.apple.com': r'/[a-z]{2}/app/[a-z0-9-]+/id[0-9]+/?', # Exact App Store app ID; reviewed IAP tier separately.
     'www.chronoid.app': r'/pricing/?',  # Exact reviewed Lifetime offer on single-product pricing page.
     'store.steampowered.com': r'/app/[0-9]+/?',  # Individual game, never Steam search/category.
     'www.hostinger.com': r'/web-hosting/?',  # Reviewed Premium tier and 48-month term; no generic campaign/search.

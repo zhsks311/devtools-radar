@@ -3131,6 +3131,109 @@
           "Purchase link is not proof of inventory or successful payment."
         ]
       }
+    },
+    {
+      "id": "snippety-pro-apple-black-friday",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "product": "Snippety Pro · all Apple devices",
+      "title_raw": "Snippety Pro · all Apple devices",
+      "store": "Apple App Store US",
+      "storefront_country": "US",
+      "price": 29.99,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "App Store in-app purchase",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Expand short keywords into reusable messages, code and fill-in templates across your Apple devices.",
+        "US App Store: $29.99 once; maker lists $49.99 regular price and November 30 end date (timezone unstated). Same Apple ID; macOS 15 / iOS 18+. App Store script restrictions apply. AI provider charges are separate. Free tier: 10 active snippets on Mac, 8 on mobile. Mobile keyboard input is Latin-only. Korean store lists ₩49,000; Korean discount and checkout not verified."
+      ],
+      "audience": "Apple users with repeated typing tasks",
+      "source": {
+        "id": "snippety-official",
+        "label": "Snippety pricing and Apple App Store",
+        "url": "https://snippety.app/pricing"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-16",
+      "score": null,
+      "disclosure": "No affiliate tracking. Listed in-app purchase; payment not performed.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://apps.apple.com/us/app/snippety-snippets-manager/id1530751461?platform=mac",
+        "tracked": false,
+        "label": "View Snippety on App Store",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "US"
+        ],
+        "status": "verified_activation",
+        "delivery": "US App Store digital purchase.",
+        "activation": "US storefront listing for same Apple ID; actual purchase not tested.",
+        "payment": "Apple account and local payment eligibility required.",
+        "tax": "Store-specific taxes and checkout may vary.",
+        "returns": "Apple handles refund requests; refund not guaranteed.",
+        "evidence_url": "https://apps.apple.com/us/app/snippety-snippets-manager/id1530751461?platform=mac",
+        "checked_at": "2026-11-16"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T11:10:35.718264+00:00",
+        "url": "https://apps.apple.com/us/app/snippety-snippets-manager/id1530751461?platform=mac",
+        "product_match": true,
+        "evidence": "US App Store lists Snippety Pro (lifetime) USD29.99; official All Apple devices tier lists regular49.99 and BF until Nov30 2026. KR store lifetime49000KRW is a separate observation, not USD offer eligibility."
+      },
+      "price_review": {
+        "id": "snippety-pro-apple-black-friday",
+        "product": "Snippety Pro · all Apple devices",
+        "seller_url": "https://apps.apple.com/us/app/snippety-snippets-manager/id1530751461?platform=mac",
+        "recorded_price": 29.99,
+        "verified_price": 29.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://apps.apple.com/us/app/snippety-snippets-manager/id1530751461?platform=mac",
+            "observed_at": "2026-11-16T11:10:35.718264+00:00",
+            "result": "US App Store lists Snippety Pro (lifetime) USD29.99; official All Apple devices tier lists regular49.99 and BF until Nov30 2026. KR store lifetime49000KRW is a separate observation, not USD offer eligibility."
+          },
+          {
+            "url": "https://snippety.app/pricing",
+            "observed_at": "2026-11-16T11:10:35.718264+00:00",
+            "result": "US App Store lists Snippety Pro (lifetime) USD29.99; official All Apple devices tier lists regular49.99 and BF until Nov30 2026. KR store lifetime49000KRW is a separate observation, not USD offer eligibility."
+          }
+        ],
+        "conditions": [
+          "US App Store: $29.99 once; maker lists $49.99 regular price and November 30 end date (timezone unstated). Same Apple ID; macOS 15 / iOS 18+. App Store script restrictions apply. AI provider charges are separate. Free tier: 10 active snippets on Mac, 8 on mobile. Mobile keyboard input is Latin-only. Korean store lists ₩49,000; Korean discount and checkout not verified."
+        ],
+        "limitations": [
+          "Official regular price is advertised, not independently verified historical selling price.",
+          "US price is not Korean price; actual in-app checkout not performed."
+        ],
+        "review_completed_at": "2026-11-16T11:10:35.718264+00:00",
+        "campaign": {
+          "ends_on": "2026-11-30",
+          "end_time": null,
+          "timezone": null,
+          "source_url": "https://snippety.app/pricing"
+        },
+        "billing": {
+          "type": "one_time",
+          "initial_total": 29.99,
+          "currency": "USD",
+          "checkout_verified": false
+        }
+      },
+      "expires_at": null
     }
   ],
   "picks": [
@@ -5819,7 +5922,7 @@
     }
   },
   "stats": {
-    "feed": 25,
+    "feed": 26,
     "sources": 8
   }
 }

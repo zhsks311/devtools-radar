@@ -12,6 +12,8 @@ def illustration(deal,lang):
         art='<rect x="110" y="35" width="140" height="145" rx="18"/><path class="accent" d="M185 65l-28 45h25l-12 40 35-54h-25z"/>'
     elif any(x in text for x in ('gan','gb102','charger')):
         art='<rect x="105" y="70" width="150" height="105" rx="20"/><path d="M155 70V40M205 70V40"/><path class="accent" d="M185 90l-23 32h22l-9 30 27-42h-22z"/>'
+    elif 'snippety' in ident:
+        art='<rect x="35" y="78" width="85" height="55" rx="8"/><path class="accent" d="M140 105h40m-13-13 13 13-13 13"/><rect x="200" y="35" width="125" height="140" rx="8"/><path d="M218 65h88M218 87h70M218 109h80M218 131h55"/><text x="78" y="111">;text</text>'
     elif 'chronoid' in ident:
         art='<circle cx="180" cy="105" r="68"/><path d="M180 48v8M180 154v8M123 105h8M229 105h8"/><path class="accent" d="M180 68v40l30 20"/>'
     elif 'moonitor' in ident:

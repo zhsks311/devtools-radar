@@ -1802,5 +1802,43 @@
       "summary": "Enregistre le temps de travail sur Mac et produit des rapports et factures.",
       "conditions": "USD 74.50 en paiement unique pour une personne sur 3 Mac. Les mises à jour durent la vie du produit, pas celle de l’utilisateur ; le produit peut être arrêté. BLACKFRIDAY26 est annoncé comme automatique au paiement, non testé. Fin le 3 décembre 2026, heure et fuseau non indiqués. Contacter le vendeur sous 30 jours pour un remboursement intégral ; ensuite, vente définitive. IA externe facturée séparément. Taxes et achat depuis la Corée non confirmés."
     }
+  },
+  "snippety-pro-apple-black-friday": {
+    "en": {
+      "product": "Snippety Pro · all Apple devices",
+      "summary": "Expand short keywords into reusable messages, code and fill-in templates across your Apple devices.",
+      "purpose": "Expand short keywords into reusable messages, code and fill-in templates across your Apple devices.",
+      "conditions": "US App Store: $29.99 once; maker lists $49.99 regular price and November 30 end date (timezone unstated). Same Apple ID; macOS 15 / iOS 18+. App Store script restrictions apply. AI provider charges are separate. Free tier: 10 active snippets on Mac, 8 on mobile. Mobile keyboard input is Latin-only. Korean store lists ₩49,000; Korean discount and checkout not verified."
+    },
+    "ko": {
+      "product": "Snippety Pro · Apple 기기 통합",
+      "summary": "짧은 키워드를 자주 쓰는 답장·코드·입력 양식으로 펼쳐 반복 타이핑을 줄이는 앱.",
+      "purpose": "짧은 키워드를 자주 쓰는 답장·코드·입력 양식으로 펼쳐 반복 타이핑을 줄이는 앱.",
+      "conditions": "미국 App Store 일회성 $29.99. 개발사 표기 정가 $49.99, 11월 30일까지(시간대 미표기). 동일 Apple ID, macOS 15·iOS 18 이상. 앱스토어판 스크립트 제약과 별도 AI 비용 있음. 무료판은 Mac 10개·모바일 8개 상용구. 모바일 키보드 입력은 라틴 문자만 지원. 한국 스토어는 49,000원이며 한국 할인·실제 결제는 미확인."
+    },
+    "zh": {
+      "product": "Snippety Pro · Apple 全设备",
+      "summary": "将简短关键词展开为常用回复、代码和填写模板，减少重复输入。",
+      "purpose": "将简短关键词展开为常用回复、代码和填写模板，减少重复输入。",
+      "conditions": "美国 App Store 一次性 $29.99；开发者标价 $49.99，活动至11月30日，时区未说明。同一 Apple ID；macOS 15 / iOS 18 以上。商店版脚本受限，AI费用另计。免费版 Mac 10条、移动版8条。移动键盘仅支持拉丁字母输入。韩国商店 ₩49,000，韩国折扣与结账未验证。"
+    },
+    "ja": {
+      "product": "Snippety Pro · Apple 全デバイス",
+      "summary": "短いキーワードから定型返信・コード・入力テンプレートを展開するアプリ。",
+      "purpose": "短いキーワードから定型返信・コード・入力テンプレートを展開するアプリ。",
+      "conditions": "米国 App Store $29.99買い切り。開発元の通常価格$49.99、11月30日まで（時刻・時差不明）。同じApple ID、macOS 15 / iOS 18以降。ストア版はスクリプト制限あり、AI料金別。無料枠Mac10件・モバイル8件。モバイルキーボードはラテン文字入力のみ。韓国ストア₩49,000、韓国の割引・決済未確認。"
+    },
+    "es": {
+      "product": "Snippety Pro · dispositivos Apple",
+      "summary": "Convierte palabras clave en respuestas, código y plantillas para reducir la escritura repetitiva.",
+      "purpose": "Convierte palabras clave en respuestas, código y plantillas para reducir la escritura repetitiva.",
+      "conditions": "App Store de EE. UU.: $29.99 una vez; precio habitual anunciado $49.99, hasta el 30 de noviembre, sin zona horaria. Mismo Apple ID; macOS 15 / iOS 18+. Scripts limitados; IA se paga aparte. Gratis: 10 fragmentos en Mac, 8 en móvil. Teclado móvil solo con alfabeto latino. Corea: ₩49,000; descuento coreano y pago sin comprobar."
+    },
+    "fr": {
+      "product": "Snippety Pro · appareils Apple",
+      "summary": "Développez des mots-clés en réponses, code et modèles à remplir pour éviter les saisies répétitives.",
+      "purpose": "Développez des mots-clés en réponses, code et modèles à remplir pour éviter les saisies répétitives.",
+      "conditions": "App Store américain : 29,99 $ en une fois ; prix habituel annoncé 49,99 $, jusqu’au 30 novembre, fuseau non précisé. Même Apple ID ; macOS 15 / iOS 18+. Scripts limités ; IA facturée séparément. Gratuit : 10 extraits Mac, 8 mobiles. Clavier mobile en caractères latins uniquement. Corée : ₩49,000 ; remise coréenne et paiement non vérifiés."
+    }
   }
 }
