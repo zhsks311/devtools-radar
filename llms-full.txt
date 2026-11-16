@@ -1575,4 +1575,12 @@ Recorded price: 12 USD. Seller price observation dated 2026-11-16T17:06:12.38061
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
+### ElevenLabs Creator · first 12 months
+Seller: ElevenLabs
+Product URL: https://join.elevenlabs.io/bfcm
+Product-link review: 2026-11-16T21:37:12.079241+00:00 (not a stock check)
+Recorded price: 99 USD. Seller price observation dated 2026-11-16T21:37:12.079241+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 16 held source records are omitted from this export; their purchase links are not verified.
