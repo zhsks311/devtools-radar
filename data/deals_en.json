@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T16:33:15.202768+00:00",
+  "generated_at": "2026-11-16T17:06:12.380616+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -3413,6 +3413,109 @@
         "source_url": "https://www.drbuho.com/buhobarx",
         "evidence": "Live product Buy Now navigates to official Black Friday BuhoBarX section. Paddle order summary identifies BuhoBarX Lifetime - Single (1 Mac), quantity 1, USD7.99 subtotal. Tax calculated at next step; no email, address or payment entered. Country list includes KR/CN/JP/US/FR/ES/AU but successful billing and activation not tested."
       }
+    },
+    {
+      "id": "rhino-voice-1-mac",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "Rhino Voice · 1 Mac · Lifetime",
+      "product": "Rhino Voice · 1 Mac · Lifetime",
+      "store": "AppSumo",
+      "storefront_country": null,
+      "price": 12,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Dictate into Mac apps with on-device speech recognition.",
+        "Try the vendor free tier first:2000words/week after first week."
+      ],
+      "audience": "Apple silicon Mac users who prefer speaking to typing.",
+      "source": {
+        "id": "appsumo",
+        "label": "Official listing and vendor plan comparison",
+        "url": "https://appsumo.com/products/rhino/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-16",
+      "score": null,
+      "disclosure": "No affiliate tracking; seller price, not guaranteed checkout total.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "price_variant": "1 Code / 1 Mac",
+      "link": {
+        "url": "https://appsumo.com/products/rhino/",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T17:06:12.380616+00:00",
+        "url": "https://appsumo.com/products/rhino/",
+        "product_match": true,
+        "evidence": "Official AppSumo product page observed USD12 once, 1 Code / 1 Mac, unlimited dictation, lifetime access, redeem within60days, refundable60days, not stackable. Vendor rhinovoice.app separately offers first week unlimited then2000words/week free; USD20 unlimited Macs or invite2friends. Apple silicon/macOS14+ required; no checkout or activation performed."
+      },
+      "price_review": {
+        "id": "rhino-voice-1-mac",
+        "product": "Rhino Voice · 1 Mac · Lifetime",
+        "seller_url": "https://appsumo.com/products/rhino/",
+        "recorded_price": 12,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 12,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://appsumo.com/products/rhino/",
+            "observed_at": "2026-11-16T17:06:12.380616+00:00",
+            "result": "Official AppSumo product page observed USD12 once, 1 Code / 1 Mac, unlimited dictation, lifetime access, redeem within60days, refundable60days, not stackable. Vendor rhinovoice.app separately offers first week unlimited then2000words/week free; USD20 unlimited Macs or invite2friends. Apple silicon/macOS14+ required; no checkout or activation performed."
+          },
+          {
+            "url": "https://rhinovoice.app/",
+            "observed_at": "2026-11-16T17:06:12.380616+00:00",
+            "result": "Free2000words/week after first week; USD20 unlimited Macs, different licence from AppSumo1Mac. Apple silicon/macOS14+, Intel unsupported."
+          }
+        ],
+        "review_completed_at": "2026-11-16T17:06:12.380616+00:00",
+        "limitations": [
+          "Different device allowances: USD20 vendor plan is not a like-for-like reference price. No discount or lowest-price claim.",
+          "Country payment eligibility, final taxes, activation and recognition quality untested."
+        ]
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital Mac licence.",
+        "activation": "1Mac; Apple silicon M1 or newer, macOS14+. Redeem within60days, no code stacking.",
+        "payment": "Checkout country eligibility unverified.",
+        "tax": "Listed USD12; final tax and checkout total unverified.",
+        "returns": "AppSumo listing states refundable up to60days.",
+        "evidence_url": "https://appsumo.com/products/rhino/",
+        "checked_at": "2026-11-16T17:06:12.380616+00:00"
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "price": 12,
+        "currency": "USD",
+        "observed_at": "2026-11-16T17:06:12.380616+00:00",
+        "source_url": "https://appsumo.com/products/rhino/",
+        "evidence": "Official AppSumo product page observed USD12 once, 1 Code / 1 Mac, unlimited dictation, lifetime access, redeem within60days, refundable60days, not stackable. Vendor rhinovoice.app separately offers first week unlimited then2000words/week free; USD20 unlimited Macs or invite2friends. Apple silicon/macOS14+ required; no checkout or activation performed."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-16T17:06:12.380616+00:00",
+        "sources": [
+          {
+            "url": "https://rhinovoice.app/",
+            "label": "Rhino Voice · Free / Unlimited"
+          }
+        ]
+      }
     }
   ],
   "picks": [
@@ -6101,7 +6204,7 @@
     }
   },
   "stats": {
-    "feed": 28,
+    "feed": 29,
     "sources": 11
   }
 }

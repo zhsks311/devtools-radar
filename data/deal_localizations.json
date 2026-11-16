@@ -1954,5 +1954,49 @@
       "purpose": "Masquez les icônes peu utilisées et accédez à celles cachées par l’encoche du Mac.",
       "conditions": "macOS14+, un Mac, achat unique. Sous-total $7.99 ; taxes et total non vérifiés. Corée proposée, paiement/activation non testés. Demande de remboursement sous 30 jours, exclusions de plateforme/environnement. Aucun prix le plus bas annoncé."
     }
+  },
+  "rhino-voice-1-mac": {
+    "ko": {
+      "product": "Rhino Voice · 1 Mac · Lifetime",
+      "summary": "Mac에서 말한 내용을 입력해주는 받아쓰기 앱. 가볍게 쓴다면 공식 무료판부터 써보세요.",
+      "purpose": "Mac에서 말한 내용을 입력해주는 받아쓰기 앱. 가볍게 쓴다면 공식 무료판부터 써보세요.",
+      "conditions": "Apple silicon·macOS14+. $12는 Mac1대 평생권, 60일 내 등록·60일 환불. 공식 무료판은 첫 주 무제한 이후 주2000단어. 공식 $20는 무제한Mac으로 다른 조건이며 할인 비교 제외. 국가·최종세금·한국어 품질 미검증.",
+      "buying_note": "무료판과 기기 수 조건을 공식 홈페이지에서 먼저 비교하세요."
+    },
+    "en": {
+      "product": "Rhino Voice · 1 Mac · Lifetime",
+      "summary": "Dictate into Mac apps. Light users can try the vendor’s free tier first.",
+      "purpose": "Dictate into Mac apps. Light users can try the vendor’s free tier first.",
+      "conditions": "Apple silicon/macOS14+. $12 covers1Mac for life; redeem/refund within60days. Vendor free tier: unlimited first week, then2000words/week. Vendor $20 covers unlimited Macs, not a comparable reference price. Country, tax and recognition quality untested.",
+      "buying_note": "Compare the free tier and device allowances on the vendor site first."
+    },
+    "zh": {
+      "product": "Rhino Voice · 1 Mac · Lifetime",
+      "summary": "在Mac应用中用语音输入。轻度使用可先试官方免费版。",
+      "purpose": "在Mac应用中用语音输入。轻度使用可先试官方免费版。",
+      "conditions": "Apple silicon/macOS14+。$12为1台Mac终身许可，60天内兑换/退款。官网首周不限量，之后每周2000词免费；$20为不限Mac数量，不作折扣比较。地区、税费和识别质量未验证。",
+      "buying_note": "先在官网比较免费版及设备数量。"
+    },
+    "ja": {
+      "product": "Rhino Voice · 1 Mac · Lifetime",
+      "summary": "Macアプリへ音声入力。軽い利用なら公式の無料版から試せます。",
+      "purpose": "Macアプリへ音声入力。軽い利用なら公式の無料版から試せます。",
+      "conditions": "Apple silicon/macOS14+。$12はMac1台買い切り、60日以内に登録・返金。公式無料版は初週無制限、以後週2000語。公式$20はMac台数無制限で条件が異なります。国・税・認識品質未検証。",
+      "buying_note": "公式サイトで無料版と利用台数を比較してください。"
+    },
+    "es": {
+      "product": "Rhino Voice · 1 Mac · Lifetime",
+      "summary": "Dicta texto en apps de Mac. Para uso ligero, prueba primero el plan gratuito.",
+      "purpose": "Dicta texto en apps de Mac. Para uso ligero, prueba primero el plan gratuito.",
+      "conditions": "Apple silicon/macOS14+. $12 por1Mac de por vida; canje/reembolso en60días. Gratis: primera semana ilimitada, luego2000palabras/semana. $20 del vendedor cubre Macs ilimitados: no es precio comparable. Países, impuestos y precisión sin probar.",
+      "buying_note": "Compara primero el plan gratuito y los límites de dispositivos."
+    },
+    "fr": {
+      "product": "Rhino Voice · 1 Mac · Lifetime",
+      "summary": "Dictez dans vos apps Mac. Pour un usage léger, essayez d’abord la formule gratuite.",
+      "purpose": "Dictez dans vos apps Mac. Pour un usage léger, essayez d’abord la formule gratuite.",
+      "conditions": "Apple silicon/macOS14+. $12 pour1Mac à vie; activation/remboursement sous60jours. Gratuit: première semaine illimitée, puis2000mots/semaine. $20 chez l’éditeur couvre des Macs illimités: offre différente. Pays, taxes et précision non testés.",
+      "buying_note": "Comparez d’abord la formule gratuite et le nombre de Mac autorisés."
+    }
   }
 }
