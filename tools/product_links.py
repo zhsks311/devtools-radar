@@ -37,6 +37,9 @@ def direct_product_url(url):
         query_values.setdefault(key.lower(), []).extend(values)
     query = set(query_values)
     if query & {'q','query','keyword','keywords','search','searchtext','searchquery','redirect','url','target'}: return False
+    if u.hostname == 'www.directg.net':
+        values = query_values.get('product_id', [])
+        return path == '/game/game_view.html' and len(values) == 1 and bool(re.fullmatch(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}', values[0]))
     if u.hostname == 'trip.coupang.com':
         return (bool(re.fullmatch(r'/m/tp/products/[0-9]+/?', path)) and
                 all(len(query_values.get(k, [])) == 1 and bool(re.fullmatch(r'[0-9]+', query_values[k][0]))

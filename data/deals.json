@@ -2270,6 +2270,113 @@
         "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
         "limitations": "No checkout performed; do not infer stock from purchase limits."
       }
+    },
+    {
+      "id": "escape-backrooms-directgames-kr-jp",
+      "region": "kr",
+      "target": "ko",
+      "category": "gaming",
+      "category_label": "Gaming",
+      "title_raw": "Escape the Backrooms · Steam key",
+      "product": "Escape the Backrooms · Steam key",
+      "store": "Direct Games",
+      "price": 6900,
+      "currency": "KRW",
+      "shipping": "Digital delivery",
+      "specs": [
+        "Windows",
+        "1–4 player co-op horror",
+        "Korean interface and subtitles"
+      ],
+      "briefing": [
+        "Official base-game page lists KRW6,900 vs displayed KRW10,500, cart control, promotion end 2026-11-24 23:59:00 (timezone not specified). Keys can only be activated and played in Korea and Japan. Steam code delivery. Checkout untested; historical market low unverified."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-16",
+      "source": {
+        "url": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
+        "name": "Direct Games official product page"
+      },
+      "price_source": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T11:40:10.289150+00:00",
+        "url": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
+        "product_match": true,
+        "evidence": "Official base-game page lists KRW6,900 vs displayed KRW10,500, cart control, promotion end 2026-11-24 23:59:00 (timezone not specified). Keys can only be activated and played in Korea and Japan. Steam code delivery. Checkout untested; historical market low unverified."
+      },
+      "price_review": {
+        "id": "escape-backrooms-directgames-kr-jp",
+        "product": "Escape the Backrooms · Steam key",
+        "seller_url": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
+        "recorded_price": 6900,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 6900,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
+            "observed_at": "2026-11-16T11:40:10.289150+00:00",
+            "result": "Official base-game page lists KRW6,900 vs displayed KRW10,500, cart control, promotion end 2026-11-24 23:59:00 (timezone not specified). Keys can only be activated and played in Korea and Japan. Steam code delivery. Checkout untested; historical market low unverified."
+          }
+        ],
+        "limitations": [
+          "Account and checkout eligibility untested.",
+          "Seller reference price is not historical-low proof.",
+          "Promotion end timezone not specified."
+        ],
+        "review_completed_at": "2026-11-16T11:40:10.289150+00:00",
+        "seller_displayed_comparison": {
+          "reference_price": 10500,
+          "sale_price": 6900,
+          "percent": 34,
+          "kind": "seller_current_regular_price",
+          "historical_low_verified": false
+        }
+      },
+      "country_targeting": {
+        "countries": [
+          "KR",
+          "JP"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "digital"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR",
+          "JP"
+        ],
+        "status": "verified_activation",
+        "delivery": "Steam key delivered through Direct Games account.",
+        "activation": "Seller explicitly limits activation and play to Korea and Japan. Account region must match; no checkout test.",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "See seller refund policy before revealing a key.",
+        "evidence_url": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
+        "checked_at": "2026-11-16"
+      },
+      "expires_at": null,
+      "latest_offer_check": {
+        "id": "escape-backrooms-directgames-kr-jp",
+        "status": "seller_purchase_offer",
+        "price": 6900,
+        "observed_at": "2026-11-16T11:40:10.289150+00:00",
+        "source_url": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
+        "evidence": "Official base-game page lists KRW6,900 vs displayed KRW10,500, cart control, promotion end 2026-11-24 23:59:00 (timezone not specified). Keys can only be activated and played in Korea and Japan. Steam code delivery. Checkout untested; historical market low unverified.",
+        "limitations": "No purchase or redemption performed."
+      }
     }
   ],
   "categories": {
@@ -4643,7 +4750,7 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 23,
+    "feed": 24,
     "tracked_links": 0,
     "search_fallback": 0,
     "verified_product_links": 7,

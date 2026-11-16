@@ -1840,5 +1840,43 @@
       "purpose": "Développez des mots-clés en réponses, code et modèles à remplir pour éviter les saisies répétitives.",
       "conditions": "App Store américain : 29,99 $ en une fois ; prix habituel annoncé 49,99 $, jusqu’au 30 novembre, fuseau non précisé. Même Apple ID ; macOS 15 / iOS 18+. Scripts limités ; IA facturée séparément. Gratuit : 10 extraits Mac, 8 mobiles. Clavier mobile en caractères latins uniquement. Corée : ₩49,000 ; remise coréenne et paiement non vérifiés."
     }
+  },
+  "escape-backrooms-directgames-kr-jp": {
+    "en": {
+      "product": "Escape the Backrooms · Steam key",
+      "summary": "Explore eerie rooms with up to four players and find the exit together.",
+      "purpose": "Explore eerie rooms with up to four players and find the exit together.",
+      "conditions": "KRW6,900 for the base game; seller reference KRW10,500. Steam activation and play only in Korea/Japan. Offer ends Nov 24 at 23:59, timezone unspecified. Checkout untested; not a verified historical low."
+    },
+    "ko": {
+      "product": "이스케이프 더 백룸 · Steam 키",
+      "summary": "최대 4명이 으스스한 공간을 탐험하고 함께 출구를 찾는 협동 공포 게임.",
+      "purpose": "최대 4명이 으스스한 공간을 탐험하고 함께 출구를 찾는 협동 공포 게임.",
+      "conditions": "기본게임 6,900원, 판매처 표시 기준가 10,500원. 한국·일본에서만 Steam 키 등록·플레이 가능. 11월 24일 23:59 종료, 시간대 미표기. 결제 미진행, 역대 최저가 확인 아님."
+    },
+    "ja": {
+      "product": "Escape the Backrooms · Steamキー",
+      "summary": "最大4人で不気味な空間を探索し、協力して出口を探すホラーゲーム。",
+      "purpose": "最大4人で不気味な空間を探索し、協力して出口を探すホラーゲーム。",
+      "conditions": "本編6,900ウォン、販売店表示の基準価格10,500ウォン。キー登録・プレイは韓国と日本のみ。11月24日23:59終了、時間帯未記載。決済・過去最安値は未確認。"
+    },
+    "zh": {
+      "product": "Escape the Backrooms · Steam激活码",
+      "summary": "最多四人合作探索诡异空间，一起寻找出口的恐怖游戏。",
+      "purpose": "最多四人合作探索诡异空间，一起寻找出口的恐怖游戏。",
+      "conditions": "本体6,900韩元，商家参考价10,500韩元。仅限韩国、日本激活及游玩。11月24日23:59结束，时区未注明。未测试结账，非已验证历史最低价。"
+    },
+    "es": {
+      "product": "Escape the Backrooms · clave Steam",
+      "summary": "Explora espacios inquietantes y busca la salida en equipo de hasta cuatro jugadores.",
+      "purpose": "Explora espacios inquietantes y busca la salida en equipo de hasta cuatro jugadores.",
+      "conditions": "Juego base: 6.900 KRW; referencia del vendedor: 10.500 KRW. Activación y juego solo en Corea/Japón. Termina el 24 de noviembre a las 23:59, sin zona horaria. Pago y mínimo histórico no verificados."
+    },
+    "fr": {
+      "product": "Escape the Backrooms · clé Steam",
+      "summary": "Explorez des lieux inquiétants et cherchez la sortie en équipe, jusqu’à quatre joueurs.",
+      "purpose": "Explorez des lieux inquiétants et cherchez la sortie en équipe, jusqu’à quatre joueurs.",
+      "conditions": "Jeu de base : 6 900 KRW ; référence vendeur : 10 500 KRW. Activation et jeu en Corée/Japon uniquement. Fin le 24 novembre à 23 h 59, fuseau non précisé. Paiement et minimum historique non vérifiés."
+    }
   }
 }

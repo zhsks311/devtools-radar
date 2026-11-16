@@ -41,7 +41,7 @@ class CountryTests(unittest.TestCase):
     def test_storefront_does_not_grant_country_eligibility(self):
         self.assertEqual(validate_deal_countries(self.feed), [])
         for d in self.feed:
-            self.assertEqual(confirmed_countries(d), ({'43ca41d03daa': ('AU',), 'ps5-dualsense-midnight-black-kr': ('KR',), 'anker-p31i-d1202-kr': ('KR',), 'deal-belkin-100w-gan': ('KR',), 'deal-ugreen-100w-gan': ('KR',), 'deal-artmu-100w-gb102': ('KR',), 'babbel-lifetime-all-languages': ('US',), 'snippety-pro-apple-black-friday': ('US',)}.get(d['id'], ())))
+            self.assertEqual(confirmed_countries(d), ({'43ca41d03daa': ('AU',), 'ps5-dualsense-midnight-black-kr': ('KR',), 'anker-p31i-d1202-kr': ('KR',), 'deal-belkin-100w-gan': ('KR',), 'deal-ugreen-100w-gan': ('KR',), 'deal-artmu-100w-gb102': ('KR',), 'babbel-lifetime-all-languages': ('US',), 'snippety-pro-apple-black-friday': ('US',), 'escape-backrooms-directgames-kr-jp': ('JP','KR')}.get(d['id'], ())))
         d = {'region': 'kr', 'category': 'china', 'currency': 'USD', 'target': 'en'}
         self.assertEqual(confirmed_countries(d), ())
         self.assertEqual(storefront_country(d), 'unknown')
