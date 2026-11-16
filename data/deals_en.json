@@ -3685,8 +3685,18 @@
           {
             "url": "https://elevenlabs.io/pricing",
             "label": "Free tier and regular pricing"
+          },
+          {
+            "url": "https://elevenlabs.io/docs/overview/administration/billing",
+            "label": "Monthly credits and rollover conditions"
           }
         ]
+      },
+      "credit_allocation_review": {
+        "checked_at": "2026-11-16T22:17:12.846874+00:00",
+        "source_url": "https://elevenlabs.io/docs/overview/administration/billing",
+        "annual_allocation": "monthly, not upfront annual lump sum",
+        "rollover": "up to two monthly quotas; none when downgrade/cancellation takes effect at billing-cycle end"
       }
     }
   ],

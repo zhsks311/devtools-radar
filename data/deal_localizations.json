@@ -2017,42 +2017,42 @@
       "summary": "영상 내레이션·더빙과 음성·이미지 제작을 한곳에서 하는 AI 서비스. Creator는 월 121,000 크레딧을 제공합니다.",
       "purpose": "영상 내레이션·더빙과 음성·이미지 제작을 한곳에서 하는 AI 서비스. Creator는 월 121,000 크레딧을 제공합니다.",
       "conditions": "첫 12개월 $99 선결제, 세금 별도. 신규 또는 업그레이드 대상만 적용되며 11월 16일 00:00 UTC 당시 Creator 연간·Pro 연간·상위 플랜 이용자는 제외됩니다. 취소 후 재가입으로 자격이 생기지 않습니다. 12월 1일 23:59 ET 종료. 다음 해 당시 연간 정가로 자동갱신; 취소는 갱신 중단이지 비례 환불 보장이 아닙니다. 국가·계정 자격·결제 미검증.",
-      "buying_note": "Pro는 신규·업그레이드 첫해 $445.50, 기존 Pro 월간에서 연간 전환은 $495로 다릅니다. 별도 API 사용료·선불 크레딧에는 할인 제외, 다른 할인 중복 불가. 무료판은 월 10,000 크레딧이며 유료판과 상업 이용 권한이 같다고 볼 수 없습니다. 먼저 무료판으로 용도를 확인하세요."
+      "buying_note": "Pro는 신규·업그레이드 첫해 $445.50, 기존 Pro 월간에서 연간 전환은 $495로 다릅니다. 별도 API 사용료·선불 크레딧에는 할인 제외, 다른 할인 중복 불가. 무료판은 월 10,000 크레딧이며 유료판과 상업 이용 권한이 같다고 볼 수 없습니다. 먼저 무료판으로 용도를 확인하세요. 연간 결제여도 크레딧은 매월 지급·초기화되며 1년치를 한꺼번에 받지 않습니다. 미사용분은 최대 2개월분까지 다음 달로 이월됩니다. 다운그레이드나 취소가 결제 주기 말에 적용되면 미사용분은 이월되지 않습니다."
     },
     "en": {
       "product": "ElevenLabs Creator · first 12 months",
       "summary": "AI voiceovers, dubbing and media creation in one service. Creator includes 121,000 credits each month.",
       "purpose": "AI voiceovers, dubbing and media creation in one service. Creator includes 121,000 credits each month.",
       "conditions": "Pay $99 upfront for the first 12 months, plus tax. Only new or upgrading subscribers; users on Creator annual, Pro annual or higher at 00:00 UTC on Nov 16 are excluded. Cancelling and rejoining does not create eligibility. Ends Dec 1 at 23:59 ET. Renews yearly at the then-current regular rate unless cancelled; cancellation does not promise a prorated refund. Country, account eligibility and checkout untested.",
-      "buying_note": "Pro costs $445.50 for eligible new/upgrading subscribers, or $495 when switching an active Pro monthly plan to annual, for the first year only. Separate API usage charges and prepaid credits are excluded; no stacking discounts. Try the free 10,000-credit monthly tier first; do not assume it has paid-tier commercial rights."
+      "buying_note": "Pro costs $445.50 for eligible new/upgrading subscribers, or $495 when switching an active Pro monthly plan to annual, for the first year only. Separate API usage charges and prepaid credits are excluded; no stacking discounts. Try the free 10,000-credit monthly tier first; do not assume it has paid-tier commercial rights. Annual payment does not deliver a full year of credits upfront: credits are allocated and reset monthly. Up to two months’ worth of unused credits can roll into the next month. Unused credits do not roll over when a downgrade or cancellation takes effect at the end of the billing cycle."
     },
     "zh": {
       "product": "ElevenLabs Creator · 首12个月",
       "summary": "用于视频配音、翻译配音和媒体生成的AI服务。Creator每月提供121,000点数。",
       "purpose": "用于视频配音、翻译配音和媒体生成的AI服务。Creator每月提供121,000点数。",
       "conditions": "首12个月预付$99，另加税。仅限新订阅或符合升级条件者；11月16日00:00 UTC已订阅Creator年付、Pro年付或更高套餐者除外。取消后重订不产生资格。12月1日23:59 ET结束。次年按当时年费自动续订；取消续订不代表按比例退款。地区、账户资格及结账未验证。",
-      "buying_note": "Pro新订阅/升级首年$445.50；现有Pro月付转年付首年$495。单独API用量费及预付点数不参与优惠，不可叠加。可先试每月10,000点数免费版，但不可假设商业使用权与付费版相同。"
+      "buying_note": "Pro新订阅/升级首年$445.50；现有Pro月付转年付首年$495。单独API用量费及预付点数不参与优惠，不可叠加。可先试每月10,000点数免费版，但不可假设商业使用权与付费版相同。 即使按年付款，点数仍按月发放和重置，并非一次获得全年点数。最多可将两个月额度的未用点数结转至下月。降级或取消在计费周期结束时生效后，未用点数不再结转。"
     },
     "ja": {
       "product": "ElevenLabs Creator · 最初の12か月",
       "summary": "動画のナレーション、吹き替えやメディア生成向けAIサービス。Creatorは月121,000クレジット。",
       "purpose": "動画のナレーション、吹き替えやメディア生成向けAIサービス。Creatorは月121,000クレジット。",
       "conditions": "最初の12か月は$99前払い、税別。新規または対象のアップグレードのみ。11月16日00:00 UTC時点でCreator年払い・Pro年払い以上は対象外。解約後の再登録で資格は得られません。12月1日23:59 ET終了。翌年は更新時の通常年額で自動更新。解約は日割り返金の保証ではありません。国・アカウント資格・決済未検証。",
-      "buying_note": "Pro新規/アップグレードは初年度$445.50、既存Pro月払いから年払いへの変更は$495。別途API利用料と前払いクレジットは割引対象外、他の割引と併用不可。月10,000クレジットの無料版から試せますが商用利用権は有料版と同じではありません。"
+      "buying_note": "Pro新規/アップグレードは初年度$445.50、既存Pro月払いから年払いへの変更は$495。別途API利用料と前払いクレジットは割引対象外、他の割引と併用不可。月10,000クレジットの無料版から試せますが商用利用権は有料版と同じではありません。 年払いでもクレジットは毎月付与・リセットされ、1年分の一括付与ではありません。未使用分は最大2か月分まで翌月へ繰り越せます。請求期間の終了時にダウングレードや解約が適用されると、未使用分は繰り越されません。"
     },
     "es": {
       "product": "ElevenLabs Creator · primeros 12 meses",
       "summary": "Voces para vídeos, doblaje y creación multimedia con IA. Creator incluye 121.000 créditos mensuales.",
       "purpose": "Voces para vídeos, doblaje y creación multimedia con IA. Creator incluye 121.000 créditos mensuales.",
       "conditions": "$99 por adelantado por los primeros 12 meses, más impuestos. Solo altas o mejoras elegibles; excluye Creator anual, Pro anual y superiores a las 00:00 UTC del 16 de noviembre. Cancelar y volver no da elegibilidad. Finaliza el 1 de diciembre a las 23:59 ET. Renovación anual al precio vigente salvo cancelación; no implica reembolso proporcional. País, cuenta y pago no probados.",
-      "buying_note": "Pro: $445,50 el primer año para altas/mejoras elegibles; $495 al pasar de Pro mensual activo a anual. Excluye cargos API separados y créditos prepagados; no acumulable. Prueba primero el plan gratuito de 10.000 créditos/mes; no presupongas los mismos derechos comerciales que en el plan de pago."
+      "buying_note": "Pro: $445,50 el primer año para altas/mejoras elegibles; $495 al pasar de Pro mensual activo a anual. Excluye cargos API separados y créditos prepagados; no acumulable. Prueba primero el plan gratuito de 10.000 créditos/mes; no presupongas los mismos derechos comerciales que en el plan de pago. El pago anual no entrega todos los créditos del año de golpe: se asignan y reinician cada mes. Se pueden trasladar al mes siguiente hasta dos cuotas mensuales no usadas. Los créditos sin usar no se trasladan cuando la reducción de plan o cancelación entra en vigor al terminar el ciclo de facturación."
     },
     "fr": {
       "product": "ElevenLabs Creator · 12 premiers mois",
       "summary": "Voix pour vidéos, doublage et création multimédia par IA. Creator comprend 121 000 crédits par mois.",
       "purpose": "Voix pour vidéos, doublage et création multimédia par IA. Creator comprend 121 000 crédits par mois.",
       "conditions": "99 $ prépayés pour les 12 premiers mois, hors taxes. Nouveaux abonnés ou changements éligibles uniquement ; Creator annuel, Pro annuel et supérieurs au 16 novembre à 00:00 UTC sont exclus. Résilier puis revenir ne crée pas de droit. Fin le 1er décembre à 23:59 ET. Renouvellement annuel au tarif alors en vigueur sauf résiliation ; aucun remboursement au prorata promis. Pays, compte et paiement non testés.",
-      "buying_note": "Pro : 445,50 $ la première année pour nouveaux abonnés/changements éligibles ; 495 $ pour passer de Pro mensuel actif à annuel. Frais API séparés et crédits prépayés exclus, offres non cumulables. Essayez les 10 000 crédits mensuels gratuits sans supposer les mêmes droits commerciaux que la formule payante."
+      "buying_note": "Pro : 445,50 $ la première année pour nouveaux abonnés/changements éligibles ; 495 $ pour passer de Pro mensuel actif à annuel. Frais API séparés et crédits prépayés exclus, offres non cumulables. Essayez les 10 000 crédits mensuels gratuits sans supposer les mêmes droits commerciaux que la formule payante. Le paiement annuel ne donne pas tous les crédits de l’année en une fois : ils sont attribués et réinitialisés chaque mois. Jusqu’à deux quotas mensuels inutilisés peuvent être reportés au mois suivant. Le reliquat n’est pas reporté lorsqu’une baisse de formule ou une résiliation prend effet à la fin du cycle de facturation."
     }
   }
 }
