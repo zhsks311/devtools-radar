@@ -201,6 +201,7 @@ NO_ACTIVE_AFFILIATES = {
  'fr': 'Ce catalogue ne contient actuellement aucun lien d’achat rémunéré. Consultez la date de vérification du prix et les conditions de chaque offre.'
 }
 SOLD_OUT_LABEL = {'ko':'품절 · 판매처에서 현재 구매할 수 없습니다.','en':'Sold out · currently unavailable from the seller.','zh':'已售罄 · 卖家目前无法供货。','ja':'売り切れ・現在販売元で購入できません。','es':'Agotado · no disponible actualmente en la tienda.','fr':'Épuisé · actuellement indisponible chez le vendeur.'}
+CURRENT_OFFER_UNVERIFIED = {'ko': '현재 가격·판매 상태를 재확인하지 못했습니다. 아래 가격은 이전 기록값으로, 현재 판매가를 뜻하지 않습니다.', 'en': 'Current price and availability could not be rechecked. The price below is a historical record, not a confirmed current offer.', 'zh': '未能重新核实当前价格及销售状态。下方为历史记录价格，并非已确认的当前售价。', 'ja': '現在の価格・販売状況を再確認できませんでした。下記は過去の記録価格で、現在の販売価格を保証しません。', 'es': 'No se pudo verificar de nuevo el precio ni la disponibilidad. Se muestra un precio histórico, no una oferta actual confirmada.', 'fr': 'Le prix et la disponibilité actuels n’ont pas pu être revérifiés. Le prix affiché est historique, non une offre actuelle confirmée.'}
 def catalogue(lang,feeds,translations,discoveries=False):
  t=LABELS[lang]; f=FILTER_TEXT[lang]; discovery_cards=candidate_cards(lang) if discoveries else []; cards=[]; held_cards=[]; discovery_count=len(discovery_cards); active_affiliates=0
  for d in feeds:
@@ -223,6 +224,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
    image=f'<figure><img src="{e(safe(media["path"]))}" alt="{e(title)}" loading="lazy"><figcaption class="caption">{e(media.get("caption",""))} <a href="{e(safe(media.get("credit_url","")))}">{e(media.get("credit",""))}</a></figcaption></figure>'
   if not image: image=illustration(d,lang)
   source=d.get('source') or {};src=f'<a href="{e(safe(source.get("url","")))}" rel="noopener nofollow">{t[30]}</a>' if source.get('url') else ''
+  availability_note = '<p class="notice availability-warning">'+e(CURRENT_OFFER_UNVERIFIED[lang])+'</p>' if (d.get('latest_offer_check') or {}).get('status') == 'unverified_current' else ''
   linked=publishable_link(d)
   promotion=verified_aliexpress_url(d) if linked else None
   destination=promotion or link.get('url','')
@@ -260,7 +262,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
   terms=d.get('service_terms') or {}
   if terms.get('url'): evidence+=f'<p><a class="service-terms-source" href="{e(safe(terms["url"]))}" rel="noopener nofollow">{t[30]}</a></p>'
   linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}"{description}>{e(title)}</a>' if linked else e(title)
-  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}">{disclosure}{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p><div class="price">{e(price)}{billing_label(d,lang)}</div>{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
+  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}">{disclosure}{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}<div class="price">{e(price)}{billing_label(d,lang)}</div>{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  storefronts=sorted({storefront_country(d) for d in feeds}-{"unknown"})
  destinations=list(COUNTRY_ORDER)+sorted({c for d in feeds for c in target_countries(d)}-set(COUNTRY_ORDER))

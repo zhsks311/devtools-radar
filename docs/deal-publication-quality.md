@@ -67,3 +67,15 @@ Gmarket 4885511021 (Mega HOT Americano) now explicitly displays SOLD OUT and no 
 
 ### 2026-11-16: buyer-facing cards, not internal audit dumps
 Active cards now lead with a specific purpose, visual and purchase action. Raw source JSON stays in the repository and is never rendered into cards, even when expanded. Purchase limitations, renewal/refund terms and dated source links remain in closed, readable sections. Original category illustrations are explicitly labelled and never presented as product screenshots. Existing licensed images are retained. Proton's media-kit reuse terms were located, but asset requests returned 403: no blocked images were copied or hotlinked. Regression tests cover all six languages, illustration coverage and action-before-details order.
+
+## Availability regression: Google Play code (2026-11-16)
+The seller displayed SOLD OUT while still showing a one-per-day purchase limit.
+Purchase limits must never be treated as remaining inventory. Preserve prior
+price evidence as history, remove the current buying CTA when sold out, and
+record the actual observation time without guessing when stock changed.
+`tools.deal_availability.classify_visible_offer` accepts only reviewer-extracted
+visible exact-offer text, not raw HTML containing hidden sold-out templates.
+Access failures and unselected variants remain separate unknown states. A buy
+button and displayed price only establish `purchase_ui_observed`, not successful
+checkout, stock reservation, or eligibility. `publishable_link` blocks recorded
+sold-out offers even if an older product-link review was positive.

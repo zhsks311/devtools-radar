@@ -197,6 +197,15 @@
         "reviewed_at": "2026-11-15T13:30:52.386439+00:00",
         "fulfilment": "domestic",
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      },
+      "latest_offer_check": {
+        "id": "deal-oliveyoung-gift-card-20k",
+        "status": "unverified_current",
+        "price": null,
+        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "source_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+        "evidence": "HTTP403 access denied. No retry or bypass.",
+        "limitations": "No checkout performed; do not infer stock from purchase limits."
       }
     },
     {
@@ -749,6 +758,15 @@
         "reviewed_at": "2026-11-15T13:30:52.386455+00:00",
         "fulfilment": "domestic",
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      },
+      "latest_offer_check": {
+        "id": "deal-belkin-100w-gan",
+        "status": "unverified_current",
+        "price": null,
+        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+        "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+        "limitations": "No checkout performed; do not infer stock from purchase limits."
       }
     },
     {
@@ -949,6 +967,15 @@
         "reviewed_at": "2026-11-15T13:30:52.386459+00:00",
         "fulfilment": "domestic",
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      },
+      "latest_offer_check": {
+        "id": "deal-ugreen-100w-gan",
+        "status": "unverified_current",
+        "price": null,
+        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+        "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+        "limitations": "No checkout performed; do not infer stock from purchase limits."
       }
     },
     {
@@ -1015,13 +1042,18 @@
             "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
             "result": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout.",
             "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+          },
+          {
+            "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "result": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed."
           }
         ],
         "limitations": [
           "No independently verified historical-low or previous-price comparison.",
           "Address-specific stock, checkout, billing eligibility and final total not verified."
         ],
-        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+        "review_completed_at": "2026-11-16T08:56:54.825858+00:00"
       },
       "historical_claims": {
         "original_price": 44800,
@@ -1061,6 +1093,15 @@
         "reviewed_at": "2026-11-15T13:30:52.386461+00:00",
         "fulfilment": "domestic",
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+      },
+      "latest_offer_check": {
+        "id": "deal-artmu-100w-gb102",
+        "status": "seller_in_stock_signal",
+        "price": 35700,
+        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "source_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+        "evidence": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed.",
+        "limitations": "Structured seller signal and option text, not completed cart/checkout. No quantity claim; hidden generic soldout markup is not black variant status."
       }
     },
     {
@@ -1916,6 +1957,15 @@
           }
         ],
         "evidence": "Official Affinity FAQ: individuals can use Pixel, Vector, Layout with free Canva account; Canva AI requires premium plan. Official graphics page describes vector design. No Premiere/full-suite equivalence or tested compatibility/language claims."
+      },
+      "latest_offer_check": {
+        "id": "adobe-creative-cloud-kr-bf-monthly-annual",
+        "status": "unverified_current",
+        "price": null,
+        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "source_url": "https://www.adobe.com/kr/creativecloud.html",
+        "evidence": "Official KR page returns product and new-subscriber first-year offer text but price dynamically omitted in retrieved HTML. 34800 not verified this round.",
+        "limitations": "No checkout performed; do not infer stock from purchase limits."
       }
     },
     {
@@ -1977,13 +2027,18 @@
             "observed_at": "2026-11-16T00:39:37+00:00",
             "result": "Korean Steam storefront: KRW17,400, 40% below its displayed KRW29,000 regular price. Base game package 751340, app 2102040. Digital delivery through Steam; account required. Discount ends 2026-11-23 17:00 UTC (November 24, 02:00 KST). Purchase button observed; checkout and account-specific eligibility not tested. Historical market-low price unverified.",
             "observed_storefront_url": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana"
+          },
+          {
+            "url": "https://store.steampowered.com/app/2102040/",
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "result": "Public KR display cc=kr: app2102040 package751340, KRW17400 vs29000,40%, discount_end_date1795453200, purchase offer."
           }
         ],
         "limitations": [
           "Checkout and account-specific purchase eligibility untested.",
           "Historical market low unverified."
         ],
-        "review_completed_at": "2026-11-16T00:39:37+00:00",
+        "review_completed_at": "2026-11-16T08:56:54.825858+00:00",
         "seller_displayed_comparison": {
           "reference_price": 29000,
           "sale_price": 17400,
@@ -2010,7 +2065,16 @@
         "evidence_url": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana",
         "checked_at": "2026-11-16"
       },
-      "expires_at": "2026-11-23T17:00:00Z"
+      "expires_at": "2026-11-23T17:00:00Z",
+      "latest_offer_check": {
+        "id": "my-little-puppy-steam-kr",
+        "status": "seller_purchase_offer",
+        "price": 17400,
+        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "source_url": "https://store.steampowered.com/app/2102040/",
+        "evidence": "Public KR display cc=kr: app2102040 package751340, KRW17400 vs29000,40%, discount_end_date1795453200, purchase offer.",
+        "limitations": "Digital license. Account eligibility and checkout untested. Regional display is not account region confirmation. Observed after first fetch, by09:00UTC."
+      }
     },
     {
       "id": "google-play-100k-kr",
@@ -2196,6 +2260,15 @@
         "returns": "Not fully reviewed",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
         "checked_at": "2026-11-16"
+      },
+      "latest_offer_check": {
+        "id": "ps5-dualsense-midnight-black-kr",
+        "status": "unverified_current",
+        "price": null,
+        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "source_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+        "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+        "limitations": "No checkout performed; do not infer stock from purchase limits."
       }
     }
   ],
@@ -2306,6 +2379,15 @@
             "reviewed_at": "2026-11-15T13:30:52.386439+00:00",
             "fulfilment": "domestic",
             "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          },
+          "latest_offer_check": {
+            "id": "deal-oliveyoung-gift-card-20k",
+            "status": "unverified_current",
+            "price": null,
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "source_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+            "evidence": "HTTP403 access denied. No retry or bypass.",
+            "limitations": "No checkout performed; do not infer stock from purchase limits."
           }
         },
         {
@@ -3807,6 +3889,15 @@
             "reviewed_at": "2026-11-15T13:30:52.386455+00:00",
             "fulfilment": "domestic",
             "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          },
+          "latest_offer_check": {
+            "id": "deal-belkin-100w-gan",
+            "status": "unverified_current",
+            "price": null,
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+            "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+            "limitations": "No checkout performed; do not infer stock from purchase limits."
           }
         },
         {
@@ -3918,6 +4009,15 @@
             "reviewed_at": "2026-11-15T13:30:52.386459+00:00",
             "fulfilment": "domestic",
             "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          },
+          "latest_offer_check": {
+            "id": "deal-ugreen-100w-gan",
+            "status": "unverified_current",
+            "price": null,
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+            "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+            "limitations": "No checkout performed; do not infer stock from purchase limits."
           }
         },
         {
@@ -3984,13 +4084,18 @@
                 "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
                 "result": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout.",
                 "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+              },
+              {
+                "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+                "observed_at": "2026-11-16T08:56:54.825858+00:00",
+                "result": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed."
               }
             ],
             "limitations": [
               "No independently verified historical-low or previous-price comparison.",
               "Address-specific stock, checkout, billing eligibility and final total not verified."
             ],
-            "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+            "review_completed_at": "2026-11-16T08:56:54.825858+00:00"
           },
           "historical_claims": {
             "original_price": 44800,
@@ -4030,6 +4135,15 @@
             "reviewed_at": "2026-11-15T13:30:52.386461+00:00",
             "fulfilment": "domestic",
             "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
+          },
+          "latest_offer_check": {
+            "id": "deal-artmu-100w-gb102",
+            "status": "seller_in_stock_signal",
+            "price": 35700,
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "source_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "evidence": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed.",
+            "limitations": "Structured seller signal and option text, not completed cart/checkout. No quantity claim; hidden generic soldout markup is not black variant status."
           }
         },
         {
@@ -4262,6 +4376,15 @@
               }
             ],
             "evidence": "Official Affinity FAQ: individuals can use Pixel, Vector, Layout with free Canva account; Canva AI requires premium plan. Official graphics page describes vector design. No Premiere/full-suite equivalence or tested compatibility/language claims."
+          },
+          "latest_offer_check": {
+            "id": "adobe-creative-cloud-kr-bf-monthly-annual",
+            "status": "unverified_current",
+            "price": null,
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "source_url": "https://www.adobe.com/kr/creativecloud.html",
+            "evidence": "Official KR page returns product and new-subscriber first-year offer text but price dynamically omitted in retrieved HTML. 34800 not verified this round.",
+            "limitations": "No checkout performed; do not infer stock from purchase limits."
           }
         }
       ]
@@ -4328,13 +4451,18 @@
                 "observed_at": "2026-11-16T00:39:37+00:00",
                 "result": "Korean Steam storefront: KRW17,400, 40% below its displayed KRW29,000 regular price. Base game package 751340, app 2102040. Digital delivery through Steam; account required. Discount ends 2026-11-23 17:00 UTC (November 24, 02:00 KST). Purchase button observed; checkout and account-specific eligibility not tested. Historical market-low price unverified.",
                 "observed_storefront_url": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana"
+              },
+              {
+                "url": "https://store.steampowered.com/app/2102040/",
+                "observed_at": "2026-11-16T08:56:54.825858+00:00",
+                "result": "Public KR display cc=kr: app2102040 package751340, KRW17400 vs29000,40%, discount_end_date1795453200, purchase offer."
               }
             ],
             "limitations": [
               "Checkout and account-specific purchase eligibility untested.",
               "Historical market low unverified."
             ],
-            "review_completed_at": "2026-11-16T00:39:37+00:00",
+            "review_completed_at": "2026-11-16T08:56:54.825858+00:00",
             "seller_displayed_comparison": {
               "reference_price": 29000,
               "sale_price": 17400,
@@ -4361,7 +4489,16 @@
             "evidence_url": "https://store.steampowered.com/app/2102040/?cc=kr&l=koreana",
             "checked_at": "2026-11-16"
           },
-          "expires_at": "2026-11-23T17:00:00Z"
+          "expires_at": "2026-11-23T17:00:00Z",
+          "latest_offer_check": {
+            "id": "my-little-puppy-steam-kr",
+            "status": "seller_purchase_offer",
+            "price": 17400,
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "source_url": "https://store.steampowered.com/app/2102040/",
+            "evidence": "Public KR display cc=kr: app2102040 package751340, KRW17400 vs29000,40%, discount_end_date1795453200, purchase offer.",
+            "limitations": "Digital license. Account eligibility and checkout untested. Regional display is not account region confirmation. Observed after first fetch, by09:00UTC."
+          }
         },
         {
           "id": "ps5-dualsense-midnight-black-kr",
@@ -4445,6 +4582,15 @@
             "returns": "Not fully reviewed",
             "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
             "checked_at": "2026-11-16"
+          },
+          "latest_offer_check": {
+            "id": "ps5-dualsense-midnight-black-kr",
+            "status": "unverified_current",
+            "price": null,
+            "observed_at": "2026-11-16T08:56:54.825858+00:00",
+            "source_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+            "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+            "limitations": "No checkout performed; do not infer stock from purchase limits."
           }
         }
       ]

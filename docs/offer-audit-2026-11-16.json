@@ -1,0 +1,475 @@
+{
+  "scope": "32 active offers after Google Play sold-out removal; Google Play supplementary chronology check",
+  "records": [
+    {
+      "id": "deal-oliveyoung-gift-card-20k",
+      "status": "unverified_current",
+      "price": null,
+      "observed_at": "2026-11-16T08:56:54.825858+00:00",
+      "source_url": "https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536",
+      "evidence": "HTTP403 access denied. No retry or bypass.",
+      "limitations": "No checkout performed; do not infer stock from purchase limits."
+    },
+    {
+      "id": "deal-belkin-100w-gan",
+      "status": "unverified_current",
+      "price": null,
+      "observed_at": "2026-11-16T08:56:54.825858+00:00",
+      "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+      "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+      "limitations": "No checkout performed; do not infer stock from purchase limits."
+    },
+    {
+      "id": "deal-ugreen-100w-gan",
+      "status": "unverified_current",
+      "price": null,
+      "observed_at": "2026-11-16T08:56:54.825858+00:00",
+      "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+      "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+      "limitations": "No checkout performed; do not infer stock from purchase limits."
+    },
+    {
+      "id": "deal-artmu-100w-gb102",
+      "status": "seller_in_stock_signal",
+      "price": 35700,
+      "observed_at": "2026-11-16T08:56:54.825858+00:00",
+      "source_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+      "evidence": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed.",
+      "limitations": "Structured seller signal and option text, not completed cart/checkout. No quantity claim; hidden generic soldout markup is not black variant status."
+    },
+    {
+      "id": "adobe-creative-cloud-kr-bf-monthly-annual",
+      "status": "unverified_current",
+      "price": null,
+      "observed_at": "2026-11-16T08:56:54.825858+00:00",
+      "source_url": "https://www.adobe.com/kr/creativecloud.html",
+      "evidence": "Official KR page returns product and new-subscriber first-year offer text but price dynamically omitted in retrieved HTML. 34800 not verified this round.",
+      "limitations": "No checkout performed; do not infer stock from purchase limits."
+    },
+    {
+      "id": "my-little-puppy-steam-kr",
+      "status": "seller_purchase_offer",
+      "price": 17400,
+      "observed_at": "2026-11-16T08:56:54.825858+00:00",
+      "source_url": "https://store.steampowered.com/app/2102040/",
+      "evidence": "Public KR display cc=kr: app2102040 package751340, KRW17400 vs29000,40%, discount_end_date1795453200, purchase offer.",
+      "limitations": "Digital license. Account eligibility and checkout untested. Regional display is not account region confirmation. Observed after first fetch, by09:00UTC."
+    },
+    {
+      "id": "google-play-100k-kr",
+      "status": "unverified_current",
+      "price": null,
+      "observed_at": "2026-11-16T08:56:54.825858+00:00",
+      "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+      "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+      "limitations": "No checkout performed; do not infer stock from purchase limits."
+    },
+    {
+      "id": "ps5-dualsense-midnight-black-kr",
+      "status": "unverified_current",
+      "price": null,
+      "observed_at": "2026-11-16T08:56:54.825858+00:00",
+      "source_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+      "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+      "limitations": "No checkout performed; do not infer stock from purchase limits."
+    },
+    {
+      "id": "de0f62d0487f",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 3.99,
+      "currency": "USD",
+      "previous_recorded_price": 3.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD3.99, and Add To Cart. New users; 1 Mac; macOS10.15+; v1.6.0; redeem30days; minor updates included, major upgrades extra.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "9caac4280b19",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 8.99,
+      "currency": "USD",
+      "previous_recorded_price": 8.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/slidepad-mac-app",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD8.99, and Add To Cart. 1 Mac; macOS10.14+; v1.0.43; redeem30days; updates included.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "bde198764514",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 79.99,
+      "currency": "USD",
+      "previous_recorded_price": 79.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD79.99, and Add To Cart. PDF Expert3 Mac; unlimited personal macOS devices; redeem30days; bug fixes included, new features may cost extra.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "e30c9a510928",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 199.99,
+      "currency": "USD",
+      "previous_recorded_price": 199.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/koofr-cloud-storage-plans-lifetime-subscription-1tb",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD199.99, and Add To Cart. 1TB; one lifetime code per person; redeem15days; inactivity terms apply.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ],
+      "coupon_display": {
+        "code": "KOOFR",
+        "displayed_price": 159.99,
+        "checkout_tested": false
+      }
+    },
+    {
+      "id": "2f57dcdf2174",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 24.97,
+      "currency": "USD",
+      "previous_recorded_price": 29.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/vsdc-video-editor-pro-lifetime-license-2",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD24.97, and Add To Cart. Version11; 2 devices; redeem30days; updates included.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "3b4097687c74",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 14.97,
+      "currency": "USD",
+      "previous_recorded_price": 19.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/adguard-family-plan-lifetime-subscription",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD14.97, and Add To Cart. Family; 9 devices; new users; redeem30days.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "3b4c5d317572",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 29.99,
+      "currency": "USD",
+      "previous_recorded_price": 29.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD29.99, and Add To Cart. 2 devices; Windows1.4.5.5/Mac1.6.1.0; redeem30days; updates included.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ],
+      "coupon_display": {
+        "code": "DEAL20",
+        "displayed_price": 24,
+        "checkout_tested": false,
+        "currently_valid": null
+      }
+    },
+    {
+      "id": "0deb259ecfd4",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 9.99,
+      "currency": "USD",
+      "previous_recorded_price": 9.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/action-screen-recording-software-and-gameplay-recorder",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD9.99, and Add To Cart. New users; 1 Windows device; v4.20.2; redeem30days; updates included.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "mail-backup-x-individual-v2",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 49.99,
+      "currency": "USD",
+      "previous_recorded_price": 49.99,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/mail-backup-x-individual-edition-lifetime-subscription",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD49.99, and Add To Cart. New users; 2 devices; v2; macOS10.13+/Windows8+; redeem30days.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "babbel-lifetime-all-languages",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 249,
+      "currency": "USD",
+      "previous_recorded_price": 249.0,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD249.00, and Add To Cart. New US users only; other-country eligibility must not be implied.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "seoagent-tier-1",
+      "status": "seller_page_price_and_add_to_cart_observed",
+      "price": 69,
+      "currency": "USD",
+      "previous_recorded_price": 69,
+      "observed_at": "2026-11-16T08:57:57.638591+00:00",
+      "source_url": "https://www.stacksocial.com/sales/seoagent-lifetime-subscription-tier-1",
+      "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD69.00, and Add To Cart. Tier1; 1 site,1000 monthly credits no rollover; new/existing users; redeem30days; no AI article writing/editing.",
+      "limitations": [
+        "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
+        "Web tool may use a recently crawled page; not an inventory API guarantee.",
+        "DEAL20 availability/application not verified; do not claim it is currently valid.",
+        "No independent historical discount comparison."
+      ]
+    },
+    {
+      "id": "keyboardstack-premium",
+      "status": "seller_page_price_and_purchase_link_observed",
+      "price": 14.99,
+      "observed_at": "2026-11-16T08:59:09.753121+00:00",
+      "source_url": "https://keyboardstack.com/",
+      "evidence": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately.",
+      "limitations": [
+        "Public source text, not completed checkout; tax and country eligibility not verified.",
+        "Purchase link is not proof of inventory or successful payment."
+      ]
+    },
+    {
+      "id": "proton-mail-plus-black-friday-annual",
+      "status": "seller_page_price_and_purchase_link_observed",
+      "price": 29.88,
+      "observed_at": "2026-11-16T08:59:09.753121+00:00",
+      "source_url": "https://proton.me/mail/black-friday",
+      "evidence": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately.",
+      "limitations": [
+        "Public source text, not completed checkout; tax and country eligibility not verified.",
+        "Purchase link is not proof of inventory or successful payment."
+      ]
+    },
+    {
+      "id": "proton-drive-plus-black-friday-annual",
+      "status": "seller_page_price_and_purchase_link_observed",
+      "price": 29.88,
+      "observed_at": "2026-11-16T08:59:09.753121+00:00",
+      "source_url": "https://proton.me/drive/black-friday",
+      "evidence": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately.",
+      "limitations": [
+        "Public source text, not completed checkout; tax and country eligibility not verified.",
+        "Purchase link is not proof of inventory or successful payment."
+      ]
+    },
+    {
+      "id": "proton-pass-plus-black-friday-annual",
+      "status": "seller_page_price_and_purchase_link_observed",
+      "price": 23.88,
+      "observed_at": "2026-11-16T08:59:09.753121+00:00",
+      "source_url": "https://proton.me/pass/black-friday",
+      "evidence": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately.",
+      "limitations": [
+        "Public source text, not completed checkout; tax and country eligibility not verified.",
+        "Purchase link is not proof of inventory or successful payment."
+      ]
+    },
+    {
+      "id": "hostinger-premium-black-friday-48-months",
+      "status": "seller_page_price_and_purchase_link_observed",
+      "price": 95.52,
+      "observed_at": "2026-11-16T08:59:09.753121+00:00",
+      "source_url": "https://www.hostinger.com/web-hosting",
+      "evidence": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately.",
+      "limitations": [
+        "Public source text, not completed checkout; tax and country eligibility not verified.",
+        "Purchase link is not proof of inventory or successful payment."
+      ]
+    },
+    {
+      "id": "chronoid-lifetime-black-friday",
+      "status": "seller_page_price_and_purchase_link_observed",
+      "price": 74.5,
+      "observed_at": "2026-11-16T08:59:09.753121+00:00",
+      "source_url": "https://www.chronoid.app/pricing",
+      "evidence": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately.",
+      "limitations": [
+        "Public source text, not completed checkout; tax and country eligibility not verified.",
+        "Purchase link is not proof of inventory or successful payment."
+      ]
+    },
+    {
+      "id": "dji-osmo-mobile-7-cn",
+      "status": "price_and_purchase_ui_confirmed",
+      "price": 349,
+      "currency": "CNY",
+      "observed_at": "2026-11-16T08:59:08.956Z",
+      "source_url": "https://store.dji.com/cn/product/osmo-mobile-7?set_region=CN&vid=182991",
+      "evidence": [
+        "Live browser selected radio is base Osmo Mobile 7, variant 182991; displayed CNY349, Add to cart and Buy now controls present.",
+        "Purchase limit is 3 units per person; this is not a sold-out notice. Page advertises same-day dispatch and Nov20 delivery for its displayed default Xuancheng location.",
+        "Base box includes gimbal, magnetic phone clamp 4, USB-C charging cable and pouch; tracking module is an optional extra."
+      ],
+      "limitations": [
+        "No cart, order or checkout performed; displayed default location is not a user-confirmed address. Country eligibility, actual address inventory, payment and final total remain unverified.",
+        "No independent discount or lowest-price evidence. Do not interpret purchase limit as unavailable."
+      ]
+    },
+    {
+      "id": "lenovo-gk10-rt60-cn",
+      "status": "unverified_current",
+      "price": null,
+      "currency": "CNY",
+      "previous_recorded_price": 199,
+      "observed_at": "2026-11-16T08:58:27.021Z",
+      "source_url": "https://item.lenovo.com.cn/product/1057925.html",
+      "evidence": [
+        "Live browser and public web extraction identify GK10 RT60 black magnetic wired keyboard, product number 870056109.",
+        "Browser price area renders only the yuan symbol with no numeric amount. Quantity defaults to one; a sticky Buy now label alone does not establish sellable stock."
+      ],
+      "limitations": [
+        "Current price, option inventory and deliverability could not be read. This is incomplete price/availability rendering, not confirmed sold out and not a demonstrated security block.",
+        "Previous CNY199 homepage observation was not reverified; retain only explicitly as an older unverified observation. No login or alternate private endpoints probed."
+      ]
+    },
+    {
+      "id": "lenovo-loq-25-10-cn",
+      "status": "unverified_current",
+      "price": null,
+      "currency": "CNY",
+      "previous_recorded_price": 599,
+      "observed_at": "2026-11-16T08:58:35.562Z",
+      "source_url": "https://item.lenovo.com.cn/product/1058662.html",
+      "evidence": [
+        "Live browser and public web extraction identify LOQ25-10 24.5-inch FHD IPS monitor, product 68EFGAS6CB, 280Hz and HDMI2.1/DP1.4 seller specifications.",
+        "Browser price area renders only the yuan symbol with no numeric amount; quantity defaults to one."
+      ],
+      "limitations": [
+        "Current price, stock and postcode delivery not available. Incomplete rendering is not sold-out evidence.",
+        "Previous CNY599 homepage observation was not reverified; no login or private endpoint requests."
+      ]
+    },
+    {
+      "id": "lenovo-c02-cn",
+      "status": "unverified_current",
+      "price": null,
+      "currency": "CNY",
+      "previous_recorded_price": 29.9,
+      "observed_at": "2026-11-16T08:58:36.944Z",
+      "source_url": "https://item.lenovo.com.cn/product/1016949.html",
+      "evidence": [
+        "Live browser and public web extraction identify Lenovo C02 seven-in-one cleaning kit, product number 31104773.",
+        "Browser price area renders only the yuan symbol with no numeric amount; quantity defaults to one."
+      ],
+      "limitations": [
+        "Current price, option availability, stock and shipping not available. Do not classify as sold out.",
+        "Previous CNY29.90 homepage observation not reverified. No login or private endpoint requests."
+      ]
+    },
+    {
+      "id": "43ca41d03daa",
+      "status": "price_and_purchase_ui_confirmed",
+      "price": 719,
+      "currency": "AUD",
+      "member_price": 678,
+      "observed_at": "2026-11-16T08:59:19.859Z",
+      "source_url": "https://www.ebgames.com.au/product/nintendo-switch-2/325321-nintendo-switch-2-console",
+      "evidence": [
+        "Live browser confirms standalone Nintendo Switch2 Console SKU325321 at AUD719; AUD678 is explicitly EB World PLUS member price, not public price.",
+        "Home Delivery Available and Add to Cart controls are displayed. Pickup requires choosing a store; no store is set.",
+        "Page also displays AUD769.95 reference. The frequently bought-together AUD828.90 total includes separately listed case and camera and is not the console price."
+      ],
+      "limitations": [
+        "No cart/checkout, actual address, freight, final stock or payment tested. No guarantee of shipping outside Australia.",
+        "This audit did not independently recheck the Nintendo SRP source or validate historical lowest price."
+      ]
+    },
+    {
+      "id": "moonitor-solo",
+      "status": "price_and_purchase_ui_confirmed",
+      "price": 45.9,
+      "currency": "USD",
+      "observed_at": "2026-11-16T08:59:34.624Z",
+      "source_url": "https://appsumo.com/products/moonitor-uptime-monitoring/",
+      "evidence": [
+        "Live browser Solo radio selected: USD45.90; Get lifetime access and tier-specific Buy now present. Solo has20 monitors,1 team/user,60-second checks and website/API,ping,SSL types.",
+        "Active15% countdown approximately15 hours remaining at observation; seller base price54. Exact expiry not independently verified; web extractor zeroed timer is a hydration placeholder, not confirmed expiration.",
+        "Lifetime,60-day activation and advertised60-day refunds; Radar listing excluded from We Got Your Back."
+      ],
+      "limitations": [
+        "Purchase control displayed only; no cart or checkout performed. Korea activation/billing/taxes and final total unknown.",
+        "Time-limited price requires prompt recheck; exact expiry and timezone are unverified. Do not infer historical discount from seller reference168."
+      ]
+    },
+    {
+      "id": "otter-ab-tier-1",
+      "status": "price_and_purchase_ui_confirmed",
+      "price": 67.15,
+      "currency": "USD",
+      "observed_at": "2026-11-16T08:59:50.638Z",
+      "source_url": "https://appsumo.com/products/otter-ab/",
+      "evidence": [
+        "Live browser License Tier1 radio selected: USD67.15; Get lifetime access and tier-specific Buy now present.1 website,10 concurrent experiments,unlimited visitors.",
+        "Active15% countdown approximately15 hours remaining; seller base price79. Web extractor zero timer is not evidence sale ended.",
+        "Lifetime,60-day activation and advertised60-day refunds; Radar listing excluded from We Got Your Back. Product is A/B testing, not Otter.ai transcription."
+      ],
+      "limitations": [
+        "No cart or checkout; actual country,billing,tax and total unknown. Seller claims not runtime tested.",
+        "Time-limited price needs near-term recheck; no independent historical/comparable discount evidence for seller reference468."
+      ]
+    },
+    {
+      "id": "nocodebackend-tier-1",
+      "status": "price_and_purchase_ui_confirmed",
+      "price": 79,
+      "currency": "USD",
+      "observed_at": "2026-11-16T09:00:05.648Z",
+      "source_url": "https://appsumo.com/products/nocodebackend/",
+      "evidence": [
+        "Live browser Tier1 radio selected: USD79,Get lifetime access and Buy now present.2 databases,25k records per database,unlimited tables/columns,2 Prehooks.",
+        "Official current FAQ independently read via web confirms new users only; MCP and built-in auth require Tier2+. Existing accounts cannot redeem/upgrade using these codes. Expansion packs cost extra.",
+        "Lifetime with future Starter updates,60-day activation and advertised60-day refund; no We Got Your Back."
+      ],
+      "limitations": [
+        "No checkout/payment/country test. No independent89% or688 comparison proof.",
+        "Flattened feature tables lose availability icons; use explicit current FAQ for auth/MCP exclusions. Older founder record-limit claims are not applied to currentTier1."
+      ]
+    }
+  ],
+  "checkout_verified": false,
+  "limitations": "Each observation is source/page text or seller data, not a checkout or inventory reservation. Access failures preserve last-good prices and are visibly marked."
+}

@@ -52,6 +52,8 @@ def direct_product_url(url):
     return bool(pattern and re.fullmatch(pattern, path))
 
 def publishable_link(deal):
+    from tools.deal_availability import blocks_publication
+    if blocks_publication(deal): return False
     link = deal.get('link') or {}
     evidence = deal.get('link_review') or {}
     if observed_timestamp(evidence.get('checked_at')) is None: return False
