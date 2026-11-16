@@ -1916,5 +1916,43 @@
       "purpose": "Transformez vos données en tableaux et graphiques consultables dans WordPress.",
       "conditions": "1 code, 5 domaines, à vie. Activer sous 60 jours ; nouveaux utilisateurs ou anciens acheteurs de wpDataTables sur AppSumo. Remboursement sous 60 jours. Hébergement et extensions à vérifier. Pays/taxes non vérifiés ; sans remise supplémentaire de 10 %."
     }
+  },
+  "buhobarx-single-lifetime": {
+    "ko": {
+      "product": "BuhoBarX · Mac 1대 · 평생 라이선스",
+      "summary": "메뉴바에서 덜 쓰는 아이콘을 숨기고, 노치에 가린 아이콘을 펼쳐 쓰는 Mac 앱.",
+      "purpose": "메뉴바에서 덜 쓰는 아이콘을 숨기고, 노치에 가린 아이콘을 펼쳐 쓰는 Mac 앱.",
+      "conditions": "macOS14 이상, 1대용 일회성 구매. $7.99는 소계로 세금·최종금액 미확인. 한국 등 결제 국가 선택지 있음; 결제·활성화 미검증. 30일 환불 요청 가능하나 잘못된 플랫폼·환경 문제 등 예외. 할인율·최저가 주장은 하지 않음."
+    },
+    "en": {
+      "product": "BuhoBarX · 1 Mac · Lifetime",
+      "summary": "Hide less-used menu-bar icons and reach icons obscured by the Mac notch.",
+      "purpose": "Hide less-used menu-bar icons and reach icons obscured by the Mac notch.",
+      "conditions": "macOS14+, one Mac, one-time licence. $7.99 subtotal; final tax/total unverified. Korea and other checkout countries listed, billing/activation untested. Refund requests within 30 days, with platform/environment exclusions. No lowest-price claim."
+    },
+    "zh": {
+      "product": "BuhoBarX · 1台Mac · 终身许可",
+      "summary": "隐藏少用的菜单栏图标，展开被Mac刘海遮住的图标。",
+      "purpose": "隐藏少用的菜单栏图标，展开被Mac刘海遮住的图标。",
+      "conditions": "macOS14以上，1台Mac，一次付费。$7.99为小计，最终税费未核实。结账国家含韩国等，不保证付款或激活。30天内申请退款，错误平台及环境问题等除外。不宣称最低价。"
+    },
+    "ja": {
+      "product": "BuhoBarX · Mac1台 · 買い切り",
+      "summary": "使わないメニューバーアイコンを隠し、ノッチに隠れたアイコンを開くMacアプリ。",
+      "purpose": "使わないメニューバーアイコンを隠し、ノッチに隠れたアイコンを開くMacアプリ。",
+      "conditions": "macOS14以降、1台、買い切り。$7.99は小計、税・最終額未確認。韓国等の国選択あり、決済・有効化未検証。30日以内の返金申請可、誤ったOS・動作環境等は対象外の場合あり。最安値の主張なし。"
+    },
+    "es": {
+      "product": "BuhoBarX · 1 Mac · De por vida",
+      "summary": "Oculta iconos poco usados y accede a los tapados por la muesca del Mac.",
+      "purpose": "Oculta iconos poco usados y accede a los tapados por la muesca del Mac.",
+      "conditions": "macOS14+, un Mac, pago único. Subtotal $7.99; impuestos y total sin verificar. Selector incluye Corea; pago/activación no probados. Solicitud de reembolso en 30 días con exclusiones por plataforma/entorno. Sin promesa de precio mínimo."
+    },
+    "fr": {
+      "product": "BuhoBarX · 1 Mac · À vie",
+      "summary": "Masquez les icônes peu utilisées et accédez à celles cachées par l’encoche du Mac.",
+      "purpose": "Masquez les icônes peu utilisées et accédez à celles cachées par l’encoche du Mac.",
+      "conditions": "macOS14+, un Mac, achat unique. Sous-total $7.99 ; taxes et total non vérifiés. Corée proposée, paiement/activation non testés. Demande de remboursement sous 30 jours, exclusions de plateforme/environnement. Aucun prix le plus bas annoncé."
+    }
   }
 }

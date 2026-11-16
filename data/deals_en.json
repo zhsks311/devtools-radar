@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T14:15:26.020635+00:00",
+  "generated_at": "2026-11-16T16:33:15.202768+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -3322,6 +3322,97 @@
         "source_url": "https://appsumo.com/products/wpdatatables/",
         "evidence": "Live AppSumo browser: selected 1 Code, 5 Domains, USD 69 once with Buy now/Get lifetime access controls. Search extract still showed expired USD 59 Plus early access; current browser price takes precedence. Lifetime and future Developer Plan updates; redeem within 60 days; new users and returning AppSumo purchasers; refundable up to 60 days. Checkout, country eligibility and tax untested."
       }
+    },
+    {
+      "id": "buhobarx-single-lifetime",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "BuhoBarX · 1 Mac · Lifetime",
+      "product": "BuhoBarX · 1 Mac · Lifetime",
+      "store": "Dr.Buho",
+      "storefront_country": null,
+      "price": 7.99,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Hide and organize Mac menu-bar icons, including icons obscured by the notch.",
+        "macOS14 or later. One Mac lifetime licence. Final tax, country billing and activation unverified."
+      ],
+      "audience": "Mac users with crowded menu bars.",
+      "source": {
+        "id": "drbuho",
+        "label": "Official product and selected checkout summary",
+        "url": "https://www.drbuho.com/buhobarx"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-16",
+      "score": null,
+      "disclosure": "No affiliate tracking; seller price, not guaranteed checkout total.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "price_variant": "Lifetime - Single (1 Mac)",
+      "link": {
+        "url": "https://www.drbuho.com/buhobarx",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T16:33:15.202768+00:00",
+        "url": "https://www.drbuho.com/buhobarx",
+        "product_match": true,
+        "evidence": "Live product Buy Now navigates to official Black Friday BuhoBarX section. Paddle order summary identifies BuhoBarX Lifetime - Single (1 Mac), quantity 1, USD7.99 subtotal. Tax calculated at next step; no email, address or payment entered. Country list includes KR/CN/JP/US/FR/ES/AU but successful billing and activation not tested."
+      },
+      "price_review": {
+        "id": "buhobarx-single-lifetime",
+        "product": "BuhoBarX · 1 Mac · Lifetime",
+        "seller_url": "https://www.drbuho.com/buhobarx",
+        "recorded_price": 7.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 7.99,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://www.drbuho.com/buhobarx",
+            "observed_at": "2026-11-16T16:33:15.202768+00:00",
+            "result": "Live product Buy Now navigates to official Black Friday BuhoBarX section. Paddle order summary identifies BuhoBarX Lifetime - Single (1 Mac), quantity 1, USD7.99 subtotal. Tax calculated at next step; no email, address or payment entered. Country list includes KR/CN/JP/US/FR/ES/AU but successful billing and activation not tested.",
+            "price_observed_url": "https://www.drbuho.com/black-friday-sale#BuhoBarX",
+            "price_observed_surface": "Paddle order summary: BuhoBarX Lifetime - Single (1 Mac), quantity 1, USD7.99 subtotal; tax calculated next step. Session-specific checkout URL intentionally not stored."
+          }
+        ],
+        "review_completed_at": "2026-11-16T16:33:15.202768+00:00",
+        "limitations": [
+          "Seller reference USD19.99 and percentage are not independent historical-price proof; not reproduced. No exact sale end asserted.",
+          "Tax and final total require further checkout. Country selector is not completed purchase or activation verification."
+        ]
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital Mac licence; no physical shipping.",
+        "activation": "Lifetime licence for one Mac; macOS14 Sonoma or later. Activation not performed.",
+        "payment": "Paddle country selector includes KR/CN/JP/US/FR/ES/AU; billing approval not verified.",
+        "tax": "USD7.99 subtotal; tax calculated at next checkout step. Final total unverified.",
+        "returns": "Direct-store refund requests within 30 days; exclusions include wrong platform, environment/operator problems, retrospective price adjustments. See https://www.drbuho.com/refund-policy.",
+        "evidence_url": "https://www.drbuho.com/buhobarx",
+        "checked_at": "2026-11-16T16:33:15.202768+00:00"
+      },
+      "latest_offer_check": {
+        "status": "price_and_purchase_ui_confirmed",
+        "price": 7.99,
+        "currency": "USD",
+        "observed_at": "2026-11-16T16:33:15.202768+00:00",
+        "source_url": "https://www.drbuho.com/buhobarx",
+        "evidence": "Live product Buy Now navigates to official Black Friday BuhoBarX section. Paddle order summary identifies BuhoBarX Lifetime - Single (1 Mac), quantity 1, USD7.99 subtotal. Tax calculated at next step; no email, address or payment entered. Country list includes KR/CN/JP/US/FR/ES/AU but successful billing and activation not tested."
+      }
     }
   ],
   "picks": [
@@ -6010,7 +6101,7 @@
     }
   },
   "stats": {
-    "feed": 27,
-    "sources": 8
+    "feed": 28,
+    "sources": 11
   }
 }
