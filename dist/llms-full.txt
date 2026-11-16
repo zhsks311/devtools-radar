@@ -1291,7 +1291,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Gmarket · 벨킨공식판매원
 Product URL: https://item.gmarket.co.kr/Item?goodsCode=4758759898
 Product-link review: 2026-11-14T12:43:08.562400+00:00 (not a stock check)
-Recorded price: 39900 KRW. Seller price observation dated 2026-11-14T12:43:08.562400+00:00.
+Recorded price: 39900 KRW. Seller price observation dated 2026-11-16T16:11:43.991970+00:00.
 Delivery / activation countries with evidence: KR.
 Discounts and historical-low claims are not established by this export.
 
@@ -1307,7 +1307,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Artmu 공식몰
 Product URL: https://artmu.co.kr/product/detail.html?product_no=2942
 Product-link review: 2026-11-14T12:43:08.562400+00:00 (not a stock check)
-Recorded price: 35700 KRW. Seller price observation dated 2026-11-16T08:56:54.825858+00:00.
+Recorded price: 35700 KRW. Seller price observation dated 2026-11-16T16:11:43.991970+00:00.
 Delivery / activation countries with evidence: KR.
 Discounts and historical-low claims are not established by this export.
 

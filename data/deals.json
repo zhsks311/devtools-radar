@@ -712,13 +712,18 @@
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
             "result": "Seller detail shows WCH025kr1.5WHB6 white option, KRW39,900 and purchase UI. Belkin official seller; domestic delivery only.",
             "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+          },
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+            "observed_at": "2026-11-16T16:11:43.991970+00:00",
+            "result": "Exact WCH025 official seller page text: sale KRW39900; eligible Samsung card KRW1500 discount for KRW30000+ payments, displayed KRW38400. Source text retrieved; no checkout or stock verification."
           }
         ],
         "limitations": [
           "No independently verified historical-low or previous-price comparison.",
           "Address-specific stock, checkout, billing eligibility and final total not verified."
         ],
-        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+        "review_completed_at": "2026-11-16T16:11:43.991970+00:00"
       },
       "historical_claims": {
         "original_price": 63900,
@@ -760,14 +765,45 @@
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       },
       "latest_offer_check": {
-        "id": "deal-belkin-100w-gan",
-        "status": "unverified_current",
-        "price": null,
-        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "status": "seller_text_observed",
+        "price": 39900,
+        "currency": "KRW",
+        "observed_at": "2026-11-16T16:11:43.991970+00:00",
         "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
-        "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
-        "limitations": "No checkout performed; do not infer stock from purchase limits."
-      }
+        "evidence": "Exact WCH025 official seller page text: sale KRW39900; eligible Samsung card KRW1500 discount for KRW30000+ payments, displayed KRW38400. Source text retrieved; no checkout or stock verification."
+      },
+      "previous_offer_checks": [
+        {
+          "id": "deal-belkin-100w-gan",
+          "status": "unverified_current",
+          "price": null,
+          "observed_at": "2026-11-16T08:56:54.825858+00:00",
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+          "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
+          "limitations": "No checkout performed; do not infer stock from purchase limits."
+        }
+      ],
+      "price_variant": "WCH025 · 100W",
+      "price_options": [
+        {
+          "kind": "payment",
+          "product_id": "deal-belkin-100w-gan",
+          "variant": "WCH025 · 100W",
+          "currency": "KRW",
+          "price": 38400,
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4758759898",
+          "checked_at": "2026-11-16T16:11:43.991970+00:00",
+          "evidence": "Exact WCH025 official seller page text: sale KRW39900; eligible Samsung card KRW1500 discount for KRW30000+ payments, displayed KRW38400. Source text retrieved; no checkout or stock verification.",
+          "conditions": {
+            "ko": "대상 삼성카드로 3만원 이상 결제 시 1,500원 할인 · 적용 조건 확인",
+            "en": "Eligible Samsung card: KRW1,500 off KRW30,000+ payment; check eligibility",
+            "zh": "符合条件的三星卡满30,000韩元减1,500；请确认资格",
+            "ja": "対象Samsungカードで30,000ウォン以上決済時1,500ウォン引き・条件確認",
+            "es": "Tarjeta Samsung elegible: KRW1.500 menos al pagar KRW30.000+; comprobar condiciones",
+            "fr": "Carte Samsung éligible : KRW1 500 de réduction dès KRW30 000 ; vérifier les conditions"
+          }
+        }
+      ]
     },
     {
       "id": "deal-lg-ultragear-27",
@@ -1083,13 +1119,18 @@
             "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
             "observed_at": "2026-11-16T08:56:54.825858+00:00",
             "result": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed."
+          },
+          {
+            "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "observed_at": "2026-11-16T16:11:43.991970+00:00",
+            "result": "Exact GB102 black detail page: KRW35700, free shipping. Optional accessories are separate paid purchases. No checkout or live inventory quantity checked; generic overseas shipping wording does not verify any particular country."
           }
         ],
         "limitations": [
           "No independently verified historical-low or previous-price comparison.",
           "Address-specific stock, checkout, billing eligibility and final total not verified."
         ],
-        "review_completed_at": "2026-11-16T08:56:54.825858+00:00"
+        "review_completed_at": "2026-11-16T16:11:43.991970+00:00"
       },
       "historical_claims": {
         "original_price": 44800,
@@ -1131,14 +1172,24 @@
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       },
       "latest_offer_check": {
-        "id": "deal-artmu-100w-gb102",
-        "status": "seller_in_stock_signal",
+        "status": "seller_text_observed",
         "price": 35700,
-        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "currency": "KRW",
+        "observed_at": "2026-11-16T16:11:43.991970+00:00",
         "source_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
-        "evidence": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed.",
-        "limitations": "Structured seller signal and option text, not completed cart/checkout. No quantity claim; hidden generic soldout markup is not black variant status."
-      }
+        "evidence": "Exact GB102 black detail page: KRW35700, free shipping. Optional accessories are separate paid purchases. No checkout or live inventory quantity checked; generic overseas shipping wording does not verify any particular country."
+      },
+      "previous_offer_checks": [
+        {
+          "id": "deal-artmu-100w-gb102",
+          "status": "seller_in_stock_signal",
+          "price": 35700,
+          "observed_at": "2026-11-16T08:56:54.825858+00:00",
+          "source_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+          "evidence": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed.",
+          "limitations": "Structured seller signal and option text, not completed cart/checkout. No quantity claim; hidden generic soldout markup is not black variant status."
+        }
+      ]
     },
     {
       "id": "deal-sony-mdr-3r",
