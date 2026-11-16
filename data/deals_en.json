@@ -730,6 +730,12 @@
           "DEAL20 availability/application not verified; do not claim it is currently valid.",
           "No independent historical discount comparison."
         ]
+      },
+      "service_terms": {
+        "url": "https://www.stacksocial.com/sales/textsniper-for-mac",
+        "checked_at": "2026-11-16T17:48:10.328506+00:00",
+        "refund": "Unredeemed licences: store credit within30days; after redemption all sales final.",
+        "updates": "Minor updates included; major upgrades and features cost extra."
       }
     },
     {
@@ -850,6 +856,12 @@
           "DEAL20 availability/application not verified; do not claim it is currently valid.",
           "No independent historical discount comparison."
         ]
+      },
+      "service_terms": {
+        "url": "https://www.stacksocial.com/sales/slidepad-mac-app",
+        "checked_at": "2026-11-16T17:48:10.328506+00:00",
+        "refund": "Unredeemed licences: store credit within30days; after redemption all sales final.",
+        "updates": "Updates included."
       }
     },
     {
