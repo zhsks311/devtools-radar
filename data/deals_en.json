@@ -3333,6 +3333,29 @@
         "observed_at": "2026-11-16T14:15:26.020635+00:00",
         "source_url": "https://appsumo.com/products/wpdatatables/",
         "evidence": "Live AppSumo browser: selected 1 Code, 5 Domains, USD 69 once with Buy now/Get lifetime access controls. Search extract still showed expired USD 59 Plus early access; current browser price takes precedence. Lifetime and future Developer Plan updates; redeem within 60 days; new users and returning AppSumo purchasers; refundable up to 60 days. Checkout, country eligibility and tax untested."
+      },
+      "sheets_workflow_review": {
+        "sources": [
+          "https://wpdatatables.com/documentation/create-tables-from-google-sheets/",
+          "https://wpdatatables.com/documentation/import-excel-csv-mysql/"
+        ],
+        "linked_table_editable": false,
+        "imported_table_auto_sync": false,
+        "scope": "Vendor-documented workflows, not independently installed or tested; does not rule out separate manual update features.",
+        "checked_at": "2026-11-16T19:20:41.254241+00:00"
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-16T19:20:41.254241+00:00",
+        "sources": [
+          {
+            "url": "https://wpdatatables.com/documentation/create-tables-from-google-sheets/",
+            "label": "Google Sheets · Linked tables"
+          },
+          {
+            "url": "https://wpdatatables.com/documentation/import-excel-csv-mysql/",
+            "label": "Google Sheets · Editable imports"
+          }
+        ]
       }
     },
     {
