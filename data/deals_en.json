@@ -3545,6 +3545,17 @@
             "label": "Rhino Voice · Free / Unlimited"
           }
         ]
+      },
+      "language_privacy_review": {
+        "url": "https://rhinovoice.app/",
+        "checked_at": "2026-11-16T18:15:56.709739+00:00",
+        "default_language": "English-optimized",
+        "other_languages": "Vendor recommends Parakeet v3 for 25 European languages or a Whisper multilingual model. Automatic detection can select the wrong language. Korean accuracy untested.",
+        "permissions": [
+          "Microphone",
+          "Accessibility"
+        ],
+        "network": "Model downloads and signed update checks use network; vendor says dictation/cleanup work offline after model download. Not independently executed."
       }
     }
   ],

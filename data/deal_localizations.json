@@ -1967,42 +1967,42 @@
       "summary": "Mac에서 말한 내용을 입력해주는 받아쓰기 앱. 가볍게 쓴다면 공식 무료판부터 써보세요.",
       "purpose": "Mac에서 말한 내용을 입력해주는 받아쓰기 앱. 가볍게 쓴다면 공식 무료판부터 써보세요.",
       "conditions": "Apple silicon·macOS14+. $12는 Mac1대 평생권, 60일 내 등록·60일 환불. 공식 무료판은 첫 주 무제한 이후 주2000단어. 공식 $20는 무제한Mac으로 다른 조건이며 할인 비교 제외. 국가·최종세금·한국어 품질 미검증.",
-      "buying_note": "무료판과 기기 수 조건을 공식 홈페이지에서 먼저 비교하세요."
+      "buying_note": "한국어로 쓸 예정이라면 무료판에서 먼저 시험해 보세요. 기본 모델은 영어에 최적화되어 있고, 다른 언어는 설정에서 다국어 모델을 선택해야 합니다. 자동 언어 감지는 틀릴 수 있습니다. 마이크·손쉬운 사용 권한이 필요합니다. 모델 다운로드와 앱 업데이트 확인에는 네트워크를 사용하며, 모델 설치 후 받아쓰기는 로컬에서 동작한다는 개발사 설명입니다. 한국어 정확도와 실제 오프라인 작동은 직접 시험하지 않았습니다."
     },
     "en": {
       "product": "Rhino Voice · 1 Mac · Lifetime",
       "summary": "Dictate into Mac apps. Light users can try the vendor’s free tier first.",
       "purpose": "Dictate into Mac apps. Light users can try the vendor’s free tier first.",
       "conditions": "Apple silicon/macOS14+. $12 covers1Mac for life; redeem/refund within60days. Vendor free tier: unlimited first week, then2000words/week. Vendor $20 covers unlimited Macs, not a comparable reference price. Country, tax and recognition quality untested.",
-      "buying_note": "Compare the free tier and device allowances on the vendor site first."
+      "buying_note": "Try your language in the free tier before buying. The default model is English-tuned; select a multilingual model for other languages. Automatic language detection can be wrong. Microphone and Accessibility permissions are required. Model downloads and update checks use the network; the vendor says dictation runs locally after model installation. We have not tested recognition accuracy or offline operation."
     },
     "zh": {
       "product": "Rhino Voice · 1 Mac · Lifetime",
       "summary": "在Mac应用中用语音输入。轻度使用可先试官方免费版。",
       "purpose": "在Mac应用中用语音输入。轻度使用可先试官方免费版。",
       "conditions": "Apple silicon/macOS14+。$12为1台Mac终身许可，60天内兑换/退款。官网首周不限量，之后每周2000词免费；$20为不限Mac数量，不作折扣比较。地区、税费和识别质量未验证。",
-      "buying_note": "先在官网比较免费版及设备数量。"
+      "buying_note": "购买前请用免费版测试所需语言。默认模型针对英语优化，其他语言需选择多语言模型，自动语言检测可能出错。需要麦克风与辅助功能权限。模型下载和更新检查需要网络；开发者表示安装模型后可本地听写。未实测识别准确度或离线运行。"
     },
     "ja": {
       "product": "Rhino Voice · 1 Mac · Lifetime",
       "summary": "Macアプリへ音声入力。軽い利用なら公式の無料版から試せます。",
       "purpose": "Macアプリへ音声入力。軽い利用なら公式の無料版から試せます。",
       "conditions": "Apple silicon/macOS14+。$12はMac1台買い切り、60日以内に登録・返金。公式無料版は初週無制限、以後週2000語。公式$20はMac台数無制限で条件が異なります。国・税・認識品質未検証。",
-      "buying_note": "公式サイトで無料版と利用台数を比較してください。"
+      "buying_note": "購入前に無料版で使用言語を試してください。既定モデルは英語向けで、他言語には多言語モデルの選択が必要です。言語の自動検出は誤る場合があります。マイクとアクセシビリティ権限が必要です。モデルの取得と更新確認には通信を使用し、導入後の音声入力はローカル処理との開発元説明です。認識精度やオフライン動作は実機未検証です。"
     },
     "es": {
       "product": "Rhino Voice · 1 Mac · Lifetime",
       "summary": "Dicta texto en apps de Mac. Para uso ligero, prueba primero el plan gratuito.",
       "purpose": "Dicta texto en apps de Mac. Para uso ligero, prueba primero el plan gratuito.",
       "conditions": "Apple silicon/macOS14+. $12 por1Mac de por vida; canje/reembolso en60días. Gratis: primera semana ilimitada, luego2000palabras/semana. $20 del vendedor cubre Macs ilimitados: no es precio comparable. Países, impuestos y precisión sin probar.",
-      "buying_note": "Compara primero el plan gratuito y los límites de dispositivos."
+      "buying_note": "Prueba tu idioma con la versión gratuita antes de comprar. El modelo predeterminado está optimizado para inglés; elige uno multilingüe para otros idiomas. La detección automática puede fallar. Requiere permisos de micrófono y accesibilidad. Las descargas de modelos y comprobaciones de actualizaciones usan internet; según el proveedor, el dictado funciona localmente después de instalar el modelo. No hemos probado su precisión ni el uso sin conexión."
     },
     "fr": {
       "product": "Rhino Voice · 1 Mac · Lifetime",
       "summary": "Dictez dans vos apps Mac. Pour un usage léger, essayez d’abord la formule gratuite.",
       "purpose": "Dictez dans vos apps Mac. Pour un usage léger, essayez d’abord la formule gratuite.",
       "conditions": "Apple silicon/macOS14+. $12 pour1Mac à vie; activation/remboursement sous60jours. Gratuit: première semaine illimitée, puis2000mots/semaine. $20 chez l’éditeur couvre des Macs illimités: offre différente. Pays, taxes et précision non testés.",
-      "buying_note": "Comparez d’abord la formule gratuite et le nombre de Mac autorisés."
+      "buying_note": "Testez votre langue avec la version gratuite avant achat. Le modèle par défaut est optimisé pour l’anglais ; choisissez un modèle multilingue pour les autres langues. La détection automatique peut se tromper. Les autorisations Microphone et Accessibilité sont nécessaires. Les téléchargements de modèles et vérifications de mises à jour utilisent le réseau ; selon l’éditeur, la dictée fonctionne localement après installation du modèle. Précision et fonctionnement hors ligne non testés."
     }
   }
 }
