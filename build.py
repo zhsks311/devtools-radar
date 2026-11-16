@@ -578,13 +578,15 @@ def _deal_card(deal: dict, lang: str = "ko") -> str:
     price = _won(deal)
     price_html = f"<strong>{html.escape(price)}</strong>" if price else (
         '<span class="unknown">원문 가격 확인</span>' if lang == "ko" else '<span class="unknown">See price at source</span>')
-    from tools.deal_prices import discount_percent
-    verified_discount = discount_percent(deal)
+    from tools.deal_prices import discount_percent, current_price_state
+    verified_discount = discount_percent(deal) if current_price_state(deal)=='observed' else None
     if verified_discount is not None:
         orig = deal["original_price"]
         orig_txt = _won({"price": orig, "currency": deal.get("currency", "KRW")})
         price_html += f"<s>{html.escape(orig_txt)}</s>"
 
+    from site_i18n import visible_price_context
+    price_html += visible_price_context(deal, lang)
     flags = ""
     if verified_discount is not None:
         flags += f'<span class="flag flag-discount">-{html.escape(str(verified_discount))}%</span>'

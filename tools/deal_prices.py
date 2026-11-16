@@ -65,6 +65,8 @@ def validate_deal_prices(feed):
     errors=[]
     for d in feed:
         ident=d.get('id','?'); r=d.get('price_review') or {}
+        if len(validated_price_options(d)) != len(d.get('price_options') or []):
+            errors.append(f'{ident}: price options require exact variant, source, timestamp and translated conditions')
         if number(d.get('price')) is None: errors.append(f'{ident}: invalid price')
         if r.get('price_status')=='seller_page_display_confirmed' and not checked_price(d):
             errors.append(f'{ident}: checked price must match dated seller evidence, currency and product URL')
@@ -75,3 +77,34 @@ def validate_deal_prices(feed):
             if pct is None: errors.append(f'{ident}: unsupported discount; move legacy values to historical_claims')
             elif number(d.get('discount_pct'))!=pct: errors.append(f'{ident}: discount_pct must equal computed {pct}')
     return errors
+
+
+# A successful historical observation is not a current-price guarantee.
+PRICE_MAX_AGE_HOURS = 24
+
+def current_price_state(d, *, now=None):
+    from datetime import datetime, timezone, timedelta
+    now = now or datetime.now(timezone.utc)
+    review = d.get('price_review') or {}
+    seen = observed_timestamp(review.get('review_completed_at'), now=now)
+    latest = d.get('latest_offer_check') or {}
+    if latest.get('status') == 'unverified_current': return 'unverified'
+    if not checked_price(d) or seen is None: return 'unverified'
+    if now - seen > timedelta(hours=PRICE_MAX_AGE_HOURS): return 'historical'
+    return 'observed'
+
+def validated_price_options(d):
+    """Never infer a coupon/card price from arithmetic or another product option."""
+    options = d.get('price_options') or []
+    result = []
+    for item in options:
+        if (item.get('kind') in ('coupon', 'payment') and
+            item.get('product_id') == d.get('id') and d.get('price_variant') and
+            item.get('variant') == d.get('price_variant') and
+            item.get('currency') == d.get('currency') and
+            number(item.get('price')) is not None and
+            item.get('source_url') == (d.get('link') or {}).get('url') and
+            dated(item.get('checked_at')) and item.get('evidence') and
+            all(item.get('conditions', {}).get(lang) for lang in ('en','ko','zh','ja','es','fr'))):
+            result.append(item)
+    return result

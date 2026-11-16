@@ -30,8 +30,9 @@ for (const page of pages) {
   const location = {};
   for(const key of ['search','pathname','hash']) Object.defineProperty(location,key,{get:()=>url[key]});
   const context = vm.createContext({URLSearchParams, URL, location,
-    history,
+    history, setInterval(){},
     document:{querySelector:selector=>nodes[selector], querySelectorAll(selector){
+      if (selector.startsWith('.price-status')) return [];
       return selector==='#active-products .card, #discovery-products .card'?cards:selector==='#held-products .card'?archived:links.map(a=>({
         get href(){return new URL(a.href,url).href}, set href(v){a.href=v}
       }));}},

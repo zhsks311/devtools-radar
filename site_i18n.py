@@ -5,7 +5,7 @@ from pathlib import Path
 from tools.product_links import publishable_link
 from tools.deal_candidates import candidate_cards
 from tools.affiliate_links import verified_aliexpress_url
-from tools.deal_prices import checked_price, official_srp_comparison
+from tools.deal_prices import checked_price, official_srp_comparison, current_price_state, validated_price_options, number
 from tools.evidence_dates import observed_timestamp
 from tools.deal_countries import confirmed_countries, storefront_country, target_countries
 from xml.sax.saxutils import escape
@@ -162,6 +162,19 @@ document.querySelector('#reset-filters').addEventListener('click', () => {
 window.addEventListener('popstate', () => { restore(); filter(); });
 window.addEventListener('pageshow', () => { restore(); filter(); });
 restore(); filter();
+function expireObservedPrices() {
+  for (const node of document.querySelectorAll('.price-status[data-price-state="observed"]')) {
+    const observed = Date.parse(node.dataset.observedAt);
+    if (!Number.isFinite(observed) || Date.now() - observed > 24 * 60 * 60 * 1000) {
+      node.dataset.priceState = 'historical';
+      node.textContent = node.dataset.staleLabel;
+      const card = node.closest('article');
+      if (card) for (const claim of card.querySelectorAll('.current-savings')) claim.hidden = true;
+    }
+  }
+}
+expireObservedPrices();
+setInterval(expireObservedPrices, 60000);
 """
 CANDIDATE_SECTION = {
 'en':'Price pending · research candidates (not deals)',
@@ -202,6 +215,31 @@ NO_ACTIVE_AFFILIATES = {
 }
 SOLD_OUT_LABEL = {'ko':'품절 · 판매처에서 현재 구매할 수 없습니다.','en':'Sold out · currently unavailable from the seller.','zh':'已售罄 · 卖家目前无法供货。','ja':'売り切れ・現在販売元で購入できません。','es':'Agotado · no disponible actualmente en la tienda.','fr':'Épuisé · actuellement indisponible chez le vendeur.'}
 CURRENT_OFFER_UNVERIFIED = {'ko': '현재 가격·판매 상태를 재확인하지 못했습니다. 아래 가격은 이전 기록값으로, 현재 판매가를 뜻하지 않습니다.', 'en': 'Current price and availability could not be rechecked. The price below is a historical record, not a confirmed current offer.', 'zh': '未能重新核实当前价格及销售状态。下方为历史记录价格，并非已确认的当前售价。', 'ja': '現在の価格・販売状況を再確認できませんでした。下記は過去の記録価格で、現在の販売価格を保証しません。', 'es': 'No se pudo verificar de nuevo el precio ni la disponibilidad. Se muestra un precio histórico, no una oferta actual confirmada.', 'fr': 'Le prix et la disponibilité actuels n’ont pas pu être revérifiés. Le prix affiché est historique, non une offre actuelle confirmée.'}
+
+PRICE_STATE_LABELS = {
+ 'ko': {'observed':'판매처 표시가 · 결제금액 보장 아님','historical':'이전 확인 가격 · 현재가 아님','unverified':'현재 가격 확인 필요'},
+ 'en': {'observed':'Seller-listed price · not a checkout guarantee','historical':'Historical price · not current','unverified':'Current price needs verification'},
+ 'zh': {'observed':'卖家标价 · 非最终结算保证','historical':'历史价格 · 非当前价格','unverified':'当前价格待核实'},
+ 'ja': {'observed':'販売店表示価格・決済額の保証ではありません','historical':'過去の確認価格・現在価格ではありません','unverified':'現在価格の確認が必要'},
+ 'es': {'observed':'Precio indicado · no garantiza el total al pagar','historical':'Precio histórico · no actual','unverified':'Precio actual por verificar'},
+ 'fr': {'observed':'Prix affiché · total au paiement non garanti','historical':'Prix historique · non actuel','unverified':'Prix actuel à vérifier'},
+}
+def visible_price_context(deal, lang):
+ state=current_price_state(deal)
+ review=deal.get('price_review') or {}
+ stamp=review.get('review_completed_at','')
+ source=(deal.get('link') or {}).get('url','')
+ result=f'<p class="price-status" data-observed-at="{e(stamp)}" data-stale-label="{e(PRICE_STATE_LABELS[lang]["historical"])}" data-price-state="{state}">{e(PRICE_STATE_LABELS[lang][state])}</p>'
+ if observed_timestamp(stamp):
+  result+=f'<p class="meta price-observed"><a href="{e(safe(source))}" rel="noopener nofollow">{e(LABELS[lang][30])}</a> · <time datetime="{e(stamp)}">{observed_timestamp(stamp).strftime("%Y-%m-%d %H:%M UTC")}</time></p>'
+ # Conditional prices stay visibly conditional, even when the observation ages.
+ for option in validated_price_options(deal):
+  option_seen=observed_timestamp(option['checked_at'])
+  option_state='observed' if option_seen and datetime.datetime.now(datetime.timezone.utc)-option_seen <= datetime.timedelta(hours=24) and state=='observed' else 'historical'
+  amount=f"{number(option['price']):,.2f}".rstrip('0').rstrip('.')
+  result+=f'<p class="conditional-price">{e(option["currency"])} {amount} · {e(option["conditions"][lang])} · {e(option["variant"])}</p><p class="price-status" data-price-state="{option_state}" data-observed-at="{e(option["checked_at"])}" data-stale-label="{e(PRICE_STATE_LABELS[lang]["historical"])}">{e(PRICE_STATE_LABELS[lang][option_state])}</p><p class="meta price-observed"><time datetime="{e(option["checked_at"])}">{option_seen.strftime("%Y-%m-%d %H:%M UTC")}</time></p>'
+ return result
+
 def catalogue(lang,feeds,translations,discoveries=False):
  t=LABELS[lang]; f=FILTER_TEXT[lang]; discovery_cards=candidate_cards(lang) if discoveries else []; cards=[]; held_cards=[]; discovery_count=len(discovery_cards); active_affiliates=0
  for d in feeds:
@@ -242,9 +280,10 @@ def catalogue(lang,feeds,translations,discoveries=False):
   review=d.get('price_review') or {}; current=checked_price(d)
   if not publishable_link(d): summary=HELD_SUMMARY[lang]
   price_context=''
-  srp=official_srp_comparison(d)
+  srp=official_srp_comparison(d) if current_price_state(d)=='observed' else None
   savings=SRP[lang].format(percent=srp['percent'],currency=srp['currency'],price=f"{srp['price']:,.2f}") if srp else (NOT_DISCOUNT[lang] if review.get('deal_status')=='not_a_discount' else DISCOUNT_UNKNOWN[lang])
-  price_note=f'<p class="notice">{e(savings)}</p>'
+  savings_class='notice current-savings' if srp else 'notice'
+  price_note=f'<p class="{savings_class}">{e(savings)}</p>'
   comparison=(review.get('comparison') or {}).get('url')
   if loc.get('buying_note'): price_context+=f'<p class="notice buying-note">{e(loc["buying_note"])}</p>'
   alternative=d.get('alternative_review') or {}
@@ -262,7 +301,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
   terms=d.get('service_terms') or {}
   if terms.get('url'): evidence+=f'<p><a class="service-terms-source" href="{e(safe(terms["url"]))}" rel="noopener nofollow">{t[30]}</a></p>'
   linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}"{description}>{e(title)}</a>' if linked else e(title)
-  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}">{disclosure}{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}<div class="price">{e(price)}{billing_label(d,lang)}</div>{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
+  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}">{disclosure}{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}<div class="price">{e(price)}{billing_label(d,lang)}</div>{visible_price_context(d,lang)}{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  storefronts=sorted({storefront_country(d) for d in feeds}-{"unknown"})
  destinations=list(COUNTRY_ORDER)+sorted({c for d in feeds for c in target_countries(d)}-set(COUNTRY_ORDER))

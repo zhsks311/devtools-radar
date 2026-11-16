@@ -918,8 +918,7 @@
         "evidence": [
           {
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
-            "result": "Seller detail explicitly identifies U-25093 and KRW65,100 base price with purchase UI. Optional advertised 5% coupon price KRW61,850 is not the unconditional price. Domestic delivery only.",
-            "provenance": "Seller product detail retrieved 2026-11-14; no completed checkout."
+            "result": "Exact U-25093 seller listing: base KRW 65,100; named 5% digital/appliance coupon deducts KRW 3,250 to KRW 61,850; eligible Samsung card further KRW 2,000 to KRW 59,850. Checkout eligibility and stock not tested."
           }
         ],
         "limitations": [
@@ -927,7 +926,7 @@
           "Address-specific stock, checkout, billing eligibility and final total not verified.",
           "Seller advertises 5% coupon KRW61,850; eligibility not tested and excluded from main price."
         ],
-        "review_completed_at": "2026-11-14T12:43:08.562400+00:00"
+        "review_completed_at": "2026-11-16T13:43:26.443786+00:00"
       },
       "historical_claims": {
         "original_price": 89900,
@@ -969,14 +968,51 @@
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       },
       "latest_offer_check": {
-        "id": "deal-ugreen-100w-gan",
-        "status": "unverified_current",
-        "price": null,
-        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "checked_at": "2026-11-16T13:43:26.443786+00:00",
+        "status": "seller_text_observed",
+        "price": 65100,
         "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
-        "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
-        "limitations": "No checkout performed; do not infer stock from purchase limits."
-      }
+        "evidence": "Seller text retrieved via web; exact option U-25093. No checkout performed."
+      },
+      "price_options": [
+        {
+          "kind": "coupon",
+          "product_id": "deal-ugreen-100w-gan",
+          "variant": "U-25093 · 100W",
+          "currency": "KRW",
+          "price": 61850,
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+          "checked_at": "2026-11-16T13:43:26.443786+00:00",
+          "evidence": "Exact U-25093 seller listing: base KRW 65,100; named 5% digital/appliance coupon deducts KRW 3,250 to KRW 61,850; eligible Samsung card further KRW 2,000 to KRW 59,850. Checkout eligibility and stock not tested.",
+          "conditions": {
+            "ko": "5% 디지털/가전 쿠폰 적용 시 · 대상 여부 결제 전 확인",
+            "en": "With eligible 5% digital/appliance coupon; verify eligibility at checkout",
+            "zh": "适用5%数码家电券时；结账前确认资格",
+            "ja": "対象の5%デジタル家電クーポン適用時・決済時に確認",
+            "es": "Con cupón elegible del 5%; confirmar al pagar",
+            "fr": "Avec coupon éligible de 5 % ; vérifier au paiement"
+          }
+        },
+        {
+          "kind": "payment",
+          "product_id": "deal-ugreen-100w-gan",
+          "variant": "U-25093 · 100W",
+          "currency": "KRW",
+          "price": 59850,
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4661908147",
+          "checked_at": "2026-11-16T13:43:26.443786+00:00",
+          "evidence": "Exact U-25093 seller listing: base KRW 65,100; named 5% digital/appliance coupon deducts KRW 3,250 to KRW 61,850; eligible Samsung card further KRW 2,000 to KRW 59,850. Checkout eligibility and stock not tested.",
+          "conditions": {
+            "ko": "쿠폰 + 대상 삼성카드 5만원 이상 결제 할인 2,000원 · 적용 조건 확인",
+            "en": "Coupon plus eligible Samsung card KRW 2,000 discount on KRW 50,000+ payment; conditions apply",
+            "zh": "优惠券加符合条件的三星卡满50,000韩元减2,000；需符合条件",
+            "ja": "クーポン＋対象Samsungカード50,000ウォン以上で2,000ウォン引き・条件あり",
+            "es": "Cupón más tarjeta Samsung elegible: descuento de KRW 2.000 al pagar KRW 50.000+; sujeto a condiciones",
+            "fr": "Coupon et carte Samsung éligible : réduction de KRW 2 000 dès KRW 50 000 de paiement ; sous conditions"
+          }
+        }
+      ],
+      "price_variant": "U-25093 · 100W"
     },
     {
       "id": "deal-artmu-100w-gb102",
