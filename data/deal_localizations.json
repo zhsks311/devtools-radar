@@ -1705,32 +1705,38 @@
     "en": {
       "product": "Google Play KRW100,000 gift code",
       "summary": "A digital code for adding KRW100,000 of Google Play credit for eligible purchases.",
-      "conditions": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+      "conditions": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim.",
+      "purpose": "A digital code for adding KRW100,000 of Google Play credit for eligible purchases."
     },
     "ko": {
       "product": "Google Play 기프트코드 · 10만원권",
       "summary": "Google Play의 지원되는 구매에 쓰는 잔액 10만원을 충전하는 디지털 코드.",
-      "conditions": "액면 10만원 코드의 표시가는 92,000원입니다. 하루 1개 제한이며 결제 후 모바일로 발송됩니다(지연 가능). 판매페이지에 구매일부터 1,825일과 발행일부터 5년이 함께 기재되어 있으므로 수신한 코드의 유효기간을 확인하세요. 판매처는 미사용 기한 만료 후 구매금의 95% 환불을 안내합니다. 계정 국가 조건·잔액 환급 세부 규정·최종 결제는 미확인입니다."
+      "conditions": "액면 10만원 코드의 표시가는 92,000원입니다. 하루 1개 제한이며 결제 후 모바일로 발송됩니다(지연 가능). 판매페이지에 구매일부터 1,825일과 발행일부터 5년이 함께 기재되어 있으므로 수신한 코드의 유효기간을 확인하세요. 판매처는 미사용 기한 만료 후 구매금의 95% 환불을 안내합니다. 계정 국가 조건·잔액 환급 세부 규정·최종 결제는 미확인입니다.",
+      "purpose": "Google Play의 지원되는 구매에 쓰는 잔액 10만원을 충전하는 디지털 코드."
     },
     "zh": {
       "product": "Google Play KRW100,000 gift code",
       "summary": "用于充值10万韩元 Google Play 余额并购买符合条件内容的数字代码。",
-      "conditions": "面值10万韩元，标价92,000韩元：卖家优惠6,000加平台2,000。每天限1个，显示可购1个。付款后手机发送，可能延迟。卖家标注1,825天/发行起五年，未使用过期码退购买价95%。账户地区、余额退款细则及结账未验证，不宣称历史最低价。"
+      "conditions": "面值10万韩元，标价92,000韩元：卖家优惠6,000加平台2,000。每天限1个，显示可购1个。付款后手机发送，可能延迟。卖家标注1,825天/发行起五年，未使用过期码退购买价95%。账户地区、余额退款细则及结账未验证，不宣称历史最低价。",
+      "purpose": "用于充值10万韩元 Google Play 余额并购买符合条件内容的数字代码。"
     },
     "ja": {
       "product": "Google Play KRW100,000 gift code",
       "summary": "対象コンテンツの購入に使うGoogle Play残高10万ウォンを追加するデジタルコード。",
-      "conditions": "額面10万ウォン、表示92,000ウォン（販売者6,000＋Gmarket2,000引き）。1日1個、購入可能1個。決済後電子送信、遅延あり。販売者表記は1,825日／発行から5年、未使用期限切れは購入額95%返金。アカウント地域・残高返金詳細・決済は未確認。過去最安値とは主張しません。"
+      "conditions": "額面10万ウォン、表示92,000ウォン（販売者6,000＋Gmarket2,000引き）。1日1個、購入可能1個。決済後電子送信、遅延あり。販売者表記は1,825日／発行から5年、未使用期限切れは購入額95%返金。アカウント地域・残高返金詳細・決済は未確認。過去最安値とは主張しません。",
+      "purpose": "対象コンテンツの購入に使うGoogle Play残高10万ウォンを追加するデジタルコード。"
     },
     "es": {
       "product": "Google Play KRW100,000 gift code",
       "summary": "Código digital para añadir 100.000 KRW de saldo Google Play para compras admitidas.",
-      "conditions": "Precio92.000 KRW por saldo100.000: descuento vendedor6.000 y Gmarket2.000. Uno al día, uno disponible mostrado. Envío móvil tras pagar, posibles retrasos. Vendedor:1.825 días/cinco años desde emisión; código sin usar caducado, devolución95% del precio pagado. País de cuenta, reembolso de saldo y pago no verificados. No se afirma mínimo histórico."
+      "conditions": "Precio92.000 KRW por saldo100.000: descuento vendedor6.000 y Gmarket2.000. Uno al día, uno disponible mostrado. Envío móvil tras pagar, posibles retrasos. Vendedor:1.825 días/cinco años desde emisión; código sin usar caducado, devolución95% del precio pagado. País de cuenta, reembolso de saldo y pago no verificados. No se afirma mínimo histórico.",
+      "purpose": "Código digital para añadir 100.000 KRW de saldo Google Play para compras admitidas."
     },
     "fr": {
       "product": "Google Play KRW100,000 gift code",
       "summary": "Code numérique ajoutant 100 000 KRW de crédit Google Play pour les achats admissibles.",
-      "conditions": "92 000 KRW affichés pour100 000 KRW de crédit : remise vendeur6 000 et Gmarket2 000. Un par jour, un disponible affiché. Envoi mobile après paiement, retard possible. Vendeur :1 825 jours/cinq ans dès émission ; code inutilisé expiré remboursé à95% du prix payé. Pays du compte, remboursement du solde et paiement non vérifiés. Aucun minimum historique affirmé."
+      "conditions": "92 000 KRW affichés pour100 000 KRW de crédit : remise vendeur6 000 et Gmarket2 000. Un par jour, un disponible affiché. Envoi mobile après paiement, retard possible. Vendeur :1 825 jours/cinq ans dès émission ; code inutilisé expiré remboursé à95% du prix payé. Pays du compte, remboursement du solde et paiement non vérifiés. Aucun minimum historique affirmé.",
+      "purpose": "Code numérique ajoutant 100 000 KRW de crédit Google Play pour les achats admissibles."
     }
   },
   "ps5-dualsense-midnight-black-kr": {

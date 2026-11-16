@@ -18,7 +18,7 @@ class HeldPublicSurfaceTests(unittest.TestCase):
     card=re.search(r'<article[^>]*data-id="'+re.escape(d['id'])+r'".*?</article>',page,re.S).group()
     for bad in ('<pre','<details','href=', 'seller_url', '6W', '1,000원 안팎','가성비 종결'):
      self.assertNotIn(bad,card)
-    self.assertIn(i.HELD_SUMMARY[lang],card)
+    self.assertIn(i.SOLD_OUT_LABEL[lang] if (d.get("availability_review") or {}).get("status")=="sold_out" else i.HELD_SUMMARY[lang],card)
     self.assertIn(i.PRICE_RECORDED[lang],card)
   self.assertEqual(before,held)
  def test_nested_rejected_urls_and_ads_cannot_reappear(self):

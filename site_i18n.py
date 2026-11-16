@@ -200,6 +200,7 @@ NO_ACTIVE_AFFILIATES = {
  'es': 'Este catálogo no tiene actualmente enlaces de compra con comisión. Consulta la fecha de revisión del precio y las condiciones de cada oferta.',
  'fr': 'Ce catalogue ne contient actuellement aucun lien d’achat rémunéré. Consultez la date de vérification du prix et les conditions de chaque offre.'
 }
+SOLD_OUT_LABEL = {'ko':'품절 · 판매처에서 현재 구매할 수 없습니다.','en':'Sold out · currently unavailable from the seller.','zh':'已售罄 · 卖家目前无法供货。','ja':'売り切れ・現在販売元で購入できません。','es':'Agotado · no disponible actualmente en la tienda.','fr':'Épuisé · actuellement indisponible chez le vendeur.'}
 def catalogue(lang,feeds,translations,discoveries=False):
  t=LABELS[lang]; f=FILTER_TEXT[lang]; discovery_cards=candidate_cards(lang) if discoveries else []; cards=[]; held_cards=[]; discovery_count=len(discovery_cards); active_affiliates=0
  for d in feeds:
@@ -213,8 +214,9 @@ def catalogue(lang,feeds,translations,discoveries=False):
   # their source/briefing/price_review objects (including rejected search URLs).
   # Keep only catalogue identity and explicitly historical price in public output.
   if not publishable_link(d):
+   held_summary = SOLD_OUT_LABEL[lang] if (d.get('availability_review') or {}).get('status') == 'sold_out' else HELD_SUMMARY[lang]
    held_discount = NOT_DISCOUNT[lang] if (d.get('price_review') or {}).get('deal_status') == 'not_a_discount' else DISCOUNT_UNKNOWN[lang]
-   held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-category="{e(cat)}">{illustration(d,lang)}<div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p class="product-summary">{e(loc.get("purpose",""))}</p><p>{e(HELD_SUMMARY[lang])}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
+   held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-category="{e(cat)}">{illustration(d,lang)}<div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p class="product-summary">{e(loc.get("purpose",""))}</p><p>{e(held_summary)}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
    continue
   media=d.get('image') or {};image=''
   if media.get('path'):

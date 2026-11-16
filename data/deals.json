@@ -2046,11 +2046,12 @@
         "label_kind": "retailer"
       },
       "link_review": {
-        "status": "verified_detail",
-        "checked_at": "2026-11-16T06:31:06+00:00",
+        "status": "held",
+        "checked_at": "2026-11-16T08:50:40.136437+00:00",
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
         "product_match": true,
-        "evidence": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+        "evidence": "Seller page now displays SOLD OUT and no current price. Purchase limit of one per day is not stock availability. Previous KRW92,000 is historical only.",
+        "reason": "Seller page now displays SOLD OUT and no current price. Purchase limit of one per day is not stock availability. Previous KRW92,000 is historical only."
       },
       "price_review": {
         "id": "google-play-100k-kr",
@@ -2058,20 +2059,26 @@
         "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
         "recorded_price": 92000,
         "currency": "KRW",
-        "price_status": "seller_page_display_confirmed",
-        "verified_price": 92000,
-        "deal_status": "comparison_unverified",
+        "price_status": "unverified",
+        "verified_price": null,
+        "deal_status": "unverified",
         "evidence": [
           {
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
             "observed_at": "2026-11-16T06:31:06+00:00",
             "result": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+          },
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "observed_at": "2026-11-16T08:50:40.136437+00:00",
+            "result": "Seller page now displays SOLD OUT and no current price. Purchase limit of one per day is not stock availability. Previous KRW92,000 is historical only."
           }
         ],
         "limitations": [
           "Checkout and independent market low unverified."
         ],
-        "review_completed_at": "2026-11-16T06:31:06+00:00"
+        "review_completed_at": "2026-11-16T08:50:40.136437+00:00",
+        "previous_verified_price": 92000
       },
       "country_targeting": {
         "countries": [
@@ -2092,6 +2099,19 @@
         "returns": "Not fully reviewed",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
         "checked_at": "2026-11-16"
+      },
+      "previous_link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T06:31:06+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+        "product_match": true,
+        "evidence": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+      },
+      "availability_review": {
+        "status": "sold_out",
+        "checked_at": "2026-11-16T08:50:40.136437+00:00",
+        "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+        "evidence": "Seller page now displays SOLD OUT and no current price. Purchase limit of one per day is not stock availability. Previous KRW92,000 is historical only."
       }
     },
     {
@@ -2511,11 +2531,12 @@
             "label_kind": "retailer"
           },
           "link_review": {
-            "status": "verified_detail",
-            "checked_at": "2026-11-16T06:31:06+00:00",
+            "status": "held",
+            "checked_at": "2026-11-16T08:50:40.136437+00:00",
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
             "product_match": true,
-            "evidence": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+            "evidence": "Seller page now displays SOLD OUT and no current price. Purchase limit of one per day is not stock availability. Previous KRW92,000 is historical only.",
+            "reason": "Seller page now displays SOLD OUT and no current price. Purchase limit of one per day is not stock availability. Previous KRW92,000 is historical only."
           },
           "price_review": {
             "id": "google-play-100k-kr",
@@ -2523,20 +2544,26 @@
             "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
             "recorded_price": 92000,
             "currency": "KRW",
-            "price_status": "seller_page_display_confirmed",
-            "verified_price": 92000,
-            "deal_status": "comparison_unverified",
+            "price_status": "unverified",
+            "verified_price": null,
+            "deal_status": "unverified",
             "evidence": [
               {
                 "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
                 "observed_at": "2026-11-16T06:31:06+00:00",
                 "result": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+              },
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+                "observed_at": "2026-11-16T08:50:40.136437+00:00",
+                "result": "Seller page now displays SOLD OUT and no current price. Purchase limit of one per day is not stock availability. Previous KRW92,000 is historical only."
               }
             ],
             "limitations": [
               "Checkout and independent market low unverified."
             ],
-            "review_completed_at": "2026-11-16T06:31:06+00:00"
+            "review_completed_at": "2026-11-16T08:50:40.136437+00:00",
+            "previous_verified_price": 92000
           },
           "country_targeting": {
             "countries": [
@@ -2557,6 +2584,19 @@
             "returns": "Not fully reviewed",
             "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
             "checked_at": "2026-11-16"
+          },
+          "previous_link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-16T06:31:06+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "product_match": true,
+            "evidence": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+          },
+          "availability_review": {
+            "status": "sold_out",
+            "checked_at": "2026-11-16T08:50:40.136437+00:00",
+            "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "evidence": "Seller page now displays SOLD OUT and no current price. Purchase limit of one per day is not stock availability. Previous KRW92,000 is historical only."
           }
         }
       ]
@@ -4460,7 +4500,7 @@
     "feed": 23,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 8,
+    "verified_product_links": 7,
     "held_product_links": 15,
     "historical_tracked_links": 14
   }
