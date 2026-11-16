@@ -3412,6 +3412,24 @@
         "observed_at": "2026-11-16T16:33:15.202768+00:00",
         "source_url": "https://www.drbuho.com/buhobarx",
         "evidence": "Live product Buy Now navigates to official Black Friday BuhoBarX section. Paddle order summary identifies BuhoBarX Lifetime - Single (1 Mac), quantity 1, USD7.99 subtotal. Tax calculated at next step; no email, address or payment entered. Country list includes KR/CN/JP/US/FR/ES/AU but successful billing and activation not tested."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-16T17:14:46.739709+00:00",
+        "sources": [
+          {
+            "url": "https://www.drbuho.com/buhobarx/guide/activate-buhobarx",
+            "label": "BuhoBarX · 7-day trial"
+          },
+          {
+            "url": "https://github.com/jordanbaird/Ice",
+            "label": "Ice · GPL-3.0 · macOS14+"
+          },
+          {
+            "url": "https://github.com/Sh7ne/Ice-macOS-Menu-Bar-Manager/releases",
+            "label": "Ice fork · macOS27 preview limitations"
+          }
+        ],
+        "evidence": "Vendor guide offers full7daytrial then paidlicence. UpstreamIce GPL3, macOS14+, free download. Sh7ne fork preview3 separately experimentalmacOS27: IceBar/dividerdragging unavailable and some systemicons affected; not upstreamstable. No installation, feature equivalence or compatibility testing performed."
       }
     },
     {

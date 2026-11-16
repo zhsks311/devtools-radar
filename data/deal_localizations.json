@@ -1922,37 +1922,43 @@
       "product": "BuhoBarX · Mac 1대 · 평생 라이선스",
       "summary": "메뉴바에서 덜 쓰는 아이콘을 숨기고, 노치에 가린 아이콘을 펼쳐 쓰는 Mac 앱.",
       "purpose": "메뉴바에서 덜 쓰는 아이콘을 숨기고, 노치에 가린 아이콘을 펼쳐 쓰는 Mac 앱.",
-      "conditions": "macOS14 이상, 1대용 일회성 구매. $7.99는 소계로 세금·최종금액 미확인. 한국 등 결제 국가 선택지 있음; 결제·활성화 미검증. 30일 환불 요청 가능하나 잘못된 플랫폼·환경 문제 등 예외. 할인율·최저가 주장은 하지 않음."
+      "conditions": "macOS14 이상, 1대용 일회성 구매. $7.99는 소계로 세금·최종금액 미확인. 한국 등 결제 국가 선택지 있음; 결제·활성화 미검증. 30일 환불 요청 가능하나 잘못된 플랫폼·환경 문제 등 예외. 할인율·최저가 주장은 하지 않음.",
+      "buying_note": "결제 전 공식 7일 전체 기능 체험판부터 써보세요. 무료 오픈소스 Ice(macOS14+)도 메뉴바 정리 대안입니다. 기능·호환성이 같다는 뜻은 아닙니다. 별도 Sh7ne 포크의 macOS27 실험판은 Ice Bar·구분선 드래그 미지원 및 일부 시스템 아이콘 제한이 있어 안정판처럼 권하지 않습니다. 설치·실행 테스트는 하지 않았습니다."
     },
     "en": {
       "product": "BuhoBarX · 1 Mac · Lifetime",
       "summary": "Hide less-used menu-bar icons and reach icons obscured by the Mac notch.",
       "purpose": "Hide less-used menu-bar icons and reach icons obscured by the Mac notch.",
-      "conditions": "macOS14+, one Mac, one-time licence. $7.99 subtotal; final tax/total unverified. Korea and other checkout countries listed, billing/activation untested. Refund requests within 30 days, with platform/environment exclusions. No lowest-price claim."
+      "conditions": "macOS14+, one Mac, one-time licence. $7.99 subtotal; final tax/total unverified. Korea and other checkout countries listed, billing/activation untested. Refund requests within 30 days, with platform/environment exclusions. No lowest-price claim.",
+      "buying_note": "Try BuhoBarX’s full7-day trial before paying. Free open-source Ice(macOS14+) is another menu-bar option, not feature-equivalent or tested here. The separate Sh7ne fork’s experimental macOS27 preview lacks Ice Bar/divider dragging and has system-icon limits; it is not upstream stable."
     },
     "zh": {
       "product": "BuhoBarX · 1台Mac · 终身许可",
       "summary": "隐藏少用的菜单栏图标，展开被Mac刘海遮住的图标。",
       "purpose": "隐藏少用的菜单栏图标，展开被Mac刘海遮住的图标。",
-      "conditions": "macOS14以上，1台Mac，一次付费。$7.99为小计，最终税费未核实。结账国家含韩国等，不保证付款或激活。30天内申请退款，错误平台及环境问题等除外。不宣称最低价。"
+      "conditions": "macOS14以上，1台Mac，一次付费。$7.99为小计，最终税费未核实。结账国家含韩国等，不保证付款或激活。30天内申请退款，错误平台及环境问题等除外。不宣称最低价。",
+      "buying_note": "付费前先试BuhoBarX的7天完整试用。免费开源Ice(macOS14+)也是菜单栏管理选择，但不保证功能相同或兼容。独立Sh7ne分支的macOS27实验版缺少Ice Bar及分隔线拖动，部分系统图标受限，并非上游稳定版。未安装测试。"
     },
     "ja": {
       "product": "BuhoBarX · Mac1台 · 買い切り",
       "summary": "使わないメニューバーアイコンを隠し、ノッチに隠れたアイコンを開くMacアプリ。",
       "purpose": "使わないメニューバーアイコンを隠し、ノッチに隠れたアイコンを開くMacアプリ。",
-      "conditions": "macOS14以降、1台、買い切り。$7.99は小計、税・最終額未確認。韓国等の国選択あり、決済・有効化未検証。30日以内の返金申請可、誤ったOS・動作環境等は対象外の場合あり。最安値の主張なし。"
+      "conditions": "macOS14以降、1台、買い切り。$7.99は小計、税・最終額未確認。韓国等の国選択あり、決済・有効化未検証。30日以内の返金申請可、誤ったOS・動作環境等は対象外の場合あり。最安値の主張なし。",
+      "buying_note": "購入前にBuhoBarXの全機能7日間体験を。無料オープンソースIce(macOS14+)も候補ですが同等機能・互換性は未検証です。別のSh7neフォークのmacOS27実験版はIce Bar・区切りドラッグ非対応、一部システムアイコンに制限。上流安定版ではなく、実行未検証です。"
     },
     "es": {
       "product": "BuhoBarX · 1 Mac · De por vida",
       "summary": "Oculta iconos poco usados y accede a los tapados por la muesca del Mac.",
       "purpose": "Oculta iconos poco usados y accede a los tapados por la muesca del Mac.",
-      "conditions": "macOS14+, un Mac, pago único. Subtotal $7.99; impuestos y total sin verificar. Selector incluye Corea; pago/activación no probados. Solicitud de reembolso en 30 días con exclusiones por plataforma/entorno. Sin promesa de precio mínimo."
+      "conditions": "macOS14+, un Mac, pago único. Subtotal $7.99; impuestos y total sin verificar. Selector incluye Corea; pago/activación no probados. Solicitud de reembolso en 30 días con exclusiones por plataforma/entorno. Sin promesa de precio mínimo.",
+      "buying_note": "Prueba los7días completos de BuhoBarX antes de pagar. Ice es una alternativa gratuita y abierta(macOS14+), sin equivalencia funcional ni pruebas propias. La versión experimental macOS27 del fork separado Sh7ne carece de Ice Bar y arrastre de separadores y limita iconos del sistema; no es la versión estable original."
     },
     "fr": {
       "product": "BuhoBarX · 1 Mac · À vie",
       "summary": "Masquez les icônes peu utilisées et accédez à celles cachées par l’encoche du Mac.",
       "purpose": "Masquez les icônes peu utilisées et accédez à celles cachées par l’encoche du Mac.",
-      "conditions": "macOS14+, un Mac, achat unique. Sous-total $7.99 ; taxes et total non vérifiés. Corée proposée, paiement/activation non testés. Demande de remboursement sous 30 jours, exclusions de plateforme/environnement. Aucun prix le plus bas annoncé."
+      "conditions": "macOS14+, un Mac, achat unique. Sous-total $7.99 ; taxes et total non vérifiés. Corée proposée, paiement/activation non testés. Demande de remboursement sous 30 jours, exclusions de plateforme/environnement. Aucun prix le plus bas annoncé.",
+      "buying_note": "Essayez les7jours complets de BuhoBarX avant d’acheter. Ice, gratuit et open source(macOS14+), est une autre option, sans équivalence ni test pratique garanti. La préversion macOS27 du fork distinct Sh7ne n’a pas Ice Bar ni déplacement des séparateurs et limite certains icônes système; ce n’est pas la version stable d’origine."
     }
   },
   "rhino-voice-1-mac": {
