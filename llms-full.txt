@@ -1535,4 +1535,12 @@ Recorded price: 74.5 USD. Seller price observation dated 2026-11-16T08:59:09.753
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
+### Snippety Pro · all Apple devices
+Seller: Apple App Store US
+Product URL: https://apps.apple.com/us/app/snippety-snippets-manager/id1530751461?platform=mac
+Product-link review: 2026-11-16T11:10:35.718264+00:00 (not a stock check)
+Recorded price: 29.99 USD. Seller price observation dated 2026-11-16T11:10:35.718264+00:00.
+Delivery / activation countries with evidence: US.
+Discounts and historical-low claims are not established by this export.
+
 16 held source records are omitted from this export; their purchase links are not verified.
