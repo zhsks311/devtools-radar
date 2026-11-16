@@ -1299,7 +1299,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Gmarket · 에이스네트웍
 Product URL: https://item.gmarket.co.kr/Item?goodsCode=4661908147
 Product-link review: 2026-11-14T12:43:08.562400+00:00 (not a stock check)
-Recorded price: 65100 KRW. Seller price observation dated 2026-11-14T12:43:08.562400+00:00.
+Recorded price: 65100 KRW. Seller price observation dated 2026-11-16T13:43:26.443786+00:00.
 Delivery / activation countries with evidence: KR.
 Discounts and historical-low claims are not established by this export.
 
