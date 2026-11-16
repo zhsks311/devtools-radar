@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T18:42:16.768851+00:00",
+  "generated_at": "2026-11-16T14:15:26.020635+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -3234,6 +3234,94 @@
         }
       },
       "expires_at": null
+    },
+    {
+      "id": "wpdatatables-1-code",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "wpDataTables · 1 Code · 5 Domains",
+      "product": "wpDataTables · 1 Code · 5 Domains",
+      "store": "AppSumo",
+      "storefront_country": null,
+      "price": 69,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital licence",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "WordPress plugin for searchable tables and charts from spreadsheet or database data.",
+        "5 domains; lifetime access; redeem within 60 days. Country eligibility and taxes unverified."
+      ],
+      "audience": "WordPress site owners publishing data tables.",
+      "source": {
+        "id": "appsumo",
+        "label": "AppSumo product detail",
+        "url": "https://appsumo.com/products/wpdatatables/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-16",
+      "score": null,
+      "disclosure": "No affiliate tracking; seller price, not guaranteed checkout total.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "price_variant": "1 Code · 5 Domains",
+      "link": {
+        "url": "https://appsumo.com/products/wpdatatables/",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T14:15:26.020635+00:00",
+        "url": "https://appsumo.com/products/wpdatatables/",
+        "product_match": true,
+        "evidence": "Live AppSumo browser: selected 1 Code, 5 Domains, USD 69 once with Buy now/Get lifetime access controls. Search extract still showed expired USD 59 Plus early access; current browser price takes precedence. Lifetime and future Developer Plan updates; redeem within 60 days; new users and returning AppSumo purchasers; refundable up to 60 days. Checkout, country eligibility and tax untested."
+      },
+      "price_review": {
+        "id": "wpdatatables-1-code",
+        "product": "wpDataTables · 1 Code · 5 Domains",
+        "seller_url": "https://appsumo.com/products/wpdatatables/",
+        "recorded_price": 69,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 69,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://appsumo.com/products/wpdatatables/",
+            "observed_at": "2026-11-16T14:15:26.020635+00:00",
+            "result": "Live AppSumo browser: selected 1 Code, 5 Domains, USD 69 once with Buy now/Get lifetime access controls. Search extract still showed expired USD 59 Plus early access; current browser price takes precedence. Lifetime and future Developer Plan updates; redeem within 60 days; new users and returning AppSumo purchasers; refundable up to 60 days. Checkout, country eligibility and tax untested."
+          }
+        ],
+        "review_completed_at": "2026-11-16T14:15:26.020635+00:00",
+        "limitations": [
+          "Seller USD 289 reference and 76% comparison not independently matched; no strike-through or percentage reproduced. Extra 10% campaign banner not applied without product-specific checkout verification. WordPress hosting and optional add-on costs not included or verified. No country eligibility claim."
+        ]
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital WordPress plugin; no physical shipping.",
+        "activation": "Redeem within 60 days; new wpDataTables users and previous AppSumo wpDataTables purchasers.",
+        "payment": "Country eligibility, including Korea, not tested.",
+        "tax": "Final tax and checkout total unverified.",
+        "returns": "Seller states refundable up to 60 days.",
+        "evidence_url": "https://appsumo.com/products/wpdatatables/",
+        "checked_at": "2026-11-16T14:15:26.020635+00:00"
+      },
+      "latest_offer_check": {
+        "status": "price_and_purchase_ui_confirmed",
+        "price": 69,
+        "currency": "USD",
+        "observed_at": "2026-11-16T14:15:26.020635+00:00",
+        "source_url": "https://appsumo.com/products/wpdatatables/",
+        "evidence": "Live AppSumo browser: selected 1 Code, 5 Domains, USD 69 once with Buy now/Get lifetime access controls. Search extract still showed expired USD 59 Plus early access; current browser price takes precedence. Lifetime and future Developer Plan updates; redeem within 60 days; new users and returning AppSumo purchasers; refundable up to 60 days. Checkout, country eligibility and tax untested."
+      }
     }
   ],
   "picks": [
@@ -5922,7 +6010,7 @@
     }
   },
   "stats": {
-    "feed": 26,
+    "feed": 27,
     "sources": 8
   }
 }

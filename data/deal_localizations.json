@@ -1878,5 +1878,43 @@
       "purpose": "Explorez des lieux inquiétants et cherchez la sortie en équipe, jusqu’à quatre joueurs.",
       "conditions": "Jeu de base : 6 900 KRW ; référence vendeur : 10 500 KRW. Activation et jeu en Corée/Japon uniquement. Fin le 24 novembre à 23 h 59, fuseau non précisé. Paiement et minimum historique non vérifiés."
     }
+  },
+  "wpdatatables-1-code": {
+    "ko": {
+      "product": "wpDataTables · 1코드 · 5도메인",
+      "summary": "엑셀·CSV·데이터베이스 자료를 워드프레스의 검색 가능한 표와 차트로 만드는 플러그인.",
+      "purpose": "엑셀·CSV·데이터베이스 자료를 워드프레스의 검색 가능한 표와 차트로 만드는 플러그인.",
+      "conditions": "1코드·5도메인 평생 이용. 60일 내 등록, 신규 또는 기존 AppSumo wpDataTables 구매자 대상. 환불 60일. 호스팅·선택 애드온 비용 별도 확인. 국가·세금 미확인. 추가 10%는 미적용 표시가."
+    },
+    "en": {
+      "product": "wpDataTables · 1 Code · 5 Domains",
+      "summary": "Turn spreadsheet and database data into searchable WordPress tables and charts.",
+      "purpose": "Turn spreadsheet and database data into searchable WordPress tables and charts.",
+      "conditions": "1 code, 5 domains, lifetime. Redeem within 60 days; new users or previous AppSumo wpDataTables buyers. 60-day refund. Check hosting/add-on costs. Countries/taxes unverified; extra 10% not applied."
+    },
+    "zh": {
+      "product": "wpDataTables · 1个代码 · 5个域名",
+      "summary": "将电子表格和数据库数据转换为可搜索的WordPress表格和图表。",
+      "purpose": "将电子表格和数据库数据转换为可搜索的WordPress表格和图表。",
+      "conditions": "1代码、5域名、终身使用。60天内激活；新用户或此前通过AppSumo购买wpDataTables的客户。60天退款。托管及附加组件费用另查。国家及税费未核实；未计算额外10%。"
+    },
+    "ja": {
+      "product": "wpDataTables · 1コード · 5ドメイン",
+      "summary": "スプレッドシートやデータベースを検索可能なWordPressの表・グラフにするプラグイン。",
+      "purpose": "スプレッドシートやデータベースを検索可能なWordPressの表・グラフにするプラグイン。",
+      "conditions": "1コード・5ドメイン・買い切り。60日以内に登録。新規またはAppSumoでwpDataTablesを購入済みの方向け、60日返金。ホスティング・追加機能の費用は要確認。国・税未確認、追加10%未適用。"
+    },
+    "es": {
+      "product": "wpDataTables · 1 código · 5 dominios",
+      "summary": "Convierte hojas de cálculo y datos en tablas y gráficos buscables en WordPress.",
+      "purpose": "Convierte hojas de cálculo y datos en tablas y gráficos buscables en WordPress.",
+      "conditions": "1 código, 5 dominios, de por vida. Activar en 60 días; usuarios nuevos o compradores anteriores de wpDataTables en AppSumo. Reembolso de 60 días. Alojamiento y extras aparte. Países/impuestos sin verificar; sin 10% adicional."
+    },
+    "fr": {
+      "product": "wpDataTables · 1 code · 5 domaines",
+      "summary": "Transformez vos données en tableaux et graphiques consultables dans WordPress.",
+      "purpose": "Transformez vos données en tableaux et graphiques consultables dans WordPress.",
+      "conditions": "1 code, 5 domaines, à vie. Activer sous 60 jours ; nouveaux utilisateurs ou anciens acheteurs de wpDataTables sur AppSumo. Remboursement sous 60 jours. Hébergement et extensions à vérifier. Pays/taxes non vérifiés ; sans remise supplémentaire de 10 %."
+    }
   }
 }

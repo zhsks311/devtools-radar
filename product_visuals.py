@@ -12,6 +12,8 @@ def illustration(deal,lang):
         art='<rect x="110" y="35" width="140" height="145" rx="18"/><path class="accent" d="M185 65l-28 45h25l-12 40 35-54h-25z"/>'
     elif any(x in text for x in ('gan','gb102','charger')):
         art='<rect x="105" y="70" width="150" height="105" rx="20"/><path d="M155 70V40M205 70V40"/><path class="accent" d="M185 90l-23 32h22l-9 30 27-42h-22z"/>'
+    elif 'wpdatatables' in ident:
+        art='<rect x="45" y="40" width="150" height="130" rx="8"/><path d="M45 72h150M45 104h150M45 136h150M95 40v130M145 40v130"/><path class="accent" d="M225 170V115h20v55m15 0V85h20v85m15 0V55h20v115"/>'
     elif 'snippety' in ident:
         art='<rect x="35" y="78" width="85" height="55" rx="8"/><path class="accent" d="M140 105h40m-13-13 13 13-13 13"/><rect x="200" y="35" width="125" height="140" rx="8"/><path d="M218 65h88M218 87h70M218 109h80M218 131h55"/><text x="78" y="111">;text</text>'
     elif 'chronoid' in ident:
