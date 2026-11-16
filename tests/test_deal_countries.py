@@ -73,7 +73,7 @@ class CountryTests(unittest.TestCase):
             self.assertTrue(all(len(site_i18n.FILTER_TEXT[lang][i]) > 0 for i in range(20)))
     def test_link_verified_price_unverified_does_not_claim_unknown_identity(self):
         page = site_i18n.catalogue('en', [next(d for d in self.feed if d['id'] == 'lenovo-gk10-rt60-cn')], self.tr)
-        self.assertIn('Magnetic-switch keyboard in black.', page)
+        self.assertIn(self.tr['lenovo-gk10-rt60-cn']['en']['summary'], page)
         self.assertNotIn('Product identity and current price need verification.', page)
     def test_koofr_limit_is_per_person_not_account(self):
         expected = {'en': 'per person for their lifetime', 'ko': '1인당 평생 코드 1개',

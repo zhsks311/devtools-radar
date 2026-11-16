@@ -185,7 +185,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
   # Keep only catalogue identity and explicitly historical price in public output.
   if not publishable_link(d):
    held_discount = NOT_DISCOUNT[lang] if (d.get('price_review') or {}).get('deal_status') == 'not_a_discount' else DISCOUNT_UNKNOWN[lang]
-   held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-category="{e(cat)}"><div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p>{e(HELD_SUMMARY[lang])}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
+   held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-category="{e(cat)}">{illustration(d,lang)}<div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p class="product-summary">{e(loc.get("purpose",""))}</p><p>{e(HELD_SUMMARY[lang])}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
    continue
   media=d.get('image') or {};image=''
   if media.get('path'):
