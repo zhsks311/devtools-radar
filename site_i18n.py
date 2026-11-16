@@ -173,6 +173,7 @@ CANDIDATE_SECTION = {
 }
 PRODUCT_PERMALINK = {'en':'Link to this product', 'ko':'이 상품 바로가기', 'zh':'此商品链接', 'ja':'この商品のリンク', 'es':'Enlace a este producto', 'fr':'Lien vers ce produit'}
 BILLING_KIND = {
+ 'ps5-dualsense-midnight-black-kr': 'coupon',
  'adobe-creative-cloud-kr-bf-monthly-annual': 'monthly_annual',
  'proton-mail-plus-black-friday-annual': 'first_year',
  'proton-drive-plus-black-friday-annual': 'first_year',
@@ -180,12 +181,12 @@ BILLING_KIND = {
  'hostinger-premium-black-friday-48-months': 'four_years',
 }
 BILLING_LABELS = {
- 'ko': {'monthly_annual':'/월 · 첫해, 12개월 약정','first_year':'첫 12개월 총액 · 선결제','four_years':'48개월 총액 · 선결제'},
- 'en': {'monthly_annual':'/month · first year, 12-month commitment','first_year':'First 12 months total · prepaid','four_years':'48 months total · prepaid'},
- 'zh': {'monthly_annual':'/月 · 首年，须承诺12个月','first_year':'首12个月总额 · 预付','four_years':'48个月总额 · 预付'},
- 'ja': {'monthly_annual':'/月・初年度、12か月契約','first_year':'最初の12か月の総額・前払い','four_years':'48か月の総額・前払い'},
- 'es': {'monthly_annual':'/mes · primer año, compromiso de 12 meses','first_year':'Total primeros 12 meses · prepago','four_years':'Total 48 meses · prepago'},
- 'fr': {'monthly_annual':'/mois · première année, engagement de 12 mois','first_year':'Total des 12 premiers mois · prépayé','four_years':'Total de 48 mois · prépayé'},
+ 'ko': {'coupon':'10% 쿠폰 적용가', 'monthly_annual':'/월 · 첫해, 12개월 약정','first_year':'첫 12개월 총액 · 선결제','four_years':'48개월 총액 · 선결제'},
+ 'en': {'coupon':'With the 10% coupon', 'monthly_annual':'/month · first year, 12-month commitment','first_year':'First 12 months total · prepaid','four_years':'48 months total · prepaid'},
+ 'zh': {'coupon':'使用九折优惠券后的价格', 'monthly_annual':'/月 · 首年，须承诺12个月','first_year':'首12个月总额 · 预付','four_years':'48个月总额 · 预付'},
+ 'ja': {'coupon':'10%クーポン適用価格', 'monthly_annual':'/月・初年度、12か月契約','first_year':'最初の12か月の総額・前払い','four_years':'48か月の総額・前払い'},
+ 'es': {'coupon':'Con el cupón del 10%', 'monthly_annual':'/mes · primer año, compromiso de 12 meses','first_year':'Total primeros 12 meses · prepago','four_years':'Total 48 meses · prepago'},
+ 'fr': {'coupon':'Avec le coupon de 10 %', 'monthly_annual':'/mois · première année, engagement de 12 mois','first_year':'Total des 12 premiers mois · prépayé','four_years':'Total de 48 mois · prépayé'},
 }
 def billing_label(deal, lang):
  kind=BILLING_KIND.get(deal.get('id'))

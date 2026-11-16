@@ -1700,5 +1700,101 @@
     "fr": {
       "summary": "Batterie portable pour recharger les appareils compatibles loin d’une prise."
     }
+  },
+  "google-play-100k-kr": {
+    "en": {
+      "product": "Google Play KRW100,000 gift code",
+      "summary": "A digital code for adding KRW100,000 of Google Play credit for eligible purchases.",
+      "conditions": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+    },
+    "ko": {
+      "product": "Google Play 기프트코드 · 10만원권",
+      "summary": "Google Play의 지원되는 구매에 쓰는 잔액 10만원을 충전하는 디지털 코드.",
+      "conditions": "액면 10만원 코드의 표시가는 92,000원입니다. 하루 1개 제한이며 결제 후 모바일로 발송됩니다(지연 가능). 판매페이지에 구매일부터 1,825일과 발행일부터 5년이 함께 기재되어 있으므로 수신한 코드의 유효기간을 확인하세요. 판매처는 미사용 기한 만료 후 구매금의 95% 환불을 안내합니다. 계정 국가 조건·잔액 환급 세부 규정·최종 결제는 미확인입니다."
+    },
+    "zh": {
+      "product": "Google Play KRW100,000 gift code",
+      "summary": "用于充值10万韩元 Google Play 余额并购买符合条件内容的数字代码。",
+      "conditions": "面值10万韩元，标价92,000韩元：卖家优惠6,000加平台2,000。每天限1个，显示可购1个。付款后手机发送，可能延迟。卖家标注1,825天/发行起五年，未使用过期码退购买价95%。账户地区、余额退款细则及结账未验证，不宣称历史最低价。"
+    },
+    "ja": {
+      "product": "Google Play KRW100,000 gift code",
+      "summary": "対象コンテンツの購入に使うGoogle Play残高10万ウォンを追加するデジタルコード。",
+      "conditions": "額面10万ウォン、表示92,000ウォン（販売者6,000＋Gmarket2,000引き）。1日1個、購入可能1個。決済後電子送信、遅延あり。販売者表記は1,825日／発行から5年、未使用期限切れは購入額95%返金。アカウント地域・残高返金詳細・決済は未確認。過去最安値とは主張しません。"
+    },
+    "es": {
+      "product": "Google Play KRW100,000 gift code",
+      "summary": "Código digital para añadir 100.000 KRW de saldo Google Play para compras admitidas.",
+      "conditions": "Precio92.000 KRW por saldo100.000: descuento vendedor6.000 y Gmarket2.000. Uno al día, uno disponible mostrado. Envío móvil tras pagar, posibles retrasos. Vendedor:1.825 días/cinco años desde emisión; código sin usar caducado, devolución95% del precio pagado. País de cuenta, reembolso de saldo y pago no verificados. No se afirma mínimo histórico."
+    },
+    "fr": {
+      "product": "Google Play KRW100,000 gift code",
+      "summary": "Code numérique ajoutant 100 000 KRW de crédit Google Play pour les achats admissibles.",
+      "conditions": "92 000 KRW affichés pour100 000 KRW de crédit : remise vendeur6 000 et Gmarket2 000. Un par jour, un disponible affiché. Envoi mobile après paiement, retard possible. Vendeur :1 825 jours/cinq ans dès émission ; code inutilisé expiré remboursé à95% du prix payé. Pays du compte, remboursement du solde et paiement non vérifiés. Aucun minimum historique affirmé."
+    }
+  },
+  "ps5-dualsense-midnight-black-kr": {
+    "en": {
+      "product": "PS5 DualSense Midnight Black",
+      "summary": "A Midnight Black wireless controller for playing compatible games on PS5; controller only, not a console.",
+      "conditions": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+    },
+    "ko": {
+      "product": "PS5 듀얼센스 무선 컨트롤러 · 미드나이트 블랙",
+      "summary": "PS5의 호환 게임을 조작하는 미드나이트 블랙 무선 컨트롤러. 콘솔 본체가 아닌 컨트롤러 단품.",
+      "conditions": "74,800원은 끝장세일 디지털 10% 쿠폰 적용가입니다(쿠폰 전 83,110원). 해당 카드와 스마일페이 7% 할인을 함께 적용하면 69,570원으로 안내됩니다. 카드 할인은 7만원 이상 결제, 최대 7만원, 11월 19일까지이며 개인별 적용 여부는 결제 전 확인하세요. 국내 배송만 가능하며 기본 배송 무료, 제주·산간은 5,000원 추가입니다. ID당 2개 제한. 정확한 재고 수량·제품 리비전과 최종 결제는 확인하지 않았습니다."
+    },
+    "zh": {
+      "product": "PS5 DualSense Midnight Black",
+      "summary": "用于操作 PS5 兼容游戏的午夜黑无线手柄；不是主机。",
+      "conditions": "83,110韩元使用所示数码促销10%券后74,800。指定银行卡经SmilePay享7%可至69,570（满70,000，最高减70,000，显示至11月19日），结账资格未测试。积分后65,830不是成交价。仅韩国配送，CJ基础免费，济州/偏远加5,000；每账户限2个。有购买按钮，库存数量、硬件修订及最低价未验证。"
+    },
+    "ja": {
+      "product": "PS5 DualSense Midnight Black",
+      "summary": "PS5の対応ゲームを操作するミッドナイトブラックのワイヤレスコントローラー。本体ではなくコントローラー単品。",
+      "conditions": "83,110ウォンに表示のデジタル10%クーポン適用で74,800。対象カード×SmilePay7%で69,570（7万以上、上限7万、11月19日まで表記）、決済資格は未確認。ポイント込み65,830は販売価格ではありません。韓国内のみ、CJ基本無料、済州・遠隔地+5,000。IDごと2個。購入ボタンあり、在庫数・製造改訂・最安値未確認。"
+    },
+    "es": {
+      "product": "PS5 DualSense Midnight Black",
+      "summary": "Mando inalámbrico Midnight Black para juegos compatibles de PS5; no incluye consola.",
+      "conditions": "74.800 KRW con cupón digital10% sobre83.110. 69.570 con tarjeta admitida por SmilePay7% (mínimo70.000, máximo descuento70.000, hasta19nov según página); pago sin probar. 65.830 tras puntos no es precio de compra. Solo Corea: CJ gratis, Jeju/remoto+5.000; dos por cuenta. Botón compra visible; stock exacto, revisión y mínimo sin verificar."
+    },
+    "fr": {
+      "product": "PS5 DualSense Midnight Black",
+      "summary": "Manette sans fil Midnight Black pour les jeux PS5 compatibles ; sans console.",
+      "conditions": "74 800 KRW avec coupon numérique10% sur83 110. 69 570 avec carte admissible via SmilePay7% (minimum70 000, plafond remise70 000, jusqu’au19nov affiché) ; paiement non testé. 65 830 après points n’est pas le prix payé. Livraison Corée uniquement : CJ gratuit, Jeju/éloigné+5 000 ; deux par compte. Bouton achat visible ; stock exact, révision et prix minimum non vérifiés."
+    }
+  },
+  "chronoid-lifetime-black-friday": {
+    "en": {
+      "product": "Chronoid Lifetime · 3 Macs",
+      "summary": "Track time spent working on Mac and turn it into reports and invoices.",
+      "conditions": "USD 74.50 once for one person on 3 Macs. Lifetime updates cover the product’s lifetime, not the user’s; the product may be discontinued. BLACKFRIDAY26 is advertised as automatic at checkout, which was not tested. Ends December 3, 2026; exact time and timezone unstated. Contact the seller within 30 days for a full refund; later sales are final. External AI provider fees are separate. Taxes and Korean checkout eligibility are unverified."
+    },
+    "ko": {
+      "product": "Chronoid Lifetime · Mac 3대",
+      "summary": "Mac 작업 시간을 자동 기록하고 보고서·청구서로 정리하는 앱.",
+      "conditions": "1인·Mac 3대, USD 74.50 일회 결제. 업데이트는 사용자 수명이 아닌 제품 존속 기간 기준이며 서비스가 종료될 수 있습니다. BLACKFRIDAY26 자동 적용 안내가 있으나 결제는 미실험. 2026년 12월 3일 종료, 정확한 시각·시간대 미공개. 구매 후 30일 내 판매자에게 연락하면 전액 환불, 이후 환불 불가. 외부 AI 이용료 별도. 세금·한국 결제 가능 여부 미확인."
+    },
+    "zh": {
+      "product": "Chronoid Lifetime · 3 台 Mac",
+      "summary": "自动记录 Mac 工作时间并生成报告与账单。",
+      "conditions": "一人 3 台 Mac，一次支付 USD 74.50。终身更新指产品存续期，非用户寿命；产品可能停止运营。页面称 BLACKFRIDAY26 结账时自动应用，尚未测试。2026年12月3日结束，具体时间与时区未公布。购买后30天内联系卖家可全额退款，之后不退。外部 AI 费用另计。税费及韩国购买资格未确认。"
+    },
+    "ja": {
+      "product": "Chronoid Lifetime · Mac 3台",
+      "summary": "Macの作業時間を記録し、レポートや請求書にまとめるアプリ。",
+      "conditions": "1人・Mac 3台でUSD 74.50の買い切り。更新は利用者の生涯ではなく製品の存続期間が対象で、提供終了の可能性があります。BLACKFRIDAY26は決済時に自動適用との案内ですが未検証。2026年12月3日終了、時刻・タイムゾーンは未公表。購入から30日以内に販売元へ連絡すると全額返金、以後は返金不可。外部AI料金は別途。税金と韓国での購入可否は未確認。"
+    },
+    "es": {
+      "product": "Chronoid Lifetime · 3 Mac",
+      "summary": "Registra el tiempo de trabajo en Mac y genera informes y facturas.",
+      "conditions": "USD 74.50 una vez para una persona y 3 Mac. Las actualizaciones duran lo que el producto, no la vida del usuario; puede dejar de ofrecerse. BLACKFRIDAY26 se anuncia como automático al pagar, sin probar el pago. Termina el 3 de diciembre de 2026; hora y zona no indicadas. Contacta al vendedor en 30 días para el reembolso completo; después no hay devoluciones. IA externa aparte. Impuestos y compra desde Corea sin confirmar."
+    },
+    "fr": {
+      "product": "Chronoid Lifetime · 3 Mac",
+      "summary": "Enregistre le temps de travail sur Mac et produit des rapports et factures.",
+      "conditions": "USD 74.50 en paiement unique pour une personne sur 3 Mac. Les mises à jour durent la vie du produit, pas celle de l’utilisateur ; le produit peut être arrêté. BLACKFRIDAY26 est annoncé comme automatique au paiement, non testé. Fin le 3 décembre 2026, heure et fuseau non indiqués. Contacter le vendeur sous 30 jours pour un remboursement intégral ; ensuite, vente définitive. IA externe facturée séparément. Taxes et achat depuis la Corée non confirmés."
+    }
   }
 }

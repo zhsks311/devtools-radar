@@ -12,6 +12,8 @@ def illustration(deal,lang):
         art='<rect x="110" y="35" width="140" height="145" rx="18"/><path class="accent" d="M185 65l-28 45h25l-12 40 35-54h-25z"/>'
     elif any(x in text for x in ('gan','gb102','charger')):
         art='<rect x="105" y="70" width="150" height="105" rx="20"/><path d="M155 70V40M205 70V40"/><path class="accent" d="M185 90l-23 32h22l-9 30 27-42h-22z"/>'
+    elif 'chronoid' in ident:
+        art='<circle cx="180" cy="105" r="68"/><path d="M180 48v8M180 154v8M123 105h8M229 105h8"/><path class="accent" d="M180 68v40l30 20"/>'
     elif 'moonitor' in ident:
         art='<rect x="65" y="45" width="230" height="125" rx="10"/><path d="M65 75h230"/><path class="accent" d="M85 126h40l18-29 27 52 25-39 18 16h62"/>'
     elif 'seoagent' in ident:

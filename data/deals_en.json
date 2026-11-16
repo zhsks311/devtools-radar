@@ -2478,6 +2478,107 @@
         "evidence": "The English refund policy permits deducting the supplied free domain’s price from a refund. Cryptocurrency, token and digital-asset payments are non-refundable. Payment-method and regional exceptions apply; actual terms for a Korean order are unverified.",
         "korean_order_verified": false
       }
+    },
+    {
+      "id": "chronoid-lifetime-black-friday",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Chronoid Lifetime · 3 Macs",
+      "product": "Chronoid Lifetime · 3 Macs",
+      "store": "Chronoid",
+      "storefront_country": null,
+      "price": 74.5,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital Mac software license",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Track time spent working on Mac and turn it into reports and invoices.",
+        "USD 74.50 once for one person on 3 Macs. Lifetime updates cover the product’s lifetime, not the user’s; the product may be discontinued. BLACKFRIDAY26 is advertised as automatic at checkout, which was not tested. Ends December 3, 2026; exact time and timezone unstated. Contact the seller within 30 days for a full refund; later sales are final. External AI provider fees are separate. Taxes and Korean checkout eligibility are unverified."
+      ],
+      "audience": "Mac users tracking project and client time.",
+      "source": {
+        "id": "chronoid-official",
+        "label": "Chronoid official Lifetime pricing",
+        "url": "https://www.chronoid.app/pricing"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-16",
+      "score": null,
+      "disclosure": "No affiliate tracking. Seller-listed promotion; final checkout not tested.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://www.chronoid.app/pricing",
+        "tracked": false,
+        "label": "View Lifetime offer",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital license for one person on 3 Macs.",
+        "activation": "Lifetime plan; license is non-transferable.",
+        "payment": "Korean checkout eligibility unverified.",
+        "tax": "Taxes may apply; checkout not tested.",
+        "returns": "Contact seller within 30 days of purchase for full refund; afterward final.",
+        "evidence_url": "https://www.chronoid.app/pricing",
+        "checked_at": "2026-11-16T06:32:36.112834+00:00"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T06:32:36.112834+00:00",
+        "url": "https://www.chronoid.app/pricing",
+        "product_match": true,
+        "evidence": "Official Lifetime tier: USD 74.50 once, one person on 3 Macs, updates included. BLACKFRIDAY26 auto-application advertised; campaign ends December 3, 2026 with no time/timezone. Checkout not performed."
+      },
+      "price_review": {
+        "id": "chronoid-lifetime-black-friday",
+        "product": "Chronoid Lifetime · 3 Macs",
+        "seller_url": "https://www.chronoid.app/pricing",
+        "recorded_price": 74.5,
+        "verified_price": 74.5,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://www.chronoid.app/pricing",
+            "observed_at": "2026-11-16T06:32:36.112834+00:00",
+            "result": "Official Lifetime tier: USD 74.50 once, one person on 3 Macs, updates included. BLACKFRIDAY26 auto-application advertised; campaign ends December 3, 2026 with no time/timezone. Checkout not performed."
+          },
+          {
+            "url": "https://www.chronoid.app/terms",
+            "observed_at": "2026-11-16T06:32:36.112834+00:00",
+            "result": "Lifetime means product lifetime and includes updates without recurring license fees; discontinuation possible. Refund on contact within 30 days; external AI charges separate."
+          }
+        ],
+        "conditions": [
+          "USD 74.50 once for one person on 3 Macs. Lifetime updates cover the product’s lifetime, not the user’s; the product may be discontinued. BLACKFRIDAY26 is advertised as automatic at checkout, which was not tested. Ends December 3, 2026; exact time and timezone unstated. Contact the seller within 30 days for a full refund; later sales are final. External AI provider fees are separate. Taxes and Korean checkout eligibility are unverified."
+        ],
+        "limitations": [
+          "Seller comparison price not independently verified.",
+          "Tax, coupon checkout and Korean activation not tested."
+        ],
+        "review_completed_at": "2026-11-16T06:32:36.112834+00:00",
+        "campaign": {
+          "ends_on": "2026-12-03",
+          "end_time": null,
+          "timezone": null,
+          "source_url": "https://www.chronoid.app/pricing"
+        },
+        "billing": {
+          "type": "one_time",
+          "initial_total": 74.5,
+          "currency": "USD",
+          "checkout_verified": false
+        }
+      },
+      "expires_at": null
     }
   ],
   "picks": [
@@ -3959,6 +4060,107 @@
             "evidence": "The English refund policy permits deducting the supplied free domain’s price from a refund. Cryptocurrency, token and digital-asset payments are non-refundable. Payment-method and regional exceptions apply; actual terms for a Korean order are unverified.",
             "korean_order_verified": false
           }
+        },
+        {
+          "id": "chronoid-lifetime-black-friday",
+          "region": "global",
+          "target": "en",
+          "category": "cloud",
+          "category_label": "SaaS & cloud",
+          "title_raw": "Chronoid Lifetime · 3 Macs",
+          "product": "Chronoid Lifetime · 3 Macs",
+          "store": "Chronoid",
+          "storefront_country": null,
+          "price": 74.5,
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "Digital Mac software license",
+          "rocket": false,
+          "specs": [],
+          "briefing": [
+            "Track time spent working on Mac and turn it into reports and invoices.",
+            "USD 74.50 once for one person on 3 Macs. Lifetime updates cover the product’s lifetime, not the user’s; the product may be discontinued. BLACKFRIDAY26 is advertised as automatic at checkout, which was not tested. Ends December 3, 2026; exact time and timezone unstated. Contact the seller within 30 days for a full refund; later sales are final. External AI provider fees are separate. Taxes and Korean checkout eligibility are unverified."
+          ],
+          "audience": "Mac users tracking project and client time.",
+          "source": {
+            "id": "chronoid-official",
+            "label": "Chronoid official Lifetime pricing",
+            "url": "https://www.chronoid.app/pricing"
+          },
+          "published_at": null,
+          "checked_date": "2026-11-16",
+          "score": null,
+          "disclosure": "No affiliate tracking. Seller-listed promotion; final checkout not tested.",
+          "ai_rewritten": false,
+          "price_source": "retailer_product_page",
+          "link": {
+            "url": "https://www.chronoid.app/pricing",
+            "tracked": false,
+            "label": "View Lifetime offer",
+            "label_kind": "retailer"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Digital license for one person on 3 Macs.",
+            "activation": "Lifetime plan; license is non-transferable.",
+            "payment": "Korean checkout eligibility unverified.",
+            "tax": "Taxes may apply; checkout not tested.",
+            "returns": "Contact seller within 30 days of purchase for full refund; afterward final.",
+            "evidence_url": "https://www.chronoid.app/pricing",
+            "checked_at": "2026-11-16T06:32:36.112834+00:00"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-16T06:32:36.112834+00:00",
+            "url": "https://www.chronoid.app/pricing",
+            "product_match": true,
+            "evidence": "Official Lifetime tier: USD 74.50 once, one person on 3 Macs, updates included. BLACKFRIDAY26 auto-application advertised; campaign ends December 3, 2026 with no time/timezone. Checkout not performed."
+          },
+          "price_review": {
+            "id": "chronoid-lifetime-black-friday",
+            "product": "Chronoid Lifetime · 3 Macs",
+            "seller_url": "https://www.chronoid.app/pricing",
+            "recorded_price": 74.5,
+            "verified_price": 74.5,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "evidence": [
+              {
+                "url": "https://www.chronoid.app/pricing",
+                "observed_at": "2026-11-16T06:32:36.112834+00:00",
+                "result": "Official Lifetime tier: USD 74.50 once, one person on 3 Macs, updates included. BLACKFRIDAY26 auto-application advertised; campaign ends December 3, 2026 with no time/timezone. Checkout not performed."
+              },
+              {
+                "url": "https://www.chronoid.app/terms",
+                "observed_at": "2026-11-16T06:32:36.112834+00:00",
+                "result": "Lifetime means product lifetime and includes updates without recurring license fees; discontinuation possible. Refund on contact within 30 days; external AI charges separate."
+              }
+            ],
+            "conditions": [
+              "USD 74.50 once for one person on 3 Macs. Lifetime updates cover the product’s lifetime, not the user’s; the product may be discontinued. BLACKFRIDAY26 is advertised as automatic at checkout, which was not tested. Ends December 3, 2026; exact time and timezone unstated. Contact the seller within 30 days for a full refund; later sales are final. External AI provider fees are separate. Taxes and Korean checkout eligibility are unverified."
+            ],
+            "limitations": [
+              "Seller comparison price not independently verified.",
+              "Tax, coupon checkout and Korean activation not tested."
+            ],
+            "review_completed_at": "2026-11-16T06:32:36.112834+00:00",
+            "campaign": {
+              "ends_on": "2026-12-03",
+              "end_time": null,
+              "timezone": null,
+              "source_url": "https://www.chronoid.app/pricing"
+            },
+            "billing": {
+              "type": "one_time",
+              "initial_total": 74.5,
+              "currency": "USD",
+              "checkout_verified": false
+            }
+          },
+          "expires_at": null
         }
       ]
     },
@@ -4101,7 +4303,7 @@
     }
   },
   "stats": {
-    "feed": 24,
+    "feed": 25,
     "sources": 8
   }
 }

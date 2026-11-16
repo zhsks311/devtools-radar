@@ -7,12 +7,12 @@ import site_i18n
 class TargetCountryTest(unittest.TestCase):
  def test_domestic_audience_keeps_delivery_evidence_separate(self):
   rows=json.loads(Path('data/deals.json').read_text())['feed']
-  self.assertEqual(sum('KR' in target_countries(x) for x in rows),21)
-  self.assertEqual(sum(publishable_link(x) and 'KR' in target_countries(x) for x in rows),6)
-  self.assertEqual(sum('KR' in confirmed_countries(x) for x in rows),4)
+  self.assertEqual(sum('KR' in target_countries(x) for x in rows),23)
+  self.assertEqual(sum(publishable_link(x) and 'KR' in target_countries(x) for x in rows),8)
+  self.assertEqual(sum('KR' in confirmed_countries(x) for x in rows),5)
   for lang in site_i18n.LANGS:
    p=FilterParser();p.feed(site_i18n.catalogue(lang,rows,{}))
-   self.assertEqual(sum(x['countries']=='KR' for x in p.cards),6)
+   self.assertEqual(sum(x['countries']=='KR' for x in p.cards),8)
    self.assertEqual(sum(x['countries']=='KR' for x in p.archived),15)
    for c in p.cards:
     if '100w' in c['id']:self.assertEqual(c['category'],'hardware')

@@ -2011,6 +2011,172 @@
         "checked_at": "2026-11-16"
       },
       "expires_at": "2026-11-23T17:00:00Z"
+    },
+    {
+      "id": "google-play-100k-kr",
+      "region": "kr",
+      "target": "ko",
+      "category": "vouchers",
+      "category_label": "vouchers",
+      "title_raw": "Google Play KRW100,000 gift code",
+      "product": "Google Play KRW100,000 gift code",
+      "store": "Gmarket",
+      "price": 92000,
+      "currency": "KRW",
+      "shipping": "See delivery conditions",
+      "specs": [],
+      "briefing": [
+        "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-16",
+      "source": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+        "label": "Gmarket product detail"
+      },
+      "price_source": "retailer_product_page",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T06:31:06+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+        "product_match": true,
+        "evidence": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+      },
+      "price_review": {
+        "id": "google-play-100k-kr",
+        "product": "Google Play KRW100,000 gift code",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+        "recorded_price": 92000,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 92000,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "observed_at": "2026-11-16T06:31:06+00:00",
+            "result": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+          }
+        ],
+        "limitations": [
+          "Checkout and independent market low unverified."
+        ],
+        "review_completed_at": "2026-11-16T06:31:06+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "digital",
+        "reviewed_at": "2026-11-16T06:31:06+00:00",
+        "note": "Korean seller audience; account/individual checkout requirements remain separate."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim.",
+        "activation": "Account-country rules unverified",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Not fully reviewed",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+        "checked_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "ps5-dualsense-midnight-black-kr",
+      "region": "kr",
+      "target": "ko",
+      "category": "gaming",
+      "category_label": "gaming",
+      "title_raw": "PS5 DualSense Midnight Black",
+      "product": "PS5 DualSense Midnight Black",
+      "store": "Gmarket",
+      "price": 74800,
+      "currency": "KRW",
+      "shipping": "See delivery conditions",
+      "specs": [],
+      "briefing": [
+        "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-16",
+      "source": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+        "label": "Gmarket product detail"
+      },
+      "price_source": "retailer_product_page",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-16T06:31:06+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+        "product_match": true,
+        "evidence": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+      },
+      "price_review": {
+        "id": "ps5-dualsense-midnight-black-kr",
+        "product": "PS5 DualSense Midnight Black",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+        "recorded_price": 74800,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 74800,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+            "observed_at": "2026-11-16T06:31:06+00:00",
+            "result": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+          }
+        ],
+        "limitations": [
+          "Checkout and independent market low unverified."
+        ],
+        "review_completed_at": "2026-11-16T06:31:06+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-16T06:31:06+00:00",
+        "note": "Korean seller audience; account/individual checkout requirements remain separate."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified.",
+        "activation": "PS5 controller; exact hardware revision unverified",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Not fully reviewed",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+        "checked_at": "2026-11-16"
+      }
     }
   ],
   "categories": {
@@ -2309,6 +2475,88 @@
             "status": "sold_out",
             "checked_at": "2026-11-16T00:40:01.889133+00:00",
             "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4885511021"
+          }
+        },
+        {
+          "id": "google-play-100k-kr",
+          "region": "kr",
+          "target": "ko",
+          "category": "vouchers",
+          "category_label": "vouchers",
+          "title_raw": "Google Play KRW100,000 gift code",
+          "product": "Google Play KRW100,000 gift code",
+          "store": "Gmarket",
+          "price": 92000,
+          "currency": "KRW",
+          "shipping": "See delivery conditions",
+          "specs": [],
+          "briefing": [
+            "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+          ],
+          "published_at": null,
+          "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-16",
+          "source": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "label": "Gmarket product detail"
+          },
+          "price_source": "retailer_product_page",
+          "storefront_country": "KR",
+          "link": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "tracked": false,
+            "label": "View actual product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-16T06:31:06+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "product_match": true,
+            "evidence": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+          },
+          "price_review": {
+            "id": "google-play-100k-kr",
+            "product": "Google Play KRW100,000 gift code",
+            "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "recorded_price": 92000,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 92000,
+            "deal_status": "comparison_unverified",
+            "evidence": [
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+                "observed_at": "2026-11-16T06:31:06+00:00",
+                "result": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim."
+              }
+            ],
+            "limitations": [
+              "Checkout and independent market low unverified."
+            ],
+            "review_completed_at": "2026-11-16T06:31:06+00:00"
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "digital",
+            "reviewed_at": "2026-11-16T06:31:06+00:00",
+            "note": "Korean seller audience; account/individual checkout requirements remain separate."
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "KRW92,000 displayed for KRW100,000 face value: seller discount 6,000 + Gmarket 2,000. One per day, one available shown. Mobile delivery after payment, delays possible. Seller lists 1,825 days / five years from issue, and 95% of purchase price refunded for unused codes after expiry. Account-country eligibility and remaining-balance refund terms unverified; checkout not tested. No historical-low claim.",
+            "activation": "Account-country rules unverified",
+            "payment": "Checkout untested",
+            "tax": "Final checkout untested",
+            "returns": "Not fully reviewed",
+            "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4882716904",
+            "checked_at": "2026-11-16"
           }
         }
       ]
@@ -4074,6 +4322,90 @@
             "checked_at": "2026-11-16"
           },
           "expires_at": "2026-11-23T17:00:00Z"
+        },
+        {
+          "id": "ps5-dualsense-midnight-black-kr",
+          "region": "kr",
+          "target": "ko",
+          "category": "gaming",
+          "category_label": "gaming",
+          "title_raw": "PS5 DualSense Midnight Black",
+          "product": "PS5 DualSense Midnight Black",
+          "store": "Gmarket",
+          "price": 74800,
+          "currency": "KRW",
+          "shipping": "See delivery conditions",
+          "specs": [],
+          "briefing": [
+            "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+          ],
+          "published_at": null,
+          "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-16",
+          "source": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+            "label": "Gmarket product detail"
+          },
+          "price_source": "retailer_product_page",
+          "storefront_country": "KR",
+          "link": {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+            "tracked": false,
+            "label": "View actual product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-16T06:31:06+00:00",
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+            "product_match": true,
+            "evidence": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+          },
+          "price_review": {
+            "id": "ps5-dualsense-midnight-black-kr",
+            "product": "PS5 DualSense Midnight Black",
+            "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+            "recorded_price": 74800,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "verified_price": 74800,
+            "deal_status": "comparison_unverified",
+            "evidence": [
+              {
+                "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+                "observed_at": "2026-11-16T06:31:06+00:00",
+                "result": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+              }
+            ],
+            "limitations": [
+              "Checkout and independent market low unverified."
+            ],
+            "review_completed_at": "2026-11-16T06:31:06+00:00"
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "physical",
+            "reviewed_at": "2026-11-16T06:31:06+00:00",
+            "note": "Korean seller audience; account/individual checkout requirements remain separate."
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "KR"
+            ],
+            "status": "retailer_delivery_statement",
+            "delivery": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified.",
+            "activation": "PS5 controller; exact hardware revision unverified",
+            "payment": "Checkout untested",
+            "tax": "Final checkout untested",
+            "returns": "Not fully reviewed",
+            "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+            "checked_at": "2026-11-16"
+          }
         }
       ]
     }
@@ -4125,10 +4457,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 21,
+    "feed": 23,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 6,
+    "verified_product_links": 8,
     "held_product_links": 15,
     "historical_tracked_links": 14
   }
