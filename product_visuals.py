@@ -6,7 +6,7 @@ def illustration(deal,lang):
     # Match use, not advertised specifications: no port count, capacity or branded UI.
     text = (ident + ' ' + deal.get('product', '')).lower()
     # Simple diagrams explain the category without fabricating a branded UI.
-    if 'keyboard' in text or 'ajazz' in text or 'gk10' in text:
+    if category == 'keyboard-mouse' and 'mx-master' not in ident or 'ajazz' in text:
         art='<rect x="55" y="65" width="250" height="100" rx="12"/><path stroke-dasharray="8 12" d="M80 90h200M80 115h200"/><path class="accent" d="M125 143h110"/>'
     elif any(x in text for x in ('power bank','powerbank','baseus','vention')):
         art='<rect x="110" y="35" width="140" height="145" rx="18"/><path class="accent" d="M185 65l-28 45h25l-12 40 35-54h-25z"/>'
