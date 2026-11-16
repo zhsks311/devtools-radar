@@ -4,6 +4,8 @@ from tools.deal_prices import validated_price_options
 class DualSensePrices(unittest.TestCase):
  def test_main_price_excludes_coupon_and_card(self):
   d=next(x for x in json.loads(Path('data/deals.json').read_text())['feed'] if x['id']=='ps5-dualsense-midnight-black-kr')
+  from site_i18n import billing_label
+  for lang in ['ko','en','zh','ja','es','fr']: self.assertEqual(billing_label(d,lang),'')
   self.assertEqual(d['price'],83110)
   self.assertEqual(d['price_review']['verified_price'],83110)
   self.assertEqual([o['price'] for o in d['price_options']],[74800,69570])
