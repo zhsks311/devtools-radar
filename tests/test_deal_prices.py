@@ -1,4 +1,7 @@
 import copy,json,unittest
+from unittest.mock import patch
+from datetime import datetime,timezone
+from tools.deal_prices import current_price_state
 from pathlib import Path
 from tools.deal_prices import discount_percent,validate_deal_prices,checked_price,official_srp_comparison
 import build,site_i18n
@@ -47,9 +50,12 @@ class DiscountTests(unittest.TestCase):
   self.assertEqual(str(official_srp_comparison(d)['percent']),'6.62')
   d['price']=700;d['price_review']['verified_price']=700
   self.assertEqual(str(official_srp_comparison(d)['percent']),'9.09')
-  for lang in site_i18n.LANGS:
-   page=site_i18n.catalogue(lang,[d],{})
-   self.assertIn('9.09',page);self.assertNotIn('6.62%',page)
+  # Freeze currentness at this fixture's observation, not the CI wall clock.
+  observed=datetime.fromisoformat(d['price_review']['review_completed_at'].replace('Z','+00:00'))
+  with patch.object(site_i18n,'current_price_state',side_effect=lambda item: current_price_state(item,now=observed)):
+   for lang in site_i18n.LANGS:
+    page=site_i18n.catalogue(lang,[d],{})
+    self.assertIn('9.09',page);self.assertNotIn('6.62%',page)
   for field,value in [('currency','USD'),('price',699),('same_product_variant',False),
                       ('product_id','other'),('checked_at','9999-01-01T00:00:00Z'),
                       ('evidence',' '),('reference_kind','seller_previous_price'),('url','javascript:alert(1)')]:
