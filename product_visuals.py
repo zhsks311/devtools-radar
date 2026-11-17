@@ -14,6 +14,8 @@ def illustration(deal,lang):
         art='<rect x="105" y="70" width="150" height="105" rx="20"/><path d="M155 70V40M205 70V40"/><path class="accent" d="M185 90l-23 32h22l-9 30 27-42h-22z"/>'
     elif 'bridge-constructor-studio' in ident:
         art='<path d="M30 160h300M45 155l50-85 55 85 55-85 55 85 55-85M95 70h220"/><path class="accent" d="M45 155h270M150 155v35M260 155v35"/><rect x="110" y="130" width="35" height="20" rx="5"/>'
+    elif 'actionclip-individual' in ident:
+        art='<rect x="40" y="40" width="280" height="140" rx="12"/><path d="M70 75h170M70 100h130M70 145h210"/><rect class="accent" x="90" y="90" width="180" height="40" rx="10"/><path d="M135 100v20M180 100v20M225 100v20"/>'
     elif 'plerdy-startup' in ident:
         art='<rect x="40" y="35" width="280" height="155" rx="12"/><path d="M60 65h240M65 155l45-30 40 15 45-60 50 30 45-40"/><circle class="accent" cx="195" cy="80" r="20"/>'
     elif 'elevenlabs-creator' in ident:

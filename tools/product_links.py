@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'actionclip.app': r'/', # Reviewed single-product page; Individual 1 Mac plan.
     'www.plerdy.com': r'/black-friday/?',
     'join.elevenlabs.io': r'/bfcm/?',  # Exact reviewed Creator annual offer with explicit account eligibility.
     'www.drbuho.com': r'/buhobarx/?',  # Reviewed exact Mac app, never the multi-product sale page.
