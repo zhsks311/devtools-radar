@@ -1,0 +1,74 @@
+{
+  "attempted_at": "2026-11-17T09:23:14.834579+00:00",
+  "published_deals_changed": false,
+  "sources": [
+    {
+      "id": "dealnews",
+      "enabled": true,
+      "mode": "unaltered_public_feed_display",
+      "note": "Official RSS is automatically displayed separately at /feeds/, unchanged with DealNews attribution and original referral links. Merchant price, stock and country claims remain unverified; never auto-promoted into curated cards.",
+      "status": "collected",
+      "last_success_at": "2026-11-17T09:23:14.834579+00:00",
+      "items": 50,
+      "sha256": "1c18e754498f1831e5c0f5d5fb4cbc3ffb74386a1303a5492da5b483ccbe962c",
+      "etag": null,
+      "last_modified": "Tue, 17 Nov 2026 09:21:38 +0000"
+    },
+    {
+      "id": "ozbargain",
+      "enabled": false,
+      "mode": "permission_review",
+      "note": "Official teaser RSS exists; automatic reuse review pending. Existing independently verified deal retained.",
+      "status": "disabled"
+    },
+    {
+      "id": "slickdeals",
+      "enabled": false,
+      "mode": "permission_required",
+      "note": "Automated scraping restricted; official partner API requires authorization.",
+      "status": "disabled"
+    },
+    {
+      "id": "stacksocial",
+      "enabled": false,
+      "mode": "permission_required",
+      "note": "Automated scraping restricted. Existing manually verified product records retain their original dates.",
+      "status": "disabled"
+    },
+    {
+      "id": "woot",
+      "enabled": false,
+      "mode": "api_credentials_required",
+      "note": "Official API requires approved credentials. No credentials generated.",
+      "status": "disabled"
+    },
+    {
+      "id": "smzdm",
+      "enabled": false,
+      "mode": "blocked",
+      "note": "Official RSS returned 403; no bypass. Reuse permission unconfirmed.",
+      "status": "disabled"
+    },
+    {
+      "id": "ppomppu",
+      "enabled": false,
+      "mode": "blocked",
+      "note": "Official RSS directory lookup returned HTTP403 on 2026-11-15. Hot-deal feed endpoint and reuse permission not verified; no bypass and no automatic collection enabled.",
+      "status": "disabled"
+    },
+    {
+      "id": "quasarzone",
+      "enabled": false,
+      "mode": "permission_review",
+      "note": "Public list and individual posts readable via search on 2026-11-15; automated collection permission/robots could not be verified. Manual discovery followed by independent seller checks only; no bulk mirroring.",
+      "status": "disabled"
+    },
+    {
+      "id": "fmkorea",
+      "enabled": false,
+      "mode": "blocked",
+      "note": "Robots check returned HTTP429 on 2026-11-15; no retries or bypass. Do not enable automatic scraping without verified access and reuse scope.",
+      "status": "disabled"
+    }
+  ]
+}
