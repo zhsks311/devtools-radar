@@ -1,4 +1,4 @@
-name: Check official deal feeds
+name: Collect and publish permitted deal feeds
 on:
   schedule:
     - cron: '17 */6 * * *'
@@ -7,32 +7,77 @@ on:
     branches: [main]
     paths:
       - 'tools/collect_deal_feeds.py'
+      - 'tools/publish_deal_feed.py'
       - 'config/deal_sources.json'
       - '.github/workflows/deal-feeds.yml'
 permissions:
-  contents: read
+  contents: write
+  pages: write
 concurrency:
-  group: deal-feed-collection
+  group: devteardown-feed-publication
   cancel-in-progress: false
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - uses: actions/cache@v4
+      - uses: actions/setup-node@v4
         with:
-          path: .feed-cache
-          key: feed-state-${{ github.run_id }}
-          restore-keys: feed-state-
-      - run: python tools/collect_deal_feeds.py --output collection-output --previous .feed-cache/status.json
-      - if: always()
+          node-version: '22'
+      - run: python tools/check.py
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: published
+          fetch-depth: 1
+      - name: Collect only enabled official feeds
+        id: collect
+        continue-on-error: true
+        run: python tools/collect_deal_feeds.py --output collection-output --previous published/feeds/status.json
+      - name: Validate and render complete attributed source feed
+        run: python tools/publish_deal_feed.py --collected collection-output --destination published/feeds
+      - name: Commit only feed files without overwriting current site
         run: |
-          mkdir -p .feed-cache
-          if [ -f collection-output/status.json ]; then cp collection-output/* .feed-cache/; fi
+          cd published
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add feeds/index.html feeds/dealnews.xml feeds/status.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh permitted DealNews source feed'
+            git pull --rebase origin gh-pages
+            git push origin HEAD:gh-pages
+          fi
+          test "$(git rev-parse HEAD)" = "$(git ls-remote origin refs/heads/gh-pages | cut -f1)"
+      - name: Request build of latest configured Pages branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Server builds the configured branch, never an old uploaded site snapshot.
+          test "$(gh api repos/${{ github.repository }}/pages --jq '.build_type')" = 'legacy'
+          test "$(gh api repos/${{ github.repository }}/pages --jq '.source.branch')" = 'gh-pages'
+          gh api --method POST repos/${{ github.repository }}/pages/builds
+      - name: Verify live collection timestamp
+        run: |
+          python - <<'PY'
+          import json,time,urllib.request
+          expected=json.load(open('published/feeds/status.json'))['attempted_at']
+          for attempt in range(18):
+              try:
+                  req=urllib.request.Request('https://devteardown.com/feeds/status.json',headers={'Cache-Control':'no-cache'})
+                  live=json.load(urllib.request.urlopen(req,timeout=20))
+                  if live['attempted_at']==expected: break
+              except Exception: pass
+              time.sleep(10)
+          else: raise SystemExit('Deployment completed but live timestamp not yet verified')
+          print('Live source-feed collection timestamp verified:',expected)
+          source=next(s for s in live['sources'] if s['id']=='dealnews')
+          if source['status'] not in ('collected','not_modified'):
+              raise SystemExit('Last-good feed retained with a live error notice; collection did not succeed')
+          PY
       - if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -41,6 +86,6 @@ jobs:
           retention-days: 7
       - if: always()
         run: |
-          echo '## Deal source collection' >> "$GITHUB_STEP_SUMMARY"
-          echo 'Read-only collection. Curated product prices, countries and images are not auto-published.' >> "$GITHUB_STEP_SUMMARY"
+          echo '## Permitted source feed publication' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Separate unchanged DealNews RSS; merchant prices/countries unverified. No domestic community scraping or curated-card modification.' >> "$GITHUB_STEP_SUMMARY"
           if [ -f collection-output/status.json ]; then cat collection-output/status.json >> "$GITHUB_STEP_SUMMARY"; fi
