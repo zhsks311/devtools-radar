@@ -1375,6 +1375,14 @@ Recorded price: 3100 KRW. Seller price observation dated 2026-11-17T00:27:53.813
 Delivery / activation countries with evidence: JP, KR, SG.
 Discounts and historical-low claims are not established by this export.
 
+### Ulysses · US first-year offer
+Seller: Ulysses / Apple App Store
+Product URL: https://ulysses.app/howiwrite/
+Product-link review: 2026-11-17T13:28:30.102785+00:00 (not a stock check)
+Recorded price: 19.99 USD. Seller price observation dated 2026-11-17T13:28:30.102785+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### ActionClip Individual · 1 Mac
 Seller: ActionClip
 Product URL: https://actionclip.app/
