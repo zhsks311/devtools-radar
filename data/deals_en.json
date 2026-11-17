@@ -106,8 +106,22 @@
           {
             "url": "https://actionclip.app/terms",
             "label": "Lifetime scope and refund terms"
+          },
+          {
+            "url": "https://actionclip.app/privacy",
+            "label": "OCR and online action privacy policy"
           }
         ]
+      },
+      "privacy_review": {
+        "checked_at": "2026-11-17T05:20:12.258045+00:00",
+        "source_url": "https://actionclip.app/privacy",
+        "policy_effective_date": "2026-11-05",
+        "basis": "Developer policy; not independently tested app behavior",
+        "local_ocr_uploads_image": false,
+        "microsoft_online_ocr_route": "Captured image, app version and anonymous install ID to ActionClip OCR endpoint; image forwarded to Microsoft Azure",
+        "online_disabled": "Apple OCR",
+        "auto_translation": "Recognized text may be sent to chosen translation provider; distinct from external AI actions"
       }
     },
     {

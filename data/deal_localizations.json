@@ -2149,42 +2149,42 @@
       "summary": "Mac에서 선택한 텍스트 옆에 복사·번역·문장 변환 메뉴를 띄우는 도구. 필요할 때 로컬 또는 외부 AI도 연결할 수 있습니다.",
       "purpose": "Mac에서 선택한 텍스트 옆에 복사·번역·문장 변환 메뉴를 띄우는 도구. 필요할 때 로컬 또는 외부 AI도 연결할 수 있습니다.",
       "conditions": "Mac 1대용 평생 라이선스 $9 일회 결제. 2026년 11월 29일 23:59 UTC 종료. macOS 15 이상, 무제한 작업과 앱 업데이트 포함. 국가별 구매 가능 여부·세금·최종 결제액 미확인. 비교가격 근거가 없어 할인율은 표시하지 않습니다.",
-      "buying_note": "무료판은 하루 30회 작업부터 시험할 수 있습니다. 손쉬운 사용 권한이 필요하며 모든 앱과의 호환성을 보장하지 않습니다. Apple Intelligence는 지원 Mac이 필요하고 외부 AI는 본인 API 키·별도 제공업체 비용이 들 수 있습니다. 온라인 작업은 선택한 텍스트를 전송할 수 있습니다. 평생은 서비스의 상업적 존속기간으로, 모든 미래 기능·OS 지원을 보장하지 않습니다. 구매 후 30일 이내 환불 요청 가능. 여러 Mac용 플랜은 상품 페이지와 약관의 대수 표기가 달라 여기서는 제외했습니다."
+      "buying_note": "무료판은 하루 30회 작업부터 시험할 수 있습니다. 손쉬운 사용 권한이 필요하며 모든 앱과의 호환성을 보장하지 않습니다. Apple Intelligence는 지원 Mac이 필요하고 외부 AI는 본인 API 키·별도 제공업체 비용이 들 수 있습니다. 온라인 작업은 선택한 텍스트를 전송할 수 있습니다. 평생은 서비스의 상업적 존속기간으로, 모든 미래 기능·OS 지원을 보장하지 않습니다. 구매 후 30일 이내 환불 요청 가능. 여러 Mac용 플랜은 상품 페이지와 약관의 대수 표기가 달라 여기서는 제외했습니다. 개발사 개인정보처리방침 기준: 기기 내 OCR은 이미지를 업로드하지 않습니다. Microsoft 온라인 OCR은 캡처 영역 이미지·앱 버전·익명 설치 식별자를 ActionClip 서버로 보내고, 이미지를 Azure에 전달합니다. 온라인 작업을 끄면 Apple OCR을 사용합니다. OCR 자동번역은 인식한 텍스트를 번역 제공업체에 보낼 수 있으며, 외부 AI의 선택 텍스트 전송과는 별도입니다. 실제 앱 동작은 시험하지 않았습니다."
     },
     "en": {
       "product": "ActionClip Individual · 1 Mac",
       "summary": "A floating menu beside selected text on Mac for copying, translating and transforming text, with optional local or connected AI.",
       "purpose": "A floating menu beside selected text on Mac for copying, translating and transforming text, with optional local or connected AI.",
       "conditions": "One-time $9 lifetime license for 1 Mac. Ends November 29, 2026 at 23:59 UTC. macOS 15+, unlimited actions and app updates. Country eligibility, taxes and final checkout total unverified. No comparison price or discount percentage claimed.",
-      "buying_note": "Try 30 actions a day free first. Requires Accessibility permission; not every app is compatible. Apple Intelligence needs supported hardware; external AI uses your API key and may incur separate provider fees. Online actions can transmit selected text. Lifetime means the product’s commercial lifetime, not guaranteed future features or OS support. Refund requests within 30 days. Multi-Mac plans omitted because the product page and legal activation counts conflict."
+      "buying_note": "Try 30 actions a day free first. Requires Accessibility permission; not every app is compatible. Apple Intelligence needs supported hardware; external AI uses your API key and may incur separate provider fees. Online actions can transmit selected text. Lifetime means the product’s commercial lifetime, not guaranteed future features or OS support. Refund requests within 30 days. Multi-Mac plans omitted because the product page and legal activation counts conflict. According to the developer’s privacy policy, on-device OCR does not upload images. Microsoft Online OCR sends the captured image, app version and anonymous install ID to ActionClip, which forwards the image to Azure. Disabling online actions uses Apple OCR. OCR auto-translation can send recognized text to the translation provider, separate from selected text sent to external AI. We have not tested the app’s behavior."
     },
     "zh": {
       "product": "ActionClip Individual · 1台Mac",
       "summary": "在Mac选中文本旁显示复制、翻译和文本转换菜单，可选连接本地或外部AI。",
       "purpose": "在Mac选中文本旁显示复制、翻译和文本转换菜单，可选连接本地或外部AI。",
       "conditions": "1台Mac终身许可一次性$9。2026年11月29日23:59 UTC结束。macOS 15以上，无限操作及应用更新。地区、税费和最终结账总额未验证。无参考价格，不声称折扣率。",
-      "buying_note": "先试免费每天30次操作。需要辅助功能权限，并非兼容所有应用。Apple Intelligence需兼容硬件；外部AI使用自有API密钥，可能另收供应商费用。在线操作可发送选中文本。终身指产品商业存续期，不保证未来功能或系统支持。30天内可申请退款。多Mac方案因产品页与条款设备数量矛盾而未列入。"
+      "buying_note": "先试免费每天30次操作。需要辅助功能权限，并非兼容所有应用。Apple Intelligence需兼容硬件；外部AI使用自有API密钥，可能另收供应商费用。在线操作可发送选中文本。终身指产品商业存续期，不保证未来功能或系统支持。30天内可申请退款。多Mac方案因产品页与条款设备数量矛盾而未列入。 据开发者隐私政策，设备端OCR不上传图像。Microsoft在线OCR将截取图像、应用版本及匿名安装标识发送至ActionClip，由其将图像转发至Azure。关闭在线操作后使用Apple OCR。OCR自动翻译可能向翻译服务商发送识别文本，与外部AI发送所选文本的路径不同。我们未测试应用实际行为。"
     },
     "ja": {
       "product": "ActionClip Individual · Mac 1台",
       "summary": "Macの選択テキスト横にコピー・翻訳・変換メニューを表示。必要に応じてローカルまたは外部AIを接続できます。",
       "purpose": "Macの選択テキスト横にコピー・翻訳・変換メニューを表示。必要に応じてローカルまたは外部AIを接続できます。",
       "conditions": "Mac 1台用の買い切りライセンス$9。2026年11月29日23:59 UTC終了。macOS 15以降、操作無制限とアプリ更新。国別購入可否・税・決済総額は未確認。比較価格や割引率は主張しません。",
-      "buying_note": "まず無料の1日30操作を試せます。アクセシビリティ権限が必要で、全アプリ対応ではありません。Apple Intelligenceは対応機器が必要。外部AIは自身のAPIキーを使い別料金の可能性があります。オンライン操作は選択テキストを送信します。永久は製品の商業的存続期間で、将来の機能やOS対応を保証しません。30日以内に返金申請可能。複数Macプランは商品ページと規約の台数が不一致のため掲載していません。"
+      "buying_note": "まず無料の1日30操作を試せます。アクセシビリティ権限が必要で、全アプリ対応ではありません。Apple Intelligenceは対応機器が必要。外部AIは自身のAPIキーを使い別料金の可能性があります。オンライン操作は選択テキストを送信します。永久は製品の商業的存続期間で、将来の機能やOS対応を保証しません。30日以内に返金申請可能。複数Macプランは商品ページと規約の台数が不一致のため掲載していません。 開発元のプライバシーポリシーによると、端末内OCRは画像をアップロードしません。MicrosoftオンラインOCRはキャプチャ画像・アプリ版・匿名インストールIDをActionClipへ送り、画像がAzureへ転送されます。オンライン操作を無効にするとApple OCRを使います。OCR自動翻訳は認識テキストを翻訳事業者へ送る場合があり、外部AIへの選択テキスト送信とは別です。アプリの実動作は未検証です。"
     },
     "es": {
       "product": "ActionClip Individual · 1 Mac",
       "summary": "Un menú junto al texto seleccionado en Mac para copiar, traducir y transformar, con IA local o externa opcional.",
       "purpose": "Un menú junto al texto seleccionado en Mac para copiar, traducir y transformar, con IA local o externa opcional.",
       "conditions": "Licencia de pago único de $9 para 1 Mac. Hasta el 29 de noviembre de 2026, 23:59 UTC. macOS 15+, acciones ilimitadas y actualizaciones. Países, impuestos y total final no verificados. Sin precio comparativo ni porcentaje de descuento.",
-      "buying_note": "Prueba gratis 30 acciones al día. Requiere permiso de Accesibilidad; no funciona en todas las apps. Apple Intelligence exige hardware compatible; la IA externa usa tu clave API y puede tener costes adicionales. Las acciones en línea pueden enviar texto seleccionado. Vitalicia se refiere a la vida comercial del producto, sin garantizar funciones futuras ni compatibilidad. Reembolso solicitado dentro de 30 días. Omitimos planes multi-Mac por diferencias entre las cantidades de la página y los términos."
+      "buying_note": "Prueba gratis 30 acciones al día. Requiere permiso de Accesibilidad; no funciona en todas las apps. Apple Intelligence exige hardware compatible; la IA externa usa tu clave API y puede tener costes adicionales. Las acciones en línea pueden enviar texto seleccionado. Vitalicia se refiere a la vida comercial del producto, sin garantizar funciones futuras ni compatibilidad. Reembolso solicitado dentro de 30 días. Omitimos planes multi-Mac por diferencias entre las cantidades de la página y los términos. Según la política del desarrollador, el OCR local no sube imágenes. Microsoft Online OCR envía la imagen capturada, la versión y un identificador anónimo de instalación a ActionClip, que reenvía la imagen a Azure. Al desactivar las acciones en línea se usa Apple OCR. La traducción automática del OCR puede enviar el texto reconocido al traductor, aparte del texto seleccionado enviado a una IA externa. No hemos probado el comportamiento de la app."
     },
     "fr": {
       "product": "ActionClip Individual · 1 Mac",
       "summary": "Un menu près du texte sélectionné sur Mac pour copier, traduire et transformer, avec IA locale ou externe en option.",
       "purpose": "Un menu près du texte sélectionné sur Mac pour copier, traduire et transformer, avec IA locale ou externe en option.",
       "conditions": "Licence à paiement unique de 9 $ pour 1 Mac. Fin le 29 novembre 2026 à 23:59 UTC. macOS 15+, actions illimitées et mises à jour. Pays, taxes et total final non vérifiés. Aucun prix de référence ni pourcentage de remise revendiqué.",
-      "buying_note": "Essayez gratuitement 30 actions par jour. Autorisation Accessibilité requise ; toutes les apps ne sont pas compatibles. Apple Intelligence exige un Mac compatible ; l’IA externe utilise votre clé API et peut coûter davantage. Les actions en ligne peuvent transmettre le texte sélectionné. À vie signifie la durée commerciale du produit, sans garantie des futures fonctions ou versions de macOS. Remboursement à demander sous 30 jours. Plans multi-Mac exclus car les nombres divergent entre la page et les conditions."
+      "buying_note": "Essayez gratuitement 30 actions par jour. Autorisation Accessibilité requise ; toutes les apps ne sont pas compatibles. Apple Intelligence exige un Mac compatible ; l’IA externe utilise votre clé API et peut coûter davantage. Les actions en ligne peuvent transmettre le texte sélectionné. À vie signifie la durée commerciale du produit, sans garantie des futures fonctions ou versions de macOS. Remboursement à demander sous 30 jours. Plans multi-Mac exclus car les nombres divergent entre la page et les conditions. Selon la politique du développeur, l’OCR local n’envoie pas les images. Microsoft Online OCR transmet l’image capturée, la version et un identifiant anonyme d’installation à ActionClip, qui relaie l’image vers Azure. Désactiver les actions en ligne utilise Apple OCR. La traduction automatique de l’OCR peut envoyer le texte reconnu au traducteur, séparément du texte sélectionné envoyé à une IA externe. Nous n’avons pas testé le comportement de l’app."
     }
   },
   "yakuza-kiwami3-dark-ties-directgames": {
