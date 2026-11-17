@@ -2054,5 +2054,49 @@
       "conditions": "99 $ prépayés pour les 12 premiers mois, hors taxes. Nouveaux abonnés ou changements éligibles uniquement ; Creator annuel, Pro annuel et supérieurs au 16 novembre à 00:00 UTC sont exclus. Résilier puis revenir ne crée pas de droit. Fin le 1er décembre à 23:59 ET. Renouvellement annuel au tarif alors en vigueur sauf résiliation ; aucun remboursement au prorata promis. Pays, compte et paiement non testés.",
       "buying_note": "Pro : 445,50 $ la première année pour nouveaux abonnés/changements éligibles ; 495 $ pour passer de Pro mensuel actif à annuel. Frais API séparés et crédits prépayés exclus, offres non cumulables. Essayez les 10 000 crédits mensuels gratuits sans supposer les mêmes droits commerciaux que la formule payante. Le paiement annuel ne donne pas tous les crédits de l’année en une fois : ils sont attribués et réinitialisés chaque mois. Jusqu’à deux quotas mensuels inutilisés peuvent être reportés au mois suivant. Le reliquat n’est pas reporté lorsqu’une baisse de formule ou une résiliation prend effet à la fin du cycle de facturation."
     }
+  },
+  "plerdy-startup-bf-first-year": {
+    "ko": {
+      "product": "Plerdy Startup · 첫해",
+      "summary": "방문자가 어디를 누르고 어디서 이탈하는지 살펴보는 웹사이트 분석 도구. 히트맵·세션 재생·SEO 점검을 함께 제공합니다.",
+      "purpose": "방문자가 어디를 누르고 어디서 이탈하는지 살펴보는 웹사이트 분석 도구. 히트맵·세션 재생·SEO 점검을 함께 제공합니다.",
+      "conditions": "코드 plerdyBF2026로 첫해 $126 선결제(일반 연간 $252 기준), 세금 별도. 12월 2일 23:59 미국 태평양시간 종료. 다음 해 당시 연간 정가로 자동갱신. 월간→연간 전환 또는 기존 연간의 상위 플랜 전환에도 적용. 월간 결제·추가 기능·중복 할인 제외. 국가와 결제 미검증.",
+      "buying_note": "무료판이나 14일 체험부터 사용하세요. Startup은 일일 히트맵 500, 저장 세션 총 5,000, SEO 페이지 10,000, 보관 3개월 한도입니다. 결제 후 30일 이내 환불 요청 시 전액 반환하고 유료 기능 종료, 이후 환불 불가. 설치 전 방문자 고지·필요한 동의·민감정보 마스킹을 설정해야 합니다. SERP 등 별도 추가 기능 포함 여부는 구매 화면에서 확인하세요."
+    },
+    "en": {
+      "product": "Plerdy Startup · first year",
+      "summary": "Website analytics for seeing where visitors click and get stuck, with heatmaps, session replay and SEO checks.",
+      "purpose": "Website analytics for seeing where visitors click and get stuck, with heatmaps, session replay and SEO checks.",
+      "conditions": "Code plerdyBF2026: $126 prepaid for the first year against the regular $252 annual price, plus tax. Ends Dec 2 at 23:59 Pacific. Renews at the then-current annual rate. Monthly-to-annual switches and upgrades from existing annual plans qualify. No monthly billing, add-ons or stacked discounts. Country and checkout untested.",
+      "buying_note": "Try the free plan or 14-day trial. Startup limits: 500 daily heatmap views, 5,000 stored sessions total, 10,000 SEO pages and 3 months of storage. Request a full refund within 30 days of payment; paid features end. No refunds afterward. Set up visitor notices, required consent and sensitive-data masking before installation. Check separately sold add-ons such as SERP at checkout."
+    },
+    "zh": {
+      "product": "Plerdy Startup · 首年",
+      "summary": "通过热图、会话回放和SEO检查，了解网站访客在哪里点击、在哪一步离开。",
+      "purpose": "通过热图、会话回放和SEO检查，了解网站访客在哪里点击、在哪一步离开。",
+      "conditions": "使用plerdyBF2026首年预付$126，普通年费参考$252，另加税。12月2日太平洋时间23:59结束。次年按届时年费自动续订。月付转年付及现有年付升级适用。月付、附加功能、叠加优惠不适用。地区和结账未验证。",
+      "buying_note": "先试免费版或14天试用。Startup限每日500热图浏览、共5,000保存会话、10,000个SEO页面、保留3个月。付款后30天内申请可全额退款并终止付费功能；之后不退。安装前设置访客告知、必要同意和敏感数据遮蔽。SERP等单独销售的附加功能请在结账时确认。"
+    },
+    "ja": {
+      "product": "Plerdy Startup · 初年度",
+      "summary": "ヒートマップ、セッション再生、SEOチェックで訪問者のクリックや離脱箇所を調べるサイト分析ツール。",
+      "purpose": "ヒートマップ、セッション再生、SEOチェックで訪問者のクリックや離脱箇所を調べるサイト分析ツール。",
+      "conditions": "plerdyBF2026で初年度$126前払い、通常年額$252基準、税別。12月2日23:59太平洋時間終了。翌年は更新時の通常年額で自動更新。月払いから年払い、既存年払いから上位プランへの変更も対象。月払い・追加機能・他割引併用不可。国と決済は未検証。",
+      "buying_note": "無料版または14日間体験から。Startupは日次ヒートマップ500、保存セッション総数5,000、SEOページ10,000、保存期間3か月。支払いから30日以内の申請で全額返金し有料機能終了、それ以降は返金不可。導入前に訪問者通知・必要な同意・機密情報のマスクを設定。SERPなど別売機能は購入画面で確認。"
+    },
+    "es": {
+      "product": "Plerdy Startup · primer año",
+      "summary": "Mapas de calor, reproducción de sesiones y revisión SEO para entender dónde hacen clic y abandonan los visitantes.",
+      "purpose": "Mapas de calor, reproducción de sesiones y revisión SEO para entender dónde hacen clic y abandonan los visitantes.",
+      "conditions": "Código plerdyBF2026: $126 anticipados el primer año frente a $252 anuales habituales, más impuestos. Hasta el 2 de diciembre, 23:59 del Pacífico. Renovación al precio anual vigente. Admite pasar de mensual a anual o mejorar un plan anual existente. Excluye mensualidades, extras y descuentos acumulados. País y pago no probados.",
+      "buying_note": "Prueba el plan gratuito o los 14 días de prueba. Startup: 500 vistas de mapas al día, 5.000 sesiones guardadas en total, 10.000 páginas SEO y 3 meses de almacenamiento. Reembolso completo solicitado dentro de 30 días del pago, con fin de funciones pagadas; después no. Configura avisos, consentimiento necesario y ocultación de datos sensibles antes de instalar. Confirma extras separados como SERP al pagar."
+    },
+    "fr": {
+      "product": "Plerdy Startup · première année",
+      "summary": "Cartes de chaleur, relecture de sessions et contrôles SEO pour comprendre les clics et abandons sur un site.",
+      "purpose": "Cartes de chaleur, relecture de sessions et contrôles SEO pour comprendre les clics et abandons sur un site.",
+      "conditions": "Code plerdyBF2026 : 126 $ prépayés la première année au lieu du tarif annuel habituel de 252 $, hors taxes. Fin le 2 décembre à 23:59, heure du Pacifique. Renouvellement au tarif annuel alors applicable. Passage mensuel vers annuel ou montée de gamme annuelle admis. Mensualités, options et cumul exclus. Pays et paiement non testés.",
+      "buying_note": "Essayez la formule gratuite ou les 14 jours d’essai. Startup : 500 vues de cartes par jour, 5 000 sessions stockées au total, 10 000 pages SEO et 3 mois de stockage. Demande de remboursement intégral sous 30 jours après paiement, avec arrêt des fonctions payantes ; aucun après. Configurez information, consentement nécessaire et masquage sensible avant installation. Vérifiez les options séparées comme SERP au paiement."
+    }
   }
 }

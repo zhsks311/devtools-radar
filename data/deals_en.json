@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T21:37:12.079241+00:00",
+  "generated_at": "2026-11-17T00:09:11.411167+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -3698,6 +3698,113 @@
         "annual_allocation": "monthly, not upfront annual lump sum",
         "rollover": "up to two monthly quotas; none when downgrade/cancellation takes effect at billing-cycle end"
       }
+    },
+    {
+      "id": "plerdy-startup-bf-first-year",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Plerdy Startup · first year",
+      "product": "Plerdy Startup · first year",
+      "store": "Plerdy",
+      "storefront_country": null,
+      "price": 126,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital subscription",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Website heatmaps, session replay and SEO checks to investigate where visitors get stuck.",
+        "Official Startup offer: USD 126 prepaid first year with plerdyBF2026, regular annual reference USD 252; tax extra. Ends December 2 2026 at 23:59 Pacific. Renews at regular annual price; monthly-to-annual and annual upgrades eligible. No monthly billing, add-ons or stacked discounts. Country and checkout untested."
+      ],
+      "audience": "Website owners and professional teams",
+      "source": {
+        "id": "plerdy-official",
+        "label": "Plerdy official Black Friday offer",
+        "url": "https://www.plerdy.com/black-friday/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-17",
+      "score": null,
+      "disclosure": "No affiliate tracking; seller price, not guaranteed checkout total.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "price_variant": "Startup annual with plerdyBF2026 / eligible account",
+      "link": {
+        "url": "https://www.plerdy.com/black-friday/",
+        "tracked": false,
+        "label": "View official offer",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-17T00:09:11.411167+00:00",
+        "url": "https://www.plerdy.com/black-friday/",
+        "product_match": true,
+        "evidence": "Official Startup offer: USD 126 prepaid first year with plerdyBF2026, regular annual reference USD 252; tax extra. Ends December 2 2026 at 23:59 Pacific. Renews at regular annual price; monthly-to-annual and annual upgrades eligible. No monthly billing, add-ons or stacked discounts. Country and checkout untested."
+      },
+      "price_review": {
+        "id": "plerdy-startup-bf-first-year",
+        "product": "Plerdy Startup · first year",
+        "seller_url": "https://www.plerdy.com/black-friday/",
+        "recorded_price": 126,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 126,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://www.plerdy.com/black-friday/",
+            "observed_at": "2026-11-17T00:09:11.411167+00:00",
+            "result": "Official Startup offer: USD 126 prepaid first year with plerdyBF2026, regular annual reference USD 252; tax extra. Ends December 2 2026 at 23:59 Pacific. Renews at regular annual price; monthly-to-annual and annual upgrades eligible. No monthly billing, add-ons or stacked discounts. Country and checkout untested."
+          }
+        ],
+        "review_completed_at": "2026-11-17T00:09:11.411167+00:00",
+        "limitations": [
+          "Seller annual reference, not historical lowest price.",
+          "Country eligibility, taxes and checkout not verified."
+        ]
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital annual subscription",
+        "activation": "New plans, monthly-to-annual changes or existing annual upgrades; account checkout untested.",
+        "payment": "Paddle; country eligibility unverified.",
+        "tax": "Tax extra.",
+        "returns": "Official policy: request full payment refund within 30 days; paid features end. No refund after 30 days.",
+        "evidence_url": "https://www.plerdy.com/refund-policy/",
+        "checked_at": "2026-11-17T00:09:11.411167+00:00"
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "price": 126,
+        "currency": "USD",
+        "observed_at": "2026-11-17T00:09:11.411167+00:00",
+        "source_url": "https://www.plerdy.com/black-friday/",
+        "evidence": "Official Startup offer: USD 126 prepaid first year with plerdyBF2026, regular annual reference USD 252; tax extra. Ends December 2 2026 at 23:59 Pacific. Renews at regular annual price; monthly-to-annual and annual upgrades eligible. No monthly billing, add-ons or stacked discounts. Country and checkout untested."
+      },
+      "expires_at": "2026-12-03T07:59:00+00:00",
+      "alternative_review": {
+        "checked_at": "2026-11-17T00:09:11.411167+00:00",
+        "sources": [
+          {
+            "url": "https://www.plerdy.com/pricing/",
+            "label": "Plan limits and free tier"
+          },
+          {
+            "url": "https://www.plerdy.com/refund-policy/",
+            "label": "Refund policy"
+          },
+          {
+            "url": "https://www.plerdy.com/terms-of-service/",
+            "label": "Terms and visitor privacy responsibilities"
+          }
+        ]
+      }
     }
   ],
   "picks": [
@@ -6386,7 +6493,7 @@
     }
   },
   "stats": {
-    "feed": 30,
+    "feed": 31,
     "sources": 11
   }
 }
