@@ -2230,5 +2230,49 @@
       "conditions": "25 800 KRW ; référence vendeur 69 800 KRW, sans minimum historique vérifié. Activation ET jeu en Corée uniquement. Fin indiquée : 1er décembre à 02:00, fuseau non précisé. Sans bonus Deluxe. Paiement et activation non testés.",
       "buying_note": "Windows 11 64 bits, 58 GB, interface/sous-titres coréens, Denuvo DRM. Vérifiez région Steam et configuration. Changement d’avis sous 7 jours ; réception/activation de clé ou synchronisation limite les retours. Erreurs de région/configuration et achats en double exclus."
     }
+  },
+  "sonic-racing-crossworlds-directgames": {
+    "ko": {
+      "product": "소닉 레이싱 크로스월드 · Steam 기본판",
+      "summary": "육지·바다·하늘을 넘나드는 소닉 카트 레이싱. 온라인 최대 12명 경쟁과 4인 로컬 플레이를 지원하는 PC 기본판입니다.",
+      "purpose": "육지·바다·하늘을 넘나드는 소닉 카트 레이싱. 온라인 최대 12명 경쟁과 4인 로컬 플레이를 지원하는 PC 기본판입니다.",
+      "conditions": "23,500원. 판매처 비교가 44,800원이며 역대 최저가 검증은 아닙니다. 한국에서만 키 등록과 플레이 가능. 12월 1일 02:00 종료 표기(시간대 미명시). 디럭스 추가 아이템은 미포함. 결제·등록 미시험.",
+      "buying_note": "Steam의 현재 사양은 저장공간 20 GB, 최소 Windows 10 / 권장 Windows 11, RAM 12 GB, AVX 지원 CPU입니다. 판매처의 9 GB는 네트워크 테스트용이라 적용하지 않았습니다. 디럭스와 시즌 패스 2는 별도 구매입니다. Steam 국가와 PC 사양을 확인하세요. 판매처 정책상 단순변심은 구매 7일 이내 요청 가능하지만 키 수신·활성화·계정 동기화 후에는 반품이 제한됩니다. 지역·사양 착오와 중복 구매도 제한 대상입니다."
+    },
+    "en": {
+      "product": "Sonic Racing: CrossWorlds · Steam base game",
+      "summary": "A Sonic kart racer across land, sea and air. The PC base game offers online races for up to 12 players and four-player local play.",
+      "purpose": "A Sonic kart racer across land, sea and air. The PC base game offers online races for up to 12 players and four-player local play.",
+      "conditions": "KRW 23,500; seller reference KRW 44,800, not a verified historical low. Activation AND play in Korea only. End shown Dec 1, 02:00, timezone unspecified. Deluxe extras excluded. Checkout and redemption untested.",
+      "buying_note": "Current Steam requirements: 20 GB, Windows 10 minimum / Windows 11 recommended, 12 GB RAM and an AVX-capable CPU. The seller’s 9 GB refers to the network test and is not used. Deluxe and Season Pass 2 are separate purchases. Check Steam region and hardware. Seller accepts change-of-mind requests within 7 days, but key receipt, activation or account sync restrict returns. Region/spec mistakes and duplicate purchases are excluded."
+    },
+    "zh": {
+      "product": "索尼克赛车 跨界世界 · Steam基础版",
+      "summary": "穿越陆地、海洋和天空的索尼克卡丁车竞速。PC基础版支持最多12人在线竞赛和4人本地游玩。",
+      "purpose": "穿越陆地、海洋和天空的索尼克卡丁车竞速。PC基础版支持最多12人在线竞赛和4人本地游玩。",
+      "conditions": "23,500韩元；商家参考价44,800韩元，未验证历史最低。仅限韩国激活和游玩。标示12月1日02:00结束，时区未注明。不含豪华版附加物品。未测试付款及激活。",
+      "buying_note": "Steam当前要求20 GB、最低Windows 10 / 推荐Windows 11、12 GB内存及支持AVX的CPU。商家9 GB是网络测试要求，未采用。豪华版和季票2另购。 检查Steam地区和配置。商家允许购买7天内提出改变主意退货，但密钥接收、激活或账户同步后受限；地区、配置错误及重复购买也受限。"
+    },
+    "ja": {
+      "product": "ソニックレーシング クロスワールド · Steam基本版",
+      "summary": "陸・海・空を走るソニックのカートレース。PC基本版は最大12人のオンライン対戦と4人ローカルプレイに対応。",
+      "purpose": "陸・海・空を走るソニックのカートレース。PC基本版は最大12人のオンライン対戦と4人ローカルプレイに対応。",
+      "conditions": "23,500ウォン、販売店比較価格44,800ウォン。過去最安値未検証。登録とプレイは韓国のみ。12月1日02:00終了表記、時間帯未指定。デラックス追加アイテムは対象外。決済・登録未試験。",
+      "buying_note": "現行Steam要件は20 GB、最低Windows 10／推奨Windows 11、RAM 12 GB、AVX対応CPU。販売店の9 GBはネットワークテスト用のため採用していません。デラックス版とシーズンパス2は別売り。 Steam国設定と仕様を確認。購入者都合の返品申請は購入7日以内ですが、キー受領・有効化・同期後は制限。地域・仕様の確認不足や重複購入も対象外。"
+    },
+    "es": {
+      "product": "Sonic Racing: CrossWorlds · juego base Steam",
+      "summary": "Carreras de karts de Sonic por tierra, mar y aire. Juego base para PC con carreras en línea de hasta 12 jugadores y modo local para cuatro.",
+      "purpose": "Carreras de karts de Sonic por tierra, mar y aire. Juego base para PC con carreras en línea de hasta 12 jugadores y modo local para cuatro.",
+      "conditions": "23.500 KRW; referencia del vendedor 44.800 KRW, sin mínimo histórico verificado. Activación Y juego solo en Corea. Fin indicado: 1 de diciembre, 02:00, zona horaria no indicada. Sin extras Deluxe. Pago y activación no probados.",
+      "buying_note": "Steam indica 20 GB, Windows 10 mínimo / Windows 11 recomendado, 12 GB de RAM y CPU con AVX. Los 9 GB del vendedor corresponden a la prueba de red y no se usan. Deluxe y el pase de temporada 2 se compran aparte. Revisa región Steam y requisitos. Cambio de opinión: solicitar en 7 días; recibir/activar la clave o sincronizar la cuenta restringe devoluciones. También se excluyen errores de región/configuración y compras duplicadas."
+    },
+    "fr": {
+      "product": "Sonic Racing: CrossWorlds · jeu de base Steam",
+      "summary": "Des courses de karts Sonic sur terre, sur mer et dans les airs. Jeu de base PC avec courses en ligne à 12 et mode local à quatre.",
+      "purpose": "Des courses de karts Sonic sur terre, sur mer et dans les airs. Jeu de base PC avec courses en ligne à 12 et mode local à quatre.",
+      "conditions": "23 500 KRW ; référence vendeur 44 800 KRW, sans minimum historique vérifié. Activation ET jeu en Corée uniquement. Fin indiquée : 1er décembre à 02:00, fuseau non précisé. Sans bonus Deluxe. Paiement et activation non testés.",
+      "buying_note": "Steam indique 20 GB, Windows 10 minimum / Windows 11 recommandé, 12 GB de RAM et un processeur AVX. Les 9 GB du vendeur concernent le test réseau et ne sont pas retenus. Deluxe et le pass saison 2 sont vendus séparément. Vérifiez région Steam et configuration. Changement d’avis sous 7 jours ; réception/activation de clé ou synchronisation limite les retours. Erreurs de région/configuration et achats en double exclus."
+    }
   }
 }

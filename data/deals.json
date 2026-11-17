@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T03:48:13.142745+00:00",
+  "generated_at": "2026-11-17T06:27:51.437019+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -7,6 +7,128 @@
   },
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
+    {
+      "id": "sonic-racing-crossworlds-directgames",
+      "region": "kr",
+      "target": "ko",
+      "category": "gaming",
+      "category_label": "Gaming",
+      "title_raw": "Sonic Racing: CrossWorlds · Steam base game",
+      "product": "Sonic Racing: CrossWorlds · Steam base game",
+      "store": "Direct Games",
+      "price": 23500,
+      "currency": "KRW",
+      "shipping": "Digital delivery",
+      "specs": [
+        "Windows 10 minimum / Windows 11 recommended · 20 GB (Steam)",
+        "Steam · Denuvo DRM",
+        "Korean interface and subtitles"
+      ],
+      "briefing": [
+        "Live seller browser: base game KRW 23,500; current seller reference KRW 44,800. Deluxe KRW 36,500 and Season Pass 2 KRW 23,800 are separate purchases. Korean activation AND play only, Steam, Denuvo. End 2026-12-01 02:00 timezone unspecified. Cached search showed obsolete 71,800/79,800 and 27,500 prices; not used. Checkout/redemption untested. Seller has cart button."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-17",
+      "source": {
+        "url": "https://www.directg.net/game/game_view.html?platform=1&product_id=662a6660-1027-4c87-8667-9b04943977b4&sku=fbab0691-59b9-4c66-a55e-f9c3410d4056",
+        "name": "Direct Games official product page"
+      },
+      "price_source": "https://www.directg.net/game/game_view.html?platform=1&product_id=662a6660-1027-4c87-8667-9b04943977b4&sku=fbab0691-59b9-4c66-a55e-f9c3410d4056",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://www.directg.net/game/game_view.html?platform=1&product_id=662a6660-1027-4c87-8667-9b04943977b4&sku=fbab0691-59b9-4c66-a55e-f9c3410d4056",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-17T06:27:51.437019+00:00",
+        "url": "https://www.directg.net/game/game_view.html?platform=1&product_id=662a6660-1027-4c87-8667-9b04943977b4&sku=fbab0691-59b9-4c66-a55e-f9c3410d4056",
+        "product_match": true,
+        "evidence": "Live seller browser: base game KRW 23,500; current seller reference KRW 44,800. Deluxe KRW 36,500 and Season Pass 2 KRW 23,800 are separate purchases. Korean activation AND play only, Steam, Denuvo. End 2026-12-01 02:00 timezone unspecified. Cached search showed obsolete 71,800/79,800 and 27,500 prices; not used. Checkout/redemption untested. Seller has cart button."
+      },
+      "price_review": {
+        "id": "sonic-racing-crossworlds-directgames",
+        "product": "Sonic Racing: CrossWorlds · Steam base game",
+        "seller_url": "https://www.directg.net/game/game_view.html?platform=1&product_id=662a6660-1027-4c87-8667-9b04943977b4&sku=fbab0691-59b9-4c66-a55e-f9c3410d4056",
+        "recorded_price": 23500,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 23500,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://www.directg.net/game/game_view.html?platform=1&product_id=662a6660-1027-4c87-8667-9b04943977b4&sku=fbab0691-59b9-4c66-a55e-f9c3410d4056",
+            "observed_at": "2026-11-17T06:27:51.437019+00:00",
+            "result": "Live seller browser: base game KRW 23,500; current seller reference KRW 44,800. Deluxe KRW 36,500 and Season Pass 2 KRW 23,800 are separate purchases. Korean activation AND play only, Steam, Denuvo. End 2026-12-01 02:00 timezone unspecified. Cached search showed obsolete 71,800/79,800 and 27,500 prices; not used. Checkout/redemption untested. Seller has cart button."
+          }
+        ],
+        "limitations": [
+          "Account and checkout eligibility untested.",
+          "Seller reference price is not historical-low proof.",
+          "Promotion end timezone not specified."
+        ],
+        "review_completed_at": "2026-11-17T06:27:51.437019+00:00",
+        "seller_displayed_comparison": {
+          "reference_price": 44800,
+          "sale_price": 23500,
+          "kind": "seller_current_regular_price",
+          "historical_low_verified": false
+        }
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "digital"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "verified_activation",
+        "delivery": "Steam key delivered through Direct Games account.",
+        "activation": "Activation and play limited to Korea. Check Steam account region.",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Seller policy: change-of-mind requests within 7 days; code receipt, activation or account sync prevents return. Other exceptions apply.",
+        "evidence_url": "https://www.directg.net/game/game_view.html?platform=1&product_id=662a6660-1027-4c87-8667-9b04943977b4&sku=fbab0691-59b9-4c66-a55e-f9c3410d4056",
+        "checked_at": "2026-11-17"
+      },
+      "expires_at": null,
+      "latest_offer_check": {
+        "id": "sonic-racing-crossworlds-directgames",
+        "status": "seller_purchase_offer",
+        "price": 23500,
+        "observed_at": "2026-11-17T06:27:51.437019+00:00",
+        "source_url": "https://www.directg.net/game/game_view.html?platform=1&product_id=662a6660-1027-4c87-8667-9b04943977b4&sku=fbab0691-59b9-4c66-a55e-f9c3410d4056",
+        "evidence": "Live seller browser: base game KRW 23,500; current seller reference KRW 44,800. Deluxe KRW 36,500 and Season Pass 2 KRW 23,800 are separate purchases. Korean activation AND play only, Steam, Denuvo. End 2026-12-01 02:00 timezone unspecified. Cached search showed obsolete 71,800/79,800 and 27,500 prices; not used. Checkout/redemption untested. Seller has cart button.",
+        "limitations": "No purchase or redemption performed."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-17T06:27:51.437019+00:00",
+        "sources": [
+          {
+            "url": "https://www.directg.net/service/refund_policy.html",
+            "label": "Digital-key refund restrictions"
+          },
+          {
+            "url": "https://store.steampowered.com/app/2486820/Sonic_Racing_CrossWorlds/",
+            "label": "Steam: current system requirements"
+          }
+        ]
+      },
+      "system_requirements_review": {
+        "checked_at": "2026-11-17T06:27:51.437019+00:00",
+        "source_url": "https://store.steampowered.com/app/2486820/Sonic_Racing_CrossWorlds/",
+        "note": "Steam lists 20 GB and Windows 10 minimum/11 recommended; seller 9 GB explicitly refers to Open Network Test and is not used. AVX CPU, 12 GB RAM, DirectX 12 required."
+      }
+    },
     {
       "id": "yakuza-kiwami3-dark-ties-directgames",
       "region": "kr",
@@ -5121,7 +5243,7 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 26,
+    "feed": 27,
     "tracked_links": 0,
     "search_fallback": 0,
     "verified_product_links": 7,
