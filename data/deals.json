@@ -2474,7 +2474,7 @@
         "url": "https://www.adobe.com/kr/offer-terms/cci-special-offer.html"
       },
       "published_at": null,
-      "checked_date": "2026-11-15",
+      "checked_date": "2026-11-17",
       "score": null,
       "disclosure": "Direct official link, no affiliate tracking. Annual commitment billed monthly; checkout not tested.",
       "ai_rewritten": false,
@@ -2527,6 +2527,11 @@
             "url": "https://www.adobe.com/kr/creativecloud.html",
             "observed_at": "2026-11-15T17:14:18.828646+00:00",
             "result": "Official suite product page independently shows 34800 KRW/month VAT included, first-year annual commitment monthly billed."
+          },
+          {
+            "url": "https://www.adobe.com/kr/creativecloud.html",
+            "observed_at": "2026-11-17T18:46:37.059022+00:00",
+            "result": "Official KR product page and linked offer terms both show KRW 34800/month VAT included, first-year annual commitment billed monthly (KRW 417600 total), new eligible subscribers, offer through 2026-11-27; renewal currently KRW 87900/month. No checkout performed."
           }
         ],
         "conditions": [
@@ -2535,7 +2540,7 @@
         "limitations": [
           "No historical-low claim; different prepaid plan not combined. No checkout."
         ],
-        "review_completed_at": "2026-11-15T17:14:18.828646+00:00"
+        "review_completed_at": "2026-11-17T18:46:37.059022+00:00"
       },
       "expires_at": null,
       "country_targeting": {
@@ -2571,12 +2576,12 @@
       },
       "latest_offer_check": {
         "id": "adobe-creative-cloud-kr-bf-monthly-annual",
-        "status": "unverified_current",
-        "price": null,
-        "observed_at": "2026-11-16T08:56:54.825858+00:00",
+        "status": "seller_page_display_confirmed",
+        "price": 34800,
+        "observed_at": "2026-11-17T18:46:37.059022+00:00",
         "source_url": "https://www.adobe.com/kr/creativecloud.html",
-        "evidence": "Official KR page returns product and new-subscriber first-year offer text but price dynamically omitted in retrieved HTML. 34800 not verified this round.",
-        "limitations": "No checkout performed; do not infer stock from purchase limits."
+        "evidence": "Official KR product page and linked offer terms both show KRW 34800/month VAT included, first-year annual commitment billed monthly (KRW 417600 total), new eligible subscribers, offer through 2026-11-27; renewal currently KRW 87900/month. No checkout performed.",
+        "limitations": "No checkout; eligibility restrictions remain. Exact expiry time unspecified."
       }
     },
     {
