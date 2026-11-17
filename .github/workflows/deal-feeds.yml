@@ -19,7 +19,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -65,14 +65,14 @@ jobs:
           python - <<'PY'
           import json,time,urllib.request
           expected=json.load(open('published/feeds/status.json'))['attempted_at']
-          for attempt in range(18):
+          for attempt in range(60):
               try:
                   req=urllib.request.Request('https://devteardown.com/feeds/status.json',headers={'Cache-Control':'no-cache'})
                   live=json.load(urllib.request.urlopen(req,timeout=20))
                   if live['attempted_at']==expected: break
               except Exception: pass
               time.sleep(10)
-          else: raise SystemExit('Deployment completed but live timestamp not yet verified')
+          else: raise SystemExit('Pages build requested, but live timestamp was not verified within ten minutes')
           print('Live source-feed collection timestamp verified:',expected)
           source=next(s for s in live['sources'] if s['id']=='dealnews')
           if source['status'] not in ('collected','not_modified'):

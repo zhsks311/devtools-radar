@@ -37,6 +37,8 @@ class FeedPublicationTests(unittest.TestCase):
   self.assertIn('git pull --rebase origin gh-pages',w)
   self.assertIn('git add feeds/index.html feeds/dealnews.xml feeds/status.json',w)
   self.assertIn('pages/builds',w)
+  self.assertIn("'.build_type'",w);self.assertIn('range(60)',w)
+  self.assertIn('timeout-minutes: 20',w)
   self.assertNotIn('upload-pages-artifact',w);self.assertNotIn('deploy-pages@',w)
   self.assertIn("source['status'] not in",w)
  def test_feed_commit_rebase_preserves_concurrent_site_commit(self):
