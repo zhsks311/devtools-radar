@@ -2098,5 +2098,49 @@
       "conditions": "Code plerdyBF2026 : 126 $ prépayés la première année au lieu du tarif annuel habituel de 252 $, hors taxes. Fin le 2 décembre à 23:59, heure du Pacifique. Renouvellement au tarif annuel alors applicable. Passage mensuel vers annuel ou montée de gamme annuelle admis. Mensualités, options et cumul exclus. Pays et paiement non testés.",
       "buying_note": "Essayez la formule gratuite ou les 14 jours d’essai. Startup : 500 vues de cartes par jour, 5 000 sessions stockées au total, 10 000 pages SEO et 3 mois de stockage. Demande de remboursement intégral sous 30 jours après paiement, avec arrêt des fonctions payantes ; aucun après. Configurez information, consentement nécessaire et masquage sensible avant installation. Vérifiez les options séparées comme SERP au paiement."
     }
+  },
+  "bridge-constructor-studio-directgames": {
+    "ko": {
+      "product": "브릿지 컨스트럭터 스튜디오 · Steam 키",
+      "summary": "다리를 설계하고 차를 통과시켜 보는 물리 퍼즐 게임. 70개 퍼즐과 자유로운 건설 모드로 구조를 바꿔 가며 시험합니다.",
+      "purpose": "다리를 설계하고 차를 통과시켜 보는 물리 퍼즐 게임. 70개 퍼즐과 자유로운 건설 모드로 구조를 바꿔 가며 시험합니다.",
+      "conditions": "3,100원. 판매처 비교가 13,500원이며 역대 최저가 검증은 아닙니다. 한국·일본·싱가포르에서만 키 등록과 플레이 가능. Steam 계정 국가를 확인하세요. 11월 24일 23:59 종료 표기(시간대 미명시). 결제·키 등록 미시험.",
+      "buying_note": "Windows 10 64비트, 한국어 인터페이스·자막, 싱글 플레이. 사양과 보유 게임을 먼저 확인하세요. 판매처 정책상 단순변심은 구매 7일 이내 요청 가능하지만 키 수신·활성화·계정 동기화 후에는 반품이 제한됩니다. 지역·사양 착오 및 중복 구매도 제한 대상입니다."
+    },
+    "en": {
+      "product": "Bridge Constructor Studio · Steam key",
+      "summary": "Design bridges and test them with vehicles in a physics puzzle game, with 70 puzzles and open-ended building.",
+      "purpose": "Design bridges and test them with vehicles in a physics puzzle game, with 70 puzzles and open-ended building.",
+      "conditions": "KRW 3,100; seller reference KRW 13,500, not a verified historical low. Key activation and play ONLY in Korea, Japan and Singapore; check Steam account region. Listed end: Nov 24, 23:59, timezone unspecified. Checkout and redemption untested.",
+      "buying_note": "Windows 10 64-bit, Korean interface/subtitles, single player. Check system requirements and existing library. Seller allows change-of-mind requests within 7 days, but receiving or activating a key or syncing an account restricts returns. Region/spec mistakes and duplicate purchases are also excluded."
+    },
+    "zh": {
+      "product": "Bridge Constructor Studio · Steam密钥",
+      "summary": "设计桥梁并让车辆通行的物理益智游戏，提供70个谜题和自由建造模式。",
+      "purpose": "设计桥梁并让车辆通行的物理益智游戏，提供70个谜题和自由建造模式。",
+      "conditions": "3,100韩元，商家参考价13,500韩元，未验证历史最低。仅可在韩国、日本、新加坡激活并游玩，请检查Steam账户地区。标示11月24日23:59结束，时区未注明。未测试付款及激活。",
+      "buying_note": "Windows 10 64位，韩语界面/字幕，单人游戏。先检查配置和已有游戏。商家允许购买后7天内提出改变主意退货，但密钥接收、激活或账户同步后受限；地区、配置误判及重复购买也受限。"
+    },
+    "ja": {
+      "product": "Bridge Constructor Studio · Steamキー",
+      "summary": "橋を設計し車両を通して試す物理パズル。70の問題と自由な建設を楽しめます。",
+      "purpose": "橋を設計し車両を通して試す物理パズル。70の問題と自由な建設を楽しめます。",
+      "conditions": "3,100ウォン、販売店比較価格13,500ウォン。過去最安値の検証ではありません。韓国・日本・シンガポールのみ登録とプレイ可能。Steamの国設定を確認。11月24日23:59終了表記、時間帯未指定。決済・登録は未試験。",
+      "buying_note": "Windows 10 64ビット、韓国語UI/字幕、シングルプレイ。仕様と所持済みゲームを確認。購入者都合の返品申請は購入後7日以内ですが、キー受領・有効化・アカウント同期後は制限されます。地域・仕様の確認不足や重複購入も対象外。"
+    },
+    "es": {
+      "product": "Bridge Constructor Studio · clave Steam",
+      "summary": "Diseña puentes y prueba su resistencia con vehículos en 70 puzles de física y construcción libre.",
+      "purpose": "Diseña puentes y prueba su resistencia con vehículos en 70 puzles de física y construcción libre.",
+      "conditions": "3.100 KRW; referencia del vendedor 13.500 KRW, no mínimo histórico verificado. Activación y juego SOLO en Corea, Japón y Singapur; revisa la región de Steam. Fin indicado: 24 de noviembre, 23:59, sin zona horaria. Pago y activación no probados.",
+      "buying_note": "Windows 10 de 64 bits, interfaz/subtítulos coreanos, un jugador. Comprueba requisitos y biblioteca. El vendedor admite solicitudes por cambio de opinión en 7 días, pero restringe devoluciones tras recibir/activar la clave o sincronizar la cuenta. Errores de región, requisitos o compras duplicadas también se excluyen."
+    },
+    "fr": {
+      "product": "Bridge Constructor Studio · clé Steam",
+      "summary": "Construisez des ponts et testez-les avec des véhicules : 70 énigmes de physique et construction libre.",
+      "purpose": "Construisez des ponts et testez-les avec des véhicules : 70 énigmes de physique et construction libre.",
+      "conditions": "3 100 KRW, référence vendeur 13 500 KRW, sans minimum historique vérifié. Activation ET jeu uniquement en Corée, au Japon et à Singapour ; vérifiez la région Steam. Fin indiquée : 24 novembre à 23:59, fuseau non précisé. Paiement et activation non testés.",
+      "buying_note": "Windows 10 64 bits, interface/sous-titres coréens, solo. Vérifiez configuration et bibliothèque. Demande pour changement d’avis sous 7 jours selon le vendeur, mais retour limité après réception/activation de la clé ou synchronisation du compte. Erreurs de région, configuration et achats en double également exclus."
+    }
   }
 }
