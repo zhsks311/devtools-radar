@@ -2705,7 +2705,7 @@
         "url": "https://proton.me/mail/black-friday"
       },
       "published_at": null,
-      "checked_date": "2026-11-15",
+      "checked_date": "2026-11-17",
       "score": null,
       "disclosure": "No affiliate tracking. Introductory annual price; automatic renewal costs more. Final checkout not tested.",
       "ai_rewritten": false,
@@ -2753,6 +2753,11 @@
             "url": "https://proton.me/mail/black-friday",
             "observed_at": "2026-11-16T08:59:09.753121+00:00",
             "result": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately."
+          },
+          {
+            "url": "https://proton.me/mail/black-friday",
+            "observed_at": "2026-11-17T12:36:12.710019+00:00",
+            "result": "Official public page rechecked: same first-12-month prepaid price and annual renewal as recorded. Checkout, tax and country eligibility not verified."
           }
         ],
         "conditions": [
@@ -2762,7 +2767,7 @@
           "Vendor discount uses regular monthly billing as baseline, not the annual renewal price. No crossed-out annual price or historical-low claim.",
           "Offer expiry, country eligibility and final tax unverified."
         ],
-        "review_completed_at": "2026-11-16T08:59:09.753121+00:00"
+        "review_completed_at": "2026-11-17T12:36:12.710019+00:00"
       },
       "expires_at": null,
       "alternative_review": {
@@ -2829,7 +2834,7 @@
         "url": "https://proton.me/drive/black-friday"
       },
       "published_at": null,
-      "checked_date": "2026-11-15",
+      "checked_date": "2026-11-17",
       "score": null,
       "disclosure": "No affiliate tracking. Introductory annual price; automatic renewal costs more. Final checkout not tested.",
       "ai_rewritten": false,
@@ -2877,6 +2882,11 @@
             "url": "https://proton.me/drive/black-friday",
             "observed_at": "2026-11-16T08:59:09.753121+00:00",
             "result": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately."
+          },
+          {
+            "url": "https://proton.me/drive/black-friday",
+            "observed_at": "2026-11-17T12:36:12.710019+00:00",
+            "result": "Official public page rechecked: same first-12-month prepaid price and annual renewal as recorded. Checkout, tax and country eligibility not verified."
           }
         ],
         "conditions": [
@@ -2886,7 +2896,7 @@
           "Vendor discount uses regular monthly billing as baseline, not the annual renewal price. No crossed-out annual price or historical-low claim.",
           "Offer expiry, country eligibility and final tax unverified."
         ],
-        "review_completed_at": "2026-11-16T08:59:09.753121+00:00"
+        "review_completed_at": "2026-11-17T12:36:12.710019+00:00"
       },
       "expires_at": null,
       "alternative_review": {
@@ -2953,7 +2963,7 @@
         "url": "https://proton.me/pass/black-friday"
       },
       "published_at": null,
-      "checked_date": "2026-11-15",
+      "checked_date": "2026-11-17",
       "score": null,
       "disclosure": "No affiliate tracking. Introductory annual price; automatic renewal costs more. Final checkout not tested.",
       "ai_rewritten": false,
@@ -3001,6 +3011,11 @@
             "url": "https://proton.me/pass/black-friday",
             "observed_at": "2026-11-16T08:59:09.753121+00:00",
             "result": "Official exact plan page displays the recorded USD price and purchase link. Proton first-year totals and renewals; Hostinger Premium 48-month upfront total; Chronoid Lifetime one-time; KeyboardStack Premium one-time checked separately."
+          },
+          {
+            "url": "https://proton.me/pass/black-friday",
+            "observed_at": "2026-11-17T12:36:12.710019+00:00",
+            "result": "Official public page rechecked: same first-12-month prepaid price and annual renewal as recorded. Checkout, tax and country eligibility not verified. Pass malformed feature fields not used."
           }
         ],
         "conditions": [
@@ -3011,7 +3026,7 @@
           "Offer expiry, country eligibility and final tax unverified.",
           "Official feature card contains malformed NaN and email fields; only password-manager identity and explicit billing terms retained."
         ],
-        "review_completed_at": "2026-11-16T08:59:09.753121+00:00"
+        "review_completed_at": "2026-11-17T12:36:12.710019+00:00"
       },
       "expires_at": null,
       "alternative_review": {
