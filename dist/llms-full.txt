@@ -1279,6 +1279,14 @@ A reviewed link is not proof of current stock, a discount or completed checkout.
 Prices can change. Countries below refer only to recorded delivery/activation evidence, not payment eligibility.
 Localized catalog and purchase conditions: https://devteardown.com/deals/
 
+### Insta360 Ace Pro 2 · Dual Battery Standard Bundle
+Seller: Insta360 official store
+Product URL: https://store.insta360.com/kr/product/ace-pro-2
+Product-link review: 2026-11-17T22:59:16.107244+00:00 (not a stock check)
+Recorded price: 437000 KRW. Seller price observation dated 2026-11-17T22:59:16.107244+00:00.
+Delivery / activation countries with evidence: KR.
+Discounts and historical-low claims are not established by this export.
+
 ### Insta360 X5 · Standard Bundle
 Seller: Insta360 official store
 Product URL: https://store.insta360.com/kr/product/x5
@@ -1347,7 +1355,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: Adobe
 Product URL: https://www.adobe.com/kr/creativecloud.html
 Product-link review: 2026-11-15T17:14:18.828646+00:00 (not a stock check)
-Recorded price: 34800 KRW. Seller price observation dated 2026-11-15T17:14:18.828646+00:00.
+Recorded price: 34800 KRW. Seller price observation dated 2026-11-17T18:46:37.059022+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1381,6 +1389,14 @@ Product URL: https://www.directg.net/game/game_view.html?platform=1&product_id=f
 Product-link review: 2026-11-17T00:27:53.813640+00:00 (not a stock check)
 Recorded price: 3100 KRW. Seller price observation dated 2026-11-17T00:27:53.813640+00:00.
 Delivery / activation countries with evidence: JP, KR, SG.
+Discounts and historical-low claims are not established by this export.
+
+### Proton Unlimited · first 12 months
+Seller: Proton
+Product URL: https://proton.me/mail/black-friday
+Product-link review: 2026-11-17T20:36:05.795014+00:00 (not a stock check)
+Recorded price: 77.88 USD. Seller price observation dated 2026-11-17T20:36:05.795014+00:00.
+Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
 ### Ulysses · US first-year offer

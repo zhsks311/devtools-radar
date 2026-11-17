@@ -2450,5 +2450,49 @@
       "conditions": "77.88 USD payés pour 12 mois ; renouvellement automatique à 119.88 USD/an sauf résiliation. Nouveaux clients. Pays, taxes et date de fin non confirmés. Image : application Mail incluse.",
       "buying_note": "Pour ce seul service, le forfait individuel coûte moins cher. Pour plusieurs services, comparez Unlimited : 77.88 USD prépayés la première année, puis renouvellement automatique à 119.88 USD/an. Il inclut 500 Go et les fonctions premium de Mail, Drive, VPN et Pass. Cela ne signifie pas que des abonnements séparés sont cumulables."
     }
+  },
+  "insta360-ace-pro-2-kr-dual-battery": {
+    "ko": {
+      "product": "Insta360 Ace Pro 2 · 배터리 2개 표준 번들",
+      "summary": "여행·라이딩 영상을 찍는 8K 액션캠. 셀프 촬영에 편한 2.5인치 플립 화면을 갖췄습니다.",
+      "purpose": "여행·라이딩 영상을 찍는 8K 액션캠. 셀프 촬영에 편한 2.5인치 플립 화면을 갖췄습니다.",
+      "conditions": "한국 공식몰 미드나잇 블랙·배터리 2개 표준 번들 437,000원. 판매처 참고가 547,000원이며 역사적 최저가로 검증하지 않았습니다.",
+      "buying_note": "한국몰 15만원 이상 무료배송. 장바구니 버튼 확인; 정확한 재고·도착일·주소별 결제는 미확인. 사진에는 카메라만 보이며 번들 전체 구성이 아닙니다."
+    },
+    "en": {
+      "product": "Insta360 Ace Pro 2 · Dual Battery Standard Bundle",
+      "summary": "An 8K action camera for travel and riding videos, with a 2.5-inch flip screen for self-filming.",
+      "purpose": "An 8K action camera for travel and riding videos, with a 2.5-inch flip screen for self-filming.",
+      "conditions": "Korean official store: Midnight Black Dual Battery Standard Bundle KRW437,000. Seller reference KRW547,000 is not a verified historical low.",
+      "buying_note": "Korean store offers free shipping above KRW150,000. Add-to-cart button observed; exact stock, arrival date and address-specific checkout untested. Photo shows the camera, not the entire bundle."
+    },
+    "zh": {
+      "product": "Insta360 Ace Pro 2 · 双电池标准套装",
+      "summary": "适合旅行及骑行拍摄的8K运动相机，配有方便自拍的2.5英寸翻转屏。",
+      "purpose": "适合旅行及骑行拍摄的8K运动相机，配有方便自拍的2.5英寸翻转屏。",
+      "conditions": "韩国官网午夜黑双电池标准套装437,000韩元。卖家参考价547,000韩元，未经历史最低价验证。",
+      "buying_note": "韩国店满150,000韩元免运费。已看到加入购物车按钮；实际库存、到货日期和地址结账未验证。图片仅展示相机，并非完整套装。"
+    },
+    "ja": {
+      "product": "Insta360 Ace Pro 2 · バッテリー2個標準セット",
+      "summary": "旅行やライディング撮影向けの8Kアクションカメラ。自撮りに便利な2.5インチ可動式画面を搭載。",
+      "purpose": "旅行やライディング撮影向けの8Kアクションカメラ。自撮りに便利な2.5インチ可動式画面を搭載。",
+      "conditions": "韓国公式ストアのミッドナイトブラック・バッテリー2個標準セット437,000ウォン。販売店参考547,000ウォンは過去最安値の検証ではありません。",
+      "buying_note": "韓国店は150,000ウォン以上送料無料。カートボタン確認済み。実在庫・到着日・住所別決済は未確認。写真はカメラのみでセット全体ではありません。"
+    },
+    "es": {
+      "product": "Insta360 Ace Pro 2 · paquete estándar con dos baterías",
+      "summary": "Cámara de acción 8K para viajes y rutas, con pantalla abatible de 2,5 pulgadas para grabarte.",
+      "purpose": "Cámara de acción 8K para viajes y rutas, con pantalla abatible de 2,5 pulgadas para grabarte.",
+      "conditions": "Tienda oficial coreana: paquete estándar Midnight Black con dos baterías, KRW437.000. Referencia del vendedor KRW547.000, no mínimo histórico verificado.",
+      "buying_note": "Envío gratis en Corea desde KRW150.000. Botón de compra visible; stock, llegada y pago por dirección no comprobados. La foto muestra solo la cámara, no todo el paquete."
+    },
+    "fr": {
+      "product": "Insta360 Ace Pro 2 · pack standard deux batteries",
+      "summary": "Caméra d’action 8K pour les voyages et les sorties, avec écran orientable de 2,5 pouces pour se filmer.",
+      "purpose": "Caméra d’action 8K pour les voyages et les sorties, avec écran orientable de 2,5 pouces pour se filmer.",
+      "conditions": "Boutique officielle coréenne : pack standard Midnight Black deux batteries, KRW437 000. Référence vendeur KRW547 000, pas un minimum historique vérifié.",
+      "buying_note": "Livraison gratuite en Corée dès KRW150 000. Bouton panier observé ; stock, arrivée et paiement par adresse non vérifiés. Photo de la caméra seule, pas du pack complet."
+    }
   }
 }

@@ -9,7 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
-    'store.insta360.com': r'/kr/product/x5/?', # Exact reviewed standard bundle.
+    'store.insta360.com': r'/kr/product/(?:x5|ace-pro-2)/?', # Exact reviewed standard bundle.
     'ulysses.app': r'/howiwrite/?', # Reviewed exact product/campaign; account eligibility remains unverified.
     'actionclip.app': r'/', # Reviewed single-product page; Individual 1 Mac plan.
     'www.plerdy.com': r'/black-friday/?',
