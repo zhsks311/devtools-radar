@@ -27,12 +27,13 @@ class PriceCurrentness(unittest.TestCase):
  def test_exact_price_not_recomputed(self):
   self.assertEqual([x['price'] for x in validated_price_options(self.d)],[61850,59850])
   self.assertEqual(self.d['price'],65100)
- def test_six_languages_show_conditions_outside_details(self):
+ def test_six_languages_keep_conditions_in_labeled_disclosure(self):
   for lang in ('ko','en','zh','ja','es','fr'):
    html=visible_price_context(self.d,lang)
    self.assertIn('61,850',html);self.assertIn('59,850',html)
    self.assertIn('U-25093',html);self.assertIn('datetime=',html)
-   self.assertNotIn('<details',html)
+   self.assertIn('<details class="conditional-options">',html)
+   self.assertIn('option-conditions',html)
  def test_old_coupon_does_not_inherit_fresh_base_observation(self):
   self.d['price_options'][0]['checked_at']=(self.now-timedelta(hours=25)).isoformat()
   text=visible_price_context(self.d,'en')
