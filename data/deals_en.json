@@ -3807,8 +3807,25 @@
           {
             "url": "https://www.plerdy.com/terms-of-service/",
             "label": "Terms and visitor privacy responsibilities"
+          },
+          {
+            "url": "https://www.plerdy.com/dpa/",
+            "label": "Data processing: session replay, popups and chat"
           }
         ]
+      },
+      "usage_privacy_review": {
+        "checked_at": "2026-11-17T02:21:12.602452+00:00",
+        "sources": [
+          "https://www.plerdy.com/pricing/",
+          "https://www.plerdy.com/dpa/"
+        ],
+        "heatmap_pageviews_per_day": 500,
+        "stored_sessions_total": 5000,
+        "retention_months": 3,
+        "monthly_session_allowance": false,
+        "popup_chat_personal_data_possible": true,
+        "evidence": "Official Startup pricing distinguishes daily page views from total stored recordings. DPA Annex 1 distinguishes masked replay input from visitor-submitted popup/chat personal data."
       }
     }
   ],
