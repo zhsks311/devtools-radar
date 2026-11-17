@@ -1279,6 +1279,14 @@ A reviewed link is not proof of current stock, a discount or completed checkout.
 Prices can change. Countries below refer only to recorded delivery/activation evidence, not payment eligibility.
 Localized catalog and purchase conditions: https://devteardown.com/deals/
 
+### Yakuza Kiwami 3 & Dark Ties · Steam base game
+Seller: Direct Games
+Product URL: https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6
+Product-link review: 2026-11-17T03:48:13.142745+00:00 (not a stock check)
+Recorded price: 25800 KRW. Seller price observation dated 2026-11-17T03:48:13.142745+00:00.
+Delivery / activation countries with evidence: KR.
+Discounts and historical-low claims are not established by this export.
+
 ### 올리브영 전용 기프트카드 20,000원권
 Seller: 쿠팡 · 즐거운(스마일콘)
 Product URL: https://trip.coupang.com/m/tp/products/10000011273690?vendorItemId=70000236938095&itemId=20002152486536
