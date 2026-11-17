@@ -2362,5 +2362,49 @@
       "conditions": "HOWIWRITE : prix américain affiché de $19.99 pour la première année après 7 jours d’essai, contre une référence annuelle de $39.99. Prix locaux variables. Éligibilité, utilisation du code, taxes et montant du renouvellement non vérifiés. Campagne partenaire, pas une offre Black Friday confirmée.",
       "buying_note": "Cette offre nécessite un abonnement Apple App Store. Renouvellement automatique sauf résiliation au moins 24 heures avant la fin de l’essai ou de la période. Apple décide des remboursements, sans garantie. À expiration, lecture et export restent possibles. Annuler un abonnement à prix réduit met fin à cette offre. Vérifiez les conditions de votre compte ; nous n’avons ni utilisé le code ni testé l’application."
     }
+  },
+  "insta360-x5-kr-standard": {
+    "ko": {
+      "product": "Insta360 X5 · 표준 번들",
+      "summary": "주변을 360도로 촬영한 뒤 원하는 구도로 잘라 쓰는 8K 액션캠. 교체형 렌즈를 갖췄으며 영상 저장용 microSD 카드는 별도 구매가 필요합니다.",
+      "purpose": "주변을 360도로 촬영한 뒤 원하는 구도로 잘라 쓰는 8K 액션캠. 교체형 렌즈를 갖췄으며 영상 저장용 microSD 카드는 별도 구매가 필요합니다.",
+      "conditions": "한국 공식몰 미드나잇 블랙 표준 번들 645,000원. 판매처 비교 표시는 759,000원이며 과거 최저가로 검증하지 않았습니다. SD 카드 미포함. Gold·가입 보너스·유료 보호 서비스를 가격에서 빼지 않았습니다.",
+      "buying_note": "한국몰은 15만원 이상 무료배송을 안내합니다. 정확한 재고·배송일·주소별 결제는 미확인. 공식 FAQ상 수입세·관세 포함, 해외 카드 수수료는 별도 가능. 수령 후 15일 반품은 원상태·포장·부속품·사은품 완비 등 재판매 가능한 조건에 한하며 승인·제외 조건이 있습니다. 직접 사용한 리뷰는 아닙니다."
+    },
+    "en": {
+      "product": "Insta360 X5 · Standard Bundle",
+      "summary": "An 8K 360° action camera for capturing every direction and reframing shots later, with replaceable lenses. A microSD card is required and sold separately.",
+      "purpose": "An 8K 360° action camera for capturing every direction and reframing shots later, with replaceable lenses. A microSD card is required and sold separately.",
+      "conditions": "Korean official store: Midnight Black Standard Bundle KRW 645,000. Seller reference KRW 759,000 is not a verified historical low. No SD card. Gold, signup rewards and paid protection are not deducted from this price.",
+      "buying_note": "Korean store advertises free shipping from KRW 150,000. Exact stock, delivery date and address-specific checkout unverified. FAQ says import taxes/customs included; card issuer fees may be extra. Returns within 15 days of receipt require original condition, complete packaging, accessories and gifts, and resale suitability; approval/exclusions apply. Not a hands-on review."
+    },
+    "zh": {
+      "product": "Insta360 X5 · 标准套装",
+      "summary": "可先拍摄360°全景、再选择构图的8K运动相机，镜片可更换。须另购microSD卡。",
+      "purpose": "可先拍摄360°全景、再选择构图的8K运动相机，镜片可更换。须另购microSD卡。",
+      "conditions": "韩国官网午夜黑标准套装645,000韩元，卖家参考价759,000韩元，并非已验证历史低价。不含SD卡；未扣除Gold、注册奖励或付费保障。",
+      "buying_note": "韩国商店满150,000韩元免运费。实际库存、送达日期及地址结账未验证。FAQ称含进口税及关税，发卡行费用可能另计。收货15天内退货须保持原状、包装配件赠品齐全且可再次销售，须审批并有例外。未实测。"
+    },
+    "ja": {
+      "product": "Insta360 X5 · 標準セット",
+      "summary": "360度を撮影して後から構図を選べる8Kアクションカメラ。交換式レンズを採用。microSDカードは別売りです。",
+      "purpose": "360度を撮影して後から構図を選べる8Kアクションカメラ。交換式レンズを採用。microSDカードは別売りです。",
+      "conditions": "韓国公式ストアのミッドナイトブラック標準セット645,000ウォン。販売店参考759,000ウォンは過去最安値の検証ではありません。SDカードなし。Gold・登録特典・有料保証は差し引いていません。",
+      "buying_note": "韓国ストアは150,000ウォン以上送料無料と案内。実在庫・到着日・住所別決済は未確認。FAQでは輸入税・関税込み、カード会社手数料は別途の可能性。受領後15日以内の返品は原状・包装・付属品・特典が揃い再販売可能なことが条件で、承認・除外規定あり。実機レビューではありません。"
+    },
+    "es": {
+      "product": "Insta360 X5 · paquete estándar",
+      "summary": "Cámara de acción 8K de 360° para grabar todas las direcciones y reencuadrar después, con lentes reemplazables. Requiere microSD, no incluida.",
+      "purpose": "Cámara de acción 8K de 360° para grabar todas las direcciones y reencuadrar después, con lentes reemplazables. Requiere microSD, no incluida.",
+      "conditions": "Tienda oficial coreana: paquete estándar Midnight Black KRW 645.000; referencia del vendedor KRW 759.000, no mínimo histórico verificado. Sin tarjeta SD. No se restan Gold, bonos de registro ni protección de pago.",
+      "buying_note": "Envío gratis anunciado desde KRW 150.000 en Corea. Existencias, fecha y pago por dirección sin verificar. FAQ: impuestos de importación y aduanas incluidos; posibles comisiones de tarjeta. Devolución en 15 días desde recepción exige estado original, embalaje, accesorios y regalos completos y aptitud para reventa; sujeta a aprobación y exclusiones. Sin prueba práctica."
+    },
+    "fr": {
+      "product": "Insta360 X5 · pack standard",
+      "summary": "Caméra d’action 8K à 360° pour filmer toutes les directions puis recadrer, avec lentilles remplaçables. Carte microSD nécessaire, vendue séparément.",
+      "purpose": "Caméra d’action 8K à 360° pour filmer toutes les directions puis recadrer, avec lentilles remplaçables. Carte microSD nécessaire, vendue séparément.",
+      "conditions": "Boutique officielle coréenne : pack standard Midnight Black KRW 645 000 ; référence vendeur KRW 759 000, pas un minimum historique vérifié. Sans carte SD. Gold, bonus d’inscription et protection payante non déduits.",
+      "buying_note": "Livraison gratuite annoncée dès KRW 150 000 en Corée. Stock, date et paiement selon adresse non vérifiés. FAQ : taxes d’importation et douane incluses ; frais bancaires possibles. Retour sous 15 jours après réception soumis à état d’origine, emballage, accessoires et cadeaux complets, revente possible, accord et exclusions. Aucun test pratique."
+    }
   }
 }

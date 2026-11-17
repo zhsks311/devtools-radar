@@ -8,6 +8,133 @@
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
     {
+      "id": "insta360-x5-kr-standard",
+      "region": "kr",
+      "target": "ko",
+      "category": "hardware",
+      "category_label": "hardware",
+      "title_raw": "Insta360 X5 · Standard Bundle",
+      "product": "Insta360 X5 · Standard Bundle",
+      "store": "Insta360 official store",
+      "price": 645000,
+      "currency": "KRW",
+      "shipping": "Free shipping threshold KRW 150000; address-specific delivery unverified",
+      "specs": [
+        "8K 360° camera",
+        "Replaceable lenses",
+        "microSD card required, not included"
+      ],
+      "briefing": [
+        "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-17",
+      "source": {
+        "url": "https://store.insta360.com/kr/product/x5",
+        "label": "Insta360 official Korean product page"
+      },
+      "price_source": "retailer_product_page",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://store.insta360.com/kr/product/x5",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-17T14:09:21.495854+00:00",
+        "url": "https://store.insta360.com/kr/product/x5",
+        "product_match": true,
+        "evidence": "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+      },
+      "price_review": {
+        "id": "insta360-x5-kr-standard",
+        "product": "Insta360 X5 · Standard Bundle",
+        "seller_url": "https://store.insta360.com/kr/product/x5",
+        "recorded_price": 645000,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 645000,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://store.insta360.com/kr/product/x5",
+            "observed_at": "2026-11-17T14:09:21.495854+00:00",
+            "result": "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+          }
+        ],
+        "limitations": [
+          "Seller reference is not verified historical or market price.",
+          "Inventory, final checkout and delivery date untested."
+        ],
+        "review_completed_at": "2026-11-17T14:09:21.495854+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-17T14:09:21.495854+00:00",
+        "note": "Official Korea storefront offer and Korean shipping statement; exact address not tested."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Korean store: free shipping on orders >= KRW150000; exact address/delivery time unverified.",
+        "activation": "Physical camera; microSD not included.",
+        "payment": "Checkout untested; international-card issuer fees may apply.",
+        "tax": "Official FAQ states import taxes and customs included except Brazil.",
+        "returns": "15 days from receipt if original condition, packaging/accessories/gifts complete and resale possible. Approval and exclusions apply; not an unconditional used-product trial.",
+        "evidence_url": "https://store.insta360.com/kr/faq",
+        "checked_at": "2026-11-17"
+      },
+      "latest_offer_check": {
+        "checked_at": "2026-11-17T14:09:21.495854+00:00",
+        "status": "seller_text_observed",
+        "price": 645000,
+        "source_url": "https://store.insta360.com/kr/product/x5",
+        "evidence": "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+      },
+      "price_variant": "X5 Midnight Black Standard Bundle · no SD card",
+      "alternative_review": {
+        "checked_at": "2026-11-17T14:09:21.495854+00:00",
+        "sources": [
+          {
+            "url": "https://store.insta360.com/kr",
+            "label": "Korean shipping threshold"
+          },
+          {
+            "url": "https://store.insta360.com/kr/faq",
+            "label": "Taxes and card fees"
+          },
+          {
+            "url": "https://www.insta360.com/kr/support/aftersales",
+            "label": "Return conditions"
+          }
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/insta360-x5.webp",
+        "alt": "Insta360 X5 official distributor product photo",
+        "credit": "Insta360 / Transcontinenta",
+        "credit_url": "https://newsroom.notified.com/transcontinenta-netherlands/media/312726/insta360-x5-product-image-6",
+        "kind": "official_product_photo",
+        "rights_basis": "Distributor press image explicitly licensed Media use; used for editorial product coverage, not resale or independent endorsement.",
+        "source_page": "https://newsroom.notified.com/transcontinenta-netherlands/media/312726/insta360-x5-product-image-6",
+        "source_file": "https://cdn.filestackcontent.com/auto_image/9ILV7OcTad5l6XsnqNwU",
+        "checked_at": "2026-11-17T14:09:21.495854+00:00",
+        "sha256": "3ee1660cc7f09b88df7525b94806b9467c615164351233f64104339a2a4306a1",
+        "processing": "Proportional resize and WebP encoding, transparency preserved."
+      }
+    },
+    {
       "id": "msi-mp273q-e7-gmarket",
       "region": "kr",
       "target": "ko",
@@ -5405,7 +5532,7 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 28,
+    "feed": 29,
     "tracked_links": 0,
     "search_fallback": 0,
     "verified_product_links": 7,
