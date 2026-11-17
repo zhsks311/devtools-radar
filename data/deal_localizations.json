@@ -2318,5 +2318,49 @@
       "conditions": "Base KRW 172 340 ; prix avec coupon et carte séparés. Les 110 000 après points annoncés ne sont pas le prix payé. Livraison en Corée uniquement ; Jeju/zones isolées +KRW 5 000.",
       "buying_note": "Pas un écran gaming à haute fréquence ; sans KVM. Le vendeur indique un retour pour changement d’avis sous 7 jours après réception, transport payé par l’acheteur : KRW 10 000 si la livraison initiale était gratuite. Vérifier exclusions liées à l’installation/utilisation et carte éligible. Paiement, stock exact et plus bas historique non vérifiés."
     }
+  },
+  "ulysses-howiwrite-first-year": {
+    "en": {
+      "product": "Ulysses · US first-year offer",
+      "summary": "A focused writing app for organizing chapters and notes, tracking writing goals, and exporting books or publishing blog posts across Mac, iPad and iPhone.",
+      "purpose": "A focused writing app for organizing chapters and notes, tracking writing goals, and exporting books or publishing blog posts across Mac, iPad and iPhone.",
+      "conditions": "HOWIWRITE: advertised US price $19.99 for the first year after a 7-day trial, versus the displayed $39.99 annual reference. Local prices vary. Code eligibility, redemption, tax and renewal amount are unverified. This is a partner offer, not a confirmed Black Friday campaign.",
+      "buying_note": "This offer requires an Apple App Store subscription. It renews automatically unless canceled at least 24 hours before the trial or subscription ends. Apple decides refunds; no refund guarantee. After expiry, writing becomes read-only but export remains available. Canceling a discounted subscription ends that offer. Check the final terms in your App Store account; we did not redeem the code or test the app."
+    },
+    "ko": {
+      "product": "Ulysses · 미국 첫해 구독 혜택",
+      "summary": "Mac·iPad·iPhone에서 원고와 메모를 정리하고 집필 목표를 관리하는 글쓰기 앱. 책 파일로 내보내거나 블로그에 발행할 수 있습니다.",
+      "purpose": "Mac·iPad·iPhone에서 원고와 메모를 정리하고 집필 목표를 관리하는 글쓰기 앱. 책 파일로 내보내거나 블로그에 발행할 수 있습니다.",
+      "conditions": "HOWIWRITE 코드: 7일 체험 뒤 첫해 미국 표시가 $19.99, 표시 일반 연간 요금 $39.99. 지역별 가격은 다릅니다. 계정별 코드 자격·실제 적용·세금·갱신 금액은 미확인입니다. 별도 제휴 캠페인이며 블랙프라이데이 행사로 확인한 것은 아닙니다.",
+      "buying_note": "이 혜택은 Apple App Store 구독이 필요하며 체험 또는 구독 종료 최소 24시간 전에 취소하지 않으면 자동 갱신됩니다. 환불은 Apple 심사로 결정되며 보장되지 않습니다. 만료 뒤에는 읽기 전용이 되지만 내보내기는 가능합니다. 할인 구독을 취소하면 해당 혜택도 종료됩니다. 본인 계정의 최종 조건을 확인하세요. 코드를 사용하거나 앱을 직접 시험하지 않았습니다."
+    },
+    "zh": {
+      "product": "Ulysses · 美国首年订阅优惠",
+      "summary": "适用于 Mac、iPad 和 iPhone 的写作工具，可整理章节与笔记、管理写作目标，并导出电子书或发布博客。",
+      "purpose": "适用于 Mac、iPad 和 iPhone 的写作工具，可整理章节与笔记、管理写作目标，并导出电子书或发布博客。",
+      "conditions": "HOWIWRITE：7天试用后，美国首年标价 $19.99，所列常规年费 $39.99。地区价格不同。账户资格、兑换、税费和续订金额未验证。这是合作推广，并非已确认的黑五活动。",
+      "buying_note": "此优惠须通过 Apple App Store 订阅；应在试用或订阅到期至少24小时前取消，否则自动续订。退款由 Apple 审核，不保证退款。到期后变为只读，但仍可导出。取消优惠订阅会终止该优惠。请查看本人账户最终条款；我们未兑换代码或实测应用。"
+    },
+    "ja": {
+      "product": "Ulysses · 米国向け初年度特典",
+      "summary": "Mac・iPad・iPhoneで章やメモを整理し、執筆目標を管理できる文章作成アプリ。書籍形式への書き出しやブログ投稿にも対応。",
+      "purpose": "Mac・iPad・iPhoneで章やメモを整理し、執筆目標を管理できる文章作成アプリ。書籍形式への書き出しやブログ投稿にも対応。",
+      "conditions": "HOWIWRITE：7日間の試用後、米国の初年度表示価格は $19.99、通常年額の表示は $39.99。地域で価格が異なります。アカウント資格、適用、税金、更新額は未確認。提携キャンペーンであり、ブラックフライデー企画とは確認していません。",
+      "buying_note": "この特典には Apple App Store の購読が必要。試用・購読終了の24時間以上前に解約しないと自動更新されます。返金は Apple の審査で決まり保証されません。期限後は読み取り専用ですが書き出しは可能。割引購読の解約で特典も終了します。最終条件は本人のアカウントで確認してください。コード適用や実機試験はしていません。"
+    },
+    "es": {
+      "product": "Ulysses · oferta del primer año en EE. UU.",
+      "summary": "Aplicación de escritura para organizar capítulos y notas, seguir objetivos y exportar libros o publicar en blogs desde Mac, iPad y iPhone.",
+      "purpose": "Aplicación de escritura para organizar capítulos y notas, seguir objetivos y exportar libros o publicar en blogs desde Mac, iPad y iPhone.",
+      "conditions": "HOWIWRITE: precio anunciado en EE. UU. de $19.99 el primer año tras 7 días de prueba, frente a la referencia anual de $39.99. Los precios locales varían. Elegibilidad, canje, impuestos y renovación sin verificar. Es una campaña de un socio, no una oferta Black Friday confirmada.",
+      "buying_note": "Esta oferta requiere suscripción de Apple App Store. Se renueva automáticamente salvo cancelación al menos 24 horas antes del fin de la prueba o del período. Apple decide los reembolsos; no están garantizados. Al caducar queda en modo lectura, con exportación. Cancelar una suscripción rebajada termina esa oferta. Revise las condiciones de su cuenta; no canjeamos el código ni probamos la aplicación."
+    },
+    "fr": {
+      "product": "Ulysses · offre de première année aux États-Unis",
+      "summary": "Application pour organiser chapitres et notes, suivre ses objectifs et exporter des livres ou publier des articles depuis Mac, iPad et iPhone.",
+      "purpose": "Application pour organiser chapitres et notes, suivre ses objectifs et exporter des livres ou publier des articles depuis Mac, iPad et iPhone.",
+      "conditions": "HOWIWRITE : prix américain affiché de $19.99 pour la première année après 7 jours d’essai, contre une référence annuelle de $39.99. Prix locaux variables. Éligibilité, utilisation du code, taxes et montant du renouvellement non vérifiés. Campagne partenaire, pas une offre Black Friday confirmée.",
+      "buying_note": "Cette offre nécessite un abonnement Apple App Store. Renouvellement automatique sauf résiliation au moins 24 heures avant la fin de l’essai ou de la période. Apple décide des remboursements, sans garantie. À expiration, lecture et export restent possibles. Annuler un abonnement à prix réduit met fin à cette offre. Vérifiez les conditions de votre compte ; nous n’avons ni utilisé le code ni testé l’application."
+    }
   }
 }

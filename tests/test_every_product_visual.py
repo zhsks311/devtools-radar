@@ -16,4 +16,4 @@ class EveryProductVisualTest(unittest.TestCase):
     self.assertNotIn('<pre',card)
    for card in candidate_cards(lang):
     self.assertIn('<svg',card); self.assertRegex(card,r'class="product-summary">[^<]+</p>')
-  self.assertEqual(len(rows)+len(load_candidates()),65)
+  self.assertEqual(len(rows)+len(load_candidates()),66)

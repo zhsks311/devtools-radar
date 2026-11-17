@@ -210,6 +210,7 @@ CANDIDATE_SECTION = {
 }
 PRODUCT_PERMALINK = {'en':'Link to this product', 'ko':'이 상품 바로가기', 'zh':'此商品链接', 'ja':'この商品のリンク', 'es':'Enlace a este producto', 'fr':'Lien vers ce produit'}
 BILLING_KIND = {
+ 'ulysses-howiwrite-first-year': 'first_year',
  'plerdy-startup-bf-first-year': 'first_year',
  'elevenlabs-creator-bf-first-year': 'first_year',
  'adobe-creative-cloud-kr-bf-monthly-annual': 'monthly_annual',

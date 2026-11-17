@@ -7,6 +7,121 @@
   },
   "feed": [
     {
+      "id": "ulysses-howiwrite-first-year",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Ulysses · US first-year offer",
+      "product": "Ulysses · US first-year offer",
+      "store": "Ulysses / Apple App Store",
+      "storefront_country": "US",
+      "price": 19.99,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital subscription",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Writing and organizing long documents on Mac, iPad and iPhone.",
+        "Official HOWIWRITE campaign displays US first-year annual price USD 19.99 after 7-day trial, regular annual reference USD 39.99. Local prices vary. Account eligibility, actual redemption, renewal amount and checkout tax not verified; no account or redemption performed."
+      ],
+      "audience": "Writers using Apple devices",
+      "source": {
+        "id": "ulysses-official",
+        "label": "Ulysses official HOWIWRITE offer",
+        "url": "https://ulysses.app/howiwrite/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-17",
+      "score": null,
+      "disclosure": "No affiliate tracking; seller price, not guaranteed checkout total.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "price_variant": "HOWIWRITE eligible US App Store yearly subscription, first year",
+      "link": {
+        "url": "https://ulysses.app/howiwrite/",
+        "tracked": false,
+        "label": "View official offer",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-17T13:28:30.102785+00:00",
+        "url": "https://ulysses.app/howiwrite/",
+        "product_match": true,
+        "evidence": "Official HOWIWRITE campaign displays US first-year annual price USD 19.99 after 7-day trial, regular annual reference USD 39.99. Local prices vary. Account eligibility, actual redemption, renewal amount and checkout tax not verified; no account or redemption performed."
+      },
+      "price_review": {
+        "id": "ulysses-howiwrite-first-year",
+        "product": "Ulysses · US first-year offer",
+        "seller_url": "https://ulysses.app/howiwrite/",
+        "recorded_price": 19.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 19.99,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://ulysses.app/howiwrite/",
+            "observed_at": "2026-11-17T13:28:30.102785+00:00",
+            "result": "Official HOWIWRITE campaign displays US first-year annual price USD 19.99 after 7-day trial, regular annual reference USD 39.99. Local prices vary. Account eligibility, actual redemption, renewal amount and checkout tax not verified; no account or redemption performed."
+          }
+        ],
+        "review_completed_at": "2026-11-17T13:28:30.102785+00:00",
+        "limitations": [
+          "US advertised offer only; exact code eligibility and redemption untested.",
+          "Renewal amount, local prices and tax unverified."
+        ]
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital annual subscription",
+        "activation": "Apple App Store offer code HOWIWRITE; account eligibility unverified.",
+        "payment": "Apple App Store; no checkout or code redemption performed.",
+        "tax": "Local final charge unverified.",
+        "returns": "Apple decides refund requests; developer cannot grant refunds. Cancel at least 24 hours before trial or subscription end to avoid automatic renewal.",
+        "evidence_url": "https://help.ulysses.app/en_US/subscription-synchronization/how-can-i-cancel-or-refund-a-subscription",
+        "checked_at": "2026-11-17T13:28:30.102785+00:00"
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "price": 19.99,
+        "currency": "USD",
+        "observed_at": "2026-11-17T13:28:30.102785+00:00",
+        "source_url": "https://ulysses.app/howiwrite/",
+        "evidence": "Official HOWIWRITE campaign displays US first-year annual price USD 19.99 after 7-day trial, regular annual reference USD 39.99. Local prices vary. Account eligibility, actual redemption, renewal amount and checkout tax not verified; no account or redemption performed."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-17T13:28:30.102785+00:00",
+        "sources": [
+          {
+            "url": "https://help.ulysses.app/en_US/subscription-synchronization/subscription-options-",
+            "label": "Trial and automatic renewal"
+          },
+          {
+            "url": "https://help.ulysses.app/en_US/subscription-synchronization/how-can-i-cancel-or-refund-a-subscription",
+            "label": "Cancellation and Apple refund decisions"
+          }
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/ulysses.webp",
+        "alt": "Ulysses official Mac screenshot: library, sheet list and editor",
+        "credit": "Ulysses",
+        "credit_url": "https://ulysses.app/press/media/",
+        "kind": "official_product_ui",
+        "rights_basis": "Official press media page states screenshots and images are free to use for covering Ulysses.",
+        "source_page": "https://ulysses.app/press/media/",
+        "source_file": "https://ulysses.app/assets/press/screenshots/mac/Mac-1.png",
+        "checked_at": "2026-11-17T13:28:30.102785+00:00",
+        "sha256": "62b5a540152f957ac05941724e5bb8448165af8158ad98e08608ea229d2af9d3",
+        "processing": "Proportional resize and WebP compression with original transparency preserved; no invented UI."
+      }
+    },
+    {
       "id": "actionclip-individual-lifetime",
       "region": "global",
       "target": "en",
@@ -6701,7 +6816,7 @@
     }
   },
   "stats": {
-    "feed": 32,
+    "feed": 33,
     "sources": 11
   }
 }
