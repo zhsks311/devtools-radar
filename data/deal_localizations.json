@@ -1001,32 +1001,32 @@
     "en": {
       "product": "AcePDF · 2 devices",
       "summary": "Edit PDFs and convert them to other document formats.",
-      "conditions": "2 devices; Windows 8/10/11 or macOS 12+; redeem within 30 days. Country activation and billing eligibility, taxes and refund terms remain unverified."
+      "conditions": "2 devices; Windows 8/10/11 or macOS 12+; Internet required for conversion. Redeem within 30 days. Unredeemed licenses can be returned for store credit within 30 days of purchase; after redemption all sales are final. Taxes, checkout total and country eligibility are unverified."
     },
     "ko": {
       "product": "AcePDF · 기기 2대",
       "summary": "PDF를 편집하고 다른 문서 형식으로 변환하는 프로그램.",
-      "conditions": "기기 2대, Windows 8/10/11 또는 macOS 12 이상, 30일 이내 등록. 국가별 활성화·결제 가능 여부와 세금·환불 조건은 미확인입니다."
+      "conditions": "기기 2대, Windows 8/10/11 또는 macOS 12 이상. 문서 변환에는 인터넷이 필요합니다. 구매 후 30일 이내 등록. 미등록 라이선스는 구매 후 30일 이내 스토어 크레딧으로만 환불되며, 등록 후에는 환불 불가입니다. 세금·최종 결제액·국가별 구매 가능 여부는 미확인입니다."
     },
     "zh": {
       "product": "AcePDF · 2台设备",
       "summary": "编辑 PDF 并转换为其他文档格式。",
-      "conditions": "2台设备；Windows 8/10/11或macOS 12及以上；30天内兑换。 各国激活与付款资格、税费及退款条件尚未核实。"
+      "conditions": "2台设备，Windows 8/10/11或macOS 12及以上；转换文档需要联网。购买后30天内兑换。未兑换许可购买后30天内仅退商店余额，兑换后不退。税费、结账总额和各国购买资格未核实。"
     },
     "ja": {
       "product": "AcePDF · 2台",
       "summary": "PDFの編集と文書形式の変換ができるソフト。",
-      "conditions": "2台、Windows 8/10/11またはmacOS 12以降、30日以内に引き換え。 国別の有効化・支払い可否、税金、返金条件は未確認です。"
+      "conditions": "2台、Windows 8/10/11またはmacOS 12以降。変換にはインターネット接続が必要です。購入後30日以内に引き換え。未引き換えライセンスは購入後30日以内にストアクレジットでのみ返金可能、引き換え後は返金不可。税金、決済総額、国別の購入可否は未確認です。"
     },
     "es": {
       "product": "AcePDF · 2 dispositivos",
       "summary": "Edita PDF y conviértelos a otros formatos de documento.",
-      "conditions": "2 dispositivos; Windows 8/10/11 o macOS 12+; canje en 30 días. Países de activación y pago, impuestos y condiciones de reembolso sin verificar."
+      "conditions": "2 dispositivos; Windows 8/10/11 o macOS 12+. La conversión requiere Internet. Canje en 30 días. Las licencias sin canjear se devuelven como crédito de tienda durante los 30 días posteriores a la compra; tras canjearlas, la venta es definitiva. Impuestos, total de compra y países elegibles sin verificar."
     },
     "fr": {
       "product": "AcePDF · 2 appareils",
       "summary": "Modifie les PDF et les convertit vers d’autres formats de document.",
-      "conditions": "2 appareils ; Windows 8/10/11 ou macOS 12+ ; activation sous 30 jours. Pays d’activation et de facturation, taxes et conditions de remboursement non vérifiés."
+      "conditions": "2 appareils ; Windows 8/10/11 ou macOS 12+. Connexion Internet nécessaire à la conversion. Activation sous 30 jours. Les licences non activées sont remboursables en crédit boutique sous 30 jours après achat ; après activation, la vente est définitive. Taxes, total à payer et pays éligibles non vérifiés."
     }
   },
   "0deb259ecfd4": {

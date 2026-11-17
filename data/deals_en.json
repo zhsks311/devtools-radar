@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T00:09:11.411167+00:00",
+  "generated_at": "2026-11-17T00:45:09.117623+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -1452,7 +1452,7 @@
       "title_raw": "AcePDF · 2 devices",
       "product": "AcePDF · 2 devices",
       "store": "StackSocial",
-      "price": 29.99,
+      "price": 23.97,
       "price_source": "retailer_product_page",
       "currency": "USD",
       "original_price": null,
@@ -1461,11 +1461,10 @@
       "rocket": false,
       "specs": [],
       "briefing": [
-        "Key: PDF conversion and editing.",
-        "Condition: Windows 8/10/11 or macOS 12+; 2 devices.",
-        "Checked: November 10, 2026 · Add to Cart shown",
-        "Check: Page advertises $24 with DEAL20; checkout not tested. Redeem within 30 days.",
-        "Coupon campaign evidence: DEAL20 campaign: 9–15 November 2026, seller-stated dates; exclusions apply. Exact end time and time zone are not stated on the campaign page. Coupon application and final total remain untested."
+        "PDF editing, OCR and document conversion for 2 devices.",
+        "Windows 8/10/11 or macOS 12+; Internet required for conversion.",
+        "Seller page shows USD 23.97 without a coupon. Redeem within 30 days.",
+        "Unredeemed licenses: store credit within 30 days; after redemption all sales final."
       ],
       "audience": "Check OS, license and regional eligibility before purchase.",
       "source": {
@@ -1474,9 +1473,9 @@
         "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license"
       },
       "published_at": null,
-      "checked_date": "2026-11-10",
+      "checked_date": "2026-11-17",
       "score": null,
-      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout coupons and country eligibility not verified. Base offer expiry unknown; DEAL20 campaign dates are 9–15 November 2026, exact end time/time zone unstated.",
+      "disclosure": "No DevTeardown affiliate tracking. Taxes, checkout total and country eligibility not verified; no historical-low claim.",
       "ai_rewritten": false,
       "link": {
         "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
@@ -1493,7 +1492,7 @@
         "activation": "License activation country restrictions have not been verified.",
         "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
         "tax": "Delivery fees, taxes and final total: check checkout.",
-        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "returns": "Unredeemed licenses: store credit within 30 days of purchase. Redeemed licenses: all sales final.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
       },
@@ -1516,10 +1515,10 @@
         "id": "3b4c5d317572",
         "product": "AcePDF · 2 devices",
         "seller_url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
-        "recorded_price": 29.99,
+        "recorded_price": 23.97,
         "currency": "USD",
         "price_status": "seller_page_display_confirmed",
-        "verified_price": 29.99,
+        "verified_price": 23.97,
         "deal_status": "comparison_unverified",
         "evidence": [
           {
@@ -1535,6 +1534,11 @@
             "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
             "observed_at": "2026-11-16T08:57:57.638591+00:00",
             "result": "Web tool direct seller page extraction displayed exact product title, Deal Price USD29.99, and Add To Cart. 2 devices; Windows1.4.5.5/Mac1.6.1.0; redeem30days; updates included."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+            "observed_at": "2026-11-17T00:45:09.117623+00:00",
+            "result": "Direct seller product-page web extraction shows Deal Price USD 23.97 and Add To Cart without a coupon, 2 devices, redeem within 30 days, updates included. Unredeemed licenses returnable for store credit within 30 days; after redemption all sales final. No checkout performed."
           }
         ],
         "limitations": [
@@ -1554,32 +1558,33 @@
           "source_date_text": "Valid 11/9 - 11/15. Exclusions apply."
         },
         "conditions": [
-          "2devices;Windows1.4.5.5/Mac1.6.1.0;redeem30days;conversion Internet required."
+          "2 devices; Windows 8/10/11 or macOS 12+; Internet required for conversion.",
+          "Redeem within 30 days; unredeemed licenses returnable for store credit within 30 days; redeemed licenses final."
         ],
-        "review_completed_at": "2026-11-16T08:57:57.638591+00:00"
+        "review_completed_at": "2026-11-17T00:45:09.117623+00:00",
+        "seller_displayed_comparison": {
+          "amount": 99.99,
+          "label": "Suggested Price",
+          "historical_price_verified": false
+        }
       },
       "storefront_country": null,
       "latest_offer_check": {
-        "id": "3b4c5d317572",
         "status": "seller_page_price_and_add_to_cart_observed",
-        "price": 29.99,
+        "price": 23.97,
         "currency": "USD",
         "previous_recorded_price": 29.99,
-        "observed_at": "2026-11-16T08:57:57.638591+00:00",
+        "observed_at": "2026-11-17T00:45:09.117623+00:00",
         "source_url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
-        "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD29.99, and Add To Cart. 2 devices; Windows1.4.5.5/Mac1.6.1.0; redeem30days; updates included.",
+        "evidence": "Direct seller product-page web extraction shows Deal Price USD 23.97 and Add To Cart without a coupon, 2 devices, redeem within 30 days, updates included. Unredeemed licenses returnable for store credit within 30 days; after redemption all sales final. No checkout performed.",
         "limitations": [
-          "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
-          "Web tool may use a recently crawled page; not an inventory API guarantee.",
-          "DEAL20 availability/application not verified; do not claim it is currently valid.",
-          "No independent historical discount comparison."
-        ],
-        "coupon_display": {
-          "code": "DEAL20",
-          "displayed_price": 24,
-          "checkout_tested": false,
-          "currently_valid": null
-        }
+          "Public web extraction; checkout, taxes, regional eligibility and license issuance not verified. No historical-low evidence. Exact expiry not given."
+        ]
+      },
+      "return_terms_review": {
+        "checked_at": "2026-11-17T00:45:09.117623+00:00",
+        "source_url": "https://www.stacksocial.com/sales/pdf-converter-pro-lifetime-license",
+        "terms": "Unredeemed licenses: store credit within 30 days of purchase. Redeemed licenses: all sales final."
       }
     },
     {
