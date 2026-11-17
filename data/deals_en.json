@@ -829,6 +829,10 @@
           {
             "label": "Mac App Store · Korea",
             "url": "https://apps.apple.com/kr/app/textsniper/id1528890965?mt=12"
+          },
+          {
+            "url": "https://textsniper.app/",
+            "label": "Vendor FAQ: OCR languages by macOS version"
           }
         ],
         "note": "Separate storefront and licence; do not equate with StackSocial code."
@@ -854,6 +858,16 @@
         "checked_at": "2026-11-16T17:48:10.328506+00:00",
         "refund": "Unredeemed licences: store credit within30days; after redemption all sales final.",
         "updates": "Minor updates included; major upgrades and features cost extra."
+      },
+      "language_support_review": {
+        "checked_at": "2026-11-17T05:46:50.434593+00:00",
+        "source_url": "https://textsniper.app/",
+        "general_minimum": "macOS 10.15 Catalina",
+        "catalina_languages": [
+          "English"
+        ],
+        "korean_japanese_minimum": "macOS 13 Ventura",
+        "basis": "Current vendor FAQ, not execution-tested; seller lists app version 1.6.0; license-version applicability not tested"
       }
     },
     {
