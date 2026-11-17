@@ -2186,5 +2186,49 @@
       "conditions": "Licence à paiement unique de 9 $ pour 1 Mac. Fin le 29 novembre 2026 à 23:59 UTC. macOS 15+, actions illimitées et mises à jour. Pays, taxes et total final non vérifiés. Aucun prix de référence ni pourcentage de remise revendiqué.",
       "buying_note": "Essayez gratuitement 30 actions par jour. Autorisation Accessibilité requise ; toutes les apps ne sont pas compatibles. Apple Intelligence exige un Mac compatible ; l’IA externe utilise votre clé API et peut coûter davantage. Les actions en ligne peuvent transmettre le texte sélectionné. À vie signifie la durée commerciale du produit, sans garantie des futures fonctions ou versions de macOS. Remboursement à demander sous 30 jours. Plans multi-Mac exclus car les nombres divergent entre la page et les conditions."
     }
+  },
+  "yakuza-kiwami3-dark-ties-directgames": {
+    "ko": {
+      "product": "용과 같이 극3 / 다크 타이스 · Steam 기본판",
+      "summary": "오키나와를 무대로 키류의 이야기를 다시 그린 액션 어드벤처. 미네 요시타카의 별도 이야기 Dark Ties도 함께 들어 있습니다.",
+      "purpose": "오키나와를 무대로 키류의 이야기를 다시 그린 액션 어드벤처. 미네 요시타카의 별도 이야기 Dark Ties도 함께 들어 있습니다.",
+      "conditions": "25,800원. 판매처 비교가 69,800원이며 역대 최저가 검증은 아닙니다. 한국에서만 키 등록과 플레이 가능. 12월 1일 02:00 종료 표기(시간대 미명시). 디럭스 추가 아이템은 미포함. 결제·등록 미시험.",
+      "buying_note": "Windows 11 64비트, 저장공간 58 GB, 한국어 UI·자막, Denuvo DRM. Steam 국가와 PC 사양을 확인하세요. 판매처 정책상 단순변심은 구매 7일 이내 요청 가능하지만 키 수신·활성화·계정 동기화 후에는 반품이 제한됩니다. 지역·사양 착오와 중복 구매도 제한 대상입니다."
+    },
+    "en": {
+      "product": "Yakuza Kiwami 3 & Dark Ties · Steam base game",
+      "summary": "An action adventure revisiting Kiryu’s story in Okinawa, bundled with Mine’s separate story, Dark Ties.",
+      "purpose": "An action adventure revisiting Kiryu’s story in Okinawa, bundled with Mine’s separate story, Dark Ties.",
+      "conditions": "KRW 25,800; seller reference KRW 69,800, not a verified historical low. Activation AND play in Korea only. End shown Dec 1, 02:00, timezone unspecified. Deluxe extras excluded. Checkout and redemption untested.",
+      "buying_note": "Windows 11 64-bit, 58 GB, Korean UI/subtitles, Denuvo DRM. Check Steam region and hardware. Seller accepts change-of-mind requests within 7 days, but key receipt, activation or account sync restrict returns. Region/spec mistakes and duplicate purchases are excluded."
+    },
+    "zh": {
+      "product": "如龙 极3 / Dark Ties · Steam基础版",
+      "summary": "重访桐生在冲绳的故事的动作冒险游戏，并包含峯义孝的独立故事Dark Ties。",
+      "purpose": "重访桐生在冲绳的故事的动作冒险游戏，并包含峯义孝的独立故事Dark Ties。",
+      "conditions": "25,800韩元；商家参考价69,800韩元，未验证历史最低。仅限韩国激活和游玩。标示12月1日02:00结束，时区未注明。不含豪华版附加物品。未测试付款及激活。",
+      "buying_note": "Windows 11 64位，58 GB，韩语界面/字幕，Denuvo DRM。检查Steam地区和配置。商家允许购买7天内提出改变主意退货，但密钥接收、激活或账户同步后受限；地区、配置错误及重复购买也受限。"
+    },
+    "ja": {
+      "product": "龍が如く 極3 / Dark Ties · Steam基本版",
+      "summary": "沖縄を舞台に桐生の物語を再び描くアクションアドベンチャー。峯義孝の別の物語Dark Tiesも収録。",
+      "purpose": "沖縄を舞台に桐生の物語を再び描くアクションアドベンチャー。峯義孝の別の物語Dark Tiesも収録。",
+      "conditions": "25,800ウォン、販売店比較価格69,800ウォン。過去最安値未検証。登録とプレイは韓国のみ。12月1日02:00終了表記、時間帯未指定。デラックス追加アイテムは対象外。決済・登録未試験。",
+      "buying_note": "Windows 11 64ビット、58 GB、韓国語UI/字幕、Denuvo DRM。Steam国設定と仕様を確認。購入者都合の返品申請は購入7日以内ですが、キー受領・有効化・同期後は制限。地域・仕様の確認不足や重複購入も対象外。"
+    },
+    "es": {
+      "product": "Yakuza Kiwami 3 & Dark Ties · juego base Steam",
+      "summary": "Aventura de acción que vuelve a la historia de Kiryu en Okinawa e incluye la historia independiente de Mine, Dark Ties.",
+      "purpose": "Aventura de acción que vuelve a la historia de Kiryu en Okinawa e incluye la historia independiente de Mine, Dark Ties.",
+      "conditions": "25.800 KRW; referencia del vendedor 69.800 KRW, sin mínimo histórico verificado. Activación Y juego solo en Corea. Fin indicado: 1 de diciembre, 02:00, zona horaria no indicada. Sin extras Deluxe. Pago y activación no probados.",
+      "buying_note": "Windows 11 de 64 bits, 58 GB, interfaz/subtítulos coreanos, Denuvo DRM. Revisa región Steam y requisitos. Cambio de opinión: solicitar en 7 días; recibir/activar la clave o sincronizar la cuenta restringe devoluciones. También se excluyen errores de región/configuración y compras duplicadas."
+    },
+    "fr": {
+      "product": "Yakuza Kiwami 3 & Dark Ties · jeu de base Steam",
+      "summary": "Une aventure d’action autour de Kiryu à Okinawa, accompagnée de l’histoire distincte de Mine, Dark Ties.",
+      "purpose": "Une aventure d’action autour de Kiryu à Okinawa, accompagnée de l’histoire distincte de Mine, Dark Ties.",
+      "conditions": "25 800 KRW ; référence vendeur 69 800 KRW, sans minimum historique vérifié. Activation ET jeu en Corée uniquement. Fin indiquée : 1er décembre à 02:00, fuseau non précisé. Sans bonus Deluxe. Paiement et activation non testés.",
+      "buying_note": "Windows 11 64 bits, 58 GB, interface/sous-titres coréens, Denuvo DRM. Vérifiez région Steam et configuration. Changement d’avis sous 7 jours ; réception/activation de clé ou synchronisation limite les retours. Erreurs de région/configuration et achats en double exclus."
+    }
   }
 }

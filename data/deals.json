@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T00:27:53.813640+00:00",
+  "generated_at": "2026-11-17T03:48:13.142745+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -7,6 +7,119 @@
   },
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
+    {
+      "id": "yakuza-kiwami3-dark-ties-directgames",
+      "region": "kr",
+      "target": "ko",
+      "category": "gaming",
+      "category_label": "Gaming",
+      "title_raw": "Yakuza Kiwami 3 & Dark Ties · Steam base game",
+      "product": "Yakuza Kiwami 3 & Dark Ties · Steam base game",
+      "store": "Direct Games",
+      "price": 25800,
+      "currency": "KRW",
+      "shipping": "Digital delivery",
+      "specs": [
+        "Windows 11 64-bit · 58 GB",
+        "Steam · Denuvo DRM",
+        "Korean interface and subtitles"
+      ],
+      "briefing": [
+        "Live seller browser: base game KRW 25,800; seller reference KRW 69,800, not historical-low proof. Deluxe is separate KRW 31,800. Activation AND play Korea only. Steam, Denuvo, Windows 11 64-bit, 58 GB; Korean UI/subtitles. End displayed 2026-12-01 02:00, timezone unspecified. Cart button present; checkout and redemption untested. Search cached detail showed old KRW 62,800; current browser resolves discrepancy."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-17",
+      "source": {
+        "url": "https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6",
+        "name": "Direct Games official product page"
+      },
+      "price_source": "https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-17T03:48:13.142745+00:00",
+        "url": "https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6",
+        "product_match": true,
+        "evidence": "Live seller browser: base game KRW 25,800; seller reference KRW 69,800, not historical-low proof. Deluxe is separate KRW 31,800. Activation AND play Korea only. Steam, Denuvo, Windows 11 64-bit, 58 GB; Korean UI/subtitles. End displayed 2026-12-01 02:00, timezone unspecified. Cart button present; checkout and redemption untested. Search cached detail showed old KRW 62,800; current browser resolves discrepancy."
+      },
+      "price_review": {
+        "id": "yakuza-kiwami3-dark-ties-directgames",
+        "product": "Yakuza Kiwami 3 & Dark Ties · Steam base game",
+        "seller_url": "https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6",
+        "recorded_price": 25800,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 25800,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6",
+            "observed_at": "2026-11-17T03:48:13.142745+00:00",
+            "result": "Live seller browser: base game KRW 25,800; seller reference KRW 69,800, not historical-low proof. Deluxe is separate KRW 31,800. Activation AND play Korea only. Steam, Denuvo, Windows 11 64-bit, 58 GB; Korean UI/subtitles. End displayed 2026-12-01 02:00, timezone unspecified. Cart button present; checkout and redemption untested. Search cached detail showed old KRW 62,800; current browser resolves discrepancy."
+          }
+        ],
+        "limitations": [
+          "Account and checkout eligibility untested.",
+          "Seller reference price is not historical-low proof.",
+          "Promotion end timezone not specified."
+        ],
+        "review_completed_at": "2026-11-17T03:48:13.142745+00:00",
+        "seller_displayed_comparison": {
+          "reference_price": 69800,
+          "sale_price": 25800,
+          "kind": "seller_current_regular_price",
+          "historical_low_verified": false
+        }
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "digital"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "verified_activation",
+        "delivery": "Steam key delivered through Direct Games account.",
+        "activation": "Activation and play limited to Korea. Check Steam account region.",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Seller policy: change-of-mind requests within 7 days; code receipt, activation or account sync prevents return. Other exceptions apply.",
+        "evidence_url": "https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6",
+        "checked_at": "2026-11-17"
+      },
+      "expires_at": null,
+      "latest_offer_check": {
+        "id": "yakuza-kiwami3-dark-ties-directgames",
+        "status": "seller_purchase_offer",
+        "price": 25800,
+        "observed_at": "2026-11-17T03:48:13.142745+00:00",
+        "source_url": "https://www.directg.net/game/game_view.html?platform=1&product_id=f4ea9ee4-21b0-4db6-8741-33eb54799ae9&sku=5b74705e-cd13-4857-9641-6042e59899c6",
+        "evidence": "Live seller browser: base game KRW 25,800; seller reference KRW 69,800, not historical-low proof. Deluxe is separate KRW 31,800. Activation AND play Korea only. Steam, Denuvo, Windows 11 64-bit, 58 GB; Korean UI/subtitles. End displayed 2026-12-01 02:00, timezone unspecified. Cart button present; checkout and redemption untested. Search cached detail showed old KRW 62,800; current browser resolves discrepancy.",
+        "limitations": "No purchase or redemption performed."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-17T03:48:13.142745+00:00",
+        "sources": [
+          {
+            "url": "https://www.directg.net/service/refund_policy.html",
+            "label": "Digital-key refund restrictions"
+          }
+        ]
+      }
+    },
     {
       "id": "deal-mx-master-3s",
       "region": "kr",
@@ -5008,7 +5121,7 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 25,
+    "feed": 26,
     "tracked_links": 0,
     "search_fallback": 0,
     "verified_product_links": 7,
