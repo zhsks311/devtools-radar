@@ -32,7 +32,7 @@ for (const page of pages) {
   const context = vm.createContext({URLSearchParams, URL, location,
     history, setInterval(){},
     document:{querySelector:selector=>nodes[selector], querySelectorAll(selector){
-      if (selector.startsWith('.price-status')) return [];
+      if (selector.startsWith('.price-status') || selector === '.official-product-media img') return [];
       return selector==='#active-products .card, #discovery-products .card'?cards:selector==='#held-products .card'?archived:links.map(a=>({
         get href(){return new URL(a.href,url).href}, set href(v){a.href=v}
       }));}},

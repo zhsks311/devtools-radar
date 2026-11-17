@@ -2786,6 +2786,19 @@
           "Public source text, not completed checkout; tax and country eligibility not verified.",
           "Purchase link is not proof of inventory or successful payment."
         ]
+      },
+      "image": {
+        "path": "/assets/deals/proton-mail.webp",
+        "alt": "Proton Mail official application preview",
+        "credit": "Proton",
+        "credit_url": "https://proton.me/media/kit",
+        "kind": "official_product_ui",
+        "rights_basis": "Official media kit permits free use when accompanying media refers back to proton.me; credit backlink displayed.",
+        "source_page": "https://proton.me/media/kit",
+        "source_file": "Proton Mail Desktop - Light.png",
+        "checked_at": "2026-11-17T08:51:54.489381+00:00",
+        "sha256": "aeab4ba66e55f7deaddf078be5c4f7233454f73510157143bcae9e0a36d0ee08",
+        "processing": "Proportional resize to 980px width and WebP compression only; no cropping, invented UI or content change."
       }
     },
     {
@@ -2897,6 +2910,19 @@
           "Public source text, not completed checkout; tax and country eligibility not verified.",
           "Purchase link is not proof of inventory or successful payment."
         ]
+      },
+      "image": {
+        "path": "/assets/deals/proton-drive.webp",
+        "alt": "Proton Drive official application preview",
+        "credit": "Proton",
+        "credit_url": "https://proton.me/media/kit",
+        "kind": "official_product_ui",
+        "rights_basis": "Official media kit permits free use when accompanying media refers back to proton.me; credit backlink displayed.",
+        "source_page": "https://proton.me/media/kit",
+        "source_file": "Proton Drive.png",
+        "checked_at": "2026-11-17T08:51:54.489381+00:00",
+        "sha256": "3a32d1431e8f6299ec2073502f4e04ebc28622ab012c6b31515a01cd069206d4",
+        "processing": "Proportional resize to 980px width and WebP compression only; no cropping, invented UI or content change."
       }
     },
     {
@@ -3009,6 +3035,19 @@
           "Public source text, not completed checkout; tax and country eligibility not verified.",
           "Purchase link is not proof of inventory or successful payment."
         ]
+      },
+      "image": {
+        "path": "/assets/deals/proton-pass.webp",
+        "alt": "Proton Pass official application preview",
+        "credit": "Proton",
+        "credit_url": "https://proton.me/media/kit",
+        "kind": "official_product_ui",
+        "rights_basis": "Official media kit permits free use when accompanying media refers back to proton.me; credit backlink displayed.",
+        "source_page": "https://proton.me/media/kit",
+        "source_file": "Proton Pass.png",
+        "checked_at": "2026-11-17T08:51:54.489381+00:00",
+        "sha256": "a797aa837cd33dcb57e90b704fff88982b0f7642b9a72a73c025833f288dd4a7",
+        "processing": "Proportional resize to 980px width and WebP compression only; no cropping, invented UI or content change."
       }
     },
     {

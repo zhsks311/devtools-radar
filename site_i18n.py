@@ -1,4 +1,4 @@
-from product_visuals import illustration
+from product_visuals import illustration, product_media
 """Shared six-language navigation and one market-aware deal catalogue."""
 import html, json, re, datetime
 from pathlib import Path
@@ -114,7 +114,9 @@ CSS += """
 @media(prefers-reduced-motion:reduce){.card .cta{transition:none}}
 """
 
+CSS += '.card .official-product-media{display:block;margin:0 0 4px;overflow:hidden;border:1px solid #e3e7ee;border-radius:10px;background:#fff}.card .official-product-media img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}.card .official-product-media img[hidden]{display:none}.official-product-media figcaption{padding:7px 10px;font-size:11px;line-height:1.4}.image-error{display:block;padding:32px 12px;color:#64748b}.image-error[hidden]{display:none}'
 JS = """
+document.querySelectorAll('.official-product-media img').forEach(img=>{const failed=()=>{img.hidden=true;img.nextElementSibling.hidden=false;};img.addEventListener('error',failed);if(img.complete&&img.naturalWidth===0)failed();});
 const market = document.querySelector('#market');
 const search = document.querySelector('#product-search');
 const normalizeSearch = value => value.normalize('NFKC').toLowerCase().trim();
@@ -283,12 +285,9 @@ def catalogue(lang,feeds,translations,discoveries=False):
   if not publishable_link(d):
    held_summary = SOLD_OUT_LABEL[lang] if (d.get('availability_review') or {}).get('status') == 'sold_out' else HELD_SUMMARY[lang]
    held_discount = NOT_DISCOUNT[lang] if (d.get('price_review') or {}).get('deal_status') == 'not_a_discount' else DISCOUNT_UNKNOWN[lang]
-   held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-category="{e(cat)}">{illustration(d,lang)}<div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p class="product-summary">{e(loc.get("purpose",""))}</p><p>{e(held_summary)}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
+   held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-category="{e(cat)}">{product_media(d,lang,title)}<div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p class="product-summary">{e(loc.get("purpose",""))}</p><p>{e(held_summary)}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
    continue
-  media=d.get('image') or {};image=''
-  if media.get('path'):
-   image=f'<figure><img src="{e(safe(media["path"]))}" alt="{e(title)}" loading="lazy"><figcaption class="caption">{e(media.get("caption",""))} <a href="{e(safe(media.get("credit_url","")))}">{e(media.get("credit",""))}</a></figcaption></figure>'
-  if not image: image=illustration(d,lang)
+  image=product_media(d,lang,title)
   source=d.get('source') or {};src=f'<a href="{e(safe(source.get("url","")))}" rel="noopener nofollow">{t[30]}</a>' if source.get('url') else ''
   availability_note = '<p class="notice availability-warning">'+e(CURRENT_OFFER_UNVERIFIED[lang])+'</p>' if (d.get('latest_offer_check') or {}).get('status') == 'unverified_current' else ''
   linked=publishable_link(d)

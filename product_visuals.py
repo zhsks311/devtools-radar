@@ -1,5 +1,7 @@
 """Original editorial illustrations, not vendor logos or product screenshots."""
 from html import escape
+import re
+from pathlib import Path
 CAPTION = {'ko':'서비스·제품 이해를 돕는 일러스트','en':'Illustration · not a product screenshot','zh':'功能示意图 · 非产品截图','ja':'機能イメージ・実際の製品画面ではありません','es':'Ilustración · no es una captura del producto','fr':'Illustration · pas une capture du produit'}
 def illustration(deal,lang):
     ident=deal.get('id',''); category=deal.get('category','software')
@@ -57,3 +59,17 @@ def illustration(deal,lang):
     else:
         art='<rect x="75" y="35" width="210" height="140" rx="10"/><path d="M75 65h210M95 50h5m10 0h5m10 0h5"/><rect class="accent" x="100" y="90" width="55" height="55" rx="7"/><path d="M175 95h85M175 115h65M175 135h75"/>'
     return '<figure class="editorial-visual"><svg viewBox="0 0 360 210" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'+art+'</g></svg><figcaption>'+escape(CAPTION[lang])+'</figcaption></figure>'
+
+
+MEDIA_LABEL = {'ko':'공식 제품 화면 · 제공 예시', 'en':'Official product preview · sample UI', 'zh':'官方产品界面 · 示例', 'ja':'公式製品画面・表示例', 'es':'Vista oficial del producto · ejemplo', 'fr':'Aperçu officiel du produit · exemple'}
+MEDIA_MISSING = {'ko':'이미지를 불러오지 못했습니다', 'en':'Image unavailable', 'zh':'图片暂不可用', 'ja':'画像を読み込めません', 'es':'Imagen no disponible', 'fr':'Image indisponible'}
+def product_media(deal, lang, title):
+    media=deal.get('image') or {}
+    path=media.get('path','')
+    if not re.fullmatch(r'/assets/deals/[a-z0-9-]+\.(?:png|webp|jpg)',path) or not Path(path.lstrip('/')).is_file():
+        return illustration(deal,lang)
+    if media.get('kind')=='official_product_ui' and not (media.get('rights_basis') and media.get('source_page','').startswith('https://')): return illustration(deal,lang)
+    credit_url=media.get('credit_url','')
+    if not credit_url.startswith('https://'): return illustration(deal,lang)
+    caption=MEDIA_LABEL[lang] if media.get('kind')=='official_product_ui' else media.get('caption','')
+    return '<figure class="official-product-media"><img src="'+escape(path,quote=True)+'" alt="'+escape(media.get('alt') or title,quote=True)+'" loading="lazy" decoding="async" width="980" height="552"><span class="image-error" hidden>'+escape(MEDIA_MISSING[lang])+'</span><figcaption class="caption">'+escape(caption)+' · <a href="'+escape(credit_url,quote=True)+'" rel="noopener">'+escape(media.get('credit',''))+'</a></figcaption></figure>'
