@@ -8,6 +8,7 @@ on:
     paths:
       - 'tools/collect_deal_feeds.py'
       - 'tools/publish_deal_feed.py'
+      - 'tools/verify_live_feed.py'
       - 'config/deal_sources.json'
       - '.github/workflows/deal-feeds.yml'
 permissions:
@@ -61,24 +62,7 @@ jobs:
           test "$(gh api repos/${{ github.repository }}/pages --jq '.source.branch')" = 'gh-pages'
           gh api --method POST repos/${{ github.repository }}/pages/builds
       - name: Verify live collection timestamp
-        run: |
-          python - <<'PY'
-          import json,time,urllib.request,urllib.parse
-          expected=json.load(open('published/feeds/status.json'))['attempted_at']
-          deadline=time.monotonic()+600
-          while time.monotonic()<deadline:
-              try:
-                  req=urllib.request.Request('https://devteardown.com/feeds/status.json?check='+urllib.parse.quote(expected,safe=''),headers={'Cache-Control':'no-cache'})
-                  live=json.load(urllib.request.urlopen(req,timeout=20))
-                  if live['attempted_at']==expected: break
-              except Exception: pass
-              time.sleep(10)
-          else: raise SystemExit('Pages build requested, but live timestamp was not verified within ten minutes')
-          print('Live source-feed collection timestamp verified:',expected)
-          source=next(s for s in live['sources'] if s['id']=='dealnews')
-          if source['status'] not in ('collected','not_modified'):
-              raise SystemExit('Last-good feed retained with a live error notice; collection did not succeed')
-          PY
+        run: python tools/verify_live_feed.py --expected published/feeds/status.json
       - if: always()
         uses: actions/upload-artifact@v4
         with:

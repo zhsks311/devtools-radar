@@ -1,0 +1,64 @@
+"""Verify the deployed feed, fail closed, and expose transport diagnostics."""
+import argparse
+import hashlib
+import json
+import subprocess
+import time
+from pathlib import Path
+from urllib.parse import quote
+
+BASE = 'https://devteardown.com/feeds/'
+
+def fetch(name, stamp):
+    result = subprocess.run(['curl', '--fail', '--silent', '--show-error',
+        '--location', '--proto', '=https', '--proto-redir', '=https',
+        '--connect-timeout', '10', '--max-time', '20',
+        '--header', 'Cache-Control: no-cache',
+        BASE + name + '?check=' + quote(stamp, safe='')],
+        capture_output=True, timeout=25)
+    if result.returncode:
+        raise RuntimeError(f'curl exit {result.returncode}: {result.stderr.decode(errors="replace")[:300]}')
+    return result.stdout
+
+def verify(expected, get, html_sha256):
+    live = json.loads(get('status.json'))
+    if live.get('attempted_at') != expected['attempted_at']:
+        raise ValueError(f"stale status: observed {live.get('attempted_at')!r}, expected {expected['attempted_at']!r}")
+    source = next(s for s in live['sources'] if s['id'] == 'dealnews')
+    wanted = next(s for s in expected['sources'] if s['id'] == 'dealnews')
+    if source.get('sha256') != wanted.get('sha256'):
+        raise ValueError('Live source fingerprint does not match committed collection')
+    if hashlib.sha256(get('dealnews.xml')).hexdigest() != wanted['sha256']:
+        raise ValueError('Live XML does not match committed collection')
+    html_bytes = get('index.html')
+    if hashlib.sha256(html_bytes).hexdigest() != html_sha256:
+        raise ValueError('Live page fingerprint does not match committed HTML')
+    html = html_bytes.decode('utf-8')
+    if wanted['last_success_at'] not in html:
+        raise ValueError('Live page does not contain the committed last-success timestamp')
+    if source['status'] not in ('collected', 'not_modified'):
+        raise ValueError('Last-good data published with error notice; collection was not successful')
+    return source
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--expected', type=Path, required=True)
+    parser.add_argument('--wait-seconds', type=int, default=600)
+    args = parser.parse_args()
+    expected = json.loads(args.expected.read_text())
+    html_sha256 = hashlib.sha256(args.expected.with_name('index.html').read_bytes()).hexdigest()
+    deadline = time.monotonic() + args.wait_seconds
+    attempt = 0
+    while time.monotonic() < deadline:
+        attempt += 1
+        try:
+            source = verify(expected, lambda name: fetch(name, expected['attempted_at']), html_sha256)
+            print(f"Verified live status, XML fingerprint and page timestamp: {expected['attempted_at']}; {source['items']} items", flush=True)
+            return
+        except (ValueError, KeyError, StopIteration, RuntimeError, subprocess.TimeoutExpired) as error:
+            print(f'Live verification attempt {attempt}: {type(error).__name__}: {error}', flush=True)
+        time.sleep(min(10, max(0, deadline-time.monotonic())))
+    raise SystemExit('Pages build requested, but live feed was not verified before the deadline')
+
+if __name__ == '__main__':
+    main()
