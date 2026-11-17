@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T06:27:51.437019+00:00",
+  "generated_at": "2026-11-17T07:30:53.047065+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -7,6 +7,168 @@
   },
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
+    {
+      "id": "msi-mp273q-e7-gmarket",
+      "region": "kr",
+      "target": "ko",
+      "category": "hardware",
+      "category_label": "hardware",
+      "title_raw": "MSI PRO MP273Q E7 · 27-inch QHD IPS 75Hz",
+      "product": "MSI PRO MP273Q E7 · 27-inch QHD IPS 75Hz",
+      "store": "Gmarket",
+      "price": 172340,
+      "currency": "KRW",
+      "shipping": "See delivery conditions",
+      "specs": [
+        "27-inch 2560 × 1440 IPS · 75 Hz",
+        "2 × HDMI 2.0 · DisplayPort 1.2a",
+        "VESA 100 × 100 mm · no KVM"
+      ],
+      "briefing": [
+        "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-17",
+      "source": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+        "label": "Gmarket exact product detail"
+      },
+      "price_source": "retailer_product_page",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-17T07:30:53.047065+00:00",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+        "product_match": true,
+        "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+      },
+      "price_review": {
+        "id": "msi-mp273q-e7-gmarket",
+        "product": "MSI PRO MP273Q E7 · 27-inch QHD IPS 75Hz",
+        "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+        "recorded_price": 172340,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 172340,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+            "observed_at": "2026-11-17T07:30:53.047065+00:00",
+            "result": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+          }
+        ],
+        "limitations": [
+          "Checkout and independent market low unverified.",
+          "Main price excludes conditional coupon and payment discounts; these appear separately."
+        ],
+        "review_completed_at": "2026-11-17T07:30:53.047065+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-17T07:30:53.047065+00:00",
+        "note": "Korean seller audience; account/individual checkout requirements remain separate."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Korea domestic only; free mainland CJ, Jeju/remote +KRW 5,000",
+        "activation": "Physical monitor; option 01 MP273Q E7",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Seller states change-of-mind within 7 days of receipt, buyer pays return shipping: KRW 5,000 one way or 10,000 if initial shipping was free; installation/use exclusions apply.",
+        "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+        "checked_at": "2026-11-17"
+      },
+      "latest_offer_check": {
+        "checked_at": "2026-11-17T07:30:53.047065+00:00",
+        "status": "seller_text_observed",
+        "price": 172340,
+        "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+        "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+      },
+      "price_variant": "MP273Q E7 · option 01",
+      "price_options": [
+        {
+          "kind": "coupon",
+          "product_id": "msi-mp273q-e7-gmarket",
+          "variant": "MP273Q E7 · option 01",
+          "currency": "KRW",
+          "price": 156820,
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+          "checked_at": "2026-11-17T07:30:53.047065+00:00",
+          "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified.",
+          "conditions": {
+            "ko": "끝장세일 디지털 9% 중복쿠폰 적용 시 · 대상 여부 결제 전 확인",
+            "en": "With eligible digital-sale 9% coupon; verify eligibility before paying",
+            "zh": "适用数码促销9%券时；付款前确认资格",
+            "ja": "対象デジタルセール9%クーポン適用時・決済前確認",
+            "es": "Con cupón digital del 9% elegible; confirmar antes de pagar",
+            "fr": "Avec coupon numérique de 9 % éligible ; vérifier avant paiement"
+          }
+        },
+        {
+          "kind": "payment",
+          "product_id": "msi-mp273q-e7-gmarket",
+          "variant": "MP273Q E7 · option 01",
+          "currency": "KRW",
+          "price": 145850,
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+          "checked_at": "2026-11-17T07:30:53.047065+00:00",
+          "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified.",
+          "conditions": {
+            "ko": "쿠폰 + 대상 카드·스마일페이 7% · 7만원 이상, 할인 상한 7만원 · 11월 19일까지 표기 · 일일 잔여 할인한도 내 적용",
+            "en": "Coupon + eligible SmilePay card 7%; minimum KRW 70,000, discount cap 70,000; shown through Nov 19 ; subject to remaining daily discount allowance",
+            "zh": "券加指定SmilePay卡7%；满70,000韩元、最高减70,000；显示至11月19日；受每日剩余优惠额度限制",
+            "ja": "クーポン＋対象SmilePayカード7%・7万ウォン以上、割引上限7万・11月19日まで表記・1日の割引残枠内で適用",
+            "es": "Cupón + tarjeta SmilePay elegible 7%; mínimo KRW 70.000, tope 70.000; hasta 19 nov. según página ; sujeto al límite diario restante",
+            "fr": "Coupon + carte SmilePay éligible 7 % ; minimum KRW 70 000, plafond 70 000 ; jusqu’au 19 nov. affiché ; selon le plafond quotidien restant"
+          }
+        },
+        {
+          "kind": "payment",
+          "product_id": "msi-mp273q-e7-gmarket",
+          "variant": "MP273Q E7 · option 01",
+          "currency": "KRW",
+          "price": 142710,
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+          "checked_at": "2026-11-17T07:30:53.047065+00:00",
+          "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified.",
+          "conditions": {
+            "ko": "쿠폰 + IBK 나라사랑·지마켓꼭현대·G마켓삼성 대상 카드의 스마일페이 9% · 7만원 이상, 할인 상한 20만원 · 11월 19일까지 표기 · 일일 잔여 할인한도 내 적용",
+            "en": "Coupon + specified IBK Nara Sarang, Gmarket Hyundai or Gmarket Samsung card via SmilePay 9%; minimum KRW 70,000, cap 200,000; shown through Nov 19 ; subject to remaining daily discount allowance",
+            "zh": "券加指定IBK Nara Sarang、Gmarket Hyundai或Gmarket Samsung卡经SmilePay减9%；满70,000韩元、最高减200,000；至11月19日表记；受每日剩余优惠额度限制",
+            "ja": "クーポン＋指定IBK Nara Sarang・Gmarket Hyundai・Gmarket SamsungカードのSmilePay9%・7万ウォン以上、上限20万・11月19日まで表記・1日の割引残枠内で適用",
+            "es": "Cupón + tarjeta específica IBK Nara Sarang, Gmarket Hyundai o Gmarket Samsung vía SmilePay 9%; mínimo KRW 70.000, tope 200.000; hasta 19 nov. indicado ; sujeto al límite diario restante",
+            "fr": "Coupon + carte spécifique IBK Nara Sarang, Gmarket Hyundai ou Gmarket Samsung via SmilePay 9 % ; minimum KRW 70 000, plafond 200 000 ; jusqu’au 19 nov. affiché ; selon le plafond quotidien restant"
+          }
+        }
+      ],
+      "alternative_review": {
+        "checked_at": "2026-11-17T07:30:53.047065+00:00",
+        "sources": [
+          {
+            "url": "https://www.msi.com/Business-Productivity-Monitor/PRO-MP273Q-E7/Specification",
+            "label": "MSI: official monitor specifications"
+          }
+        ]
+      }
+    },
     {
       "id": "sonic-racing-crossworlds-directgames",
       "region": "kr",
@@ -5243,7 +5405,7 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 27,
+    "feed": 28,
     "tracked_links": 0,
     "search_fallback": 0,
     "verified_product_links": 7,

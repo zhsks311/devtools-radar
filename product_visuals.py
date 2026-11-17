@@ -34,6 +34,8 @@ def illustration(deal,lang):
         art='<rect x="35" y="78" width="85" height="55" rx="8"/><path class="accent" d="M140 105h40m-13-13 13 13-13 13"/><rect x="200" y="35" width="125" height="140" rx="8"/><path d="M218 65h88M218 87h70M218 109h80M218 131h55"/><text x="78" y="111">;text</text>'
     elif 'chronoid' in ident:
         art='<circle cx="180" cy="105" r="68"/><path d="M180 48v8M180 154v8M123 105h8M229 105h8"/><path class="accent" d="M180 68v40l30 20"/>'
+    elif 'msi-mp273q-e7' in ident:
+        art='<rect x="60" y="35" width="240" height="135" rx="5"/><path d="M180 170v20m-45 0h90"/><path class="accent" d="M80 60h85v85H80zM190 65h85m-85 25h85m-85 25h60"/>'
     elif 'moonitor' in ident:
         art='<rect x="65" y="45" width="230" height="125" rx="10"/><path d="M65 75h230"/><path class="accent" d="M85 126h40l18-29 27 52 25-39 18 16h62"/>'
     elif 'seoagent' in ident:
