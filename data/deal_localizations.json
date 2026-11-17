@@ -2406,5 +2406,49 @@
       "conditions": "Boutique officielle coréenne : pack standard Midnight Black KRW 645 000 ; référence vendeur KRW 759 000, pas un minimum historique vérifié. Sans carte SD. Gold, bonus d’inscription et protection payante non déduits.",
       "buying_note": "Livraison gratuite annoncée dès KRW 150 000 en Corée. Stock, date et paiement selon adresse non vérifiés. FAQ : taxes d’importation et douane incluses ; frais bancaires possibles. Retour sous 15 jours après réception soumis à état d’origine, emballage, accessoires et cadeaux complets, revente possible, accord et exclusions. Aucun test pratique."
     }
+  },
+  "proton-unlimited-black-friday-annual": {
+    "en": {
+      "product": "Proton Unlimited · first 12 months",
+      "summary": "Email, files, VPN and passwords in one subscription, with 500 GB storage.",
+      "purpose": "Email, files, VPN and passwords in one subscription, with 500 GB storage.",
+      "conditions": "Pay $77.88 upfront for 12 months; renews at $119.88/year unless canceled. New users. Country eligibility and tax unverified. No end date stated. Image shows the included Mail app.",
+      "buying_note": "Need only this service? Keep the cheaper standalone plan. For several services, compare Unlimited: USD 77.88 prepaid for year one, then USD 119.88/year automatically. It includes 500 GB plus premium Mail, Drive, VPN and Pass. This is a plan choice, not a claim that separate subscriptions can be combined."
+    },
+    "ko": {
+      "product": "Proton Unlimited · 첫 12개월",
+      "summary": "메일·파일 보관·VPN·비밀번호 관리를 묶은 구독. 저장 공간은 500 GB입니다.",
+      "purpose": "메일·파일 보관·VPN·비밀번호 관리를 묶은 구독. 저장 공간은 500 GB입니다.",
+      "conditions": "첫 12개월 $77.88 선결제, 이후 취소 전까지 연 $119.88 자동 갱신. 신규 가입자 대상이며 국가별 결제 가능 여부·세금·종료일은 미확인입니다. 이미지는 포함된 Mail 앱 화면입니다.",
+      "buying_note": "이 기능만 필요하면 더 저렴한 단독 플랜을 고르세요. 여러 기능을 쓴다면 Unlimited도 비교해 보세요. 첫해 USD 77.88 선결제, 이후 연 USD 119.88 자동 갱신이며 500GB와 Mail·Drive·VPN·Pass 유료 기능을 포함합니다. 별도 구독들을 합칠 수 있다는 뜻은 아닙니다."
+    },
+    "ja": {
+      "product": "Proton Unlimited · 最初の12か月",
+      "summary": "メール、ファイル、VPN、パスワード管理をまとめた500 GB付きプラン。",
+      "purpose": "メール、ファイル、VPN、パスワード管理をまとめた500 GB付きプラン。",
+      "conditions": "最初の12か月は77.88 USDを前払い。解約しない限り年119.88 USDで自動更新。新規ユーザー向け。国別利用条件、税、終了日は未確認。画像は同梱のMailアプリ。",
+      "buying_note": "この機能だけなら単体プランの方が安価です。複数使うならUnlimitedも比較：初年度77.88米ドル前払い、以後年119.88米ドルで自動更新。500GBとMail・Drive・VPN・Passの有料機能を含みます。個別契約を合算できるという意味ではありません。"
+    },
+    "zh": {
+      "product": "Proton Unlimited · 首12个月",
+      "summary": "集邮件、文件存储、VPN和密码管理于一体，含500 GB空间。",
+      "purpose": "集邮件、文件存储、VPN和密码管理于一体，含500 GB空间。",
+      "conditions": "首12个月预付77.88美元，未取消则每年119.88美元自动续费。面向新用户。各国资格、税费和截止日期未确认。图片展示所含Mail应用。",
+      "buying_note": "只需这一项服务，单项套餐更便宜。需要多项服务可比较 Unlimited：首年预付77.88美元，之后每年自动续费119.88美元，含500GB及Mail、Drive、VPN、Pass高级功能。这是套餐选择，并非声称单独订阅可以合并。"
+    },
+    "es": {
+      "product": "Proton Unlimited · primeros 12 meses",
+      "summary": "Correo, archivos, VPN y contraseñas en una suscripción con 500 GB.",
+      "purpose": "Correo, archivos, VPN y contraseñas en una suscripción con 500 GB.",
+      "conditions": "77.88 USD por adelantado para 12 meses; renovación automática a 119.88 USD/año salvo cancelación. Nuevos usuarios. Países, impuestos y fecha final sin confirmar. Imagen: app Mail incluida.",
+      "buying_note": "Si solo necesitas este servicio, el plan individual cuesta menos. Para varios servicios, compara Unlimited: USD 77.88 por adelantado el primer año y renovación automática de USD 119.88/año. Incluye 500 GB y funciones prémium de Mail, Drive, VPN y Pass. No implica que se puedan combinar suscripciones separadas."
+    },
+    "fr": {
+      "product": "Proton Unlimited · 12 premiers mois",
+      "summary": "Messagerie, fichiers, VPN et mots de passe dans un abonnement avec 500 Go.",
+      "purpose": "Messagerie, fichiers, VPN et mots de passe dans un abonnement avec 500 Go.",
+      "conditions": "77.88 USD payés pour 12 mois ; renouvellement automatique à 119.88 USD/an sauf résiliation. Nouveaux clients. Pays, taxes et date de fin non confirmés. Image : application Mail incluse.",
+      "buying_note": "Pour ce seul service, le forfait individuel coûte moins cher. Pour plusieurs services, comparez Unlimited : 77.88 USD prépayés la première année, puis renouvellement automatique à 119.88 USD/an. Il inclut 500 Go et les fonctions premium de Mail, Drive, VPN et Pass. Cela ne signifie pas que des abonnements séparés sont cumulables."
+    }
   }
 }

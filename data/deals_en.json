@@ -7,6 +7,126 @@
   },
   "feed": [
     {
+      "id": "proton-unlimited-black-friday-annual",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Proton Unlimited · first 12 months",
+      "product": "Proton Unlimited · first 12 months",
+      "store": "Proton",
+      "storefront_country": null,
+      "price": 77.88,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital subscription",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "Email, cloud files, VPN and passwords in one subscription, with 500 GB storage.",
+        "Official product page: USD 77.88 billed upfront for first 12 months; automatically renews at USD 119.88 every 12 months unless canceled. New users; existing-user offers differ. 500 GB, Mail, VPN, Drive, Pass and Calendar. Separate USD 1 introductory month renews at USD 12.99 monthly and is not this annual plan. Checkout, tax, country eligibility and expiry unverified."
+      ],
+      "audience": "New subscribers; country eligibility unverified.",
+      "source": {
+        "id": "proton-official",
+        "label": "Proton official Black Friday product offer",
+        "url": "https://proton.me/mail/black-friday"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-17",
+      "score": null,
+      "disclosure": "No affiliate tracking. Introductory annual price; automatic renewal costs more. Final checkout not tested.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://proton.me/mail/black-friday",
+        "tracked": false,
+        "label": "View official offer",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital subscription; no shipping.",
+        "activation": "New-user offer; existing-user offers vary. Country eligibility unverified.",
+        "payment": "Korean billing eligibility and checkout not tested.",
+        "tax": "Taxes and final total require checkout.",
+        "returns": "Seller advertises a 30-day money-back guarantee.",
+        "evidence_url": "https://proton.me/mail/black-friday",
+        "checked_at": "2026-11-17T20:36:05.795014+00:00"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-17T20:36:05.795014+00:00",
+        "url": "https://proton.me/mail/black-friday",
+        "product_match": true,
+        "evidence": "Official product page: USD 77.88 billed upfront for first 12 months; automatically renews at USD 119.88 every 12 months unless canceled. New users; existing-user offers differ. 500 GB, Mail, VPN, Drive, Pass and Calendar. Separate USD 1 introductory month renews at USD 12.99 monthly and is not this annual plan. Checkout, tax, country eligibility and expiry unverified."
+      },
+      "price_review": {
+        "id": "proton-unlimited-black-friday-annual",
+        "product": "Proton Unlimited · first 12 months",
+        "seller_url": "https://proton.me/mail/black-friday",
+        "recorded_price": 77.88,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 77.88,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://proton.me/mail/black-friday",
+            "observed_at": "2026-11-17T20:36:05.795014+00:00",
+            "result": "Official product page: USD 77.88 billed upfront for first 12 months; automatically renews at USD 119.88 every 12 months unless canceled. New users; existing-user offers differ. 500 GB, Mail, VPN, Drive, Pass and Calendar. Separate USD 1 introductory month renews at USD 12.99 monthly and is not this annual plan. Checkout, tax, country eligibility and expiry unverified."
+          }
+        ],
+        "conditions": [
+          "Official product page: USD 77.88 billed upfront for first 12 months; automatically renews at USD 119.88 every 12 months unless canceled. New users; existing-user offers differ. 500 GB, Mail, VPN, Drive, Pass and Calendar. Separate USD 1 introductory month renews at USD 12.99 monthly and is not this annual plan. Checkout, tax, country eligibility and expiry unverified."
+        ],
+        "limitations": [
+          "Vendor discount uses regular monthly billing as baseline, not the annual renewal price. No crossed-out annual price or historical-low claim.",
+          "Offer expiry, country eligibility and final tax unverified."
+        ],
+        "review_completed_at": "2026-11-17T20:36:05.795014+00:00"
+      },
+      "expires_at": null,
+      "alternative_review": {
+        "checked_at": "2026-11-15T16:23:29.014044+00:00",
+        "sources": [
+          {
+            "url": "https://proton.me/mail/black-friday",
+            "label": "Proton: Mail Plus / Unlimited"
+          }
+        ],
+        "evidence": "Official annual billing footnote: Unlimited USD 77.88 first 12 months, renews USD 119.88/12 months; 500 GB and premium Mail, Drive, VPN, Pass. New-user offers and 30-day money-back notice. Displayed 50% uses regular monthly billing, not annual renewal or historical low. No combined-subscription eligibility, KR eligibility, tax or checkout verified."
+      },
+      "latest_offer_check": {
+        "id": "proton-unlimited-black-friday-annual",
+        "status": "seller_page_price_and_purchase_link_observed",
+        "price": 77.88,
+        "observed_at": "2026-11-17T20:36:05.795014+00:00",
+        "source_url": "https://proton.me/mail/black-friday",
+        "evidence": "Official product page: USD 77.88 billed upfront for first 12 months; automatically renews at USD 119.88 every 12 months unless canceled. New users; existing-user offers differ. 500 GB, Mail, VPN, Drive, Pass and Calendar. Separate USD 1 introductory month renews at USD 12.99 monthly and is not this annual plan. Checkout, tax, country eligibility and expiry unverified.",
+        "limitations": [
+          "Public source text, not completed checkout; tax and country eligibility not verified.",
+          "Purchase link is not proof of inventory or successful payment."
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/proton-mail.webp",
+        "alt": "Proton Mail desktop interface, one component included in Proton Unlimited",
+        "credit": "Proton",
+        "credit_url": "https://proton.me/media/kit",
+        "kind": "official_product_ui",
+        "rights_basis": "Official media kit permits free use when accompanying media refers back to proton.me; credit backlink displayed.",
+        "source_page": "https://proton.me/media/kit",
+        "source_file": "Proton Mail Desktop - Light.png",
+        "checked_at": "2026-11-17T08:51:54.489381+00:00",
+        "sha256": "aeab4ba66e55f7deaddf078be5c4f7233454f73510157143bcae9e0a36d0ee08",
+        "processing": "Proportional resize to 980px width and WebP compression only; no cropping, invented UI or content change."
+      },
+      "price_variant": "Unlimited / first 12 months / upfront annual payment"
+    },
+    {
       "id": "ulysses-howiwrite-first-year",
       "region": "global",
       "target": "en",
@@ -6816,7 +6936,7 @@
     }
   },
   "stats": {
-    "feed": 33,
+    "feed": 34,
     "sources": 11
   }
 }
