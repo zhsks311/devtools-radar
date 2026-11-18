@@ -3146,6 +3146,18 @@
           "percent": 34,
           "kind": "seller_current_regular_price",
           "historical_low_verified": false
+        },
+        "image": {
+          "path": "/assets/deals/escape-backrooms.webp",
+          "kind": "official_product_ui",
+          "alt": "Escape the Backrooms official PC gameplay screenshot showing an overgrown room and chair",
+          "credit": "© Fancy Games / Secret Mode",
+          "credit_url": "https://wearesecretmode.com/news/escape-the-backrooms-release-date",
+          "source_page": "https://wearesecretmode.com/news/escape-the-backrooms-release-date",
+          "rights_basis": "Official publisher PC release announcement explicitly distributes this public press kit for coverage of Escape the Backrooms.",
+          "checked_at": "2026-11-18T02:57:01.000968+00:00",
+          "processing": "Proportional resize to 1200 by 675 and WebP compression only. No crop or content alteration.",
+          "sha256": "b22e6c309287a2a2482240141d9e47d89be62cfe34a9542a3fa5f79aea6391da"
         }
       },
       "country_targeting": {
@@ -3178,7 +3190,31 @@
         "observed_at": "2026-11-16T11:40:10.289150+00:00",
         "source_url": "https://www.directg.net/game/game_view.html?product_id=c4166ba4-60be-462b-b0f6-375a8d4398e5",
         "evidence": "Official base-game page lists KRW6,900 vs displayed KRW10,500, cart control, promotion end 2026-11-24 23:59:00 (timezone not specified). Keys can only be activated and played in Korea and Japan. Steam code delivery. Checkout untested; historical market low unverified.",
-        "limitations": "No purchase or redemption performed."
+        "limitations": "No purchase or redemption performed.",
+        "image": {
+          "path": "/assets/deals/escape-backrooms.webp",
+          "kind": "official_product_ui",
+          "alt": "Escape the Backrooms official PC gameplay screenshot showing an overgrown room and chair",
+          "credit": "© Fancy Games / Secret Mode",
+          "credit_url": "https://wearesecretmode.com/news/escape-the-backrooms-release-date",
+          "source_page": "https://wearesecretmode.com/news/escape-the-backrooms-release-date",
+          "rights_basis": "Official publisher PC release announcement explicitly distributes this public press kit for coverage of Escape the Backrooms.",
+          "checked_at": "2026-11-18T02:57:01.000968+00:00",
+          "processing": "Proportional resize to 1200 by 675 and WebP compression only. No crop or content alteration.",
+          "sha256": "b22e6c309287a2a2482240141d9e47d89be62cfe34a9542a3fa5f79aea6391da"
+        }
+      },
+      "image": {
+        "path": "/assets/deals/escape-backrooms.webp",
+        "kind": "official_product_ui",
+        "alt": "Escape the Backrooms official PC gameplay screenshot showing an overgrown room and chair",
+        "credit": "© Fancy Games / Secret Mode",
+        "credit_url": "https://wearesecretmode.com/news/escape-the-backrooms-release-date",
+        "source_page": "https://wearesecretmode.com/news/escape-the-backrooms-release-date",
+        "rights_basis": "Official publisher PC release announcement explicitly distributes this public press kit for coverage of Escape the Backrooms.",
+        "checked_at": "2026-11-18T02:57:01.000968+00:00",
+        "processing": "Proportional resize to 1200 by 675 and WebP compression only. No crop or content alteration.",
+        "sha256": "b22e6c309287a2a2482240141d9e47d89be62cfe34a9542a3fa5f79aea6391da"
       }
     },
     {
