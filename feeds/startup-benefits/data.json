@@ -1,9 +1,9 @@
 {
   "source": "that.promo",
   "policy_url": "https://that.promo/developers",
-  "collected_at": "2026-11-18T07:23:08.169354+00:00",
-  "source_generated_at": "2026-11-18T07:23:08Z",
-  "count": 237,
+  "collected_at": "2026-11-18T08:38:30.839024+00:00",
+  "source_generated_at": "2026-11-18T08:38:30Z",
+  "count": 238,
   "offers": [
     {
       "slug": "amd-token-lab-free-api-access",
@@ -30,9 +30,9 @@
       "why_it_matters": null,
       "official_url": "https://developer.amd.com/cloud-credit/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-16T06:46:18Z",
-      "updated_at": "2026-11-16T08:12:01Z"
+      "updated_at": "2026-11-18T08:24:47Z"
     },
     {
       "slug": "lovable-free-plan",
@@ -59,9 +59,9 @@
       "why_it_matters": null,
       "official_url": "https://lovable.dev/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-16T06:11:01Z",
-      "updated_at": "2026-11-16T06:11:02Z"
+      "updated_at": "2026-11-18T08:25:56Z"
     },
     {
       "slug": "vercel-ai-gateway-free-credits",
@@ -117,9 +117,9 @@
       "why_it_matters": null,
       "official_url": "https://e2b.dev/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-15T14:26:37Z",
-      "updated_at": "2026-11-16T07:04:04Z"
+      "updated_at": "2026-11-18T08:25:58Z"
     },
     {
       "slug": "future-agi-startup-program",
@@ -146,9 +146,9 @@
       "why_it_matters": null,
       "official_url": "https://futureagi.com/startups/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T12:07:43Z",
-      "updated_at": "2026-11-16T08:12:08Z"
+      "updated_at": "2026-11-18T08:26:00Z"
     },
     {
       "slug": "runloop-free-pro-trial-credits",
@@ -175,9 +175,9 @@
       "why_it_matters": null,
       "official_url": "https://runloop.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T09:01:46Z",
-      "updated_at": "2026-11-16T08:12:09Z"
+      "updated_at": "2026-11-18T08:26:01Z"
     },
     {
       "slug": "new-relic-for-startups",
@@ -233,9 +233,9 @@
       "why_it_matters": null,
       "official_url": "https://bolt.new/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T05:26:43Z",
-      "updated_at": "2026-11-16T08:12:12Z"
+      "updated_at": "2026-11-18T08:26:03Z"
     },
     {
       "slug": "scaleway-startup-program",
@@ -262,9 +262,9 @@
       "why_it_matters": null,
       "official_url": "https://www.scaleway.com/en/startup-program/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T02:03:55Z",
-      "updated_at": "2026-11-16T08:12:14Z"
+      "updated_at": "2026-11-18T08:26:04Z"
     },
     {
       "slug": "workos-authkit-free-plan",
@@ -291,9 +291,9 @@
       "why_it_matters": null,
       "official_url": "https://workos.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T01:12:31Z",
-      "updated_at": "2026-11-16T08:12:15Z"
+      "updated_at": "2026-11-18T08:26:06Z"
     },
     {
       "slug": "ovhcloud-startup-program",
@@ -320,9 +320,9 @@
       "why_it_matters": null,
       "official_url": "https://startup.ovhcloud.com/en/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T01:12:15Z",
-      "updated_at": "2026-11-16T08:12:17Z"
+      "updated_at": "2026-11-18T08:26:07Z"
     },
     {
       "slug": "clerk-free-plan",
@@ -349,9 +349,9 @@
       "why_it_matters": null,
       "official_url": "https://clerk.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T00:08:23Z",
-      "updated_at": "2026-11-16T08:12:18Z"
+      "updated_at": "2026-11-18T08:26:09Z"
     },
     {
       "slug": "upstash-redis-free-plan",
@@ -378,9 +378,9 @@
       "why_it_matters": null,
       "official_url": "https://upstash.com/pricing/redis",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T00:08:05Z",
-      "updated_at": "2026-11-16T08:12:20Z"
+      "updated_at": "2026-11-18T08:26:10Z"
     },
     {
       "slug": "turso-free-plan",
@@ -407,9 +407,9 @@
       "why_it_matters": null,
       "official_url": "https://turso.tech/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T23:11:56Z",
-      "updated_at": "2026-11-16T08:12:21Z"
+      "updated_at": "2026-11-18T08:26:12Z"
     },
     {
       "slug": "netlify-free-plan",
@@ -436,9 +436,9 @@
       "why_it_matters": null,
       "official_url": "https://www.netlify.com/pricing/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T23:11:44Z",
-      "updated_at": "2026-11-16T08:12:23Z"
+      "updated_at": "2026-11-18T08:26:13Z"
     },
     {
       "slug": "railway-free-trial-credit",
@@ -465,9 +465,9 @@
       "why_it_matters": null,
       "official_url": "https://railway.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T22:10:03Z",
-      "updated_at": "2026-11-16T08:12:25Z"
+      "updated_at": "2026-11-18T08:26:15Z"
     },
     {
       "slug": "fly-io-startup-program",
@@ -494,9 +494,9 @@
       "why_it_matters": null,
       "official_url": "https://fly.io/startups/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T22:09:50Z",
-      "updated_at": "2026-11-16T08:12:26Z"
+      "updated_at": "2026-11-18T08:26:16Z"
     },
     {
       "slug": "supabase-free-plan",
@@ -523,9 +523,9 @@
       "why_it_matters": null,
       "official_url": "https://supabase.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T19:14:16Z",
-      "updated_at": "2026-11-16T08:12:28Z"
+      "updated_at": "2026-11-18T08:26:18Z"
     },
     {
       "slug": "amazon-web-services-aws-free-plan",
@@ -552,9 +552,9 @@
       "why_it_matters": null,
       "official_url": "https://aws.amazon.com/free/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T18:30:12Z",
-      "updated_at": "2026-11-16T08:12:29Z"
+      "updated_at": "2026-11-18T08:26:19Z"
     },
     {
       "slug": "vercel-v0-free-credits",
@@ -581,9 +581,9 @@
       "why_it_matters": null,
       "official_url": "https://v0.app/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T07:29:26Z",
-      "updated_at": "2026-11-16T08:12:31Z"
+      "updated_at": "2026-11-18T08:26:21Z"
     },
     {
       "slug": "crusoe-managed-inference-credits-nvidia-inception",
@@ -610,9 +610,9 @@
       "why_it_matters": null,
       "official_url": "https://www.crusoe.ai/startup-program/intelligence-foundry",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T01:28:33Z",
-      "updated_at": "2026-11-16T08:18:43Z"
+      "updated_at": "2026-11-18T08:26:23Z"
     },
     {
       "slug": "zoom-ai-launchpad",
@@ -639,9 +639,9 @@
       "why_it_matters": null,
       "official_url": "https://www.zoom.ai/ai-launchpad",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-13T01:27:35Z",
-      "updated_at": "2026-11-16T08:12:33Z"
+      "updated_at": "2026-11-18T08:26:24Z"
     },
     {
       "slug": "testmu-ai-kane-cli-hackathon-credits",
@@ -668,9 +668,9 @@
       "why_it_matters": null,
       "official_url": "https://www.kaneclihack.sh/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-12T17:26:34Z",
-      "updated_at": "2026-11-16T08:12:35Z"
+      "updated_at": "2026-11-18T08:26:26Z"
     },
     {
       "slug": "mixedbread-starter-plan-credits",
@@ -697,9 +697,9 @@
       "why_it_matters": null,
       "official_url": "https://www.mixedbread.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-12T10:08:20Z",
-      "updated_at": "2026-11-16T08:12:36Z"
+      "updated_at": "2026-11-18T08:26:28Z"
     },
     {
       "slug": "openrouter-ernie-5-5-flash-free",
@@ -726,9 +726,9 @@
       "why_it_matters": null,
       "official_url": "https://openrouter.ai/baidu/ernie-5.5-flash-preview:free",
       "released_at": "2026-11-10",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-12T17:43:21Z",
-      "updated_at": "2026-11-16T08:12:38Z"
+      "updated_at": "2026-11-18T08:26:30Z"
     },
     {
       "slug": "openrouter-inkling-2-small-free",
@@ -755,9 +755,9 @@
       "why_it_matters": null,
       "official_url": "https://openrouter.ai/thinkingmachines/inkling-2-small:free",
       "released_at": "2026-11-09",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-14T20:56:07Z",
-      "updated_at": "2026-11-16T08:12:40Z"
+      "updated_at": "2026-11-18T08:26:31Z"
     },
     {
       "slug": "stripe-queries-api-free-until-2027",
@@ -784,9 +784,9 @@
       "why_it_matters": null,
       "official_url": "https://stripe.com/blog/analyze-your-stripe-data-directly-with-your-agent",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-09T20:30:27Z",
-      "updated_at": "2026-11-16T08:12:42Z"
+      "updated_at": "2026-11-18T08:26:33Z"
     },
     {
       "slug": "notify-free-plan",
@@ -813,9 +813,9 @@
       "why_it_matters": null,
       "official_url": "https://notify.cx/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-09T16:59:07Z",
-      "updated_at": "2026-11-16T08:12:43Z"
+      "updated_at": "2026-11-18T08:26:34Z"
     },
     {
       "slug": "spacefast-personal-free-plan",
@@ -842,9 +842,9 @@
       "why_it_matters": null,
       "official_url": "https://spacefast.com/pricing/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-09T16:59:04Z",
-      "updated_at": "2026-11-16T08:12:45Z"
+      "updated_at": "2026-11-18T08:26:36Z"
     },
     {
       "slug": "simular-box-free",
@@ -862,18 +862,18 @@
       "headline_note": null,
       "promo_code_needed": null,
       "promo_code": null,
-      "value": "One free cloud Linux desktop per account (box itself free; model calls use account daily credits, amount not stated on official pages)",
-      "summary": "Simular builds computer-use agents. Box is a free cloud Linux desktop your AI can drive over MCP (browser, terminal, files). The box itself is free; model calls draw from your account daily credits.",
+      "value": "The computer: one cloud Linux desktop per account. Cost: your own AI keeps using its own plan. box credits pay for the Free box's time (100 credits an hour), extra boxes (from 100 credits an hour), residential IP on paid plans (10,000 credits a GB) and box's own model calls; 1,000 credits = $1. Free: 5,000 credits once (about 50 box-hours, valid 90 days).",
+      "summary": "Simular builds computer-use agents. Box is a cloud Linux desktop your AI can drive over MCP. Free accounts get 5,000 credits once (about 50 box-hours, valid 90 days); box time costs 100 credits an hour.",
       "who_qualifies": "Anyone who creates a Simular account. No funding, student or region limits stated.",
       "how_to_claim": "Connect with npx @simular-ai/box connect or add the hosted MCP at mcp.box.simular.ai and sign in.",
-      "expiry": "ongoing",
-      "caveats": "Daily credit amount (post says 1,000) not confirmed on official pages; credits can run out and then need paid credits or a plan.",
+      "expiry": "The Free plan is ongoing. The 5,000 free credits are a one-time grant, valid 90 days.",
+      "caveats": "A box asleep for 14 days in a row is deleted, with its files and saves; any wake resets the count. 1,000 credits = $1. Extra boxes start at 100 credits an hour. Residential IP on paid plans is 10,000 credits a GB.",
       "why_it_matters": null,
       "official_url": "https://box.simular.ai/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-09T16:59:01Z",
-      "updated_at": "2026-11-16T08:12:46Z"
+      "updated_at": "2026-11-18T08:25:00Z"
     },
     {
       "slug": "amd-ai-developer-program-100-mi300x-credits",
@@ -900,9 +900,9 @@
       "why_it_matters": null,
       "official_url": "https://www.amd.com/en/developer/resources/cloud-access/amd-developer-cloud.html",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-09T16:00:21Z",
-      "updated_at": "2026-11-16T08:12:48Z"
+      "updated_at": "2026-11-18T08:26:37Z"
     },
     {
       "slug": "lightning-ai-free-gpu-credits",
@@ -929,9 +929,9 @@
       "why_it_matters": null,
       "official_url": "https://lightning.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-09T14:53:59Z",
-      "updated_at": "2026-11-16T08:12:49Z"
+      "updated_at": "2026-11-18T08:26:39Z"
     },
     {
       "slug": "pipedream-free-hosted-mcp",
@@ -958,9 +958,9 @@
       "why_it_matters": null,
       "official_url": "https://pipedream.com/docs/connect/mcp",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-08T19:02:16Z",
-      "updated_at": "2026-11-16T08:12:51Z"
+      "updated_at": "2026-11-18T08:26:41Z"
     },
     {
       "slug": "iteracompute-free-qwen-api",
@@ -987,9 +987,9 @@
       "why_it_matters": null,
       "official_url": "https://iteracompute.com/free/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-08T19:02:15Z",
-      "updated_at": "2026-11-16T08:12:52Z"
+      "updated_at": "2026-11-18T08:26:42Z"
     },
     {
       "slug": "velork-hobby-plan",
@@ -1016,9 +1016,9 @@
       "why_it_matters": null,
       "official_url": "https://velork.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-08T17:54:18Z",
-      "updated_at": "2026-11-16T08:12:54Z"
+      "updated_at": "2026-11-18T08:26:44Z"
     },
     {
       "slug": "maritaca-ai-s5-free",
@@ -1045,9 +1045,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.maritaca.ai/en/precos",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-08T16:54:19Z",
-      "updated_at": "2026-11-16T08:12:56Z"
+      "updated_at": "2026-11-18T08:26:45Z"
     },
     {
       "slug": "otter-ai-basic-free-plan",
@@ -1074,9 +1074,9 @@
       "why_it_matters": null,
       "official_url": "https://otter.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-08T08:51:32Z",
-      "updated_at": "2026-11-16T08:12:57Z"
+      "updated_at": "2026-11-18T08:26:47Z"
     },
     {
       "slug": "anyscale-100-signup-credits",
@@ -1103,9 +1103,9 @@
       "why_it_matters": null,
       "official_url": "https://www.anyscale.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-08T07:52:52Z",
-      "updated_at": "2026-11-16T08:12:59Z"
+      "updated_at": "2026-11-18T08:26:49Z"
     },
     {
       "slug": "explee-30-free-credits",
@@ -1132,9 +1132,9 @@
       "why_it_matters": null,
       "official_url": "https://explee.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-07T22:58:15Z",
-      "updated_at": "2026-11-16T08:13:00Z"
+      "updated_at": "2026-11-18T08:26:50Z"
     },
     {
       "slug": "openrouter-lfm3-1-7b-free",
@@ -1161,9 +1161,9 @@
       "why_it_matters": null,
       "official_url": "https://openrouter.ai/liquid/lfm-3-1.7b:free",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-07T19:51:32Z",
-      "updated_at": "2026-11-16T08:13:02Z"
+      "updated_at": "2026-11-18T08:26:52Z"
     },
     {
       "slug": "zenrows-free-plan",
@@ -1190,9 +1190,9 @@
       "why_it_matters": null,
       "official_url": "https://www.zenrows.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-07T17:54:01Z",
-      "updated_at": "2026-11-16T08:13:04Z"
+      "updated_at": "2026-11-18T08:26:53Z"
     },
     {
       "slug": "havetml-free-plan",
@@ -1219,9 +1219,9 @@
       "why_it_matters": null,
       "official_url": "https://havetml.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T20:54:55Z",
-      "updated_at": "2026-11-16T08:13:06Z"
+      "updated_at": "2026-11-18T08:26:55Z"
     },
     {
       "slug": "nous-research-longcat-2-5-free-week",
@@ -1248,9 +1248,9 @@
       "why_it_matters": "Gives builders a free week to try Meituan's LongCat-2.5 multimodal model through Nous Portal.",
       "official_url": "https://portal.nousresearch.com/models",
       "released_at": null,
-      "last_verified": "2026-11-15",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T19:59:37Z",
-      "updated_at": "2026-11-15T08:12:41Z"
+      "updated_at": "2026-11-18T08:26:56Z"
     },
     {
       "slug": "fulcra-free-plan",
@@ -1277,9 +1277,9 @@
       "why_it_matters": "Gives founders a no-cost way to let Claude, ChatGPT and other agents share context and message each other via MCP/CLI.",
       "official_url": "https://fulcra.ai/product/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T19:59:28Z",
-      "updated_at": "2026-11-16T08:13:07Z"
+      "updated_at": "2026-11-18T08:26:58Z"
     },
     {
       "slug": "maximo-ai-5-free-api-credits",
@@ -1306,9 +1306,9 @@
       "why_it_matters": null,
       "official_url": "https://maximoai.co/platform",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T18:01:42Z",
-      "updated_at": "2026-11-16T08:13:09Z"
+      "updated_at": "2026-11-18T08:27:00Z"
     },
     {
       "slug": "orkas-500-free-credits",
@@ -1335,9 +1335,9 @@
       "why_it_matters": null,
       "official_url": "https://orkas.ai/pricing/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T15:12:53Z",
-      "updated_at": "2026-11-16T08:13:11Z"
+      "updated_at": "2026-11-18T08:27:01Z"
     },
     {
       "slug": "stability-ai-25-free-api-credits",
@@ -1364,9 +1364,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.stability.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T11:01:16Z",
-      "updated_at": "2026-11-16T08:13:12Z"
+      "updated_at": "2026-11-18T08:27:03Z"
     },
     {
       "slug": "automatesocials-50-free-credits",
@@ -1393,9 +1393,9 @@
       "why_it_matters": null,
       "official_url": "https://automatesocials.net/help/credits",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T09:53:22Z",
-      "updated_at": "2026-11-16T08:13:14Z"
+      "updated_at": "2026-11-18T08:27:05Z"
     },
     {
       "slug": "oumi-free-plan",
@@ -1422,9 +1422,9 @@
       "why_it_matters": null,
       "official_url": "https://oumi.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T09:00:58Z",
-      "updated_at": "2026-11-16T08:13:16Z"
+      "updated_at": "2026-11-18T08:27:06Z"
     },
     {
       "slug": "notemaker-free-plan",
@@ -1451,9 +1451,9 @@
       "why_it_matters": null,
       "official_url": "https://notemaker.autobot360.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T06:23:54Z",
-      "updated_at": "2026-11-16T08:13:17Z"
+      "updated_at": "2026-11-18T08:27:08Z"
     },
     {
       "slug": "mangoboost-mango-inference-10-free-credits",
@@ -1509,9 +1509,9 @@
       "why_it_matters": null,
       "official_url": "https://www.nscale.com/blog/what-is-serverless-inference",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-06T01:52:35Z",
-      "updated_at": "2026-11-16T08:13:20Z"
+      "updated_at": "2026-11-18T08:27:10Z"
     },
     {
       "slug": "slate-studio-free-credits",
@@ -1538,9 +1538,9 @@
       "why_it_matters": null,
       "official_url": "https://slatestudio.us/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T23:51:45Z",
-      "updated_at": "2026-11-16T08:13:22Z"
+      "updated_at": "2026-11-18T08:27:11Z"
     },
     {
       "slug": "seenable-130-free-credits",
@@ -1567,9 +1567,9 @@
       "why_it_matters": null,
       "official_url": "https://seenable.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T19:58:42Z",
-      "updated_at": "2026-11-16T08:13:23Z"
+      "updated_at": "2026-11-18T08:27:13Z"
     },
     {
       "slug": "reducto-free-credits",
@@ -1596,9 +1596,9 @@
       "why_it_matters": null,
       "official_url": "https://reducto.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T19:58:33Z",
-      "updated_at": "2026-11-16T08:13:25Z"
+      "updated_at": "2026-11-18T08:27:14Z"
     },
     {
       "slug": "pyai-for-startups",
@@ -1625,9 +1625,9 @@
       "why_it_matters": null,
       "official_url": "https://pyai.com/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T19:58:23Z",
-      "updated_at": "2026-11-16T08:13:26Z"
+      "updated_at": "2026-11-18T08:27:16Z"
     },
     {
       "slug": "hal-x-thx-02-free-api",
@@ -1654,9 +1654,9 @@
       "why_it_matters": null,
       "official_url": "https://api.hal-x.ai/docs/thx-02",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T17:56:32Z",
-      "updated_at": "2026-11-16T08:13:28Z"
+      "updated_at": "2026-11-18T08:27:17Z"
     },
     {
       "slug": "google-cloud-alloydb-express-free-tier",
@@ -1683,9 +1683,9 @@
       "why_it_matters": null,
       "official_url": "https://cloud.google.com/alloydb/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T17:56:21Z",
-      "updated_at": "2026-11-16T08:13:29Z"
+      "updated_at": "2026-11-18T08:27:19Z"
     },
     {
       "slug": "medux-free-trial-credits",
@@ -1712,9 +1712,9 @@
       "why_it_matters": null,
       "official_url": "https://medux.io/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T15:28:21Z",
-      "updated_at": "2026-11-16T08:13:31Z"
+      "updated_at": "2026-11-18T08:27:21Z"
     },
     {
       "slug": "tl-dv-free-plan",
@@ -1741,9 +1741,9 @@
       "why_it_matters": null,
       "official_url": "https://tldv.io/app/pricing/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T14:59:13Z",
-      "updated_at": "2026-11-16T08:11:23Z"
+      "updated_at": "2026-11-18T08:27:22Z"
     },
     {
       "slug": "brave-search-api-free-monthly-credits",
@@ -1770,9 +1770,9 @@
       "why_it_matters": null,
       "official_url": "https://api-dashboard.search.brave.com/documentation/resources/help-feedback",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T07:57:39Z",
-      "updated_at": "2026-11-16T08:13:33Z"
+      "updated_at": "2026-11-18T08:27:24Z"
     },
     {
       "slug": "vultr-300-free-credit-new-accounts",
@@ -1799,9 +1799,9 @@
       "why_it_matters": null,
       "official_url": "https://www.vultr.com/coupons/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T05:54:13Z",
-      "updated_at": "2026-11-16T08:13:34Z"
+      "updated_at": "2026-11-18T08:27:25Z"
     },
     {
       "slug": "daytona-free-compute-credits",
@@ -1828,9 +1828,9 @@
       "why_it_matters": null,
       "official_url": "https://www.daytona.io/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T03:53:53Z",
-      "updated_at": "2026-11-16T08:13:36Z"
+      "updated_at": "2026-11-18T08:27:26Z"
     },
     {
       "slug": "context-dev-free-api-credits",
@@ -1857,9 +1857,9 @@
       "why_it_matters": null,
       "official_url": "https://www.context.dev/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T03:53:44Z",
-      "updated_at": "2026-11-16T08:13:38Z"
+      "updated_at": "2026-11-18T08:27:28Z"
     },
     {
       "slug": "animatiq-free-credits",
@@ -1886,9 +1886,9 @@
       "why_it_matters": null,
       "official_url": "https://animatiq.ai",
       "released_at": null,
-      "last_verified": "2026-11-15",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-05T00:27:17Z",
-      "updated_at": "2026-11-15T08:13:17Z"
+      "updated_at": "2026-11-18T08:25:07Z"
     },
     {
       "slug": "serpkite-free-credits",
@@ -1915,9 +1915,9 @@
       "why_it_matters": null,
       "official_url": "https://serpkite.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T18:59:36Z",
-      "updated_at": "2026-11-16T08:13:40Z"
+      "updated_at": "2026-11-18T08:27:29Z"
     },
     {
       "slug": "gmi-cloud-scale-startup-program",
@@ -1944,9 +1944,9 @@
       "why_it_matters": null,
       "official_url": "https://www.gmicloud.ai/en/company/scale",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T15:51:53Z",
-      "updated_at": "2026-11-16T08:13:42Z"
+      "updated_at": "2026-11-18T08:27:32Z"
     },
     {
       "slug": "mem0-free-plan",
@@ -1973,9 +1973,9 @@
       "why_it_matters": null,
       "official_url": "https://mem0.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T13:53:08Z",
-      "updated_at": "2026-11-16T08:13:43Z"
+      "updated_at": "2026-11-18T08:27:33Z"
     },
     {
       "slug": "speechmatics-free-credits",
@@ -2002,9 +2002,9 @@
       "why_it_matters": null,
       "official_url": "https://www.speechmatics.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T12:52:34Z",
-      "updated_at": "2026-11-16T08:13:45Z"
+      "updated_at": "2026-11-18T08:27:35Z"
     },
     {
       "slug": "fellow-free-plan",
@@ -2031,9 +2031,9 @@
       "why_it_matters": null,
       "official_url": "https://fellow.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T09:59:27Z",
-      "updated_at": "2026-11-16T08:13:46Z"
+      "updated_at": "2026-11-18T08:27:36Z"
     },
     {
       "slug": "mermail-free-plan",
@@ -2060,9 +2060,9 @@
       "why_it_matters": null,
       "official_url": "https://mermail.app/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T09:06:00Z",
-      "updated_at": "2026-11-16T08:13:48Z"
+      "updated_at": "2026-11-18T08:27:38Z"
     },
     {
       "slug": "cognition-devin-for-startups",
@@ -2089,9 +2089,9 @@
       "why_it_matters": null,
       "official_url": "https://devin.ai/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T09:05:33Z",
-      "updated_at": "2026-11-16T08:13:49Z"
+      "updated_at": "2026-11-18T08:27:39Z"
     },
     {
       "slug": "capable-ai-sales-hackathon-stockholm-lovable-credits",
@@ -2118,9 +2118,9 @@
       "why_it_matters": null,
       "official_url": "https://luma.com/glbtr3yz",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:55:44Z",
-      "updated_at": "2026-11-16T08:13:51Z"
+      "updated_at": "2026-11-18T08:27:41Z"
     },
     {
       "slug": "helpnest-for-startups",
@@ -2147,9 +2147,9 @@
       "why_it_matters": null,
       "official_url": "https://helpnest.app/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:47:13Z",
-      "updated_at": "2026-11-16T08:13:53Z"
+      "updated_at": "2026-11-18T08:27:42Z"
     },
     {
       "slug": "kaiva-bridge-free-plan",
@@ -2176,9 +2176,9 @@
       "why_it_matters": null,
       "official_url": "https://kaiv.ai/bridge/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:47:06Z",
-      "updated_at": "2026-11-16T08:13:55Z"
+      "updated_at": "2026-11-18T08:27:44Z"
     },
     {
       "slug": "click-managed-agents-api-free-plan",
@@ -2205,9 +2205,9 @@
       "why_it_matters": null,
       "official_url": "https://useclick.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:47:00Z",
-      "updated_at": "2026-11-16T08:13:56Z"
+      "updated_at": "2026-11-18T08:27:45Z"
     },
     {
       "slug": "notesxd-free-plan",
@@ -2234,9 +2234,9 @@
       "why_it_matters": null,
       "official_url": "https://notesxd.com/#pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:46:53Z",
-      "updated_at": "2026-11-16T08:13:57Z"
+      "updated_at": "2026-11-18T08:27:47Z"
     },
     {
       "slug": "nephew-free-plan",
@@ -2263,9 +2263,9 @@
       "why_it_matters": null,
       "official_url": "https://nephew.ai/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:41:04Z",
-      "updated_at": "2026-11-16T08:13:59Z"
+      "updated_at": "2026-11-18T08:27:48Z"
     },
     {
       "slug": "assemblyai-free-credits",
@@ -2292,9 +2292,9 @@
       "why_it_matters": null,
       "official_url": "https://www.assemblyai.com/docs/billing-and-pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:40:19Z",
-      "updated_at": "2026-11-16T08:14:01Z"
+      "updated_at": "2026-11-18T08:27:50Z"
     },
     {
       "slug": "fireflies-ai-for-startups",
@@ -2321,9 +2321,9 @@
       "why_it_matters": null,
       "official_url": "https://fireflies.notion.site/fireflies/Fireflies-ai-dda82ff4717c4ab99fb72b382c4340e0",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:39:56Z",
-      "updated_at": "2026-11-16T08:14:02Z"
+      "updated_at": "2026-11-18T08:27:51Z"
     },
     {
       "slug": "runway-builders-program",
@@ -2350,9 +2350,9 @@
       "why_it_matters": null,
       "official_url": "https://runway.com/product/builders",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T08:39:32Z",
-      "updated_at": "2026-11-16T08:14:04Z"
+      "updated_at": "2026-11-18T08:27:53Z"
     },
     {
       "slug": "linkup-startup-program",
@@ -2379,9 +2379,9 @@
       "why_it_matters": null,
       "official_url": "https://www.linkup.so/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T05:56:41Z",
-      "updated_at": "2026-11-16T08:14:05Z"
+      "updated_at": "2026-11-18T08:27:54Z"
     },
     {
       "slug": "inception-mercury-free-tokens",
@@ -2408,9 +2408,9 @@
       "why_it_matters": null,
       "official_url": "https://www.inceptionlabs.ai/blog/mercury-2-10x-free-tokens",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T04:56:05Z",
-      "updated_at": "2026-11-16T08:14:07Z"
+      "updated_at": "2026-11-18T08:27:55Z"
     },
     {
       "slug": "murf-ai-startup-incubator-program",
@@ -2437,9 +2437,9 @@
       "why_it_matters": null,
       "official_url": "https://murf.ai/startup-program",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-04T00:53:43Z",
-      "updated_at": "2026-11-16T08:14:08Z"
+      "updated_at": "2026-11-18T08:27:57Z"
     },
     {
       "slug": "sambanova-free-tier",
@@ -2466,9 +2466,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.sambanova.ai/docs/en/models/rate-limits",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-03T22:52:16Z",
-      "updated_at": "2026-11-16T08:14:11Z"
+      "updated_at": "2026-11-18T08:27:58Z"
     },
     {
       "slug": "enhanced-radar-api-free-credits",
@@ -2495,9 +2495,9 @@
       "why_it_matters": null,
       "official_url": "https://enhancedradar.com/api",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-03T19:00:52Z",
-      "updated_at": "2026-11-16T08:14:12Z"
+      "updated_at": "2026-11-18T08:28:00Z"
     },
     {
       "slug": "sail-research-for-startups",
@@ -2524,9 +2524,9 @@
       "why_it_matters": null,
       "official_url": "https://www.sailresearch.com/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-03T17:51:07Z",
-      "updated_at": "2026-11-16T08:14:14Z"
+      "updated_at": "2026-11-18T08:28:02Z"
     },
     {
       "slug": "agent-37-free-credits",
@@ -2553,9 +2553,9 @@
       "why_it_matters": null,
       "official_url": "https://www.agent37.com/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-03T15:55:43Z",
-      "updated_at": "2026-11-16T08:14:15Z"
+      "updated_at": "2026-11-18T08:28:04Z"
     },
     {
       "slug": "modal-starter-free-credits",
@@ -2582,9 +2582,9 @@
       "why_it_matters": null,
       "official_url": "https://modal.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-03T14:56:29Z",
-      "updated_at": "2026-11-16T08:14:17Z"
+      "updated_at": "2026-11-18T08:28:05Z"
     },
     {
       "slug": "fireworks-ai-muse-glimmer-free-fine-tuning",
@@ -2602,8 +2602,8 @@
       "headline_note": null,
       "promo_code_needed": null,
       "promo_code": null,
-      "value": "Free supervised fine-tuning (SFT) of Muse Glimmer 30B through November 30, no credit card required",
-      "summary": "Fireworks AI is an inference and model training platform for open models. Muse Glimmer 30B is free to train with supervised fine-tuning through November 30, kicking off its Free Weights Club.",
+      "value": "Free training of Muse Glimmer 30B with supervised fine-tuning (SFT), DPO, and RL through November 30, no credit card required",
+      "summary": "Fireworks AI is an inference and model training platform for open models. Muse Glimmer 30B is free to train with SFT, DPO, and RL through November 30, kicking off its Free Weights Club.",
       "who_qualifies": "Any Fireworks AI user, no credit card required",
       "how_to_claim": "Start an SFT job on Muse Glimmer 30B in the Fireworks app or API with Managed Training, or write your own loop with the Serverless Training API, before the end of November 30.",
       "expiry": "2026-11-30",
@@ -2611,9 +2611,9 @@
       "why_it_matters": null,
       "official_url": "https://fireworks.ai/blog/train-muse-glimmer-for-free",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-03T07:57:27Z",
-      "updated_at": "2026-11-16T08:14:18Z"
+      "updated_at": "2026-11-18T08:25:14Z"
     },
     {
       "slug": "oracle-cloud-free-tier",
@@ -2640,9 +2640,9 @@
       "why_it_matters": null,
       "official_url": "https://www.oracle.com/cloud/free/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-03T05:52:13Z",
-      "updated_at": "2026-11-16T08:14:20Z"
+      "updated_at": "2026-11-18T08:28:07Z"
     },
     {
       "slug": "tabrein-free-credits",
@@ -2669,9 +2669,9 @@
       "why_it_matters": null,
       "official_url": "https://tabrein.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T20:00:20Z",
-      "updated_at": "2026-11-16T08:14:22Z"
+      "updated_at": "2026-11-18T08:28:08Z"
     },
     {
       "slug": "freebuff-free-coding-agent",
@@ -2698,9 +2698,9 @@
       "why_it_matters": null,
       "official_url": "https://freebuff.com",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T20:00:16Z",
-      "updated_at": "2026-11-16T08:14:23Z"
+      "updated_at": "2026-11-18T08:28:10Z"
     },
     {
       "slug": "siteself-free-credits",
@@ -2727,9 +2727,9 @@
       "why_it_matters": null,
       "official_url": "https://siteself.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T17:54:25Z",
-      "updated_at": "2026-11-16T08:14:25Z"
+      "updated_at": "2026-11-18T08:28:11Z"
     },
     {
       "slug": "noan-for-startups",
@@ -2756,9 +2756,9 @@
       "why_it_matters": null,
       "official_url": "https://www.getnoan.com/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T15:52:18Z",
-      "updated_at": "2026-11-16T08:14:27Z"
+      "updated_at": "2026-11-18T08:28:13Z"
     },
     {
       "slug": "deepgram-free-200-credit",
@@ -2785,9 +2785,9 @@
       "why_it_matters": null,
       "official_url": "https://deepgram.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T14:54:34Z",
-      "updated_at": "2026-11-16T08:14:28Z"
+      "updated_at": "2026-11-18T08:28:14Z"
     },
     {
       "slug": "tazo-labs-free-audio-minutes",
@@ -2814,9 +2814,38 @@
       "why_it_matters": null,
       "official_url": "https://docs.tazolabs.com/guides/billing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T14:53:44Z",
-      "updated_at": "2026-11-16T08:14:30Z"
+      "updated_at": "2026-11-18T08:28:16Z"
+    },
+    {
+      "slug": "stepfun-stepaudio-3-free-until-nov-8",
+      "url": "https://that.promo/stepfun-stepaudio-3-free-until-nov-8",
+      "json_url": "https://that.promo/stepfun-stepaudio-3-free-until-nov-8.json",
+      "name": "StepAudio 3 models free until November 23",
+      "provider": "StepFun",
+      "company": "stepfun",
+      "company_url": "https://that.promo/stepfun",
+      "category": "Model APIs",
+      "category_url": "https://that.promo/free-ai-api-credits",
+      "program": null,
+      "status": "live",
+      "headline_amount": null,
+      "headline_note": null,
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "StepAudio 3 series speech models free on the StepFun API for a limited time",
+      "summary": "StepFun is a Chinese AI lab with an API platform for its Step language and StepAudio speech models. Its StepAudio 3 series (speech recognition, text-to-speech, realtime voice, voice and music generation) is free on the API until 11:59:59 AM on November 23, 2026 (UTC+8), and billed at list prices from 12:00:00 PM on November 23, 2026 (UTC+8).",
+      "who_qualifies": "Anyone with a StepFun API account",
+      "how_to_claim": null,
+      "expiry": "2026-11-23T12:00:00+08:00",
+      "caveats": "The free window ends 11:59:59 AM on November 23, 2026 UTC+8. New list prices take effect at 12:00:00 PM on November 23, 2026 UTC+8.",
+      "why_it_matters": null,
+      "official_url": "https://platform.stepfun.ai/docs/en/guides/pricing/details",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-11-02T14:53:37Z",
+      "updated_at": "2026-11-18T07:35:37Z"
     },
     {
       "slug": "fal-for-startups",
@@ -2843,9 +2872,9 @@
       "why_it_matters": null,
       "official_url": "https://fal.ai/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T14:53:28Z",
-      "updated_at": "2026-11-16T08:14:33Z"
+      "updated_at": "2026-11-18T08:28:18Z"
     },
     {
       "slug": "you-com-web-search-api-free-credits",
@@ -2863,18 +2892,18 @@
       "headline_note": "API credit",
       "promo_code_needed": null,
       "promo_code": null,
-      "value": "Free API credits for new accounts, no card: the pricing table shows $10 (about 2,000 searches) and the Web Search API page says $100 (about 20,000 searches), plus up to 100 free Web Search queries a day via MCP with no key or account",
+      "value": "You get $10 in API credit when you sign up and $90 more when you verify your account, no credit card required. The pricing table still shows $10 free credit = 2,000 searches. The MCP free tier is 100 Web Search API queries/day via MCP, with no API key, no account, and no credit card.",
       "summary": "You.com runs search and research APIs built for AI apps and agents. New API accounts get $100 in free credits with no card ($10 at signup, $90 after verifying), about 20,000 web searches, valid for 60 days, and its MCP server gives up to 100 free Web Search queries a day with no key.",
       "who_qualifies": "New You.com API accounts; the MCP free tier needs no account. Eligible early-stage startups can ask sales for extended credits.",
       "how_to_claim": "Sign up for a You.com API account at you.com/platform and verify the account to unlock the extra $90. For the no-key tier, point an MCP client at api.you.com/mcp?profile=free.",
-      "expiry": "ongoing",
-      "caveats": "The official pricing table shows a $10 free credit (2,000 searches), while the Web Search API page says new accounts get $100 (about 20,000 searches). A $10 at signup plus $90 after account checks split and a 60-day expiry are not stated on the current pages. The MCP free tier is 100 queries a day.",
+      "expiry": "Free signup credits are valid for 60 days. The free-credit program itself is still offered on an ongoing basis.",
+      "caveats": "Official pricing FAQ now confirms $10 at signup plus $90 after you verify your account, and that free signup credits are valid for 60 days. The pricing table still shows $10 free credit = 2,000 searches. The MCP free tier remains 100 Web Search queries a day with no key or account.",
       "why_it_matters": null,
       "official_url": "https://you.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T12:55:36Z",
-      "updated_at": "2026-11-16T08:14:35Z"
+      "updated_at": "2026-11-18T08:25:19Z"
     },
     {
       "slug": "openweb-ninja-aliexpress-data-api-free-plan",
@@ -2901,9 +2930,9 @@
       "why_it_matters": null,
       "official_url": "https://www.openwebninja.com/api/real-time-aliexpress-data",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T12:55:32Z",
-      "updated_at": "2026-11-16T08:11:30Z"
+      "updated_at": "2026-11-18T08:28:20Z"
     },
     {
       "slug": "kiro-kiroween-hackathon-credits",
@@ -2959,9 +2988,9 @@
       "why_it_matters": null,
       "official_url": "https://developers.heygen.com/docs/voices/heygen-voice-speech",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T09:54:12Z",
-      "updated_at": "2026-11-16T08:14:38Z"
+      "updated_at": "2026-11-18T08:28:21Z"
     },
     {
       "slug": "telemetry-dev-free-plan",
@@ -2988,9 +3017,9 @@
       "why_it_matters": null,
       "official_url": "https://telemetry.dev/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-02T09:53:22Z",
-      "updated_at": "2026-11-16T08:14:40Z"
+      "updated_at": "2026-11-18T08:28:23Z"
     },
     {
       "slug": "kilo-open-source-sponsorship-program",
@@ -3017,9 +3046,9 @@
       "why_it_matters": null,
       "official_url": "https://kilo.ai/oss",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T16:56:32Z",
-      "updated_at": "2026-11-16T08:14:41Z"
+      "updated_at": "2026-11-18T08:28:24Z"
     },
     {
       "slug": "fish-audio-s2-1-pro-free-model",
@@ -3046,9 +3075,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.fish.audio/developer-guide/models-pricing/models-overview",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T16:56:28Z",
-      "updated_at": "2026-11-16T08:14:43Z"
+      "updated_at": "2026-11-18T08:28:26Z"
     },
     {
       "slug": "embage-free-plan",
@@ -3075,9 +3104,9 @@
       "why_it_matters": null,
       "official_url": "https://embage.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T12:58:25Z",
-      "updated_at": "2026-11-16T08:14:45Z"
+      "updated_at": "2026-11-18T08:28:27Z"
     },
     {
       "slug": "blinkimg-image-api-free-plan",
@@ -3104,9 +3133,9 @@
       "why_it_matters": null,
       "official_url": "https://blinkimg.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T10:56:39Z",
-      "updated_at": "2026-11-16T08:14:47Z"
+      "updated_at": "2026-11-18T08:28:29Z"
     },
     {
       "slug": "google-antigravity-free-plan",
@@ -3133,9 +3162,9 @@
       "why_it_matters": null,
       "official_url": "https://antigravity.google/docs/plans",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T09:11:59Z",
-      "updated_at": "2026-11-16T08:14:48Z"
+      "updated_at": "2026-11-18T08:28:30Z"
     },
     {
       "slug": "zendesk-for-startups",
@@ -3162,9 +3191,9 @@
       "why_it_matters": null,
       "official_url": "https://www.zendesk.com/business/startups/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T09:11:40Z",
-      "updated_at": "2026-11-16T08:14:50Z"
+      "updated_at": "2026-11-18T08:28:32Z"
     },
     {
       "slug": "oracle-ai-smb-bundle",
@@ -3191,9 +3220,9 @@
       "why_it_matters": null,
       "official_url": "https://www.oracle.com/artificial-intelligence/smb-bundle/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T09:02:38Z",
-      "updated_at": "2026-11-16T08:14:52Z"
+      "updated_at": "2026-11-18T08:28:34Z"
     },
     {
       "slug": "nebius-ai-builder-program",
@@ -3220,9 +3249,9 @@
       "why_it_matters": null,
       "official_url": "https://dev.nebius.com/builders",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T09:02:24Z",
-      "updated_at": "2026-11-16T08:14:53Z"
+      "updated_at": "2026-11-18T08:28:35Z"
     },
     {
       "slug": "granola-free-basic-plan",
@@ -3249,9 +3278,9 @@
       "why_it_matters": null,
       "official_url": "https://www.granola.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T09:02:19Z",
-      "updated_at": "2026-11-16T08:14:55Z"
+      "updated_at": "2026-11-18T08:28:37Z"
     },
     {
       "slug": "embedding-studio-free-credit",
@@ -3307,9 +3336,9 @@
       "why_it_matters": null,
       "official_url": "https://cloudhike.dev",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T09:02:10Z",
-      "updated_at": "2026-11-16T08:14:58Z"
+      "updated_at": "2026-11-18T08:28:39Z"
     },
     {
       "slug": "moonmath-ai-zro-free-plan",
@@ -3336,9 +3365,9 @@
       "why_it_matters": null,
       "official_url": "https://zro.moonmath.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T08:24:16Z",
-      "updated_at": "2026-11-16T08:14:59Z"
+      "updated_at": "2026-11-18T08:28:40Z"
     },
     {
       "slug": "runway-free-plan",
@@ -3365,9 +3394,9 @@
       "why_it_matters": null,
       "official_url": "https://runway.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T08:23:05Z",
-      "updated_at": "2026-11-16T08:15:01Z"
+      "updated_at": "2026-11-18T08:28:42Z"
     },
     {
       "slug": "genspark-free-plan",
@@ -3394,9 +3423,9 @@
       "why_it_matters": null,
       "official_url": "https://www.genspark.ai/helpcenter/membership-plans",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T08:22:21Z",
-      "updated_at": "2026-11-16T08:15:03Z"
+      "updated_at": "2026-11-18T08:28:43Z"
     },
     {
       "slug": "render-free-plan",
@@ -3423,9 +3452,9 @@
       "why_it_matters": null,
       "official_url": "https://render.com/docs/free",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T08:21:47Z",
-      "updated_at": "2026-11-16T08:15:04Z"
+      "updated_at": "2026-11-18T08:28:45Z"
     },
     {
       "slug": "fonoster-free-credits",
@@ -3452,9 +3481,9 @@
       "why_it_matters": null,
       "official_url": "https://fonoster.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T08:20:43Z",
-      "updated_at": "2026-11-16T08:15:06Z"
+      "updated_at": "2026-11-18T08:28:46Z"
     },
     {
       "slug": "greenaibox-greenai-launch",
@@ -3481,9 +3510,9 @@
       "why_it_matters": null,
       "official_url": "https://www.greenaibox.com/solutions/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T08:19:54Z",
-      "updated_at": "2026-11-16T08:15:07Z"
+      "updated_at": "2026-11-18T08:28:48Z"
     },
     {
       "slug": "wiro-for-startups",
@@ -3510,9 +3539,9 @@
       "why_it_matters": null,
       "official_url": "https://wiro.ai/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T08:18:14Z",
-      "updated_at": "2026-11-16T08:15:09Z"
+      "updated_at": "2026-11-18T08:28:49Z"
     },
     {
       "slug": "hostedge-free-plan",
@@ -3539,9 +3568,9 @@
       "why_it_matters": null,
       "official_url": "https://hostedge.app/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-31T19:56:54Z",
-      "updated_at": "2026-11-16T08:15:10Z"
+      "updated_at": "2026-11-18T08:28:51Z"
     },
     {
       "slug": "cartesia-free-plan",
@@ -3568,9 +3597,9 @@
       "why_it_matters": null,
       "official_url": "https://cartesia.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-31T00:54:25Z",
-      "updated_at": "2026-11-16T08:15:12Z"
+      "updated_at": "2026-11-18T08:28:52Z"
     },
     {
       "slug": "postman-for-ai-native-startups",
@@ -3597,9 +3626,9 @@
       "why_it_matters": null,
       "official_url": "https://www.postman.com/postman-for-ai-native-startups/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-30T20:55:58Z",
-      "updated_at": "2026-11-16T08:15:14Z"
+      "updated_at": "2026-11-18T08:28:54Z"
     },
     {
       "slug": "novita-ai-startup-program",
@@ -3626,9 +3655,9 @@
       "why_it_matters": null,
       "official_url": "https://startups.novita.ai/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-30T16:57:28Z",
-      "updated_at": "2026-11-16T08:15:16Z"
+      "updated_at": "2026-11-18T08:28:55Z"
     },
     {
       "slug": "arcade-free-plan",
@@ -3655,9 +3684,9 @@
       "why_it_matters": null,
       "official_url": "https://www.arcade.dev/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-30T16:57:18Z",
-      "updated_at": "2026-11-16T08:15:18Z"
+      "updated_at": "2026-11-18T08:28:57Z"
     },
     {
       "slug": "axiom-free-plan",
@@ -3684,9 +3713,9 @@
       "why_it_matters": null,
       "official_url": "https://axiom.co/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-30T15:54:11Z",
-      "updated_at": "2026-11-16T08:15:20Z"
+      "updated_at": "2026-11-18T08:28:58Z"
     },
     {
       "slug": "modaal-free-plan",
@@ -3713,9 +3742,9 @@
       "why_it_matters": null,
       "official_url": "https://modaal.dev/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-30T13:52:57Z",
-      "updated_at": "2026-11-16T08:15:21Z"
+      "updated_at": "2026-11-18T08:29:00Z"
     },
     {
       "slug": "cloudflare-workers-ai-free-allocation",
@@ -3742,9 +3771,9 @@
       "why_it_matters": null,
       "official_url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-30T04:55:02Z",
-      "updated_at": "2026-11-16T08:15:23Z"
+      "updated_at": "2026-11-18T08:29:01Z"
     },
     {
       "slug": "wealthnow-financial-data-api-free-tier",
@@ -3771,9 +3800,9 @@
       "why_it_matters": null,
       "official_url": "https://wealthnow.io/mcp",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-30T01:50:50Z",
-      "updated_at": "2026-11-16T08:15:25Z"
+      "updated_at": "2026-11-18T08:29:04Z"
     },
     {
       "slug": "adlib-api-free-plan-credits",
@@ -3791,18 +3820,18 @@
       "headline_note": "credits a month",
       "promo_code_needed": null,
       "promo_code": null,
-      "value": "5,000 free credits a month (+1,000 on sign-up), no card needed",
-      "summary": "AdLib is one REST API and MCP server over the public ad libraries of Meta, Google, TikTok, LinkedIn, Amazon and other platforms, keeping ads after platforms remove them. Its Free plan gives 5,000 credits a month plus 1,000 on sign-up with 90 days of history, no card needed.",
+      "value": "Start with 2,000 free credits, then buy credits when you need them: no subscription, valid for 12 months. Free credits to start: 2,000, once per account. The free credits are given once per account and don't expire. No card.",
+      "summary": "AdLib is one REST API and MCP server over public ad libraries. New accounts get 2,000 free API credits once, with no card. Free credits do not expire. After that, usage is prepaid credit packs valid for 12 months.",
       "who_qualifies": "Anyone who signs up for an AdLib account",
-      "how_to_claim": "Sign up for a free account at adlibapi.com and pick the Free plan; no card needed.",
-      "expiry": "ongoing",
-      "caveats": "Posted by the company's own X account, created 2026-10-29 with no followers yet.",
+      "how_to_claim": "Sign up at adlibapi.com and claim the 2,000 free API credits. No card needed.",
+      "expiry": "ongoing (free credits are given once per account and do not expire; purchased credits stay valid for 12 months)",
+      "caveats": "The 2,000 free credits are one-time, not a monthly refill. Purchased packs last 12 months. Archive history is 12 months until a pack is bought.",
       "why_it_matters": null,
       "official_url": "https://adlibapi.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-29T18:57:25Z",
-      "updated_at": "2026-11-16T08:15:26Z"
+      "updated_at": "2026-11-18T08:25:31Z"
     },
     {
       "slug": "botscanner-autobench-llm-router-1-free-credit",
@@ -3829,9 +3858,9 @@
       "why_it_matters": null,
       "official_url": "https://botscanner.ai",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-29T18:57:09Z",
-      "updated_at": "2026-11-16T08:15:27Z"
+      "updated_at": "2026-11-18T08:29:05Z"
     },
     {
       "slug": "scenario-free-tier",
@@ -3858,9 +3887,9 @@
       "why_it_matters": null,
       "official_url": "https://www.scenario.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-29T13:24:28Z",
-      "updated_at": "2026-11-16T08:15:29Z"
+      "updated_at": "2026-11-18T08:29:07Z"
     },
     {
       "slug": "articul8-bivia-1-billion-free-tokens",
@@ -3887,9 +3916,9 @@
       "why_it_matters": null,
       "official_url": "https://articul8.ai/bivia",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-29T13:23:58Z",
-      "updated_at": "2026-11-16T08:15:30Z"
+      "updated_at": "2026-11-18T08:29:08Z"
     },
     {
       "slug": "zed-student-plan",
@@ -3916,9 +3945,9 @@
       "why_it_matters": null,
       "official_url": "https://zed.dev/education",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-29T10:51:22Z",
-      "updated_at": "2026-11-16T08:15:32Z"
+      "updated_at": "2026-11-18T08:29:10Z"
     },
     {
       "slug": "openai-chatgpt-subscriber-api-credits",
@@ -3945,9 +3974,9 @@
       "why_it_matters": null,
       "official_url": "https://developers.openai.com/api/docs/guides/chatgpt-api-credits",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-29T06:17:12Z",
-      "updated_at": "2026-11-16T08:15:34Z"
+      "updated_at": "2026-11-18T08:29:11Z"
     },
     {
       "slug": "opencode-zen-free-models",
@@ -3965,18 +3994,18 @@
       "headline_note": null,
       "promo_code_needed": null,
       "promo_code": null,
-      "value": "Limited-time free models on OpenCode's gateway, including GLM-5.3-Flash Free, DeepSeek V4.1 Flash Free, MiMo-V2.6-Flash Free, Nemotron 3 Ultra Free, Big Pickle and more (free input and output)",
+      "value": "Current free models (free input and output): Big Pickle, Iceman Free, Inkling 2 Small Free, DeepSeek V4.1 Flash Free, Beam Free, Flint 40B Free, LongCat 2.5 Free, Hy4 flash Free, MiMo-V2.6-Flash Free, Nemotron 3.5 Lightning Free, Nemotron 3.5 Super VL Free, and Jev 1.13 Free. GLM-5.3-Flash Free has a deprecation date of November 18, 2026.",
       "summary": "OpenCode Console is the OpenCode team's curated, pay-as-you-go model gateway for coding agents. Its docs list a set of free-tier models with free input and output tokens, which require the OpenCode client.",
       "who_qualifies": "Anyone with an OpenCode sign-in; free models work only from the OpenCode client",
       "how_to_claim": "Sign in to OpenCode, pick a model ending in Free (or Big Pickle) with /models, and use it from the OpenCode client",
       "expiry": "ongoing",
-      "caveats": "Free for a limited time with no end date. Free chat models need the OpenCode client. Some free models may log or train on your data during the free period. Beam Free is blocked in some countries, and Inkling 2 Small Free is not available in the EU, Iceland, Liechtenstein, Norway, Cuba, Iran, North Korea, Russia, Ukraine or Venezuela. Pulse Alpha Free was deprecated on November 6, 2026. Crouton Alpha Free was deprecated on November 9, 2026.",
+      "caveats": "Free for a limited time with no single end date. Free chat models need the OpenCode client. Some free models may log or train on your data during the free period. Beam Free is blocked in some countries, and Inkling 2 Small Free is not available in the EU, Iceland, Liechtenstein, Norway, Cuba, Iran, North Korea, Russia, Ukraine or Venezuela. GLM-5.3-Flash Free is deprecated November 18, 2026. Pulse Alpha Free was deprecated on November 6, 2026. Crouton Alpha Free was deprecated on November 9, 2026.",
       "why_it_matters": null,
       "official_url": "https://opencode.ai/v2/docs/console/models/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T19:58:41Z",
-      "updated_at": "2026-11-16T08:15:35Z"
+      "updated_at": "2026-11-18T08:25:37Z"
     },
     {
       "slug": "ai-for-church-sponsor-lovable-for-church-hackathon-100-free",
@@ -4003,9 +4032,9 @@
       "why_it_matters": null,
       "official_url": "https://aiforchurch.com/hackathon",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T19:58:07Z",
-      "updated_at": "2026-11-16T08:15:37Z"
+      "updated_at": "2026-11-18T08:29:13Z"
     },
     {
       "slug": "microsoft-foundry-copilot-harness-free-preview",
@@ -4032,9 +4061,9 @@
       "why_it_matters": null,
       "official_url": "https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T19:37:23Z",
-      "updated_at": "2026-11-16T08:15:38Z"
+      "updated_at": "2026-11-18T08:29:14Z"
     },
     {
       "slug": "traveltime-free-plan",
@@ -4061,9 +4090,9 @@
       "why_it_matters": null,
       "official_url": "https://traveltime.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T13:57:31Z",
-      "updated_at": "2026-11-16T08:15:40Z"
+      "updated_at": "2026-11-18T08:29:16Z"
     },
     {
       "slug": "gnani-ai-free-credits",
@@ -4090,9 +4119,9 @@
       "why_it_matters": null,
       "official_url": "https://www.gnani.ai/resources/prisma-v3",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T13:57:22Z",
-      "updated_at": "2026-11-16T08:15:41Z"
+      "updated_at": "2026-11-18T08:29:18Z"
     },
     {
       "slug": "napster-ignite-hackathon-api-credits",
@@ -4119,9 +4148,9 @@
       "why_it_matters": null,
       "official_url": "https://www.napster.com/microsoftignite26",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T06:28:40Z",
-      "updated_at": "2026-11-16T08:15:43Z"
+      "updated_at": "2026-11-18T08:29:19Z"
     },
     {
       "slug": "videogen-model-1-free-ai-credits",
@@ -4148,9 +4177,9 @@
       "why_it_matters": null,
       "official_url": "https://videogen.io/model-1",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T06:28:21Z",
-      "updated_at": "2026-11-16T08:15:45Z"
+      "updated_at": "2026-11-18T08:29:21Z"
     },
     {
       "slug": "supermicro-jumpstart-free-remote-gpu-access",
@@ -4177,9 +4206,9 @@
       "why_it_matters": null,
       "official_url": "https://www.supermicro.com/en/jumpstart",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T06:27:57Z",
-      "updated_at": "2026-11-16T08:15:46Z"
+      "updated_at": "2026-11-18T08:29:22Z"
     },
     {
       "slug": "vapi-free-credits",
@@ -4206,9 +4235,9 @@
       "why_it_matters": null,
       "official_url": "https://vapi.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-28T00:59:35Z",
-      "updated_at": "2026-11-16T08:15:49Z"
+      "updated_at": "2026-11-18T08:29:24Z"
     },
     {
       "slug": "parallel-web-systems-decisions-api",
@@ -4235,9 +4264,9 @@
       "why_it_matters": null,
       "official_url": "https://parallel.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T21:38:46Z",
-      "updated_at": "2026-11-16T08:15:50Z"
+      "updated_at": "2026-11-18T08:29:25Z"
     },
     {
       "slug": "geek-room-global-ai-hackathon",
@@ -4264,9 +4293,9 @@
       "why_it_matters": null,
       "official_url": "https://hackculture.io/hackathons/ai-global-hackathon",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T21:38:24Z",
-      "updated_at": "2026-11-16T08:11:37Z"
+      "updated_at": "2026-11-18T08:29:27Z"
     },
     {
       "slug": "3am-super-intelligence-90-day-free-trial",
@@ -4293,9 +4322,9 @@
       "why_it_matters": null,
       "official_url": "https://3am.si/legal/licence",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T20:32:38Z",
-      "updated_at": "2026-11-16T08:15:51Z"
+      "updated_at": "2026-11-18T08:29:29Z"
     },
     {
       "slug": "hasdata-free-plan",
@@ -4322,9 +4351,9 @@
       "why_it_matters": null,
       "official_url": "https://hasdata.com/prices",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T17:00:38Z",
-      "updated_at": "2026-11-16T08:15:53Z"
+      "updated_at": "2026-11-18T08:29:30Z"
     },
     {
       "slug": "ecomgen-250-free-credits",
@@ -4351,9 +4380,9 @@
       "why_it_matters": null,
       "official_url": "https://ecomgen.io/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T16:15:01Z",
-      "updated_at": "2026-11-16T08:15:55Z"
+      "updated_at": "2026-11-18T08:25:42Z"
     },
     {
       "slug": "popcraft-100-free-credits",
@@ -4380,9 +4409,9 @@
       "why_it_matters": null,
       "official_url": "https://popcraft.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T16:14:44Z",
-      "updated_at": "2026-11-16T08:15:56Z"
+      "updated_at": "2026-11-18T08:29:31Z"
     },
     {
       "slug": "fathom-free-plan",
@@ -4409,9 +4438,9 @@
       "why_it_matters": null,
       "official_url": "https://www.fathom.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T16:14:27Z",
-      "updated_at": "2026-11-16T08:15:58Z"
+      "updated_at": "2026-11-18T08:29:33Z"
     },
     {
       "slug": "browserbase-free-plan",
@@ -4438,9 +4467,9 @@
       "why_it_matters": null,
       "official_url": "https://www.browserbase.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T16:13:39Z",
-      "updated_at": "2026-11-16T08:15:59Z"
+      "updated_at": "2026-11-18T08:29:35Z"
     },
     {
       "slug": "devin-swe-2-free-use",
@@ -4467,9 +4496,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.devin.ai/desktop/models",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T16:13:20Z",
-      "updated_at": "2026-11-16T08:16:01Z"
+      "updated_at": "2026-11-18T08:29:37Z"
     },
     {
       "slug": "google-gemini-api-free-tier",
@@ -4496,9 +4525,9 @@
       "why_it_matters": null,
       "official_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T12:41:09Z",
-      "updated_at": "2026-11-16T08:16:02Z"
+      "updated_at": "2026-11-18T08:29:38Z"
     },
     {
       "slug": "enricho-free-plan",
@@ -4525,9 +4554,9 @@
       "why_it_matters": null,
       "official_url": "https://enricho.co/pricing",
       "released_at": null,
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T10:38:44Z",
-      "updated_at": "2026-11-17T13:11:26Z"
+      "updated_at": "2026-11-18T08:29:40Z"
     },
     {
       "slug": "reachira-free-ai-credits",
@@ -4554,9 +4583,9 @@
       "why_it_matters": null,
       "official_url": "https://reachira.com/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T09:40:19Z",
-      "updated_at": "2026-11-16T08:16:06Z"
+      "updated_at": "2026-11-18T08:29:41Z"
     },
     {
       "slug": "microlink-free-plan",
@@ -4583,9 +4612,9 @@
       "why_it_matters": null,
       "official_url": "https://microlink.io/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T09:40:17Z",
-      "updated_at": "2026-11-16T08:16:07Z"
+      "updated_at": "2026-11-18T08:29:43Z"
     },
     {
       "slug": "tinyfish-for-startups",
@@ -4612,9 +4641,9 @@
       "why_it_matters": "Both tiers also include a blog and social feature, founder dinner invites and a direct line to TinyFish engineers.",
       "official_url": "https://www.tinyfish.ai/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-27T07:40:27Z",
-      "updated_at": "2026-11-16T08:16:09Z"
+      "updated_at": "2026-11-18T08:29:44Z"
     },
     {
       "slug": "gyaansetu-free-plan",
@@ -4641,9 +4670,9 @@
       "why_it_matters": null,
       "official_url": "https://web-search.gyaansetu.com",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T19:52:50Z",
-      "updated_at": "2026-11-16T08:16:10Z"
+      "updated_at": "2026-11-18T08:29:46Z"
     },
     {
       "slug": "strawberry-free-plan",
@@ -4670,9 +4699,9 @@
       "why_it_matters": null,
       "official_url": "https://strawberrybrowser.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T15:44:47Z",
-      "updated_at": "2026-11-16T08:16:12Z"
+      "updated_at": "2026-11-18T08:29:47Z"
     },
     {
       "slug": "livekit-for-startups",
@@ -4699,9 +4728,9 @@
       "why_it_matters": null,
       "official_url": "https://livekit.com/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T15:44:44Z",
-      "updated_at": "2026-11-16T08:16:14Z"
+      "updated_at": "2026-11-18T08:29:49Z"
     },
     {
       "slug": "nvidia-inception",
@@ -4728,9 +4757,9 @@
       "why_it_matters": null,
       "official_url": "https://www.nvidia.com/en-us/startups/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T14:37:10Z",
-      "updated_at": "2026-11-16T08:16:15Z"
+      "updated_at": "2026-11-18T08:29:51Z"
     },
     {
       "slug": "oxylabs-web-api-free-credits",
@@ -4757,9 +4786,9 @@
       "why_it_matters": null,
       "official_url": "https://oxylabs.io/products/web-api",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T13:41:31Z",
-      "updated_at": "2026-11-16T08:16:17Z"
+      "updated_at": "2026-11-18T08:29:52Z"
     },
     {
       "slug": "pomerado-free-plan",
@@ -4786,9 +4815,9 @@
       "why_it_matters": null,
       "official_url": "https://pomerado.ai/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T08:31:54Z",
-      "updated_at": "2026-11-16T08:16:19Z"
+      "updated_at": "2026-11-18T08:29:53Z"
     },
     {
       "slug": "hark-pro-free-plan",
@@ -4815,9 +4844,9 @@
       "why_it_matters": null,
       "official_url": "https://hark.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T08:27:24Z",
-      "updated_at": "2026-11-16T08:16:21Z"
+      "updated_at": "2026-11-18T08:29:55Z"
     },
     {
       "slug": "groq-free-plan",
@@ -4844,9 +4873,9 @@
       "why_it_matters": null,
       "official_url": "https://console.groq.com/docs/rate-limits",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T08:27:08Z",
-      "updated_at": "2026-11-16T08:16:23Z"
+      "updated_at": "2026-11-18T08:29:56Z"
     },
     {
       "slug": "valyu-free-credits",
@@ -4873,9 +4902,9 @@
       "why_it_matters": null,
       "official_url": "https://www.valyu.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-25T21:36:51Z",
-      "updated_at": "2026-11-16T08:16:24Z"
+      "updated_at": "2026-11-18T08:29:58Z"
     },
     {
       "slug": "cerebras-free-trial-credits",
@@ -4902,9 +4931,9 @@
       "why_it_matters": null,
       "official_url": "https://inference-docs.cerebras.ai/support/rate-limits",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-25T20:05:23Z",
-      "updated_at": "2026-11-16T08:16:26Z"
+      "updated_at": "2026-11-18T08:29:59Z"
     },
     {
       "slug": "cohere-free-trial-api-key",
@@ -4931,9 +4960,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.cohere.com/docs/rate-limits",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-25T20:05:22Z",
-      "updated_at": "2026-11-16T08:16:27Z"
+      "updated_at": "2026-11-18T08:30:01Z"
     },
     {
       "slug": "konbiniapi-free-credits",
@@ -4960,9 +4989,9 @@
       "why_it_matters": null,
       "official_url": "https://konbiniapi.com/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-25T20:05:20Z",
-      "updated_at": "2026-11-16T08:16:29Z"
+      "updated_at": "2026-11-18T08:30:02Z"
     },
     {
       "slug": "sitespeakai-free-plan",
@@ -4989,9 +5018,9 @@
       "why_it_matters": null,
       "official_url": "https://sitespeak.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-25T20:05:18Z",
-      "updated_at": "2026-11-16T08:16:30Z"
+      "updated_at": "2026-11-18T08:30:04Z"
     },
     {
       "slug": "deapi-free-credits",
@@ -5018,9 +5047,9 @@
       "why_it_matters": null,
       "official_url": "https://deapi.ai/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-25T16:42:15Z",
-      "updated_at": "2026-11-16T08:16:32Z"
+      "updated_at": "2026-11-18T08:30:06Z"
     },
     {
       "slug": "sarvam-startup-program",
@@ -5047,9 +5076,9 @@
       "why_it_matters": null,
       "official_url": "https://www.sarvam.ai/startup-program",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-24T21:40:00Z",
-      "updated_at": "2026-11-16T08:16:34Z"
+      "updated_at": "2026-11-18T08:30:08Z"
     },
     {
       "slug": "nvidia-nim-free-api-access",
@@ -5076,9 +5105,9 @@
       "why_it_matters": null,
       "official_url": "https://developer.nvidia.com/nim",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-24T21:39:59Z",
-      "updated_at": "2026-11-16T08:16:35Z"
+      "updated_at": "2026-11-18T08:30:09Z"
     },
     {
       "slug": "clawifi-free-plan",
@@ -5105,9 +5134,9 @@
       "why_it_matters": null,
       "official_url": "https://clawifi.dev/pricing",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-24T21:39:55Z",
-      "updated_at": "2026-11-16T08:16:37Z"
+      "updated_at": "2026-11-18T08:30:11Z"
     },
     {
       "slug": "beatapi-free-models",
@@ -5125,18 +5154,18 @@
       "headline_note": "5 text models",
       "promo_code_needed": null,
       "promo_code": null,
-      "value": "Free calls to three text models on a zero balance: glm-5.3-flash-free, deepseek-v4.1-flash-free and hy4-free",
-      "summary": "BeatAPI is a third-party model gateway. Free calls work on three text model IDs ending in -free, including on a zero balance.",
+      "value": "Three free text models, listed below. Free model IDs: glm-5.3-flash-free, deepseek-v4.1-flash-free, hy4-flash-free. Any key can call them if its group reaches the free group, including the default, including on a zero balance.",
+      "summary": "BeatAPI is a third-party model gateway. Free calls work on three text model IDs ending in -free (glm-5.3-flash-free, deepseek-v4.1-flash-free and hy4-flash-free), including on a zero balance.",
       "who_qualifies": "Anyone with a BeatAPI account and API key; no top-up needed",
-      "how_to_claim": "Create a BeatAPI account, generate an API key and call a free model id: glm-5.3-flash-free, deepseek-v4.1-flash-free or hy4-free.",
+      "how_to_claim": "Create a BeatAPI account, generate an API key and call a free model id: glm-5.3-flash-free, deepseek-v4.1-flash-free or hy4-flash-free.",
       "expiry": "ongoing",
       "caveats": "Three free text models only. Free JEV IDs retired 2026-11-05. Rate limited (1 rpm before top-up, 10 after). Free access can be withdrawn anytime. No free image or video models.",
       "why_it_matters": null,
       "official_url": "https://docs.beatapi.io/free-models",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-24T07:01:31Z",
-      "updated_at": "2026-11-16T08:16:38Z"
+      "updated_at": "2026-11-18T08:25:49Z"
     },
     {
       "slug": "digitalocean-agent-droplets-free-trial",
@@ -5163,9 +5192,9 @@
       "why_it_matters": null,
       "official_url": "https://www.digitalocean.com/pricing/agent-droplets",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-24T07:01:28Z",
-      "updated_at": "2026-11-16T08:16:40Z"
+      "updated_at": "2026-11-18T08:30:13Z"
     },
     {
       "slug": "baseten-ai-startup-program",
@@ -5192,9 +5221,9 @@
       "why_it_matters": null,
       "official_url": "https://www.baseten.co/talk-to-us/startup-program/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T18:44:23Z",
-      "updated_at": "2026-11-16T08:16:42Z"
+      "updated_at": "2026-11-18T08:30:14Z"
     },
     {
       "slug": "openai-startup-credits",
@@ -5221,9 +5250,9 @@
       "why_it_matters": null,
       "official_url": "https://openai.com/business/why-openai/startups/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T18:44:21Z",
-      "updated_at": "2026-11-16T08:16:43Z"
+      "updated_at": "2026-11-18T08:30:16Z"
     },
     {
       "slug": "assemblyai-startup-program",
@@ -5250,9 +5279,9 @@
       "why_it_matters": null,
       "official_url": "https://www.assemblyai.com/contact/startup-program",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T18:44:20Z",
-      "updated_at": "2026-11-16T08:16:45Z"
+      "updated_at": "2026-11-18T08:30:17Z"
     },
     {
       "slug": "sentry-for-startups",
@@ -5279,9 +5308,9 @@
       "why_it_matters": null,
       "official_url": "https://sentry.io/for/startups/",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T18:44:18Z",
-      "updated_at": "2026-11-16T08:16:46Z"
+      "updated_at": "2026-11-18T08:30:19Z"
     },
     {
       "slug": "render-for-startups",
@@ -5308,9 +5337,9 @@
       "why_it_matters": null,
       "official_url": "https://render.com/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T18:44:17Z",
-      "updated_at": "2026-11-16T08:16:48Z"
+      "updated_at": "2026-11-18T08:30:20Z"
     },
     {
       "slug": "together-ai-startup-accelerator",
@@ -5337,9 +5366,9 @@
       "why_it_matters": null,
       "official_url": "https://www.together.ai/startup-accelerator",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T18:44:15Z",
-      "updated_at": "2026-11-16T08:16:49Z"
+      "updated_at": "2026-11-18T08:30:22Z"
     },
     {
       "slug": "perch-ai-free-starter-plan",
@@ -5366,9 +5395,9 @@
       "why_it_matters": null,
       "official_url": "https://www.perchai.app/docs/plans/starter",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T07:23:37Z",
-      "updated_at": "2026-11-16T08:16:51Z"
+      "updated_at": "2026-11-18T08:30:23Z"
     },
     {
       "slug": "keiki-for-startups",
@@ -5395,9 +5424,9 @@
       "why_it_matters": null,
       "official_url": "https://onkeiki.com/startups",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T07:23:35Z",
-      "updated_at": "2026-11-16T08:16:53Z"
+      "updated_at": "2026-11-18T08:30:25Z"
     },
     {
       "slug": "deepgram-startup-program",
@@ -5424,9 +5453,9 @@
       "why_it_matters": null,
       "official_url": "https://deepgram.com/startup-program",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T07:23:34Z",
-      "updated_at": "2026-11-16T08:16:55Z"
+      "updated_at": "2026-11-18T08:30:27Z"
     },
     {
       "slug": "anthropic-claude-security-launch-credits",
@@ -5453,9 +5482,9 @@
       "why_it_matters": null,
       "official_url": "https://support.claude.com/en/articles/14661296-use-claude-security",
       "released_at": "2026-10-21",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-25T16:32:17Z",
-      "updated_at": "2026-11-16T08:16:56Z"
+      "updated_at": "2026-11-18T08:30:28Z"
     },
     {
       "slug": "instabox-free-plan",
@@ -5482,9 +5511,9 @@
       "why_it_matters": null,
       "official_url": "https://instabox.sh/pricing",
       "released_at": "2026-10-20",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-24T21:39:50Z",
-      "updated_at": "2026-11-16T08:16:58Z"
+      "updated_at": "2026-11-18T08:30:30Z"
     },
     {
       "slug": "anyrouter-minimax-m3-1-flash-free",
@@ -5511,9 +5540,9 @@
       "why_it_matters": null,
       "official_url": "https://anyrouter.dev/blog/minimax-m3-1-flash-free",
       "released_at": "2026-10-20",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-24T07:01:30Z",
-      "updated_at": "2026-11-16T08:16:59Z"
+      "updated_at": "2026-11-18T08:30:31Z"
     },
     {
       "slug": "vercel-reflection-beam-free",
@@ -5540,9 +5569,9 @@
       "why_it_matters": null,
       "official_url": "https://vercel.com/ai-gateway/models/beam",
       "released_at": "2026-10-16",
-      "last_verified": "2026-11-15",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-12T17:43:25Z",
-      "updated_at": "2026-11-15T08:16:39Z"
+      "updated_at": "2026-11-18T08:30:33Z"
     },
     {
       "slug": "oracle-startup-growth-engine",
@@ -5569,9 +5598,9 @@
       "why_it_matters": null,
       "official_url": "https://www.oracle.com/europe/artificial-intelligence/startup-growth-engine/",
       "released_at": "2026-10-15",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-23T07:23:36Z",
-      "updated_at": "2026-11-16T08:17:01Z"
+      "updated_at": "2026-11-18T08:30:34Z"
     },
     {
       "slug": "tavily-for-startups",
@@ -5598,9 +5627,9 @@
       "why_it_matters": null,
       "official_url": "https://www.tavily.com/startups",
       "released_at": "2026-10-14",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:02Z"
+      "updated_at": "2026-11-18T08:30:36Z"
     },
     {
       "slug": "google-antigravity-for-science",
@@ -5627,9 +5656,9 @@
       "why_it_matters": null,
       "official_url": "https://antigravity.google/use-cases/science/",
       "released_at": "2026-10-13",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-24T21:39:54Z",
-      "updated_at": "2026-11-16T08:17:04Z"
+      "updated_at": "2026-11-18T08:30:38Z"
     },
     {
       "slug": "anthropic-claude-max-team-api-credits",
@@ -5656,9 +5685,9 @@
       "why_it_matters": null,
       "official_url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-ultra-and-team-plans",
       "released_at": "2026-10-07",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:06Z"
+      "updated_at": "2026-11-18T08:30:40Z"
     },
     {
       "slug": "x-api-free-credits",
@@ -5685,9 +5714,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.x.com/x-api/getting-started/pricing",
       "released_at": "2026-10-02",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:07Z"
+      "updated_at": "2026-11-18T08:30:41Z"
     },
     {
       "slug": "posthog-for-startups",
@@ -5714,9 +5743,9 @@
       "why_it_matters": null,
       "official_url": "https://posthog.com/startups",
       "released_at": "2026-09-14",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:09Z"
+      "updated_at": "2026-11-18T08:30:43Z"
     },
     {
       "slug": "vercel-for-startups",
@@ -5743,9 +5772,9 @@
       "why_it_matters": null,
       "official_url": "https://vercel.com/startups",
       "released_at": "2026-08-06",
-      "last_verified": "2026-11-15",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-15T08:16:51Z"
+      "updated_at": "2026-11-18T08:30:44Z"
     },
     {
       "slug": "minimax-code-daily-check-in-credits",
@@ -5772,9 +5801,9 @@
       "why_it_matters": null,
       "official_url": "https://code.minimax.io/docs/code/account/usage",
       "released_at": "2026-08-05",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-25T23:41:13Z",
-      "updated_at": "2026-11-16T08:17:11Z"
+      "updated_at": "2026-11-18T08:30:46Z"
     },
     {
       "slug": "databricks-genie-one-free-usage",
@@ -5801,9 +5830,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.databricks.com/aws/en/genie/monitor-cost",
       "released_at": "2026-08-03",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-26T19:58:04Z",
-      "updated_at": "2026-11-16T08:17:12Z"
+      "updated_at": "2026-11-18T08:30:47Z"
     },
     {
       "slug": "neon-databricks-startup",
@@ -5830,9 +5859,9 @@
       "why_it_matters": null,
       "official_url": "https://neon.com/startups",
       "released_at": "2026-06-16",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:14Z"
+      "updated_at": "2026-11-18T08:30:49Z"
     },
     {
       "slug": "microsoft-for-startups",
@@ -5859,9 +5888,9 @@
       "why_it_matters": null,
       "official_url": "https://www.microsoft.com/en-us/startups",
       "released_at": "2026-06-02",
-      "last_verified": "2026-11-15",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-15T08:16:57Z"
+      "updated_at": "2026-11-18T08:30:50Z"
     },
     {
       "slug": "ona-for-open-source",
@@ -5888,9 +5917,9 @@
       "why_it_matters": null,
       "official_url": "https://ona.com/open-source",
       "released_at": "2026-02-04",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:15Z"
+      "updated_at": "2026-11-18T08:30:52Z"
     },
     {
       "slug": "google-ai-pro-cloud-credits",
@@ -5917,9 +5946,9 @@
       "why_it_matters": null,
       "official_url": "https://one.google.com/about/google-ai-plans/",
       "released_at": "2026-01-27",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:17Z"
+      "updated_at": "2026-11-18T08:30:53Z"
     },
     {
       "slug": "mongodb-for-startups",
@@ -5946,9 +5975,9 @@
       "why_it_matters": null,
       "official_url": "https://www.mongodb.com/solutions/startups",
       "released_at": "2025-10-28",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:19Z"
+      "updated_at": "2026-11-18T08:30:55Z"
     },
     {
       "slug": "elevenlabs-startup-grants",
@@ -5975,9 +6004,9 @@
       "why_it_matters": null,
       "official_url": "https://elevenlabs.io/startup-grants",
       "released_at": "2025-08-12",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:20Z"
+      "updated_at": "2026-11-18T08:30:56Z"
     },
     {
       "slug": "pinecone-for-startups",
@@ -6004,9 +6033,9 @@
       "why_it_matters": null,
       "official_url": "https://www.pinecone.io/startup-program/",
       "released_at": "2025-06-04",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:22Z"
+      "updated_at": "2026-11-18T08:30:58Z"
     },
     {
       "slug": "amplitude-startups",
@@ -6033,9 +6062,9 @@
       "why_it_matters": null,
       "official_url": "https://amplitude.com/startups",
       "released_at": "2025-01-31",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:23Z"
+      "updated_at": "2026-11-18T08:30:59Z"
     },
     {
       "slug": "mixpanel-for-startups",
@@ -6062,9 +6091,9 @@
       "why_it_matters": null,
       "official_url": "https://mixpanel.com/startups",
       "released_at": "2024-09-04",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:26Z"
+      "updated_at": "2026-11-18T08:31:01Z"
     },
     {
       "slug": "linear-startups",
@@ -6091,9 +6120,9 @@
       "why_it_matters": null,
       "official_url": "https://linear.app/startups",
       "released_at": "2023-11-30",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:28Z"
+      "updated_at": "2026-11-18T08:31:02Z"
     },
     {
       "slug": "github-copilot-pro-free-oss",
@@ -6120,9 +6149,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-teachers-and-os-maintainers",
       "released_at": "2022-06-21",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:29Z"
+      "updated_at": "2026-11-18T08:31:04Z"
     },
     {
       "slug": "algolia-startup-program",
@@ -6149,9 +6178,9 @@
       "why_it_matters": null,
       "official_url": "https://www.algolia.com/industries/startups",
       "released_at": "2022-04-05",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:31Z"
+      "updated_at": "2026-11-18T08:31:05Z"
     },
     {
       "slug": "google-cloud-free-trial",
@@ -6178,676 +6207,9 @@
       "why_it_matters": null,
       "official_url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
       "released_at": "2020-08-11",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:32Z"
-    },
-    {
-      "slug": "stripe-atlas-credits",
-      "url": "https://that.promo/stripe-atlas-credits",
-      "json_url": "https://that.promo/stripe-atlas-credits.json",
-      "name": "Stripe Atlas product credits",
-      "provider": "Stripe",
-      "company": "stripe",
-      "company_url": "https://that.promo/stripe",
-      "category": "Business SaaS",
-      "category_url": "https://that.promo/startup-saas-deals",
-      "program": null,
-      "status": "live",
-      "headline_amount": "$2.5k",
-      "headline_note": "+ $50k discounts",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "$2,500 in Stripe product credits in the first year, plus more than $200,000 in partner offers (AWS, Google, OpenRouter and others); $500 when you open a Stripe Treasury business account within 7 days of incorporation; C-Corps can earn another $1,500 (LLCs $1,000) for spending $5,000 on Treasury within 90 days",
-      "summary": "Atlas incorporation comes with Stripe credits and partner discounts.",
-      "who_qualifies": "Companies incorporated through Stripe Atlas",
-      "how_to_claim": "Incorporate with Atlas",
-      "expiry": "ongoing",
-      "caveats": "Atlas itself is paid ($500 one-time setup fee, then $100 a year for the registered agent). The $500 Treasury reward requires opening a Stripe Treasury business account within 7 days of incorporation (terms at https://docs.stripe.com/atlas/stripe-treasury-offer). The extra Treasury spend bonus ($1,500 for C-Corps, $1,000 for LLCs, after spending $5,000 within 90 days) is listed in Stripe's Atlas perks partners article (https://support.stripe.com/questions/stripe-atlas-perks-partners), not on the main Atlas page.",
-      "why_it_matters": null,
-      "official_url": "https://stripe.com/atlas",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:18:06Z"
-    },
-    {
-      "slug": "runpod-starter-credits",
-      "url": "https://that.promo/runpod-starter-credits",
-      "json_url": "https://that.promo/runpod-starter-credits.json",
-      "name": "Runpod Startup Program - Starter Tier",
-      "provider": "Runpod",
-      "company": "runpod",
-      "company_url": "https://that.promo/runpod",
-      "category": "GPU and compute",
-      "category_url": "https://that.promo/free-gpu-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$1k",
-      "headline_note": "free credits",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Starter: $1,000 in free credits (under $1M raised). Venture: $5,000 for verified-VC portfolio companies (under $5M raised). Growth Track: bonus credits on commit ($10k on $25k, $25k on $50k)",
-      "summary": "$1k of GPU credits on Runpod with full platform access.",
-      "who_qualifies": "Starter: raised under $1M with working products and near-term GPU needs, new to Runpod. Venture: portfolio of a verified VC (a16z, Neo and South Park Commons named), raised under $5M. Growth Track: raised over $5M (commit required; existing customers allowed)",
-      "how_to_claim": "Apply on the program page",
-      "expiry": "ongoing",
-      "caveats": "One free offer (Starter or Venture) per company. Credits expire 1 year after issue and work across Pods, Serverless, Clusters and Storage. A separate Venture tier gives $5,000 to portfolio companies of a verified VC that raised under $5M. The Growth Track is a deposit bonus ($10k on a $25k commit, $25k on a $50k commit), not free credit.",
-      "why_it_matters": null,
-      "official_url": "https://www.runpod.io/startup-program",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:18:05Z"
-    },
-    {
-      "slug": "amazon-web-services-aws-activate",
-      "url": "https://that.promo/amazon-web-services-aws-activate",
-      "json_url": "https://that.promo/amazon-web-services-aws-activate.json",
-      "name": "AWS Activate Credits",
-      "provider": "Amazon Web Services",
-      "company": "amazon-web-services",
-      "company_url": "https://that.promo/amazon-web-services",
-      "category": "Cloud",
-      "category_url": "https://that.promo/free-cloud-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$200k",
-      "headline_note": "up to",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Founders: up to $5,000 (start with $1,000). Portfolio: up to $200,000. AI startups: $200,000+ by invite",
-      "summary": "AWS credits for startups by stage, from $1k self-funded to $200k with a partner investor.",
-      "who_qualifies": "Pre-Series B, founded in the last 10 years, AWS account on the Paid Tier plan, new to Activate or requesting more",
-      "how_to_claim": "Create an AWS Builder ID and apply; Portfolio needs an Activate Provider Org ID",
-      "expiry": "ongoing",
-      "caveats": "Portfolio tier requires an Org ID from a VC or accelerator. Kiro Startup Credits are a separate option for startups without Activate credits.",
-      "why_it_matters": null,
-      "official_url": "https://aws.amazon.com/startups/credits/",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:18:03Z"
-    },
-    {
-      "slug": "cloudflare-for-startups",
-      "url": "https://that.promo/cloudflare-for-startups",
-      "json_url": "https://that.promo/cloudflare-for-startups.json",
-      "name": "Cloudflare for Startups",
-      "provider": "Cloudflare",
-      "company": "cloudflare",
-      "company_url": "https://that.promo/cloudflare",
-      "category": "Cloud",
-      "category_url": "https://that.promo/free-cloud-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$350k",
-      "headline_note": "up to, 1 year",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Tier 3 $10k, Tier 2 $100k, Tier 1 $350k in credits for a year",
-      "summary": "Cloudflare developer platform credits, with $10k available without any funding.",
-      "who_qualifies": "Tier 3: bootstrapped or under $1M raised. Tier 2: under $5M from an affiliated partner. Tier 1: $5M+ from an affiliated partner",
-      "how_to_claim": "Apply on the program page",
-      "expiry": "ongoing (credits for one year)",
-      "caveats": "From December 1, 2026, Workers AI is not covered by credits for incoming startups. Until then, existing startups have Workers AI caps of $2,500 (Tier 3), $10,000 (Tier 2) and $50,000 (Tier 1). R2 is capped at $10,000. AI Gateway is temporarily not covered. A business email on your own domain is required and only first-time applicants qualify. You also need to be founded in the last 10 years, funded up to Series B, have a live website and a public social profile. The qualify list also says funded within the last 12 months, which sits next to Tier 3 (bootstrapped or under $1M, no minimum funding).",
-      "why_it_matters": null,
-      "official_url": "https://www.cloudflare.com/startups/",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:18:01Z"
-    },
-    {
-      "slug": "convex-for-startups",
-      "url": "https://that.promo/convex-for-startups",
-      "json_url": "https://that.promo/convex-for-startups.json",
-      "name": "Convex for Startups",
-      "provider": "Convex",
-      "company": "convex",
-      "company_url": "https://that.promo/convex",
-      "category": "Databases",
-      "category_url": "https://that.promo/free-database-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "1 year",
-      "headline_note": "Professional free",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Up to 1 year free of Convex Professional, no seat fees, 30% off usage-based fees up to $30k",
-      "summary": "A free year of Convex Professional for small startups.",
-      "who_qualifies": "Series A or earlier, under 20 employees, under 3 years old, raised under $3M, live site or MVP",
-      "how_to_claim": "Be on Starter with a card on file, then apply",
-      "expiry": "ongoing",
-      "caveats": "Card on file needed before applying.",
-      "why_it_matters": null,
-      "official_url": "https://www.convex.dev/startups",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:18:00Z"
-    },
-    {
-      "slug": "e2b-for-startups",
-      "url": "https://that.promo/e2b-for-startups",
-      "json_url": "https://that.promo/e2b-for-startups.json",
-      "name": "E2B for Startups",
-      "provider": "E2B",
-      "company": "e2b",
-      "company_url": "https://that.promo/e2b",
-      "category": "GPU and compute",
-      "category_url": "https://that.promo/free-gpu-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$20k",
-      "headline_note": "+ Pro tier",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "One-time $20,000 in E2B credits and the Pro tier",
-      "summary": "$20k of sandbox credits for teams building AI agents.",
-      "who_qualifies": "Startups under 3 years old that have raised under $5M and are new to E2B; research teams also eligible",
-      "how_to_claim": "Apply via the program form; YC, a16z Speedrun, and Antler teams apply through their portal",
-      "expiry": "ongoing",
-      "caveats": "One-time grant. First-time E2B users only.",
-      "why_it_matters": null,
-      "official_url": "https://e2b.dev/startups",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:58Z"
-    },
-    {
-      "slug": "exa-free-plan",
-      "url": "https://that.promo/exa-free-plan",
-      "json_url": "https://that.promo/exa-free-plan.json",
-      "name": "Exa Starter (free)",
-      "provider": "Exa",
-      "company": "exa",
-      "company_url": "https://that.promo/exa",
-      "category": "Data and search APIs",
-      "category_url": "https://that.promo/free-data-api-credits",
-      "program": null,
-      "status": "live",
-      "headline_amount": "$10",
-      "headline_note": "per month",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "$10 in credits every month plus a $10 onboarding bonus",
-      "summary": "Exa's free tier gives monthly search API credit, which it pitches as over $120 a year.",
-      "who_qualifies": "Anyone; no payment method",
-      "how_to_claim": "Sign up",
-      "expiry": "ongoing",
-      "caveats": "Usage is billed per request at Exa rates.",
-      "why_it_matters": null,
-      "official_url": "https://exa.ai/pricing",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:55Z"
-    },
-    {
-      "slug": "firecrawl-free-plan",
-      "url": "https://that.promo/firecrawl-free-plan",
-      "json_url": "https://that.promo/firecrawl-free-plan.json",
-      "name": "Firecrawl free plan",
-      "provider": "Firecrawl",
-      "company": "firecrawl",
-      "company_url": "https://that.promo/firecrawl",
-      "category": "Data and search APIs",
-      "category_url": "https://that.promo/free-data-api-credits",
-      "program": null,
-      "status": "live",
-      "headline_amount": "1,000",
-      "headline_note": "credits per month",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "1,000 credits per month (about 500 searches or 1,000 pages)",
-      "summary": "Free monthly scraping and search credits from Firecrawl.",
-      "who_qualifies": "Anyone; no card",
-      "how_to_claim": "Sign up",
-      "expiry": "ongoing",
-      "caveats": "Low rate limits, 2 concurrent requests. The same credits also cover Firecrawl Directory in ChatGPT and Claude: searching 240M+ professional profiles is free, and detailed profile and contact lookups spend credits.",
-      "why_it_matters": null,
-      "official_url": "https://www.firecrawl.dev/pricing",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:54Z"
-    },
-    {
-      "slug": "github-for-startups",
-      "url": "https://that.promo/github-for-startups",
-      "json_url": "https://that.promo/github-for-startups.json",
-      "name": "GitHub for Startups",
-      "provider": "GitHub",
-      "company": "github",
-      "company_url": "https://that.promo/github",
-      "category": "Dev tools",
-      "category_url": "https://that.promo/free-dev-tools",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$10k",
-      "headline_note": "platform credits",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "$10,000 in flexible platform credits",
-      "summary": "$10k of credits across GitHub Enterprise, Copilot, Advanced Security, and Actions.",
-      "who_qualifies": "Partner-affiliated startups",
-      "how_to_claim": "Apply through a GitHub for Startups partner",
-      "expiry": "ongoing",
-      "caveats": "Partner affiliation required, plus outside funding up to Series B. Must be new to GitHub Enterprise (not on it in the past six months) and never have received GitHub credits or Enterprise licenses. A valid payment method is needed and GitHub places an authorization charge after onboarding. Credits last up to 12 months, then active products move to paid billing.",
-      "why_it_matters": null,
-      "official_url": "https://github.com/enterprise/startups",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:52Z"
-    },
-    {
-      "slug": "google-cloud-startups",
-      "url": "https://that.promo/google-cloud-startups",
-      "json_url": "https://that.promo/google-cloud-startups.json",
-      "name": "Google for Startups Cloud Program",
-      "provider": "Google",
-      "company": "google",
-      "company_url": "https://that.promo/google",
-      "category": "Cloud",
-      "category_url": "https://that.promo/free-cloud-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$350k",
-      "headline_note": "up to, over 2 years",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Start tier $2k; Scale tiers $200K to $350K in Cloud credits over two years, plus 12 months of Workspace Business Plus",
-      "summary": "Tiered Google Cloud credits for startups, from $2k for early teams up to $350k for funded ones.",
-      "who_qualifies": "Start: founded in the last 2 years with an MVP. Scale: Pre-Seed to Series A funding, founded in the last 3 to 5 years",
-      "how_to_claim": "Apply on the program page",
-      "expiry": "ongoing",
-      "caveats": "Excludes companies that have IPO'd or been acquired, crypto mining, and some others. Past Google Cloud credit use can affect acceptance.",
-      "why_it_matters": null,
-      "official_url": "https://cloud.google.com/startup",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:51Z"
-    },
-    {
-      "slug": "microsoft-azure-for-students",
-      "url": "https://that.promo/microsoft-azure-for-students",
-      "json_url": "https://that.promo/microsoft-azure-for-students.json",
-      "name": "Azure for Students",
-      "provider": "Microsoft",
-      "company": "microsoft",
-      "company_url": "https://that.promo/microsoft",
-      "category": "Cloud",
-      "category_url": "https://that.promo/free-cloud-credits",
-      "program": null,
-      "status": "live",
-      "headline_amount": "$100",
-      "headline_note": "Azure credit",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "$100 Azure credit to use within 12 months, plus free monthly amounts of 20+ popular services for 12 months, 65+ always-free services and free developer tools",
-      "summary": "Full-time university students get $100 of Azure credit, free service amounts and free dev tools, with no credit card.",
-      "who_qualifies": "Students with an academic email; no credit card",
-      "how_to_claim": "Sign up via the Azure free services page",
-      "expiry": "ongoing",
-      "caveats": "Full-time university students only, signing up with a school email. One account per person. Credit can't be used on Azure Marketplace offers. Renew yearly while you're a student. The 12-month free service amounts are for new Azure customers only.",
-      "why_it_matters": null,
-      "official_url": "https://azure.microsoft.com/en-us/free/students",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:49Z"
-    },
-    {
-      "slug": "modal-for-startups",
-      "url": "https://that.promo/modal-for-startups",
-      "json_url": "https://that.promo/modal-for-startups.json",
-      "name": "Modal for Startups",
-      "provider": "Modal",
-      "company": "modal",
-      "company_url": "https://that.promo/modal",
-      "category": "GPU and compute",
-      "category_url": "https://that.promo/free-gpu-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": null,
-      "headline_note": null,
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Free credits (amount not stated)",
-      "summary": "GPU and compute credits on Modal for funded startups.",
-      "who_qualifies": "New to Modal; VC funding from a partner fund, or over $1M from any fund; larger tiers for post-Series B",
-      "how_to_claim": "Apply on the startups page",
-      "expiry": "ongoing",
-      "caveats": "One-time grant per tier. Amount not stated.",
-      "why_it_matters": null,
-      "official_url": "https://modal.com/startups",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:48Z"
-    },
-    {
-      "slug": "okta-auth0-for-startups",
-      "url": "https://that.promo/okta-auth0-for-startups",
-      "json_url": "https://that.promo/okta-auth0-for-startups.json",
-      "name": "Auth0 for Startups",
-      "provider": "Okta / Auth0",
-      "company": "okta-auth0",
-      "company_url": "https://that.promo/okta-auth0",
-      "category": "Auth",
-      "category_url": "https://that.promo/free-auth-for-startups",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "1 year",
-      "headline_note": "B2B Professional free",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "One year of the B2B Professional plan free, up to 100k MAU",
-      "summary": "A free year of Auth0's B2B Professional login stack.",
-      "who_qualifies": "Venture-backed with under $5M raised and under $1M ARR (more criteria listed on the page)",
-      "how_to_claim": "Apply on the startups page",
-      "expiry": "ongoing (12 months)",
-      "caveats": "Must be venture-backed, under $5M raised, under $1M ARR and less than 2 years from incorporation. Not for existing paid Auth0/Okta customers or past members of the program.",
-      "why_it_matters": null,
-      "official_url": "https://auth0.com/startups",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:46Z"
-    },
-    {
-      "slug": "openai-codex-for-open-source",
-      "url": "https://that.promo/openai-codex-for-open-source",
-      "json_url": "https://that.promo/openai-codex-for-open-source.json",
-      "name": "Codex for Open Source",
-      "provider": "OpenAI",
-      "company": "openai",
-      "company_url": "https://that.promo/openai",
-      "category": "AI coding tools",
-      "category_url": "https://that.promo/free-ai-coding-tools",
-      "program": "open_source",
-      "status": "live",
-      "headline_amount": "6 mo",
-      "headline_note": "ChatGPT Pro",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Six months of ChatGPT Pro with Codex, API credits via the Codex Open Source Fund (amount not stated), conditional Codex Security access",
-      "summary": "OpenAI gives OSS maintainers ChatGPT Pro with Codex, plus API credits for PR review and maintainer automation.",
-      "who_qualifies": "Core maintainers or people running widely used public projects; others can apply and explain",
-      "how_to_claim": "Apply on the program page (agree to the program terms)",
-      "expiry": "ongoing",
-      "caveats": "API credit amount per project not stated. Codex Security access is reviewed case by case for core maintainers with write access.",
-      "why_it_matters": null,
-      "official_url": "https://developers.openai.com/community/codex-for-oss",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:44Z"
-    },
-    {
-      "slug": "openrouter-for-startups",
-      "url": "https://that.promo/openrouter-for-startups",
-      "json_url": "https://that.promo/openrouter-for-startups.json",
-      "name": "OpenRouter for Startups",
-      "provider": "OpenRouter",
-      "company": "openrouter",
-      "company_url": "https://that.promo/openrouter",
-      "category": "Model APIs",
-      "category_url": "https://that.promo/free-ai-api-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$3k",
-      "headline_note": "up to, inference",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Up to $3,000 in inference credits and 0% processing fees for 12 months",
-      "summary": "Inference credits that work across 600+ models through one API.",
-      "who_qualifies": "Pre-Series B, AI-native full-time, referred by an approved partner, public site, domain email, under $500 lifetime spend, no prior startup credits",
-      "how_to_claim": "Apply on the startups page",
-      "expiry": "ongoing",
-      "caveats": "Partner referral required. Most credits expire 6 months after they are issued; the 0% fee waiver lasts 12 months.",
-      "why_it_matters": null,
-      "official_url": "https://openrouter.ai/startups",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:43Z"
-    },
-    {
-      "slug": "retool-for-startups",
-      "url": "https://that.promo/retool-for-startups",
-      "json_url": "https://that.promo/retool-for-startups.json",
-      "name": "Retool for Startups",
-      "provider": "Retool",
-      "company": "retool",
-      "company_url": "https://that.promo/retool",
-      "category": "Dev tools",
-      "category_url": "https://that.promo/free-dev-tools",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$60k",
-      "headline_note": "up to, 1 year free",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "100% off for one year, value up to $60K; 25% off the following year",
-      "summary": "A free year of Retool for internal tools.",
-      "who_qualifies": "Raised under $10M, founded in the last 10 years, new customer on a monthly Team or Business plan",
-      "how_to_claim": "Upgrade to a monthly plan, then apply",
-      "expiry": "ongoing (discount lasts one year)",
-      "caveats": "Must upgrade to a paid monthly plan first. Can't be combined with sales discounts.",
-      "why_it_matters": null,
-      "official_url": "https://retool.com/startups",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:41Z"
-    },
-    {
-      "slug": "notion-for-startups",
-      "url": "https://that.promo/notion-for-startups",
-      "json_url": "https://that.promo/notion-for-startups.json",
-      "name": "Notion for Startups",
-      "provider": "Notion",
-      "company": "notion",
-      "company_url": "https://that.promo/notion",
-      "category": "Business SaaS",
-      "category_url": "https://that.promo/startup-saas-deals",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "6 mo",
-      "headline_note": "Business + AI free",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Business plan with Notion AI free for up to 6 months (Notion says it saves $12,000)",
-      "summary": "Up to six months of Notion Business with AI free for new startup workspaces.",
-      "who_qualifies": "Non-paying Notion customers under 100 employees; 6 months requires a partner, 3 months needs a business site and domain email",
-      "how_to_claim": "Unlock the startup offer on the page",
-      "expiry": "ongoing",
-      "caveats": "Length depends on partner affiliation and details provided. Only 1 month for very small teams or incomplete applications.",
-      "why_it_matters": null,
-      "official_url": "https://www.notion.com/startups",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:40Z"
-    },
-    {
-      "slug": "datadog-for-startups",
-      "url": "https://that.promo/datadog-for-startups",
-      "json_url": "https://that.promo/datadog-for-startups.json",
-      "name": "Datadog for Startups",
-      "provider": "Datadog",
-      "company": "datadog",
-      "company_url": "https://that.promo/datadog",
-      "category": "Monitoring",
-      "category_url": "https://that.promo/free-monitoring-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": "$100k",
-      "headline_note": "up to, 1 year",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "A year of Datadog Pro, up to $100k in credits",
-      "summary": "One free year of Datadog for early startups that come through a partner.",
-      "who_qualifies": "Series A or earlier, referred by a Datadog partner, new to Datadog",
-      "how_to_claim": "Apply, start a trial while under review",
-      "expiry": "ongoing",
-      "caveats": "Partner referral required. Not open to current or past Datadog customers or anyone who already received DDFS credits. After approval you must confirm credit activation within 30 days, and accounts inactive for three months can be removed from the program.",
-      "why_it_matters": null,
-      "official_url": "https://www.datadoghq.com/partner/datadog-for-startups/",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:38Z"
-    },
-    {
-      "slug": "tavily-free-plan",
-      "url": "https://that.promo/tavily-free-plan",
-      "json_url": "https://that.promo/tavily-free-plan.json",
-      "name": "Tavily free Researcher plan",
-      "provider": "Tavily",
-      "company": "tavily",
-      "company_url": "https://that.promo/tavily",
-      "category": "Data and search APIs",
-      "category_url": "https://that.promo/free-data-api-credits",
-      "program": null,
-      "status": "live",
-      "headline_amount": "1,000",
-      "headline_note": "API credits per month",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "1,000 API credits per month",
-      "summary": "Permanent free tier for Tavily's web search API.",
-      "who_qualifies": "Anyone; no credit card",
-      "how_to_claim": "Sign up and get an API key",
-      "expiry": "ongoing",
-      "caveats": "Credits reset on the 1st of each month. Requests stop when you run out.",
-      "why_it_matters": null,
-      "official_url": "https://www.tavily.com/pricing",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:37Z"
-    },
-    {
-      "slug": "workato-free-plan",
-      "url": "https://that.promo/workato-free-plan",
-      "json_url": "https://that.promo/workato-free-plan.json",
-      "name": "Workato Free plan",
-      "provider": "Workato",
-      "company": "workato",
-      "company_url": "https://that.promo/workato",
-      "category": "Business SaaS",
-      "category_url": "https://that.promo/startup-saas-deals",
-      "program": null,
-      "status": "live",
-      "headline_amount": "50k",
-      "headline_note": "one-time credits",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "50K one-time credits, $0/month",
-      "summary": "Workato's free tier for building AI agent workflows, with a one-time credit grant.",
-      "who_qualifies": "Anyone signing up with a work email or SSO",
-      "how_to_claim": "Start for free on the plan page",
-      "expiry": "ongoing",
-      "caveats": "Credits are a one-time grant of 50,000, not monthly; Workato Pro is the plan with recurring monthly credits. No credit card needed.",
-      "why_it_matters": null,
-      "official_url": "https://www.workato.com/free",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:35Z"
-    },
-    {
-      "slug": "firecrawl-student-program",
-      "url": "https://that.promo/firecrawl-student-program",
-      "json_url": "https://that.promo/firecrawl-student-program.json",
-      "name": "Firecrawl Student Program",
-      "provider": "Firecrawl",
-      "company": "firecrawl",
-      "company_url": "https://that.promo/firecrawl",
-      "category": "Data and search APIs",
-      "category_url": "https://that.promo/free-data-api-credits",
-      "program": null,
-      "status": "live",
-      "headline_amount": "10k",
-      "headline_note": "free credits",
-      "promo_code_needed": true,
-      "promo_code": "STUDENTEDU",
-      "value": "Verified students get 10,000 free credits.",
-      "summary": "Students get 10k Firecrawl credits with a public coupon code.",
-      "who_qualifies": "Students with a valid academic email enrolled in a college, university, or accredited program; educational or personal projects",
-      "how_to_claim": "Sign up with your edu email and enter the code STUDENTEDU in Settings > Billing",
-      "expiry": "ongoing",
-      "caveats": "For educational or personal projects only.",
-      "why_it_matters": null,
-      "official_url": "https://www.firecrawl.dev/student-program",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T08:17:34Z"
-    },
-    {
-      "slug": "xai-grok-for-startups",
-      "url": "https://that.promo/xai-grok-for-startups",
-      "json_url": "https://that.promo/xai-grok-for-startups.json",
-      "name": "Grok for Startups",
-      "provider": "xAI",
-      "company": "xai",
-      "company_url": "https://that.promo/xai",
-      "category": "Model APIs",
-      "category_url": "https://that.promo/free-ai-api-credits",
-      "program": "startups",
-      "status": "live",
-      "headline_amount": null,
-      "headline_note": null,
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "Credits sized to about six months of realistic usage (amount not stated); 20% on approval, 80% released once you are up and running",
-      "summary": "One credit balance for Grok, Grok Build, Grok Bot, and the Grok API, paid out in two stages.",
-      "who_qualifies": "Venture-backed startups with a live product and a company email matching the website",
-      "how_to_claim": "Apply at https://x.ai/startups/apply with a work email on your company website's domain (personal emails are not accepted), your LinkedIn profile, company website, funding details, revenue, current AI spend, team size, and investors.",
-      "expiry": "ongoing",
-      "caveats": "Venture-backed startups only, with a live product. Company email must match your website (no personal emails). One grant per company. No fixed amount: sized by funding, revenue and AI spend. The FAQ says about six months of realistic usage (the figure this listing uses); the page body says six to twelve months. Credits are for Grok, Grok Build, Grok Bot, and the Grok API; the hero also mentions Cursor, which the FAQ credit list does not. 20% of credits on approval, 80% after onboarding.",
-      "why_it_matters": null,
-      "official_url": "https://x.ai/startups",
-      "released_at": null,
-      "last_verified": "2026-11-15",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T06:47:11Z"
-    },
-    {
-      "slug": "anthropic-claude-for-open-source",
-      "url": "https://that.promo/anthropic-claude-for-open-source",
-      "json_url": "https://that.promo/anthropic-claude-for-open-source.json",
-      "name": "Claude for Open Source Program",
-      "provider": "Anthropic",
-      "company": "anthropic",
-      "company_url": "https://that.promo/anthropic",
-      "category": "Model APIs",
-      "category_url": "https://that.promo/free-ai-api-credits",
-      "program": "open_source",
-      "status": "live",
-      "headline_amount": "6 mo",
-      "headline_note": "Claude Ultra",
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "6 months of free Claude Ultra",
-      "summary": "Six free months of a Claude Ultra subscription for people who maintain or contribute to widely used open source.",
-      "who_qualifies": "Maintainers/library authors (500+ dependent repos, 100+ dependent packages, or 200k+ monthly downloads); core contributors on recognized foundation projects; active contributors (100+ PRs merged into others' repos in last 12 months); community builders (repo with 20+ unique external contributors in last 12 months); or OpenSSF criticality score 0.4+; others may apply and explain",
-      "how_to_claim": "Apply on the program page",
-      "expiry": "ongoing",
-      "caveats": "This is a Claude subscription, not API credits. Paid plans resume after 6 months unless cancelled. Old claude.com/programs/open-source links return 404.",
-      "why_it_matters": null,
-      "official_url": "https://claude.com/contact-sales/claude-for-oss",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-16T06:38:48Z"
+      "updated_at": "2026-11-18T08:31:07Z"
     },
     {
       "slug": "exa-startup-education-grants",
@@ -6874,9 +6236,676 @@
       "why_it_matters": null,
       "official_url": "https://exa.ai/pricing",
       "released_at": null,
-      "last_verified": "2026-11-15",
+      "last_verified": "2026-11-18",
       "added_at": "2026-10-22T23:00:43Z",
-      "updated_at": "2026-11-15T08:17:16Z"
+      "updated_at": "2026-11-18T08:31:43Z"
+    },
+    {
+      "slug": "anthropic-claude-for-open-source",
+      "url": "https://that.promo/anthropic-claude-for-open-source",
+      "json_url": "https://that.promo/anthropic-claude-for-open-source.json",
+      "name": "Claude for Open Source Program",
+      "provider": "Anthropic",
+      "company": "anthropic",
+      "company_url": "https://that.promo/anthropic",
+      "category": "Model APIs",
+      "category_url": "https://that.promo/free-ai-api-credits",
+      "program": "open_source",
+      "status": "live",
+      "headline_amount": "6 mo",
+      "headline_note": "Claude Ultra",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "6 months of free Claude Ultra",
+      "summary": "Six free months of a Claude Ultra subscription for people who maintain or contribute to widely used open source.",
+      "who_qualifies": "Maintainers/library authors (500+ dependent repos, 100+ dependent packages, or 200k+ monthly downloads); core contributors on recognized foundation projects; active contributors (100+ PRs merged into others' repos in last 12 months); community builders (repo with 20+ unique external contributors in last 12 months); or OpenSSF criticality score 0.4+; others may apply and explain",
+      "how_to_claim": "Apply on the program page",
+      "expiry": "ongoing",
+      "caveats": "This is a Claude subscription, not API credits. Paid plans resume after 6 months unless cancelled. Old claude.com/programs/open-source links return 404.",
+      "why_it_matters": null,
+      "official_url": "https://claude.com/contact-sales/claude-for-oss",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:42Z"
+    },
+    {
+      "slug": "xai-grok-for-startups",
+      "url": "https://that.promo/xai-grok-for-startups",
+      "json_url": "https://that.promo/xai-grok-for-startups.json",
+      "name": "Grok for Startups",
+      "provider": "xAI",
+      "company": "xai",
+      "company_url": "https://that.promo/xai",
+      "category": "Model APIs",
+      "category_url": "https://that.promo/free-ai-api-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": null,
+      "headline_note": null,
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Credits sized to about six months of realistic usage (amount not stated); 20% on approval, 80% released once you are up and running",
+      "summary": "One credit balance for Grok, Grok Build, Grok Bot, and the Grok API, paid out in two stages.",
+      "who_qualifies": "Venture-backed startups with a live product and a company email matching the website",
+      "how_to_claim": "Apply at https://x.ai/startups/apply with a work email on your company website's domain (personal emails are not accepted), your LinkedIn profile, company website, funding details, revenue, current AI spend, team size, and investors.",
+      "expiry": "ongoing",
+      "caveats": "Venture-backed startups only, with a live product. Company email must match your website (no personal emails). One grant per company. No fixed amount: sized by funding, revenue and AI spend. The FAQ says about six months of realistic usage (the figure this listing uses); the page body says six to twelve months. Credits are for Grok, Grok Build, Grok Bot, and the Grok API; the hero also mentions Cursor, which the FAQ credit list does not. 20% of credits on approval, 80% after onboarding.",
+      "why_it_matters": null,
+      "official_url": "https://x.ai/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:40Z"
+    },
+    {
+      "slug": "firecrawl-student-program",
+      "url": "https://that.promo/firecrawl-student-program",
+      "json_url": "https://that.promo/firecrawl-student-program.json",
+      "name": "Firecrawl Student Program",
+      "provider": "Firecrawl",
+      "company": "firecrawl",
+      "company_url": "https://that.promo/firecrawl",
+      "category": "Data and search APIs",
+      "category_url": "https://that.promo/free-data-api-credits",
+      "program": null,
+      "status": "live",
+      "headline_amount": "10k",
+      "headline_note": "free credits",
+      "promo_code_needed": true,
+      "promo_code": "STUDENTEDU",
+      "value": "Verified students get 10,000 free credits.",
+      "summary": "Students get 10k Firecrawl credits with a public coupon code.",
+      "who_qualifies": "Students with a valid academic email enrolled in a college, university, or accredited program; educational or personal projects",
+      "how_to_claim": "Sign up with your edu email and enter the code STUDENTEDU in Settings > Billing",
+      "expiry": "ongoing",
+      "caveats": "For educational or personal projects only.",
+      "why_it_matters": null,
+      "official_url": "https://www.firecrawl.dev/student-program",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:38Z"
+    },
+    {
+      "slug": "workato-free-plan",
+      "url": "https://that.promo/workato-free-plan",
+      "json_url": "https://that.promo/workato-free-plan.json",
+      "name": "Workato Free plan",
+      "provider": "Workato",
+      "company": "workato",
+      "company_url": "https://that.promo/workato",
+      "category": "Business SaaS",
+      "category_url": "https://that.promo/startup-saas-deals",
+      "program": null,
+      "status": "live",
+      "headline_amount": "50k",
+      "headline_note": "one-time credits",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "50K one-time credits, $0/month",
+      "summary": "Workato's free tier for building AI agent workflows, with a one-time credit grant.",
+      "who_qualifies": "Anyone signing up with a work email or SSO",
+      "how_to_claim": "Start for free on the plan page",
+      "expiry": "ongoing",
+      "caveats": "Credits are a one-time grant of 50,000, not monthly; Workato Pro is the plan with recurring monthly credits. No credit card needed.",
+      "why_it_matters": null,
+      "official_url": "https://www.workato.com/free",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:37Z"
+    },
+    {
+      "slug": "tavily-free-plan",
+      "url": "https://that.promo/tavily-free-plan",
+      "json_url": "https://that.promo/tavily-free-plan.json",
+      "name": "Tavily free Researcher plan",
+      "provider": "Tavily",
+      "company": "tavily",
+      "company_url": "https://that.promo/tavily",
+      "category": "Data and search APIs",
+      "category_url": "https://that.promo/free-data-api-credits",
+      "program": null,
+      "status": "live",
+      "headline_amount": "1,000",
+      "headline_note": "API credits per month",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "1,000 API credits per month",
+      "summary": "Permanent free tier for Tavily's web search API.",
+      "who_qualifies": "Anyone; no credit card",
+      "how_to_claim": "Sign up and get an API key",
+      "expiry": "ongoing",
+      "caveats": "Credits reset on the 1st of each month. Requests stop when you run out.",
+      "why_it_matters": null,
+      "official_url": "https://www.tavily.com/pricing",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:35Z"
+    },
+    {
+      "slug": "datadog-for-startups",
+      "url": "https://that.promo/datadog-for-startups",
+      "json_url": "https://that.promo/datadog-for-startups.json",
+      "name": "Datadog for Startups",
+      "provider": "Datadog",
+      "company": "datadog",
+      "company_url": "https://that.promo/datadog",
+      "category": "Monitoring",
+      "category_url": "https://that.promo/free-monitoring-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$100k",
+      "headline_note": "up to, 1 year",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "A year of Datadog Pro, up to $100k in credits",
+      "summary": "One free year of Datadog for early startups that come through a partner.",
+      "who_qualifies": "Series A or earlier, referred by a Datadog partner, new to Datadog",
+      "how_to_claim": "Apply, start a trial while under review",
+      "expiry": "ongoing",
+      "caveats": "Partner referral required. Not open to current or past Datadog customers or anyone who already received DDFS credits. After approval you must confirm credit activation within 30 days, and accounts inactive for three months can be removed from the program.",
+      "why_it_matters": null,
+      "official_url": "https://www.datadoghq.com/partner/datadog-for-startups/",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:34Z"
+    },
+    {
+      "slug": "notion-for-startups",
+      "url": "https://that.promo/notion-for-startups",
+      "json_url": "https://that.promo/notion-for-startups.json",
+      "name": "Notion for Startups",
+      "provider": "Notion",
+      "company": "notion",
+      "company_url": "https://that.promo/notion",
+      "category": "Business SaaS",
+      "category_url": "https://that.promo/startup-saas-deals",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "6 mo",
+      "headline_note": "Business + AI free",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Business plan with Notion AI free for up to 6 months (Notion says it saves $12,000)",
+      "summary": "Up to six months of Notion Business with AI free for new startup workspaces.",
+      "who_qualifies": "Non-paying Notion customers under 100 employees; 6 months requires a partner, 3 months needs a business site and domain email",
+      "how_to_claim": "Unlock the startup offer on the page",
+      "expiry": "ongoing",
+      "caveats": "Length depends on partner affiliation and details provided. Only 1 month for very small teams or incomplete applications.",
+      "why_it_matters": null,
+      "official_url": "https://www.notion.com/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:32Z"
+    },
+    {
+      "slug": "retool-for-startups",
+      "url": "https://that.promo/retool-for-startups",
+      "json_url": "https://that.promo/retool-for-startups.json",
+      "name": "Retool for Startups",
+      "provider": "Retool",
+      "company": "retool",
+      "company_url": "https://that.promo/retool",
+      "category": "Dev tools",
+      "category_url": "https://that.promo/free-dev-tools",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$60k",
+      "headline_note": "up to, 1 year free",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "100% off for one year, value up to $60K; 25% off the following year",
+      "summary": "A free year of Retool for internal tools.",
+      "who_qualifies": "Raised under $10M, founded in the last 10 years, new customer on a monthly Team or Business plan",
+      "how_to_claim": "Upgrade to a monthly plan, then apply",
+      "expiry": "ongoing (discount lasts one year)",
+      "caveats": "Must upgrade to a paid monthly plan first. Can't be combined with sales discounts.",
+      "why_it_matters": null,
+      "official_url": "https://retool.com/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:31Z"
+    },
+    {
+      "slug": "openrouter-for-startups",
+      "url": "https://that.promo/openrouter-for-startups",
+      "json_url": "https://that.promo/openrouter-for-startups.json",
+      "name": "OpenRouter for Startups",
+      "provider": "OpenRouter",
+      "company": "openrouter",
+      "company_url": "https://that.promo/openrouter",
+      "category": "Model APIs",
+      "category_url": "https://that.promo/free-ai-api-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$3k",
+      "headline_note": "up to, inference",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Up to $3,000 in inference credits and 0% processing fees for 12 months",
+      "summary": "Inference credits that work across 600+ models through one API.",
+      "who_qualifies": "Pre-Series B, AI-native full-time, referred by an approved partner, public site, domain email, under $500 lifetime spend, no prior startup credits",
+      "how_to_claim": "Apply on the startups page",
+      "expiry": "ongoing",
+      "caveats": "Partner referral required. Most credits expire 6 months after they are issued; the 0% fee waiver lasts 12 months.",
+      "why_it_matters": null,
+      "official_url": "https://openrouter.ai/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:29Z"
+    },
+    {
+      "slug": "openai-codex-for-open-source",
+      "url": "https://that.promo/openai-codex-for-open-source",
+      "json_url": "https://that.promo/openai-codex-for-open-source.json",
+      "name": "Codex for Open Source",
+      "provider": "OpenAI",
+      "company": "openai",
+      "company_url": "https://that.promo/openai",
+      "category": "AI coding tools",
+      "category_url": "https://that.promo/free-ai-coding-tools",
+      "program": "open_source",
+      "status": "live",
+      "headline_amount": "6 mo",
+      "headline_note": "ChatGPT Pro",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Six months of ChatGPT Pro with Codex, API credits via the Codex Open Source Fund (amount not stated), conditional Codex Security access",
+      "summary": "OpenAI gives OSS maintainers ChatGPT Pro with Codex, plus API credits for PR review and maintainer automation.",
+      "who_qualifies": "Core maintainers or people running widely used public projects; others can apply and explain",
+      "how_to_claim": "Apply on the program page (agree to the program terms)",
+      "expiry": "ongoing",
+      "caveats": "API credit amount per project not stated. Codex Security access is reviewed case by case for core maintainers with write access.",
+      "why_it_matters": null,
+      "official_url": "https://developers.openai.com/community/codex-for-oss",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:28Z"
+    },
+    {
+      "slug": "okta-auth0-for-startups",
+      "url": "https://that.promo/okta-auth0-for-startups",
+      "json_url": "https://that.promo/okta-auth0-for-startups.json",
+      "name": "Auth0 for Startups",
+      "provider": "Okta / Auth0",
+      "company": "okta-auth0",
+      "company_url": "https://that.promo/okta-auth0",
+      "category": "Auth",
+      "category_url": "https://that.promo/free-auth-for-startups",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "1 year",
+      "headline_note": "B2B Professional free",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "One year of the B2B Professional plan free, up to 100k MAU",
+      "summary": "A free year of Auth0's B2B Professional login stack.",
+      "who_qualifies": "Venture-backed with under $5M raised and under $1M ARR (more criteria listed on the page)",
+      "how_to_claim": "Apply on the startups page",
+      "expiry": "ongoing (12 months)",
+      "caveats": "Must be venture-backed, under $5M raised, under $1M ARR and less than 2 years from incorporation. Not for existing paid Auth0/Okta customers or past members of the program.",
+      "why_it_matters": null,
+      "official_url": "https://auth0.com/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:26Z"
+    },
+    {
+      "slug": "microsoft-azure-for-students",
+      "url": "https://that.promo/microsoft-azure-for-students",
+      "json_url": "https://that.promo/microsoft-azure-for-students.json",
+      "name": "Azure for Students",
+      "provider": "Microsoft",
+      "company": "microsoft",
+      "company_url": "https://that.promo/microsoft",
+      "category": "Cloud",
+      "category_url": "https://that.promo/free-cloud-credits",
+      "program": null,
+      "status": "live",
+      "headline_amount": "$100",
+      "headline_note": "Azure credit",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "$100 Azure credit to use within 12 months, plus free monthly amounts of 20+ popular services for 12 months, 65+ always-free services and free developer tools",
+      "summary": "Full-time university students get $100 of Azure credit, free service amounts and free dev tools, with no credit card.",
+      "who_qualifies": "Students with an academic email; no credit card",
+      "how_to_claim": "Sign up via the Azure free services page",
+      "expiry": "ongoing",
+      "caveats": "Full-time university students only, signing up with a school email. One account per person. Credit can't be used on Azure Marketplace offers. Renew yearly while you're a student. The 12-month free service amounts are for new Azure customers only.",
+      "why_it_matters": null,
+      "official_url": "https://azure.microsoft.com/en-us/free/students",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:25Z"
+    },
+    {
+      "slug": "google-cloud-startups",
+      "url": "https://that.promo/google-cloud-startups",
+      "json_url": "https://that.promo/google-cloud-startups.json",
+      "name": "Google for Startups Cloud Program",
+      "provider": "Google",
+      "company": "google",
+      "company_url": "https://that.promo/google",
+      "category": "Cloud",
+      "category_url": "https://that.promo/free-cloud-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$350k",
+      "headline_note": "up to, over 2 years",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Start tier $2k; Scale tiers $200K to $350K in Cloud credits over two years, plus 12 months of Workspace Business Plus",
+      "summary": "Tiered Google Cloud credits for startups, from $2k for early teams up to $350k for funded ones.",
+      "who_qualifies": "Start: founded in the last 2 years with an MVP. Scale: Pre-Seed to Series A funding, founded in the last 3 to 5 years",
+      "how_to_claim": "Apply on the program page",
+      "expiry": "ongoing",
+      "caveats": "Excludes companies that have IPO'd or been acquired, crypto mining, and some others. Past Google Cloud credit use can affect acceptance.",
+      "why_it_matters": null,
+      "official_url": "https://cloud.google.com/startup",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:23Z"
+    },
+    {
+      "slug": "github-for-startups",
+      "url": "https://that.promo/github-for-startups",
+      "json_url": "https://that.promo/github-for-startups.json",
+      "name": "GitHub for Startups",
+      "provider": "GitHub",
+      "company": "github",
+      "company_url": "https://that.promo/github",
+      "category": "Dev tools",
+      "category_url": "https://that.promo/free-dev-tools",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$10k",
+      "headline_note": "platform credits",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "$10,000 in flexible platform credits",
+      "summary": "$10k of credits across GitHub Enterprise, Copilot, Advanced Security, and Actions.",
+      "who_qualifies": "Partner-affiliated startups",
+      "how_to_claim": "Apply through a GitHub for Startups partner",
+      "expiry": "ongoing",
+      "caveats": "Partner affiliation required, plus outside funding up to Series B. Must be new to GitHub Enterprise (not on it in the past six months) and never have received GitHub credits or Enterprise licenses. A valid payment method is needed and GitHub places an authorization charge after onboarding. Credits last up to 12 months, then active products move to paid billing.",
+      "why_it_matters": null,
+      "official_url": "https://github.com/enterprise/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:22Z"
+    },
+    {
+      "slug": "firecrawl-free-plan",
+      "url": "https://that.promo/firecrawl-free-plan",
+      "json_url": "https://that.promo/firecrawl-free-plan.json",
+      "name": "Firecrawl free plan",
+      "provider": "Firecrawl",
+      "company": "firecrawl",
+      "company_url": "https://that.promo/firecrawl",
+      "category": "Data and search APIs",
+      "category_url": "https://that.promo/free-data-api-credits",
+      "program": null,
+      "status": "live",
+      "headline_amount": "1,000",
+      "headline_note": "credits per month",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "1,000 credits per month (about 500 searches or 1,000 pages)",
+      "summary": "Free monthly scraping and search credits from Firecrawl.",
+      "who_qualifies": "Anyone; no card",
+      "how_to_claim": "Sign up",
+      "expiry": "ongoing",
+      "caveats": "Low rate limits, 2 concurrent requests. The same credits also cover Firecrawl Directory in ChatGPT and Claude: searching 240M+ professional profiles is free, and detailed profile and contact lookups spend credits.",
+      "why_it_matters": null,
+      "official_url": "https://www.firecrawl.dev/pricing",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:20Z"
+    },
+    {
+      "slug": "exa-free-plan",
+      "url": "https://that.promo/exa-free-plan",
+      "json_url": "https://that.promo/exa-free-plan.json",
+      "name": "Exa Starter (free)",
+      "provider": "Exa",
+      "company": "exa",
+      "company_url": "https://that.promo/exa",
+      "category": "Data and search APIs",
+      "category_url": "https://that.promo/free-data-api-credits",
+      "program": null,
+      "status": "live",
+      "headline_amount": "$10",
+      "headline_note": "per month",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "$10 in credits every month plus a $10 onboarding bonus",
+      "summary": "Exa's free tier gives monthly search API credit, which it pitches as over $120 a year.",
+      "who_qualifies": "Anyone; no payment method",
+      "how_to_claim": "Sign up",
+      "expiry": "ongoing",
+      "caveats": "Usage is billed per request at Exa rates.",
+      "why_it_matters": null,
+      "official_url": "https://exa.ai/pricing",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:19Z"
+    },
+    {
+      "slug": "e2b-for-startups",
+      "url": "https://that.promo/e2b-for-startups",
+      "json_url": "https://that.promo/e2b-for-startups.json",
+      "name": "E2B for Startups",
+      "provider": "E2B",
+      "company": "e2b",
+      "company_url": "https://that.promo/e2b",
+      "category": "GPU and compute",
+      "category_url": "https://that.promo/free-gpu-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$20k",
+      "headline_note": "+ Pro tier",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "One-time $20,000 in E2B credits and the Pro tier",
+      "summary": "$20k of sandbox credits for teams building AI agents.",
+      "who_qualifies": "Startups under 3 years old that have raised under $5M and are new to E2B; research teams also eligible",
+      "how_to_claim": "Apply via the program form; YC, a16z Speedrun, and Antler teams apply through their portal",
+      "expiry": "ongoing",
+      "caveats": "One-time grant. First-time E2B users only.",
+      "why_it_matters": null,
+      "official_url": "https://e2b.dev/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:17Z"
+    },
+    {
+      "slug": "convex-for-startups",
+      "url": "https://that.promo/convex-for-startups",
+      "json_url": "https://that.promo/convex-for-startups.json",
+      "name": "Convex for Startups",
+      "provider": "Convex",
+      "company": "convex",
+      "company_url": "https://that.promo/convex",
+      "category": "Databases",
+      "category_url": "https://that.promo/free-database-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "1 year",
+      "headline_note": "Professional free",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Up to 1 year free of Convex Professional, no seat fees, 30% off usage-based fees up to $30k",
+      "summary": "A free year of Convex Professional for small startups.",
+      "who_qualifies": "Series A or earlier, under 20 employees, under 3 years old, raised under $3M, live site or MVP",
+      "how_to_claim": "Be on Starter with a card on file, then apply",
+      "expiry": "ongoing",
+      "caveats": "Card on file needed before applying.",
+      "why_it_matters": null,
+      "official_url": "https://www.convex.dev/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:15Z"
+    },
+    {
+      "slug": "cloudflare-for-startups",
+      "url": "https://that.promo/cloudflare-for-startups",
+      "json_url": "https://that.promo/cloudflare-for-startups.json",
+      "name": "Cloudflare for Startups",
+      "provider": "Cloudflare",
+      "company": "cloudflare",
+      "company_url": "https://that.promo/cloudflare",
+      "category": "Cloud",
+      "category_url": "https://that.promo/free-cloud-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$350k",
+      "headline_note": "up to, 1 year",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Tier 3 $10k, Tier 2 $100k, Tier 1 $350k in credits for a year",
+      "summary": "Cloudflare developer platform credits, with $10k available without any funding.",
+      "who_qualifies": "Tier 3: bootstrapped or under $1M raised. Tier 2: under $5M from an affiliated partner. Tier 1: $5M+ from an affiliated partner",
+      "how_to_claim": "Apply on the program page",
+      "expiry": "ongoing (credits for one year)",
+      "caveats": "From December 1, 2026, Workers AI is not covered by credits for incoming startups. Until then, existing startups have Workers AI caps of $2,500 (Tier 3), $10,000 (Tier 2) and $50,000 (Tier 1). R2 is capped at $10,000. AI Gateway is temporarily not covered. A business email on your own domain is required and only first-time applicants qualify. You also need to be founded in the last 10 years, funded up to Series B, have a live website and a public social profile. The qualify list also says funded within the last 12 months, which sits next to Tier 3 (bootstrapped or under $1M, no minimum funding).",
+      "why_it_matters": null,
+      "official_url": "https://www.cloudflare.com/startups/",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:14Z"
+    },
+    {
+      "slug": "amazon-web-services-aws-activate",
+      "url": "https://that.promo/amazon-web-services-aws-activate",
+      "json_url": "https://that.promo/amazon-web-services-aws-activate.json",
+      "name": "AWS Activate Credits",
+      "provider": "Amazon Web Services",
+      "company": "amazon-web-services",
+      "company_url": "https://that.promo/amazon-web-services",
+      "category": "Cloud",
+      "category_url": "https://that.promo/free-cloud-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$200k",
+      "headline_note": "up to",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Founders: up to $5,000 (start with $1,000). Portfolio: up to $200,000. AI startups: $200,000+ by invite",
+      "summary": "AWS credits for startups by stage, from $1k self-funded to $200k with a partner investor.",
+      "who_qualifies": "Pre-Series B, founded in the last 10 years, AWS account on the Paid Tier plan, new to Activate or requesting more",
+      "how_to_claim": "Create an AWS Builder ID and apply; Portfolio needs an Activate Provider Org ID",
+      "expiry": "ongoing",
+      "caveats": "Portfolio tier requires an Org ID from a VC or accelerator. Kiro Startup Credits are a separate option for startups without Activate credits.",
+      "why_it_matters": null,
+      "official_url": "https://aws.amazon.com/startups/credits/",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:12Z"
+    },
+    {
+      "slug": "runpod-starter-credits",
+      "url": "https://that.promo/runpod-starter-credits",
+      "json_url": "https://that.promo/runpod-starter-credits.json",
+      "name": "Runpod Startup Program - Starter Tier",
+      "provider": "Runpod",
+      "company": "runpod",
+      "company_url": "https://that.promo/runpod",
+      "category": "GPU and compute",
+      "category_url": "https://that.promo/free-gpu-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": "$1k",
+      "headline_note": "free credits",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Starter: $1,000 in free credits (under $1M raised). Venture: $5,000 for verified-VC portfolio companies (under $5M raised). Growth Track: bonus credits on commit ($10k on $25k, $25k on $50k)",
+      "summary": "$1k of GPU credits on Runpod with full platform access.",
+      "who_qualifies": "Starter: raised under $1M with working products and near-term GPU needs, new to Runpod. Venture: portfolio of a verified VC (a16z, Neo and South Park Commons named), raised under $5M. Growth Track: raised over $5M (commit required; existing customers allowed)",
+      "how_to_claim": "Apply on the program page",
+      "expiry": "ongoing",
+      "caveats": "One free offer (Starter or Venture) per company. Credits expire 1 year after issue and work across Pods, Serverless, Clusters and Storage. A separate Venture tier gives $5,000 to portfolio companies of a verified VC that raised under $5M. The Growth Track is a deposit bonus ($10k on a $25k commit, $25k on a $50k commit), not free credit.",
+      "why_it_matters": null,
+      "official_url": "https://www.runpod.io/startup-program",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:11Z"
+    },
+    {
+      "slug": "stripe-atlas-credits",
+      "url": "https://that.promo/stripe-atlas-credits",
+      "json_url": "https://that.promo/stripe-atlas-credits.json",
+      "name": "Stripe Atlas product credits",
+      "provider": "Stripe",
+      "company": "stripe",
+      "company_url": "https://that.promo/stripe",
+      "category": "Business SaaS",
+      "category_url": "https://that.promo/startup-saas-deals",
+      "program": null,
+      "status": "live",
+      "headline_amount": "$2.5k",
+      "headline_note": "+ $50k discounts",
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "$2,500 in Stripe product credits in the first year, plus more than $200,000 in partner offers (AWS, Google, OpenRouter and others); $500 when you open a Stripe Treasury business account within 7 days of incorporation; C-Corps can earn another $1,500 (LLCs $1,000) for spending $5,000 on Treasury within 90 days",
+      "summary": "Atlas incorporation comes with Stripe credits and partner discounts.",
+      "who_qualifies": "Companies incorporated through Stripe Atlas",
+      "how_to_claim": "Incorporate with Atlas",
+      "expiry": "ongoing",
+      "caveats": "Atlas itself is paid ($500 one-time setup fee, then $100 a year for the registered agent). The $500 Treasury reward requires opening a Stripe Treasury business account within 7 days of incorporation (terms at https://docs.stripe.com/atlas/stripe-treasury-offer). The extra Treasury spend bonus ($1,500 for C-Corps, $1,000 for LLCs, after spending $5,000 within 90 days) is listed in Stripe's Atlas perks partners article (https://support.stripe.com/questions/stripe-atlas-perks-partners), not on the main Atlas page.",
+      "why_it_matters": null,
+      "official_url": "https://stripe.com/atlas",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:31:09Z"
+    },
+    {
+      "slug": "modal-for-startups",
+      "url": "https://that.promo/modal-for-startups",
+      "json_url": "https://that.promo/modal-for-startups.json",
+      "name": "Modal for Startups",
+      "provider": "Modal",
+      "company": "modal",
+      "company_url": "https://that.promo/modal",
+      "category": "GPU and compute",
+      "category_url": "https://that.promo/free-gpu-credits",
+      "program": "startups",
+      "status": "live",
+      "headline_amount": null,
+      "headline_note": null,
+      "promo_code_needed": null,
+      "promo_code": null,
+      "value": "Free credits (amount not stated). Credits last 1 year and cannot be reinstated if they expire.",
+      "summary": "GPU and compute credits on Modal for funded startups.",
+      "who_qualifies": "New to Modal; VC funding from a partner fund, or over $1M from any fund; larger tiers for post-Series B",
+      "how_to_claim": "Apply on the startups page",
+      "expiry": "ongoing (credits last 1 year)",
+      "caveats": "One-time grant per tier. Amount not stated.",
+      "why_it_matters": null,
+      "official_url": "https://modal.com/startups",
+      "released_at": null,
+      "last_verified": "2026-11-18",
+      "added_at": "2026-10-22T23:00:43Z",
+      "updated_at": "2026-11-18T08:25:53Z"
     }
   ]
 }
