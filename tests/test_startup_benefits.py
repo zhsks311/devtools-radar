@@ -61,3 +61,13 @@ class CategoryFilterTests(unittest.TestCase):
  def test_missing_category_does_not_create_empty_option(self):
   page=render(prepare({'offers':[BenefitTests().row()]},datetime(2026,11,18,tzinfo=timezone.utc)))
   self.assertEqual(page.count('<option value="">'),1)
+
+class CountryClaimTests(unittest.TestCase):
+ def test_source_region_claim_preserved_without_independent_confirmation(self):
+  row={'slug':'global-trial','name':'Trial','access':'free','url':'https://saasoffers.tech/offers/global-trial','offer':'14-day trial','eligibility':'Available worldwide; new customers only.'}
+  data=prepare_saasoffers({'deals':[row]},datetime(2026,11,18,tzinfo=timezone.utc))
+  self.assertEqual(data['offers'][0]['who_qualifies'],row['eligibility'])
+  page=render(data)
+  self.assertIn('Available worldwide; new customers only.',page)
+  self.assertIn('Country availability is not independently verified',page)
+  self.assertNotIn('Country availability is not supplied',page)

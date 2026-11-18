@@ -64,7 +64,7 @@ def prepare_saasoffers(data, now):
         offers.append({'slug':slug,'url':r['url'],'name':r.get('name'),'provider':r.get('name'),
           'category':r.get('category'),'summary':r.get('description'),'value':r.get('offer'),
           'who_qualifies':r.get('eligibility'),'expiry':expiry,'last_verified':None,'official_url':None,
-          'caveats':'Source lists free access to this offer, not unconditional free software. Eligibility and current merchant terms must be checked. Country availability is not supplied.',
+          'caveats':'Source lists free access to this offer, not unconditional free software. Eligibility and current merchant terms must be checked. Country availability is not independently verified; any regional claim in the eligibility text is source-reported.',
           'how_to_claim':'Read the SaaSOffers source detail page. This API does not provide a direct merchant URL.'})
     return {'source':'SaaSOffers','policy_url':'https://saasoffers.tech/ai','collected_at':now.isoformat(),
       'source_generated_at':data.get('updated'),'count':len(offers),'offers':offers}
