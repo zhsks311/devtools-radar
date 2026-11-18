@@ -1407,6 +1407,14 @@ Recorded price: 77.88 USD. Seller price observation dated 2026-11-17T20:36:05.79
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
+### Proton Pass Family · first 12 months
+Seller: Proton
+Product URL: https://proton.me/pass/black-friday
+Product-link review: 2026-11-18T13:36:07.236561+00:00 (not a stock check)
+Recorded price: 33.48 USD. Seller price observation dated 2026-11-18T13:36:07.236561+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### Ulysses · US first-year offer
 Seller: Ulysses / Apple App Store
 Product URL: https://ulysses.app/howiwrite/
