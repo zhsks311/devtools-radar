@@ -943,6 +943,20 @@
           "No cart/checkout, actual address, freight, final stock or payment tested. No guarantee of shipping outside Australia.",
           "This audit did not independently recheck the Nintendo SRP source or validate historical lowest price."
         ]
+      },
+      "image": {
+        "path": "/assets/deals/nintendo-switch-2.webp",
+        "alt": "Nintendo Switch 2 console in its dock with Joy-Con 2 controllers and grip",
+        "kind": "licensed_product_photo",
+        "credit": "PantheraLeo1359531 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Spieleequipment_20250605.png",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "rights_basis": "Photographer publishes this work under CC BY 4.0, permitting commercial reuse with attribution.",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Spieleequipment_20250605.png",
+        "checked_at": "2026-11-18T02:10:15.023879+00:00",
+        "processing": "Proportional resize and WebP compression only; no cropping. Metadata omitted.",
+        "sha256": "e8826de188f76382dc58770e5fe34d14316b86c8911656e75c3fc54b68a72d9b"
       }
     },
     {
@@ -4313,6 +4327,20 @@
         "matched_keyword": null,
         "label": "View product at EB Games Australia",
         "label_kind": "retailer"
+      },
+      "image": {
+        "path": "/assets/deals/nintendo-switch-2.webp",
+        "alt": "Nintendo Switch 2 console in its dock with Joy-Con 2 controllers and grip",
+        "kind": "licensed_product_photo",
+        "credit": "PantheraLeo1359531 / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Spieleequipment_20250605.png",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "rights_basis": "Photographer publishes this work under CC BY 4.0, permitting commercial reuse with attribution.",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Spieleequipment_20250605.png",
+        "checked_at": "2026-11-18T02:10:15.023879+00:00",
+        "processing": "Proportional resize and WebP compression only; no cropping. Metadata omitted.",
+        "sha256": "e8826de188f76382dc58770e5fe34d14316b86c8911656e75c3fc54b68a72d9b"
       }
     },
     {
@@ -6952,6 +6980,20 @@
               "No cart/checkout, actual address, freight, final stock or payment tested. No guarantee of shipping outside Australia.",
               "This audit did not independently recheck the Nintendo SRP source or validate historical lowest price."
             ]
+          },
+          "image": {
+            "path": "/assets/deals/nintendo-switch-2.webp",
+            "alt": "Nintendo Switch 2 console in its dock with Joy-Con 2 controllers and grip",
+            "kind": "licensed_product_photo",
+            "credit": "PantheraLeo1359531 / Wikimedia Commons",
+            "credit_url": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Spieleequipment_20250605.png",
+            "license": "CC BY 4.0",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
+            "rights_basis": "Photographer publishes this work under CC BY 4.0, permitting commercial reuse with attribution.",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Spieleequipment_20250605.png",
+            "checked_at": "2026-11-18T02:10:15.023879+00:00",
+            "processing": "Proportional resize and WebP compression only; no cropping. Metadata omitted.",
+            "sha256": "e8826de188f76382dc58770e5fe34d14316b86c8911656e75c3fc54b68a72d9b"
           }
         }
       ]
