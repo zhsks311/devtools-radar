@@ -42,10 +42,22 @@ jobs:
         run: python tools/collect_deal_feeds.py --output collection-output --previous published/feeds/status.json
       - name: Validate and render complete attributed source feed
         run: python tools/publish_deal_feed.py --collected collection-output --destination published/feeds
-      - name: Collect and publish attributed SaaS benefits
+      # Stage each independent source before replacing its last-good files.
+      # A failed provider must not suppress another provider's successful refresh.
+      - name: Collect attributed that.promo benefits
+        id: thatpromo
+        continue-on-error: true
         run: |
-          python tools/publish_startup_benefits.py --destination published/feeds/startup-benefits
-          python tools/publish_startup_benefits.py --source saasoffers --destination published/feeds/saasoffers
+          python tools/publish_startup_benefits.py --destination staged/thatpromo
+          mkdir -p published/feeds/startup-benefits
+          cp staged/thatpromo/{data.json,index.html} published/feeds/startup-benefits/
+      - name: Collect attributed SaaSOffers benefits
+        id: saasoffers
+        continue-on-error: true
+        run: |
+          python tools/publish_startup_benefits.py --source saasoffers --destination staged/saasoffers
+          mkdir -p published/feeds/saasoffers
+          cp staged/saasoffers/{data.json,index.html} published/feeds/saasoffers/
       - name: Commit only feed files without overwriting current site
         run: |
           cd published
@@ -68,6 +80,11 @@ jobs:
           gh api --method POST repos/${{ github.repository }}/pages/builds
       - name: Verify live collection timestamp
         run: python tools/verify_live_feed.py --expected published/feeds/status.json
+      - name: Report partial collection failure after publishing healthy sources
+        if: ${{ always() && (steps.thatpromo.outcome == 'failure' || steps.saasoffers.outcome == 'failure') }}
+        run: |
+          echo '::error::One or more SaaS sources failed. Their last-good files and original timestamps were retained; healthy sources were allowed to publish.'
+          exit 1
       - if: always()
         uses: actions/upload-artifact@v4
         with:

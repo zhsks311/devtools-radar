@@ -41,6 +41,42 @@ class FeedPublicationTests(unittest.TestCase):
   self.assertIn('timeout-minutes: 20',w)
   self.assertNotIn('upload-pages-artifact',w);self.assertNotIn('deploy-pages@',w)
   self.assertIn("source['status'] not in",Path('tools/verify_live_feed.py').read_text())
+ def test_independent_saas_refreshes_stage_before_replacing_last_good(self):
+  from pathlib import Path
+  w=Path('.github/workflows/deal-feeds.yml').read_text()
+  for source,target in [('thatpromo','startup-benefits'),('saasoffers','saasoffers')]:
+   start=w.index('        id: '+source)
+   end=w.index('      - name:',start)
+   step=w[start:end]
+   self.assertIn('continue-on-error: true',step)
+   self.assertIn('--destination staged/'+source,step)
+   self.assertIn('cp staged/'+source+'/{data.json,index.html} published/feeds/'+target+'/',step)
+   self.assertLess(step.index('python tools/'),step.index('cp staged/'))
+  report=w.index('name: Report partial collection failure')
+  self.assertGreater(report,w.index('name: Verify live collection timestamp'))
+  self.assertIn("steps.thatpromo.outcome == 'failure'",w)
+  self.assertIn("steps.saasoffers.outcome == 'failure'",w)
+  self.assertIn('exit 1',w[report:])
+ def test_failed_source_does_not_replace_last_good_but_other_source_can_publish(self):
+  import os,subprocess,tempfile
+  from pathlib import Path
+  workflow=Path('.github/workflows/deal-feeds.yml').read_text()
+  with tempfile.TemporaryDirectory() as tmp:
+   root=Path(tmp);bin_dir=root/'bin';bin_dir.mkdir()
+   fake=bin_dir/'python'
+   fake.write_text('#!/bin/sh\ncase "$*" in *--source*) mkdir -p staged/saasoffers; echo fresh > staged/saasoffers/data.json; echo fresh > staged/saasoffers/index.html;; *) mkdir -p staged/thatpromo; echo incomplete > staged/thatpromo/data.json; exit 1;; esac\n')
+   fake.chmod(0o755)
+   env=dict(os.environ,PATH=str(bin_dir)+os.pathsep+os.environ['PATH'])
+   for source,target in [('thatpromo','startup-benefits'),('saasoffers','saasoffers')]:
+    dest=root/'published'/'feeds'/target;dest.mkdir(parents=True)
+    for name in ('data.json','index.html'):(dest/name).write_text('last-good')
+    start=workflow.index('        id: '+source);end=workflow.index('      - name:',start)
+    script=workflow[start:end].split('        run: |\n',1)[1]
+    script='\n'.join(line[10:] for line in script.splitlines() if line.startswith('          '))
+    result=subprocess.run(['bash','-e','-c',script],cwd=root,env=env,capture_output=True)
+    self.assertEqual(result.returncode,1 if source=='thatpromo' else 0)
+    for name in ('data.json','index.html'):
+     self.assertEqual((dest/name).read_text().strip(),'last-good' if source=='thatpromo' else 'fresh')
  def test_feed_commit_rebase_preserves_concurrent_site_commit(self):
   import tempfile,subprocess
   from pathlib import Path
