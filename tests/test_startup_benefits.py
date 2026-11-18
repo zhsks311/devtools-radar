@@ -48,3 +48,16 @@ class SearchFeedbackTests(unittest.TestCase):
   self.assertIn('id="no-results" hidden',page)
   self.assertIn('검색 결과가 없습니다',page)
   self.assertIn('search.value.trim().toLowerCase()',page)
+
+class CategoryFilterTests(unittest.TestCase):
+ def test_categories_are_unique_escaped_and_combined_with_search(self):
+  rows=[BenefitTests().row(category='Email & forms'),dict(BenefitTests().row(category='Email & forms'),slug='two'),dict(BenefitTests().row(category='AI'),slug='three')]
+  page=render(prepare({'offers':rows},datetime(2026,11,18,tzinfo=timezone.utc)))
+  self.assertEqual(page.count('<option value="Email &amp; forms">'),1)
+  self.assertIn('data-category="Email &amp; forms"',page)
+  self.assertIn('x.dataset.category!==category.value',page)
+  self.assertIn("category.addEventListener('change',filterOffers)",page)
+  self.assertIn('<label for="category">',page)
+ def test_missing_category_does_not_create_empty_option(self):
+  page=render(prepare({'offers':[BenefitTests().row()]},datetime(2026,11,18,tzinfo=timezone.utc)))
+  self.assertEqual(page.count('<option value="">'),1)
