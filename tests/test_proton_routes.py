@@ -25,10 +25,24 @@ class ProtonRoutesTest(unittest.TestCase):
   from pathlib import Path
   d=json.loads(Path('data/deals_en.json').read_text());t=json.loads(Path('data/deal_localizations.json').read_text())
   for row in d['feed']:
-   if row['id'].startswith('proton-'):
+   if row['id'].startswith('proton-') and row['id'] != 'proton-pass-family-black-friday-annual':
     self.assertEqual(row['purchase_eligibility']['countries_confirmed'],[])
     self.assertEqual([s['url'] for s in row['alternative_review']['sources']],['https://proton.me/mail/black-friday'])
     for lang,loc in t[row['id']].items():
      for value in ['77.88','119.88','500','Unlimited']:
       self.assertIn(value,loc['buying_note'])
     self.assertIn('not annual renewal',row['alternative_review']['evidence'])
+
+ def test_family_has_separate_billing_and_eligibility(self):
+  import json
+  from pathlib import Path
+  d=next(x for x in json.loads(Path('data/deals_en.json').read_text())['feed'] if x['id']=='proton-pass-family-black-friday-annual')
+  t=json.loads(Path('data/deal_localizations.json').read_text())[d['id']]
+  self.assertEqual(d['price'],33.48)
+  self.assertEqual(d['purchase_eligibility']['countries_confirmed'],[])
+  self.assertIsNone(d['original_price'])
+  self.assertEqual(d['image']['path'],'/assets/deals/proton-pass.webp')
+  for loc in t.values():
+   self.assertIn('59.88',loc['conditions'])
+   self.assertIn('33.48',loc['conditions'])
+   self.assertIn('Visionary',loc['conditions'])

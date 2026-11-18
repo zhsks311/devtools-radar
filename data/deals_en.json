@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T03:58:19.734731+00:00",
+  "generated_at": "2026-11-18T13:36:07.236561+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -125,6 +125,135 @@
         "processing": "Proportional resize to 980px width and WebP compression only; no cropping, invented UI or content change."
       },
       "price_variant": "Unlimited / first 12 months / upfront annual payment"
+    },
+    {
+      "id": "proton-pass-family-black-friday-annual",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Proton Pass Family · first 12 months",
+      "product": "Proton Pass Family · first 12 months",
+      "store": "Proton",
+      "storefront_country": null,
+      "price": 33.48,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital subscription",
+      "rocket": false,
+      "specs": [
+        "Up to six password-manager accounts",
+        "First 12 months prepaid"
+      ],
+      "briefing": [
+        "Manage passwords across devices for up to six people.",
+        "New users: USD 33.48 prepaid for the first 12 months, then USD 59.88 every 12 months automatically unless canceled. Up to six Pass accounts, not the Proton Family suite. Existing users receive account-specific offers. Active Mail Plus, VPN Plus, Drive Plus, Unlimited, Proton Family, Visionary, Duo or business subscribers cannot join this Pass Family group. Country eligibility, tax and checkout untested; expiry unspecified."
+      ],
+      "audience": "New users; eligible Pass accounts only. Country eligibility unverified.",
+      "source": {
+        "id": "proton-official",
+        "label": "Proton official Black Friday product offer",
+        "url": "https://proton.me/pass/black-friday"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-18",
+      "score": null,
+      "disclosure": "No affiliate tracking. Introductory annual price; automatic renewal costs more. Final checkout not tested.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://proton.me/pass/black-friday",
+        "tracked": false,
+        "label": "View official offer",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital subscription; no shipping.",
+        "activation": "New users: USD 33.48 prepaid for the first 12 months, then USD 59.88 every 12 months automatically unless canceled. Up to six Pass accounts, not the Proton Family suite. Existing users receive account-specific offers. Active Mail Plus, VPN Plus, Drive Plus, Unlimited, Proton Family, Visionary, Duo or business subscribers cannot join this Pass Family group. Country eligibility, tax and checkout untested; expiry unspecified.",
+        "payment": "Korean billing eligibility and checkout not tested.",
+        "tax": "Taxes and final total require checkout.",
+        "returns": "Seller advertises a 30-day money-back guarantee.",
+        "evidence_url": "https://proton.me/pass/black-friday",
+        "checked_at": "2026-11-18"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-18T13:36:07.236561+00:00",
+        "url": "https://proton.me/pass/black-friday",
+        "product_match": true,
+        "evidence": "Official offer explicitly bills Pass Family USD 33.48 for first 12 months, then USD 59.88/12 months. Ambiguous USD 2.79 first-month headline is not used as a payable monthly price. Official support confirms admin plus five users and incompatible subscriptions. No checkout performed."
+      },
+      "price_review": {
+        "id": "proton-pass-family-black-friday-annual",
+        "product": "Proton Pass Family · first 12 months",
+        "seller_url": "https://proton.me/pass/black-friday",
+        "recorded_price": 33.48,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 33.48,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://proton.me/pass/black-friday",
+            "observed_at": "2026-11-18T13:36:07.236561+00:00",
+            "result": "Official offer explicitly bills Pass Family USD 33.48 for first 12 months, then USD 59.88/12 months. Ambiguous USD 2.79 first-month headline is not used as a payable monthly price. Official support confirms admin plus five users and incompatible subscriptions. No checkout performed."
+          },
+          {
+            "url": "https://proton.me/support/pass-family-add-user",
+            "observed_at": "2026-11-18T13:36:07.236561+00:00",
+            "result": "Admin plus five others. Active other paid Proton subscriptions listed in conditions cannot join."
+          }
+        ],
+        "conditions": [
+          "New users: USD 33.48 prepaid for the first 12 months, then USD 59.88 every 12 months automatically unless canceled. Up to six Pass accounts, not the Proton Family suite. Existing users receive account-specific offers. Active Mail Plus, VPN Plus, Drive Plus, Unlimited, Proton Family, Visionary, Duo or business subscribers cannot join this Pass Family group. Country eligibility, tax and checkout untested; expiry unspecified."
+        ],
+        "limitations": [
+          "Public advertised annual total, not completed checkout.",
+          "Headline monthly wording conflicts with explicit annual billing; annual footnote retained.",
+          "No annual crossed-out price or historical-low claim.",
+          "Tax, country eligibility and expiry unverified."
+        ],
+        "review_completed_at": "2026-11-18T13:36:07.236561+00:00"
+      },
+      "expires_at": null,
+      "alternative_review": {
+        "checked_at": "2026-11-18T13:36:07.236561+00:00",
+        "sources": [
+          {
+            "url": "https://proton.me/support/pass-family-add-user",
+            "label": "Pass Family account eligibility"
+          }
+        ],
+        "evidence": "Password manager only; not the full Proton Family suite."
+      },
+      "latest_offer_check": {
+        "id": "proton-pass-family-black-friday-annual",
+        "status": "seller_page_price_and_purchase_link_observed",
+        "price": 33.48,
+        "observed_at": "2026-11-18T13:36:07.236561+00:00",
+        "source_url": "https://proton.me/pass/black-friday",
+        "evidence": "Official offer explicitly bills Pass Family USD 33.48 for first 12 months, then USD 59.88/12 months. Ambiguous USD 2.79 first-month headline is not used as a payable monthly price. Official support confirms admin plus five users and incompatible subscriptions. No checkout performed.",
+        "limitations": [
+          "Public source text, not completed checkout; tax and country eligibility not verified.",
+          "Purchase link is not proof of inventory or successful payment."
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/proton-pass.webp",
+        "alt": "Proton Pass official application preview",
+        "credit": "Proton",
+        "credit_url": "https://proton.me/media/kit",
+        "kind": "official_product_ui",
+        "rights_basis": "Official media kit permits free use when accompanying media refers back to proton.me; credit backlink displayed.",
+        "source_page": "https://proton.me/media/kit",
+        "source_file": "Proton Pass.png",
+        "checked_at": "2026-11-17T08:51:54.489381+00:00",
+        "sha256": "a797aa837cd33dcb57e90b704fff88982b0f7642b9a72a73c025833f288dd4a7",
+        "processing": "Proportional resize to 980px width and WebP compression only; no cropping, invented UI or content change."
+      }
     },
     {
       "id": "ulysses-howiwrite-first-year",
@@ -7125,7 +7254,7 @@
     }
   },
   "stats": {
-    "feed": 35,
+    "feed": 36,
     "sources": 11
   }
 }

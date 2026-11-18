@@ -2570,5 +2570,37 @@
       "summary": "Stockage en ligne pour synchroniser des fichiers et partager des liens de téléchargement. Offre annuelle, pas une licence à vie.",
       "conditions": "Prix annoncé : 44,26 EUR/an avec BF2026, hors TVA. Du 16 au 30 novembre 2026, fuseau non précisé. Comptes gratuits jamais payants : mise à niveau ; clients payants actuels ou anciens : carte cadeau. Même capacité : durée prolongée seulement ; carte inférieure incompatible avec un forfait supérieur. Aucun renouvellement automatique ni tarif garanti l’année suivante. Paiement coréen, taxes et coupon en caisse non testés."
     }
+  },
+  "proton-pass-family-black-friday-annual": {
+    "en": {
+      "product": "Proton Pass Family · first 12 months",
+      "summary": "Manage passwords across devices for up to six people.",
+      "conditions": "New users: USD 33.48 prepaid for the first 12 months, then USD 59.88 every 12 months automatically unless canceled. Up to six Pass accounts, not the Proton Family suite. Existing users receive account-specific offers. Active Mail Plus, VPN Plus, Drive Plus, Unlimited, Proton Family, Visionary, Duo or business subscribers cannot join this Pass Family group. Country eligibility, tax and checkout untested; expiry unspecified."
+    },
+    "ko": {
+      "product": "Proton Pass Family · 첫 12개월",
+      "summary": "최대 6명이 여러 기기에서 비밀번호를 저장하고 관리합니다.",
+      "conditions": "신규 사용자용 첫 12개월 USD 33.48 선결제, 이후 취소하지 않으면 연 USD 59.88 자동 갱신. 기존 사용자는 계정별 혜택. Proton Family 전체 제품 묶음이 아닌 Pass 전용입니다. Mail Plus·VPN Plus·Drive Plus·Unlimited·Proton Family·Visionary·Duo·비즈니스 구독자는 이 가족 그룹 참여 불가. 국가별 자격·세금·결제 미확인, 종료일 미공개."
+    },
+    "zh": {
+      "product": "Proton Pass Family · 首12个月",
+      "summary": "最多六人可跨设备保存和管理密码。",
+      "conditions": "新用户首12个月预付33.48美元，未取消则每年自动续费59.88美元。老用户优惠依账户而定。仅含Pass，不是完整Proton Family套件。订阅Mail Plus、VPN Plus、Drive Plus、Unlimited、Proton Family、Visionary、Duo或企业套餐者不能加入此家庭组。国家资格、税费及结账未核实，结束日期未公布。"
+    },
+    "ja": {
+      "product": "Proton Pass Family · 最初の12か月",
+      "summary": "最大6人で端末をまたいでパスワードを保存・管理できます。",
+      "conditions": "新規ユーザーは初年度33.48米ドルを前払い。解約しない場合は年59.88米ドルで自動更新。既存ユーザーはアカウント別特典。Pass専用でProton Family全製品セットではありません。Mail Plus・VPN Plus・Drive Plus・Unlimited・Proton Family・Visionary・Duo・ビジネス契約者は参加不可。国別資格・税金・決済は未確認、終了日は未公表。"
+    },
+    "es": {
+      "product": "Proton Pass Family · primeros 12 meses",
+      "summary": "Gestiona contraseñas entre dispositivos para hasta seis personas.",
+      "conditions": "Nuevos usuarios: USD 33.48 por adelantado el primer año; renovación automática de USD 59.88/año salvo cancelación. Ofertas existentes según cuenta. Solo Pass, no la suite Proton Family. Usuarios con Mail Plus, VPN Plus, Drive Plus, Unlimited, Proton Family, Visionary, Duo o planes empresariales no pueden unirse. País, impuestos y pago sin verificar; fecha final no publicada."
+    },
+    "fr": {
+      "product": "Proton Pass Family · 12 premiers mois",
+      "summary": "Gérez vos mots de passe sur plusieurs appareils pour six personnes au maximum.",
+      "conditions": "Nouveaux utilisateurs : 33.48 USD prépayés la première année, puis 59.88 USD/an automatiquement sauf résiliation. Offres existantes selon le compte. Pass seul, pas la suite Proton Family. Les abonnés Mail Plus, VPN Plus, Drive Plus, Unlimited, Proton Family, Visionary, Duo ou professionnels ne peuvent pas rejoindre ce groupe. Pays, taxes et paiement non vérifiés ; fin non publiée."
+    }
   }
 }
