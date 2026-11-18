@@ -24,3 +24,7 @@ Retrieved 2026-11-10. These assets are used only to illustrate the corresponding
 ## Everything is Crab official gameplay, 2026-11-18
 
 `everything-is-crab.webp`: ©2026 Odd Dreams Digital. Published by Secret Mode Limited. Official public press kit https://drive.google.com/drive/folders/1I_rfASVoNl6q-AKyPxMmkAgurJeggJrC?usp=sharing linked in the publisher’s 16 November Tide Turner announcement. Source file: Everything is Crab Screenshot 1.jpg, Google Drive ID 1z16eBoVSsNIAbGyDOLUAnS1a3L7ORe3B. Proportional resize to 1200×675 and WebP compression, no crop/content alteration. Used only as editorial product illustration; no endorsement implied.
+
+## Escape the Backrooms
+
+`escape-backrooms.webp` is an actual PC gameplay screenshot distributed by Fancy Games / Secret Mode in the [official publisher announcement](https://wearesecretmode.com/news/escape-the-backrooms-release-date) and its [public press kit](https://drive.google.com/drive/folders/1j1Gu_WUgPDcGvBje8jY-mY8PhwtoWTJv). Source file: Escape the Backrooms Screenshot 1.png (Drive ID `11EfXVK65aXscghDT92I0z04-asDGl0jP`). Resized proportionally from 1920×1080 to 1200×675 and WebP compressed; no crop/content edits. © Fancy Games / Secret Mode. Used to illustrate the matching Steam PC game, not to claim console entitlement or a current price.
