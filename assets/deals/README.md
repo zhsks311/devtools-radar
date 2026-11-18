@@ -12,3 +12,7 @@ Retrieved 2026-11-10. These assets are used only to illustrate the corresponding
 ## AdGuard Windows UI, 2026-11-18
 
 `adguard-windows.png`: unmodified Windows app screenshot distributed under “Windows app screenshots” by the official AdGuard press media kit, https://adguard.com/en/media-materials.html. Source: https://cdn.adguardcdn.com/website/adguard.com/media-kits/screenshots/windows_main-v2.png. Used for editorial illustration of AdGuard Family's Windows application, not as evidence of results, device allowance or pricing. Credit links to the media kit. The UI counters are vendor sample content.
+
+## Babbel mobile product preview, 2026-11-18
+
+`babbel-app.webp`: © Babbel official press-room Product asset gallery: https://www.babbel.com/press/en-us/downloads/product-babbel. Original: https://images.ctfassets.net/zuzqvf4m2o58/66K2g2ZnVSZM093kPUue7h/614400e5f987622772b973b55a0ce68e/01.png. Proportionally resized and compressed to WebP without cropping or changing content. Official sample application UI is not a guarantee that every pictured feature is included in this retailer license. Credit and source link are displayed.

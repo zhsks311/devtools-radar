@@ -2341,6 +2341,17 @@
           "DEAL20 availability/application not verified; do not claim it is currently valid.",
           "No independent historical discount comparison."
         ]
+      },
+      "image": {
+        "path": "/assets/deals/babbel-app.webp",
+        "kind": "official_product_ui",
+        "credit": "© Babbel",
+        "credit_url": "https://www.babbel.com/press/en-us/downloads/product-babbel",
+        "rights_basis": "Babbel official press-room Product gallery distributes this credited product asset for editorial media use. Proportional resize and WebP compression only; no endorsement implied.",
+        "source_page": "https://www.babbel.com/press/en-us/downloads/product-babbel",
+        "source_file": "https://images.ctfassets.net/zuzqvf4m2o58/66K2g2ZnVSZM093kPUue7h/614400e5f987622772b973b55a0ce68e/01.png",
+        "checked_at": "2026-11-18T00:59:04.348598+00:00",
+        "alt": "Babbel official mobile app preview showing a language lesson. Illustrated features are not a statement of plan inclusions."
       }
     },
     {
