@@ -3058,7 +3058,21 @@
             "fr": "Coupon + carte éligible via SmilePay 7 % ; minimum KRW 70 000, remise plafonnée à KRW 70 000, jusqu’au 19 novembre affiché ; vérifier au paiement"
           }
         }
-      ]
+      ],
+      "image": {
+        "path": "/assets/deals/dualsense-midnight-black.webp",
+        "alt": "Sony DualSense Midnight Black controller, front view",
+        "kind": "licensed_product_photo",
+        "credit": "Chris Woodrich",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Playstation_5_DualSense_controller_in_Midnight_Black,_2026-02-07_(front).jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_basis": "Photographer publishes this work under CC BY-SA 4.0; derivative distributed under same license.",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Playstation_5_DualSense_controller_in_Midnight_Black,_2026-02-07_(front).jpg",
+        "checked_at": "2026-11-18T01:37:29.428291+00:00",
+        "processing": "Proportional resize and WebP compression only; no cropping. Metadata omitted.",
+        "sha256": "8fd88a3f127d5fab271a13a2e3ab6080c797ff506e12489010d0134e92a7b43e"
+      }
     },
     {
       "id": "escape-backrooms-directgames-kr-jp",

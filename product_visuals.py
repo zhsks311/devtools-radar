@@ -63,6 +63,7 @@ def illustration(deal,lang):
 
 MEDIA_LABEL = {'ko':'공식 제품 화면 · 제공 예시', 'en':'Official product preview · sample UI', 'zh':'官方产品界面 · 示例', 'ja':'公式製品画面・表示例', 'es':'Vista oficial del producto · ejemplo', 'fr':'Aperçu officiel du produit · exemple'}
 PHOTO_LABEL = {'ko':'공식 배포 제품 사진', 'en':'Official distributor product photo', 'zh':'官方经销商产品图', 'ja':'公式販売元の製品写真', 'es':'Foto del distribuidor oficial', 'fr':'Photo du distributeur officiel'}
+LICENSED_PHOTO_LABEL = {'ko':'제품 사진 · 크기 조정', 'en':'Product photo · resized', 'zh':'产品照片 · 已调整尺寸', 'ja':'製品写真・サイズ調整', 'es':'Foto del producto · redimensionada', 'fr':'Photo du produit · redimensionnée'}
 MEDIA_MISSING = {'ko':'이미지를 불러오지 못했습니다', 'en':'Image unavailable', 'zh':'图片暂不可用', 'ja':'画像を読み込めません', 'es':'Imagen no disponible', 'fr':'Image indisponible'}
 def product_media(deal, lang, title):
     media=deal.get('image') or {}
@@ -72,5 +73,8 @@ def product_media(deal, lang, title):
     if media.get('kind') in ('official_product_ui','official_product_photo') and not (media.get('rights_basis') and media.get('source_page','').startswith('https://')): return illustration(deal,lang)
     credit_url=media.get('credit_url','')
     if not credit_url.startswith('https://'): return illustration(deal,lang)
-    caption=MEDIA_LABEL[lang] if media.get('kind')=='official_product_ui' else PHOTO_LABEL[lang] if media.get('kind')=='official_product_photo' else media.get('caption','')
-    return '<figure class="official-product-media"><img src="'+escape(path,quote=True)+'" alt="'+escape(media.get('alt') or title,quote=True)+'" loading="lazy" decoding="async" width="980" height="552"><span class="image-error" hidden>'+escape(MEDIA_MISSING[lang])+'</span><figcaption class="caption">'+escape(caption)+' · <a href="'+escape(credit_url,quote=True)+'" rel="noopener">'+escape(media.get('credit',''))+'</a></figcaption></figure>'
+    licensed = media.get('kind') == 'licensed_product_photo'
+    if licensed and not (media.get('rights_basis') and media.get('source_page','').startswith('https://') and media.get('license_url','').startswith('https://') and media.get('license')): return illustration(deal,lang)
+    license_html = (' · <a href="'+escape(media['license_url'],quote=True)+'" rel="license noopener">'+escape(media['license'])+'</a>') if licensed else ''
+    caption=LICENSED_PHOTO_LABEL[lang] if licensed else MEDIA_LABEL[lang] if media.get('kind')=='official_product_ui' else PHOTO_LABEL[lang] if media.get('kind')=='official_product_photo' else media.get('caption','')
+    return '<figure class="official-product-media"><img src="'+escape(path,quote=True)+'" alt="'+escape(media.get('alt') or title,quote=True)+'" loading="lazy" decoding="async" width="980" height="552"><span class="image-error" hidden>'+escape(MEDIA_MISSING[lang])+'</span><figcaption class="caption">'+escape(caption)+' · <a href="'+escape(credit_url,quote=True)+'" rel="noopener">'+escape(media.get('credit',''))+'</a>'+license_html+'</figcaption></figure>'

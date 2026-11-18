@@ -223,3 +223,7 @@ need a summary; the build rejects missing, overlong or visibly truncated text. T
 character editorial budget is not a search-engine display guarantee. Output checks compare
 all three fields exactly, and regressions independently corrupt description and OG fields.
 These checks do not establish factual correctness, indexing, ranking or AI citation.
+
+### DualSense product photograph
+
+`assets/deals/dualsense-midnight-black.webp`: Chris Woodrich, [original photograph](https://commons.wikimedia.org/wiki/File:Playstation_5_DualSense_controller_in_Midnight_Black,_2026-02-07_(front).jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Proportionally resized and WebP compressed; metadata omitted, no cropping. This derivative image is also CC BY-SA 4.0. The model/color match is illustrative, not an endorsement or a photograph of the seller’s specific unit. Attribution and license links appear on the product card.
