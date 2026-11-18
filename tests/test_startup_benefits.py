@@ -39,3 +39,12 @@ class ExpiryTests(unittest.TestCase):
   r=BenefitTests().row();r['expiry']='2026-11-17T12:00:00+08:00'
   data=prepare({'offers':[r]},datetime(2026,11,18,tzinfo=timezone.utc))
   self.assertEqual(data['count'],0); self.assertIn('현재 표시할 혜택이 없습니다',render(data))
+
+class SearchFeedbackTests(unittest.TestCase):
+ def test_accessible_result_count_and_empty_guidance(self):
+  data=prepare({'offers':[BenefitTests().row()]},datetime(2026,11,18,tzinfo=timezone.utc))
+  page=render(data)
+  self.assertIn('id="search-count" role="status" aria-live="polite"',page)
+  self.assertIn('id="no-results" hidden',page)
+  self.assertIn('검색 결과가 없습니다',page)
+  self.assertIn('search.value.trim().toLowerCase()',page)
