@@ -10,6 +10,8 @@ on:
       - 'tools/publish_deal_feed.py'
       - 'tools/verify_live_feed.py'
       - 'tools/check_feed_health.py'
+      - 'tests/test_feed_health.py'
+      - 'tests/test_feed_publication.py'
       - 'tools/publish_startup_benefits.py'
       - 'config/deal_sources.json'
       - '.github/workflows/deal-feeds.yml'

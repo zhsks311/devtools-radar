@@ -54,8 +54,11 @@ class FeedPublicationTests(unittest.TestCase):
    self.assertLess(step.index('python tools/'),step.index('cp staged/'))
   report=w.index('name: Report partial collection failure')
   self.assertGreater(report,w.index('name: Verify live collection timestamp'))
-  self.assertIn("steps.thatpromo.outcome == 'failure'",w)
-  self.assertIn("steps.saasoffers.outcome == 'failure'",w)
+  for source in ('collect','thatpromo','saasoffers'):
+   self.assertIn('steps.'+source+'.outcome',w[report:])
+  self.assertIn('python tools/check_feed_health.py published/feeds/status.json',w[report:])
+  self.assertIn('if: ${{ always() }}',w[report:])
+  self.assertIn("if [ \"$outcome\" != 'success' ]; then",w[report:])
   self.assertIn('exit 1',w[report:])
  def test_failed_source_does_not_replace_last_good_but_other_source_can_publish(self):
   import os,subprocess,tempfile
