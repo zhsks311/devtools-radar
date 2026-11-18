@@ -1,6 +1,8 @@
 """Verify the deployed feed, fail closed, and expose transport diagnostics."""
 import argparse
 import hashlib
+import html
+import re
 import json
 import subprocess
 import time
@@ -19,6 +21,26 @@ def fetch(name, stamp):
     if result.returncode:
         raise RuntimeError(f'curl exit {result.returncode}: {result.stderr.decode(errors="replace")[:300]}')
     return result.stdout
+
+def canonical_html(body):
+    """Undo only the CDN's observed, lossless public-email obfuscation.
+
+    No elements or arbitrary scripts are ignored. All other bytes must match.
+    JSON and XML always retain raw-byte verification.
+    """
+    text = body.decode('utf-8')
+    pattern = r'<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="([0-9a-f]+)">\[email&#160;protected\]</a>'
+    def decode(match):
+        encoded = bytes.fromhex(match.group(1))
+        if len(encoded) < 2:
+            raise ValueError('Invalid CDN email encoding')
+        email = bytes(x ^ encoded[0] for x in encoded[1:]).decode('utf-8')
+        if '@' not in email or any(ord(c) < 32 for c in email):
+            raise ValueError('Invalid CDN email text')
+        return html.escape(email)
+    text = re.sub(pattern, decode, text)
+    text = text.replace('<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>', '')
+    return text.encode('utf-8')
 
 def verify(expected, get, html_sha256):
     live = json.loads(get('status.json'))
@@ -60,6 +82,8 @@ def main():
                         resource = benefits.name+'/'+name
                         actual = fetch(resource, expected['attempted_at'])
                         wanted = (benefits/name).read_bytes()
+                        if name == 'index.html':
+                            actual = canonical_html(actual)
                         actual_hash = hashlib.sha256(actual).hexdigest()
                         wanted_hash = hashlib.sha256(wanted).hexdigest()
                         if actual_hash != wanted_hash:
