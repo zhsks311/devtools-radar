@@ -27,7 +27,7 @@ class ProtonRoutesTest(unittest.TestCase):
   for row in d['feed']:
    if row['id'].startswith('proton-') and row['id'] != 'proton-pass-family-black-friday-annual':
     self.assertEqual(row['purchase_eligibility']['countries_confirmed'],[])
-    self.assertEqual([s['url'] for s in row['alternative_review']['sources']],['https://proton.me/mail/black-friday'])
+    self.assertEqual(row['alternative_review']['sources'][0]['url'],'https://proton.me/mail/black-friday')
     for lang,loc in t[row['id']].items():
      for value in ['77.88','119.88','500','Unlimited']:
       self.assertIn(value,loc['buying_note'])
@@ -46,3 +46,14 @@ class ProtonRoutesTest(unittest.TestCase):
    self.assertIn('59.88',loc['conditions'])
    self.assertIn('33.48',loc['conditions'])
    self.assertIn('Visionary',loc['conditions'])
+
+ def test_drive_alternative_does_not_replace_standard_offer(self):
+  import json
+  from pathlib import Path
+  row=next(x for x in json.loads(Path('data/deals_en.json').read_text())['feed'] if x['id']=='proton-drive-plus-black-friday-annual')
+  self.assertEqual(row['price'],29.88)
+  self.assertEqual(row['link']['url'],'https://proton.me/drive/black-friday')
+  self.assertIn('https://proton.me/l/encrypted-cloud-storage-pfm-fapp',[s['url'] for s in row['alternative_review']['sources']])
+  self.assertEqual(row['purchase_eligibility']['countries_confirmed'],[])
+  for loc in json.loads(Path('data/deal_localizations.json').read_text())[row['id']].values():
+   for value in ['23.94','47.88','PREMIUM_DRIVE_DEAL']: self.assertIn(value,loc['buying_note'])
