@@ -1391,6 +1391,14 @@ Recorded price: 3100 KRW. Seller price observation dated 2026-11-17T00:27:53.813
 Delivery / activation countries with evidence: JP, KR, SG.
 Discounts and historical-low claims are not established by this export.
 
+### Everything is Crab · Steam key
+Seller: Direct Games
+Product URL: https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c
+Product-link review: 2026-11-18T02:28:37.655443+00:00 (not a stock check)
+Recorded price: 7700 KRW. Seller price observation dated 2026-11-18T02:28:37.655443+00:00.
+Delivery / activation countries with evidence: JP, KR.
+Discounts and historical-low claims are not established by this export.
+
 ### Proton Unlimited · first 12 months
 Seller: Proton
 Product URL: https://proton.me/mail/black-friday

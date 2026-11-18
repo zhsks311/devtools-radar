@@ -20,3 +20,7 @@ Retrieved 2026-11-10. These assets are used only to illustrate the corresponding
 ## Nintendo Switch 2 equipment photograph, 2026-11-18
 
 `nintendo-switch-2.webp`: Nintendo Switch 2-Spieleequipment 20250605 by PantheraLeo1359531 on Wikimedia Commons via CC BY-4.0. Original and attribution: https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Spieleequipment_20250605.png. License: https://creativecommons.org/licenses/by/4.0/. Proportionally resized and WebP compressed, metadata omitted, no cropping. Photo shows the standard console, dock, Joy-Con 2 and grip for product illustration, not the seller’s specific unit or a guarantee of offer contents. No endorsement implied. Credit and license links appear on the card.
+
+## Everything is Crab official gameplay, 2026-11-18
+
+`everything-is-crab.webp`: ©2026 Odd Dreams Digital. Published by Secret Mode Limited. Official public press kit https://drive.google.com/drive/folders/1I_rfASVoNl6q-AKyPxMmkAgurJeggJrC?usp=sharing linked in the publisher’s 16 November Tide Turner announcement. Source file: Everything is Crab Screenshot 1.jpg, Google Drive ID 1z16eBoVSsNIAbGyDOLUAnS1a3L7ORe3B. Proportional resize to 1200×675 and WebP compression, no crop/content alteration. Used only as editorial product illustration; no endorsement implied.

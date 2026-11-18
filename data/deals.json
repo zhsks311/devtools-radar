@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T07:30:53.047065+00:00",
+  "generated_at": "2026-11-18T02:28:37.655443+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -3296,6 +3296,133 @@
             "label": "Digital-key refund restrictions"
           }
         ]
+      }
+    },
+    {
+      "id": "everything-is-crab-directgames-kr-jp",
+      "region": "kr",
+      "target": "ko",
+      "category": "gaming",
+      "category_label": "Gaming",
+      "title_raw": "Everything is Crab · Steam key",
+      "product": "Everything is Crab · Steam key",
+      "store": "Direct Games",
+      "price": 7700,
+      "currency": "KRW",
+      "shipping": "Digital delivery",
+      "specs": [
+        "Windows 10",
+        "Single-player evolution action roguelite",
+        "Korean interface and subtitles"
+      ],
+      "briefing": [
+        "Official base-game seller page displays KRW 7,700 and reference KRW 11,000. Steam code activation and play only in Korea and Japan. Windows 10, Korean interface/subtitles, single-player. Cart control visible. Promotion end 2026-11-24 23:59, timezone unspecified. Checkout and key redemption not tested; historical-low claim not verified."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-18",
+      "source": {
+        "url": "https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c",
+        "name": "Direct Games official product page"
+      },
+      "price_source": "https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-18T02:28:37.655443+00:00",
+        "url": "https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c",
+        "product_match": true,
+        "evidence": "Official base-game seller page displays KRW 7,700 and reference KRW 11,000. Steam code activation and play only in Korea and Japan. Windows 10, Korean interface/subtitles, single-player. Cart control visible. Promotion end 2026-11-24 23:59, timezone unspecified. Checkout and key redemption not tested; historical-low claim not verified."
+      },
+      "price_review": {
+        "id": "everything-is-crab-directgames-kr-jp",
+        "product": "Everything is Crab · Steam key",
+        "seller_url": "https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c",
+        "recorded_price": 7700,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 7700,
+        "deal_status": "regular_price_or_discount_unproven",
+        "evidence": [
+          {
+            "url": "https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c",
+            "observed_at": "2026-11-18T02:28:37.655443+00:00",
+            "result": "Official base-game seller page displays KRW 7,700 and reference KRW 11,000. Steam code activation and play only in Korea and Japan. Windows 10, Korean interface/subtitles, single-player. Cart control visible. Promotion end 2026-11-24 23:59, timezone unspecified. Checkout and key redemption not tested; historical-low claim not verified."
+          }
+        ],
+        "limitations": [
+          "Account and checkout eligibility untested.",
+          "Seller reference price is not historical-low proof.",
+          "Promotion end timezone not specified."
+        ],
+        "review_completed_at": "2026-11-18T02:28:37.655443+00:00",
+        "seller_displayed_comparison": {
+          "reference_price": 11000,
+          "sale_price": 7700,
+          "kind": "seller_current_regular_price",
+          "historical_low_verified": false
+        }
+      },
+      "country_targeting": {
+        "countries": [
+          "KR",
+          "JP"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "digital"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR",
+          "JP"
+        ],
+        "status": "verified_activation",
+        "delivery": "Steam key delivered through Direct Games account.",
+        "activation": "Seller limits activation and play to Korea and Japan; check Steam account region.",
+        "payment": "Checkout untested",
+        "tax": "Final checkout untested",
+        "returns": "Seller policy: change-of-mind requests within 7 days; code receipt, activation or account sync prevents return. Other exceptions apply.",
+        "evidence_url": "https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c",
+        "checked_at": "2026-11-18"
+      },
+      "expires_at": null,
+      "latest_offer_check": {
+        "id": "everything-is-crab-directgames-kr-jp",
+        "status": "seller_purchase_offer",
+        "price": 7700,
+        "observed_at": "2026-11-18T02:28:37.655443+00:00",
+        "source_url": "https://directg.net/game/game_view.html?platform=1&product_id=c4c5e959-7130-4828-82de-8e0a2a7ce5a1&sku=cd128917-a247-42c6-91a5-c9be00ab601c",
+        "evidence": "Official base-game seller page displays KRW 7,700 and reference KRW 11,000. Steam code activation and play only in Korea and Japan. Windows 10, Korean interface/subtitles, single-player. Cart control visible. Promotion end 2026-11-24 23:59, timezone unspecified. Checkout and key redemption not tested; historical-low claim not verified.",
+        "limitations": "No purchase or redemption performed."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-18T02:28:37.655443+00:00",
+        "sources": [
+          {
+            "url": "https://www.directg.net/service/refund_policy.html",
+            "label": "Digital-key refund restrictions"
+          }
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/everything-is-crab.webp",
+        "kind": "official_product_ui",
+        "alt": "Everything is Crab official gameplay screenshot showing a creature fighting a desert boss",
+        "credit": "© Odd Dreams Digital / Secret Mode",
+        "credit_url": "https://drive.google.com/drive/folders/1I_rfASVoNl6q-AKyPxMmkAgurJeggJrC?usp=sharing",
+        "source_page": "https://drive.google.com/drive/folders/1I_rfASVoNl6q-AKyPxMmkAgurJeggJrC?usp=sharing",
+        "rights_basis": "Official publisher press release explicitly distributes this public press kit for coverage of Everything is Crab.",
+        "checked_at": "2026-11-18T02:28:37.655443+00:00",
+        "processing": "Proportional resize and WebP compression. No crop or content alteration.",
+        "sha256": "5c48420bec64e9a1394931d9d65cab32458702d8d72c14c6aea4d09c7b8c60a0"
       }
     }
   ],
