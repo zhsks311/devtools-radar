@@ -2538,5 +2538,37 @@
       "conditions": "7 700 KRW ; référence vendeur 11 000 KRW, sans minimum historique vérifié. Activation Steam ET jeu uniquement en Corée et au Japon. Fin indiquée : 24 novembre à 23:59, fuseau non précisé. Paiement et activation non testés.",
       "buying_note": "Windows 10  interface/sous-titres coréens, solo. Vérifiez configuration et bibliothèque. Demande pour changement d’avis sous 7 jours selon le vendeur, mais retour limité après réception/activation de la clé ou synchronisation du compte. Erreurs de région, configuration et achats en double également exclus. L’achat direct sur Steam Corée est affiché à 8 800 KRW, soit 1 100 KRW de plus (vérifié le 18/11/2026 ; fin indiquée le 30 novembre). Steam accepte généralement les demandes de remboursement sous 14 jours avec moins de 2 heures de jeu. Cette clé externe Direct Games n’est pas remboursée par Steam ; les règles du vendeur s’appliquent. Éligibilité au paiement selon le compte non testée."
     }
+  },
+  "koofr-1tb-annual-bf2026": {
+    "ko": {
+      "product": "Koofr · 1TB · 1년",
+      "summary": "파일을 온라인에 보관하고 기기 간 동기화·링크 공유를 할 수 있는 클라우드 저장소. 평생 이용권이 아닌 1년 상품입니다.",
+      "conditions": "BF2026 적용 표시가 연 €44.26, VAT 별도. 2026년 11월 16~30일 행사(시간대 미명시). 유료 이용 이력이 없는 무료 계정은 업그레이드, 현재·과거 유료 고객은 기프트카드 구매 경로. 같은 용량 기프트카드는 기간만 연장하며 하위 용량 카드는 상위 플랜에 적용 불가. 자동갱신 없음, 내년 가격 보장 아님. 한국 결제 자격·세금·쿠폰 최종 적용은 미시험."
+    },
+    "en": {
+      "product": "Koofr · 1 TB · 1 year",
+      "summary": "Cloud storage for syncing files across devices and sharing download links. This is a one-year plan, not a lifetime license.",
+      "conditions": "Advertised EUR44.26/year with BF2026, before VAT. Nov16–30, 2026; timezone unspecified. Never-paid free accounts upgrade; current/former paid users buy gift cards. Same-tier cards extend duration only; lower-tier cards cannot apply to higher plans. No automatic renewal or promise of next-year pricing. Korean billing eligibility, final tax and checkout coupon application untested."
+    },
+    "zh": {
+      "product": "Koofr · 1TB · 1年",
+      "summary": "用于跨设备同步文件和分享下载链接的云存储。这是一年方案，不是终身授权。",
+      "conditions": "BF2026标示价每年44.26欧元，未含VAT。2026年11月16日至30日，时区未注明。从未付费的免费账户升级；当前或曾付费用户购买礼品卡。同等级卡仅延长期限，低等级卡不可用于高等级方案。无自动续费，不保证次年价格。韩国付款资格、税额和结账优惠未测试。"
+    },
+    "ja": {
+      "product": "Koofr · 1TB · 1年間",
+      "summary": "端末間のファイル同期やダウンロードリンク共有ができるクラウドストレージ。買い切りではなく1年間のプランです。",
+      "conditions": "BF2026適用表示価格は年44.26ユーロ、VAT別。2026年11月16～30日、時間帯未指定。有料履歴のない無料アカウントはアップグレード、現在・過去の有料ユーザーはギフトカード購入。同容量カードは期間のみ延長し、下位カードは上位プランに使用不可。自動更新なし、翌年価格保証なし。韓国の決済資格・税額・クーポン適用は未試験。"
+    },
+    "es": {
+      "product": "Koofr · 1 TB · 1 año",
+      "summary": "Almacenamiento en la nube para sincronizar archivos y compartir enlaces de descarga. Plan anual, no licencia de por vida.",
+      "conditions": "Precio anunciado: 44,26 EUR/año con BF2026, sin IVA. Del 16 al 30 de noviembre de 2026; zona horaria sin indicar. Las cuentas gratuitas nunca pagadas mejoran el plan; clientes actuales o anteriores compran tarjetas regalo. Misma capacidad: amplía solo duración; tarjetas inferiores no sirven para planes superiores. Sin renovación automática ni precio garantizado para el año siguiente. Facturación coreana, impuestos y cupón en caja no probados."
+    },
+    "fr": {
+      "product": "Koofr · 1 To · 1 an",
+      "summary": "Stockage en ligne pour synchroniser des fichiers et partager des liens de téléchargement. Offre annuelle, pas une licence à vie.",
+      "conditions": "Prix annoncé : 44,26 EUR/an avec BF2026, hors TVA. Du 16 au 30 novembre 2026, fuseau non précisé. Comptes gratuits jamais payants : mise à niveau ; clients payants actuels ou anciens : carte cadeau. Même capacité : durée prolongée seulement ; carte inférieure incompatible avec un forfait supérieur. Aucun renouvellement automatique ni tarif garanti l’année suivante. Paiement coréen, taxes et coupon en caisse non testés."
+    }
   }
 }

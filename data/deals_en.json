@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T02:56:42.954301+00:00",
+  "generated_at": "2026-11-18T03:58:19.734731+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -4284,6 +4284,105 @@
         "popup_chat_personal_data_possible": true,
         "evidence": "Official Startup pricing distinguishes daily page views from total stored recordings. DPA Annex 1 distinguishes masked replay input from visitor-submitted popup/chat personal data."
       }
+    },
+    {
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "Cloud storage",
+      "image": {
+        "path": "/assets/deals/koofr-web-app.png",
+        "alt": "Koofr web app file browser screenshot",
+        "credit": "Koofr",
+        "credit_url": "https://koofr.eu/",
+        "caption": "App preview; storage shown is illustrative."
+      },
+      "id": "koofr-1tb-annual-bf2026",
+      "title_raw": "Koofr · 1 TB · 1 year",
+      "product": "Koofr · 1 TB · 1 year",
+      "store": "Koofr",
+      "price": 44.26,
+      "currency": "EUR",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital service",
+      "specs": [
+        "1 TB",
+        "One year, not lifetime",
+        "No automatic renewal"
+      ],
+      "briefing": [
+        "Official 2026 campaign displays 1 TB yearly plan EUR44.26 excluding VAT with BF2026. November16–30; timezone unspecified. Current/former paid customers use gift cards; never-paid free accounts upgrade. No automatic renewal. Checkout, Korean billing eligibility and final VAT untested."
+      ],
+      "published_at": null,
+      "checked_date": "2026-11-18",
+      "source": {
+        "url": "https://koofr.eu/black-friday/",
+        "name": "Koofr official 2026 offer"
+      },
+      "price_source": "https://koofr.eu/black-friday/",
+      "disclosure": "No affiliate tracking. Advertised coupon price before VAT; checkout not tested.",
+      "link": {
+        "url": "https://koofr.eu/black-friday/",
+        "tracked": false,
+        "label": "View 1 TB annual offer",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-18T03:58:19.734731+00:00",
+        "url": "https://koofr.eu/black-friday/",
+        "product_match": true,
+        "evidence": "Official 2026 campaign displays 1 TB yearly plan EUR44.26 excluding VAT with BF2026. November16–30; timezone unspecified. Current/former paid customers use gift cards; never-paid free accounts upgrade. No automatic renewal. Checkout, Korean billing eligibility and final VAT untested."
+      },
+      "price_review": {
+        "id": "koofr-1tb-annual-bf2026",
+        "product": "Koofr · 1 TB · 1 year",
+        "seller_url": "https://koofr.eu/black-friday/",
+        "recorded_price": 44.26,
+        "verified_price": 44.26,
+        "currency": "EUR",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-18T03:58:19.734731+00:00",
+        "evidence": [
+          {
+            "url": "https://koofr.eu/black-friday/",
+            "observed_at": "2026-11-18T03:58:19.734731+00:00",
+            "result": "Official 2026 campaign displays 1 TB yearly plan EUR44.26 excluding VAT with BF2026. November16–30; timezone unspecified. Current/former paid customers use gift cards; never-paid free accounts upgrade. No automatic renewal. Checkout, Korean billing eligibility and final VAT untested."
+          }
+        ],
+        "limitations": [
+          "Published coupon amount, not a tested checkout total. VAT depends on billing country.",
+          "No historical-low evidence. Official reference is rounded; no calculated discount displayed."
+        ],
+        "coupon": {
+          "code": "BF2026",
+          "displayed_price": 44.26,
+          "checkout_verified": false
+        }
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "unverified",
+        "delivery": "Online cloud storage, one year. Not the StackSocial lifetime license.",
+        "activation": "Never-paid free users upgrade; current/former paid users buy a gift card. Same-tier cards extend duration, not capacity. Lower-tier cards cannot apply to higher plans.",
+        "payment": "Account and billing-country eligibility untested.",
+        "tax": "EUR44.26 excludes VAT. Final price requires billing information.",
+        "returns": "Check official service terms before payment.",
+        "evidence_url": "https://koofr.eu/black-friday/",
+        "checked_at": "2026-11-18"
+      },
+      "expires_at": null,
+      "latest_offer_check": {
+        "id": "koofr-1tb-annual-bf2026",
+        "status": "seller_purchase_offer",
+        "price": 44.26,
+        "observed_at": "2026-11-18T03:58:19.734731+00:00",
+        "source_url": "https://koofr.eu/black-friday/",
+        "evidence": "Official 2026 campaign displays 1 TB yearly plan EUR44.26 excluding VAT with BF2026. November16–30; timezone unspecified. Current/former paid customers use gift cards; never-paid free accounts upgrade. No automatic renewal. Checkout, Korean billing eligibility and final VAT untested.",
+        "limitations": "No checkout or account creation performed."
+      }
     }
   ],
   "picks": [
@@ -7000,7 +7099,7 @@
     }
   },
   "stats": {
-    "feed": 34,
+    "feed": 35,
     "sources": 11
   }
 }
