@@ -1,9 +1,9 @@
 {
   "source": "that.promo",
   "policy_url": "https://that.promo/developers",
-  "collected_at": "2026-11-18T06:47:30.166589+00:00",
-  "source_generated_at": "2026-11-18T06:47:30Z",
-  "count": 238,
+  "collected_at": "2026-11-18T07:07:56.529496+00:00",
+  "source_generated_at": "2026-11-18T07:07:56Z",
+  "count": 237,
   "offers": [
     {
       "slug": "amd-token-lab-free-api-access",
@@ -2817,35 +2817,6 @@
       "last_verified": "2026-11-16",
       "added_at": "2026-11-02T14:53:44Z",
       "updated_at": "2026-11-16T08:14:30Z"
-    },
-    {
-      "slug": "stepfun-stepaudio-3-free-until-nov-8",
-      "url": "https://that.promo/stepfun-stepaudio-3-free-until-nov-8",
-      "json_url": "https://that.promo/stepfun-stepaudio-3-free-until-nov-8.json",
-      "name": "StepAudio 3 models free until November 17",
-      "provider": "StepFun",
-      "company": "stepfun",
-      "company_url": "https://that.promo/stepfun",
-      "category": "Model APIs",
-      "category_url": "https://that.promo/free-ai-api-credits",
-      "program": null,
-      "status": "live",
-      "headline_amount": null,
-      "headline_note": null,
-      "promo_code_needed": null,
-      "promo_code": null,
-      "value": "StepAudio 3 series speech models free on the StepFun API for a limited time",
-      "summary": "StepFun is a Chinese AI lab with an API platform for its Step language and StepAudio speech models. Its StepAudio 3 series (speech recognition, text-to-speech, realtime voice, voice and music generation) is free on the API until 11:59:59 AM on November 17, 2026 (UTC+8), and billed at list prices from 12:00:00 PM on November 17, 2026 (UTC+8).",
-      "who_qualifies": "Anyone with a StepFun API account",
-      "how_to_claim": null,
-      "expiry": "2026-11-17T12:00:00+08:00",
-      "caveats": "The free window ends 11:59:59 AM on November 17, 2026 UTC+8. New list prices take effect at 12:00:00 PM on November 17, 2026 UTC+8.",
-      "why_it_matters": null,
-      "official_url": "https://platform.stepfun.ai/docs/en/guides/pricing/details",
-      "released_at": null,
-      "last_verified": "2026-11-16",
-      "added_at": "2026-11-02T14:53:37Z",
-      "updated_at": "2026-11-16T08:14:32Z"
     },
     {
       "slug": "fal-for-startups",
