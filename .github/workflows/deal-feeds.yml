@@ -9,6 +9,7 @@ on:
       - 'tools/collect_deal_feeds.py'
       - 'tools/publish_deal_feed.py'
       - 'tools/verify_live_feed.py'
+      - 'tools/check_feed_health.py'
       - 'tools/publish_startup_benefits.py'
       - 'config/deal_sources.json'
       - '.github/workflows/deal-feeds.yml'
@@ -81,10 +82,21 @@ jobs:
       - name: Verify live collection timestamp
         run: python tools/verify_live_feed.py --expected published/feeds/status.json
       - name: Report partial collection failure after publishing healthy sources
-        if: ${{ always() && (steps.thatpromo.outcome == 'failure' || steps.saasoffers.outcome == 'failure') }}
+        if: ${{ always() }}
+        env:
+          COLLECT_OUTCOME: ${{ steps.collect.outcome }}
+          THATPROMO_OUTCOME: ${{ steps.thatpromo.outcome }}
+          SAASOFFERS_OUTCOME: ${{ steps.saasoffers.outcome }}
         run: |
-          echo '::error::One or more SaaS sources failed. Their last-good files and original timestamps were retained; healthy sources were allowed to publish.'
-          exit 1
+          # The publisher may hold invalid new XML while keeping the last-good feed.
+          # Inspect its final status as well as the collector process outcome.
+          python tools/check_feed_health.py published/feeds/status.json
+          for outcome in "$COLLECT_OUTCOME" "$THATPROMO_OUTCOME" "$SAASOFFERS_OUTCOME"; do
+            if [ "$outcome" != 'success' ]; then
+              echo '::error::A source failed or was skipped. Last-good data was retained; successful independent sources were allowed to publish.'
+              exit 1
+            fi
+          done
       - if: always()
         uses: actions/upload-artifact@v4
         with:
