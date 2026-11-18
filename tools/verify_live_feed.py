@@ -52,7 +52,7 @@ def verify(expected, get, html_sha256):
         raise ValueError('Live source fingerprint does not match committed collection')
     if hashlib.sha256(get('dealnews.xml')).hexdigest() != wanted['sha256']:
         raise ValueError('Live XML does not match committed collection')
-    html_bytes = get('index.html')
+    html_bytes = canonical_html(get('index.html'))
     if hashlib.sha256(html_bytes).hexdigest() != html_sha256:
         raise ValueError('Live page fingerprint does not match committed HTML')
     html = html_bytes.decode('utf-8')

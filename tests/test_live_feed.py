@@ -7,6 +7,11 @@ class LiveFeedTests(unittest.TestCase):
   self.pages={'status.json':json.dumps(self.expected).encode(),'dealnews.xml':self.xml,'index.html':b'<time>2026-11-17T10:00:00Z</time>'}
   self.html_sha=hashlib.sha256(self.pages['index.html']).hexdigest()
  def test_exact_live_files_pass(self):self.assertEqual(verify(self.expected,self.pages.__getitem__,self.html_sha)['items'],1)
+ def test_dealnews_cdn_email_transform_passes(self):
+  original=self.pages['index.html']+b'<p>info@example.com</p>'
+  key=63; encoded=bytes([key]+[x^key for x in b'info@example.com']).hex()
+  self.pages['index.html']=self.pages['index.html']+(f'<p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="{encoded}">[email&#160;protected]</a></p><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>').encode()
+  self.assertEqual(verify(self.expected,self.pages.__getitem__,hashlib.sha256(original).hexdigest())['items'],1)
  def test_stale_status_fails(self):
   old=dict(self.expected,attempted_at='old');self.pages['status.json']=json.dumps(old).encode()
   with self.assertRaisesRegex(ValueError,'stale status'):verify(self.expected,self.pages.__getitem__,self.html_sha)

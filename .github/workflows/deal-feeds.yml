@@ -53,7 +53,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add feeds/index.html feeds/dealnews.xml feeds/status.json feeds/startup-benefits feeds/saasoffers
           if ! git diff --cached --quiet; then
-            git commit -m 'Refresh permitted DealNews source feed'
+            git commit -m 'Refresh permitted deal and SaaS source feeds'
             git pull --rebase origin gh-pages
             git push origin HEAD:gh-pages
           fi
@@ -72,10 +72,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: official-deal-feeds-${{ github.run_id }}
-          path: collection-output/
+          path: |
+            collection-output/
+            published/feeds/startup-benefits/data.json
+            published/feeds/saasoffers/data.json
           retention-days: 7
       - if: always()
         run: |
           echo '## Permitted source feed publication' >> "$GITHUB_STEP_SUMMARY"
-          echo 'Separate unchanged DealNews RSS; merchant prices/countries unverified. No domestic community scraping or curated-card modification.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Sources: unchanged DealNews RSS, attributed that.promo benefits, and free/no-code SaaSOffers benefits. Merchant prices/countries unverified. No domestic community scraping or curated-card modification.' >> "$GITHUB_STEP_SUMMARY"
           if [ -f collection-output/status.json ]; then cat collection-output/status.json >> "$GITHUB_STEP_SUMMARY"; fi
