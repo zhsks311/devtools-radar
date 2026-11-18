@@ -57,8 +57,13 @@ def main():
             for benefits in benefit_dirs:
                 if benefits.exists():
                     for name in ('data.json','index.html'):
-                        if hashlib.sha256(fetch(benefits.name+'/'+name, expected['attempted_at'])).hexdigest()!=hashlib.sha256((benefits/name).read_bytes()).hexdigest():
-                            raise ValueError('SaaS benefits live fingerprint mismatch')
+                        resource = benefits.name+'/'+name
+                        actual = fetch(resource, expected['attempted_at'])
+                        wanted = (benefits/name).read_bytes()
+                        actual_hash = hashlib.sha256(actual).hexdigest()
+                        wanted_hash = hashlib.sha256(wanted).hexdigest()
+                        if actual_hash != wanted_hash:
+                            raise ValueError(f'{resource}: live SHA256 {actual_hash} ({len(actual)} bytes), expected {wanted_hash} ({len(wanted)} bytes)')
             print(f"Verified live status, XML fingerprint and page timestamp: {expected['attempted_at']}; {source['items']} items", flush=True)
             return
         except (ValueError, KeyError, StopIteration, RuntimeError, subprocess.TimeoutExpired) as error:
