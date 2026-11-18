@@ -3440,13 +3440,33 @@
         "limitations": "No purchase or redemption performed."
       },
       "alternative_review": {
-        "checked_at": "2026-11-18T02:28:37.655443+00:00",
+        "checked_at": "2026-11-18T03:15:00.289825+00:00",
         "sources": [
           {
             "url": "https://www.directg.net/service/refund_policy.html",
             "label": "Digital-key refund restrictions"
+          },
+          {
+            "url": "https://store.steampowered.com/app/3526710/?cc=kr&l=koreana",
+            "label": "Steam Korea · KRW 8,800 · 2026-11-18"
+          },
+          {
+            "url": "https://store.steampowered.com/steam_refunds/",
+            "label": "Steam refund policy · external keys excluded"
           }
-        ]
+        ],
+        "comparison": {
+          "country": "KR",
+          "currency": "KRW",
+          "seller_price": 7700,
+          "alternative_price": 8800,
+          "difference": 1100,
+          "observed_at": "2026-11-18T03:15:00.289825+00:00",
+          "source_url": "https://store.steampowered.com/app/3526710/?cc=kr&l=koreana",
+          "product_scope": "Base game only, not Supporter Edition or bundle",
+          "refund_source_url": "https://store.steampowered.com/steam_refunds/",
+          "limitations": "Both seller displays, not checkout quotes. No account-specific eligibility or payment tested. Steam listed end Nov 30, timezone unspecified. Steam refunds exclude external keys."
+        }
       },
       "image": {
         "path": "/assets/deals/everything-is-crab.webp",
