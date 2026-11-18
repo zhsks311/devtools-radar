@@ -47,17 +47,18 @@ def main():
     args = parser.parse_args()
     expected = json.loads(args.expected.read_text())
     html_sha256 = hashlib.sha256(args.expected.with_name('index.html').read_bytes()).hexdigest()
-    benefits = args.expected.parent/'startup-benefits'
+    benefit_dirs = [args.expected.parent/name for name in ('startup-benefits','saasoffers')]
     deadline = time.monotonic() + args.wait_seconds
     attempt = 0
     while time.monotonic() < deadline:
         attempt += 1
         try:
             source = verify(expected, lambda name: fetch(name, expected['attempted_at']), html_sha256)
-            if benefits.exists():
-                for name in ('data.json','index.html'):
-                    if hashlib.sha256(fetch('startup-benefits/'+name, expected['attempted_at'])).hexdigest()!=hashlib.sha256((benefits/name).read_bytes()).hexdigest():
-                        raise ValueError('SaaS benefits live fingerprint mismatch')
+            for benefits in benefit_dirs:
+                if benefits.exists():
+                    for name in ('data.json','index.html'):
+                        if hashlib.sha256(fetch(benefits.name+'/'+name, expected['attempted_at'])).hexdigest()!=hashlib.sha256((benefits/name).read_bytes()).hexdigest():
+                            raise ValueError('SaaS benefits live fingerprint mismatch')
             print(f"Verified live status, XML fingerprint and page timestamp: {expected['attempted_at']}; {source['items']} items", flush=True)
             return
         except (ValueError, KeyError, StopIteration, RuntimeError, subprocess.TimeoutExpired) as error:

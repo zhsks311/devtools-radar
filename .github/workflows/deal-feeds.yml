@@ -43,13 +43,15 @@ jobs:
       - name: Validate and render complete attributed source feed
         run: python tools/publish_deal_feed.py --collected collection-output --destination published/feeds
       - name: Collect and publish attributed SaaS benefits
-        run: python tools/publish_startup_benefits.py --destination published/feeds/startup-benefits
+        run: |
+          python tools/publish_startup_benefits.py --destination published/feeds/startup-benefits
+          python tools/publish_startup_benefits.py --source saasoffers --destination published/feeds/saasoffers
       - name: Commit only feed files without overwriting current site
         run: |
           cd published
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add feeds/index.html feeds/dealnews.xml feeds/status.json feeds/startup-benefits
+          git add feeds/index.html feeds/dealnews.xml feeds/status.json feeds/startup-benefits feeds/saasoffers
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh permitted DealNews source feed'
             git pull --rebase origin gh-pages
