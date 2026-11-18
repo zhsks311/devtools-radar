@@ -12,3 +12,9 @@ class KoofrAnnual(unittest.TestCase):
   for v in loc.values():self.assertIn('BF2026',v['conditions'])
  def test_not_generic_koofr_urls(self):
   for u in ['https://koofr.eu/','https://koofr.eu/blog/','https://koofr.eu/black-friday/?q=1tb']:self.assertFalse(direct_product_url(u))
+
+ def test_storage_image_caption_is_localized(self):
+  from product_visuals import product_media,STORAGE_PREVIEW_LABEL
+  d=next(x for x in json.loads(Path('data/deals_en.json').read_text())['feed'] if x['id']=='koofr-1tb-annual-bf2026')
+  for lang in STORAGE_PREVIEW_LABEL:
+   self.assertIn(STORAGE_PREVIEW_LABEL[lang],product_media(d,lang,d['product']))
