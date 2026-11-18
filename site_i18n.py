@@ -222,6 +222,7 @@ BILLING_KIND = {
  'proton-mail-plus-black-friday-annual': 'first_year',
  'proton-drive-plus-black-friday-annual': 'first_year',
  'proton-pass-plus-black-friday-annual': 'first_year',
+ 'proton-pass-family-black-friday-annual': 'first_year',
  'hostinger-premium-black-friday-48-months': 'four_years',
 }
 BILLING_LABELS = {

@@ -13,7 +13,13 @@ class BillingUnitsTest(unittest.TestCase):
     card=site_i18n.catalogue(lang,[row],tr)
     self.assertRegex(card,r'<div class="price">[^<]+<span class="billing-unit">[^<]+</span></div>')
     self.assertLess(card.index('billing-unit">'),card.index('class="cta"'))
-  self.assertEqual(len(found),8)
+  self.assertEqual(len(found),9)
  def test_no_inferred_units_for_other_products(self):
   self.assertEqual(site_i18n.billing_label({'id':'unknown'},'en'),'')
   self.assertEqual(site_i18n.billing_label({'id':'proton-unknown'},'ko'),'')
+
+ def test_pass_family_explicit_prepaid_year_in_all_languages(self):
+  deal={'id':'proton-pass-family-black-friday-annual'}
+  self.assertEqual(site_i18n.BILLING_KIND[deal['id']],'first_year')
+  for lang in site_i18n.LANGS:
+   self.assertIn(site_i18n.BILLING_LABELS[lang]['first_year'],site_i18n.billing_label(deal,lang))
