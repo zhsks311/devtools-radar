@@ -476,6 +476,19 @@
           "No cart, order or checkout performed; displayed default location is not a user-confirmed address. Country eligibility, actual address inventory, payment and final total remain unverified.",
           "No independent discount or lowest-price evidence. Do not interpret purchase limit as unavailable."
         ]
+      },
+      "image": {
+        "path": "/assets/deals/dji-osmo-mobile-7.webp",
+        "alt": "DJI Osmo Mobile 7 base gimbal with integrated tripod and phone clamp; no phone or optional tracking module",
+        "kind": "official_product_photo",
+        "credit": "DJI Europe",
+        "credit_url": "https://www.mynewsdesk.com/uk/dji/images/osmo-mobile-7-2-dot-jpg-3194062",
+        "source_page": "https://www.mynewsdesk.com/uk/dji/images/osmo-mobile-7-2-dot-jpg-3194062",
+        "rights_basis": "Official DJI Europe media item grants Media Use to bloggers for coverage with attribution and unmodified content. Composition and product content preserved.",
+        "source_file": "https://mnd-assets.mynewsdesk.com/image/upload/fl_attachment/wtkf2puyg35laa1obqjcb2",
+        "checked_at": "2026-11-18T04:55:26.557073+00:00",
+        "sha256": "c3d7aa1e77e6c48ac8531c537e97c5361d887395fb1cb20ee2ef44f2a1024d0b",
+        "processing": "Proportional resize and WebP encoding only; no crop, overlays, retouching or invented content."
       }
     },
     {
@@ -4649,6 +4662,19 @@
               "No cart, order or checkout performed; displayed default location is not a user-confirmed address. Country eligibility, actual address inventory, payment and final total remain unverified.",
               "No independent discount or lowest-price evidence. Do not interpret purchase limit as unavailable."
             ]
+          },
+          "image": {
+            "path": "/assets/deals/dji-osmo-mobile-7.webp",
+            "alt": "DJI Osmo Mobile 7 base gimbal with integrated tripod and phone clamp; no phone or optional tracking module",
+            "kind": "official_product_photo",
+            "credit": "DJI Europe",
+            "credit_url": "https://www.mynewsdesk.com/uk/dji/images/osmo-mobile-7-2-dot-jpg-3194062",
+            "source_page": "https://www.mynewsdesk.com/uk/dji/images/osmo-mobile-7-2-dot-jpg-3194062",
+            "rights_basis": "Official DJI Europe media item grants Media Use to bloggers for coverage with attribution and unmodified content. Composition and product content preserved.",
+            "source_file": "https://mnd-assets.mynewsdesk.com/image/upload/fl_attachment/wtkf2puyg35laa1obqjcb2",
+            "checked_at": "2026-11-18T04:55:26.557073+00:00",
+            "sha256": "c3d7aa1e77e6c48ac8531c537e97c5361d887395fb1cb20ee2ef44f2a1024d0b",
+            "processing": "Proportional resize and WebP encoding only; no crop, overlays, retouching or invented content."
           }
         },
         {
