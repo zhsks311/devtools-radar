@@ -16,3 +16,7 @@ Retrieved 2026-11-10. These assets are used only to illustrate the corresponding
 ## Babbel mobile product preview, 2026-11-18
 
 `babbel-app.webp`: © Babbel official press-room Product asset gallery: https://www.babbel.com/press/en-us/downloads/product-babbel. Original: https://images.ctfassets.net/zuzqvf4m2o58/66K2g2ZnVSZM093kPUue7h/614400e5f987622772b973b55a0ce68e/01.png. Proportionally resized and compressed to WebP without cropping or changing content. Official sample application UI is not a guarantee that every pictured feature is included in this retailer license. Credit and source link are displayed.
+
+## Nintendo Switch 2 equipment photograph, 2026-11-18
+
+`nintendo-switch-2.webp`: Nintendo Switch 2-Spieleequipment 20250605 by PantheraLeo1359531 on Wikimedia Commons via CC BY-4.0. Original and attribution: https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Spieleequipment_20250605.png. License: https://creativecommons.org/licenses/by/4.0/. Proportionally resized and WebP compressed, metadata omitted, no cropping. Photo shows the standard console, dock, Joy-Con 2 and grip for product illustration, not the seller’s specific unit or a guarantee of offer contents. No endorsement implied. Credit and license links appear on the card.
