@@ -38,6 +38,16 @@ class CountryTests(unittest.TestCase):
         cls.feed = sum([json.loads((ROOT / 'data' / name).read_text())['feed']
                         for name in ('deals.json', 'deals_en.json')], [])
         cls.tr = json.loads((ROOT / 'data/deal_localizations.json').read_text())
+    def test_singapore_name_is_localized_without_changing_filter_value(self):
+        names = {'en': 'Singapore', 'ko': '싱가포르', 'zh': '新加坡', 'ja': 'シンガポール', 'es': 'Singapur', 'fr': 'Singapour'}
+        for lang, label in names.items():
+            with self.subTest(lang=lang):
+                self.assertEqual(site_i18n.country_name('SG', lang), label)
+                page = site_i18n.catalogue(lang, self.feed, self.tr)
+                self.assertIn('value="SG"', page)
+                self.assertIn(label, page)
+                self.assertEqual(site_i18n.country_name('ZZ', lang), 'ZZ')
+
     def test_storefront_does_not_grant_country_eligibility(self):
         self.assertEqual(validate_deal_countries(self.feed), [])
         for d in self.feed:

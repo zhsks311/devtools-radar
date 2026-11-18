@@ -59,8 +59,13 @@ for _lang, _unknown, _intro in [
  UNKNOWN_SHORTCUT[_lang]=_unknown
 
 COUNTRY_ORDER = ('KR', 'CN', 'AU', 'US', 'JP', 'ES', 'FR')
+EXTRA_COUNTRY_NAMES = {
+ 'SG': {'en': 'Singapore', 'ko': '싱가포르', 'zh': '新加坡', 'ja': 'シンガポール', 'es': 'Singapur', 'fr': 'Singapour'},
+}
 def country_name(code, lang):
- return FILTER_TEXT[lang][10 + COUNTRY_ORDER.index(code)] if code in COUNTRY_ORDER else code
+ if code in COUNTRY_ORDER:
+  return FILTER_TEXT[lang][10 + COUNTRY_ORDER.index(code)]
+ return EXTRA_COUNTRY_NAMES.get(code, {}).get(lang, code)
 PRICE_CURRENT={'en':'Price when checked. Confirm the final total at checkout.','ko':'확인 당시 판매가입니다. 결제할 때 가격을 다시 확인하세요.','zh':'这是查看时的标价，请在结账时确认最终价格。','ja':'確認時の価格です。購入時に最終金額をご確認ください。','es':'Precio al consultarlo. Confirma el total al pagar.','fr':'Prix lors de notre consultation. Vérifiez le total avant de payer.'}
 PRICE_DETAILS={'en':'Price details and sources','ko':'가격 확인 내역과 출처','zh':'价格详情与来源','ja':'価格の詳細と出典','es':'Detalles del precio y fuentes','fr':'Détails du prix et sources'}
 DESTINATION_NOTE={'en':'Check delivery or activation availability with the seller.','ko':'배송이나 사용 가능 여부는 판매처에서 확인하세요.','zh':'请向卖家确认配送或激活地区。','ja':'配送・利用可能な地域は販売元でご確認ください。','es':'Consulta al vendedor dónde se puede recibir o activar.','fr':'Vérifiez les pays de livraison ou d’activation auprès du vendeur.'}
