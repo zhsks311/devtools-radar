@@ -5853,11 +5853,11 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 29,
+    "feed": 31,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 7,
-    "held_product_links": 15,
+    "verified_product_links": 15,
+    "held_product_links": 16,
     "historical_tracked_links": 14
   }
 }

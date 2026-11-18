@@ -47,3 +47,10 @@ class KoreanRecoveryTests(unittest.TestCase):
             self.assertIsNone(discount_percent(d));self.assertIsNone(d['original_price'])
             self.assertIn('30 days',d['purchase_eligibility']['activation'])
             self.assertIn('final sale',d['purchase_eligibility']['returns'])
+
+    def test_korean_stats_match_current_catalogue(self):
+        data=json.loads((ROOT/'data/deals.json').read_text())
+        rows=data['feed']; stats=data['stats']
+        self.assertEqual(stats['feed'],len(rows))
+        self.assertEqual(stats['verified_product_links'],sum(publishable_link(row) for row in rows))
+        self.assertEqual(stats['held_product_links'],sum(not publishable_link(row) for row in rows))
