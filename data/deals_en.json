@@ -1808,7 +1808,18 @@
         "Checked: November 10, 2026 · Add to Cart shown",
         "Check: Page advertises $16 with DEAL20; checkout not tested. Redeem within 30 days.",
         "Coupon campaign evidence: DEAL20 campaign: 9–15 November 2026, seller-stated dates; exclusions apply. Exact end time and time zone are not stated on the campaign page. Coupon application and final total remain untested."
-      ]
+      ],
+      "image": {
+        "path": "/assets/deals/adguard-windows.png",
+        "kind": "official_product_ui",
+        "credit": "AdGuard",
+        "credit_url": "https://adguard.com/en/media-materials.html",
+        "rights_basis": "Official press media kit distributes Windows application screenshots for media coverage; unmodified screenshot used to illustrate corresponding AdGuard product. No endorsement implied.",
+        "source_page": "https://adguard.com/en/media-materials.html",
+        "source_file": "https://cdn.adguardcdn.com/website/adguard.com/media-kits/screenshots/windows_main-v2.png",
+        "checked_at": "2026-11-18T00:39:28.291980+00:00",
+        "alt": "AdGuard for Windows official protection dashboard; sample interface and counters, not usage claims."
+      }
     },
     {
       "id": "3b4c5d317572",
