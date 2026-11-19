@@ -1407,6 +1407,14 @@ Recorded price: 7700 KRW. Seller price observation dated 2026-11-18T02:28:37.655
 Delivery / activation countries with evidence: JP, KR.
 Discounts and historical-low claims are not established by this export.
 
+### Proton VPN Plus · first 12 months
+Seller: Proton
+Product URL: https://protonvpn.com/black-friday
+Product-link review: 2026-11-19T21:44:40.642202+00:00 (not a stock check)
+Recorded price: 35.88 USD. Seller price observation dated 2026-11-19T21:44:40.642202+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### Proton Unlimited · first 12 months
 Seller: Proton
 Product URL: https://proton.me/mail/black-friday
