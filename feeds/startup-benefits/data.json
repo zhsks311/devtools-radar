@@ -1,8 +1,8 @@
 {
   "source": "that.promo",
   "policy_url": "https://that.promo/developers",
-  "collected_at": "2026-11-18T20:28:08.981169+00:00",
-  "source_generated_at": "2026-11-18T20:28:08Z",
+  "collected_at": "2026-11-19T07:20:50.657655+00:00",
+  "source_generated_at": "2026-11-19T07:20:50Z",
   "count": 244,
   "offers": [
     {
@@ -3472,18 +3472,18 @@
       "headline_note": "trial credit, no card",
       "promo_code_needed": null,
       "promo_code": null,
-      "value": "$10 of trial credit (2,500 decisions), no card",
-      "summary": "Embedding Studio fits and calibrates a small model on your own labeled past cases and serves it as an API or a downloadable calibration file, routing low-confidence decisions to a person. New workspaces start with $10 of trial credit (about 2,500 decisions), no card needed.",
+      "value": "$10 of trial credit (5,000 decisions), no card",
+      "summary": "Embedding Studio fits and calibrates a small model on your own labeled past cases and serves it as an API or a downloadable calibration file, routing low-confidence decisions to a person. New workspaces start with $10 of trial credit (about 5,000 decisions), no card needed.",
       "who_qualifies": "Anyone who creates a new Embedding Studio workspace",
       "how_to_claim": null,
       "expiry": "ongoing",
-      "caveats": "Embedding Studio's homepage says $10 (2,500 decisions). Trial credit has no cash value stated and is not described as refundable. Fitting and calibration are free today; only decisions spend credit.",
+      "caveats": "Embedding Studio's credits docs say a new workspace gets $10 of credit with no card, and that $10 is 5,000 decisions. The homepage no longer mentions the trial and leads with a paid annual licence. Trial credit has no cash value stated and is not described as refundable.",
       "why_it_matters": null,
-      "official_url": "https://studio.embedding.in/",
+      "official_url": "https://studio.embedding.in/docs/credits",
       "released_at": null,
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "added_at": "2026-11-01T09:02:15Z",
-      "updated_at": "2026-11-16T08:14:56Z"
+      "updated_at": "2026-11-18T21:23:55Z"
     },
     {
       "slug": "cloudhike-free-plan",
