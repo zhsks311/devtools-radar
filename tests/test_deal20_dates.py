@@ -1,4 +1,4 @@
-import json,unittest
+import json,unittest,re
 from pathlib import Path
 import site_i18n as i
 R=Path(__file__).resolve().parents[1]
@@ -12,4 +12,4 @@ class CouponDatesTests(unittest.TestCase):
    self.assertEqual(c['valid_through_date'],'2026-11-15');self.assertIsNone(c['timezone']);self.assertIsNone(c['ends_at']);self.assertFalse(c['checkout_verified'])
    self.assertTrue(c['exclusions_apply']);self.assertIn('/collections/',c['source_url']);self.assertNotIn('Expiry unknown.',d['disclosure'])
    for lang in i.LANGS:
-    self.assertNotIn('DEAL20',tr[d['id']][lang]['conditions']); self.assertNotIn('US$24',tr[d['id']][lang]['conditions'])
+    self.assertNotIn('DEAL20',tr[d['id']][lang]['conditions']); self.assertNotRegex(tr[d['id']][lang]['conditions'], re.escape('US$'+format(c['displayed_price'], '.2f'))+r'(?![0-9])')
