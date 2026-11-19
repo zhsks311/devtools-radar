@@ -2634,5 +2634,37 @@
       "summary": "Client pour consulter et modifier des données SQL et NoSQL. Les outils de base sont gratuits ; Pro ajoute comparaison de bases, analyse des requêtes et graphiques.",
       "conditions": "47,40 USD en un paiement, hors taxes, pour une personne sur 3 Mac/Linux. Prix annoncé BLACKFRIDAY2026 ; paiement non testé. Fin le 1er décembre 2026 à 08:00 UTC. Licence sans expiration, mais compte et vérifications en ligne requis ; mises à jour perpétuelles non garanties. Linux est en bêta avec des fonctions différentes. Remboursement sous 7 jours ; paiement coréen non vérifié. Annuler séparément tout abonnement existant. Image : icône officielle de l’application."
     }
+  },
+  "insta360-go-ultra-kr-standard-black": {
+    "en": {
+      "product": "Insta360 GO Ultra · black standard bundle",
+      "summary": "A 53g wearable camera for hands-free 4K60 video. The detachable camera and flip-screen Action Pod let you film from different positions.",
+      "conditions": "Cosmic Black standard bundle, no microSD; memory card required separately. KRW523,000 with seller free shipping above KRW150,000. Dispatch estimated within 2 days, not guaranteed arrival. Final address, tax, stock and checkout untested; sale cutoff unspecified. 15-day returns require original condition, full packaging and accessories; use traces may be refused. Paid cloud, cards and protection are extra, not included."
+    },
+    "ko": {
+      "product": "Insta360 GO Ultra · 블랙 표준 번들",
+      "summary": "옷이나 모자에 달아 두 손을 비우고 4K60 영상을 찍는 53g 카메라입니다. 카메라를 분리해 촬영하고 플립 화면이 달린 액션팟으로 구도를 확인할 수 있습니다.",
+      "conditions": "코스믹 블랙 표준 번들 523,000원. microSD는 별도 필수이며 내장 저장 공간이 없습니다. 판매처는 15만원 이상 무료 배송·2일 내 출고 예정을 안내합니다. 주소별 배송·세금·재고·결제는 미시험, 행사 종료일은 미공개입니다. 수령 후 15일 내 반품은 원상태·포장·구성품 보존 조건이며 사용 흔적이 있으면 거절될 수 있습니다. 유료 클라우드·메모리카드·보장 플랜은 별도입니다."
+    },
+    "zh": {
+      "product": "Insta360 GO Ultra · 黑色标准套装",
+      "summary": "53克穿戴式相机，可免手持拍摄4K60视频。可拆相机搭配翻转屏Action Pod，便于调整拍摄角度。",
+      "conditions": "宇宙黑标准套装523,000韩元，不含microSD，需另购且无内置存储。韩国卖家满150,000韩元免运，预计2天内发货，并非到货保证。地址、税费、库存和结账未测试，促销截止未公布。签收15天内退货要求原状和完整包装配件，使用痕迹可能导致拒退。付费云服务、存储卡及保障另购。"
+    },
+    "ja": {
+      "product": "Insta360 GO Ultra · ブラック標準セット",
+      "summary": "53gの装着型カメラでハンズフリーの4K60撮影。取り外せるカメラとフリップ画面付きAction Podで構図を確認できます。",
+      "conditions": "コズミックブラック標準セット523,000ウォン。microSD別売必須、内蔵ストレージなし。韓国販売店は150,000ウォン以上送料無料、2日以内発送予定と案内。到着保証ではなく、住所・税・在庫・決済未検証。終了日未公表。受領後15日以内返品は元の状態と全包装・付属品が必要で、使用痕は拒否対象。有料クラウド・カード・補償は別料金。"
+    },
+    "es": {
+      "product": "Insta360 GO Ultra · kit estándar negro",
+      "summary": "Cámara portátil de 53 g para vídeo 4K60 manos libres. La cámara desmontable y el Action Pod con pantalla abatible facilitan distintos encuadres.",
+      "conditions": "Kit estándar Cosmic Black: 523.000 KRW. Requiere microSD aparte; sin memoria interna. Tienda coreana: envío gratis desde 150.000 KRW y expedición estimada en 2 días, sin garantizar llegada. Dirección, impuestos, stock y pago no probados; fin sin indicar. Devolución en 15 días con estado original, embalaje y accesorios completos; señales de uso pueden impedirla. Nube de pago, tarjetas y protección son extras."
+    },
+    "fr": {
+      "product": "Insta360 GO Ultra · kit standard noir",
+      "summary": "Caméra portable de 53 g pour filmer en 4K60 les mains libres. Caméra détachable et Action Pod à écran rabattable pour varier les cadrages.",
+      "conditions": "Kit standard Cosmic Black : 523 000 KRW. microSD séparée obligatoire, sans mémoire interne. Boutique coréenne : livraison gratuite dès 150 000 KRW, expédition estimée sous 2 jours, sans garantie de réception. Adresse, taxes, stock et paiement non testés ; fin non précisée. Retour sous 15 jours en état original avec emballage et accessoires complets ; traces d’usage susceptibles de refus. Cloud payant, cartes et protection en supplément."
+    }
   }
 }

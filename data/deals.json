@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T02:28:37.655443+00:00",
+  "generated_at": "2026-11-19T11:59:22.323642+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -7,6 +7,130 @@
   },
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
+    {
+      "id": "insta360-go-ultra-kr-standard-black",
+      "region": "kr",
+      "target": "ko",
+      "category": "hardware",
+      "category_label": "hardware",
+      "title_raw": "Insta360 GO Ultra · Cosmic Black Standard Bundle",
+      "product": "Insta360 GO Ultra · Cosmic Black Standard Bundle",
+      "store": "Insta360 official store",
+      "price": 523000,
+      "currency": "KRW",
+      "shipping": "Free shipping threshold KRW 150000; address-specific delivery unverified",
+      "specs": [
+        "4K60 wearable camera",
+        "53 g camera body",
+        "Standard Bundle · microSD not included"
+      ],
+      "briefing": [
+        "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-19",
+      "source": {
+        "url": "https://store.insta360.com/KR/product/go-ultra",
+        "label": "Insta360 official Korean product page"
+      },
+      "price_source": "retailer_product_page",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://store.insta360.com/KR/product/go-ultra",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-19T11:59:22.323642+00:00",
+        "url": "https://store.insta360.com/KR/product/go-ultra",
+        "product_match": true,
+        "evidence": "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+      },
+      "price_review": {
+        "id": "insta360-go-ultra-kr-standard-black",
+        "product": "Insta360 GO Ultra · Cosmic Black Standard Bundle",
+        "seller_url": "https://store.insta360.com/KR/product/go-ultra",
+        "recorded_price": 523000,
+        "verified_price": 523000,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://store.insta360.com/KR/product/go-ultra",
+            "observed_at": "2026-11-19T11:59:22.323642+00:00",
+            "result": "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+          }
+        ],
+        "limitations": [
+          "Seller reference616000 not independently verified historical or market price.",
+          "Stock, checkout, exact address, tax and cutoff unverified."
+        ],
+        "review_completed_at": "2026-11-19T11:59:22.323642+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-19T11:59:22.323642+00:00",
+        "note": "Official Korea storefront offer and Korean shipping statement; exact address not tested."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Korean seller says free shipping from KRW150000 and dispatch estimated within2days; exact address and arrival untested.",
+        "activation": "Physical camera; microSD required and sold separately. No internal storage.",
+        "payment": "Checkout untested; international-card issuer fees may apply.",
+        "tax": "Final tax and checkout not tested.",
+        "returns": "15 days from receipt if original condition, packaging/accessories/gifts complete and resale possible. Approval and exclusions apply; not an unconditional used-product trial.",
+        "evidence_url": "https://store.insta360.com/KR/product/go-ultra",
+        "checked_at": "2026-11-19"
+      },
+      "latest_offer_check": {
+        "checked_at": "2026-11-19T11:59:22.323642+00:00",
+        "status": "seller_dom_observed",
+        "price": 523000,
+        "source_url": "https://store.insta360.com/KR/product/go-ultra",
+        "evidence": "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+      },
+      "price_variant": "GO Ultra Cosmic Black Standard Bundle · no SD card",
+      "alternative_review": {
+        "checked_at": "2026-11-19T11:59:22.323642+00:00",
+        "sources": [
+          {
+            "url": "https://store.insta360.com/KR/product/go-ultra",
+            "label": "Selected bundle and Korean shipping statement"
+          },
+          {
+            "url": "https://www.insta360.com/support/supportcourse?post_id=20726",
+            "label": "15-day return policy with condition and resale exclusions"
+          }
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/insta360-go-ultra-black.webp",
+        "alt": "Insta360 GO Ultra black camera in its Action Pod; standard-bundle accessories not pictured",
+        "credit": "Insta360 / Transcontinenta",
+        "credit_url": "https://newsroom.notified.com/transcontinenta-netherlands/media/330069/insta360-go-ultra-product-shot-camera-black1",
+        "kind": "official_product_photo",
+        "rights_basis": "Official distributor media detail explicitly licenses Media use. Credited editorial product coverage; no endorsement or resale of image.",
+        "source_page": "https://newsroom.notified.com/transcontinenta-netherlands/media/330069/insta360-go-ultra-product-shot-camera-black1",
+        "source_file": "https://cdn.filestackcontent.com/auto_image/SJ7v6kPMR5emABAu6jzy",
+        "checked_at": "2026-11-19T11:59:22.323642+00:00",
+        "sha256": "2b63585515445c2964b974964636a61b90b16e2cc6be38157492e48e352281ed",
+        "processing": "Proportional resize to800x800 and WebP compression only."
+      },
+      "expires_at": null
+    },
     {
       "id": "insta360-ace-pro-2-kr-dual-battery",
       "region": "kr",
@@ -5853,10 +5977,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 31,
+    "feed": 32,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 15,
+    "verified_product_links": 16,
     "held_product_links": 16,
     "historical_tracked_links": 14
   }
