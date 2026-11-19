@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T03:48:08.009198+00:00",
+  "generated_at": "2026-11-19T11:26:43.888961+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -2394,8 +2394,7 @@
       "rocket": false,
       "specs": [],
       "briefing": [
-        "New US users only. 14 languages; redeem on the web within 30 days, then use on mobile. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD199.20 untested; not used as main price.",
-        "Coupon campaign evidence: DEAL20 campaign: 9–15 November 2026, seller-stated dates; exclusions apply. Exact end time and time zone are not stated on the campaign page. Coupon application and final total remain untested."
+        "New US users only. Base price USD249; seller advertises USD159 with LEARN, but coupon application, taxes and checkout are untested. Coupon expiry not stated. Redeem on the web within 30 days. Unredeemed licences: store credit within 30 days; redeemed licences: final sale."
       ],
       "audience": "New users who meet seller activation conditions.",
       "source": {
@@ -2404,7 +2403,7 @@
         "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages"
       },
       "published_at": null,
-      "checked_date": "2026-11-14",
+      "checked_date": "2026-11-19",
       "score": null,
       "disclosure": "No affiliate tracking. Seller displayed price, not a verified discount or completed checkout.",
       "ai_rewritten": false,
@@ -2421,7 +2420,7 @@
         ],
         "status": "verified_activation",
         "delivery": "Digital licence; no physical delivery.",
-        "activation": "New US users only. 14 languages; redeem on the web within 30 days, then use on mobile. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD199.20 untested; not used as main price.",
+        "activation": "New US users only. Base price USD249; seller advertises USD159 with LEARN, but coupon application, taxes and checkout are untested. Coupon expiry not stated. Redeem on the web within 30 days. Unredeemed licences: store credit within 30 days; redeemed licences: final sale.",
         "payment": "Billing country, tax and final checkout not tested.",
         "tax": "Displayed USD price; final tax and total require checkout.",
         "returns": "Unredeemed licence: store credit within 30 days; redeemed licence: final sale.",
@@ -2458,16 +2457,21 @@
             "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
             "observed_at": "2026-11-16T08:57:57.638591+00:00",
             "result": "Web tool direct seller page extraction displayed exact product title, Deal Price USD249.00, and Add To Cart. New US users only; other-country eligibility must not be implied."
+          },
+          {
+            "url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+            "observed_at": "2026-11-19T11:26:43.888961+00:00",
+            "result": "Seller exact product page observed: base USD249; advertised Early Black Friday coupon LEARN USD159. New US users only. No coupon expiry stated. Redemption within30days; unredeemed store credit within30days, redeemed final sale. No coupon application, checkout or tax tested."
           }
         ],
         "conditions": [
-          "New US users only. 14 languages; redeem on the web within 30 days, then use on mobile. Unredeemed licences may be returned for store credit within 30 days; redeemed licences are final sale. Optional DEAL20 price USD199.20 untested; not used as main price."
+          "New US users only. Base price USD249; seller advertises USD159 with LEARN, but coupon application, taxes and checkout are untested. Coupon expiry not stated. Redeem on the web within 30 days. Unredeemed licences: store credit within 30 days; redeemed licences: final sale."
         ],
         "limitations": [
-          "No independent previous-price or historical-low evidence.",
-          "Checkout, optional coupon, tax, billing-country eligibility untested."
+          "No independent historical comparison.",
+          "Current LEARN application, tax and final checkout untested; expiry unspecified."
         ],
-        "review_completed_at": "2026-11-16T08:57:57.638591+00:00",
+        "review_completed_at": "2026-11-19T11:26:43.888961+00:00",
         "coupon": {
           "code": "DEAL20",
           "checkout_verified": false,
@@ -2480,22 +2484,28 @@
           "observed_at": "2026-11-15T00:54:58.669942+00:00",
           "source_date_text": "Valid 11/9 - 11/15. Exclusions apply.",
           "displayed_price": 199.2
+        },
+        "current_coupon": {
+          "code": "LEARN",
+          "displayed_price": 159,
+          "currency": "USD",
+          "checkout_verified": false,
+          "ends_at": null,
+          "source_url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
+          "observed_at": "2026-11-19T11:26:43.888961+00:00",
+          "evidence": "Seller exact product page observed: base USD249; advertised Early Black Friday coupon LEARN USD159. New US users only. No coupon expiry stated. Redemption within30days; unredeemed store credit within30days, redeemed final sale. No coupon application, checkout or tax tested."
         }
       },
       "latest_offer_check": {
-        "id": "babbel-lifetime-all-languages",
         "status": "seller_page_price_and_add_to_cart_observed",
         "price": 249,
         "currency": "USD",
-        "previous_recorded_price": 249.0,
-        "observed_at": "2026-11-16T08:57:57.638591+00:00",
+        "observed_at": "2026-11-19T11:26:43.888961+00:00",
         "source_url": "https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages",
-        "evidence": "Web tool direct seller page extraction displayed exact product title, Deal Price USD249.00, and Add To Cart. New US users only; other-country eligibility must not be implied.",
+        "evidence": "Seller exact product page observed: base USD249; advertised Early Black Friday coupon LEARN USD159. New US users only. No coupon expiry stated. Redemption within30days; unredeemed store credit within30days, redeemed final sale. No coupon application, checkout or tax tested.",
         "limitations": [
-          "Public-page text observation only; no browser visual/cart execution or checkout, payment, regional fulfillment or license issuance verified.",
-          "Web tool may use a recently crawled page; not an inventory API guarantee.",
-          "DEAL20 availability/application not verified; do not claim it is currently valid.",
-          "No independent historical discount comparison."
+          "Public seller text, not completed checkout.",
+          "LEARN conditional USD159 is not the main price."
         ]
       },
       "image": {
