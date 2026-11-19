@@ -1687,4 +1687,12 @@ Recorded price: 44.26 EUR. Seller price observation dated 2026-11-18T03:58:19.73
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
+### TablePro Pro · one-time · 3 computers
+Seller: TablePro / Polar
+Product URL: https://tablepro.app/pricing
+Product-link review: 2026-11-19T03:48:08.009198+00:00 (not a stock check)
+Recorded price: 47.4 USD. Seller price observation dated 2026-11-19T03:48:08.009198+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 16 held source records are omitted from this export; their purchase links are not verified.
