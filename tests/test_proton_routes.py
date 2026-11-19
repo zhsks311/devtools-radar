@@ -25,7 +25,7 @@ class ProtonRoutesTest(unittest.TestCase):
   from pathlib import Path
   d=json.loads(Path('data/deals_en.json').read_text());t=json.loads(Path('data/deal_localizations.json').read_text())
   for row in d['feed']:
-   if row['id'].startswith('proton-') and row['id'] != 'proton-pass-family-black-friday-annual':
+   if row['id'].startswith('proton-') and row['id'] not in {'proton-pass-family-black-friday-annual','proton-vpn-plus-black-friday-annual'}:
     self.assertEqual(row['purchase_eligibility']['countries_confirmed'],[])
     self.assertEqual(row['alternative_review']['sources'][0]['url'],'https://proton.me/mail/black-friday')
     for lang,loc in t[row['id']].items():
@@ -57,3 +57,21 @@ class ProtonRoutesTest(unittest.TestCase):
   self.assertEqual(row['purchase_eligibility']['countries_confirmed'],[])
   for loc in json.loads(Path('data/deal_localizations.json').read_text())[row['id']].values():
    for value in ['23.94','47.88','PREMIUM_DRIVE_DEAL']: self.assertIn(value,loc['buying_note'])
+
+ def test_vpn_annual_offer(self):
+  import json
+  from pathlib import Path
+  import site_i18n
+  from tools.product_links import publishable_link
+  row=next(x for x in json.loads(Path('data/deals_en.json').read_text())['feed'] if x['id']=='proton-vpn-plus-black-friday-annual')
+  self.assertEqual(row['price'],35.88)
+  self.assertEqual(row['purchase_eligibility']['countries_confirmed'],[])
+  self.assertTrue(publishable_link(row))
+  self.assertIsNone(row['discount_pct'])
+  self.assertIsNone(row['original_price'])
+  self.assertEqual(site_i18n.BILLING_KIND[row['id']],'first_year')
+  self.assertEqual(row['image']['path'],'/assets/deals/proton-vpn.webp')
+  for loc in json.loads(Path('data/deal_localizations.json').read_text())[row['id']].values():
+   for value in ['35.88','83.88','30']: self.assertIn(value,loc['conditions'])
+  self.assertFalse(direct_product_url('https://protonvpn.com/'))
+  self.assertFalse(direct_product_url('https://protonvpn.com.evil.test/black-friday'))

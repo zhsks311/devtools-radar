@@ -2666,5 +2666,37 @@
       "summary": "Caméra portable de 53 g pour filmer en 4K60 les mains libres. Caméra détachable et Action Pod à écran rabattable pour varier les cadrages.",
       "conditions": "Kit standard Cosmic Black : 523 000 KRW. microSD séparée obligatoire, sans mémoire interne. Boutique coréenne : livraison gratuite dès 150 000 KRW, expédition estimée sous 2 jours, sans garantie de réception. Adresse, taxes, stock et paiement non testés ; fin non précisée. Retour sous 15 jours en état original avec emballage et accessoires complets ; traces d’usage susceptibles de refus. Cloud payant, cartes et protection en supplément."
     }
+  },
+  "proton-vpn-plus-black-friday-annual": {
+    "en": {
+      "product": "Proton VPN Plus · first 12 months",
+      "summary": "A VPN for up to 10 devices with ad, tracker and malware blocking. USD 35.88 covers the first 12 months, not a monthly bill.",
+      "conditions": "New users: USD 35.88 prepaid for the first 12 months, then automatic renewal at USD 83.88 every 12 months unless canceled. Existing-account offers vary. Cancel and request a refund within 30 days of the initial direct purchase; once per user, cash/bank transfer excluded. Offer end, country eligibility, tax and final checkout unverified."
+    },
+    "ko": {
+      "product": "Proton VPN Plus · 첫 12개월",
+      "summary": "최대 10대에서 쓰는 VPN입니다. 광고·추적기·악성코드 차단을 제공하며, 첫 12개월 총액은 USD 35.88입니다.",
+      "conditions": "신규 사용자 첫 12개월 USD 35.88 선결제. 해지하지 않으면 이후 12개월마다 USD 83.88 자동 갱신됩니다. 기존 계정 혜택은 다를 수 있습니다. 최초 직접 구매 후 30일 이내 해지와 환불 요청 모두 필요하며, 사용자당 1회이고 현금·은행 송금은 제외됩니다. 행사 종료일·국가별 가입 가능 여부·세금·최종 결제는 미확인입니다."
+    },
+    "zh": {
+      "product": "Proton VPN Plus · 首 12 个月",
+      "summary": "最多同时连接 10 台设备的 VPN，支持广告、跟踪器和恶意软件拦截。首 12 个月总价 USD 35.88。",
+      "conditions": "新用户首 12 个月预付 USD 35.88；如不取消，之后每 12 个月自动续费 USD 83.88。已有账户优惠可能不同。首次直接购买后 30 天内须同时取消并申请退款；每人限一次，现金和银行转账除外。截止时间、国家资格、税费和最终结账未核实。"
+    },
+    "ja": {
+      "product": "Proton VPN Plus · 最初の 12 か月",
+      "summary": "最大 10 台で使える VPN。広告・トラッカー・マルウェアをブロックします。最初の 12 か月の総額は USD 35.88。",
+      "conditions": "新規利用者は最初の 12 か月分 USD 35.88 を前払い。解約しない場合、以後 12 か月ごとに USD 83.88 で自動更新。既存アカウントの条件は異なる場合があります。初回直接購入から 30 日以内の解約と返金申請が必要で、利用者につき 1 回、現金・銀行振込は対象外。終了日時、国別資格、税金、最終決済は未確認。"
+    },
+    "es": {
+      "product": "Proton VPN Plus · primeros 12 meses",
+      "summary": "VPN para hasta 10 dispositivos, con bloqueo de anuncios, rastreadores y malware. USD 35.88 en total por los primeros 12 meses.",
+      "conditions": "Nuevos usuarios: USD 35.88 por adelantado por 12 meses; renovación automática de USD 83.88 cada 12 meses salvo cancelación. Las ofertas de cuentas existentes varían. Cancelar y solicitar el reembolso dentro de 30 días de la primera compra directa; una vez por usuario, excluye efectivo y transferencia bancaria. Fin, países elegibles, impuestos y pago final sin verificar."
+    },
+    "fr": {
+      "product": "Proton VPN Plus · 12 premiers mois",
+      "summary": "VPN pour 10 appareils simultanés, avec blocage des publicités, traqueurs et logiciels malveillants. USD 35.88 au total pour les 12 premiers mois.",
+      "conditions": "Nouveaux utilisateurs : USD 35.88 payés à l’avance pour 12 mois, puis renouvellement automatique à USD 83.88 tous les 12 mois sauf résiliation. Les offres des comptes existants varient. Résiliation et demande de remboursement sous 30 jours après le premier achat direct ; une fois par utilisateur, hors espèces et virement bancaire. Fin, pays éligibles, taxes et paiement final non vérifiés."
+    }
   }
 }

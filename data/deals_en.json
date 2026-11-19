@@ -1,11 +1,121 @@
 {
-  "generated_at": "2026-11-19T11:26:43.888961+00:00",
+  "generated_at": "2026-11-19T21:45:38.596487+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
     "lang": "en"
   },
   "feed": [
+    {
+      "id": "proton-vpn-plus-black-friday-annual",
+      "region": "global",
+      "target": "en",
+      "category": "cloud",
+      "category_label": "SaaS & cloud",
+      "title_raw": "Proton VPN Plus · first 12 months",
+      "product": "Proton VPN Plus · first 12 months",
+      "store": "Proton",
+      "storefront_country": null,
+      "price": 35.88,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital subscription",
+      "rocket": false,
+      "specs": [],
+      "briefing": [
+        "A VPN for up to 10 devices with ad, tracker and malware blocking. USD 35.88 covers the first 12 months, not a monthly bill.",
+        "New users: USD 35.88 prepaid for the first 12 months, then automatic renewal at USD 83.88 every 12 months unless canceled. Existing-account offers vary. Cancel and request a refund within 30 days of the initial direct purchase; once per user, cash/bank transfer excluded. Offer end, country eligibility, tax and final checkout unverified."
+      ],
+      "audience": "New subscribers; country eligibility unverified.",
+      "source": {
+        "id": "proton-official",
+        "label": "Proton official Black Friday product offer",
+        "url": "https://protonvpn.com/black-friday"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-19",
+      "score": null,
+      "disclosure": "No affiliate tracking. Introductory annual price; automatic renewal costs more. Final checkout not tested.",
+      "ai_rewritten": false,
+      "price_source": "retailer_product_page",
+      "link": {
+        "url": "https://protonvpn.com/black-friday",
+        "tracked": false,
+        "label": "View official offer",
+        "label_kind": "retailer"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital subscription; no shipping.",
+        "activation": "New-user offer; existing-user offers vary. Country eligibility unverified.",
+        "payment": "Korean billing eligibility and checkout not tested.",
+        "tax": "Taxes and final total require checkout.",
+        "returns": "Cancel and request refund within 30 days of initial direct purchase; one refund per user; cash/bank transfer excluded. https://proton.me/legal/terms",
+        "evidence_url": "https://protonvpn.com/black-friday",
+        "checked_at": "2026-11-19T21:44:40.642202+00:00"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-19T21:44:40.642202+00:00",
+        "url": "https://protonvpn.com/black-friday",
+        "product_match": true,
+        "evidence": "Official VPN Plus annual tier: USD 35.88 billed for first 12 months, then USD 83.88 every 12 months. New-user offer. Public seller page and purchase link observed; no checkout or purchase performed."
+      },
+      "price_review": {
+        "id": "proton-vpn-plus-black-friday-annual",
+        "product": "Proton VPN Plus · first 12 months",
+        "seller_url": "https://protonvpn.com/black-friday",
+        "recorded_price": 35.88,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "verified_price": 35.88,
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://protonvpn.com/black-friday",
+            "observed_at": "2026-11-19T21:44:40.642202+00:00",
+            "result": "Official VPN Plus annual tier: USD 35.88 billed for first 12 months, then USD 83.88 every 12 months. New-user offer. Public seller page and purchase link observed; no checkout or purchase performed."
+          }
+        ],
+        "conditions": [
+          "New users: USD 35.88 prepaid for the first 12 months, then automatic renewal at USD 83.88 every 12 months unless canceled. Existing-account offers vary. Cancel and request a refund within 30 days of the initial direct purchase; once per user, cash/bank transfer excluded. Offer end, country eligibility, tax and final checkout unverified."
+        ],
+        "limitations": [
+          "Vendor discount uses regular monthly billing as baseline, not the annual renewal price. No crossed-out annual price or historical-low claim.",
+          "Offer expiry, country eligibility and final tax unverified."
+        ],
+        "review_completed_at": "2026-11-19T21:44:40.642202+00:00"
+      },
+      "expires_at": null,
+      "latest_offer_check": {
+        "id": "proton-vpn-plus-black-friday-annual",
+        "status": "seller_page_price_and_purchase_link_observed",
+        "price": 35.88,
+        "observed_at": "2026-11-19T21:44:40.642202+00:00",
+        "source_url": "https://protonvpn.com/black-friday",
+        "evidence": "Official VPN Plus annual tier: USD 35.88 billed for first 12 months, then USD 83.88 every 12 months. New-user offer. Public seller page and purchase link observed; no checkout or purchase performed.",
+        "limitations": [
+          "Public source text, not completed checkout; tax and country eligibility not verified.",
+          "Purchase link is not proof of inventory or successful payment."
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/proton-vpn.webp",
+        "alt": "Proton VPN official Android application home screen",
+        "credit": "Proton",
+        "credit_url": "https://proton.me/media/kit",
+        "kind": "official_product_ui",
+        "rights_basis": "Official media kit permits free use when accompanying media refers back to proton.me; credit backlink displayed.",
+        "source_page": "https://proton.me/media/kit",
+        "source_file": "VPN_UI_homescreen_dark_android.png",
+        "checked_at": "2026-11-19T21:44:40.642202+00:00",
+        "sha256": "46ff7f8551f719c51bae1998ff39879f6b58f7cca4d23682801d1f76d23fdc2f",
+        "processing": "Proportional resize to 980px width and WebP compression only; no cropping, invented UI or content change."
+      },
+      "price_variant": "VPN Plus / first 12 months / upfront annual payment"
+    },
     {
       "id": "proton-unlimited-black-friday-annual",
       "region": "global",
@@ -7506,7 +7616,7 @@
     }
   },
   "stats": {
-    "feed": 37,
+    "feed": 38,
     "sources": 11
   }
 }

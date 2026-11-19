@@ -1279,6 +1279,14 @@ A reviewed link is not proof of current stock, a discount or completed checkout.
 Prices can change. Countries below refer only to recorded delivery/activation evidence, not payment eligibility.
 Localized catalog and purchase conditions: https://devteardown.com/deals/
 
+### Insta360 GO Ultra · Cosmic Black Standard Bundle
+Seller: Insta360 official store
+Product URL: https://store.insta360.com/KR/product/go-ultra
+Product-link review: 2026-11-19T11:59:22.323642+00:00 (not a stock check)
+Recorded price: 523000 KRW. Seller price observation dated 2026-11-19T11:59:22.323642+00:00.
+Delivery / activation countries with evidence: KR.
+Discounts and historical-low claims are not established by this export.
+
 ### Insta360 Ace Pro 2 · Dual Battery Standard Bundle
 Seller: Insta360 official store
 Product URL: https://store.insta360.com/kr/product/ace-pro-2
@@ -1399,11 +1407,27 @@ Recorded price: 7700 KRW. Seller price observation dated 2026-11-18T02:28:37.655
 Delivery / activation countries with evidence: JP, KR.
 Discounts and historical-low claims are not established by this export.
 
+### Proton VPN Plus · first 12 months
+Seller: Proton
+Product URL: https://protonvpn.com/black-friday
+Product-link review: 2026-11-19T21:44:40.642202+00:00 (not a stock check)
+Recorded price: 35.88 USD. Seller price observation dated 2026-11-19T21:44:40.642202+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### Proton Unlimited · first 12 months
 Seller: Proton
 Product URL: https://proton.me/mail/black-friday
 Product-link review: 2026-11-17T20:36:05.795014+00:00 (not a stock check)
 Recorded price: 77.88 USD. Seller price observation dated 2026-11-17T20:36:05.795014+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### Proton Pass Family · first 12 months
+Seller: Proton
+Product URL: https://proton.me/pass/black-friday
+Product-link review: 2026-11-18T13:36:07.236561+00:00 (not a stock check)
+Recorded price: 33.48 USD. Seller price observation dated 2026-11-18T13:36:07.236561+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
@@ -1539,7 +1563,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages
 Product-link review: 2026-11-14T12:44:20.414842+00:00 (not a stock check)
-Recorded price: 249 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
+Recorded price: 249 USD. Seller price observation dated 2026-11-19T11:26:43.888961+00:00.
 Delivery / activation countries with evidence: US.
 Discounts and historical-low claims are not established by this export.
 
@@ -1676,6 +1700,14 @@ Seller: Koofr
 Product URL: https://koofr.eu/black-friday/
 Product-link review: 2026-11-18T03:58:19.734731+00:00 (not a stock check)
 Recorded price: 44.26 EUR. Seller price observation dated 2026-11-18T03:58:19.734731+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
+### TablePro Pro · one-time · 3 computers
+Seller: TablePro / Polar
+Product URL: https://tablepro.app/pricing
+Product-link review: 2026-11-19T03:48:08.009198+00:00 (not a stock check)
+Recorded price: 47.4 USD. Seller price observation dated 2026-11-19T03:48:08.009198+00:00.
 Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
