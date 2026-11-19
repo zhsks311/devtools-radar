@@ -1547,7 +1547,7 @@ Discounts and historical-low claims are not established by this export.
 Seller: StackSocial
 Product URL: https://www.stacksocial.com/sales/babbel-language-learning-lifetime-subscription-all-languages
 Product-link review: 2026-11-14T12:44:20.414842+00:00 (not a stock check)
-Recorded price: 249 USD. Seller price observation dated 2026-11-16T08:57:57.638591+00:00.
+Recorded price: 249 USD. Seller price observation dated 2026-11-19T11:26:43.888961+00:00.
 Delivery / activation countries with evidence: US.
 Discounts and historical-low claims are not established by this export.
 
