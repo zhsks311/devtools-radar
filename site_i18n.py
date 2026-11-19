@@ -380,3 +380,5 @@ def write_unified(output,items,deals,en_deals):
   alternates=''.join(f'<xhtml:link rel="alternate" hreflang="{k}" href="https://devteardown.com{v}"/>' for k,v in PATHS.items()) if path in PATHS.values() else ''
   records.append(f'<url><loc>https://devteardown.com{escape(path)}</loc><lastmod>{modified}</lastmod>{alternates}</url>')
  (output/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+''.join(records)+'</urlset>',encoding='utf-8')
+
+CSS += '.card .official-app-icon img{width:64px;height:64px;aspect-ratio:1;margin:20px auto;object-fit:contain}'

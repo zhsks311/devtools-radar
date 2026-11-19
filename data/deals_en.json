@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T13:36:07.236561+00:00",
+  "generated_at": "2026-11-19T03:48:08.009198+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
@@ -4533,6 +4533,123 @@
         "evidence": "Official 2026 campaign displays 1 TB yearly plan EUR44.26 excluding VAT with BF2026. November16–30; timezone unspecified. Current/former paid customers use gift cards; never-paid free accounts upgrade. No automatic renewal. Checkout, Korean billing eligibility and final VAT untested.",
         "limitations": "No checkout or account creation performed."
       }
+    },
+    {
+      "id": "tablepro-pro-onetime-bf2026",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "TablePro Pro · one-time · 3 computers",
+      "product": "TablePro Pro · one-time · 3 computers",
+      "store": "TablePro / Polar",
+      "price": 47.4,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital license",
+      "specs": [
+        "1 person · 3 computers",
+        "Mac and Linux",
+        "One-time license"
+      ],
+      "briefing": [
+        "Database client for querying and editing SQL and NoSQL data. Pro adds comparison, query insights and charts; core tools are free.",
+        "Official current pricing and campaign: Pro one-time USD47.40, one person on up to3 Mac/Linux computers, Nov19 00:00 UTC to Dec1 08:00 UTC 2026. BLACKFRIDAY2026 applied from site. Tax added at checkout. No expiry date, but periodic online license checks; no promise of perpetual updates. Checkout and Korean payment eligibility untested. Older search cache Nov24 start superseded by current official page."
+      ],
+      "published_at": null,
+      "checked_date": "2026-11-19",
+      "source": {
+        "url": "https://tablepro.app/pricing",
+        "label": "TablePro official pricing"
+      },
+      "price_source": "retailer_product_page",
+      "price_variant": "Pro one-time / 1 person / 3 Mac or Linux computers",
+      "disclosure": "No affiliate tracking. Advertised seller price before tax; checkout untested.",
+      "link": {
+        "url": "https://tablepro.app/pricing",
+        "tracked": false,
+        "label": "View product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-19T03:48:08.009198+00:00",
+        "url": "https://tablepro.app/pricing",
+        "product_match": true,
+        "evidence": "Official current pricing and campaign: Pro one-time USD47.40, one person on up to3 Mac/Linux computers, Nov19 00:00 UTC to Dec1 08:00 UTC 2026. BLACKFRIDAY2026 applied from site. Tax added at checkout. No expiry date, but periodic online license checks; no promise of perpetual updates. Checkout and Korean payment eligibility untested. Older search cache Nov24 start superseded by current official page."
+      },
+      "price_review": {
+        "id": "tablepro-pro-onetime-bf2026",
+        "product": "TablePro Pro · one-time · 3 computers",
+        "seller_url": "https://tablepro.app/pricing",
+        "recorded_price": 47.4,
+        "verified_price": 47.4,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-19T03:48:08.009198+00:00",
+        "evidence": [
+          {
+            "url": "https://tablepro.app/pricing",
+            "observed_at": "2026-11-19T03:48:08.009198+00:00",
+            "result": "Official current pricing and campaign: Pro one-time USD47.40, one person on up to3 Mac/Linux computers, Nov19 00:00 UTC to Dec1 08:00 UTC 2026. BLACKFRIDAY2026 applied from site. Tax added at checkout. No expiry date, but periodic online license checks; no promise of perpetual updates. Checkout and Korean payment eligibility untested. Older search cache Nov24 start superseded by current official page."
+          }
+        ],
+        "limitations": [
+          "Seller list price USD79 changed Nov2; not independently verified price history. No discount percentage shown.",
+          "Tax and Korean checkout eligibility untested."
+        ]
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital license, not a physical product.",
+        "activation": "One person, up to3 Mac/Linux computers. Account and periodic online license checks required. Linux beta; paid features differ by platform.",
+        "payment": "Polar; Korean payment eligibility not tested.",
+        "tax": "USD price excludes checkout sales tax/VAT.",
+        "returns": "Official refund policy: full refund within7days of purchase; paid license ends on refund.",
+        "evidence_url": "https://tablepro.app/terms",
+        "checked_at": "2026-11-19T03:48:08.009198+00:00"
+      },
+      "expires_at": "2026-12-01T08:00:00+00:00",
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "price": 47.4,
+        "observed_at": "2026-11-19T03:48:08.009198+00:00",
+        "source_url": "https://tablepro.app/pricing",
+        "evidence": "Official current pricing and campaign: Pro one-time USD47.40, one person on up to3 Mac/Linux computers, Nov19 00:00 UTC to Dec1 08:00 UTC 2026. BLACKFRIDAY2026 applied from site. Tax added at checkout. No expiry date, but periodic online license checks; no promise of perpetual updates. Checkout and Korean payment eligibility untested. Older search cache Nov24 start superseded by current official page."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-19T03:48:08.009198+00:00",
+        "sources": [
+          {
+            "url": "https://tablepro.app/black-friday",
+            "label": "Campaign timing and exclusions"
+          },
+          {
+            "url": "https://tablepro.app/refund-policy",
+            "label": "Refund policy"
+          },
+          {
+            "url": "https://tablepro.app/terms",
+            "label": "License and online checks"
+          }
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/tablepro-icon.png",
+        "alt": "Official TablePro app icon, not a product screenshot",
+        "credit": "TablePro / Ngo Quoc Dat",
+        "credit_url": "https://tablepro.app/brand",
+        "kind": "official_app_icon",
+        "rights_basis": "Official brand guidelines permit unchanged app icon in articles/reviews referring to TablePro. No endorsement implied.",
+        "source_page": "https://tablepro.app/brand",
+        "source_file": "https://tablepro.app/images/brand/tablepro-icon-512.png",
+        "checked_at": "2026-11-19T03:48:08.009198+00:00",
+        "sha256": "fa292dc18dfb61b52099e0387882b9795d9e8209dfb9c212231021a3730bc5dc",
+        "processing": "Original PNG unchanged."
+      }
     }
   ],
   "picks": [
@@ -6188,6 +6305,123 @@
               "Purchase link is not proof of inventory or successful payment."
             ]
           }
+        },
+        {
+          "id": "tablepro-pro-onetime-bf2026",
+          "region": "global",
+          "target": "en",
+          "category": "software",
+          "category_label": "Software",
+          "title_raw": "TablePro Pro · one-time · 3 computers",
+          "product": "TablePro Pro · one-time · 3 computers",
+          "store": "TablePro / Polar",
+          "price": 47.4,
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "Digital license",
+          "specs": [
+            "1 person · 3 computers",
+            "Mac and Linux",
+            "One-time license"
+          ],
+          "briefing": [
+            "Database client for querying and editing SQL and NoSQL data. Pro adds comparison, query insights and charts; core tools are free.",
+            "Official current pricing and campaign: Pro one-time USD47.40, one person on up to3 Mac/Linux computers, Nov19 00:00 UTC to Dec1 08:00 UTC 2026. BLACKFRIDAY2026 applied from site. Tax added at checkout. No expiry date, but periodic online license checks; no promise of perpetual updates. Checkout and Korean payment eligibility untested. Older search cache Nov24 start superseded by current official page."
+          ],
+          "published_at": null,
+          "checked_date": "2026-11-19",
+          "source": {
+            "url": "https://tablepro.app/pricing",
+            "label": "TablePro official pricing"
+          },
+          "price_source": "retailer_product_page",
+          "price_variant": "Pro one-time / 1 person / 3 Mac or Linux computers",
+          "disclosure": "No affiliate tracking. Advertised seller price before tax; checkout untested.",
+          "link": {
+            "url": "https://tablepro.app/pricing",
+            "tracked": false,
+            "label": "View product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-19T03:48:08.009198+00:00",
+            "url": "https://tablepro.app/pricing",
+            "product_match": true,
+            "evidence": "Official current pricing and campaign: Pro one-time USD47.40, one person on up to3 Mac/Linux computers, Nov19 00:00 UTC to Dec1 08:00 UTC 2026. BLACKFRIDAY2026 applied from site. Tax added at checkout. No expiry date, but periodic online license checks; no promise of perpetual updates. Checkout and Korean payment eligibility untested. Older search cache Nov24 start superseded by current official page."
+          },
+          "price_review": {
+            "id": "tablepro-pro-onetime-bf2026",
+            "product": "TablePro Pro · one-time · 3 computers",
+            "seller_url": "https://tablepro.app/pricing",
+            "recorded_price": 47.4,
+            "verified_price": 47.4,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "review_completed_at": "2026-11-19T03:48:08.009198+00:00",
+            "evidence": [
+              {
+                "url": "https://tablepro.app/pricing",
+                "observed_at": "2026-11-19T03:48:08.009198+00:00",
+                "result": "Official current pricing and campaign: Pro one-time USD47.40, one person on up to3 Mac/Linux computers, Nov19 00:00 UTC to Dec1 08:00 UTC 2026. BLACKFRIDAY2026 applied from site. Tax added at checkout. No expiry date, but periodic online license checks; no promise of perpetual updates. Checkout and Korean payment eligibility untested. Older search cache Nov24 start superseded by current official page."
+              }
+            ],
+            "limitations": [
+              "Seller list price USD79 changed Nov2; not independently verified price history. No discount percentage shown.",
+              "Tax and Korean checkout eligibility untested."
+            ]
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Digital license, not a physical product.",
+            "activation": "One person, up to3 Mac/Linux computers. Account and periodic online license checks required. Linux beta; paid features differ by platform.",
+            "payment": "Polar; Korean payment eligibility not tested.",
+            "tax": "USD price excludes checkout sales tax/VAT.",
+            "returns": "Official refund policy: full refund within7days of purchase; paid license ends on refund.",
+            "evidence_url": "https://tablepro.app/terms",
+            "checked_at": "2026-11-19T03:48:08.009198+00:00"
+          },
+          "expires_at": "2026-12-01T08:00:00+00:00",
+          "latest_offer_check": {
+            "status": "seller_text_observed",
+            "price": 47.4,
+            "observed_at": "2026-11-19T03:48:08.009198+00:00",
+            "source_url": "https://tablepro.app/pricing",
+            "evidence": "Official current pricing and campaign: Pro one-time USD47.40, one person on up to3 Mac/Linux computers, Nov19 00:00 UTC to Dec1 08:00 UTC 2026. BLACKFRIDAY2026 applied from site. Tax added at checkout. No expiry date, but periodic online license checks; no promise of perpetual updates. Checkout and Korean payment eligibility untested. Older search cache Nov24 start superseded by current official page."
+          },
+          "alternative_review": {
+            "checked_at": "2026-11-19T03:48:08.009198+00:00",
+            "sources": [
+              {
+                "url": "https://tablepro.app/black-friday",
+                "label": "Campaign timing and exclusions"
+              },
+              {
+                "url": "https://tablepro.app/refund-policy",
+                "label": "Refund policy"
+              },
+              {
+                "url": "https://tablepro.app/terms",
+                "label": "License and online checks"
+              }
+            ]
+          },
+          "image": {
+            "path": "/assets/deals/tablepro-icon.png",
+            "alt": "Official TablePro app icon, not a product screenshot",
+            "credit": "TablePro / Ngo Quoc Dat",
+            "credit_url": "https://tablepro.app/brand",
+            "kind": "official_app_icon",
+            "rights_basis": "Official brand guidelines permit unchanged app icon in articles/reviews referring to TablePro. No endorsement implied.",
+            "source_page": "https://tablepro.app/brand",
+            "source_file": "https://tablepro.app/images/brand/tablepro-icon-512.png",
+            "checked_at": "2026-11-19T03:48:08.009198+00:00",
+            "sha256": "fa292dc18dfb61b52099e0387882b9795d9e8209dfb9c212231021a3730bc5dc",
+            "processing": "Original PNG unchanged."
+          }
         }
       ]
     },
@@ -7262,7 +7496,7 @@
     }
   },
   "stats": {
-    "feed": 36,
+    "feed": 37,
     "sources": 11
   }
 }

@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'tablepro.app': r'/pricing/?', # Reviewed Pro one-time tier of this single product.
     'koofr.eu': r'/black-friday/?', # Official single-service offer; 1 TB annual tier reviewed explicitly.
     'store.insta360.com': r'/kr/product/(?:x5|ace-pro-2)/?', # Exact reviewed standard bundle.
     'ulysses.app': r'/howiwrite/?', # Reviewed exact product/campaign; account eligibility remains unverified.

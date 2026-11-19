@@ -71,12 +71,14 @@ def product_media(deal, lang, title):
     path=media.get('path','')
     if not re.fullmatch(r'/assets/deals/[a-z0-9-]+\.(?:png|webp|jpg)',path) or not Path(path.lstrip('/')).is_file():
         return illustration(deal,lang)
-    if media.get('kind') in ('official_product_ui','official_product_photo') and not (media.get('rights_basis') and media.get('source_page','').startswith('https://')): return illustration(deal,lang)
+    if media.get('kind') in ('official_product_ui','official_product_photo','official_app_icon') and not (media.get('rights_basis') and media.get('source_page','').startswith('https://')): return illustration(deal,lang)
     credit_url=media.get('credit_url','')
     if not credit_url.startswith('https://'): return illustration(deal,lang)
     licensed = media.get('kind') == 'licensed_product_photo'
     if licensed and not (media.get('rights_basis') and media.get('source_page','').startswith('https://') and media.get('license_url','').startswith('https://') and media.get('license')): return illustration(deal,lang)
     license_html = (' · <a href="'+escape(media['license_url'],quote=True)+'" rel="license noopener">'+escape(media['license'])+'</a>') if licensed else ''
     caption=LICENSED_PHOTO_LABEL[lang] if licensed else MEDIA_LABEL[lang] if media.get('kind')=='official_product_ui' else PHOTO_LABEL[lang] if media.get('kind')=='official_product_photo' else media.get('caption','')
+    if media.get('kind')=='official_app_icon': caption={'ko':'공식 앱 아이콘 · 제품 화면 아님','en':'Official app icon · not a screenshot','zh':'官方应用图标 · 非界面截图','ja':'公式アプリアイコン・画面ではありません','es':'Icono oficial · no es una captura','fr':'Icône officielle · pas une capture'}[lang]
     if caption == 'App preview; storage shown is illustrative.': caption = STORAGE_PREVIEW_LABEL[lang]
-    return '<figure class="official-product-media"><img src="'+escape(path,quote=True)+'" alt="'+escape(media.get('alt') or title,quote=True)+'" loading="lazy" decoding="async" width="980" height="552"><span class="image-error" hidden>'+escape(MEDIA_MISSING[lang])+'</span><figcaption class="caption">'+escape(caption)+' · <a href="'+escape(credit_url,quote=True)+'" rel="noopener">'+escape(media.get('credit',''))+'</a>'+license_html+'</figcaption></figure>'
+    cls='official-product-media official-app-icon' if media.get('kind')=='official_app_icon' else 'official-product-media'
+    return '<figure class="'+cls+'"><img src="'+escape(path,quote=True)+'" alt="'+escape(media.get('alt') or title,quote=True)+'" loading="lazy" decoding="async" width="980" height="552"><span class="image-error" hidden>'+escape(MEDIA_MISSING[lang])+'</span><figcaption class="caption">'+escape(caption)+' · <a href="'+escape(credit_url,quote=True)+'" rel="noopener">'+escape(media.get('credit',''))+'</a>'+license_html+'</figcaption></figure>'

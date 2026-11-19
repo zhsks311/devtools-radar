@@ -2602,5 +2602,37 @@
       "summary": "Gérez vos mots de passe sur plusieurs appareils pour six personnes au maximum.",
       "conditions": "Nouveaux utilisateurs : 33.48 USD prépayés la première année, puis 59.88 USD/an automatiquement sauf résiliation. Offres existantes selon le compte. Pass seul, pas la suite Proton Family. Les abonnés Mail Plus, VPN Plus, Drive Plus, Unlimited, Proton Family, Visionary, Duo ou professionnels ne peuvent pas rejoindre ce groupe. Pays, taxes et paiement non vérifiés ; fin non publiée."
     }
+  },
+  "tablepro-pro-onetime-bf2026": {
+    "ko": {
+      "product": "TablePro Pro · 일시불 · 컴퓨터 3대",
+      "summary": "SQL·NoSQL 데이터를 조회하고 수정하는 DB 클라이언트. 기본 기능은 무료이며 Pro에는 DB 비교, 쿼리 분석과 결과 차트 등이 추가됩니다.",
+      "conditions": "1인 Mac/Linux 합계 3대, 일시불 $47.40에 세금 별도. BLACKFRIDAY2026 자동 적용 표시가이며 결제 미시험. 2026년 12월 1일 08:00 UTC 종료. 사용권 만료는 없지만 계정·주기적 온라인 확인이 필요하고 영구 업데이트 보장은 아닙니다. Linux는 베타이며 기능 차이가 있습니다. 7일 내 환불, 한국 결제 가능 여부는 미확인. 기존 구독은 별도로 취소해야 합니다. 이미지는 공식 앱 아이콘입니다."
+    },
+    "en": {
+      "product": "TablePro Pro · one-time · 3 computers",
+      "summary": "A database client for querying and editing SQL and NoSQL data. Core tools are free; Pro adds database comparison, query insights and result charts.",
+      "conditions": "USD47.40 once for one person on 3 Mac/Linux computers, plus tax. Advertised BLACKFRIDAY2026 price; checkout untested. Ends Dec1,2026 at08:00 UTC. No license expiry, but account and periodic online checks required; not guaranteed lifetime updates. Linux is beta with feature differences. Refund within7days. Korean payment eligibility unverified. Cancel any existing subscription separately. Image is the official app icon."
+    },
+    "zh": {
+      "product": "TablePro Pro · 一次付费 · 3台电脑",
+      "summary": "用于查询和编辑SQL与NoSQL数据的数据库客户端。基础功能免费；Pro增加数据库比较、查询分析和结果图表。",
+      "conditions": "一人共3台Mac/Linux，单次47.40美元，税另计。BLACKFRIDAY2026标示价，未测试结账。2026年12月1日08:00 UTC结束。授权无到期日，但需账户和定期在线验证，不保证终身更新。Linux为测试版且功能有差异。7天内退款，韩国付款资格未验证。原订阅需另行取消。图片为官方应用图标。"
+    },
+    "ja": {
+      "product": "TablePro Pro · 買い切り · 3台",
+      "summary": "SQL・NoSQLデータを照会・編集するDBクライアント。基本機能は無料で、ProはDB比較・クエリ分析・結果チャートを追加します。",
+      "conditions": "1人、Mac/Linux合計3台で47.40米ドル、税別。BLACKFRIDAY2026表示価格、決済未検証。2026年12月1日08:00 UTC終了。利用期限なし。ただしアカウントと定期オンライン確認が必要で、永久更新の保証ではありません。Linuxはベータ版で機能差あり。7日以内返金、韓国決済資格未確認。既存サブスクは別途解約。画像は公式アプリアイコンです。"
+    },
+    "es": {
+      "product": "TablePro Pro · pago único · 3 equipos",
+      "summary": "Cliente para consultar y editar datos SQL y NoSQL. Las funciones básicas son gratuitas; Pro añade comparación de bases, análisis de consultas y gráficos.",
+      "conditions": "47,40 USD una vez, más impuestos: una persona y 3 equipos Mac/Linux. Precio anunciado BLACKFRIDAY2026, pago no probado. Finaliza el 1 de diciembre de 2026 a las 08:00 UTC. Sin caducidad, pero requiere cuenta y verificaciones en línea; no garantiza actualizaciones perpetuas. Linux es beta y sus funciones difieren. Reembolso en 7 días; pago desde Corea no verificado. Cancele por separado cualquier suscripción anterior. Imagen: icono oficial de la app."
+    },
+    "fr": {
+      "product": "TablePro Pro · achat unique · 3 ordinateurs",
+      "summary": "Client pour consulter et modifier des données SQL et NoSQL. Les outils de base sont gratuits ; Pro ajoute comparaison de bases, analyse des requêtes et graphiques.",
+      "conditions": "47,40 USD en un paiement, hors taxes, pour une personne sur 3 Mac/Linux. Prix annoncé BLACKFRIDAY2026 ; paiement non testé. Fin le 1er décembre 2026 à 08:00 UTC. Licence sans expiration, mais compte et vérifications en ligne requis ; mises à jour perpétuelles non garanties. Linux est en bêta avec des fonctions différentes. Remboursement sous 7 jours ; paiement coréen non vérifié. Annuler séparément tout abonnement existant. Image : icône officielle de l’application."
+    }
   }
 }
