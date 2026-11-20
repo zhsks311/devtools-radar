@@ -33,3 +33,14 @@ class PaymentFeeEvidenceTests(unittest.TestCase):
   sys.path.insert(0,str(ROOT/'content'))
   from killer5_a import STRIPE
   self.assertEqual(STRIPE,a)
+ def test_wind_down_is_visible_in_article_and_discovery(self):
+  a=json.loads((ROOT/'content/final'/f'{SLUG}.json').read_text())
+  for path in ('index.html','reports/ko/index.html','llms.txt','llms-full.txt',f'compare/{SLUG}/index.html'):
+   with self.subTest(path=path):
+    text=(ROOT/'dist'/path).read_text()
+    self.assertIn('March 31, 2027',text)
+  page=(ROOT/'dist/compare'/SLUG/'index.html').read_text()
+  self.assertIn('PayPal-funded subscriptions cannot move',page)
+  self.assertIn('does not include South Korea',page)
+  self.assertIn('https://docs.lemonsqueezy.com/migration',a['sources'])
+  self.assertIn('https://docs.stripe.com/payments/managed-payments/eligibility',a['sources'])

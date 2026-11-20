@@ -2,25 +2,25 @@
   {
     "slug": "stripe-vs-lemonsqueezy-vs-paddle",
     "category": "Payments & Billing",
-    "last_verified": "2026-11-14",
+    "last_verified": "2026-11-20",
     "published": "2026-11-10",
-    "hook": "For 1,000 monthly $20 subscriptions, the modeled fees are $1,120 on Stripe with no-code Tax, $1,520 with Tax API, $1,600 on Lemon Squeezy and $1,500 on Paddle. The integration path and subscription surcharge change the ranking.",
+    "hook": "Lemon Squeezy is closed to new stores and will stop processing on March 31, 2027. In the same $20 subscription model, Stripe Payments + Billing with no-code Tax costs $1,120, with Tax API $1,520, Paddle $1,500, and legacy Lemon Squeezy $1,600.",
     "sections": [
       {
-        "title": "Start with a defined account and checkout",
-        "content": "These are standard US Stripe card rates, not a quote for a Korean business. Eligibility, negotiated contracts, tax treatment and settlement currency must be checked before choosing a provider.\n\n| Stripe component | Published rate | Scope |\n|---|---|---|\n| Domestic cards | 2.9% + 30¢ | successful charge |\n| International cards | +1.5% | applicable international cards |\n| Currency conversion | +1% | when conversion is required |\n| Billing pay-as-you-go | 0.7% | Billing volume |\n| Tax Basic no-code | 0.5% | registered transactions |\n| Tax Basic API | 50¢ | registered transactions |\n\nNo-code Tax applies to integrations such as Checkout and Billing. The API price is a different integration path, not a fee to add to the no-code rate. Registration, filing and optional services need their own budget."
+        "title": "Lemon Squeezy is winding down: what existing stores need to do",
+        "content": "Lemon Squeezy closed new-user and store sign-ups on November 16, 2026. Tools for eligible stores are planned for December 2; start by mid-January 2027. Processing and renewals stop March 31, 2027, with no extensions.\n\nIts fee examples here are a legacy baseline. See the [migration guide](https://docs.lemonsqueezy.com/migration) for the official dates.\n\n| Stripe component | Published rate | Scope |\n|---|---|---|\n| Domestic cards | 2.9% + 30¢ | successful charge |\n| International cards | +1.5% | applicable international cards |\n| Currency conversion | +1% | when conversion is required |\n| Billing pay-as-you-go | 0.7% | Billing volume |\n| Tax Basic no-code | 0.5% | registered transactions |\n| Tax Basic API | 50¢ | registered transactions |\n\nUse one Tax Basic path, not both. These are US rates; registration and filing are separate."
       },
       {
-        "title": "The two merchants have different fee rules",
-        "content": "Lemon Squeezy and Paddle advertise a base 5% + 50¢, but that does not make their subscription invoices identical.\n\n- Lemon Squeezy adds 0.5 percentage points for subscriptions, 1.5 for applicable non-US transactions and 1.5 for PayPal. Its fee uses the total order value, including tax.\n- Paddle advertises 5% + 50¢ per Checkout transaction with subscriptions included. Do not copy Lemon Squeezy surcharges onto Paddle.\n- Account-specific pricing, payouts and optional services can change either result.\n\nA merchant of record handles covered transaction tax obligations as the seller. That is not a promise that your business has no income-tax, reporting or other legal obligations. Compare the service scope as well as the checkout fee."
+        "title": "Paddle and legacy Lemon Squeezy have different fee rules",
+        "content": "Paddle and the legacy Lemon Squeezy rate card list a base 5% + 50¢, but their subscription invoices differ.\n\n- Lemon Squeezy adds 0.5 percentage points for subscriptions, 1.5 for applicable non-US transactions and 1.5 for PayPal. Its fee uses the total order value, including tax.\n- Paddle advertises 5% + 50¢ per Checkout transaction with subscriptions included. Do not copy Lemon Squeezy surcharges onto Paddle.\n- Account-specific pricing, payouts and optional services can change either result.\n\nA merchant of record handles covered transaction tax obligations as the seller. That is not a promise that your business has no income-tax, reporting or other legal obligations. Compare the service scope as well as the checkout fee."
       },
       {
         "title": "Four invoices for the same subscription volume",
-        "content": "Assume 1,000 successful $20 renewals: $20,000 charged, no added tax, refunds, disputes, FX or payout fees. Use US domestic cards for Stripe and no international or PayPal surcharge for Lemon Squeezy; assume every transaction incurs the chosen Tax Basic fee.\n\n| Provider / path | Arithmetic | Total |\n|---|---|---|\n| Stripe + no-code Tax | $580 + $300 Payments + $140 Billing + $100 Tax | $1,120 |\n| Stripe + Tax API | $580 + $300 + $140 + $500 | $1,520 |\n| Lemon Squeezy subscription | 5.5% × $20,000 + 1,000 × $0.50 | $1,600 |\n| Paddle standard | 5% × $20,000 + 1,000 × $0.50 | $1,500 |\n\nCorrection, November 14: the earlier $1,500 Lemon Squeezy subscription example omitted its surcharge. The old universal $21.43 crossover also assumed the Tax API path and Paddle's base rate, not every subscription setup."
+        "content": "Assume 1,000 US domestic card renewals at $20 each. Every charge incurs the chosen Tax Basic fee. Excludes added tax, refunds, disputes, FX, payouts and Lemon Squeezy international or PayPal fees.\n\n| Provider / path | Arithmetic | Total |\n|---|---|---|\n| Stripe + no-code Tax | $580 + $300 Payments + $140 Billing + $100 Tax | $1,120 |\n| Stripe + Tax API | $580 + $300 + $140 + $500 | $1,520 |\n| Legacy Lemon Squeezy subscription | 5.5% × $20,000 + 1,000 × $0.50 | $1,600 |\n| Paddle standard | 5% × $20,000 + 1,000 × $0.50 | $1,500 |\n\nCorrection, November 14: the earlier $1,500 Lemon Squeezy subscription example omitted its surcharge. The old universal $21.43 crossover also assumed the Tax API path and Paddle's base rate, not every subscription setup."
       },
       {
         "title": "Country and tax change the denominator",
-        "content": "Use the actual checkout total, not just the advertised product price. A hypothetical $20 subscription with 20% tax creates a $24 order; if Lemon Squeezy's non-US surcharge applies, its fee is 7% × $24 + $0.50 = $2.18, before payout costs.\n\n| Change from the base model | Consequence |\n|---|---|\n| Lemon Squeezy non-US subscription | 7% + 50¢; PayPal can add another 1.5 points |\n| Stripe international card | add 1.5 points to its applicable stack |\n| Stripe FX conversion | add 1 point when required |\n| Tax-inclusive versus tax-exclusive price | calculate from the actual fee base |\n\nLemon Squeezy also documents region-dependent payout fees. These are separate from checkout fees and excluded from the worked totals. Paddle's own contract and payout terms must be evaluated separately; a foreign buyer alone does not establish which provider wins."
+        "content": "Use the actual checkout total, not just the advertised product price. A hypothetical $20 subscription with 20% tax creates a $24 order; if Lemon Squeezy's non-US surcharge applies, its fee is 7% × $24 + $0.50 = $2.18, before payout costs.\n\n| Change from the base model | Consequence |\n|---|---|\n| Lemon Squeezy non-US subscription | 7% + 50¢; PayPal can add another 1.5 points |\n| Stripe international card | add 1.5 points to its applicable stack |\n| Stripe FX conversion | add 1 point when required |\n| Tax-inclusive versus tax-exclusive price | calculate from the actual fee base |\n\nPayout fees are separate and excluded from the totals."
       },
       {
         "title": "The crossover belongs to one set of assumptions",
@@ -28,7 +28,7 @@
       },
       {
         "title": "Choose the service before trusting the headline",
-        "content": "For Stripe Payments with Billing, you remain the seller. Tax Basic is calculation and collection tooling; Tax Complete offers a separate registration and filing service with its own plans and limits. Stripe also markets Managed Payments as a distinct MoR product, which is outside these calculations.\n\nFor a covered Paddle or Lemon Squeezy sale, the provider is the merchant of record. Approval, product eligibility, refunds, chargebacks, payout timing and reserves still matter.\n\n- Confirm the business and bank country are supported.\n- Obtain the applicable rate card and test a representative receipt.\n- Model the real card mix, tax totals and average charge.\n- Check migration and data portability with both providers before committing.\n\nA checkout demo is not proof of live eligibility or settlement. None of the examples establishes that a Korean account will be approved or receive the modeled net amount."
+        "content": "On Stripe Payments + Billing, you remain the seller. Tax Basic calculates and collects tax; separate Tax Complete plans cover filing and registration.\n\nStripe Managed Payments is a distinct merchant-of-record product outside this fee model. Stripe reviews account and product eligibility; its [business-location list](https://docs.stripe.com/payments/managed-payments/eligibility) does not include South Korea. Buyer coverage is separate.\n\nPaddle acts as merchant of record for covered sales, as Lemon Squeezy does for existing stores until processing ends. Confirm approval, fees, payout timing, refunds and chargebacks, then test representative receipts and renewals before committing."
       }
     ],
     "cost_math": [
@@ -55,19 +55,24 @@
     ],
     "decision_matrix": [
       {
+        "situation": "An existing Lemon Squeezy store",
+        "pick": "Plan the move before renewals stop",
+        "why": "Dec 2 tooling is planned for eligible stores only. Start by mid-January and replace links and any unsupported payment or fulfillment flows before March 31, 2027."
+      },
+      {
         "situation": "US domestic subscriptions with Checkout Tax",
         "pick": "Model Stripe no-code Tax separately",
         "why": "The 0.5% path produces $1,120 here, not the $1,520 Tax API total."
       },
       {
         "situation": "A custom Tax API integration",
-        "pick": "Compare all three invoices",
-        "why": "At $20, Stripe is $1,520, Paddle $1,500 and Lemon Squeezy $1,600 under the base assumptions."
+        "pick": "Compare the viable paths and your legacy baseline",
+        "why": "At $20, Stripe Tax API is $1,520 and Paddle $1,500 under the base assumptions. Existing Lemon Squeezy stores can use $1,600 as a legacy comparison."
       },
       {
         "situation": "Non-US buyers or PayPal subscriptions",
         "pick": "Use the applicable surcharges",
-        "why": "Lemon Squeezy lists additional fees; do not reuse the US base total or transfer its rules to Paddle."
+        "why": "Factor in the actual surcharge and payout terms; use the Lemon Squeezy rates only to model existing transactions."
       },
       {
         "situation": "A team without transaction-tax operations",
@@ -82,27 +87,27 @@
       {
         "situation": "A Korean business seeking payouts",
         "pick": "Verify eligibility and settlement first",
-        "why": "US rate arithmetic does not establish Korean onboarding, payout currency, timing or buyer-visible details."
+        "why": "South Korea is not on Stripe’s published Managed Payments business-location list. Buyer coverage and merchant onboarding are distinct; compare settlement for providers available to your business."
       }
     ],
-    "verdict_summary": "There is no single merchant-of-record invoice. In the defined $20 subscription model, Stripe no-code Tax costs $1,120, Stripe Tax API $1,520, Lemon Squeezy $1,600 and Paddle $1,500. Choose using the actual integration, country, tax base and service scope, not the shared 5% headline.",
-    "migration_guide": "Ask both providers to confirm supported subscription and payment-data migration, required customer consent, settlement reconciliation and historical tax-record handling before scheduling a move. Do not assume either automatic portability or that every customer must re-enter a card. Run a small approved migration test before moving active renewals; retaining access to old records does not transfer earlier obligations.",
+    "verdict_summary": "Lemon Squeezy is closed to new stores and stops renewals on March 31, 2027. Existing stores should migrate before then. In the defined US $20 model, Stripe Payments + Billing with no-code Tax costs $1,120, with Tax API $1,520, Paddle $1,500, and legacy Lemon Squeezy $1,600. These are not Managed Payments prices.",
+    "migration_guide": "Start by mid-January 2027. Export customer, order and subscription records; confirm eligible payment data and consent with both providers; test renewals, receipts and settlement before cutting over. Managed Payments cannot migrate PayPal-funded subscriptions and has no built-in storefront, digital delivery or affiliate tools. Arrange replacements and replace checkout links, embeds and integrations: old links do not redirect automatically. Move to another provider if the business or required features are ineligible.",
     "faqs": [
       {
-        "q": "Is 5% + 50¢ the full subscription fee on both MoRs?",
-        "a": "No. Lemon Squeezy adds 0.5 percentage points for subscriptions and may add international and PayPal fees. Paddle advertises subscriptions within its standard 5% + 50¢ rate. Check each account contract and payout costs separately."
+        "q": "Can a new business choose Lemon Squeezy now?",
+        "a": "No. New users and stores closed November 16, 2026. Lemon Squeezy stops payment processing, including renewals, on March 31, 2027; its fees here are a comparison for existing stores."
+      },
+      {
+        "q": "Does an existing store automatically move to Stripe Managed Payments?",
+        "a": "No. Lemon Squeezy plans tools for eligible stores on December 2, 2026 and recommends starting by mid-January. PayPal-funded subscriptions cannot move to Managed Payments, and old checkout links do not redirect automatically. Check account and product eligibility and arrange separate storefront, delivery and affiliate tools as needed."
       },
       {
         "q": "Does Stripe Tax always cost 50¢ per transaction?",
         "a": "No. The US Tax Basic page distinguishes 0.5% no-code integrations from a 50¢ API integration charge for applicable registered transactions. They are alternative paths, not two fees to add together."
       },
       {
-        "q": "What changes the international comparison?",
-        "a": "Stripe lists +1.5% for international cards and +1% when currency conversion is required. Lemon Squeezy lists +1.5% for applicable non-US transactions and +1.5% for PayPal. Tax-inclusive order totals and payout costs also matter."
-      },
-      {
         "q": "Do these calculations prove Korean eligibility or remove all tax duties?",
-        "a": "No. Verify supported business and bank countries, account approval, settlement and legal obligations. MoR transaction-tax handling is not a blanket exemption from the seller business’s own taxes or reporting."
+        "a": "No. South Korea is not on Stripe’s published list of supported Managed Payments business locations. Buyer coverage is not seller eligibility. Verify onboarding, settlement and business tax obligations separately."
       }
     ],
     "sources": [
@@ -110,7 +115,9 @@
       "https://stripe.com/billing/pricing",
       "https://stripe.com/tax/pricing",
       "https://docs.lemonsqueezy.com/help/getting-started/fees",
-      "https://www.paddle.com/pricing"
+      "https://www.paddle.com/pricing",
+      "https://docs.lemonsqueezy.com/migration",
+      "https://docs.stripe.com/payments/managed-payments/eligibility"
     ],
     "related": [
       {
@@ -151,23 +158,23 @@
     },
     "tool_b": {
       "name": "Lemon Squeezy / Paddle",
-      "tagline": "Separate rate cards, shared merchant-of-record model",
-      "db": "Checkout, subscriptions and tax remittance as a single fee",
-      "pricing": "Lemon subscription 5.5% + 50¢ base · Paddle standard 5% + 50¢",
-      "self_host": "No (both act as the merchant of record)",
+      "tagline": "Paddle for new evaluations; Lemon Squeezy as a legacy baseline",
+      "db": "Paddle MoR checkout and subscriptions; Lemon Squeezy winding down",
+      "pricing": "Legacy Lemon subscription 5.5% + 50¢ base · Paddle standard 5% + 50¢",
+      "self_host": "No; covered sales use a hosted merchant of record",
       "realtime": "MoR handles covered transaction tax; own business obligations remain",
       "ai_readiness": "Compare product approval, buyer support and payout conditions",
-      "lock_in": "Confirm migration support with the providers",
-      "badge": "Check surcharges",
+      "lock_in": "Lemon Squeezy processing ends March 31, 2027; confirm migration support",
+      "badge": "Lemon Squeezy: existing stores only",
       "cta_url": "https://www.paddle.com/?utm_source=devteardown",
       "pros": [
         "MoR transaction-tax handling differs from a payment processor",
         "Paddle advertises subscriptions within its standard price",
-        "Lemon Squeezy publishes subscription and regional surcharges",
+        "Legacy Lemon Squeezy fees help benchmark existing stores",
         "Model each contract before choosing a checkout"
       ],
       "cons": [
-        "Lemon fees use total order value including tax",
+        "No new Lemon Squeezy users or stores; existing processing ends March 31, 2027",
         "International, PayPal and payout fees can affect Lemon costs",
         "Fixed fees weigh more on low-value purchases",
         "Eligibility and net settlement are not guaranteed by a price sheet"
