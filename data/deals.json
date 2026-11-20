@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T03:10:34.261188+00:00",
+  "generated_at": "2026-11-20T23:37:11+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -514,7 +514,7 @@
       "title_raw": "MSI PRO MP273Q E7 · 27-inch QHD IPS 75Hz",
       "product": "MSI PRO MP273Q E7 · 27-inch QHD IPS 75Hz",
       "store": "Gmarket",
-      "price": 172340,
+      "price": 172440,
       "currency": "KRW",
       "shipping": "See delivery conditions",
       "specs": [
@@ -523,13 +523,13 @@
         "VESA 100 × 100 mm · no KVM"
       ],
       "briefing": [
-        "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+        "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
       ],
       "published_at": null,
       "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
       "original_price": null,
       "discount_pct": null,
-      "checked_date": "2026-11-17",
+      "checked_date": "2026-11-20",
       "source": {
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
         "label": "Gmarket exact product detail"
@@ -544,32 +544,37 @@
       },
       "link_review": {
         "status": "verified_detail",
-        "checked_at": "2026-11-17T07:30:53.047065+00:00",
+        "checked_at": "2026-11-20T23:37:11+00:00",
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
         "product_match": true,
-        "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+        "evidence": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
       },
       "price_review": {
         "id": "msi-mp273q-e7-gmarket",
         "product": "MSI PRO MP273Q E7 · 27-inch QHD IPS 75Hz",
         "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-        "recorded_price": 172340,
+        "recorded_price": 172440,
         "currency": "KRW",
         "price_status": "seller_page_display_confirmed",
-        "verified_price": 172340,
+        "verified_price": 172440,
         "deal_status": "comparison_unverified",
         "evidence": [
           {
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
             "observed_at": "2026-11-17T07:30:53.047065+00:00",
             "result": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+          },
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+            "observed_at": "2026-11-20T23:37:11+00:00",
+            "result": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
           }
         ],
         "limitations": [
-          "Checkout and independent market low unverified.",
-          "Main price excludes conditional coupon and payment discounts; these appear separately."
+          "Stock, final checkout and independent market comparison unverified.",
+          "Card offer is separate; the seller lists November 30, subject to card eligibility and final checkout."
         ],
-        "review_completed_at": "2026-11-17T07:30:53.047065+00:00"
+        "review_completed_at": "2026-11-20T23:37:11+00:00"
       },
       "country_targeting": {
         "countries": [
@@ -578,82 +583,47 @@
         "basis": "reviewed_seller_audience",
         "fulfilment": "physical",
         "reviewed_at": "2026-11-17T07:30:53.047065+00:00",
-        "note": "Korean seller audience; account/individual checkout requirements remain separate."
+        "note": "Korean seller audience; account/individual checkout requirements remain separate.",
+        "checked_at": "2026-11-20"
       },
       "purchase_eligibility": {
         "countries_confirmed": [
           "KR"
         ],
         "status": "retailer_delivery_statement",
-        "delivery": "Korea domestic only; free mainland CJ, Jeju/remote +KRW 5,000",
+        "delivery": "Korean standard CJ delivery shown as free; Jeju or remote areas add KRW 5,000.",
         "activation": "Physical monitor; option 01 MP273Q E7",
         "payment": "Checkout untested",
         "tax": "Final checkout untested",
         "returns": "Seller states change-of-mind within 7 days of receipt, buyer pays return shipping: KRW 5,000 one way or 10,000 if initial shipping was free; installation/use exclusions apply.",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-        "checked_at": "2026-11-17"
+        "checked_at": "2026-11-20"
       },
       "latest_offer_check": {
-        "checked_at": "2026-11-17T07:30:53.047065+00:00",
+        "checked_at": "2026-11-20T23:37:11+00:00",
         "status": "seller_text_observed",
-        "price": 172340,
+        "price": 172440,
         "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-        "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+        "evidence": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
       },
       "price_variant": "MP273Q E7 · option 01",
       "price_options": [
         {
-          "kind": "coupon",
-          "product_id": "msi-mp273q-e7-gmarket",
-          "variant": "MP273Q E7 · option 01",
-          "currency": "KRW",
-          "price": 156820,
-          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-          "checked_at": "2026-11-17T07:30:53.047065+00:00",
-          "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified.",
-          "conditions": {
-            "ko": "끝장세일 디지털 9% 중복쿠폰 적용 시 · 대상 여부 결제 전 확인",
-            "en": "With eligible digital-sale 9% coupon; verify eligibility before paying",
-            "zh": "适用数码促销9%券时；付款前确认资格",
-            "ja": "対象デジタルセール9%クーポン適用時・決済前確認",
-            "es": "Con cupón digital del 9% elegible; confirmar antes de pagar",
-            "fr": "Avec coupon numérique de 9 % éligible ; vérifier avant paiement"
-          }
-        },
-        {
           "kind": "payment",
           "product_id": "msi-mp273q-e7-gmarket",
           "variant": "MP273Q E7 · option 01",
           "currency": "KRW",
-          "price": 145850,
+          "price": 167440,
           "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-          "checked_at": "2026-11-17T07:30:53.047065+00:00",
-          "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified.",
+          "checked_at": "2026-11-20T23:37:11+00:00",
+          "evidence": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified. The card offer lists a KRW 100,000 minimum and November 30 as the end date.",
           "conditions": {
-            "ko": "쿠폰 + 대상 카드·스마일페이 7% · 7만원 이상, 할인 상한 7만원 · 11월 19일까지 표기 · 일일 잔여 할인한도 내 적용",
-            "en": "Coupon + eligible SmilePay card 7%; minimum KRW 70,000, discount cap 70,000; shown through Nov 19 ; subject to remaining daily discount allowance",
-            "zh": "券加指定SmilePay卡7%；满70,000韩元、最高减70,000；显示至11月19日；受每日剩余优惠额度限制",
-            "ja": "クーポン＋対象SmilePayカード7%・7万ウォン以上、割引上限7万・11月19日まで表記・1日の割引残枠内で適用",
-            "es": "Cupón + tarjeta SmilePay elegible 7%; mínimo KRW 70.000, tope 70.000; hasta 19 nov. según página ; sujeto al límite diario restante",
-            "fr": "Coupon + carte SmilePay éligible 7 % ; minimum KRW 70 000, plafond 70 000 ; jusqu’au 19 nov. affiché ; selon le plafond quotidien restant"
-          }
-        },
-        {
-          "kind": "payment",
-          "product_id": "msi-mp273q-e7-gmarket",
-          "variant": "MP273Q E7 · option 01",
-          "currency": "KRW",
-          "price": 142710,
-          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-          "checked_at": "2026-11-17T07:30:53.047065+00:00",
-          "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified.",
-          "conditions": {
-            "ko": "쿠폰 + IBK 나라사랑·지마켓꼭현대·G마켓삼성 대상 카드의 스마일페이 9% · 7만원 이상, 할인 상한 20만원 · 11월 19일까지 표기 · 일일 잔여 할인한도 내 적용",
-            "en": "Coupon + specified IBK Nara Sarang, Gmarket Hyundai or Gmarket Samsung card via SmilePay 9%; minimum KRW 70,000, cap 200,000; shown through Nov 19 ; subject to remaining daily discount allowance",
-            "zh": "券加指定IBK Nara Sarang、Gmarket Hyundai或Gmarket Samsung卡经SmilePay减9%；满70,000韩元、最高减200,000；至11月19日表记；受每日剩余优惠额度限制",
-            "ja": "クーポン＋指定IBK Nara Sarang・Gmarket Hyundai・Gmarket SamsungカードのSmilePay9%・7万ウォン以上、上限20万・11月19日まで表記・1日の割引残枠内で適用",
-            "es": "Cupón + tarjeta específica IBK Nara Sarang, Gmarket Hyundai o Gmarket Samsung vía SmilePay 9%; mínimo KRW 70.000, tope 200.000; hasta 19 nov. indicado ; sujeto al límite diario restante",
-            "fr": "Coupon + carte spécifique IBK Nara Sarang, Gmarket Hyundai ou Gmarket Samsung via SmilePay 9 % ; minimum KRW 70 000, plafond 200 000 ; jusqu’au 19 nov. affiché ; selon le plafond quotidien restant"
+            "ko": "G마켓 삼성카드로 최대 5,000원 할인 시 안내된 가격입니다. 카드 적용 여부와 최종 금액은 결제 전 확인하세요. 판매처 표기: 100,000원 이상 결제 시, 11월 30일까지.",
+            "en": "Shown with an eligible Gmarket Samsung Card discount of up to KRW 5,000. Verify eligibility and the final total at checkout. Seller lists the offer through Nov 30 with a KRW 100,000 minimum.",
+            "zh": "使用符合条件的 Gmarket 三星卡最高减 5,000 韩元时的页面报价。请在结账时确认资格及总价。 卖家标示满 100,000 韩元适用，至 11 月 30 日。",
+            "ja": "対象のGmarket Samsungカードで最大5,000ウォン引きの場合の表示額です。対象条件と最終金額は決済前に確認してください。 販売ページでは100,000ウォン以上、11月30日までと表示。",
+            "es": "Precio mostrado con un descuento de hasta 5.000 KRW con una tarjeta Gmarket Samsung elegible. Comprueba los requisitos y el total al pagar. La tienda indica un mínimo de 100.000 KRW y vigencia hasta el 30 de nov.",
+            "fr": "Prix affiché avec une remise allant jusqu’à 5 000 KRW sur une carte Gmarket Samsung éligible. Vérifier les conditions et le total au paiement. Le vendeur indique un minimum de 100 000 KRW et une offre jusqu’au 30 novembre."
           }
         }
       ],
@@ -665,7 +635,17 @@
             "label": "MSI: official monitor specifications"
           }
         ]
-      }
+      },
+      "offer_check_history": [
+        {
+          "id": "msi-mp273q-e7-gmarket",
+          "status": "seller_text_observed",
+          "price": 172340,
+          "observed_at": "2026-11-17T07:30:53.047065+00:00",
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+          "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+        }
+      ]
     },
     {
       "id": "sonic-racing-crossworlds-directgames",
@@ -3174,18 +3154,18 @@
       "title_raw": "PS5 DualSense Midnight Black",
       "product": "PS5 DualSense Midnight Black",
       "store": "Gmarket",
-      "price": 83110,
+      "price": 87500,
       "currency": "KRW",
       "shipping": "See delivery conditions",
       "specs": [],
       "briefing": [
-        "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+        "Gmarket item 2453534320, option 01 Midnight Black: KRW 87,500 publicly displayed after a KRW 6,580 Gmarket discount against a KRW 94,080 seller reference, not an independent market or previous-price comparison. KRW 86,000 is separately displayed with up to KRW 1,500 off via eligible Hana Card. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, hardware revision and final checkout were not verified."
       ],
       "published_at": null,
       "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
       "original_price": null,
       "discount_pct": null,
-      "checked_date": "2026-11-16",
+      "checked_date": "2026-11-20",
       "source": {
         "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
         "label": "Gmarket product detail"
@@ -3200,19 +3180,19 @@
       },
       "link_review": {
         "status": "verified_detail",
-        "checked_at": "2026-11-16T06:31:06+00:00",
+        "checked_at": "2026-11-20T23:37:11+00:00",
         "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
         "product_match": true,
-        "evidence": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified."
+        "evidence": "Gmarket item 2453534320, option 01 Midnight Black: KRW 87,500 publicly displayed after a KRW 6,580 Gmarket discount against a KRW 94,080 seller reference, not an independent market or previous-price comparison. KRW 86,000 is separately displayed with up to KRW 1,500 off via eligible Hana Card. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, hardware revision and final checkout were not verified."
       },
       "price_review": {
         "id": "ps5-dualsense-midnight-black-kr",
         "product": "PS5 DualSense Midnight Black",
         "seller_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
-        "recorded_price": 74800,
+        "recorded_price": 87500,
         "currency": "KRW",
         "price_status": "seller_page_display_confirmed",
-        "verified_price": 83110,
+        "verified_price": 87500,
         "deal_status": "comparison_unverified",
         "evidence": [
           {
@@ -3224,13 +3204,18 @@
             "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
             "observed_at": "2026-11-16T20:06:40.255384+00:00",
             "result": "Gmarket exact item 2453534320: seller base KRW 83,110; digital sale 10% coupon deducts KRW 8,310 to KRW 74,800. Eligible SmilePay card 7% further reduces to KRW 69,570 (minimum KRW 70,000, cap KRW 70,000, shown through Nov 19). Source text observed via web extraction, not checkout; eligibility and address-specific stock untested."
+          },
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+            "observed_at": "2026-11-20T23:37:11+00:00",
+            "result": "Gmarket item 2453534320, option 01 Midnight Black: KRW 87,500 publicly displayed after a KRW 6,580 Gmarket discount against a KRW 94,080 seller reference, not an independent market or previous-price comparison. KRW 86,000 is separately displayed with up to KRW 1,500 off via eligible Hana Card. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, hardware revision and final checkout were not verified."
           }
         ],
         "limitations": [
-          "Checkout and independent market low unverified.",
-          "Main price excludes conditional coupon and payment discounts; these appear separately."
+          "Stock, final checkout and independent market comparison unverified.",
+          "Card offer is separate; the seller lists November 30, subject to card eligibility and final checkout."
         ],
-        "review_completed_at": "2026-11-16T20:06:40.255384+00:00"
+        "review_completed_at": "2026-11-20T23:37:11+00:00"
       },
       "country_targeting": {
         "countries": [
@@ -3239,27 +3224,28 @@
         "basis": "reviewed_seller_audience",
         "fulfilment": "physical",
         "reviewed_at": "2026-11-16T06:31:06+00:00",
-        "note": "Korean seller audience; account/individual checkout requirements remain separate."
+        "note": "Korean seller audience; account/individual checkout requirements remain separate.",
+        "checked_at": "2026-11-20"
       },
       "purchase_eligibility": {
         "countries_confirmed": [
           "KR"
         ],
         "status": "retailer_delivery_statement",
-        "delivery": "KRW74,800 requires the displayed 10% digital-sale coupon on KRW83,110. KRW69,570 requires a qualifying card through SmilePay with 7% off (minimum70,000, cap70,000, shown through Nov19); checkout eligibility untested. Points-based65,830 is not the purchase price. Korean domestic delivery only: free CJ, Jeju/remote+5,000. Limit two per ID. Buy button shown; exact stock and revision unverified. Market low unverified.",
+        "delivery": "Korean standard CJ delivery shown as free; Jeju or remote areas add KRW 5,000.",
         "activation": "PS5 controller; exact hardware revision unverified",
         "payment": "Checkout untested",
         "tax": "Final checkout untested",
         "returns": "Not fully reviewed",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
-        "checked_at": "2026-11-16"
+        "checked_at": "2026-11-20"
       },
       "latest_offer_check": {
-        "checked_at": "2026-11-16T20:06:40.255384+00:00",
+        "checked_at": "2026-11-20T23:37:11+00:00",
         "status": "seller_text_observed",
-        "price": 83110,
+        "price": 87500,
         "source_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
-        "evidence": "Gmarket exact item 2453534320: seller base KRW 83,110; digital sale 10% coupon deducts KRW 8,310 to KRW 74,800. Eligible SmilePay card 7% further reduces to KRW 69,570 (minimum KRW 70,000, cap KRW 70,000, shown through Nov 19). Source text observed via web extraction, not checkout; eligibility and address-specific stock untested."
+        "evidence": "Gmarket item 2453534320, option 01 Midnight Black: KRW 87,500 publicly displayed after a KRW 6,580 Gmarket discount against a KRW 94,080 seller reference, not an independent market or previous-price comparison. KRW 86,000 is separately displayed with up to KRW 1,500 off via eligible Hana Card. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, hardware revision and final checkout were not verified."
       },
       "price_variant": "DualSense Midnight Black",
       "offer_check_history": [
@@ -3271,43 +3257,33 @@
           "source_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
           "evidence": "HTTP200 CAPTCHA/WAF challenge, not seller product content. No retry or bypass.",
           "limitations": "No checkout performed; do not infer stock from purchase limits."
+        },
+        {
+          "id": "ps5-dualsense-midnight-black-kr",
+          "status": "seller_text_observed",
+          "price": 83110,
+          "observed_at": "2026-11-16T20:06:40.255384+00:00",
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
+          "evidence": "Gmarket exact item 2453534320: seller base KRW 83,110; digital sale 10% coupon deducts KRW 8,310 to KRW 74,800. Eligible SmilePay card 7% further reduces to KRW 69,570 (minimum KRW 70,000, cap KRW 70,000, shown through Nov 19). Source text observed via web extraction, not checkout; eligibility and address-specific stock untested."
         }
       ],
       "price_options": [
-        {
-          "kind": "coupon",
-          "product_id": "ps5-dualsense-midnight-black-kr",
-          "variant": "DualSense Midnight Black",
-          "currency": "KRW",
-          "price": 74800,
-          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
-          "checked_at": "2026-11-16T20:06:40.255384+00:00",
-          "evidence": "Gmarket exact item 2453534320: seller base KRW 83,110; digital sale 10% coupon deducts KRW 8,310 to KRW 74,800. Eligible SmilePay card 7% further reduces to KRW 69,570 (minimum KRW 70,000, cap KRW 70,000, shown through Nov 19). Source text observed via web extraction, not checkout; eligibility and address-specific stock untested.",
-          "conditions": {
-            "ko": "끝장세일 디지털 10% 쿠폰 적용 시 · 대상 여부 결제 전 확인",
-            "en": "With eligible digital-sale 10% coupon; check eligibility before payment",
-            "zh": "适用数码促销10%券时；付款前确认资格",
-            "ja": "対象のデジタルセール10%クーポン適用時・決済前に確認",
-            "es": "Con cupón digital del 10% elegible; confirmar antes de pagar",
-            "fr": "Avec coupon numérique de 10 % éligible ; vérifier avant paiement"
-          }
-        },
         {
           "kind": "payment",
           "product_id": "ps5-dualsense-midnight-black-kr",
           "variant": "DualSense Midnight Black",
           "currency": "KRW",
-          "price": 69570,
+          "price": 86000,
           "source_url": "https://item.gmarket.co.kr/Item?goodsCode=2453534320",
-          "checked_at": "2026-11-16T20:06:40.255384+00:00",
-          "evidence": "Gmarket exact item 2453534320: seller base KRW 83,110; digital sale 10% coupon deducts KRW 8,310 to KRW 74,800. Eligible SmilePay card 7% further reduces to KRW 69,570 (minimum KRW 70,000, cap KRW 70,000, shown through Nov 19). Source text observed via web extraction, not checkout; eligibility and address-specific stock untested.",
+          "checked_at": "2026-11-20T23:37:11+00:00",
+          "evidence": "Gmarket item 2453534320, option 01 Midnight Black: KRW 87,500 publicly displayed after a KRW 6,580 Gmarket discount against a KRW 94,080 seller reference, not an independent market or previous-price comparison. KRW 86,000 is separately displayed with up to KRW 1,500 off via eligible Hana Card. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, hardware revision and final checkout were not verified. The card offer lists a KRW 50,000 minimum and November 30 as the end date.",
           "conditions": {
-            "ko": "쿠폰 + 대상 카드·스마일페이 7% 할인 · 7만원 이상·최대 7만원·11월 19일까지 표기 · 결제 전 확인",
-            "en": "Coupon + eligible card via SmilePay 7%; minimum KRW 70,000, discount cap KRW 70,000, shown through Nov 19; verify at checkout",
-            "zh": "优惠券加指定卡经SmilePay减7%；满70,000韩元、最高减70,000，显示至11月19日；结账确认",
-            "ja": "クーポン＋対象カードのSmilePay7%引き・7万ウォン以上、割引上限7万、11月19日まで表記・決済前確認",
-            "es": "Cupón + tarjeta elegible con SmilePay 7%; mínimo KRW 70.000, descuento máximo KRW 70.000, hasta el 19 de noviembre según página; comprobar al pagar",
-            "fr": "Coupon + carte éligible via SmilePay 7 % ; minimum KRW 70 000, remise plafonnée à KRW 70 000, jusqu’au 19 novembre affiché ; vérifier au paiement"
+            "ko": "하나카드로 최대 1,500원 할인 시 안내된 가격입니다. 카드 적용 여부와 최종 금액은 결제 전 확인하세요. 판매처 표기: 50,000원 이상 결제 시, 11월 30일까지.",
+            "en": "Shown with an eligible Hana Card discount of up to KRW 1,500. Verify eligibility and the final total at checkout. Seller lists the offer through Nov 30 with a KRW 50,000 minimum.",
+            "zh": "使用符合条件的韩亚卡最高减 1,500 韩元时的页面报价。请在结账时确认资格及总价。 卖家标示满 50,000 韩元适用，至 11 月 30 日。",
+            "ja": "対象のハナカードで最大1,500ウォン引きの場合の表示額です。対象条件と最終金額は決済前に確認してください。 販売ページでは50,000ウォン以上、11月30日までと表示。",
+            "es": "Precio mostrado con un descuento de hasta 1.500 KRW con una tarjeta Hana elegible. Comprueba los requisitos y el total al pagar. La tienda indica un mínimo de 50.000 KRW y vigencia hasta el 30 de nov.",
+            "fr": "Prix affiché avec une remise allant jusqu’à 1 500 KRW sur une carte Hana éligible. Vérifier les conditions et le total au paiement. Le vendeur indique un minimum de 50 000 KRW et une offre jusqu’au 30 novembre."
           }
         }
       ],
