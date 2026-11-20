@@ -91,32 +91,31 @@ Paddle acts as merchant of record for covered sales, as Lemon Squeezy does for e
 URL: https://devteardown.com/compare/anthropic-vs-openai-api-pricing/
 Category: AI & LLM APIs · Recorded source review: 2026-11-10
 
-Verdict: The named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens. That does not make the same task equally expensive. Measure token usage, output quality, cache hits and retries on a representative sample. Apply the selected model, context and service-tier rates to those measurements; do not multiply a vendor bill by an assumed tokenizer premium.
+Verdict: For the dated November 10 comparison, the named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens. That does not make the same task equally expensive. Measure token usage, output quality, cache hits and retries on a representative sample. Apply the selected model, context and service-tier rates to those measurements; do not multiply a vendor bill by an assumed tokenizer premium.
 
-### Two sheets, one identical sticker
-The flagship rows of both price sheets match to the cent, and so do the cache reads.
+### November 20 update: GPT-6.2 pricing and service tiers
+Standard short-context rates, checked 20 November 2026 (USD per million tokens).
 
-| Per million tokens | Claude Sonnet 5.5 | GPT-6.1 Sol |
-|---|---|---|
-| Input | $2.00 | $2.00 |
-| Output | $10.00 | $10.00 |
-| Cached input (hit) | $0.10 | $0.10 |
-| 5m or 30m cache write | $2.50 (1.25x) | $2.50 (1.25x) |
-| Batch input / output | $1.00 / $5.00 | $1.00 / $5.00 |
+| Model | Input | Output | Cache read | 30m cache write | 12h cache write |
+|---|---|---|---|---|---|
+| GPT-6.2 Sol | $2.00 | $10.00 | $0.10 | $2.50 | $5.00 |
+| GPT-6.2 Astra | $8.00 | $40.00 | $0.40 | $10.00 | $20.00 |
 
-Anthropic's Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI's GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision.
+Through 272,000 input tokens use the short-context rate. Above that, input and cache rates double and output rises to 1.5x for the full request, not just the excess.
+
+Short-context Batch input/output is $1/$5 for Sol and $4/$20 for Astra. Neither GPT-6.2 model supports Flex. Flex remains available for listed older models during the beta wind-down. There is no confirmed retirement date.
+
+The worked examples below retain the November 10 model selection and November 13 corrections, not a new GPT-6.2 benchmark.
 
 ### The tokenizer note is not a cross-vendor benchmark
-Anthropic describes a tokenizer change between newer and earlier Claude models, not between Claude and GPT. Its approximate 30% increase depends on the text and workload. That note cannot establish a fixed Claude-versus-OpenAI price premium.
+Anthropic describes roughly 30% more tokens for some inputs under its newer tokenizer, compared with earlier Claude models, not between Claude and GPT. Count the same input separately for each target model and record generated output separately.
 
-There is no universal source-token unit shared by the two vendors. Count the same representative input with each target model, then record actual output usage separately. Generated answers may differ in length, reasoning usage and quality; an input-token ratio does not predict output tokens.
-
-The $1,844 example below assumes equal billed token counts in each category. It is arithmetic, not a measured identical-text benchmark. The separate input-only sensitivity case deliberately leaves the $500 output line unchanged and is not a prediction for either vendor.
+The $1,844 bill assumes equal token counts. Its input-only sensitivity case keeps the $500 output line unchanged; neither case measures a cross-vendor token ratio.
 
 Correction, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. Cache controls, hit rates and reuse arithmetic were also corrected on this date; other rates retain their original verification date.
 
 ### Caching is a break-even test, not a discount
-For standard short-context Sonnet 5.5 and GPT-6.1 Sol, the hit rate is $0.10 / $2.00 = 0.05x; other models differ.
+In the November 10 standard short-context comparison, Sonnet 5.5 and GPT-6.1 Sol both cost $2 input, $10 output and $0.10 per million cache reads (0.05x).
 
 | Cache operation | Sonnet 5.5 | GPT-6.1 Sol |
 |---|---|---|
@@ -131,14 +130,14 @@ Short writes: 1.25 + 0.05(n-1) < n means n > 1.2632. At ten requests, 1.25 + 0.0
 Long writes at 0.05x reads need three total requests (one write, two hits): Sonnet costs 2.10 and Sol costs 2.60 versus 3 uncached. Never count an expired entry as a hit.
 
 ### Batch is the one line where both sheets agree
-Both vendors halve input and output for asynchronous work. Anthropic publishes the batch rows separately; OpenAI prints a Batch table and a separate Flex table at the same numbers.
+Both vendors halve input and output in the listed Batch rows. The November 10 GPT-6.1 Sol Batch and Flex prices match; GPT-6.2 supports Batch, not Flex.
 
 | Batch, per million | Claude Sonnet 5.5 | Claude Opus 5.5 | GPT-6.1 Sol |
 |---|---|---|---|
 | Input | $1.00 | $2.00 | $1.00 |
 | Output | $5.00 | $10.00 | $5.00 |
 
-Anthropic's page says its cache multipliers stack with the batch discount. For Sonnet 5.5, apply the 0.05x hit multiplier to the applicable batch input rate only for an actual cache hit; a batch does not guarantee reuse. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached.
+Anthropic's page says its cache multipliers stack with the batch discount. For Sonnet 5.5, apply the 0.05x hit multiplier to the applicable batch input rate only for an actual cache hit; a batch does not guarantee reuse. If there are no hits, a short-window cold cache write costs 25% more than the same uncached batch input.
 
 ### Long prompts are where the sheets stop being comparable
 Both vendors reprice the prompt once it gets long, and they do it in different shapes.
@@ -171,6 +170,9 @@ This is not a long-run forecast: measure hits, writes and refreshes before extra
 - https://platform.claude.com/docs/en/build-with-claude/batch-processing
 - https://claude.com/pricing
 - https://developers.openai.com/api/docs/guides/prompt-caching
+- https://developers.openai.com/api/docs/guides/flex-processing
+- https://developers.openai.com/api/docs/models/gpt-6.2-sol
+- https://developers.openai.com/api/docs/models/gpt-6.2-astra
 
 ## Datadog vs Grafana Cloud
 URL: https://devteardown.com/compare/datadog-vs-grafana-cloud/

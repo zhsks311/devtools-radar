@@ -187,23 +187,23 @@
     "category": "AI & LLM APIs",
     "last_verified": "2026-11-10",
     "published": "2026-11-10",
-    "hook": "Claude Sonnet 5.5 and GPT-6.1 Sol list the same standard rate: $2 per million input tokens and $10 per million output. Equal rates do not establish equal costs for the same documents. Count each model separately; there is no measured Claude-versus-GPT token ratio established here.",
+    "hook": "GPT-6.2 Sol lists $2 input and $10 output per million tokens at standard short-context rates, but does not support Flex. The November 10 worked example compares Claude Sonnet 5.5 with GPT-6.1 Sol. Equal rates do not establish equal costs for the same documents.",
     "sections": [
       {
-        "title": "Two sheets, one identical sticker",
-        "content": "The flagship rows of both price sheets match to the cent, and so do the cache reads.\n\n| Per million tokens | Claude Sonnet 5.5 | GPT-6.1 Sol |\n|---|---|---|\n| Input | $2.00 | $2.00 |\n| Output | $10.00 | $10.00 |\n| Cached input (hit) | $0.10 | $0.10 |\n| 5m or 30m cache write | $2.50 (1.25x) | $2.50 (1.25x) |\n| Batch input / output | $1.00 / $5.00 | $1.00 / $5.00 |\n\nAnthropic's Opus 5.5 sits one rung up at $4 and $20, with cache reads at $0.20. OpenAI's GPT-6 Astra sits at $10 and $50. On the flagship row there is nothing to choose, which is the first sign that the model price is not the decision."
+        "title": "November 20 update: GPT-6.2 pricing and service tiers",
+        "content": "Standard short-context rates, checked 20 November 2026 (USD per million tokens).\n\n| Model | Input | Output | Cache read | 30m cache write | 12h cache write |\n|---|---|---|---|---|---|\n| GPT-6.2 Sol | $2.00 | $10.00 | $0.10 | $2.50 | $5.00 |\n| GPT-6.2 Astra | $8.00 | $40.00 | $0.40 | $10.00 | $20.00 |\n\nThrough 272,000 input tokens use the short-context rate. Above that, input and cache rates double and output rises to 1.5x for the full request, not just the excess.\n\nShort-context Batch input/output is $1/$5 for Sol and $4/$20 for Astra. Neither GPT-6.2 model supports Flex. Flex remains available for listed older models during the beta wind-down. There is no confirmed retirement date.\n\nThe worked examples below retain the November 10 model selection and November 13 corrections, not a new GPT-6.2 benchmark."
       },
       {
         "title": "The tokenizer note is not a cross-vendor benchmark",
-        "content": "Anthropic describes a tokenizer change between newer and earlier Claude models, not between Claude and GPT. Its approximate 30% increase depends on the text and workload. That note cannot establish a fixed Claude-versus-OpenAI price premium.\n\nThere is no universal source-token unit shared by the two vendors. Count the same representative input with each target model, then record actual output usage separately. Generated answers may differ in length, reasoning usage and quality; an input-token ratio does not predict output tokens.\n\nThe $1,844 example below assumes equal billed token counts in each category. It is arithmetic, not a measured identical-text benchmark. The separate input-only sensitivity case deliberately leaves the $500 output line unchanged and is not a prediction for either vendor.\n\nCorrection, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. Cache controls, hit rates and reuse arithmetic were also corrected on this date; other rates retain their original verification date."
+        "content": "Anthropic describes roughly 30% more tokens for some inputs under its newer tokenizer, compared with earlier Claude models, not between Claude and GPT. Count the same input separately for each target model and record generated output separately.\n\nThe $1,844 bill assumes equal token counts. Its input-only sensitivity case keeps the $500 output line unchanged; neither case measures a cross-vendor token ratio.\n\nCorrection, 13 November 2026: removed the unsupported cross-vendor 30% claim and the whole-bill multiplier. Cache controls, hit rates and reuse arithmetic were also corrected on this date; other rates retain their original verification date."
       },
       {
         "title": "Caching is a break-even test, not a discount",
-        "content": "For standard short-context Sonnet 5.5 and GPT-6.1 Sol, the hit rate is $0.10 / $2.00 = 0.05x; other models differ.\n\n| Cache operation | Sonnet 5.5 | GPT-6.1 Sol |\n|---|---|---|\n| Short write | 1.25x, 5m | 1.25x, 30m |\n| Long write | 2x, 1h | 2.5x, 12h |\n| Hit | 0.05x | 0.05x |\n\nLet n be total requests, including the cold first request. One write and n-1 successful full-prefix reads cost w + r(n-1), not w + rn. This excludes fresh input and output and assumes no intervening expiry, prefix change or rewrite.\n\nShort writes: 1.25 + 0.05(n-1) < n means n > 1.2632. At ten requests, 1.25 + 0.05 × 9 = 1.70 versus 10 uncached: 83% less for this prefix alone. With a 0.1x model the corresponding total is 2.15, a 78.5% reduction.\n\nLong writes at 0.05x reads need three total requests (one write, two hits): Sonnet costs 2.10 and Sol costs 2.60 versus 3 uncached. Never count an expired entry as a hit."
+        "content": "In the November 10 standard short-context comparison, Sonnet 5.5 and GPT-6.1 Sol both cost $2 input, $10 output and $0.10 per million cache reads (0.05x).\n\n| Cache operation | Sonnet 5.5 | GPT-6.1 Sol |\n|---|---|---|\n| Short write | 1.25x, 5m | 1.25x, 30m |\n| Long write | 2x, 1h | 2.5x, 12h |\n| Hit | 0.05x | 0.05x |\n\nLet n be total requests, including the cold first request. One write and n-1 successful full-prefix reads cost w + r(n-1), not w + rn. This excludes fresh input and output and assumes no intervening expiry, prefix change or rewrite.\n\nShort writes: 1.25 + 0.05(n-1) < n means n > 1.2632. At ten requests, 1.25 + 0.05 × 9 = 1.70 versus 10 uncached: 83% less for this prefix alone. With a 0.1x model the corresponding total is 2.15, a 78.5% reduction.\n\nLong writes at 0.05x reads need three total requests (one write, two hits): Sonnet costs 2.10 and Sol costs 2.60 versus 3 uncached. Never count an expired entry as a hit."
       },
       {
         "title": "Batch is the one line where both sheets agree",
-        "content": "Both vendors halve input and output for asynchronous work. Anthropic publishes the batch rows separately; OpenAI prints a Batch table and a separate Flex table at the same numbers.\n\n| Batch, per million | Claude Sonnet 5.5 | Claude Opus 5.5 | GPT-6.1 Sol |\n|---|---|---|---|\n| Input | $1.00 | $2.00 | $1.00 |\n| Output | $5.00 | $10.00 | $5.00 |\n\nAnthropic's page says its cache multipliers stack with the batch discount. For Sonnet 5.5, apply the 0.05x hit multiplier to the applicable batch input rate only for an actual cache hit; a batch does not guarantee reuse. The trap is that a nightly single-run job has nothing to read from, and a cold cache write just adds 25% to a batch you could have submitted uncached."
+        "content": "Both vendors halve input and output in the listed Batch rows. The November 10 GPT-6.1 Sol Batch and Flex prices match; GPT-6.2 supports Batch, not Flex.\n\n| Batch, per million | Claude Sonnet 5.5 | Claude Opus 5.5 | GPT-6.1 Sol |\n|---|---|---|---|\n| Input | $1.00 | $2.00 | $1.00 |\n| Output | $5.00 | $10.00 | $5.00 |\n\nAnthropic's page says its cache multipliers stack with the batch discount. For Sonnet 5.5, apply the 0.05x hit multiplier to the applicable batch input rate only for an actual cache hit; a batch does not guarantee reuse. If there are no hits, a short-window cold cache write costs 25% more than the same uncached batch input."
       },
       {
         "title": "Long prompts are where the sheets stop being comparable",
@@ -245,12 +245,12 @@
       {
         "situation": "Prompts that regularly pass 100,000 tokens",
         "pick": "Weigh the long-context row first",
-        "why": "OpenAI doubles input and multiplies output by 1.5 past the boundary; Haiku 5.5 lists a rate five times higher for prompts over 100,000 tokens."
+        "why": "The historical GPT-6.1 Sol rates double input and increase output by 1.5x above its own threshold. The separate Claude Haiku 5.5 boundary is 100,000 tokens."
       },
       {
         "situation": "Nightly batch of a few hundred thousand jobs",
         "pick": "Batch API on either",
-        "why": "Both halve input and output, and a single nightly pass has no cache to read from, so a cold write only adds 25%."
+        "why": "The named Batch rows halve input and output rates; a short-window cold write without hits adds 25% to that portion of uncached batch input."
       },
       {
         "situation": "Only two requests, 12 hours apart, no intervening reuse",
@@ -275,11 +275,11 @@
       {
         "situation": "A prototype with prompts under 100,000 tokens",
         "pick": "Claude Haiku 5.5",
-        "why": "$0.10 input and $0.50 output per million is a twentieth of the flagship rows, and the over-100k rate only applies when the prompt crosses the line."
+        "why": "$0.10 input and $0.50 output per million is a twentieth of the November 10 comparison rows, and the over-100k rate only applies when the prompt crosses the line."
       }
     ],
-    "verdict_summary": "The named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens. That does not make the same task equally expensive. Measure token usage, output quality, cache hits and retries on a representative sample. Apply the selected model, context and service-tier rates to those measurements; do not multiply a vendor bill by an assumed tokenizer premium.",
-    "migration_guide": "Caching controls are not interchangeable. Anthropic Messages is opt-in: top-level cache_control selects an automatic moving breakpoint; block-level cache_control selects explicit breakpoints. GPT-6.1 Sol supports implicit caching and explicit-only breakpoints. Re-measure token usage on migration, rather than transferring an assumed token ratio.\n\nThe worked bill uses explicit boundaries around the stable prefix, leaving fresh input outside the write. Batch jobs, files and model-specific configuration also need review when switching providers.",
+    "verdict_summary": "For the dated November 10 comparison, the named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens. That does not make the same task equally expensive. Measure token usage, output quality, cache hits and retries on a representative sample. Apply the selected model, context and service-tier rates to those measurements; do not multiply a vendor bill by an assumed tokenizer premium.",
+    "migration_guide": "The historical worked example retains GPT-6.1 Sol; do not treat its service-tier support as a GPT-6.2 migration guide.\n\nCaching controls are not interchangeable. Anthropic Messages is opt-in: top-level cache_control selects an automatic moving breakpoint; block-level cache_control selects explicit breakpoints. GPT-6.1 Sol supports implicit caching and explicit-only breakpoints. Re-measure token usage on migration, rather than transferring an assumed token ratio.\n\nThe worked bill uses explicit boundaries around the stable prefix, leaving fresh input outside the write. Batch jobs, files and model-specific configuration also need review when switching providers.",
     "faqs": [
       {
         "q": "Is prompt caching automatic on both?",
@@ -287,7 +287,7 @@
       },
       {
         "q": "Do the batch discount and the cache discount combine?",
-        "a": "On Anthropic the page says cache multipliers stack with the batch discount. OpenAI publishes separate Batch and Flex tables at the same rates, and fast mode is excluded from batch on Anthropic."
+        "a": "Anthropic says cache multipliers stack with its batch discount. OpenAI publishes model-specific Batch and Flex tables: GPT-6.1 Sol appears in both, but GPT-6.2 Sol and Astra do not support Flex. A price match does not establish service-tier availability. Anthropic excludes fast mode from batch."
       },
       {
         "q": "Does the 30% tokenizer note mean Claude costs 30% more than GPT?",
@@ -304,7 +304,10 @@
       "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
       "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
       "https://claude.com/pricing",
-      "https://developers.openai.com/api/docs/guides/prompt-caching"
+      "https://developers.openai.com/api/docs/guides/prompt-caching",
+      "https://developers.openai.com/api/docs/guides/flex-processing",
+      "https://developers.openai.com/api/docs/models/gpt-6.2-sol",
+      "https://developers.openai.com/api/docs/models/gpt-6.2-astra"
     ],
     "related": [
       {

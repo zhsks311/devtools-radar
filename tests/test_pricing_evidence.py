@@ -46,3 +46,29 @@ class PricingEvidenceTests(unittest.TestCase):
         faq = next(s for s in schemas if s.get('@type') == 'FAQPage')
         article = json.loads((ROOT / 'content/final' / (SLUG + '.json')).read_text())
         self.assertEqual([f['acceptedAnswer']['text'] for f in faq['mainEntity']], [f['a'] for f in article['faqs']])
+
+    def test_current_openai_rates_are_distinct_from_historical_worked_example(self):
+        article = json.loads((ROOT / 'content/final' / (SLUG + '.json')).read_text())
+        deployed = next(a for a in json.loads((ROOT / 'data/tools.json').read_text()) if a['slug'] == SLUG)
+        self.assertEqual(article['sections'], deployed['sections'])
+        update = article['sections'][0]['content']
+        self.assertIn('| GPT-6.2 Sol | $2.00 | $10.00 | $0.10 | $2.50 | $5.00 |', update)
+        self.assertIn('| GPT-6.2 Astra | $8.00 | $40.00 | $0.40 | $10.00 | $20.00 |', update)
+        self.assertIn('272,000 input tokens', update)
+        self.assertIn('for the full request', update)
+        self.assertIn('$1/$5 for Sol and $4/$20 for Astra', update)
+        self.assertIn('Neither GPT-6.2 model supports Flex', update)
+        self.assertIn('GPT-6.1 Sol', article['cost_math'][0]['formula'])
+        self.assertIn('$1,844', article['cost_math'][0]['result'])
+
+        outputs = (
+            ROOT / 'dist/compare' / SLUG / 'index.html',
+            ROOT / 'dist/llms-full.txt',
+        )
+        for path in outputs:
+            output = path.read_text()
+            self.assertIn('Neither GPT-6.2 model supports Flex', output)
+            self.assertIn('GPT-6.2 Astra', output)
+            self.assertIn('$1,844', output)
+        for path in (ROOT / 'dist/index.html', ROOT / 'dist/reports/ko/index.html'):
+            self.assertIn('GPT-6.2 Sol lists $2 input and $10 output', path.read_text())

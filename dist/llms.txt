@@ -6,7 +6,7 @@
 ## Comparisons
 
 - [Stripe vs Lemon Squeezy / Paddle](https://devteardown.com/compare/stripe-vs-lemonsqueezy-vs-paddle/): Lemon Squeezy is closed to new stores and stops renewals on March 31, 2027.
-- [Anthropic vs OpenAI](https://devteardown.com/compare/anthropic-vs-openai-api-pricing/): The named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens.
+- [Anthropic vs OpenAI](https://devteardown.com/compare/anthropic-vs-openai-api-pricing/): For the dated November 10 comparison, the named standard rows match: $2 input, $10 output and $0.10 cached input per million tokens.
 - [Datadog vs Grafana Cloud](https://devteardown.com/compare/datadog-vs-grafana-cloud/): The modeled metrics bills favor Grafana Cloud, especially at high cardinality.
 - [AWS Lambda vs Cloudflare Workers](https://devteardown.com/compare/aws-lambda-vs-cloudflare-workers/): In the stated 512 MB, 200 ms elapsed, 10 ms CPU model with unused allowances, Lambda Event Arm is cheaper at 5M requests ($2.13 vs $5.40).
 - [Resend vs SendGrid](https://devteardown.com/compare/resend-vs-sendgrid/): For a small service within 3,000 emails a month and 100 a day, Resend offers an ongoing free option.
