@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T11:59:22.323642+00:00",
+  "generated_at": "2026-11-20T03:10:34.261188+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -7,6 +7,134 @@
   },
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
+    {
+      "id": "insta360-link-2-pro-kr-graphite-standard",
+      "region": "kr",
+      "target": "ko",
+      "category": "hardware",
+      "category_label": "hardware",
+      "title_raw": "Insta360 Link 2 Pro · graphite black standard bundle",
+      "product": "Insta360 Link 2 Pro · graphite black standard bundle",
+      "store": "Insta360 official store",
+      "price": 321000,
+      "currency": "KRW",
+      "shipping": "Free shipping threshold KRW 150000; address-specific delivery unverified",
+      "specs": [
+        "4K webcam with 1/1.3-inch sensor",
+        "Motorized tracking and dual microphones",
+        "Standard bundle includes magnetic mount; tripod not included"
+      ],
+      "briefing": [
+        "Official Korean product page shows Link 2 Pro, Graphite Black, Standard Bundle at KRW321000 alongside the seller reference KRW402000. This is not the 2C Pro or the accessory bundle. Korea store lists free shipping from KRW150000. No inventory count, destination-specific delivery, checkout, tax or exact promotion cutoff verified. Seller comparison is not an independent market-price history."
+      ],
+      "published_at": null,
+      "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-20",
+      "source": {
+        "url": "https://store.insta360.com/kr/product/link-2-pro",
+        "label": "Insta360 official Korean product page"
+      },
+      "price_source": "retailer_product_page",
+      "storefront_country": "KR",
+      "link": {
+        "url": "https://store.insta360.com/kr/product/link-2-pro",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-20T03:10:34.261188+00:00",
+        "url": "https://store.insta360.com/kr/product/link-2-pro",
+        "product_match": true,
+        "evidence": "Official Korean product page shows Link 2 Pro, Graphite Black, Standard Bundle at KRW321000 alongside the seller reference KRW402000. This is not the 2C Pro or the accessory bundle. Korea store lists free shipping from KRW150000. No inventory count, destination-specific delivery, checkout, tax or exact promotion cutoff verified. Seller comparison is not an independent market-price history."
+      },
+      "price_review": {
+        "id": "insta360-link-2-pro-kr-graphite-standard",
+        "product": "Insta360 Link 2 Pro · graphite black standard bundle",
+        "seller_url": "https://store.insta360.com/kr/product/link-2-pro",
+        "recorded_price": 321000,
+        "verified_price": 321000,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://store.insta360.com/kr/product/link-2-pro",
+            "observed_at": "2026-11-20T03:10:34.261188+00:00",
+            "result": "Official Korean product page shows Link 2 Pro, Graphite Black, Standard Bundle at KRW321000 alongside the seller reference KRW402000. This is not the 2C Pro or the accessory bundle. Korea store lists free shipping from KRW150000. No inventory count, destination-specific delivery, checkout, tax or exact promotion cutoff verified. Seller comparison is not an independent market-price history."
+          }
+        ],
+        "limitations": [
+          "Seller comparison not independently verified as historical or market price.",
+          "No exact stock, regional checkout, address-specific delivery, tax or cutoff verified."
+        ],
+        "review_completed_at": "2026-11-20T03:10:34.261188+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-20T03:10:34.261188+00:00",
+        "note": "Official Korea storefront offer and Korean shipping statement; exact address not tested."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Korean storefront advertises free shipping from KRW150000; address-specific delivery untested.",
+        "activation": "Physical USB webcam; magnetic mount included, no extra tripod in this bundle.",
+        "payment": "Checkout untested; international-card issuer fees may apply.",
+        "tax": "Final tax and checkout not tested.",
+        "returns": "15 days from receipt if original condition, packaging/accessories/gifts complete and resale possible. Approval and exclusions apply; not an unconditional used-product trial.",
+        "evidence_url": "https://store.insta360.com/kr/product/link-2-pro",
+        "checked_at": "2026-11-20"
+      },
+      "latest_offer_check": {
+        "checked_at": "2026-11-20T03:10:34.261188+00:00",
+        "status": "seller_dom_observed",
+        "price": 321000,
+        "source_url": "https://store.insta360.com/kr/product/link-2-pro",
+        "evidence": "Official Korean product page shows Link 2 Pro, Graphite Black, Standard Bundle at KRW321000 alongside the seller reference KRW402000. This is not the 2C Pro or the accessory bundle. Korea store lists free shipping from KRW150000. No inventory count, destination-specific delivery, checkout, tax or exact promotion cutoff verified. Seller comparison is not an independent market-price history."
+      },
+      "price_variant": "Link 2 Pro · graphite black · standard bundle",
+      "alternative_review": {
+        "checked_at": "2026-11-20T03:10:34.261188+00:00",
+        "sources": [
+          {
+            "url": "https://store.insta360.com/kr/product/link-2-pro",
+            "label": "Selected exact standard bundle and listing price"
+          },
+          {
+            "url": "https://store.insta360.com/kr",
+            "label": "Official Korea standard shipping threshold"
+          },
+          {
+            "url": "https://www.insta360.com/kr/support/aftersales?lt=&post_id=375",
+            "label": "15-day returns with condition exclusions"
+          }
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/insta360-link-2-pro-black.webp",
+        "alt": "Insta360 Link 2 Pro graphite black webcam, front view",
+        "credit": "Insta360 / Transcontinenta",
+        "credit_url": "https://newsroom.notified.com/transcontinentagroup/media/347983/insta360-link-2-pro-lifestyle-image-front",
+        "kind": "official_product_photo",
+        "rights_basis": "Official distributor media detail explicitly licenses Media use. Credited editorial product coverage; no endorsement or resale of image.",
+        "source_page": "https://newsroom.notified.com/transcontinentagroup/media/347983/insta360-link-2-pro-lifestyle-image-front",
+        "source_file": "https://cdn.filestackcontent.com/auto_image/9KPcfFCVSeSPLrJYFEMz",
+        "checked_at": "2026-11-20T03:10:34.261188+00:00",
+        "sha256": "7e6b2e06fc6474bd658ba545cedd8bc6e76e79707f55ac7e397d7703f0f5724e",
+        "processing": "Proportional resize to 800×800 and WebP compression only."
+      },
+      "expires_at": null
+    },
     {
       "id": "insta360-go-ultra-kr-standard-black",
       "region": "kr",
@@ -5977,10 +6105,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 32,
+    "feed": 33,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 16,
+    "verified_product_links": 17,
     "held_product_links": 16,
     "historical_tracked_links": 14
   }

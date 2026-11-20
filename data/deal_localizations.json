@@ -2698,5 +2698,37 @@
       "summary": "VPN pour 10 appareils simultanés, avec blocage des publicités, traqueurs et logiciels malveillants. USD 35.88 au total pour les 12 premiers mois.",
       "conditions": "Nouveaux utilisateurs : USD 35.88 payés à l’avance pour 12 mois, puis renouvellement automatique à USD 83.88 tous les 12 mois sauf résiliation. Les offres des comptes existants varient. Résiliation et demande de remboursement sous 30 jours après le premier achat direct ; une fois par utilisateur, hors espèces et virement bancaire. Fin, pays éligibles, taxes et paiement final non vérifiés."
     }
+  },
+  "insta360-link-2-pro-kr-graphite-standard": {
+    "en": {
+      "product": "Insta360 Link 2 Pro · graphite black standard bundle",
+      "summary": "A 4K webcam for calls, demos and lessons. Its gimbal follows you as you move and its two microphones help isolate your voice.",
+      "conditions": "Graphite black standard bundle, KRW321,000 as listed in Korea. Magnetic mount included; no extra tripod. Free shipping advertised from KRW150,000. Address, stock, taxes and checkout untested; exact end date unverified. 15-day returns require original condition and complete packaging and accessories."
+    },
+    "ko": {
+      "product": "Insta360 Link 2 Pro · 그래파이트 블랙 표준 번들",
+      "summary": "화상회의나 강의 중 움직이면 짐벌이 따라오는 4K 웹캠입니다. 마이크 2개로 목소리를 집중해서 받을 수 있습니다.",
+      "conditions": "한국 공식몰 그래파이트 블랙 표준 번들 표시가 321,000원. 자석 거치대 포함, 추가 삼각대는 미포함. 판매처는 15만원 이상 무료배송을 안내합니다. 주소별 배송·재고·세금·결제와 정확한 행사 종료 시점은 미확인입니다. 수령 후 15일 내 반품은 원상태와 포장·전체 구성품 보존이 조건입니다."
+    },
+    "zh": {
+      "product": "Insta360 Link 2 Pro · 石墨黑标准套装",
+      "summary": "可用于视频会议、演示和授课的4K摄像头。云台可跟随移动，双麦克风有助于突出人声。",
+      "conditions": "韩国官方店石墨黑标准套装标价321,000韩元，含磁吸支架，不含额外三脚架。满150,000韩元免运。地址、库存、税费和付款未测试，确切结束时间未核实。收货后15天退货须保持原状，包装和配件齐全。"
+    },
+    "ja": {
+      "product": "Insta360 Link 2 Pro · グラファイトブラック標準セット",
+      "summary": "会議やデモ、授業向けの4Kウェブカメラ。ジンバルが動きを追い、2つのマイクで声をとらえます。",
+      "conditions": "韓国公式ストアのグラファイトブラック標準セット表示価格は321,000ウォン。磁気マウント付き、追加の三脚は別。150,000ウォン以上で送料無料の案内。住所別配送・在庫・税・決済と正確な終了日時は未確認。受領後15日以内の返品には原状と全包装・付属品が必要です。"
+    },
+    "es": {
+      "product": "Insta360 Link 2 Pro · kit estándar negro grafito",
+      "summary": "Cámara web 4K para reuniones, demostraciones y clases. Su estabilizador sigue tus movimientos y los dos micrófonos ayudan a captar tu voz.",
+      "conditions": "Precio publicado en Corea: 321.000 KRW por el kit estándar negro grafito. Incluye soporte magnético, no el trípode adicional. Envío gratis anunciado desde 150.000 KRW. Dirección, existencias, impuestos, pago y fin exacto sin confirmar. La devolución en 15 días exige estado original, embalaje y accesorios completos."
+    },
+    "fr": {
+      "product": "Insta360 Link 2 Pro · kit standard noir graphite",
+      "summary": "Webcam 4K pour les réunions, démonstrations et cours. Sa nacelle suit vos mouvements et les deux micros aident à capter votre voix.",
+      "conditions": "Prix affiché en Corée : 321 000 KRW pour le kit standard noir graphite. Support magnétique inclus, pas de trépied supplémentaire. Livraison gratuite annoncée dès 150 000 KRW. Adresse, stock, taxes, paiement et fin exacte non vérifiés. Retour sous 15 jours en état d’origine avec emballage et accessoires complets."
+    }
   }
 }
