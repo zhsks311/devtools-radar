@@ -4171,11 +4171,17 @@
             "url": "https://appsumo.com/products/wpdatatables/",
             "observed_at": "2026-11-16T14:15:26.020635+00:00",
             "result": "Live AppSumo browser: selected 1 Code, 5 Domains, USD 69 once with Buy now/Get lifetime access controls. Search extract still showed expired USD 59 Plus early access; current browser price takes precedence. Lifetime and future Developer Plan updates; redeem within 60 days; new users and returning AppSumo purchasers; refundable up to 60 days. Checkout, country eligibility and tax untested."
+          },
+          {
+            "url": "https://appsumo.com/products/wpdatatables/",
+            "observed_at": "2026-11-21T13:57:28+00:00",
+            "result": "AppSumo public product table shows USD 62.10 promotion and USD 69 before promotion for the 1 Code / 5 Domains tier, with Buy now. This is a seller-page observation, not a cart or checkout test."
           }
         ],
-        "review_completed_at": "2026-11-16T14:15:26.020635+00:00",
+        "review_completed_at": "2026-11-21T13:57:28+00:00",
         "limitations": [
-          "Seller USD 289 reference and 76% comparison not independently matched; no strike-through or percentage reproduced. Extra 10% campaign banner not applied without product-specific checkout verification. WordPress hosting and optional add-on costs not included or verified. No country eligibility claim."
+          "Seller USD 289 reference and 76% comparison not independently matched; no strike-through or percentage reproduced. Extra 10% campaign banner not applied without product-specific checkout verification. WordPress hosting and optional add-on costs not included or verified. No country eligibility claim.",
+          "The exact product level promotion visible on November 21 is separate from the USD 69 before-promotion price. Other coupons, Plus price, checkout and how long the exact promotional price persists were not verified."
         ]
       },
       "purchase_eligibility": {
@@ -4190,12 +4196,15 @@
         "checked_at": "2026-11-16T14:15:26.020635+00:00"
       },
       "latest_offer_check": {
-        "status": "price_and_purchase_ui_confirmed",
+        "status": "seller_page_price_and_add_to_cart_observed",
         "price": 69,
         "currency": "USD",
-        "observed_at": "2026-11-16T14:15:26.020635+00:00",
+        "observed_at": "2026-11-21T13:57:28+00:00",
         "source_url": "https://appsumo.com/products/wpdatatables/",
-        "evidence": "Live AppSumo browser: selected 1 Code, 5 Domains, USD 69 once with Buy now/Get lifetime access controls. Search extract still showed expired USD 59 Plus early access; current browser price takes precedence. Lifetime and future Developer Plan updates; redeem within 60 days; new users and returning AppSumo purchasers; refundable up to 60 days. Checkout, country eligibility and tax untested."
+        "evidence": "AppSumo public product table shows USD 62.10 promotion and USD 69 before promotion for the 1 Code / 5 Domains tier, with Buy now. This is a seller-page observation, not a cart or checkout test.",
+        "limitations": [
+          "USD 69 is the displayed before-promotion price; the USD 62.10 conditional amount is recorded separately. Final availability and checkout not verified."
+        ]
       },
       "sheets_workflow_review": {
         "sources": [
@@ -4219,7 +4228,34 @@
             "label": "Google Sheets · Editable imports"
           }
         ]
-      }
+      },
+      "price_options": [
+        {
+          "kind": "coupon",
+          "product_id": "wpdatatables-1-code",
+          "variant": "1 Code · 5 Domains",
+          "currency": "USD",
+          "price": 62.1,
+          "source_url": "https://appsumo.com/products/wpdatatables/",
+          "checked_at": "2026-11-21T13:57:28+00:00",
+          "evidence": "AppSumo public product table shows USD 62.10 promotion and USD 69 before promotion for the 1 Code / 5 Domains tier, with Buy now. This is a seller-page observation, not a cart or checkout test.",
+          "conditions": {
+            "en": "AppSumo showed this Black Friday price for 1 code / 5 domains with no Plus requirement indicated. The campaign discount is automatic; no code. The campaign ends Dec 1 at 18:00 UTC, but this exact price can change sooner. Plus pricing, Korean eligibility, tax and checkout total were not verified.",
+            "ko": "AppSumo 상품 페이지에서 Plus 가입 조건이 별도로 표시되지 않은 1코드·5도메인 블랙프라이데이 가격입니다. 행사 할인은 코드 입력 없이 자동 적용된다고 안내합니다. 행사 종료는 12월 2일 오전 3시(한국 시간)이지만 이 상품 가격은 그 전에 바뀔 수 있습니다. Plus 가격, 한국 구매 가능 여부, 세금·최종 결제액은 미확인입니다.",
+            "zh": "AppSumo 商品页显示的 1 个兑换码／5 个域名黑五价格，未标注需 Plus。活动折扣自动应用，无需输入代码。活动于 12 月 1 日 18:00 UTC 结束，但该价格可能提前变化。未核实 Plus 价格、韩国购买资格、税费或最终结算金额。",
+            "ja": "AppSumoの商品ページにPlus条件の記載がなく表示された、1コード・5ドメインのブラックフライデー価格です。キャンペーン割引はコード入力不要で自動適用と案内されています。企画は12月2日午前3時（日本時間）に終了しますが、この価格は先に変わることがあります。Plus価格、韓国での購入可否、税額・決済総額は未確認です。",
+            "es": "Precio del Black Friday mostrado por AppSumo para 1 código y 5 dominios, sin requisito de Plus indicado. El descuento de campaña se aplica automáticamente, sin código. La campaña termina el 1 de diciembre a las 18:00 UTC, pero el precio puede cambiar antes. Precio Plus, compra desde Corea, impuestos y total al pagar sin verificar.",
+            "fr": "Prix Black Friday affiché par AppSumo pour 1 code et 5 domaines, sans exigence Plus indiquée. La remise est automatique, sans code. La campagne se termine le 1er décembre à 18 h UTC, mais ce prix peut changer avant. Prix Plus, achat depuis la Corée, taxes et total au paiement non vérifiés."
+          },
+          "campaign_end_at": "2026-12-01T18:00:00+00:00",
+          "ends_at": null,
+          "checkout_verified": false,
+          "campaign_sources": [
+            "https://appsumo.com/blackfriday/?category=ecommerce&group=sales-leads",
+            "https://partners.appsumo.com/self-submission"
+          ]
+        }
+      ]
     },
     {
       "id": "buhobarx-single-lifetime",

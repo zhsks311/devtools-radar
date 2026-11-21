@@ -1,6 +1,6 @@
 import json,unittest
 from pathlib import Path
-from tools.deal_prices import checked_price
+from tools.deal_prices import checked_price, validated_price_options
 from tools.product_links import publishable_link
 from product_visuals import illustration
 class WPDataTablesOffer(unittest.TestCase):
@@ -11,10 +11,24 @@ class WPDataTablesOffer(unittest.TestCase):
   self.assertTrue(checked_price(self.d));self.assertTrue(publishable_link(self.d))
   self.assertIsNone(self.d['original_price']);self.assertIsNone(self.d['discount_pct'])
   self.assertIn('expired USD 59',self.d['price_review']['evidence'][0]['result'])
- def test_scope_no_invented_country_or_coupon(self):
+ def test_scope_no_invented_country_or_checkout(self):
   self.assertEqual(self.d['purchase_eligibility']['countries_confirmed'],[])
   self.assertEqual(self.d['price_variant'],'1 Code · 5 Domains')
-  self.assertNotIn('price_options',self.d)
+  self.assertIsNone(self.d.get('expires_at'))
+  option,=validated_price_options(self.d)
+  self.assertEqual(option['price'],62.10)
+  self.assertEqual(option['campaign_end_at'],'2026-12-01T18:00:00+00:00')
+  self.assertIsNone(option['ends_at'])
+  self.assertFalse(option['checkout_verified'])
+  self.assertEqual(option['source_url'],self.d['link']['url'])
+ def test_conditional_amount_separate_in_six_locales(self):
+  from site_i18n import catalogue,LANGS
+  data=json.loads(Path('data/deal_localizations.json').read_text())
+  for lang in LANGS:
+   page=catalogue(lang,[self.d],data)
+   self.assertIn('<div class="price">USD 69</div>',page)
+   self.assertIn('<p class="conditional-price">USD 62.1</p>',page)
+   self.assertNotIn('data-expires-at=',page)
  def test_localized_purpose_terms_and_original_diagram(self):
   tr=json.loads(Path('data/deal_localizations.json').read_text())[self.d['id']]
   for lang in ('en','ko','zh','ja','es','fr'):
