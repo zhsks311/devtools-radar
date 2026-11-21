@@ -873,32 +873,32 @@
     "en": {
       "product": "PDF Expert for Mac · version 3",
       "summary": "Edit, annotate and sign PDFs on Mac.",
-      "conditions": "New users; macOS 12+; iOS excluded; version-specific license, redeem within 30 days. Country activation and billing eligibility, taxes and refund terms remain unverified."
+      "conditions": "New users; macOS 12+; iOS excluded. Redeem this version-specific license within 30 days. StackSocial offers store credit only for unredeemed codes returned within 30 days of purchase. No returns after redemption. Country activation, billing eligibility and taxes are unverified."
     },
     "ko": {
       "product": "PDF Expert · Mac용 버전 3",
       "summary": "Mac에서 PDF 내용 수정·주석·서명을 하는 앱.",
-      "conditions": "신규 사용자, macOS 12 이상, iOS 제외, 특정 버전 라이선스로 30일 이내 등록. 국가별 활성화·결제 가능 여부와 세금·환불 조건은 미확인입니다."
+      "conditions": "신규 사용자용, macOS 12 이상, iOS 제외. 이 버전의 라이선스는 30일 내 등록하세요. StackSocial은 구매 후 30일 내 미등록 코드에 한해 스토어 크레딧으로만 돌려줍니다. 등록 후에는 환불할 수 없습니다. 국가별 활성화·결제 가능 여부와 세금은 미확인입니다."
     },
     "zh": {
       "product": "PDF Expert · Mac版第3版",
       "summary": "在 Mac 上编辑、批注和签署 PDF。",
-      "conditions": "新用户；macOS 12及以上，不含iOS；限定版本许可，30天内兑换。 各国激活与付款资格、税费及退款条件尚未核实。"
+      "conditions": "仅限新用户，适用于 macOS 12 及以上版本，不含 iOS。此指定版本许可须在 30 天内兑换。购买后 30 天内退回未兑换的兑换码，StackSocial 仅退店铺余额；兑换后不退款。各国激活、付款资格及税费未核实。"
     },
     "ja": {
       "product": "PDF Expert · Mac用バージョン3",
       "summary": "MacでPDFの編集・注釈・署名ができるアプリ。",
-      "conditions": "新規ユーザー、macOS 12以降、iOS対象外、特定バージョンのライセンス、30日以内に引き換え。 国別の有効化・支払い可否、税金、返金条件は未確認です。"
+      "conditions": "新規ユーザー向け。macOS 12 以降、iOS は対象外。このバージョンのライセンスは30日以内に引き換えてください。StackSocialでの返品は購入後30日以内の未引換コードに限り、返金はストアクレジットのみです。引き換え後は返金できません。国別の有効化・支払い可否、税金は未確認です。"
     },
     "es": {
       "product": "PDF Expert para Mac · versión 3",
       "summary": "Edita, anota y firma documentos PDF en Mac.",
-      "conditions": "Nuevos usuarios; macOS 12+; sin iOS; licencia de esta versión, canje en 30 días. Países de activación y pago, impuestos y condiciones de reembolso sin verificar."
+      "conditions": "Solo para nuevos usuarios. macOS 12 o posterior, sin iOS. Canjea la licencia de esta versión en 30 días. StackSocial solo devuelve crédito de tienda por códigos sin canjear devueltos en los 30 días posteriores a la compra. Una vez canjeado, no admite devolución. Activación, pago por país e impuestos sin verificar."
     },
     "fr": {
       "product": "PDF Expert pour Mac · version 3",
       "summary": "Modifie, annote et signe des PDF sur Mac.",
-      "conditions": "Nouveaux utilisateurs ; macOS 12+ ; iOS exclu ; licence propre à cette version, à activer sous 30 jours. Pays d’activation et de facturation, taxes et conditions de remboursement non vérifiés."
+      "conditions": "Pour les nouveaux utilisateurs. macOS 12 ou ultérieur, sans iOS. Activez la licence de cette version sous 30 jours. StackSocial rembourse uniquement en avoir les codes non activés, retournés dans les 30 jours suivant l’achat. Aucun remboursement après activation. Activation, paiement par pays et taxes non vérifiés."
     }
   },
   "e30c9a510928": {
@@ -2761,6 +2761,38 @@
       "product": "Arduino UNO R4 Minima",
       "summary": "Carte à microcontrôleur USB-C équipée d’une puce Renesas RA4M1 32 bits, pour prototyper capteurs, éclairages et petits automatismes.",
       "conditions": "La boutique américaine affiche 14 $ US hors port et taxes. Jusqu’au 30 novembre ; comptes professionnels exclus. Livraison gratuite au-delà de 50 $ US aux États-Unis contigus ; paiement non vérifié."
+    }
+  },
+  "wacom-intuos-small-wired-black-kr": {
+    "ko": {
+      "product": "와콤 인튜어스 소형 · 유선 블랙",
+      "summary": "화면이 없는 소형 펜 태블릿입니다. 컴퓨터에 USB로 연결해 그림을 그리거나 사진을 보정하고 문서에 손글씨 주석을 달 수 있습니다.",
+      "conditions": "신품 CTL-4100/K0-CX 공식몰 표시 55,000원(판매처 일반가 62,000원). 11월 22일까지 표시, 정확한 종료 시각 미공개. 국내 5만원 이상 기본 배송 무료. 실제 재고·지역별 배송·결제 미확인."
+    },
+    "en": {
+      "product": "Wacom Intuos Small (wired, black)",
+      "summary": "A small screenless USB pen tablet for drawing, retouching photos or annotating files on a connected computer.",
+      "conditions": "New CTL-4100/K0-CX listed at KRW 55,000 (seller comparison KRW 62,000). Offer shown through Nov 22; exact cutoff unknown. Standard Korean delivery free from KRW 50,000; stock, address and checkout unverified."
+    },
+    "zh": {
+      "product": "Wacom Intuos 小号有线黑色",
+      "summary": "通过 USB 连接电脑的无屏小型数位板，可用于绘画、照片修饰和手写标注。",
+      "conditions": "全新 CTL-4100/K0-CX 标价 55,000 韩元（卖家参考价 62,000 韩元）。活动显示至 11 月 22 日，具体结束时间未公布。韩国境内标准配送满 50,000 韩元免运费，未核实库存、地址及结账。"
+    },
+    "ja": {
+      "product": "Wacom Intuos Small · 有線ブラック",
+      "summary": "PCにUSB接続する液晶なしの小型ペンタブレット。描画や写真のレタッチ、文書への手書き注釈に使えます。",
+      "conditions": "新品CTL-4100/K0-CX、表示価格55,000ウォン（販売店比較62,000ウォン）。11月22日までと表示、終了時刻は不明。韓国内の標準送料は50,000ウォン以上で無料。在庫・配送先・決済は未確認。"
+    },
+    "es": {
+      "product": "Wacom Intuos Small · negra con cable",
+      "summary": "Una tableta gráfica pequeña sin pantalla que se conecta por USB para dibujar, retocar imágenes y anotar documentos en el ordenador.",
+      "conditions": "CTL-4100/K0-CX nueva, 55.000 KRW (referencia del vendedor: 62.000 KRW). Hasta el 22 de noviembre, sin hora publicada. Envío estándar en Corea gratis desde 50.000 KRW. No se verificaron stock, dirección ni pago."
+    },
+    "fr": {
+      "product": "Wacom Intuos Small · noire filaire",
+      "summary": "Petite tablette graphique sans écran connectée en USB à un ordinateur pour dessiner, retoucher des photos ou annoter des documents.",
+      "conditions": "CTL-4100/K0-CX neuve affichée à 55 000 KRW (référence vendeur : 62 000 KRW). Jusqu’au 22 novembre, heure non publiée. Livraison standard gratuite en Corée à partir de 50 000 KRW ; stock, adresse et paiement non vérifiés."
     }
   }
 }

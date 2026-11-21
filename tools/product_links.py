@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'estore.wacom.kr': r'/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx\.html',  # Reviewed exact new wired black SKU.
     'store-usa.arduino.cc': r'/products/uno-r4-minima/?',  # Reviewed US exact SKU ABX00080.
     'protonvpn.com': r'/black-friday/?', # Exact VPN Plus annual offer reviewed separately.
     'tablepro.app': r'/pricing/?', # Reviewed Pro one-time tier of this single product.

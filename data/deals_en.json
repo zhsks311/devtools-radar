@@ -1679,7 +1679,7 @@
         "activation": "License activation country restrictions have not been verified.",
         "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
         "tax": "Delivery fees, taxes and final total: check checkout.",
-        "returns": "Return/refund rules: check retailer before purchase or activation.",
+        "returns": "Seller terms: unredeemed licenses may be returned within 30 days of purchase for store credit only; once redeemed, all sales are final.",
         "evidence_url": null,
         "checked_at": "2026-11-10"
       },
@@ -1748,6 +1748,11 @@
           "DEAL20 availability/application not verified; do not claim it is currently valid.",
           "No independent historical discount comparison."
         ]
+      },
+      "service_terms": {
+        "url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
+        "checked_at": "2026-11-21",
+        "refund": "Seller terms: unredeemed licenses may be returned within 30 days of purchase for store credit only; once redeemed, all sales are final."
       }
     },
     {
@@ -5808,7 +5813,7 @@
             "activation": "License activation country restrictions have not been verified.",
             "payment": "Accepted payment methods and billing-country restrictions: check checkout.",
             "tax": "Delivery fees, taxes and final total: check checkout.",
-            "returns": "Return/refund rules: check retailer before purchase or activation.",
+            "returns": "Seller terms: unredeemed licenses may be returned within 30 days of purchase for store credit only; once redeemed, all sales are final.",
             "evidence_url": null,
             "checked_at": "2026-11-10"
           },
@@ -5877,6 +5882,11 @@
               "DEAL20 availability/application not verified; do not claim it is currently valid.",
               "No independent historical discount comparison."
             ]
+          },
+          "service_terms": {
+            "url": "https://www.stacksocial.com/sales/pdf-expert-premium-plan-lifetime",
+            "checked_at": "2026-11-21",
+            "refund": "Seller terms: unredeemed licenses may be returned within 30 days of purchase for store credit only; once redeemed, all sales are final."
           }
         },
         {

@@ -8,6 +8,120 @@
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
     {
+      "id": "wacom-intuos-small-wired-black-kr",
+      "region": "kr",
+      "target": "ko",
+      "category": "hardware",
+      "category_label": "hardware",
+      "title_raw": "Wacom Intuos Small (wired, black)",
+      "product": "Wacom Intuos Small (wired, black)",
+      "store": "Wacom Korea Official Store",
+      "price": 55000,
+      "price_source": "retailer_product_page",
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "KR storefront · free standard delivery on qualifying orders",
+      "specs": [
+        "CTL-4100/K0-CX",
+        "Wired USB pen tablet · without Bluetooth"
+      ],
+      "briefing": [
+        "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
+      ],
+      "source": {
+        "label": "Wacom Korea exact product detail",
+        "url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-21",
+      "promotion_end_text": "2026-11-22 (as displayed by merchant; exact cutoff time not stated)",
+      "disclosure": "Direct retailer link without affiliate tracking. No historical-low claim.",
+      "link": {
+        "url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-21T13:27:37Z",
+        "url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+        "product_match": true,
+        "evidence": "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
+      },
+      "price_review": {
+        "id": "wacom-intuos-small-wired-black-kr",
+        "product": "Wacom Intuos Small (wired, black)",
+        "seller_url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+        "recorded_price": 55000,
+        "verified_price": 55000,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+            "observed_at": "2026-11-21T13:27:37Z",
+            "result": "The official exact product page for wired black CTL-4100/K0-CX displayed KRW 55,000 with cart control in the most recent available product capture. Current campaign verified separately."
+          },
+          {
+            "url": "https://estore.wacom.kr/ko-kr/wacomblackfriday2026",
+            "observed_at": "2026-11-21T13:27:37Z",
+            "result": "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
+          }
+        ],
+        "limitations": [
+          "Seller reference only. Checkout, exact stock, address and independent price history not verified."
+        ],
+        "review_completed_at": "2026-11-21T13:27:37Z"
+      },
+      "price_variant": "CTL-4100/K0-CX wired black, new",
+      "storefront_country": "KR",
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-21T13:27:37Z"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Korean Wacom eStore advertises free standard delivery for orders of at least KRW 50,000; address-specific availability not tested. No overseas delivery claim.",
+        "activation": "Physical wired pen tablet",
+        "payment": "Checkout untested",
+        "tax": "Final total untested",
+        "returns": "See current retailer conditions",
+        "evidence_url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+        "checked_at": "2026-11-21"
+      },
+      "latest_offer_check": {
+        "checked_at": "2026-11-21T13:27:37Z",
+        "status": "seller_text_observed",
+        "price": 55000,
+        "source_url": "https://estore.wacom.kr/ko-kr/wacomblackfriday2026",
+        "evidence": "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
+      },
+      "image": {
+        "path": "/assets/deals/wacom-intuos-small-black.webp",
+        "alt": "Black Wacom Intuos Small CTL-4100 pen tablet with its pen",
+        "kind": "licensed_product_photo",
+        "credit": "Smitop",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Wacom_Intuos_S.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_basis": "Smitop published an original photo of the black CTL-4100 under CC BY-SA 4.0. Resized WebP derivative distributed under the same license.",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Wacom_Intuos_S.jpg",
+        "checked_at": "2026-11-21T13:28:00Z",
+        "processing": "Proportional resize to 780 × 485 and WebP compression; no crop, metadata omitted.",
+        "sha256": "667cb42c6653c3e50bb87097e2d76594b6cd3e897942fb58e6654726ecfc45b8"
+      }
+    },
+    {
       "id": "insta360-link-2-pro-kr-graphite-standard",
       "region": "kr",
       "target": "ko",
@@ -6094,10 +6208,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 33,
+    "feed": 34,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 17,
+    "verified_product_links": 18,
     "held_product_links": 16,
     "historical_tracked_links": 14
   }
