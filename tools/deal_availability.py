@@ -6,6 +6,7 @@ A quantity limit is a buyer restriction, not an inventory signal. A purchase CTA
 is a page observation, not proof that checkout or an unselected variant works.
 """
 import re
+from datetime import datetime, timezone
 
 def classify_visible_offer(text, *, product_matched=False, purchase_cta=False,
                            price_observed=False, option_matched=False,
@@ -30,3 +31,20 @@ def blocks_publication(deal):
     if review.get('status') == 'in_stock' and review.get('basis') == 'purchase_limit':
         return True
     return False
+
+
+def explicit_offer_expiry(value):
+    """Use only a complete, explicitly zoned timestamp; never infer a deadline."""
+    if not isinstance(value, str) or not re.fullmatch(
+        r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:Z|[+-][0-9]{2}:[0-9]{2})", value
+    ):
+        return None
+    # -00:00 can denote an unknown offset; fromisoformat normalizes invalid
+    # offset minutes, so validate them before parsing.
+    if value.endswith("-00:00") or (not value.endswith("Z") and
+                                      (int(value[-5:-3]) > 23 or int(value[-2:]) > 59)):
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+    except (ValueError, OverflowError):
+        return None

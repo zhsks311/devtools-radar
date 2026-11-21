@@ -312,10 +312,13 @@ def generate_llms_txt(items, ko_deals, en_deals) -> str:
     return "\n".join(lines) + "\n"
 
 
-def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
+def generate_llms_full_txt(items, ko_deals, en_deals, *, now=None) -> str:
     """Optional evidence export using the same publication gates as visible pages."""
     from tools.product_links import publishable_link
     from tools.deal_prices import checked_price
+    from tools.deal_availability import explicit_offer_expiry
+    from datetime import datetime, timezone
+    now = now or datetime.now(timezone.utc)
     from tools.deal_countries import confirmed_countries
     out = ["# DevTeardown — comparison evidence and recorded offers", "",
            "Source: https://devteardown.com", "",
@@ -344,7 +347,12 @@ def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
             "Prices can change. Countries below refer only to recorded delivery/activation evidence, not payment eligibility.",
             f"Localized catalog and purchase conditions: {BASE_URL}/deals/", ""]
     feeds = ko_deals.get("feed", []) + en_deals.get("feed", [])
+    ended = 0
     for d in feeds:
+        deadline = explicit_offer_expiry(d.get("expires_at"))
+        if deadline is not None and now >= deadline:
+            ended += 1
+            continue
         if not publishable_link(d):
             continue
         review = d.get('price_review') or {}
@@ -360,6 +368,8 @@ def generate_llms_full_txt(items, ko_deals, en_deals) -> str:
                 "Discounts and historical-low claims are not established by this export.", ""]
     held = sum(not publishable_link(d) for d in feeds)
     out += [f"{held} held source records are omitted from this export; their purchase links are not verified."]
+    if ended:
+        out += [f"{ended} ended offers are omitted from this export."]
     return "\n".join(out) + "\n"
 
 

@@ -3,6 +3,7 @@ from product_visuals import illustration, product_media
 import html, json, re, datetime
 from pathlib import Path
 from tools.product_links import publishable_link
+from tools.deal_availability import explicit_offer_expiry
 from tools.deal_candidates import candidate_cards
 from tools.affiliate_links import verified_aliexpress_url
 from tools.deal_prices import checked_price, official_srp_comparison, current_price_state, validated_price_options, number
@@ -18,6 +19,14 @@ AFFILIATE_DISCLOSURE = {
  'ja': '広告リンク：このリンク経由で購入すると、DevTeardown が紹介料を受け取る場合があります。',
  'es': 'Enlace de afiliado: DevTeardown puede recibir una comisión si compras a través de este enlace.',
  'fr': 'Lien affilié : DevTeardown peut recevoir une commission si vous achetez via ce lien.',
+}
+OFFER_ENDED = {
+ 'en': 'This offer has ended.',
+ 'ko': '이 할인은 종료됐습니다.',
+ 'zh': '此优惠已结束。',
+ 'ja': 'このセールは終了しました。',
+ 'es': 'Esta oferta ha terminado.',
+ 'fr': 'Cette offre est terminée.',
 }
 LANGUAGE_LABEL={'en':'Language','ko':'언어 선택','zh':'选择语言','ja':'言語を選択','es':'Elegir idioma','fr':'Choisir la langue'}
 PATHS={k:('/deals/' if k=='en' else f'/{k}/') for k in LANGS}
@@ -149,12 +158,44 @@ function matches(card) {
     (cat.value === 'all' || card.dataset.category === cat.value ||
       (cat.value === 'hardware' && ['keyboard-mouse', 'laptops', 'monitor-desk'].includes(card.dataset.category)));
 }
+function archiveEndedOffers() {
+  let moved = false;
+  for (let i = cards.length - 1; i >= 0; i--) {
+    const card = cards[i];
+    const ends = Date.parse(card.dataset.expiresAt || '');
+    if (!Number.isFinite(ends) || Date.now() < ends) continue;
+    const heading = card.querySelector('h2');
+    heading.textContent = heading.textContent;
+    for (const node of [...card.children]) {
+      if (node !== heading && node.tagName !== 'FIGURE' && !node.classList.contains('offer-category')) node.remove();
+    }
+    const label = document.createElement('p');
+    label.className = 'notice offer-ended';
+    label.textContent = card.dataset.expiredLabel;
+    card.append(label);
+    card.dataset.offerExpired = 'true';
+    document.querySelector('#held-products').append(card);
+    cards.splice(i, 1);
+    archived.push(card);
+    moved = true;
+  }
+  return moved;
+}
+let lastArchiveTarget;
 function filter(historyMode = 'replace') {
+  archiveEndedOffers();
   let n = 0, hn = 0, dn = 0;
   for (const card of cards) { card.hidden = !matches(card); if (!card.hidden) { n++; if (card.dataset.kind === 'discovery') dn++; } }
-  for (const card of archived) { card.hidden = !matches(card); if (!card.hidden) hn++; }
+  const target = archived.find(card => card.dataset.offerExpired === 'true' && location.hash === '#product-' + card.dataset.id);
+  for (const card of archived) { card.hidden = card !== target && !matches(card); if (!card.hidden) hn++; }
   document.querySelector('#archive-count').textContent=hn;
-  document.querySelector('.held-archive').hidden = hn === 0;
+  const archiveSection = document.querySelector('.held-archive');
+  archiveSection.hidden = hn === 0;
+  if (target) {
+    archiveSection.open = true;
+    if (target !== lastArchiveTarget && target.scrollIntoView) target.scrollIntoView({block:'nearest'});
+  }
+  lastArchiveTarget = target;
   document.querySelector('#discovery-count').textContent=dn;
   const discoverySection=document.querySelector('.discovery-section');
   discoverySection.hidden=dn===0;
@@ -190,6 +231,8 @@ document.querySelector('#reset-filters').addEventListener('click', () => {
 });
 window.addEventListener('popstate', () => { restore(); filter(); });
 window.addEventListener('pageshow', () => { restore(); filter(); });
+window.addEventListener('hashchange', () => filter());
+setInterval(() => { if (archiveEndedOffers()) filter(); }, 1000);
 restore(); filter();
 function expireObservedPrices() {
   for (const node of document.querySelectorAll('.price-status[data-price-state="observed"]')) {
@@ -279,7 +322,8 @@ def visible_price_context(deal, lang):
 
  return result
 
-def catalogue(lang,feeds,translations,discoveries=False):
+def catalogue(lang,feeds,translations,discoveries=False,*,now=None):
+ now=now or datetime.datetime.now(datetime.timezone.utc)
  t=LABELS[lang]; f=FILTER_TEXT[lang]; discovery_cards=candidate_cards(lang) if discoveries else []; cards=[]; held_cards=[]; discovery_count=len(discovery_cards); active_affiliates=0
  for d in feeds:
   loc=translations.get(d['id'],{}).get(lang,{})
@@ -291,11 +335,17 @@ def catalogue(lang,feeds,translations,discoveries=False):
   # Held records are internal audit inputs, not publication evidence. Never serialize
   # their source/briefing/price_review objects (including rejected search URLs).
   # Keep only catalogue identity and explicitly historical price in public output.
+  deadline=explicit_offer_expiry(d.get('expires_at'))
+  if deadline is not None and now >= deadline:
+   held_cards.append(f'<article class="card" id="product-{e(d["id"])}" data-id="{e(d["id"])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(" ".join(targets))}" data-category="{e(cat)}" data-offer-expired="true">{product_media(d,lang,title)}<div class="meta offer-category">{e(t[CATS.get(cat,29)])} · {e(d.get("store",""))}</div><h2>{e(title)}</h2><p class="notice offer-ended">{e(OFFER_ENDED[lang])}</p></article>')
+   continue
   if not publishable_link(d):
    held_summary = SOLD_OUT_LABEL[lang] if (d.get('availability_review') or {}).get('status') == 'sold_out' else HELD_SUMMARY[lang]
    held_discount = NOT_DISCOUNT[lang] if (d.get('price_review') or {}).get('deal_status') == 'not_a_discount' else DISCOUNT_UNKNOWN[lang]
    held_cards.append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-category="{e(cat)}">{product_media(d,lang,title)}<div class="meta">{e(t[CATS.get(cat,29)])}</div><h2>{e(title)}</h2><p class="product-summary">{e(loc.get("purpose",""))}</p><p>{e(held_summary)}</p><div class="price">{e(price)}</div><p class="notice">{e(PRICE_RECORDED[lang])}</p><p class="notice">{e(held_discount)}</p><p class="notice link-held" role="status">{e(HELD[lang])}</p></article>''')
    continue
+  deadline_attrs=f' data-expires-at="{e(deadline.isoformat())}" data-expired-label="{e(OFFER_ENDED[lang])}"' if deadline else ''
+  category_class="meta offer-category" if deadline else "meta"
   image=product_media(d,lang,title)
   source=d.get('source') or {};src=f'<a href="{e(safe(source.get("url","")))}" rel="noopener nofollow">{t[30]}</a>' if source.get('url') else ''
   availability_note = '<p class="notice availability-warning">'+e(CURRENT_OFFER_UNVERIFIED[lang])+'</p>' if (d.get('latest_offer_check') or {}).get('status') == 'unverified_current' else ''
@@ -337,7 +387,7 @@ def catalogue(lang,feeds,translations,discoveries=False):
   terms=d.get('service_terms') or {}
   if terms.get('url'): evidence+=f'<p><a class="service-terms-source" href="{e(safe(terms["url"]))}" rel="noopener nofollow">{t[30]}</a></p>'
   linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}"{description}>{e(title)}</a>' if linked else e(title)
-  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}">{disclosure}{image}<div class="meta">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}<div class="price">{e(price)}{billing_label(d,lang)}</div>{visible_price_context(d,lang)}{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
+  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}"{deadline_attrs}>{disclosure}{image}<div class="{category_class}">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}<div class="price">{e(price)}{billing_label(d,lang)}</div>{visible_price_context(d,lang)}{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  storefronts=sorted({storefront_country(d) for d in feeds}-{"unknown"})
  destinations=list(COUNTRY_ORDER)+sorted({c for d in feeds for c in target_countries(d)}-set(COUNTRY_ORDER))
