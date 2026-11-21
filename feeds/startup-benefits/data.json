@@ -1,9 +1,9 @@
 {
   "source": "that.promo",
   "policy_url": "https://that.promo/developers",
-  "collected_at": "2026-11-20T20:10:40.997543+00:00",
-  "source_generated_at": "2026-11-20T20:10:40Z",
-  "count": 253,
+  "collected_at": "2026-11-21T07:00:58.060197+00:00",
+  "source_generated_at": "2026-11-21T07:00:57Z",
+  "count": 252,
   "offers": [
     {
       "slug": "crawl4ai-cloud-free-plan",
@@ -4702,35 +4702,6 @@
       "last_verified": "2026-11-20",
       "added_at": "2026-10-27T21:38:46Z",
       "updated_at": "2026-11-20T08:16:20Z"
-    },
-    {
-      "slug": "geek-room-global-ai-hackathon",
-      "url": "https://that.promo/geek-room-global-ai-hackathon",
-      "json_url": "https://that.promo/geek-room-global-ai-hackathon.json",
-      "name": "Geek Room Global AI Hackathon",
-      "provider": "Geek Room",
-      "company": "geek-room",
-      "company_url": "https://that.promo/geek-room",
-      "category": "Hackathons",
-      "category_url": "https://that.promo/ai-hackathons",
-      "program": null,
-      "status": "live",
-      "headline_amount": "8,000",
-      "headline_note": "Tavily credits each",
-      "promo_code_needed": true,
-      "promo_code": "GEEKROOM2",
-      "value": "Free entry with 8,000 Tavily API credits per eligible participant, plus an $11.5K prize pool: $1,000 cash, 50,000 Tavily API credits for the top three Tavily projects and $50 Omnidimension Voice AI credits for each of 100 winners; certificates for all",
-      "summary": "Geek Room is running a free, fully virtual global AI hackathon with Bifrost (by Maxim AI) as title partner and Tavily as track partner. The official schedule shows registration open until 21 November 2026, problem statements from 1 November, prototype submission until 21 November, and judging on 28 November.",
-      "who_qualifies": "Anyone worldwide: students, developers, designers, founders and researchers, solo or in teams of up to 4",
-      "how_to_claim": "Register at https://hackculture.io/hackathons/register/ai-global-hackathon before 21 November 2026, 11:59 PM and join the official hackathon Discord. Redeem Tavily coupon code GEEKROOM2 at https://app.tavily.com/home.",
-      "expiry": "2026-11-21",
-      "caveats": "The official schedule says registration and prototype submission run to 21 November 2026, 11:59 PM, with judging on 28 November. The FAQ still says the prototype deadline is 15 November 2026, 11:59 PM and judging is 29 November. Timezone is not labeled on the schedule. Participant Tavily credits come from coupon GEEKROOM2, redeemed on app.tavily.com and valid until 28 November 2026. The prizes section still shows $65 Tavily credits for 100 winners, which conflicts with the FAQ's 50,000 Tavily API credits for the top three Tavily projects. The stated $11.5K pool does not match the listed items. Cash and Omnidimension credits are competition prizes. Discord membership is required.",
-      "why_it_matters": null,
-      "official_url": "https://hackculture.io/hackathons/ai-global-hackathon",
-      "released_at": null,
-      "last_verified": "2026-11-20",
-      "added_at": "2026-10-27T21:38:24Z",
-      "updated_at": "2026-11-20T08:16:22Z"
     },
     {
       "slug": "3am-super-intelligence-90-day-free-trial",
