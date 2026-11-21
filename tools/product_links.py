@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'store-usa.arduino.cc': r'/products/uno-r4-minima/?',  # Reviewed US exact SKU ABX00080.
     'protonvpn.com': r'/black-friday/?', # Exact VPN Plus annual offer reviewed separately.
     'tablepro.app': r'/pricing/?', # Reviewed Pro one-time tier of this single product.
     'koofr.eu': r'/black-friday/?', # Official single-service offer; 1 TB annual tier reviewed explicitly.

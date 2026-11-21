@@ -64,6 +64,7 @@ def illustration(deal,lang):
 MEDIA_LABEL = {'ko':'공식 제품 화면 · 제공 예시', 'en':'Official product preview · sample UI', 'zh':'官方产品界面 · 示例', 'ja':'公式製品画面・表示例', 'es':'Vista oficial del producto · ejemplo', 'fr':'Aperçu officiel du produit · exemple'}
 PHOTO_LABEL = {'ko':'공식 배포 제품 사진', 'en':'Official distributor product photo', 'zh':'官方经销商产品图', 'ja':'公式販売元の製品写真', 'es':'Foto del distribuidor oficial', 'fr':'Photo du distributeur officiel'}
 LICENSED_PHOTO_LABEL = {'ko':'제품 사진 · 크기 조정', 'en':'Product photo · resized', 'zh':'产品照片 · 已调整尺寸', 'ja':'製品写真・サイズ調整', 'es':'Foto del producto · redimensionada', 'fr':'Photo du produit · redimensionnée'}
+ORIGINAL_PHOTO_LABEL = {'ko':'제품 사진 · 원본', 'en':'Product photo · original', 'zh':'产品照片 · 原图', 'ja':'製品写真・原本', 'es':'Foto original del producto', 'fr':'Photo originale du produit'}
 STORAGE_PREVIEW_LABEL = {'ko':'앱 화면 예시 · 표시 용량은 상품 용량과 다를 수 있음', 'en':'App preview; storage shown is illustrative.', 'zh':'应用界面示例 · 所示容量仅供参考', 'ja':'アプリ画面例・表示容量は商品容量と異なる場合があります', 'es':'Vista de la aplicación; capacidad mostrada ilustrativa.', 'fr':'Aperçu de l’application ; capacité affichée illustrative.'}
 MEDIA_MISSING = {'ko':'이미지를 불러오지 못했습니다', 'en':'Image unavailable', 'zh':'图片暂不可用', 'ja':'画像を読み込めません', 'es':'Imagen no disponible', 'fr':'Image indisponible'}
 def product_media(deal, lang, title):
@@ -78,6 +79,7 @@ def product_media(deal, lang, title):
     if licensed and not (media.get('rights_basis') and media.get('source_page','').startswith('https://') and media.get('license_url','').startswith('https://') and media.get('license')): return illustration(deal,lang)
     license_html = (' · <a href="'+escape(media['license_url'],quote=True)+'" rel="license noopener">'+escape(media['license'])+'</a>') if licensed else ''
     caption=LICENSED_PHOTO_LABEL[lang] if licensed else MEDIA_LABEL[lang] if media.get('kind')=='official_product_ui' else PHOTO_LABEL[lang] if media.get('kind')=='official_product_photo' else media.get('caption','')
+    if licensed and media.get('unmodified') is True: caption=ORIGINAL_PHOTO_LABEL[lang]
     if media.get('kind')=='official_app_icon': caption={'ko':'공식 앱 아이콘 · 제품 화면 아님','en':'Official app icon · not a screenshot','zh':'官方应用图标 · 非界面截图','ja':'公式アプリアイコン・画面ではありません','es':'Icono oficial · no es una captura','fr':'Icône officielle · pas une capture'}[lang]
     if caption == 'App preview; storage shown is illustrative.': caption = STORAGE_PREVIEW_LABEL[lang]
     cls='official-product-media official-app-icon' if media.get('kind')=='official_app_icon' else 'official-product-media'

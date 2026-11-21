@@ -28,3 +28,7 @@ Retrieved 2026-11-10. These assets are used only to illustrate the corresponding
 ## Escape the Backrooms
 
 `escape-backrooms.webp` is an actual PC gameplay screenshot distributed by Fancy Games / Secret Mode in the [official publisher announcement](https://wearesecretmode.com/news/escape-the-backrooms-release-date) and its [public press kit](https://drive.google.com/drive/folders/1j1Gu_WUgPDcGvBje8jY-mY8PhwtoWTJv). Source file: Escape the Backrooms Screenshot 1.png (Drive ID `11EfXVK65aXscghDT92I0z04-asDGl0jP`). Resized proportionally from 1920×1080 to 1200×675 and WebP compressed; no crop/content edits. © Fancy Games / Secret Mode. Used to illustrate the matching Steam PC game, not to claim console entitlement or a current price.
+
+## Arduino UNO R4 Minima product photograph, 2026-11-21
+
+`arduino-uno-r4-minima.webp`: Arduino, [Arduino Uno R4 Minima.webp](https://commons.wikimedia.org/wiki/File:Arduino_Uno_R4_Minima.webp), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Original 1000 × 750 file, unmodified. Arduino’s [publication guide](https://www.arduino.cc/en/trademark/guides/trademark-guide-for-websites-and-publications/) allows product pictures with applicable license terms. The card links the original and license; no affiliation or endorsement implied.

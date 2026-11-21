@@ -2730,5 +2730,37 @@
       "summary": "Webcam 4K pour les réunions, démonstrations et cours. Sa nacelle suit vos mouvements et les deux micros aident à capter votre voix.",
       "conditions": "Prix affiché en Corée : 321 000 KRW pour le kit standard noir graphite. Support magnétique inclus, pas de trépied supplémentaire. Livraison gratuite annoncée dès 150 000 KRW. Adresse, stock, taxes, paiement et fin exacte non vérifiés. Retour sous 15 jours en état d’origine avec emballage et accessoires complets."
     }
+  },
+  "arduino-uno-r4-minima-us": {
+    "en": {
+      "product": "Arduino UNO R4 Minima",
+      "summary": "A USB-C microcontroller board for prototyping sensors, lighting and small automation projects. The Minima uses a 32-bit Renesas RA4M1 chip.",
+      "conditions": "US store shows $14 before shipping and tax. Offer through Nov 30; business accounts excluded. Free shipping over $50 to the contiguous US; checkout untested."
+    },
+    "ko": {
+      "product": "Arduino UNO R4 Minima",
+      "summary": "센서, 조명, 소형 자동화 장치를 시험 제작하는 USB-C 마이크로컨트롤러 보드입니다. Minima는 32비트 르네사스 RA4M1 칩을 탑재했습니다.",
+      "conditions": "미국 공식몰 표시가 $14(배송비·세금 별도). 11월 30일까지이며 사업자 계정은 제외됩니다. 미국 본토 $50 초과 주문 무료배송. 실제 결제 미확인."
+    },
+    "zh": {
+      "product": "Arduino UNO R4 Minima",
+      "summary": "用于传感器、照明和小型自动化原型制作的 USB-C 微控制器开发板，采用 32 位瑞萨 RA4M1 芯片。",
+      "conditions": "美国官方商城标价 14 美元，运费和税费另计。促销至 11 月 30 日，企业账户不适用。美国本土订单超过 50 美元免运费；未测试结账。"
+    },
+    "ja": {
+      "product": "Arduino UNO R4 Minima",
+      "summary": "センサーや照明、小規模な自動化の試作に使えるUSB-Cマイコンボード。32ビットのルネサスRA4M1を搭載。",
+      "conditions": "米国公式ストア表示は14米ドル（送料・税別）。11月30日まで。法人アカウント対象外。米国本土への50米ドル超の注文は送料無料。決済未確認。"
+    },
+    "es": {
+      "product": "Arduino UNO R4 Minima",
+      "summary": "Placa de microcontrolador USB-C con chip Renesas RA4M1 de 32 bits para crear prototipos de sensores, iluminación y automatización.",
+      "conditions": "La tienda oficial de EE. UU. muestra 14 USD, sin envío ni impuestos. Hasta el 30 de noviembre; excluye cuentas de empresa. Envío gratuito en pedidos superiores a 50 USD en EE. UU. continental; pago no comprobado."
+    },
+    "fr": {
+      "product": "Arduino UNO R4 Minima",
+      "summary": "Carte à microcontrôleur USB-C équipée d’une puce Renesas RA4M1 32 bits, pour prototyper capteurs, éclairages et petits automatismes.",
+      "conditions": "La boutique américaine affiche 14 $ US hors port et taxes. Jusqu’au 30 novembre ; comptes professionnels exclus. Livraison gratuite au-delà de 50 $ US aux États-Unis contigus ; paiement non vérifié."
+    }
   }
 }

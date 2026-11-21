@@ -1,11 +1,137 @@
 {
-  "generated_at": "2026-11-19T21:45:38.596487+00:00",
+  "generated_at": "2026-11-21T00:20:29+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
     "lang": "en"
   },
   "feed": [
+    {
+      "id": "arduino-uno-r4-minima-us",
+      "region": "global",
+      "target": "en",
+      "category": "hardware",
+      "category_label": "Hardware",
+      "title_raw": "Arduino UNO R4 Minima",
+      "product": "Arduino UNO R4 Minima",
+      "store": "Arduino US Official Store",
+      "price": 14,
+      "price_source": "retailer_product_page",
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "US storefront · shipping and tax extra as applicable",
+      "specs": [
+        "SKU ABX00080",
+        "Renesas RA4M1 32-bit microcontroller",
+        "USB-C · 256 KB flash"
+      ],
+      "briefing": [
+        "Arduino US exact SKU ABX00080 (EAN 7630049203907): USD 14 and Add to cart observed. The USD 20 comparison is shown by Arduino, not independently verified historical pricing; shipping and tax are not included. Official campaign through November 30, 2026; not valid for business accounts. Cutoff hour/timezone not stated. Free shipping advertised on orders over USD 50 to contiguous US; checkout, exact stock and address-specific charges untested."
+      ],
+      "source": {
+        "label": "Arduino US official product page",
+        "url": "https://store-usa.arduino.cc/products/uno-r4-minima"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-21",
+      "disclosure": "Untracked seller link. The comparison price reflects the retailer display, not a verified market low.",
+      "link": {
+        "url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-21T00:20:29+00:00",
+        "url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+        "product_match": true,
+        "evidence": "Arduino US exact SKU ABX00080 (EAN 7630049203907): USD 14 and Add to cart observed. The USD 20 comparison is shown by Arduino, not independently verified historical pricing; shipping and tax are not included. Official campaign through November 30, 2026; not valid for business accounts. Cutoff hour/timezone not stated. Free shipping advertised on orders over USD 50 to contiguous US; checkout, exact stock and address-specific charges untested."
+      },
+      "price_review": {
+        "id": "arduino-uno-r4-minima-us",
+        "product": "Arduino UNO R4 Minima",
+        "seller_url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+        "recorded_price": 14,
+        "verified_price": 14,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+            "observed_at": "2026-11-21T00:20:29+00:00",
+            "result": "Arduino US exact SKU ABX00080 (EAN 7630049203907): USD 14 and Add to cart observed. The USD 20 comparison is shown by Arduino, not independently verified historical pricing; shipping and tax are not included. Official campaign through November 30, 2026; not valid for business accounts. Cutoff hour/timezone not stated. Free shipping advertised on orders over USD 50 to contiguous US; checkout, exact stock and address-specific charges untested."
+          },
+          {
+            "url": "https://store-usa.arduino.cc/pages/black-friday",
+            "observed_at": "2026-11-21T00:20:29+00:00",
+            "result": "November 30, 2026 end date; business accounts excluded. Contiguous US free shipping for orders over $50."
+          }
+        ],
+        "limitations": [
+          "Retailer comparison not verified independently. Checkout and address-specific charges not tested."
+        ],
+        "review_completed_at": "2026-11-21T00:20:29+00:00"
+      },
+      "price_variant": "UNO R4 Minima · ABX00080",
+      "storefront_country": "US",
+      "country_targeting": {
+        "countries": [
+          "US"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-21T00:20:29+00:00",
+        "note": "Contiguous US free-shipping offer over USD 50; no other country coverage asserted."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "storefront_observed_address_unverified",
+        "delivery": "Free shipping on orders over USD 50 to the contiguous US; exact standalone shipping and address eligibility unverified.",
+        "activation": "Physical development board. No subscription included.",
+        "payment": "Business accounts excluded from offer; checkout not tested.",
+        "tax": "Sales tax and final checkout total unverified.",
+        "returns": "Not reviewed.",
+        "evidence_url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+        "checked_at": "2026-11-21"
+      },
+      "latest_offer_check": {
+        "checked_at": "2026-11-21T00:20:29+00:00",
+        "status": "seller_text_observed",
+        "price": 14,
+        "source_url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+        "evidence": "Arduino US exact SKU ABX00080 (EAN 7630049203907): USD 14 and Add to cart observed. The USD 20 comparison is shown by Arduino, not independently verified historical pricing; shipping and tax are not included. Official campaign through November 30, 2026; not valid for business accounts. Cutoff hour/timezone not stated. Free shipping advertised on orders over USD 50 to contiguous US; checkout, exact stock and address-specific charges untested."
+      },
+      "image": {
+        "path": "/assets/deals/arduino-uno-r4-minima.webp",
+        "alt": "Arduino UNO R4 Minima development board, top view",
+        "kind": "licensed_product_photo",
+        "credit": "Arduino",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Arduino_Uno_R4_Minima.webp",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "rights_basis": "Exact photo-specific Commons CC BY-SA 3.0 credit to Arduino; Arduino official trademark guide expressly permits use of its product pictures subject to applicable CC BY-SA terms. Do not imply endorsement. Guide: https://www.arduino.cc/en/trademark/guides/trademark-guide-for-websites-and-publications/",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Arduino_Uno_R4_Minima.webp",
+        "checked_at": "2026-11-21T00:17:14Z",
+        "processing": "Original 1000 × 750 WebP asset, unmodified.",
+        "sha256": "0c6f9efee4540a6fb7024321ee62c998b88814c4cbdf9289f3e383b59d266ce5",
+        "unmodified": true
+      },
+      "expires_at": null,
+      "campaign_end_date": "2026-11-30",
+      "availability_review": {
+        "status": "purchase_ui_observed",
+        "basis": "exact_sku_purchase_control",
+        "checked_at": "2026-11-21T00:20:29+00:00",
+        "source_url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+        "evidence": "Exact SKU ABX00080 and Add to cart shown on the seller public product page; no claim of checkout success or quantity."
+      },
+      "service_terms": {
+        "url": "https://store-usa.arduino.cc/pages/black-friday"
+      }
+    },
     {
       "id": "proton-vpn-plus-black-friday-annual",
       "region": "global",
@@ -7613,10 +7739,142 @@
           }
         }
       ]
+    },
+    "hardware": {
+      "label": "Hardware",
+      "audience": "Storefront and delivery conditions are checked separately.",
+      "items": [
+        {
+          "id": "arduino-uno-r4-minima-us",
+          "region": "global",
+          "target": "en",
+          "category": "hardware",
+          "category_label": "Hardware",
+          "title_raw": "Arduino UNO R4 Minima",
+          "product": "Arduino UNO R4 Minima",
+          "store": "Arduino US Official Store",
+          "price": 14,
+          "price_source": "retailer_product_page",
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "US storefront · shipping and tax extra as applicable",
+          "specs": [
+            "SKU ABX00080",
+            "Renesas RA4M1 32-bit microcontroller",
+            "USB-C · 256 KB flash"
+          ],
+          "briefing": [
+            "Arduino US exact SKU ABX00080 (EAN 7630049203907): USD 14 and Add to cart observed. The USD 20 comparison is shown by Arduino, not independently verified historical pricing; shipping and tax are not included. Official campaign through November 30, 2026; not valid for business accounts. Cutoff hour/timezone not stated. Free shipping advertised on orders over USD 50 to contiguous US; checkout, exact stock and address-specific charges untested."
+          ],
+          "source": {
+            "label": "Arduino US official product page",
+            "url": "https://store-usa.arduino.cc/products/uno-r4-minima"
+          },
+          "published_at": null,
+          "checked_date": "2026-11-21",
+          "disclosure": "Untracked seller link. The comparison price reflects the retailer display, not a verified market low.",
+          "link": {
+            "url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+            "tracked": false,
+            "label": "View actual product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-21T00:20:29+00:00",
+            "url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+            "product_match": true,
+            "evidence": "Arduino US exact SKU ABX00080 (EAN 7630049203907): USD 14 and Add to cart observed. The USD 20 comparison is shown by Arduino, not independently verified historical pricing; shipping and tax are not included. Official campaign through November 30, 2026; not valid for business accounts. Cutoff hour/timezone not stated. Free shipping advertised on orders over USD 50 to contiguous US; checkout, exact stock and address-specific charges untested."
+          },
+          "price_review": {
+            "id": "arduino-uno-r4-minima-us",
+            "product": "Arduino UNO R4 Minima",
+            "seller_url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+            "recorded_price": 14,
+            "verified_price": 14,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "evidence": [
+              {
+                "url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+                "observed_at": "2026-11-21T00:20:29+00:00",
+                "result": "Arduino US exact SKU ABX00080 (EAN 7630049203907): USD 14 and Add to cart observed. The USD 20 comparison is shown by Arduino, not independently verified historical pricing; shipping and tax are not included. Official campaign through November 30, 2026; not valid for business accounts. Cutoff hour/timezone not stated. Free shipping advertised on orders over USD 50 to contiguous US; checkout, exact stock and address-specific charges untested."
+              },
+              {
+                "url": "https://store-usa.arduino.cc/pages/black-friday",
+                "observed_at": "2026-11-21T00:20:29+00:00",
+                "result": "November 30, 2026 end date; business accounts excluded. Contiguous US free shipping for orders over $50."
+              }
+            ],
+            "limitations": [
+              "Retailer comparison not verified independently. Checkout and address-specific charges not tested."
+            ],
+            "review_completed_at": "2026-11-21T00:20:29+00:00"
+          },
+          "price_variant": "UNO R4 Minima · ABX00080",
+          "storefront_country": "US",
+          "country_targeting": {
+            "countries": [
+              "US"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "physical",
+            "reviewed_at": "2026-11-21T00:20:29+00:00",
+            "note": "Contiguous US free-shipping offer over USD 50; no other country coverage asserted."
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "storefront_observed_address_unverified",
+            "delivery": "Free shipping on orders over USD 50 to the contiguous US; exact standalone shipping and address eligibility unverified.",
+            "activation": "Physical development board. No subscription included.",
+            "payment": "Business accounts excluded from offer; checkout not tested.",
+            "tax": "Sales tax and final checkout total unverified.",
+            "returns": "Not reviewed.",
+            "evidence_url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+            "checked_at": "2026-11-21"
+          },
+          "latest_offer_check": {
+            "checked_at": "2026-11-21T00:20:29+00:00",
+            "status": "seller_text_observed",
+            "price": 14,
+            "source_url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+            "evidence": "Arduino US exact SKU ABX00080 (EAN 7630049203907): USD 14 and Add to cart observed. The USD 20 comparison is shown by Arduino, not independently verified historical pricing; shipping and tax are not included. Official campaign through November 30, 2026; not valid for business accounts. Cutoff hour/timezone not stated. Free shipping advertised on orders over USD 50 to contiguous US; checkout, exact stock and address-specific charges untested."
+          },
+          "image": {
+            "path": "/assets/deals/arduino-uno-r4-minima.webp",
+            "alt": "Arduino UNO R4 Minima development board, top view",
+            "kind": "licensed_product_photo",
+            "credit": "Arduino",
+            "credit_url": "https://commons.wikimedia.org/wiki/File:Arduino_Uno_R4_Minima.webp",
+            "license": "CC BY-SA 3.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "rights_basis": "Exact photo-specific Commons CC BY-SA 3.0 credit to Arduino; Arduino official trademark guide expressly permits use of its product pictures subject to applicable CC BY-SA terms. Do not imply endorsement. Guide: https://www.arduino.cc/en/trademark/guides/trademark-guide-for-websites-and-publications/",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Arduino_Uno_R4_Minima.webp",
+            "checked_at": "2026-11-21T00:17:14Z",
+            "processing": "Original 1000 × 750 WebP asset, unmodified.",
+            "sha256": "0c6f9efee4540a6fb7024321ee62c998b88814c4cbdf9289f3e383b59d266ce5",
+            "unmodified": true
+          },
+          "expires_at": null,
+          "campaign_end_date": "2026-11-30",
+          "availability_review": {
+            "status": "purchase_ui_observed",
+            "basis": "exact_sku_purchase_control",
+            "checked_at": "2026-11-21T00:20:29+00:00",
+            "source_url": "https://store-usa.arduino.cc/products/uno-r4-minima",
+            "evidence": "Exact SKU ABX00080 and Add to cart shown on the seller public product page; no claim of checkout success or quantity."
+          },
+          "service_terms": {
+            "url": "https://store-usa.arduino.cc/pages/black-friday"
+          }
+        }
+      ]
     }
   },
   "stats": {
-    "feed": 38,
-    "sources": 11
+    "feed": 39,
+    "sources": 12
   }
 }
