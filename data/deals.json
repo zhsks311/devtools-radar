@@ -523,13 +523,13 @@
         "VESA 100 × 100 mm · no KVM"
       ],
       "briefing": [
-        "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
+        "Gmarket item 4866645180, exact option 01: KRW 172,440 listed, or KRW 170,440 with an eligible Hana Card (KRW 100,000 minimum, up to KRW 2,000 off through November 30). The earlier Gmarket Samsung Card price was not displayed in this retrieval. Seller states Korea-only CJ delivery: free standard delivery, KRW 5,000 extra for Jeju/remote areas. Purchase UI displayed; exact stock, final checkout and independent market comparison unverified."
       ],
       "published_at": null,
       "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
       "original_price": null,
       "discount_pct": null,
-      "checked_date": "2026-11-20",
+      "checked_date": "2026-11-21",
       "source": {
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
         "label": "Gmarket exact product detail"
@@ -544,10 +544,10 @@
       },
       "link_review": {
         "status": "verified_detail",
-        "checked_at": "2026-11-20T23:37:11+00:00",
+        "checked_at": "2026-11-21T10:58:03Z",
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
         "product_match": true,
-        "evidence": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
+        "evidence": "Gmarket item 4866645180, exact option 01: KRW 172,440 listed, or KRW 170,440 with an eligible Hana Card (KRW 100,000 minimum, up to KRW 2,000 off through November 30). The earlier Gmarket Samsung Card price was not displayed in this retrieval. Seller states Korea-only CJ delivery: free standard delivery, KRW 5,000 extra for Jeju/remote areas. Purchase UI displayed; exact stock, final checkout and independent market comparison unverified."
       },
       "price_review": {
         "id": "msi-mp273q-e7-gmarket",
@@ -568,13 +568,18 @@
             "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
             "observed_at": "2026-11-20T23:37:11+00:00",
             "result": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
+          },
+          {
+            "url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+            "observed_at": "2026-11-21T10:58:03Z",
+            "result": "Gmarket item 4866645180, exact option 01: KRW 172,440 listed, or KRW 170,440 with an eligible Hana Card (KRW 100,000 minimum, up to KRW 2,000 off through November 30). The earlier Gmarket Samsung Card price was not displayed in this retrieval. Seller states Korea-only CJ delivery: free standard delivery, KRW 5,000 extra for Jeju/remote areas. Purchase UI displayed; exact stock, final checkout and independent market comparison unverified."
           }
         ],
         "limitations": [
           "Stock, final checkout and independent market comparison unverified.",
           "Card offer is separate; the seller lists November 30, subject to card eligibility and final checkout."
         ],
-        "review_completed_at": "2026-11-20T23:37:11+00:00"
+        "review_completed_at": "2026-11-21T10:58:03Z"
       },
       "country_targeting": {
         "countries": [
@@ -591,20 +596,20 @@
           "KR"
         ],
         "status": "retailer_delivery_statement",
-        "delivery": "Korean standard CJ delivery shown as free; Jeju or remote areas add KRW 5,000.",
+        "delivery": "Korea-only CJ shipping: free standard delivery; Jeju or remote areas add KRW 5,000.",
         "activation": "Physical monitor; option 01 MP273Q E7",
         "payment": "Checkout untested",
         "tax": "Final checkout untested",
         "returns": "Seller states change-of-mind within 7 days of receipt, buyer pays return shipping: KRW 5,000 one way or 10,000 if initial shipping was free; installation/use exclusions apply.",
         "evidence_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-        "checked_at": "2026-11-20"
+        "checked_at": "2026-11-21"
       },
       "latest_offer_check": {
-        "checked_at": "2026-11-20T23:37:11+00:00",
+        "checked_at": "2026-11-21T10:58:03Z",
         "status": "seller_text_observed",
         "price": 172440,
         "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-        "evidence": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
+        "evidence": "Gmarket item 4866645180, exact option 01: KRW 172,440 listed, or KRW 170,440 with an eligible Hana Card (KRW 100,000 minimum, up to KRW 2,000 off through November 30). The earlier Gmarket Samsung Card price was not displayed in this retrieval. Seller states Korea-only CJ delivery: free standard delivery, KRW 5,000 extra for Jeju/remote areas. Purchase UI displayed; exact stock, final checkout and independent market comparison unverified."
       },
       "price_variant": "MP273Q E7 · option 01",
       "price_options": [
@@ -613,17 +618,17 @@
           "product_id": "msi-mp273q-e7-gmarket",
           "variant": "MP273Q E7 · option 01",
           "currency": "KRW",
-          "price": 167440,
+          "price": 170440,
           "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
-          "checked_at": "2026-11-20T23:37:11+00:00",
-          "evidence": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified. The card offer lists a KRW 100,000 minimum and November 30 as the end date.",
+          "checked_at": "2026-11-21T10:58:03Z",
+          "evidence": "Gmarket item 4866645180, exact option 01: KRW 172,440 listed, or KRW 170,440 with an eligible Hana Card (KRW 100,000 minimum, up to KRW 2,000 off through November 30). The earlier Gmarket Samsung Card price was not displayed in this retrieval. Seller states Korea-only CJ delivery: free standard delivery, KRW 5,000 extra for Jeju/remote areas. Purchase UI displayed; exact stock, final checkout and independent market comparison unverified.",
           "conditions": {
-            "ko": "G마켓 삼성카드로 최대 5,000원 할인 시 안내된 가격입니다. 카드 적용 여부와 최종 금액은 결제 전 확인하세요. 판매처 표기: 100,000원 이상 결제 시, 11월 30일까지.",
-            "en": "Shown with an eligible Gmarket Samsung Card discount of up to KRW 5,000. Verify eligibility and the final total at checkout. Seller lists the offer through Nov 30 with a KRW 100,000 minimum.",
-            "zh": "使用符合条件的 Gmarket 三星卡最高减 5,000 韩元时的页面报价。请在结账时确认资格及总价。 卖家标示满 100,000 韩元适用，至 11 月 30 日。",
-            "ja": "対象のGmarket Samsungカードで最大5,000ウォン引きの場合の表示額です。対象条件と最終金額は決済前に確認してください。 販売ページでは100,000ウォン以上、11月30日までと表示。",
-            "es": "Precio mostrado con un descuento de hasta 5.000 KRW con una tarjeta Gmarket Samsung elegible. Comprueba los requisitos y el total al pagar. La tienda indica un mínimo de 100.000 KRW y vigencia hasta el 30 de nov.",
-            "fr": "Prix affiché avec une remise allant jusqu’à 5 000 KRW sur une carte Gmarket Samsung éligible. Vérifier les conditions et le total au paiement. Le vendeur indique un minimum de 100 000 KRW et une offre jusqu’au 30 novembre."
+            "ko": "대상 하나카드로 100,000원 이상 결제 시 최대 2,000원 할인 (11월 30일까지 표시). 적용 여부와 최종 금액은 결제 전 확인하세요.",
+            "en": "With an eligible Hana Card: up to KRW 2,000 off a payment of at least KRW 100,000, shown through November 30. Verify eligibility and final price at checkout.",
+            "zh": "使用符合条件的韩亚卡支付满 100,000 韩元，最高减 2,000 韩元；页面标示至 11 月 30 日。请在结账时确认资格及总价。",
+            "ja": "対象のハナカードで100,000ウォン以上決済すると最大2,000ウォン引き（11月30日までと表示）。適用条件と最終価格は決済時に確認してください。",
+            "es": "Con una tarjeta Hana elegible: hasta 2.000 KRW de descuento en pagos de al menos 100.000 KRW, anunciado hasta el 30 de noviembre. Verifica los requisitos y el total al pagar.",
+            "fr": "Avec une carte Hana éligible : jusqu’à 2 000 KRW de remise à partir de 100 000 KRW, indiquée jusqu’au 30 novembre. Vérifiez les conditions et le montant au paiement."
           }
         }
       ],
@@ -644,6 +649,14 @@
           "observed_at": "2026-11-17T07:30:53.047065+00:00",
           "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
           "evidence": "Gmarket item 4866645180 option 01: listed base 172,440 less automatic 100 = KRW 172,340; digital 9% coupon gives 156,820. Eligible SmilePay 7% cards give 145,850 (min70,000 cap70,000); specified IBK Nara Sarang / Gmarket Hyundai / Gmarket Samsung 9% cards give 142,710 (min70,000 cap200,000); payment offers shown through Nov19. Eligibility and checkout untested. Domestic delivery only, free mainland CJ, Jeju/remote +5,000. Seller headline 110,000 effective value is not cash price. Exact inventory not verified."
+        },
+        {
+          "id": "msi-mp273q-e7-gmarket",
+          "status": "seller_text_observed",
+          "price": 172440,
+          "observed_at": "2026-11-20T23:37:11+00:00",
+          "source_url": "https://item.gmarket.co.kr/Item?goodsCode=4866645180",
+          "evidence": "Gmarket item 4866645180, option 01: the public page shows KRW 172,440 and separately KRW 167,440 with an eligible Gmarket Samsung Card (up to KRW 5,000 off). Older November 19 campaign prices are historical. CJ delivery is listed as free with KRW 5,000 extra for Jeju/remote areas. Stock, final checkout and a like-for-like market comparison were not verified."
         }
       ]
     },

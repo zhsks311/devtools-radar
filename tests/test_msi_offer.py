@@ -5,10 +5,13 @@ class MSIPrice(unittest.TestCase):
  def test_option_and_price_separation(self):
   d=next(d for d in json.loads(Path('data/deals.json').read_text())['feed'] if d['id']=='msi-mp273q-e7-gmarket')
   self.assertTrue(checked_price(d));self.assertEqual(d['price'],172440)
-  self.assertEqual([o['price'] for o in d['price_options']],[167440])
+  self.assertEqual([o['price'] for o in d['price_options']],[170440])
   self.assertEqual(len(validated_price_options(d)),1)
   self.assertTrue(any('142,710' in x['evidence'] for x in d['offer_check_history']))
-  self.assertIn('Gmarket Samsung Card',d['price_options'][0]['conditions']['en'])
+  self.assertIn('eligible Hana Card',d['price_options'][0]['conditions']['en'])
+  self.assertIn('KRW 100,000',d['price_options'][0]['conditions']['en'])
+  self.assertTrue(any('167,440' in x['evidence'] for x in d['offer_check_history']))
+  self.assertIn('Korea-only',d['purchase_eligibility']['delivery'])
   self.assertEqual(d['purchase_eligibility']['countries_confirmed'],['KR'])
   self.assertIsNone(d['discount_pct']);self.assertIsNone(d['original_price'])
   loc=json.loads(Path('data/deal_localizations.json').read_text())[d['id']]
