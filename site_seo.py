@@ -145,7 +145,9 @@ def finalize_seo(output, items, css):
             path += '/'
         page.write_text(page_discovery(text, path), encoding='utf-8')
     # lastmod is optional. Build time is not a truthful content-modification date.
-    # No reliable per-output revision date is stored yet, so omit rather than invent.
+    # Only explicitly recorded substantive article revisions may supply lastmod.
+    revisions = {BASE + "/compare/" + item["slug"] + "/": item["modified"]
+                 for item in items if item.get("modified")}
     sitemap = output / 'sitemap.xml'
     ET.register_namespace('', NS)
     ET.register_namespace('xhtml', XHTML)
@@ -157,6 +159,8 @@ def finalize_seo(output, items, css):
         for alternate in list(entry.findall('{'+XHTML+'}link')):
             entry.remove(alternate)
         location = entry.find('{'+NS+'}loc').text
+        if location in revisions:
+            ET.SubElement(entry, '{'+NS+'}lastmod').text = revisions[location]
         for language, path in alternates_for(location.removeprefix(BASE)).items():
             ET.SubElement(entry, '{'+XHTML+'}link', {'rel': 'alternate', 'hreflang': language, 'href': BASE + path})
     if not any(entry.find('{'+NS+'}loc').text == BASE + POLICY for entry in root):

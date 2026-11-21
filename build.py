@@ -1134,6 +1134,9 @@ def generate_comparison_html(item):
         "publisher": {"@type": "Organization", "@id": BASE_URL + "/#publisher", "name": SITE_NAME},
         "mainEntityOfPage": f"{BASE_URL}/compare/{slug}/",
     }
+    if item.get("modified"):
+        schema_article["dateModified"] = item["modified"]
+    modified_line = (f'<span>Updated <time datetime="{html.escape(item["modified"])}">{html.escape(item["modified"])}</time></span>' if item.get("modified") else "")
     schema_crumb = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -1225,7 +1228,7 @@ def generate_comparison_html(item):
         )
         sources_html = f"""
       <h2>Sources &amp; verification</h2>
-      <p class="sources-list">Prices and limits were read from these pages on <strong>{html.escape(updated)}</strong>.
+      <p class="sources-list">{("Source review recorded <strong>" + html.escape(updated) + "</strong>. Later partial reviews are dated in the relevant sections; this is not a claim that every source was rechecked together.") if item.get("modified") else ("Prices and limits were read from these pages on <strong>" + html.escape(updated) + "</strong>.")}
       Vendor marketing claims are quoted as claims. Anything derived is arithmetic on the numbers below.</p>
       <div class="card"><p class="sources-list">{links}</p></div>"""
 
@@ -1297,7 +1300,8 @@ def generate_comparison_html(item):
     <div class="meta-row">
       <span class="badge badge-blue">{html.escape(item['category'])}</span>
       <span class="badge badge-gray">{html.escape(a['name'])} vs {html.escape(b['name'])}</span>
-      <span>Source review recorded {html.escape(updated)}</span>
+      {modified_line}
+      <span>Source review recorded {html.escape(updated)}{"; individual updates are dated below." if item.get("modified") else ""}</span>
       <span>·</span>
       <span>{rt}</span>
     </div>

@@ -7,6 +7,7 @@ a published unit price or arithmetic printed with its formula.
 STRIPE = {'slug': 'stripe-vs-lemonsqueezy-vs-paddle',
  'category': 'Payments & Billing',
  'last_verified': '2026-11-20',
+ 'modified': '2026-11-20',
  'published': '2026-11-10',
  'hook': 'Lemon Squeezy is closed to new stores and will stop processing on March 31, 2027. In the '
          'same $20 subscription model, Stripe Payments + Billing with no-code Tax costs $1,120, '

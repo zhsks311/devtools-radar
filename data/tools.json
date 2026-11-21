@@ -180,7 +180,8 @@
         "Eligibility and net settlement are not guaranteed by a price sheet"
       ],
       "code_example": "// Same tax-free US base model, no added international/PayPal fees.\nconst gross = 20000;\nconst charges = 1000;\nconst lemon = gross * (0.05 + 0.005) + charges * 0.50;\nconst paddle = gross * 0.05 + charges * 0.50;\nconsole.log(lemon, paddle); // 1600, 1500\n// Not interchangeable rate cards. Payout and other costs excluded."
-    }
+    },
+    "modified": "2026-11-20"
   },
   {
     "slug": "anthropic-vs-openai-api-pricing",
@@ -370,7 +371,8 @@
         "Fast mode uses a separate, higher rate card"
       ],
       "code_example": "// Explicit-only mode keeps the fresh question outside the cached prefix.\nimport OpenAI from \"openai\";\nconst client = new OpenAI();\nconst res = await client.responses.create({\n  model: \"gpt-6.1-sol\",\n  prompt_cache_options: { mode: \"explicit\", ttl: \"30m\" },\n  input: [\n    { role: \"developer\", content: [{ type: \"input_text\", text: SYSTEM_PROMPT,\n      prompt_cache_breakpoint: { mode: \"explicit\" } }] },\n    { role: \"user\", content: question },\n  ],\n});\n// Without a reusable prefix, explicit mode with no breakpoints avoids writes.\nconsole.log(res.usage?.input_tokens_details);"
-    }
+    },
+    "modified": "2026-11-20"
   },
   {
     "slug": "datadog-vs-grafana-cloud",

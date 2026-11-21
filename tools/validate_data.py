@@ -48,8 +48,8 @@ def article_errors(item, deployment=False):
         errors.append('sources must be a nonempty list')
     elif any(not is_safe_url(url) for url in sources):
         errors.append('sources must contain absolute HTTP(S) URLs without credentials or unsafe characters')
-    for key in ('published', 'last_verified'):
-        if deployment or key in item:
+    for key in ('published', 'last_verified', 'modified'):
+        if (deployment and key != 'modified') or key in item:
             value = item.get(key)
             try:
                 if not isinstance(value, str) or datetime.date.fromisoformat(value).isoformat() != value:
