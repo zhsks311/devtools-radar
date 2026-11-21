@@ -2795,5 +2795,43 @@
       "summary": "Petite tablette graphique sans écran connectée en USB à un ordinateur pour dessiner, retoucher des photos ou annoter des documents.",
       "conditions": "CTL-4100/K0-CX neuve affichée à 55 000 KRW (référence vendeur : 62 000 KRW). Jusqu’au 22 novembre, heure non publiée. Livraison standard gratuite en Corée à partir de 50 000 KRW ; stock, adresse et paiement non vérifiés."
     }
+  },
+  "ps5-access-controller-cfi-zac1-kr": {
+    "en": {
+      "product": "PS5 Access controller (CFI-ZAC1)",
+      "summary": "An adaptive PS5 controller with swappable button and stick caps, remappable inputs and ports for compatible external controls.",
+      "purpose": "An adaptive PS5 controller with swappable button and stick caps, remappable inputs and ports for compatible external controls.",
+      "conditions": "PlayShop lists one controller at KRW 104,700 versus its KRW 144,800 reference. Free domestic delivery per seller. Promotion shown ending Dec 4 at 00:00; time zone not stated. External controls in the photo are not included. Stock and final checkout unverified."
+    },
+    "ko": {
+      "product": "PS5 액세스 컨트롤러 (CFI-ZAC1)",
+      "summary": "버튼과 스틱 캡을 교체하고 조작을 재배치할 수 있는 PS5 접근성 컨트롤러입니다. 호환 외부 스위치도 연결할 수 있습니다.",
+      "purpose": "버튼과 스틱 캡을 교체하고 조작을 재배치할 수 있는 PS5 접근성 컨트롤러입니다. 호환 외부 스위치도 연결할 수 있습니다.",
+      "conditions": "PlayShop 1개 표시가 104,700원(판매처 비교가 144,800원), 국내 무료배송 안내. 할인 종료 표시는 12월 4일 00:00이며 시간대는 명시되지 않았습니다. 사진의 외부 버튼·트리거는 별도입니다. 재고와 결제 최종가는 미확인입니다."
+    },
+    "zh": {
+      "product": "PS5 Access 无障碍控制器 (CFI-ZAC1)",
+      "summary": "支持更换按键和摇杆帽、重新映射输入，并可连接兼容的外部开关。",
+      "purpose": "支持更换按键和摇杆帽、重新映射输入，并可连接兼容的外部开关。",
+      "conditions": "PlayShop 单件标价 104,700 韩元，店家参考价 144,800 韩元。卖家注明韩国国内免运费。促销显示至 12 月 4 日 00:00，未注明时区。图片中的外接开关不含在内；库存和结算总价未核实。"
+    },
+    "ja": {
+      "product": "PS5 Access コントローラー (CFI-ZAC1)",
+      "summary": "ボタンやスティックキャップを交換し、入力を再設定できるPS5用コントローラーです。対応する外部スイッチも接続できます。",
+      "purpose": "ボタンやスティックキャップを交換し、入力を再設定できるPS5用コントローラーです。対応する外部スイッチも接続できます。",
+      "conditions": "PlayShopの1台表示価格は104,700ウォン、販売店の比較価格は144,800ウォンです。韓国内送料無料と記載。セールは12月4日00:00までと表示され、タイムゾーンの明記はありません。写真の外付けボタン・トリガーは別売です。在庫・決済額は未確認。"
+    },
+    "es": {
+      "product": "Mando Access de PS5 (CFI-ZAC1)",
+      "summary": "Mando adaptativo de PS5 con tapas de botones y palanca intercambiables, entradas reasignables y conexiones para controles compatibles.",
+      "purpose": "Mando adaptativo de PS5 con tapas de botones y palanca intercambiables, entradas reasignables y conexiones para controles compatibles.",
+      "conditions": "PlayShop indica 104.700 KRW por una unidad; su referencia es 144.800 KRW. Envío gratuito dentro de Corea según la tienda. La promoción indica el 4 de diciembre a las 00:00 sin zona horaria. Controles externos de la foto no incluidos; existencias y total de pago sin verificar."
+    },
+    "fr": {
+      "product": "Manette Access PS5 (CFI-ZAC1)",
+      "summary": "Manette adaptative PS5 avec capuchons de boutons et de sticks interchangeables, commandes réaffectables et ports pour accessoires compatibles.",
+      "purpose": "Manette adaptative PS5 avec capuchons de boutons et de sticks interchangeables, commandes réaffectables et ports pour accessoires compatibles.",
+      "conditions": "PlayShop affiche 104 700 KRW pour une manette, pour une référence vendeur de 144 800 KRW. Livraison gratuite en Corée selon la boutique. Fin affichée le 4 décembre à 00 h 00, fuseau non précisé. Commandes externes illustrées non incluses ; stock et total au paiement non vérifiés."
+    }
   }
 }

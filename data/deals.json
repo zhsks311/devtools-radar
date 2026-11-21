@@ -8,6 +8,124 @@
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
     {
+      "id": "ps5-access-controller-cfi-zac1-kr",
+      "region": "kr",
+      "target": "ko",
+      "category": "gaming",
+      "category_label": "Gaming",
+      "title_raw": "PS5 Access controller (CFI-ZAC1)",
+      "product": "PS5 Access controller (CFI-ZAC1)",
+      "store": "PlayShop",
+      "storefront_country": "KR",
+      "price": 104700,
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "price_source": "retailer_product_page",
+      "shipping": "Free domestic delivery per retailer",
+      "price_variant": "CFI-ZAC1 · PlayShop product 131 · one controller",
+      "briefing": [
+        "PlayShop exact SKU 131 displays KRW 104,700 for one controller against a merchant reference of KRW 144,800. A direct browser check showed cart and buy UI; the static markup also contains a generic sold-out control, so inventory and successful checkout are not established. Terms specify free nationwide domestic delivery. End is displayed as Dec 4 00:00 without an explicit time zone. No payment promotion stacked."
+      ],
+      "source": {
+        "label": "PlayShop exact product page",
+        "url": "https://www.playshop.co.kr/product/ps5-%EC%97%91%EC%84%B8%EC%8A%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/131/category/176/display/1/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-21",
+      "expires_at": null,
+      "promotion_end_text": "2026-12-04 00:00 as displayed by retailer; time zone unspecified",
+      "disclosure": "No affiliate link. Stock count, final checkout and address not verified.",
+      "link": {
+        "url": "https://www.playshop.co.kr/product/ps5-%EC%97%91%EC%84%B8%EC%8A%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/131/category/176/display/1/",
+        "tracked": false,
+        "label": "View exact PlayShop product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-21T17:27:08Z",
+        "url": "https://www.playshop.co.kr/product/ps5-%EC%97%91%EC%84%B8%EC%8A%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/131/category/176/display/1/",
+        "product_match": true,
+        "evidence": "PlayShop exact SKU 131 displays KRW 104,700 for one controller against a merchant reference of KRW 144,800. A direct browser check showed cart and buy UI; the static markup also contains a generic sold-out control, so inventory and successful checkout are not established. Terms specify free nationwide domestic delivery. End is displayed as Dec 4 00:00 without an explicit time zone. No payment promotion stacked."
+      },
+      "price_review": {
+        "id": "ps5-access-controller-cfi-zac1-kr",
+        "product": "PS5 Access controller (CFI-ZAC1)",
+        "seller_url": "https://www.playshop.co.kr/product/ps5-%EC%97%91%EC%84%B8%EC%8A%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/131/category/176/display/1/",
+        "recorded_price": 104700,
+        "verified_price": 104700,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-21T17:27:08Z",
+        "evidence": [
+          {
+            "url": "https://www.playshop.co.kr/product/ps5-%EC%97%91%EC%84%B8%EC%8A%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/131/category/176/display/1/",
+            "observed_at": "2026-11-21T17:27:08Z",
+            "result": "PlayShop exact SKU 131 displays KRW 104,700 for one controller against a merchant reference of KRW 144,800. A direct browser check showed cart and buy UI; the static markup also contains a generic sold-out control, so inventory and successful checkout are not established. Terms specify free nationwide domestic delivery. End is displayed as Dec 4 00:00 without an explicit time zone. No payment promotion stacked."
+          }
+        ],
+        "limitations": [
+          "Seller reference only, not market history. Actual stock, final checkout and discounts from payment method unverified."
+        ]
+      },
+      "latest_offer_check": {
+        "status": "seller_page_price_and_add_to_cart_observed",
+        "observed_at": "2026-11-21T17:27:08Z",
+        "price": 104700,
+        "currency": "KRW",
+        "source_url": "https://www.playshop.co.kr/product/ps5-%EC%97%91%EC%84%B8%EC%8A%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/131/category/176/display/1/",
+        "evidence": "PlayShop exact SKU 131 displays KRW 104,700 for one controller against a merchant reference of KRW 144,800. A direct browser check showed cart and buy UI; the static markup also contains a generic sold-out control, so inventory and successful checkout are not established. Terms specify free nationwide domestic delivery. End is displayed as Dec 4 00:00 without an explicit time zone. No payment promotion stacked."
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-21T17:27:08Z"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Retailer states nationwide free shipping in Korea. Address and actual dispatch untested. No claim of overseas shipping.",
+        "activation": "PS5 controller; PC or other console support not represented.",
+        "payment": "Checkout and payment not tested.",
+        "tax": "Final total not tested.",
+        "returns": "See current retailer terms.",
+        "evidence_url": "https://www.playshop.co.kr/product/ps5-%EC%97%91%EC%84%B8%EC%8A%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/131/category/176/display/1/",
+        "checked_at": "2026-11-21"
+      },
+      "service_terms": {
+        "url": "https://www.playstation.com/ko-kr/accessories/access-controller/",
+        "checked_at": "2026-11-21",
+        "compatibility": "PS5 adaptive controller. Separate external controls are not included in this retailer offer."
+      },
+      "image": {
+        "path": "/assets/deals/ps5-access-controller.jpg",
+        "alt": "PS5 Access controller with separately connected adaptive controls, showing a possible setup",
+        "kind": "licensed_product_photo",
+        "credit": "InclusiveGameLab",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Sony_Access_Controller_Buttons_Trigger_2.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Sony_Access_Controller_Buttons_Trigger_2.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_basis": "Photographer’s own work under CC BY-SA 4.0; Commons-generated proportional 500×667 thumbnail shown with license and photographer credit. No local crop or other conversion.",
+        "sha256": "330ef3cccb5c92917f7c77acc89e5347b776ef9afdaac3bbc5e95c795f4892c9",
+        "notes": {
+          "en": "Example setup; external button and triggers not included.",
+          "ko": "설치 예시입니다. 외부 버튼·트리거는 포함되지 않습니다.",
+          "zh": "安装示例；外接按钮和扳机不包含在内。",
+          "ja": "接続例。外付けボタン・トリガーは付属しません。",
+          "es": "Montaje de ejemplo; no incluye botón ni gatillos externos.",
+          "fr": "Exemple de montage ; bouton et gâchettes externes non inclus."
+        }
+      }
+    },
+    {
       "id": "wacom-intuos-small-wired-black-kr",
       "region": "kr",
       "target": "ko",
@@ -6208,10 +6326,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 34,
+    "feed": 35,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 18,
+    "verified_product_links": 19,
     "held_product_links": 16,
     "historical_tracked_links": 14
   }

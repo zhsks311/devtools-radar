@@ -82,5 +82,7 @@ def product_media(deal, lang, title):
     if licensed and media.get('unmodified') is True: caption=ORIGINAL_PHOTO_LABEL[lang]
     if media.get('kind')=='official_app_icon': caption={'ko':'공식 앱 아이콘 · 제품 화면 아님','en':'Official app icon · not a screenshot','zh':'官方应用图标 · 非界面截图','ja':'公式アプリアイコン・画面ではありません','es':'Icono oficial · no es una captura','fr':'Icône officielle · pas une capture'}[lang]
     if caption == 'App preview; storage shown is illustrative.': caption = STORAGE_PREVIEW_LABEL[lang]
+    note=(media.get('notes') or {}).get(lang) if licensed else None
+    if note: caption+=' · '+note
     cls='official-product-media official-app-icon' if media.get('kind')=='official_app_icon' else 'official-product-media'
     return '<figure class="'+cls+'"><img src="'+escape(path,quote=True)+'" alt="'+escape(media.get('alt') or title,quote=True)+'" loading="lazy" decoding="async" width="980" height="552"><span class="image-error" hidden>'+escape(MEDIA_MISSING[lang])+'</span><figcaption class="caption">'+escape(caption)+' · <a href="'+escape(credit_url,quote=True)+'" rel="noopener">'+escape(media.get('credit',''))+'</a>'+license_html+'</figcaption></figure>'

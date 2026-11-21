@@ -34,3 +34,5 @@ Retrieved 2026-11-10. These assets are used only to illustrate the corresponding
 ## Arduino UNO R4 Minima product photograph, 2026-11-21
 
 `arduino-uno-r4-minima.webp`: Arduino, [Arduino Uno R4 Minima.webp](https://commons.wikimedia.org/wiki/File:Arduino_Uno_R4_Minima.webp), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Original 1000 × 750 file, unmodified. Arduino’s [publication guide](https://www.arduino.cc/en/trademark/guides/trademark-guide-for-websites-and-publications/) allows product pictures with applicable license terms. The card links the original and license; no affiliation or endorsement implied.
+
+- `ps5-access-controller.jpg`: InclusiveGameLab, [Sony Access Controller Buttons Trigger 2](https://commons.wikimedia.org/wiki/File:Sony_Access_Controller_Buttons_Trigger_2.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Uses Wikimedia’s proportional 500 × 667 thumbnail (71,716 bytes), with no additional edits. The exterior triggers and button shown illustrate a setup and are not included in the controller offer.
