@@ -102,7 +102,15 @@
       "service_terms": {
         "url": "https://www.playstation.com/ko-kr/accessories/access-controller/",
         "checked_at": "2026-11-21",
-        "compatibility": "PS5 adaptive controller. Separate external controls are not included in this retailer offer."
+        "compatibility": "PS5 adaptive controller. Separate external controls are not included in this retailer offer.",
+        "setup_urls": {
+          "ko": "https://www.playstation.com/ko-kr/support/hardware/pair-access/",
+          "en": "https://www.playstation.com/en-us/support/hardware/pair-access/",
+          "zh": "https://www.playstation.com/zh-hans-cn/support/hardware/pair-access/",
+          "ja": "https://www.playstation.com/ja-jp/support/hardware/pair-access/",
+          "es": "https://www.playstation.com/es-es/support/hardware/pair-access/",
+          "fr": "https://www.playstation.com/fr-fr/support/hardware/pair-access/"
+        }
       },
       "image": {
         "path": "/assets/deals/ps5-access-controller.jpg",

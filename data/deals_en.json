@@ -7,6 +7,105 @@
   },
   "feed": [
     {
+      "id": "deskrest-1-mac-lifetime",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "DeskRest · 1 Mac lifetime",
+      "product": "DeskRest · 1 Mac lifetime",
+      "store": "DeskRest",
+      "storefront_country": null,
+      "price": 5,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "price_source": "retailer_product_page",
+      "shipping": "Digital license",
+      "price_variant": "1 Mac · lifetime · website",
+      "briefing": [
+        "DeskRest pricing lists the exact 1 Mac plan at $5.00 one-time versus vendor regular $24.99, lifetime app updates included, with 1 Mac purchase CTA. The link includes BLACKFRIDAY80. The seller displays a dollar amount; checkout currency, taxes, Korean eligibility, final total and refund conditions were not verified. No official campaign deadline was printed."
+      ],
+      "source": {
+        "label": "DeskRest official pricing",
+        "url": "https://deskrest.com/pricing/"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-21",
+      "expires_at": null,
+      "disclosure": "Untracked editorial link. Checkout currency and total not verified.",
+      "link": {
+        "url": "https://deskrest.com/pricing/",
+        "tracked": false,
+        "label": "View product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-21T23:26:04Z",
+        "url": "https://deskrest.com/pricing/",
+        "product_match": true,
+        "evidence": "DeskRest pricing lists the exact 1 Mac plan at $5.00 one-time versus vendor regular $24.99, lifetime app updates included, with 1 Mac purchase CTA. The link includes BLACKFRIDAY80. The seller displays a dollar amount; checkout currency, taxes, Korean eligibility, final total and refund conditions were not verified. No official campaign deadline was printed."
+      },
+      "price_review": {
+        "id": "deskrest-1-mac-lifetime",
+        "product": "DeskRest · 1 Mac lifetime",
+        "seller_url": "https://deskrest.com/pricing/",
+        "recorded_price": 5,
+        "verified_price": 5,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-21T23:26:04Z",
+        "evidence": [
+          {
+            "url": "https://deskrest.com/pricing/",
+            "observed_at": "2026-11-21T23:26:04Z",
+            "result": "DeskRest pricing lists the exact 1 Mac plan at $5.00 one-time versus vendor regular $24.99, lifetime app updates included, with 1 Mac purchase CTA. The link includes BLACKFRIDAY80. The seller displays a dollar amount; checkout currency, taxes, Korean eligibility, final total and refund conditions were not verified. No official campaign deadline was printed."
+          }
+        ],
+        "limitations": [
+          "Seller reference is not independent price history. No checkout, currency, tax, billing country, coupon application or issue of license verified."
+        ]
+      },
+      "latest_offer_check": {
+        "status": "seller_page_price_and_purchase_link_observed",
+        "observed_at": "2026-11-21T23:26:04Z",
+        "price": 5,
+        "currency": "USD",
+        "source_url": "https://deskrest.com/pricing/",
+        "evidence": "DeskRest pricing lists the exact 1 Mac plan at $5.00 one-time versus vendor regular $24.99, lifetime app updates included, with 1 Mac purchase CTA. The link includes BLACKFRIDAY80. The seller displays a dollar amount; checkout currency, taxes, Korean eligibility, final total and refund conditions were not verified. No official campaign deadline was printed."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital purchase; not evidence of country eligibility.",
+        "activation": "Site license for one Mac. Country activation eligibility not verified.",
+        "payment": "Checkout and final currency not verified.",
+        "tax": "Not verified.",
+        "returns": "Not verified.",
+        "evidence_url": "https://deskrest.com/faq/",
+        "checked_at": "2026-11-21"
+      },
+      "service_terms": {
+        "url": "https://deskrest.com/faq/",
+        "checked_at": "2026-11-21",
+        "license": "One Mac, one-time payment with lifetime updates. macOS 14.2+. FAQ advertises a separate seven-day trial without a payment card."
+      },
+      "image": {
+        "kind": "official_product_ui",
+        "path": "/assets/deals/deskrest-break-settings.jpg",
+        "alt": "DeskRest official Break Settings screen showing adjustable short and long reminders",
+        "credit": "DeskRest press kit",
+        "credit_url": "https://deskrest.com/presskit/images/",
+        "source_page": "https://deskrest.com/presskit/images/",
+        "source_url": "https://deskrest.com/presskit/en/01-screenshots-compress/00-app-interface/02_deskrest_settings_breaks.jpg",
+        "rights_basis": "DeskRest makes press-kit screenshots available for editorial use; original screenshot, untracked editorial coverage only.",
+        "sha256": "efd37bc2adca54b8f7cfd21880b0c3207462dbe1a2eacb426ff523668a532407",
+        "unmodified": true
+      }
+    },
+    {
       "id": "arduino-uno-r4-minima-us",
       "region": "global",
       "target": "en",
@@ -7920,7 +8019,7 @@
     }
   },
   "stats": {
-    "feed": 39,
+    "feed": 40,
     "sources": 12
   }
 }

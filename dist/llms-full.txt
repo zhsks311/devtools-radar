@@ -1432,6 +1432,14 @@ Recorded price: 7700 KRW. Seller price observation dated 2026-11-18T02:28:37.655
 Delivery / activation countries with evidence: JP, KR.
 Discounts and historical-low claims are not established by this export.
 
+### DeskRest · 1 Mac lifetime
+Seller: DeskRest
+Product URL: https://deskrest.com/pricing/
+Product-link review: 2026-11-21T23:26:04Z (not a stock check)
+Recorded price: 5 USD. Seller price observation dated 2026-11-21T23:26:04Z.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### Arduino UNO R4 Minima
 Seller: Arduino US Official Store
 Product URL: https://store-usa.arduino.cc/products/uno-r4-minima

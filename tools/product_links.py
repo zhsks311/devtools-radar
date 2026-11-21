@@ -9,6 +9,7 @@ from tools.evidence_dates import observed_timestamp
 from tools.affiliate_links import ALIEXPRESS_PRODUCT_HOSTS, aliexpress_product_url, validate_affiliate_link
 
 DETAIL_ROUTES = {
+    'deskrest.com': r'/pricing/?',  # Reviewed single-product DeskRest pricing, exact 1 Mac plan.
     'www.playshop.co.kr': r'/product/ps5-엑세스-컨트롤러/131/category/176/display/1/?',  # PlayShop exact reviewed Access controller SKU.
     'estore.wacom.kr': r'/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx\.html',  # Reviewed exact new wired black SKU.
     'store-usa.arduino.cc': r'/products/uno-r4-minima/?',  # Reviewed US exact SKU ABX00080.
