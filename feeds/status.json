@@ -1,5 +1,5 @@
 {
-  "attempted_at": "2026-11-21T19:11:38.824021+00:00",
+  "attempted_at": "2026-11-22T06:42:15.193371+00:00",
   "published_deals_changed": false,
   "sources": [
     {
@@ -7,11 +7,11 @@
       "enabled": true,
       "mode": "unaltered_public_feed_display",
       "note": "Official RSS is automatically displayed separately at /feeds/, unchanged with DealNews attribution and original referral links. Merchant price, stock and country claims remain unverified; never auto-promoted into curated cards.",
-      "last_success_at": "2026-11-21T19:11:38.824021+00:00",
+      "last_success_at": "2026-11-22T06:42:15.193371+00:00",
       "etag": null,
-      "last_modified": "Sat, 21 Nov 2026 19:10:30 +0000",
-      "sha256": "df80466c5ab6358789b86442664f1318f3a586c2c6bb05e6390b5a70281b59b8",
-      "items": 48,
+      "last_modified": "Sun, 22 Nov 2026 06:40:41 +0000",
+      "sha256": "ede7af02d7581bbc4e12ff3098dbca95a0bb182cf14e6376da8b3006b19b38a0",
+      "items": 46,
       "status": "collected"
     },
     {
