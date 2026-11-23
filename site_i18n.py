@@ -356,7 +356,7 @@ def catalogue(lang,feeds,translations,discoveries=False,*,now=None):
   # their source/briefing/price_review objects (including rejected search URLs).
   # Keep only catalogue identity and explicitly historical price in public output.
   deadline=explicit_offer_expiry(d.get('expires_at'))
-  if deadline is not None and now >= deadline:
+  if (deadline is not None and now >= deadline) or (d.get('availability_review') or {}).get('status')=='expired':
    held_cards.append(f'<article class="card" id="product-{e(d["id"])}" data-id="{e(d["id"])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(" ".join(targets))}" data-category="{e(cat)}" data-offer-expired="true">{product_media(d,lang,title)}<div class="meta offer-category">{e(t[CATS.get(cat,29)])} · {e(d.get("store",""))}</div><h2>{e(title)}</h2><p class="notice offer-ended">{e(OFFER_ENDED[lang])}</p></article>')
    continue
   if not publishable_link(d):

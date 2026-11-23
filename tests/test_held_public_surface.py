@@ -16,13 +16,20 @@ class HeldPublicSurfaceTests(unittest.TestCase):
    page=i.catalogue(lang,held,self.tr)
    for d in held:
     card=re.search(r'<article[^>]*data-id="'+re.escape(d['id'])+r'".*?</article>',page,re.S).group()
+    if (d.get('availability_review') or {}).get('status') == 'expired':
+     self.assertNotIn(d['link']['url'],card)
+     self.assertNotIn('class="cta"',card)
+     self.assertNotIn('class="price"',card)
+     self.assertIn(i.OFFER_ENDED[lang],card)
+     self.assertIn('data-offer-expired="true"',card)
+     continue  # Trusted image attribution link is retained for the ended offer.
     for bad in ('<pre','<details','href=', 'seller_url', '6W', '1,000원 안팎','가성비 종결'):
      self.assertNotIn(bad,card)
     self.assertIn(i.SOLD_OUT_LABEL[lang] if (d.get("availability_review") or {}).get("status")=="sold_out" else i.HELD_SUMMARY[lang],card)
     self.assertIn(i.PRICE_RECORDED[lang],card)
   self.assertEqual(before,held)
  def test_nested_rejected_urls_and_ads_cannot_reappear(self):
-  d=copy.deepcopy(next(d for d in self.feeds if not publishable_link(d)))
+  d=copy.deepcopy(next(d for d in self.feeds if not publishable_link(d) and (d.get('availability_review') or {}).get('status') != 'expired'))
   marker='UNVERIFIED_AD_DO_NOT_PUBLISH'
   d['briefing']=[marker];d['source']={'url':'https://example.com/search?q='+marker}
   d['shipping']=marker;d['price_review']['evidence']=[{'url':'https://example.com/search?q='+marker}]

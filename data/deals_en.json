@@ -7,6 +7,143 @@
   },
   "feed": [
     {
+      "id": "dropshare-6-personal-bf2026",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "Dropshare 6 Personal · macOS · up to 3 Macs",
+      "product": "Dropshare 6 Personal",
+      "store": "Dropshare",
+      "storefront_country": null,
+      "price": 39,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "price_source": "retailer_product_page",
+      "shipping": "Digital license",
+      "price_variant": "Dropshare 6 Personal · macOS · up to 3 Macs",
+      "briefing": [
+        "Official Dropshare 6 pricing: one-off macOS Personal purchase at $39; up to three Macs and 6.x updates. The vendor links to the Personal purchase area from its promotion. Its official press page still displays the promotion and required coupon.",
+        "Dropshare's official Black Friday banner displayed a Personal license at $29 with blackfriday2026 versus the seller's $39 regular purchase price, for the same Personal license.",
+        "No coupon applied, checkout or country-specific payment tested. No official campaign end date presented."
+      ],
+      "source": {
+        "id": "dropshare",
+        "label": "Dropshare official Personal pricing",
+        "url": "https://new.dropshare.app/#pricing"
+      },
+      "published_at": null,
+      "checked_date": "2026-11-23",
+      "expires_at": null,
+      "disclosure": "Untracked seller link. Independent editorial listing, not sponsored. No coupon redemption or checkout tested.",
+      "link": {
+        "url": "https://new.dropshare.app/#pricing",
+        "tracked": false,
+        "label": "View Personal license at Dropshare",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-23T09:58:16+00:00",
+        "url": "https://new.dropshare.app/#pricing",
+        "product_match": true,
+        "evidence": "Official Dropshare 6 Personal pricing page displays USD 39 one-time for up to three Macs and free 6.x updates. Same page advertises USD 29 with code blackfriday2026. Checkout, tax or Korea payment not tested; no official deadline observed."
+      },
+      "price_review": {
+        "id": "dropshare-6-personal-bf2026",
+        "product": "Dropshare 6 Personal",
+        "seller_url": "https://new.dropshare.app/#pricing",
+        "recorded_price": 39,
+        "verified_price": 39,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-23T09:58:16+00:00",
+        "evidence": [
+          {
+            "url": "https://new.dropshare.app/#pricing",
+            "observed_at": "2026-11-23T09:08:26Z",
+            "result": "Official Dropshare 6 pricing: one-off macOS Personal purchase at $39; up to three Macs and 6.x updates. The vendor links to the Personal purchase area from its promotion. Its official press page still displays the promotion and required coupon."
+          },
+          {
+            "url": "https://new.dropshare.app/press/",
+            "observed_at": "2026-11-23T09:08:26Z",
+            "result": "Dropshare's official Black Friday banner displayed a Personal license at $29 with blackfriday2026 versus the seller's $39 regular purchase price, for the same Personal license."
+          },
+          {
+            "url": "https://new.dropshare.app/#pricing",
+            "observed_at": "2026-11-23T09:58:16+00:00",
+            "result": "Official Dropshare 6 Personal pricing page displays USD 39 one-time for up to three Macs and free 6.x updates. Same page advertises USD 29 with code blackfriday2026. Checkout, tax or Korea payment not tested; no official deadline observed."
+          }
+        ],
+        "limitations": [
+          "Same one-time tier and currency; the $39 comparison is the seller's advertised price, not independent price history or a lowest-price claim.",
+          "No coupon redemption, checkout or buyer-specific tax, payment or region verified. Official coupon deadline not shown."
+        ]
+      },
+      "price_options": [
+        {
+          "kind": "coupon",
+          "product_id": "dropshare-6-personal-bf2026",
+          "variant": "Dropshare 6 Personal · macOS · up to 3 Macs",
+          "currency": "USD",
+          "price": 29,
+          "source_url": "https://new.dropshare.app/#pricing",
+          "checked_at": "2026-11-23T09:58:16+00:00",
+          "evidence": "Official Dropshare 6 Personal pricing page displays USD 39 one-time for up to three Macs and free 6.x updates. Same page advertises USD 29 with code blackfriday2026. Checkout, tax or Korea payment not tested; no official deadline observed.",
+          "conditions": {
+            "en": "Enter blackfriday2026 for the seller-advertised Personal price. Coupon redemption, final checkout and Korean payment not tested; official deadline not shown.",
+            "ko": "판매처 표시가는 blackfriday2026 쿠폰 적용 조건입니다. 쿠폰 적용과 한국 결제 및 최종 결제액은 확인하지 않았으며 공식 종료 시각은 표시되지 않았습니다.",
+            "zh": "卖家标示优惠价需输入 blackfriday2026。未测试优惠券核销、最终结算或韩国付款；官方未注明截止时间。",
+            "ja": "販売元の表示価格は blackfriday2026 の入力が条件です。クーポン適用、最終決済、韓国からの支払いは未確認です。公式の終了日時は表示されていません。",
+            "es": "El precio anunciado requiere blackfriday2026. No se probaron el cupón, el importe final ni el pago en Corea. El vendedor no indica el fin de la oferta.",
+            "fr": "Le prix annoncé nécessite le code blackfriday2026. Code, total final et paiement depuis la Corée non testés. Le vendeur n’affiche pas de date de fin."
+          }
+        }
+      ],
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "observed_at": "2026-11-23T09:58:16+00:00",
+        "price": 39,
+        "currency": "USD",
+        "source_url": "https://new.dropshare.app/#pricing",
+        "evidence": "Official Dropshare 6 Personal pricing page displays USD 39 one-time for up to three Macs and free 6.x updates. Same page advertises USD 29 with code blackfriday2026. Checkout, tax or Korea payment not tested; no official deadline observed."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital license, not proof of country eligibility.",
+        "activation": "Personal native macOS license for up to three Macs; macOS 12.3+. 6.x updates only; no promise of subsequent major versions.",
+        "payment": "Seller uses Paddle; Korean billing, local pricing and final checkout untested.",
+        "tax": "Seller displays VAT-inclusive pricing; buyer-specific total untested.",
+        "returns": "Official policy offers refund within 30 days for original digital purchase; license revoked upon refund.",
+        "evidence_url": "https://new.dropshare.app/#pricing",
+        "checked_at": "2026-11-23T09:08:26Z"
+      },
+      "service_terms": {
+        "url": "https://new.dropshare.app/refund-policy/",
+        "checked_at": "2026-11-23T09:08:26Z",
+        "license": "Personal one-off license, up to three Macs; iOS/Android separate; 6.x updates included."
+      },
+      "image": {
+        "path": "/assets/deals/dropshare-6-personal-preferences.webp",
+        "alt": "Dropshare's official macOS Preferences screenshot",
+        "kind": "official_product_ui",
+        "credit": "Dropshare press kit",
+        "credit_url": "https://new.dropshare.app/press/",
+        "source_page": "https://new.dropshare.app/press/",
+        "source_file": "https://new.dropshare.app/Dropshare-Press-Kit.zip",
+        "archive_member": "preferences-2.webp",
+        "checked_at": "2026-11-23T09:08:26Z",
+        "rights_basis": "Vendor press page specifically offers Mac screenshots for coverage in publications. Independent untracked editorial usage only; no promotional creative, affiliation claim or modification.",
+        "width": 1642,
+        "height": 1368,
+        "sha256": "c6aa672f2de213a61ebe2635608c5d6f89496f7bb5789848bbced5e495cd2503",
+        "processing": "Vendor WebP bytes unchanged."
+      }
+    },
+    {
       "id": "deskrest-1-mac-lifetime",
       "region": "global",
       "target": "en",
@@ -5633,6 +5770,143 @@
       "audience": "Digital licenses; check terms before redeeming.",
       "items": [
         {
+          "id": "dropshare-6-personal-bf2026",
+          "region": "global",
+          "target": "en",
+          "category": "software",
+          "category_label": "Software",
+          "title_raw": "Dropshare 6 Personal · macOS · up to 3 Macs",
+          "product": "Dropshare 6 Personal",
+          "store": "Dropshare",
+          "storefront_country": null,
+          "price": 39,
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "price_source": "retailer_product_page",
+          "shipping": "Digital license",
+          "price_variant": "Dropshare 6 Personal · macOS · up to 3 Macs",
+          "briefing": [
+            "Official Dropshare 6 pricing: one-off macOS Personal purchase at $39; up to three Macs and 6.x updates. The vendor links to the Personal purchase area from its promotion. Its official press page still displays the promotion and required coupon.",
+            "Dropshare's official Black Friday banner displayed a Personal license at $29 with blackfriday2026 versus the seller's $39 regular purchase price, for the same Personal license.",
+            "No coupon applied, checkout or country-specific payment tested. No official campaign end date presented."
+          ],
+          "source": {
+            "id": "dropshare",
+            "label": "Dropshare official Personal pricing",
+            "url": "https://new.dropshare.app/#pricing"
+          },
+          "published_at": null,
+          "checked_date": "2026-11-23",
+          "expires_at": null,
+          "disclosure": "Untracked seller link. Independent editorial listing, not sponsored. No coupon redemption or checkout tested.",
+          "link": {
+            "url": "https://new.dropshare.app/#pricing",
+            "tracked": false,
+            "label": "View Personal license at Dropshare",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-23T09:58:16+00:00",
+            "url": "https://new.dropshare.app/#pricing",
+            "product_match": true,
+            "evidence": "Official Dropshare 6 Personal pricing page displays USD 39 one-time for up to three Macs and free 6.x updates. Same page advertises USD 29 with code blackfriday2026. Checkout, tax or Korea payment not tested; no official deadline observed."
+          },
+          "price_review": {
+            "id": "dropshare-6-personal-bf2026",
+            "product": "Dropshare 6 Personal",
+            "seller_url": "https://new.dropshare.app/#pricing",
+            "recorded_price": 39,
+            "verified_price": 39,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "review_completed_at": "2026-11-23T09:58:16+00:00",
+            "evidence": [
+              {
+                "url": "https://new.dropshare.app/#pricing",
+                "observed_at": "2026-11-23T09:08:26Z",
+                "result": "Official Dropshare 6 pricing: one-off macOS Personal purchase at $39; up to three Macs and 6.x updates. The vendor links to the Personal purchase area from its promotion. Its official press page still displays the promotion and required coupon."
+              },
+              {
+                "url": "https://new.dropshare.app/press/",
+                "observed_at": "2026-11-23T09:08:26Z",
+                "result": "Dropshare's official Black Friday banner displayed a Personal license at $29 with blackfriday2026 versus the seller's $39 regular purchase price, for the same Personal license."
+              },
+              {
+                "url": "https://new.dropshare.app/#pricing",
+                "observed_at": "2026-11-23T09:58:16+00:00",
+                "result": "Official Dropshare 6 Personal pricing page displays USD 39 one-time for up to three Macs and free 6.x updates. Same page advertises USD 29 with code blackfriday2026. Checkout, tax or Korea payment not tested; no official deadline observed."
+              }
+            ],
+            "limitations": [
+              "Same one-time tier and currency; the $39 comparison is the seller's advertised price, not independent price history or a lowest-price claim.",
+              "No coupon redemption, checkout or buyer-specific tax, payment or region verified. Official coupon deadline not shown."
+            ]
+          },
+          "price_options": [
+            {
+              "kind": "coupon",
+              "product_id": "dropshare-6-personal-bf2026",
+              "variant": "Dropshare 6 Personal · macOS · up to 3 Macs",
+              "currency": "USD",
+              "price": 29,
+              "source_url": "https://new.dropshare.app/#pricing",
+              "checked_at": "2026-11-23T09:58:16+00:00",
+              "evidence": "Official Dropshare 6 Personal pricing page displays USD 39 one-time for up to three Macs and free 6.x updates. Same page advertises USD 29 with code blackfriday2026. Checkout, tax or Korea payment not tested; no official deadline observed.",
+              "conditions": {
+                "en": "Enter blackfriday2026 for the seller-advertised Personal price. Coupon redemption, final checkout and Korean payment not tested; official deadline not shown.",
+                "ko": "판매처 표시가는 blackfriday2026 쿠폰 적용 조건입니다. 쿠폰 적용과 한국 결제 및 최종 결제액은 확인하지 않았으며 공식 종료 시각은 표시되지 않았습니다.",
+                "zh": "卖家标示优惠价需输入 blackfriday2026。未测试优惠券核销、最终结算或韩国付款；官方未注明截止时间。",
+                "ja": "販売元の表示価格は blackfriday2026 の入力が条件です。クーポン適用、最終決済、韓国からの支払いは未確認です。公式の終了日時は表示されていません。",
+                "es": "El precio anunciado requiere blackfriday2026. No se probaron el cupón, el importe final ni el pago en Corea. El vendedor no indica el fin de la oferta.",
+                "fr": "Le prix annoncé nécessite le code blackfriday2026. Code, total final et paiement depuis la Corée non testés. Le vendeur n’affiche pas de date de fin."
+              }
+            }
+          ],
+          "latest_offer_check": {
+            "status": "seller_text_observed",
+            "observed_at": "2026-11-23T09:58:16+00:00",
+            "price": 39,
+            "currency": "USD",
+            "source_url": "https://new.dropshare.app/#pricing",
+            "evidence": "Official Dropshare 6 Personal pricing page displays USD 39 one-time for up to three Macs and free 6.x updates. Same page advertises USD 29 with code blackfriday2026. Checkout, tax or Korea payment not tested; no official deadline observed."
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Digital license, not proof of country eligibility.",
+            "activation": "Personal native macOS license for up to three Macs; macOS 12.3+. 6.x updates only; no promise of subsequent major versions.",
+            "payment": "Seller uses Paddle; Korean billing, local pricing and final checkout untested.",
+            "tax": "Seller displays VAT-inclusive pricing; buyer-specific total untested.",
+            "returns": "Official policy offers refund within 30 days for original digital purchase; license revoked upon refund.",
+            "evidence_url": "https://new.dropshare.app/#pricing",
+            "checked_at": "2026-11-23T09:08:26Z"
+          },
+          "service_terms": {
+            "url": "https://new.dropshare.app/refund-policy/",
+            "checked_at": "2026-11-23T09:08:26Z",
+            "license": "Personal one-off license, up to three Macs; iOS/Android separate; 6.x updates included."
+          },
+          "image": {
+            "path": "/assets/deals/dropshare-6-personal-preferences.webp",
+            "alt": "Dropshare's official macOS Preferences screenshot",
+            "kind": "official_product_ui",
+            "credit": "Dropshare press kit",
+            "credit_url": "https://new.dropshare.app/press/",
+            "source_page": "https://new.dropshare.app/press/",
+            "source_file": "https://new.dropshare.app/Dropshare-Press-Kit.zip",
+            "archive_member": "preferences-2.webp",
+            "checked_at": "2026-11-23T09:08:26Z",
+            "rights_basis": "Vendor press page specifically offers Mac screenshots for coverage in publications. Independent untracked editorial usage only; no promotional creative, affiliation claim or modification.",
+            "width": 1642,
+            "height": 1368,
+            "sha256": "c6aa672f2de213a61ebe2635608c5d6f89496f7bb5789848bbced5e495cd2503",
+            "processing": "Vendor WebP bytes unchanged."
+          }
+        },
+        {
           "id": "de0f62d0487f",
           "region": "global",
           "target": "en",
@@ -8019,7 +8293,7 @@
     }
   },
   "stats": {
-    "feed": 40,
+    "feed": 41,
     "sources": 12
   }
 }

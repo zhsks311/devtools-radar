@@ -55,7 +55,8 @@ class ProductLinkTests(unittest.TestCase):
         for lang in site_i18n.LANGS:
             page=site_i18n.catalogue(lang,feeds,tr)
             self.assertEqual(page.count('class="cta"'),sum(publishable_link(d) for d in feeds))
-            self.assertEqual(page.count('class="notice link-held"'),sum(not publishable_link(d) for d in feeds))
+            held=sum(not publishable_link(d) and (d.get('availability_review') or {}).get('status') != 'expired' for d in feeds)
+            self.assertEqual(page.count('class="notice link-held"'),held)
             self.assertEqual(page.count(site_i18n.PRICE_CURRENT[lang]),0)
-            self.assertEqual(page.count(site_i18n.PRICE_RECORDED[lang]),sum(not publishable_link(d) for d in feeds))
+            self.assertEqual(page.count(site_i18n.PRICE_RECORDED[lang]),held)
             self.assertNotIn('href="https://link.coupang.com/',page)

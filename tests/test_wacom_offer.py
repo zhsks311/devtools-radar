@@ -10,7 +10,10 @@ class WacomOffer(unittest.TestCase):
     def test_exact_kr_offer_and_image(self):
         deals=json.loads(Path('data/deals.json').read_text())
         row=next(x for x in deals['feed'] if x['id']=='wacom-intuos-small-wired-black-kr')
-        self.assertTrue(checked_price(row))
+        self.assertFalse(checked_price(row))
+        self.assertEqual(row['availability_review']['status'],'expired')
+        self.assertEqual(row['latest_offer_check']['price'],62000)
+        self.assertEqual(row['price_review']['verified_price'],55000)
         self.assertEqual(row['price'],55000)
         self.assertIn('K0-CX wired black, new',row['price_variant'])
         self.assertIsNone(row['original_price'])

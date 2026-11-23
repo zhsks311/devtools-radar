@@ -38,3 +38,7 @@ Retrieved 2026-11-10. These assets are used only to illustrate the corresponding
 - `deskrest-break-settings.jpg`: DeskRest’s official Break Settings screenshot (unmodified vendor JPEG, 1994 × 1394, 77,821 bytes) from the [editorial-use press kit](https://deskrest.com/presskit/images/). Credited to DeskRest; sample interface, not a hands-on test. No affiliation or tracking.
 
 - `insta360-go-3s-black.webp`: JettM9104, [Insta360 GO 3S.jpg](https://commons.wikimedia.org/wiki/File:Insta360_GO_3S.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Resized proportionally to 920 × 690 and WebP-compressed; metadata removed, no crop or content changes. The WebP derivative remains CC BY-SA 4.0. Photo depicts the black camera and Action Pod, not all bundle contents or 128GB capacity.
+
+- `insta360-ace-pro-standard.webp`: TaurusEmerald, [Insta360 Ace Pro.jpg](https://commons.wikimedia.org/wiki/File:Insta360_Ace_Pro.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Proportional resize, converted to WebP and stripped metadata; no crop or content changes. Same license for derivative. Camera body only, no bundle contents implied.
+
+- `dropshare-6-personal-preferences.webp`: Dropshare’s original Preferences screen from the [official press kit](https://new.dropshare.app/press/), unchanged and credited, used only in independent editorial coverage.

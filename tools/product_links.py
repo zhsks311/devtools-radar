@@ -16,7 +16,7 @@ DETAIL_ROUTES = {
     'protonvpn.com': r'/black-friday/?', # Exact VPN Plus annual offer reviewed separately.
     'tablepro.app': r'/pricing/?', # Reviewed Pro one-time tier of this single product.
     'koofr.eu': r'/black-friday/?', # Official single-service offer; 1 TB annual tier reviewed explicitly.
-    'store.insta360.com': r'/kr/product/(?:x5|ace-pro-2|go-ultra|link-2-pro|go-3s)/?', # Exact reviewed standard bundle.
+    'store.insta360.com': r'/kr/product/(?:x5|ace-pro-2|go-ultra|link-2-pro|go-3s|ace-pro)/?', # Exact reviewed standard bundle.
     'ulysses.app': r'/howiwrite/?', # Reviewed exact product/campaign; account eligibility remains unverified.
     'actionclip.app': r'/', # Reviewed single-product page; Individual 1 Mac plan.
     'www.plerdy.com': r'/black-friday/?',
@@ -50,6 +50,9 @@ def direct_product_url(url):
         query_values.setdefault(key.lower(), []).extend(values)
     query = set(query_values)
     if query & {'q','query','keyword','keywords','search','searchtext','searchquery','redirect','url','target'}: return False
+    if u.hostname == 'new.dropshare.app':
+        # Reviewed exact macOS product pricing section, not generic home.
+        return url == 'https://new.dropshare.app/#pricing'
     if u.hostname in ('directg.net', 'www.directg.net'):
         values = query_values.get('product_id', [])
         return path == '/game/game_view.html' and len(values) == 1 and bool(re.fullmatch(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}', values[0]))

@@ -8,6 +8,142 @@
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
     {
+      "id": "insta360-ace-pro-kr-standard",
+      "region": "kr",
+      "target": "ko",
+      "category": "hardware",
+      "category_label": "Hardware",
+      "title_raw": "Insta360 Ace Pro · Standard Bundle",
+      "product": "Insta360 Ace Pro · Standard Bundle",
+      "store": "Insta360 official store",
+      "storefront_country": "KR",
+      "price": 299000,
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-23",
+      "published_at": null,
+      "expires_at": null,
+      "price_source": "retailer_product_page",
+      "price_variant": "Ace Pro Standard Bundle · first generation",
+      "shipping": "Official Korean store advertises free delivery on orders of KRW 150,000 or more; address-specific service and delivery time not verified.",
+      "specs": [
+        "First-generation Ace Pro",
+        "4K action video",
+        "Flip screen"
+      ],
+      "briefing": [
+        "Official Korea exact Ace Pro Standard Bundle · first generation offer displayed KRW 299,000, with seller comparison KRW 401,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
+      ],
+      "disclosure": "Untracked official seller link; no affiliation. Seller comparison is not an independently verified historical low.",
+      "source": {
+        "url": "https://store.insta360.com/kr/product/ace-pro",
+        "label": "Insta360 official Korean product page"
+      },
+      "link": {
+        "url": "https://store.insta360.com/kr/product/ace-pro",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-23T09:58:16+00:00",
+        "url": "https://store.insta360.com/kr/product/ace-pro",
+        "product_match": true,
+        "evidence": "Official Korea exact Ace Pro Standard Bundle · first generation offer displayed KRW 299,000, with seller comparison KRW 401,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
+      },
+      "price_review": {
+        "id": "insta360-ace-pro-kr-standard",
+        "product": "Insta360 Ace Pro · Standard Bundle",
+        "seller_url": "https://store.insta360.com/kr/product/ace-pro",
+        "recorded_price": 299000,
+        "verified_price": 299000,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-23T09:58:16+00:00",
+        "evidence": [
+          {
+            "url": "https://store.insta360.com/kr/product/ace-pro",
+            "observed_at": "2026-11-23T09:58:16+00:00",
+            "result": "Official Korea exact Ace Pro Standard Bundle · first generation offer displayed KRW 299,000, with seller comparison KRW 401,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
+          }
+        ],
+        "limitations": [
+          "Comparison is seller reference, not independent price history.",
+          "Final checkout, inventory, address and expiry unverified."
+        ],
+        "seller_reference": {
+          "kind": "seller_displayed_compare",
+          "product_id": "insta360-ace-pro-kr-standard",
+          "variant": "Ace Pro Standard Bundle · first generation",
+          "currency": "KRW",
+          "current_price": 299000,
+          "reference_price": 401000,
+          "source_url": "https://store.insta360.com/kr/product/ace-pro",
+          "current_checked_at": "2026-11-23T09:58:16+00:00",
+          "reference_observed_at": "2026-11-23T09:58:16+00:00",
+          "same_terms": true,
+          "unconditional": true,
+          "evidence": "Official Korea exact Ace Pro Standard Bundle · first generation offer displayed KRW 299,000, with seller comparison KRW 401,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
+        }
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-23T09:58:16+00:00",
+        "note": "Official Korean storefront and Korean shipping notice only."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Official Korean store advertises free delivery on orders of KRW 150,000 or more; address-specific service and delivery time not verified.",
+        "activation": "Physical camera. Exact bundle accessories verified only by seller listing, not by the illustration.",
+        "payment": "Final checkout and payment terms untested.",
+        "tax": "Final checkout and taxes untested.",
+        "returns": "Exact offer return conditions not rechecked.",
+        "evidence_url": "https://store.insta360.com/kr",
+        "checked_at": "2026-11-23"
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "checked_at": "2026-11-23T09:58:16+00:00",
+        "price": 299000,
+        "currency": "KRW",
+        "source_url": "https://store.insta360.com/kr/product/ace-pro",
+        "evidence": "Official Korea exact Ace Pro Standard Bundle · first generation offer displayed KRW 299,000, with seller comparison KRW 401,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
+      },
+      "image": {
+        "path": "/assets/deals/insta360-ace-pro-standard.webp",
+        "alt": "TaurusEmerald photograph of the original Insta360 Ace Pro camera body",
+        "kind": "licensed_product_photo",
+        "credit": "TaurusEmerald",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Insta360_Ace_Pro.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Insta360_Ace_Pro.jpg",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Insta360_Ace_Pro.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_basis": "TaurusEmerald own work on Wikimedia Commons, CC BY-SA 4.0, with the derivative under the same license.",
+        "checked_at": "2026-11-23T09:58:16+00:00",
+        "sha256": "051c9039a886d05b64ebead539c8d3ec93a2d1acf1bf8f462b78fe46050077a9",
+        "processing": "Resized proportionally with WebP compression and metadata removal only.",
+        "notes": {
+          "en": "Camera only; bundle contents not pictured",
+          "ko": "카메라 본체만 표시 · 전체 구성품 사진 아님",
+          "zh": "仅展示相机，不代表全部配件",
+          "ja": "カメラ本体のみ、付属品は写っていません",
+          "es": "Solo cámara; los accesorios no se muestran",
+          "fr": "Caméra seule ; accessoires non représentés"
+        }
+      }
+    },
+    {
       "id": "insta360-go-3s-kr-128gb-black",
       "region": "kr",
       "target": "ko",
@@ -323,11 +459,12 @@
         "label_kind": "retailer"
       },
       "link_review": {
-        "status": "verified_detail",
-        "checked_at": "2026-11-21T13:27:37Z",
+        "status": "held",
+        "reason": "The posted sale ended November 22, 2026 (no exact cutoff published). The same wired black CTL-4100/K0-CX now displays KRW 62,000 on its official exact product page including cart total; the sale campaign URL returns 404. Product itself is not claimed sold out.",
+        "checked_at": "2026-11-23T09:58:16+00:00",
         "url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
         "product_match": true,
-        "evidence": "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
+        "evidence": "The posted sale ended November 22, 2026 (no exact cutoff published). The same wired black CTL-4100/K0-CX now displays KRW 62,000 on its official exact product page including cart total; the sale campaign URL returns 404. Product itself is not claimed sold out."
       },
       "price_review": {
         "id": "wacom-intuos-small-wired-black-kr",
@@ -336,8 +473,8 @@
         "recorded_price": 55000,
         "verified_price": 55000,
         "currency": "KRW",
-        "price_status": "seller_page_display_confirmed",
-        "deal_status": "comparison_unverified",
+        "price_status": "historical_only",
+        "deal_status": "expired",
         "evidence": [
           {
             "url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
@@ -348,12 +485,18 @@
             "url": "https://estore.wacom.kr/ko-kr/wacomblackfriday2026",
             "observed_at": "2026-11-21T13:27:37Z",
             "result": "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
+          },
+          {
+            "url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+            "observed_at": "2026-11-23T09:58:16+00:00",
+            "result": "The posted sale ended November 22, 2026 (no exact cutoff published). The same wired black CTL-4100/K0-CX now displays KRW 62,000 on its official exact product page including cart total; the sale campaign URL returns 404. Product itself is not claimed sold out."
           }
         ],
         "limitations": [
           "Seller reference only. Checkout, exact stock, address and independent price history not verified."
         ],
-        "review_completed_at": "2026-11-21T13:27:37Z"
+        "review_completed_at": "2026-11-21T13:27:37Z",
+        "historical_price_status": "seller_page_display_confirmed"
       },
       "price_variant": "CTL-4100/K0-CX wired black, new",
       "storefront_country": "KR",
@@ -379,11 +522,12 @@
         "checked_at": "2026-11-21"
       },
       "latest_offer_check": {
-        "checked_at": "2026-11-21T13:27:37Z",
-        "status": "seller_text_observed",
-        "price": 55000,
-        "source_url": "https://estore.wacom.kr/ko-kr/wacomblackfriday2026",
-        "evidence": "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
+        "status": "expired",
+        "checked_at": "2026-11-23T09:58:16+00:00",
+        "source_url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+        "price": 62000,
+        "currency": "KRW",
+        "evidence": "The posted sale ended November 22, 2026 (no exact cutoff published). The same wired black CTL-4100/K0-CX now displays KRW 62,000 on its official exact product page including cart total; the sale campaign URL returns 404. Product itself is not claimed sold out."
       },
       "image": {
         "path": "/assets/deals/wacom-intuos-small-black.webp",
@@ -398,6 +542,27 @@
         "checked_at": "2026-11-21T13:28:00Z",
         "processing": "Proportional resize to 780 × 485 and WebP compression; no crop, metadata omitted.",
         "sha256": "667cb42c6653c3e50bb87097e2d76594b6cd3e897942fb58e6654726ecfc45b8"
+      },
+      "availability_review": {
+        "status": "expired",
+        "basis": "seller_exact_variant_price_and_elapsed_campaign_day",
+        "checked_at": "2026-11-23T09:58:16+00:00",
+        "source_url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+        "notes": "The posted sale ended November 22, 2026 (no exact cutoff published). The same wired black CTL-4100/K0-CX now displays KRW 62,000 on its official exact product page including cart total; the sale campaign URL returns 404. Product itself is not claimed sold out."
+      },
+      "previous_link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-21T13:27:37Z",
+        "url": "https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html",
+        "product_match": true,
+        "evidence": "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
+      },
+      "previous_offer_check": {
+        "checked_at": "2026-11-21T13:27:37Z",
+        "status": "seller_text_observed",
+        "price": 55000,
+        "source_url": "https://estore.wacom.kr/ko-kr/wacomblackfriday2026",
+        "evidence": "Wacom Korea official online campaign lists exact new black wired Intuos Small CTL-4100/K0-CX at KRW 55,000, with KRW 62,000 seller-stated regular price and an add-to-cart control. Separate refurbishment and Bluetooth listings excluded. Online sale November 20–22, 2026; exact cutoff time not stated. Wacom Korea offers free domestic standard shipping for orders of at least KRW 50,000; address, exact stock and checkout untested. Seller reference is not independent price history."
       }
     },
     {
@@ -552,7 +717,7 @@
       "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
       "original_price": null,
       "discount_pct": null,
-      "checked_date": "2026-11-19",
+      "checked_date": "2026-11-23",
       "source": {
         "url": "https://store.insta360.com/KR/product/go-ultra",
         "label": "Insta360 official Korean product page"
@@ -567,10 +732,10 @@
       },
       "link_review": {
         "status": "verified_detail",
-        "checked_at": "2026-11-19T11:59:22.323642+00:00",
+        "checked_at": "2026-11-23T09:58:16+00:00",
         "url": "https://store.insta360.com/KR/product/go-ultra",
         "product_match": true,
-        "evidence": "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+        "evidence": "Official Korea exact GO Ultra Cosmic Black Standard Bundle · no SD card offer displayed KRW 523,000, with seller comparison KRW 616,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
       },
       "price_review": {
         "id": "insta360-go-ultra-kr-standard-black",
@@ -586,13 +751,39 @@
             "url": "https://store.insta360.com/KR/product/go-ultra",
             "observed_at": "2026-11-19T11:59:22.323642+00:00",
             "result": "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+          },
+          {
+            "url": "https://store.insta360.com/KR/product/go-ultra",
+            "observed_at": "2026-11-23T09:58:16+00:00",
+            "result": "Official Korea exact GO Ultra Cosmic Black Standard Bundle · no SD card offer displayed KRW 523,000, with seller comparison KRW 616,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
           }
         ],
         "limitations": [
           "Seller reference616000 not independently verified historical or market price.",
           "Stock, checkout, exact address, tax and cutoff unverified."
         ],
-        "review_completed_at": "2026-11-19T11:59:22.323642+00:00"
+        "review_completed_at": "2026-11-23T09:58:16+00:00",
+        "previous_observations": [
+          {
+            "review_completed_at": "2026-11-19T11:59:22.323642+00:00",
+            "verified_price": 523000,
+            "currency": "KRW"
+          }
+        ],
+        "seller_reference": {
+          "kind": "seller_displayed_compare",
+          "product_id": "insta360-go-ultra-kr-standard-black",
+          "variant": "GO Ultra Cosmic Black Standard Bundle · no SD card",
+          "currency": "KRW",
+          "current_price": 523000,
+          "reference_price": 616000,
+          "source_url": "https://store.insta360.com/KR/product/go-ultra",
+          "current_checked_at": "2026-11-23T09:58:16+00:00",
+          "reference_observed_at": "2026-11-23T09:58:16+00:00",
+          "same_terms": true,
+          "unconditional": true,
+          "evidence": "Official Korea exact GO Ultra Cosmic Black Standard Bundle · no SD card offer displayed KRW 523,000, with seller comparison KRW 616,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
+        }
       },
       "country_targeting": {
         "countries": [
@@ -617,11 +808,12 @@
         "checked_at": "2026-11-19"
       },
       "latest_offer_check": {
-        "checked_at": "2026-11-19T11:59:22.323642+00:00",
-        "status": "seller_dom_observed",
+        "status": "seller_text_observed",
+        "checked_at": "2026-11-23T09:58:16+00:00",
         "price": 523000,
+        "currency": "KRW",
         "source_url": "https://store.insta360.com/KR/product/go-ultra",
-        "evidence": "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+        "evidence": "Official Korea exact GO Ultra Cosmic Black Standard Bundle · no SD card offer displayed KRW 523,000, with seller comparison KRW 616,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
       },
       "price_variant": "GO Ultra Cosmic Black Standard Bundle · no SD card",
       "alternative_review": {
@@ -650,7 +842,25 @@
         "sha256": "2b63585515445c2964b974964636a61b90b16e2cc6be38157492e48e352281ed",
         "processing": "Proportional resize to800x800 and WebP compression only."
       },
-      "expires_at": null
+      "expires_at": null,
+      "previous_offer_checks": [
+        {
+          "checked_at": "2026-11-19T11:59:22.323642+00:00",
+          "status": "seller_dom_observed",
+          "price": 523000,
+          "source_url": "https://store.insta360.com/KR/product/go-ultra",
+          "evidence": "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+        }
+      ],
+      "previous_link_reviews": [
+        {
+          "status": "verified_detail",
+          "checked_at": "2026-11-19T11:59:22.323642+00:00",
+          "url": "https://store.insta360.com/KR/product/go-ultra",
+          "product_match": true,
+          "evidence": "Official Korean seller DOM: Cosmic Black Standard Bundle without SD card, quantity1, KRW523000; seller reference616000. Add-to-cart displayed, shipping estimate within2days; free shipping above KRW150000. Exact address, inventory, final checkout and sale cutoff not verified. No Gold, signup coupon, cloud trial or optional insurance deducted. Independent historical reference not established."
+        }
+      ]
     },
     {
       "id": "insta360-ace-pro-2-kr-dual-battery",
@@ -676,7 +886,7 @@
       "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
       "original_price": null,
       "discount_pct": null,
-      "checked_date": "2026-11-17",
+      "checked_date": "2026-11-23",
       "source": {
         "url": "https://store.insta360.com/kr/product/ace-pro-2",
         "label": "Insta360 official Korean product page"
@@ -691,10 +901,10 @@
       },
       "link_review": {
         "status": "verified_detail",
-        "checked_at": "2026-11-17T22:59:16.107244+00:00",
+        "checked_at": "2026-11-23T09:58:16+00:00",
         "url": "https://store.insta360.com/kr/product/ace-pro-2",
         "product_match": true,
-        "evidence": "Korean official product page shows Midnight Black Dual Battery Standard Bundle KRW437000, seller reference547000 and add-to-cart button. Exact stock and checkout untested. KR homepage confirms free shipping above KRW150000. Homepage from416000 and Ace Pro299000 banners are not this selected bundle. No Gold, signup reward or insurance deduction."
+        "evidence": "Official Korea exact Ace Pro 2 Midnight Black Dual Battery Standard Bundle offer displayed KRW 437,000, with seller comparison KRW 547,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
       },
       "price_review": {
         "id": "insta360-ace-pro-2-kr-dual-battery",
@@ -710,13 +920,39 @@
             "url": "https://store.insta360.com/kr/product/ace-pro-2",
             "observed_at": "2026-11-17T22:59:16.107244+00:00",
             "result": "Korean official product page shows Midnight Black Dual Battery Standard Bundle KRW437000, seller reference547000 and add-to-cart button. Exact stock and checkout untested. KR homepage confirms free shipping above KRW150000. Homepage from416000 and Ace Pro299000 banners are not this selected bundle. No Gold, signup reward or insurance deduction."
+          },
+          {
+            "url": "https://store.insta360.com/kr/product/ace-pro-2",
+            "observed_at": "2026-11-23T09:58:16+00:00",
+            "result": "Official Korea exact Ace Pro 2 Midnight Black Dual Battery Standard Bundle offer displayed KRW 437,000, with seller comparison KRW 547,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
           }
         ],
         "limitations": [
           "Seller reference is not verified historical or market price.",
           "Inventory, final checkout and delivery date untested."
         ],
-        "review_completed_at": "2026-11-17T22:59:16.107244+00:00"
+        "review_completed_at": "2026-11-23T09:58:16+00:00",
+        "previous_observations": [
+          {
+            "review_completed_at": "2026-11-17T22:59:16.107244+00:00",
+            "verified_price": 437000,
+            "currency": "KRW"
+          }
+        ],
+        "seller_reference": {
+          "kind": "seller_displayed_compare",
+          "product_id": "insta360-ace-pro-2-kr-dual-battery",
+          "variant": "Ace Pro 2 Midnight Black Dual Battery Standard Bundle",
+          "currency": "KRW",
+          "current_price": 437000,
+          "reference_price": 547000,
+          "source_url": "https://store.insta360.com/kr/product/ace-pro-2",
+          "current_checked_at": "2026-11-23T09:58:16+00:00",
+          "reference_observed_at": "2026-11-23T09:58:16+00:00",
+          "same_terms": true,
+          "unconditional": true,
+          "evidence": "Official Korea exact Ace Pro 2 Midnight Black Dual Battery Standard Bundle offer displayed KRW 437,000, with seller comparison KRW 547,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
+        }
       },
       "country_targeting": {
         "countries": [
@@ -741,11 +977,12 @@
         "checked_at": "2026-11-17"
       },
       "latest_offer_check": {
-        "checked_at": "2026-11-17T22:59:16.107244+00:00",
         "status": "seller_text_observed",
+        "checked_at": "2026-11-23T09:58:16+00:00",
         "price": 437000,
+        "currency": "KRW",
         "source_url": "https://store.insta360.com/kr/product/ace-pro-2",
-        "evidence": "Korean official product page shows Midnight Black Dual Battery Standard Bundle KRW437000, seller reference547000 and add-to-cart button. Exact stock and checkout untested. KR homepage confirms free shipping above KRW150000. Homepage from416000 and Ace Pro299000 banners are not this selected bundle. No Gold, signup reward or insurance deduction."
+        "evidence": "Official Korea exact Ace Pro 2 Midnight Black Dual Battery Standard Bundle offer displayed KRW 437,000, with seller comparison KRW 547,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
       },
       "price_variant": "Ace Pro 2 Midnight Black Dual Battery Standard Bundle",
       "alternative_review": {
@@ -769,7 +1006,25 @@
         "checked_at": "2026-11-17T22:59:16.107244+00:00",
         "sha256": "845fd603982504e321def0f9c4750ad699eda6bbf197d7b70fbb31f4bfd2c743",
         "processing": "Proportional resize to 800x800 and WebP encoding."
-      }
+      },
+      "previous_offer_checks": [
+        {
+          "checked_at": "2026-11-17T22:59:16.107244+00:00",
+          "status": "seller_text_observed",
+          "price": 437000,
+          "source_url": "https://store.insta360.com/kr/product/ace-pro-2",
+          "evidence": "Korean official product page shows Midnight Black Dual Battery Standard Bundle KRW437000, seller reference547000 and add-to-cart button. Exact stock and checkout untested. KR homepage confirms free shipping above KRW150000. Homepage from416000 and Ace Pro299000 banners are not this selected bundle. No Gold, signup reward or insurance deduction."
+        }
+      ],
+      "previous_link_reviews": [
+        {
+          "status": "verified_detail",
+          "checked_at": "2026-11-17T22:59:16.107244+00:00",
+          "url": "https://store.insta360.com/kr/product/ace-pro-2",
+          "product_match": true,
+          "evidence": "Korean official product page shows Midnight Black Dual Battery Standard Bundle KRW437000, seller reference547000 and add-to-cart button. Exact stock and checkout untested. KR homepage confirms free shipping above KRW150000. Homepage from416000 and Ace Pro299000 banners are not this selected bundle. No Gold, signup reward or insurance deduction."
+        }
+      ]
     },
     {
       "id": "insta360-x5-kr-standard",
@@ -795,7 +1050,7 @@
       "disclosure": "Direct seller link without affiliate tracking. Seller page observed; checkout not tested.",
       "original_price": null,
       "discount_pct": null,
-      "checked_date": "2026-11-17",
+      "checked_date": "2026-11-23",
       "source": {
         "url": "https://store.insta360.com/kr/product/x5",
         "label": "Insta360 official Korean product page"
@@ -810,10 +1065,10 @@
       },
       "link_review": {
         "status": "verified_detail",
-        "checked_at": "2026-11-17T14:09:21.495854+00:00",
+        "checked_at": "2026-11-23T09:58:16+00:00",
         "url": "https://store.insta360.com/kr/product/x5",
         "product_match": true,
-        "evidence": "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+        "evidence": "Official Korea exact X5 Midnight Black Standard Bundle · no SD card offer displayed KRW 645,000, with seller comparison KRW 759,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
       },
       "price_review": {
         "id": "insta360-x5-kr-standard",
@@ -829,13 +1084,39 @@
             "url": "https://store.insta360.com/kr/product/x5",
             "observed_at": "2026-11-17T14:09:21.495854+00:00",
             "result": "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+          },
+          {
+            "url": "https://store.insta360.com/kr/product/x5",
+            "observed_at": "2026-11-23T09:58:16+00:00",
+            "result": "Official Korea exact X5 Midnight Black Standard Bundle · no SD card offer displayed KRW 645,000, with seller comparison KRW 759,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
           }
         ],
         "limitations": [
           "Seller reference is not verified historical or market price.",
           "Inventory, final checkout and delivery date untested."
         ],
-        "review_completed_at": "2026-11-17T14:09:21.495854+00:00"
+        "review_completed_at": "2026-11-23T09:58:16+00:00",
+        "previous_observations": [
+          {
+            "review_completed_at": "2026-11-17T14:09:21.495854+00:00",
+            "verified_price": 645000,
+            "currency": "KRW"
+          }
+        ],
+        "seller_reference": {
+          "kind": "seller_displayed_compare",
+          "product_id": "insta360-x5-kr-standard",
+          "variant": "X5 Midnight Black Standard Bundle · no SD card",
+          "currency": "KRW",
+          "current_price": 645000,
+          "reference_price": 759000,
+          "source_url": "https://store.insta360.com/kr/product/x5",
+          "current_checked_at": "2026-11-23T09:58:16+00:00",
+          "reference_observed_at": "2026-11-23T09:58:16+00:00",
+          "same_terms": true,
+          "unconditional": true,
+          "evidence": "Official Korea exact X5 Midnight Black Standard Bundle · no SD card offer displayed KRW 645,000, with seller comparison KRW 759,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
+        }
       },
       "country_targeting": {
         "countries": [
@@ -860,11 +1141,12 @@
         "checked_at": "2026-11-17"
       },
       "latest_offer_check": {
-        "checked_at": "2026-11-17T14:09:21.495854+00:00",
         "status": "seller_text_observed",
+        "checked_at": "2026-11-23T09:58:16+00:00",
         "price": 645000,
+        "currency": "KRW",
         "source_url": "https://store.insta360.com/kr/product/x5",
-        "evidence": "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+        "evidence": "Official Korea exact X5 Midnight Black Standard Bundle · no SD card offer displayed KRW 645,000, with seller comparison KRW 759,000 and an add-to-cart control. Coupon or payment conditions not displayed on the selected offer. Comparison is not an independently verified previous selling price; address, checkout and stock not tested."
       },
       "price_variant": "X5 Midnight Black Standard Bundle · no SD card",
       "alternative_review": {
@@ -896,7 +1178,25 @@
         "checked_at": "2026-11-17T14:09:21.495854+00:00",
         "sha256": "3ee1660cc7f09b88df7525b94806b9467c615164351233f64104339a2a4306a1",
         "processing": "Proportional resize and WebP encoding, transparency preserved."
-      }
+      },
+      "previous_offer_checks": [
+        {
+          "checked_at": "2026-11-17T14:09:21.495854+00:00",
+          "status": "seller_text_observed",
+          "price": 645000,
+          "source_url": "https://store.insta360.com/kr/product/x5",
+          "evidence": "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+        }
+      ],
+      "previous_link_reviews": [
+        {
+          "status": "verified_detail",
+          "checked_at": "2026-11-17T14:09:21.495854+00:00",
+          "url": "https://store.insta360.com/kr/product/x5",
+          "product_match": true,
+          "evidence": "Korean official product page: X5 Midnight Black Standard Bundle without SD card, KRW 645000; seller displayed reference 759000. Add-to-cart button displayed, exact stock and checkout untested. Official Korean store free shipping threshold KRW150000; address-specific delivery date unverified. No Gold, signup bonus or add-on insurance deducted."
+        }
+      ]
     },
     {
       "id": "msi-mp273q-e7-gmarket",
@@ -6487,11 +6787,11 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 36,
+    "feed": 37,
     "tracked_links": 0,
     "search_fallback": 0,
     "verified_product_links": 20,
-    "held_product_links": 16,
+    "held_product_links": 17,
     "historical_tracked_links": 14
   }
 }
