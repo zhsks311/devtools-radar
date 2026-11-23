@@ -8,6 +8,145 @@
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
     {
+      "id": "insta360-go-3s-kr-128gb-black",
+      "region": "kr",
+      "target": "ko",
+      "category": "hardware",
+      "category_label": "Hardware",
+      "title_raw": "Insta360 GO 3S · Cosmic Black 128GB Standard Bundle",
+      "product": "Insta360 GO 3S · Cosmic Black 128GB Standard Bundle",
+      "store": "Insta360 official store",
+      "storefront_country": "KR",
+      "price": 359000,
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-23",
+      "published_at": null,
+      "expires_at": null,
+      "price_source": "retailer_product_page",
+      "price_variant": "Cosmic Black · 128GB · Standard Bundle",
+      "shipping": "Official Korean store advertises free delivery on orders of KRW 150,000 or more; address-specific service and delivery time not verified.",
+      "specs": [
+        "128GB version",
+        "Up to 4K30 video",
+        "Detachable camera and Action Pod"
+      ],
+      "briefing": [
+        "Official Korean seller selected Cosmic Black / 128GB / Standard Bundle at KRW 359,000, seller comparison KRW 449,000. Add-to-cart button observed; exact-address delivery, inventory and checkout not tested. Campaign end for this SKU not verified."
+      ],
+      "disclosure": "Untracked official seller link; no affiliation. Seller comparison is not an independently verified historical low.",
+      "source": {
+        "url": "https://store.insta360.com/kr/product/go-3s",
+        "label": "Insta360 official Korean product page"
+      },
+      "link": {
+        "url": "https://store.insta360.com/kr/product/go-3s",
+        "tracked": false,
+        "label": "View actual product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-23T09:09:23+00:00",
+        "url": "https://store.insta360.com/kr/product/go-3s",
+        "product_match": true,
+        "evidence": "Official Korean seller selected Cosmic Black / 128GB / Standard Bundle at KRW 359,000, seller comparison KRW 449,000. Add-to-cart button observed; exact-address delivery, inventory and checkout not tested. Campaign end for this SKU not verified."
+      },
+      "price_review": {
+        "id": "insta360-go-3s-kr-128gb-black",
+        "product": "Insta360 GO 3S · Cosmic Black 128GB Standard Bundle",
+        "seller_url": "https://store.insta360.com/kr/product/go-3s",
+        "recorded_price": 359000,
+        "verified_price": 359000,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "evidence": [
+          {
+            "url": "https://store.insta360.com/kr/product/go-3s",
+            "observed_at": "2026-11-23T09:09:23+00:00",
+            "result": "Official Korean seller selected Cosmic Black / 128GB / Standard Bundle at KRW 359,000, seller comparison KRW 449,000. Add-to-cart button observed; exact-address delivery, inventory and checkout not tested. Campaign end for this SKU not verified."
+          },
+          {
+            "url": "https://store.insta360.com/kr",
+            "observed_at": "2026-11-23T09:09:23+00:00",
+            "result": "Official Korean store advertises free delivery on orders of KRW 150,000 or more; address-specific service and delivery time not verified."
+          }
+        ],
+        "limitations": [
+          "Seller comparison only, not independent historical or market price.",
+          "Exact stock, delivery, checkout and promotion cutoff not tested."
+        ],
+        "review_completed_at": "2026-11-23T09:09:23+00:00"
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-23T09:09:23+00:00",
+        "note": "Official Korean storefront and Korean shipping notice only."
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Official Korean store advertises free delivery on orders of KRW 150,000 or more; address-specific service and delivery time not verified.",
+        "activation": "Physical camera. Exact bundle accessories verified only by seller listing, not by the illustration.",
+        "payment": "Final checkout and payment terms untested.",
+        "tax": "Final checkout and taxes untested.",
+        "returns": "Exact offer return conditions not rechecked.",
+        "evidence_url": "https://store.insta360.com/kr",
+        "checked_at": "2026-11-23"
+      },
+      "latest_offer_check": {
+        "checked_at": "2026-11-23T09:09:23+00:00",
+        "status": "seller_dom_observed",
+        "price": 359000,
+        "source_url": "https://store.insta360.com/kr/product/go-3s",
+        "evidence": "Official Korean seller selected Cosmic Black / 128GB / Standard Bundle at KRW 359,000, seller comparison KRW 449,000. Add-to-cart button observed; exact-address delivery, inventory and checkout not tested. Campaign end for this SKU not verified."
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-23T09:09:23+00:00",
+        "sources": [
+          {
+            "url": "https://www.insta360.com/kr/product/insta360-go3s",
+            "label": "Manufacturer product specifications"
+          },
+          {
+            "url": "https://store.insta360.com/kr",
+            "label": "Korean seller shipping threshold"
+          }
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/insta360-go-3s-black.webp",
+        "alt": "Black Insta360 GO 3S in its Action Pod with the display flipped up; not a photo of the full bundle",
+        "credit": "JettM9104",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Insta360_GO_3S.jpg",
+        "kind": "licensed_product_photo",
+        "rights_basis": "JettM9104 own work on Wikimedia Commons, CC BY-SA 4.0; WebP derivative released under the same license. The photograph illustrates the camera and Action Pod, not capacity or complete bundle contents.",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Insta360_GO_3S.jpg",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Insta360_GO_3S.jpg",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "checked_at": "2026-11-23T09:09:23+00:00",
+        "sha256": "5ee04bf30c3e443f7b73718389e0954dcf3e3bbc9d7689c0d70e8800b7161874",
+        "processing": "Proportionally resized to 920 × 690 and WebP compressed. Metadata removed. No crop or content changes.",
+        "license": "CC BY-SA 4.0",
+        "notes": {
+          "en": "Camera and Action Pod only; not every bundle accessory",
+          "ko": "카메라와 액션팟만 표시 · 전체 구성품 사진 아님",
+          "zh": "仅展示相机和 Action Pod，并非完整套装",
+          "ja": "カメラと Action Pod のみ、付属品の全体ではありません",
+          "es": "Solo cámara y Action Pod; no todos los accesorios",
+          "fr": "Caméra et Action Pod uniquement, pas tous les accessoires"
+        }
+      }
+    },
+    {
       "id": "ps5-access-controller-cfi-zac1-kr",
       "region": "kr",
       "target": "ko",
@@ -6334,10 +6473,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 35,
+    "feed": 36,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 19,
+    "verified_product_links": 20,
     "held_product_links": 16,
     "historical_tracked_links": 14
   }

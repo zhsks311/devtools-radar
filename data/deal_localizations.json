@@ -2871,5 +2871,37 @@
       "purpose": "Planifiez des pauses courtes et longues sur Mac et suspendez les alertes lors d’un appel détecté ou en mode Concentration.",
       "conditions": "Paiement unique pour 1 Mac, mises à jour à vie, macOS 14.2 minimum. Le vendeur affiche 5 $ contre sa référence de 24,99 $. Il annonce un essai de 7 jours sans carte. Fin, éligibilité en Corée, devise de paiement, taxes et remboursements non vérifiés."
     }
+  },
+  "insta360-go-3s-kr-128gb-black": {
+    "en": {
+      "product": "Insta360 GO 3S · black 128GB standard kit",
+      "summary": "A detachable miniature 4K action camera for hands-free point-of-view recording. Its flip-screen Action Pod helps frame shots.",
+      "conditions": "Cosmic Black 128GB Standard Bundle: KRW 359,000 versus the seller’s KRW 449,000 comparison. Korean store lists free delivery from KRW 150,000. Cart button visible; stock, address and final checkout untested. End date unverified."
+    },
+    "ko": {
+      "product": "Insta360 GO 3S · 코스믹 블랙 128GB 표준 번들",
+      "summary": "옷이나 장비에 달아 두 손을 쓰지 않고 4K 1인칭 영상을 찍는 소형 액션캠입니다. 플립 화면이 달린 액션팟으로 구도를 확인할 수 있습니다.",
+      "conditions": "코스믹 블랙 128GB 표준 번들 359,000원. 449,000원은 판매처 비교가입니다. 한국 공식몰은 15만원 이상 무료배송을 안내합니다. 장바구니 버튼은 확인했지만 주소별 배송, 재고와 최종 결제는 미확인입니다. 종료일은 확인되지 않았습니다."
+    },
+    "zh": {
+      "product": "Insta360 GO 3S · 宇宙黑 128GB 标准套装",
+      "summary": "可拆卸微型 4K 运动相机，适合免手持第一视角拍摄。带翻转屏的 Action Pod 方便取景。",
+      "conditions": "宇宙黑 128GB 标准套装 359,000 韩元，卖家对比价 449,000 韩元。韩国官方店满 150,000 韩元免运。页面可加入购物车，但未验证库存、地址配送和结账。结束日期未确认。"
+    },
+    "ja": {
+      "product": "Insta360 GO 3S · コズミックブラック 128GB 標準セット",
+      "summary": "手を使わずに一人称映像を撮れる着脱式の小型 4K アクションカメラ。フリップ画面付き Action Pod で構図を確認できます。",
+      "conditions": "コズミックブラック 128GB 標準セットは359,000ウォン、販売店の比較価格は449,000ウォン。韓国公式ストアは150,000ウォン以上で送料無料。カートボタンあり。在庫、配送先、決済、終了日は未確認。"
+    },
+    "es": {
+      "product": "Insta360 GO 3S · kit estándar negro de 128 GB",
+      "summary": "Minicámara de acción 4K desmontable para grabar en primera persona con las manos libres. El Action Pod con pantalla abatible ayuda a encuadrar.",
+      "conditions": "Kit estándar Cosmic Black de 128 GB: 359.000 KRW, frente a la referencia del vendedor de 449.000 KRW. Tienda coreana: envío gratis desde 150.000 KRW. Botón de carrito visible; stock, dirección, pago y fin de oferta sin verificar."
+    },
+    "fr": {
+      "product": "Insta360 GO 3S · kit standard noir 128 Go",
+      "summary": "Petite caméra d’action 4K détachable pour filmer à la première personne les mains libres. L’Action Pod à écran rabattable facilite le cadrage.",
+      "conditions": "Kit standard Cosmic Black 128 Go : 359 000 KRW contre 449 000 KRW selon le vendeur. Boutique coréenne : livraison gratuite dès 150 000 KRW. Bouton panier affiché ; stock, adresse, paiement et fin de l’offre non vérifiés."
+    }
   }
 }
