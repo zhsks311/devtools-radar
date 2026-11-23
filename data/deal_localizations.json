@@ -2979,5 +2979,37 @@
       "purpose": "Application de la barre des menus du Mac pour envoyer fichiers, captures et enregistrements vers votre stockage ou serveur et partager un lien.",
       "conditions": "Achat unique pour trois Mac au maximum sous macOS 12.3 ou ultérieur. Mises à jour 6.x incluses, sans garantie pour les futures versions majeures. Le stockage peut être facturé à part et les applications mobiles ont des licences distinctes. Le vendeur indique que le prix affiché inclut la TVA. Les achats éligibles sont remboursables sous 30 jours selon la politique du vendeur. Paiement depuis la Corée et total final non testés ; aucune échéance officielle du code n’est affichée."
     }
+  },
+  "paste-annual-first-year-bf2026": {
+    "en": {
+      "product": "Paste · Annual clipboard manager",
+      "summary": "Keep and search clipboard history, pin useful snippets, and reuse copied text, links and images across Mac, iPhone and iPad.",
+      "conditions": "Base Annual plan currently advertises USD 29.99 billed yearly. USD 14.99 is only for the first website Annual year when BLACKFRIDAY2026 is applied at checkout. USD excludes VAT, and prices can vary by region. Seller lists Nov 20–Dec 1, no exact time. Eligibility and final checkout, including Korea, untested."
+    },
+    "ko": {
+      "product": "Paste · 클립보드 관리 연간 구독",
+      "summary": "Mac·iPhone·iPad의 복사 기록을 검색하고, 반복해서 쓰는 텍스트·링크·이미지를 고정해 다시 붙여 넣는 도구입니다.",
+      "conditions": "기본 연간 구독 표시가 $29.99. 웹사이트 첫해만 BLACKFRIDAY2026 자동 적용 시 $14.99입니다. 세금 별도 및 지역별 가격 차이 가능. 판매처 표기 11월 20일~12월 1일, 종료 시각 미공개. 구매 자격, 한국 결제, 최종 요금은 미확인입니다."
+    },
+    "zh": {
+      "product": "Paste · 剪贴板管理年付订阅",
+      "summary": "在 Mac、iPhone 和 iPad 上搜索剪贴板历史，并收藏常用文字、链接和图片以便重复粘贴。",
+      "conditions": "年付标准标价 29.99 美元；在官网结账自动使用 BLACKFRIDAY2026 时，首年 14.99 美元。未含增值税，地区价格可能不同。卖家标注 11 月 20 日至 12 月 1 日，未注明具体时间。未核实购买资格、韩国付款或最终结算。"
+    },
+    "ja": {
+      "product": "Paste · クリップボード管理 年間プラン",
+      "summary": "Mac・iPhone・iPad のコピー履歴を検索し、よく使うテキストやリンク、画像をピン留めして貼り直せます。",
+      "conditions": "年間の標準表示は29.99米ドル。公式サイトで BLACKFRIDAY2026 が自動適用される場合、初年度のみ14.99米ドルです。VAT別、地域により価格差あり。販売店表記は11月20日〜12月1日で時刻の記載なし。購入資格、韓国の決済、最終支払額は未確認。"
+    },
+    "es": {
+      "product": "Paste · gestión del portapapeles anual",
+      "summary": "Busca el historial del portapapeles y fija textos, enlaces e imágenes para volver a usarlos en Mac, iPhone e iPad.",
+      "conditions": "Suscripción anual: tarifa estándar anunciada de 29,99 USD. Solo el primer año en la web cuesta 14,99 USD al aplicarse BLACKFRIDAY2026. No incluye IVA y puede variar por región. Del 20 de noviembre al 1 de diciembre, sin hora exacta. No se probaron la elegibilidad, el pago en Corea ni el total."
+    },
+    "fr": {
+      "product": "Paste · abonnement annuel au presse-papiers",
+      "summary": "Retrouvez l’historique du presse-papiers et épinglez textes, liens et images à réutiliser sur Mac, iPhone et iPad.",
+      "conditions": "Abonnement annuel affiché à 29,99 USD au tarif standard. 14,99 USD la première année sur le site si BLACKFRIDAY2026 est appliqué. Hors TVA, prix variable par région. Du 20 novembre au 1er décembre, sans heure exacte. Éligibilité, paiement en Corée et total non vérifiés."
+    }
   }
 }

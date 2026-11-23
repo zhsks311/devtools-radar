@@ -7,6 +7,133 @@
   },
   "feed": [
     {
+      "id": "paste-annual-first-year-bf2026",
+      "region": "global",
+      "target": "en",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "Paste · Annual plan",
+      "product": "Paste · Annual plan",
+      "store": "Paste",
+      "storefront_country": null,
+      "price": 29.99,
+      "currency": "USD",
+      "price_variant": "Paste Annual · website subscription · first-year coupon separate",
+      "price_source": "retailer_product_page",
+      "original_price": null,
+      "discount_pct": null,
+      "shipping": "Digital subscription",
+      "briefing": [
+        "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated.",
+        "Paste official pricing displays the Annual plan at USD 29.99 billed annually. This is the current advertised standard annual rate, not a guaranteed later renewal quote."
+      ],
+      "published_at": null,
+      "checked_date": "2026-11-23",
+      "expires_at": null,
+      "promotion_end_text": "November 20–December 1, 2026; exact cutoff time and timezone not published.",
+      "disclosure": "Independent editorial listing. Untracked seller link. Actual checkout not tested.",
+      "source": {
+        "url": "https://pasteapp.io/black-friday-2026",
+        "label": "Paste official Annual promotional listing"
+      },
+      "link": {
+        "url": "https://pasteapp.io/black-friday-2026",
+        "tracked": false,
+        "label": "View product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-23T11:01:40+00:00",
+        "url": "https://pasteapp.io/black-friday-2026",
+        "product_match": true,
+        "evidence": "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated."
+      },
+      "price_review": {
+        "id": "paste-annual-first-year-bf2026",
+        "product": "Paste · Annual plan",
+        "seller_url": "https://pasteapp.io/black-friday-2026",
+        "recorded_price": 29.99,
+        "verified_price": 29.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-23T11:01:40+00:00",
+        "evidence": [
+          {
+            "url": "https://pasteapp.io/black-friday-2026",
+            "observed_at": "2026-11-23T11:01:40+00:00",
+            "result": "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated."
+          },
+          {
+            "url": "https://pasteapp.io/pricing",
+            "observed_at": "2026-11-23T11:01:40+00:00",
+            "result": "Paste official pricing displays the Annual plan at USD 29.99 billed annually. This is the current advertised standard annual rate, not a guaranteed later renewal quote."
+          }
+        ],
+        "limitations": [
+          "First website Annual year coupon only; not independent price history.",
+          "Final taxes, regional pricing and buyer-specific eligibility not tested."
+        ]
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "observed_at": "2026-11-23T11:01:40+00:00",
+        "price": 29.99,
+        "source_url": "https://pasteapp.io/black-friday-2026",
+        "evidence": "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated."
+      },
+      "price_options": [
+        {
+          "kind": "coupon",
+          "product_id": "paste-annual-first-year-bf2026",
+          "variant": "Paste Annual · website subscription · first-year coupon separate",
+          "price": 14.99,
+          "currency": "USD",
+          "source_url": "https://pasteapp.io/black-friday-2026",
+          "checked_at": "2026-11-23T11:01:40+00:00",
+          "evidence": "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated.",
+          "conditions": {
+            "en": "Website Annual plan, first year only. BLACKFRIDAY2026 is advertised as automatically applied at checkout; actual discount, tax, and eligibility not independently tested.",
+            "ko": "웹사이트 연간 구독 첫해만. 결제 시 BLACKFRIDAY2026 자동 적용 안내이며, 실제 적용·세금·자격은 확인하지 않았습니다.",
+            "zh": "仅官网年付计划首年。卖家称结账自动应用 BLACKFRIDAY2026；未测试实际优惠、税费或资格。",
+            "ja": "公式サイト年間プランの初年度限定。BLACKFRIDAY2026 は自動適用と案内。実際の適用、税、対象資格は未確認。",
+            "es": "Solo el primer año del plan anual en la web. El vendedor anuncia BLACKFRIDAY2026 automático; descuento efectivo, impuestos y elegibilidad sin verificar.",
+            "fr": "Première année du forfait annuel sur le site uniquement. BLACKFRIDAY2026 annoncé comme automatique ; application réelle, taxes et éligibilité non vérifiées."
+          }
+        }
+      ],
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Digital software subscription.",
+        "activation": "Exact account or region eligibility and any existing-subscriber restrictions not tested.",
+        "payment": "Website Annual plan only; Korean checkout and buyer-specific total unverified.",
+        "tax": "Advertised USD excludes VAT and may vary by region.",
+        "returns": "Vendor says it reviews refund requests for direct purchases; not an unconditional refund promise.",
+        "evidence_url": "https://pasteapp.io/terms",
+        "checked_at": "2026-11-23"
+      },
+      "service_terms": {
+        "url": "https://pasteapp.io/terms"
+      },
+      "image": {
+        "path": "/assets/deals/paste-annual-product-screens.webp",
+        "alt": "Official sample Paste clipboard history running on Mac, iPhone and iPad",
+        "kind": "official_product_ui",
+        "credit": "Paste media kit",
+        "credit_url": "https://pasteapp.io/media-kit",
+        "source_page": "https://pasteapp.io/media-kit",
+        "source_file": "https://pasteapp.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fproduct-screenshots.3wrkdexpqv66o.png&w=1080&q=75",
+        "rights_basis": "Official media kit explicitly offers product screenshots for articles, reviews and coverage. Unchanged publisher-provided rendition, credited; unrelated to sponsorship, tracking or affiliation.",
+        "sha256": "b014c1b944cba1acad0d25a7fb8c5aeebaf6b3ab497a11a76c1e70308cbf789a",
+        "width": 1080,
+        "height": 606,
+        "checked_at": "2026-11-23T11:01:40+00:00",
+        "processing": "Publisher-provided 1080-pixel WebP rendition; bytes copied unchanged, no local effects or edits."
+      }
+    },
+    {
       "id": "dropshare-6-personal-bf2026",
       "region": "global",
       "target": "en",
@@ -5770,6 +5897,133 @@
       "audience": "Digital licenses; check terms before redeeming.",
       "items": [
         {
+          "id": "paste-annual-first-year-bf2026",
+          "region": "global",
+          "target": "en",
+          "category": "software",
+          "category_label": "Software",
+          "title_raw": "Paste · Annual plan",
+          "product": "Paste · Annual plan",
+          "store": "Paste",
+          "storefront_country": null,
+          "price": 29.99,
+          "currency": "USD",
+          "price_variant": "Paste Annual · website subscription · first-year coupon separate",
+          "price_source": "retailer_product_page",
+          "original_price": null,
+          "discount_pct": null,
+          "shipping": "Digital subscription",
+          "briefing": [
+            "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated.",
+            "Paste official pricing displays the Annual plan at USD 29.99 billed annually. This is the current advertised standard annual rate, not a guaranteed later renewal quote."
+          ],
+          "published_at": null,
+          "checked_date": "2026-11-23",
+          "expires_at": null,
+          "promotion_end_text": "November 20–December 1, 2026; exact cutoff time and timezone not published.",
+          "disclosure": "Independent editorial listing. Untracked seller link. Actual checkout not tested.",
+          "source": {
+            "url": "https://pasteapp.io/black-friday-2026",
+            "label": "Paste official Annual promotional listing"
+          },
+          "link": {
+            "url": "https://pasteapp.io/black-friday-2026",
+            "tracked": false,
+            "label": "View product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-23T11:01:40+00:00",
+            "url": "https://pasteapp.io/black-friday-2026",
+            "product_match": true,
+            "evidence": "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated."
+          },
+          "price_review": {
+            "id": "paste-annual-first-year-bf2026",
+            "product": "Paste · Annual plan",
+            "seller_url": "https://pasteapp.io/black-friday-2026",
+            "recorded_price": 29.99,
+            "verified_price": 29.99,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "review_completed_at": "2026-11-23T11:01:40+00:00",
+            "evidence": [
+              {
+                "url": "https://pasteapp.io/black-friday-2026",
+                "observed_at": "2026-11-23T11:01:40+00:00",
+                "result": "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated."
+              },
+              {
+                "url": "https://pasteapp.io/pricing",
+                "observed_at": "2026-11-23T11:01:40+00:00",
+                "result": "Paste official pricing displays the Annual plan at USD 29.99 billed annually. This is the current advertised standard annual rate, not a guaranteed later renewal quote."
+              }
+            ],
+            "limitations": [
+              "First website Annual year coupon only; not independent price history.",
+              "Final taxes, regional pricing and buyer-specific eligibility not tested."
+            ]
+          },
+          "latest_offer_check": {
+            "status": "seller_text_observed",
+            "observed_at": "2026-11-23T11:01:40+00:00",
+            "price": 29.99,
+            "source_url": "https://pasteapp.io/black-friday-2026",
+            "evidence": "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated."
+          },
+          "price_options": [
+            {
+              "kind": "coupon",
+              "product_id": "paste-annual-first-year-bf2026",
+              "variant": "Paste Annual · website subscription · first-year coupon separate",
+              "price": 14.99,
+              "currency": "USD",
+              "source_url": "https://pasteapp.io/black-friday-2026",
+              "checked_at": "2026-11-23T11:01:40+00:00",
+              "evidence": "Paste official product campaign advertises USD 29.99 standard and USD 14.99 for the first website Annual year with BLACKFRIDAY2026 automatically applied at checkout. Prices exclude VAT and can vary by buyer region. Campaign gives Nov 20 to Dec 1 (2026) with no exact cutoff time or timezone stated.",
+              "conditions": {
+                "en": "Website Annual plan, first year only. BLACKFRIDAY2026 is advertised as automatically applied at checkout; actual discount, tax, and eligibility not independently tested.",
+                "ko": "웹사이트 연간 구독 첫해만. 결제 시 BLACKFRIDAY2026 자동 적용 안내이며, 실제 적용·세금·자격은 확인하지 않았습니다.",
+                "zh": "仅官网年付计划首年。卖家称结账自动应用 BLACKFRIDAY2026；未测试实际优惠、税费或资格。",
+                "ja": "公式サイト年間プランの初年度限定。BLACKFRIDAY2026 は自動適用と案内。実際の適用、税、対象資格は未確認。",
+                "es": "Solo el primer año del plan anual en la web. El vendedor anuncia BLACKFRIDAY2026 automático; descuento efectivo, impuestos y elegibilidad sin verificar.",
+                "fr": "Première année du forfait annuel sur le site uniquement. BLACKFRIDAY2026 annoncé comme automatique ; application réelle, taxes et éligibilité non vérifiées."
+              }
+            }
+          ],
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Digital software subscription.",
+            "activation": "Exact account or region eligibility and any existing-subscriber restrictions not tested.",
+            "payment": "Website Annual plan only; Korean checkout and buyer-specific total unverified.",
+            "tax": "Advertised USD excludes VAT and may vary by region.",
+            "returns": "Vendor says it reviews refund requests for direct purchases; not an unconditional refund promise.",
+            "evidence_url": "https://pasteapp.io/terms",
+            "checked_at": "2026-11-23"
+          },
+          "service_terms": {
+            "url": "https://pasteapp.io/terms"
+          },
+          "image": {
+            "path": "/assets/deals/paste-annual-product-screens.webp",
+            "alt": "Official sample Paste clipboard history running on Mac, iPhone and iPad",
+            "kind": "official_product_ui",
+            "credit": "Paste media kit",
+            "credit_url": "https://pasteapp.io/media-kit",
+            "source_page": "https://pasteapp.io/media-kit",
+            "source_file": "https://pasteapp.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fproduct-screenshots.3wrkdexpqv66o.png&w=1080&q=75",
+            "rights_basis": "Official media kit explicitly offers product screenshots for articles, reviews and coverage. Unchanged publisher-provided rendition, credited; unrelated to sponsorship, tracking or affiliation.",
+            "sha256": "b014c1b944cba1acad0d25a7fb8c5aeebaf6b3ab497a11a76c1e70308cbf789a",
+            "width": 1080,
+            "height": 606,
+            "checked_at": "2026-11-23T11:01:40+00:00",
+            "processing": "Publisher-provided 1080-pixel WebP rendition; bytes copied unchanged, no local effects or edits."
+          }
+        },
+        {
           "id": "dropshare-6-personal-bf2026",
           "region": "global",
           "target": "en",
@@ -8293,7 +8547,7 @@
     }
   },
   "stats": {
-    "feed": 41,
+    "feed": 42,
     "sources": 12
   }
 }
