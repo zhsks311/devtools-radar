@@ -1280,6 +1280,14 @@ A reviewed link is not proof of current stock, a discount or completed checkout.
 Prices can change. Countries below refer only to recorded delivery/activation evidence, not payment eligibility.
 Localized catalog and purchase conditions: https://devteardown.com/deals/
 
+### Insta360 Ace Pro · Standard Bundle
+Seller: Insta360 official store
+Product URL: https://store.insta360.com/kr/product/ace-pro
+Product-link review: 2026-11-23T09:58:16+00:00 (not a stock check)
+Recorded price: 299000 KRW. Seller price observation dated 2026-11-23T09:58:16+00:00.
+Delivery / activation countries with evidence: KR.
+Discounts and historical-low claims are not established by this export.
+
 ### Insta360 GO 3S · Cosmic Black 128GB Standard Bundle
 Seller: Insta360 official store
 Product URL: https://store.insta360.com/kr/product/go-3s
@@ -1293,14 +1301,6 @@ Seller: PlayShop
 Product URL: https://www.playshop.co.kr/product/ps5-%EC%97%91%EC%84%B8%EC%8A%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/131/category/176/display/1/
 Product-link review: 2026-11-21T17:27:08Z (not a stock check)
 Recorded price: 104700 KRW. Seller price observation dated 2026-11-21T17:27:08Z.
-Delivery / activation countries with evidence: KR.
-Discounts and historical-low claims are not established by this export.
-
-### Wacom Intuos Small (wired, black)
-Seller: Wacom Korea Official Store
-Product URL: https://estore.wacom.kr/ko-kr/pen-tablet/wacom-intuos/wacom-intuos-small-without-bluetooth-black-ctl-4100-k0-cx.html
-Product-link review: 2026-11-21T13:27:37Z (not a stock check)
-Recorded price: 55000 KRW. Seller price observation dated 2026-11-21T13:27:37Z.
 Delivery / activation countries with evidence: KR.
 Discounts and historical-low claims are not established by this export.
 
@@ -1438,6 +1438,14 @@ Product URL: https://directg.net/game/game_view.html?platform=1&product_id=c4c5e
 Product-link review: 2026-11-18T02:28:37.655443+00:00 (not a stock check)
 Recorded price: 7700 KRW. Seller price observation dated 2026-11-18T02:28:37.655443+00:00.
 Delivery / activation countries with evidence: JP, KR.
+Discounts and historical-low claims are not established by this export.
+
+### Dropshare 6 Personal
+Seller: Dropshare
+Product URL: https://new.dropshare.app/#pricing
+Product-link review: 2026-11-23T09:58:16+00:00 (not a stock check)
+Recorded price: 39 USD. Seller price observation dated 2026-11-23T09:58:16+00:00.
+Delivery / activation countries with evidence: unverified.
 Discounts and historical-low claims are not established by this export.
 
 ### DeskRest · 1 Mac lifetime
