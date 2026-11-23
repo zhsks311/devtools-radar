@@ -6,7 +6,7 @@ from tools.product_links import publishable_link
 from tools.deal_availability import explicit_offer_expiry
 from tools.deal_candidates import candidate_cards
 from tools.affiliate_links import verified_aliexpress_url
-from tools.deal_prices import checked_price, official_srp_comparison, current_price_state, validated_price_options, number
+from tools.deal_prices import checked_price, official_srp_comparison, current_price_state, validated_price_options, number, seller_price_reference
 from tools.evidence_dates import observed_timestamp
 from tools.deal_countries import confirmed_countries, storefront_country, target_countries
 from xml.sax.saxutils import escape
@@ -115,6 +115,9 @@ CSS += """
 .product-summary{font-size:14px;line-height:1.7;color:#465467;min-height:0;word-break:normal;overflow-wrap:anywhere}
 .card .price{font-size:28px;line-height:1.25;margin-top:4px;letter-spacing:-.035em}
 .card .price-status{font-size:12px;line-height:1.55;color:#5a6777}
+.card .seller-price-reference{font-size:13px;line-height:1.5;color:#526071;margin:4px 0 -10px}
+.card .seller-price-reference s{text-decoration-thickness:1.5px;margin-inline-start:.3em}
+.card .seller-price-reference[hidden]{display:none}
 .card .price-observed{font-size:11px;line-height:1.5;margin-top:-6px;color:#687587}
 .card .cta{font-weight:650;min-height:44px;display:flex;align-items:center;justify-content:center;transition:background .15s ease}
 .card .cta:hover{background:#123d99}.card details{padding-top:12px}.card summary{font-size:13px;line-height:1.6;min-height:28px}
@@ -300,8 +303,25 @@ PRICE_STATE_LABELS = {
  'es': {'observed':'Precio indicado · no garantiza el total al pagar','historical':'Precio histórico · no actual','unverified':'Precio actual por verificar'},
  'fr': {'observed':'Prix affiché · total au paiement non garanti','historical':'Prix historique · non actuel','unverified':'Prix actuel à vérifier'},
 }
-def visible_price_context(deal, lang):
- state=current_price_state(deal)
+SELLER_PRICE_LABELS = {
+ 'ko': {'seller_displayed_compare': '판매처 비교가', 'seller_previous_price': '이전 확인 판매가'},
+ 'en': {'seller_displayed_compare': 'Seller’s comparison price', 'seller_previous_price': 'Previously verified seller price'},
+ 'zh': {'seller_displayed_compare': '卖家比较价', 'seller_previous_price': '先前核实的卖家价格'},
+ 'ja': {'seller_displayed_compare': '販売店の比較価格', 'seller_previous_price': '過去に確認した販売価格'},
+ 'es': {'seller_displayed_compare': 'Precio de referencia del vendedor', 'seller_previous_price': 'Precio anterior verificado del vendedor'},
+ 'fr': {'seller_displayed_compare': 'Prix de comparaison du vendeur', 'seller_previous_price': 'Ancien prix vérifié du vendeur'},
+}
+def visible_seller_price_reference(deal, lang, *, now=None):
+ reference=seller_price_reference(deal, now=now)
+ if reference is None: return ''
+ label=SELLER_PRICE_LABELS[lang][reference['kind']]
+ amount=f"{reference['price']:,.2f}".rstrip('0').rstrip('.')
+ seen=reference["seen"]
+ return f'<p class="seller-price-reference current-savings">{e(label)} <s>{e(reference["currency"])} {amount}</s> · <time datetime="{e(seen.isoformat())}">{seen.strftime("%Y-%m-%d %H:%M UTC")}</time></p>'
+
+def visible_price_context(deal, lang, *, now=None):
+ now=now or datetime.datetime.now(datetime.timezone.utc)
+ state=current_price_state(deal, now=now)
  review=deal.get('price_review') or {}
  stamp=review.get('review_completed_at','')
  source=(deal.get('link') or {}).get('url','')
@@ -315,7 +335,7 @@ def visible_price_context(deal, lang):
   result+=f'<details class="conditional-options"><summary>{e(labels[lang])} <span class="option-count">{len(options)}</span></summary><div class="option-list">'
  for option in options:
   option_seen=observed_timestamp(option['checked_at'])
-  option_state='observed' if option_seen and datetime.datetime.now(datetime.timezone.utc)-option_seen <= datetime.timedelta(hours=24) and state=='observed' else 'historical'
+  option_state='observed' if option_seen and now-option_seen <= datetime.timedelta(hours=24) and state=='observed' else 'historical'
   amount=f"{number(option['price']):,.2f}".rstrip('0').rstrip('.')
   result+=f'<section class="conditional-option"><p class="conditional-price">{e(option["currency"])} {amount}</p><p class="option-conditions">{e(option["conditions"][lang])}</p><p class="meta option-variant">{e(option["variant"])}</p><p class="price-status" data-price-state="{option_state}" data-observed-at="{e(option["checked_at"])}" data-stale-label="{e(PRICE_STATE_LABELS[lang]["historical"])}">{e(PRICE_STATE_LABELS[lang][option_state])}</p><p class="meta price-observed"><time datetime="{e(option["checked_at"])}">{option_seen.strftime("%Y-%m-%d %H:%M UTC")}</time></p></section>'
  if options: result+='</div></details>'
@@ -366,7 +386,7 @@ def catalogue(lang,feeds,translations,discoveries=False,*,now=None):
   review=d.get('price_review') or {}; current=checked_price(d)
   if not publishable_link(d): summary=HELD_SUMMARY[lang]
   price_context=''
-  srp=official_srp_comparison(d) if current_price_state(d)=='observed' else None
+  srp=official_srp_comparison(d) if current_price_state(d, now=now)=='observed' else None
   savings=SRP[lang].format(percent=srp['percent'],currency=srp['currency'],price=f"{srp['price']:,.2f}") if srp else (NOT_DISCOUNT[lang] if review.get('deal_status')=='not_a_discount' else DISCOUNT_UNKNOWN[lang])
   savings_class='notice current-savings' if srp else 'notice'
   price_note=f'<p class="{savings_class}">{e(savings)}</p>'
@@ -389,7 +409,7 @@ def catalogue(lang,feeds,translations,discoveries=False,*,now=None):
   setup=(terms.get('setup_urls') or {}).get(lang)
   if setup and safe(setup): evidence+=f'<p><a class="service-terms-source" href="{e(safe(setup))}" rel="noopener nofollow">{t[30]} · DualSense</a></p>'
   linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}"{description}>{e(title)}</a>' if linked else e(title)
-  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}"{deadline_attrs}>{disclosure}{image}<div class="{category_class}">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}<div class="price">{e(price)}{billing_label(d,lang)}</div>{visible_price_context(d,lang)}{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
+  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}"{deadline_attrs}>{disclosure}{image}<div class="{category_class}">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}{visible_seller_price_reference(d,lang,now=now)}<div class="price">{e(price)}{billing_label(d,lang)}</div>{visible_price_context(d,lang,now=now)}{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  storefronts=sorted({storefront_country(d) for d in feeds}-{"unknown"})
  destinations=list(COUNTRY_ORDER)+sorted({c for d in feeds for c in target_countries(d)}-set(COUNTRY_ORDER))

@@ -108,3 +108,53 @@ def validated_price_options(d):
             all(item.get('conditions', {}).get(lang) for lang in ('en','ko','zh','ja','es','fr'))):
             result.append(item)
     return result
+
+
+def seller_price_reference(d, *, now=None):
+    """Comparable prior seller price for the unified cards, never an MSRP or coupon.
+
+    Allow only exact, independently recorded previous offers and seller-displayed
+    compare prices accompanied by a same-session, still-current base price review.
+    No fallback to narrative evidence, original_price, or price-option arithmetic.
+    """
+    from datetime import datetime, timezone
+    from tools.deal_availability import explicit_offer_expiry
+
+    now = now or datetime.now(timezone.utc)
+    review = d.get('price_review') or {}
+    reference = review.get('seller_reference')
+    if not isinstance(reference, dict) or current_price_state(d, now=now) != 'observed':
+        return None
+    deadline = d.get('expires_at')
+    if deadline:
+        expiry = explicit_offer_expiry(deadline)
+        if expiry is None or now >= expiry:
+            return None
+    kind = reference.get('kind')
+    if kind not in ('seller_displayed_compare', 'seller_previous_price'):
+        return None
+    variant = d.get('price_variant')
+    currency = d.get('currency')
+    seller = (d.get('link') or {}).get('url')
+    current, prior = number(d.get('price')), number(reference.get('reference_price'))
+    seen = observed_timestamp(review.get('review_completed_at'), now=now)
+    current_seen = observed_timestamp(reference.get('current_checked_at'), now=now)
+    reference_seen = observed_timestamp(reference.get('reference_observed_at'), now=now)
+    if not (d.get('id') and reference.get('product_id') == d.get('id')
+            and isinstance(variant, str) and variant.strip() and reference.get('variant') == variant
+            and currency and reference.get('currency') == currency
+            and seller and reference.get('source_url') == seller
+            and reference.get('same_terms') is True and reference.get('unconditional') is True
+            and current is not None and prior is not None and 0 < current < prior
+            and number(reference.get('current_price')) == current
+            and seen is not None and current_seen == seen and reference_seen is not None
+            and isinstance(reference.get('evidence'), str) and reference['evidence'].strip()):
+        return None
+    if ((kind == 'seller_displayed_compare' and reference_seen != seen) or
+            (kind == 'seller_previous_price' and reference_seen >= seen)):
+        return None
+    latest = d.get('latest_offer_check') or {}
+    if latest and (latest.get('status') not in ('seller_dom_observed', 'seller_text_observed', 'purchase_ui_observed')
+                   or latest.get('source_url') != seller or number(latest.get('price')) != current):
+        return None
+    return {'kind': kind, 'price': prior, 'currency': currency, 'seen': reference_seen}

@@ -1,9 +1,7 @@
 import copy,json,unittest
-from unittest.mock import patch
 from datetime import datetime,timezone
-from tools.deal_prices import current_price_state
 from pathlib import Path
-from tools.deal_prices import discount_percent,validate_deal_prices,checked_price,official_srp_comparison
+from tools.deal_prices import discount_percent,validate_deal_prices,checked_price,official_srp_comparison,seller_price_reference
 import build,site_i18n
 ROOT=Path(__file__).resolve().parents[1]
 class DiscountTests(unittest.TestCase):
@@ -52,10 +50,10 @@ class DiscountTests(unittest.TestCase):
   self.assertEqual(str(official_srp_comparison(d)['percent']),'9.09')
   # Freeze currentness at this fixture's observation, not the CI wall clock.
   observed=datetime.fromisoformat(d['price_review']['review_completed_at'].replace('Z','+00:00'))
-  with patch.object(site_i18n,'current_price_state',side_effect=lambda item: current_price_state(item,now=observed)):
-   for lang in site_i18n.LANGS:
-    page=site_i18n.catalogue(lang,[d],{})
-    self.assertIn('9.09',page);self.assertNotIn('6.62%',page)
+  for lang in site_i18n.LANGS:
+   page=site_i18n.catalogue(lang,[d],{},now=observed)
+   self.assertIn('9.09',page);self.assertNotIn('6.62%',page)
+   self.assertNotIn('<s>',page)
   for field,value in [('currency','USD'),('price',699),('same_product_variant',False),
                       ('product_id','other'),('checked_at','9999-01-01T00:00:00Z'),
                       ('evidence',' '),('reference_kind','seller_previous_price'),('url','javascript:alert(1)')]:
@@ -70,9 +68,11 @@ class DiscountTests(unittest.TestCase):
  def test_all_registered_products_and_six_languages(self):
   feed=sum([json.loads((ROOT/'data'/f).read_text())['feed'] for f in ('deals.json','deals_en.json')],[])
   self.assertEqual(len(feed),len({d['id'] for d in feed}));self.assertEqual(validate_deal_prices(feed),[])
+  now=datetime.now(timezone.utc)
+  expected=sum(seller_price_reference(d,now=now) is not None for d in feed)
   for lang in site_i18n.LANGS:
-   page=site_i18n.catalogue(lang,feed,{})
+   page=site_i18n.catalogue(lang,feed,{},now=now)
    self.assertEqual(page.count('<article class="card"'),len(feed))
-   self.assertNotIn('<s>',page);self.assertNotIn('flag-discount',page)
+   self.assertEqual(page.count('<s>'),expected);self.assertNotIn('flag-discount',page)
    self.assertIn(site_i18n.NOT_DISCOUNT[lang],page)
   for d in feed:self.assertNotIn('<s>',build._deal_card(d))

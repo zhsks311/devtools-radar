@@ -48,7 +48,7 @@
       },
       "link_review": {
         "status": "verified_detail",
-        "checked_at": "2026-11-23T09:09:23+00:00",
+        "checked_at": "2026-11-23T09:36:50+00:00",
         "url": "https://store.insta360.com/kr/product/go-3s",
         "product_match": true,
         "evidence": "Official Korean seller selected Cosmic Black / 128GB / Standard Bundle at KRW 359,000, seller comparison KRW 449,000. Add-to-cart button observed; exact-address delivery, inventory and checkout not tested. Campaign end for this SKU not verified."
@@ -65,7 +65,7 @@
         "evidence": [
           {
             "url": "https://store.insta360.com/kr/product/go-3s",
-            "observed_at": "2026-11-23T09:09:23+00:00",
+            "observed_at": "2026-11-23T09:36:50+00:00",
             "result": "Official Korean seller selected Cosmic Black / 128GB / Standard Bundle at KRW 359,000, seller comparison KRW 449,000. Add-to-cart button observed; exact-address delivery, inventory and checkout not tested. Campaign end for this SKU not verified."
           },
           {
@@ -78,7 +78,21 @@
           "Seller comparison only, not independent historical or market price.",
           "Exact stock, delivery, checkout and promotion cutoff not tested."
         ],
-        "review_completed_at": "2026-11-23T09:09:23+00:00"
+        "review_completed_at": "2026-11-23T09:36:50+00:00",
+        "seller_reference": {
+          "kind": "seller_displayed_compare",
+          "product_id": "insta360-go-3s-kr-128gb-black",
+          "variant": "Cosmic Black · 128GB · Standard Bundle",
+          "currency": "KRW",
+          "current_price": 359000,
+          "reference_price": 449000,
+          "source_url": "https://store.insta360.com/kr/product/go-3s",
+          "current_checked_at": "2026-11-23T09:36:50+00:00",
+          "reference_observed_at": "2026-11-23T09:36:50+00:00",
+          "same_terms": true,
+          "unconditional": true,
+          "evidence": "The Korea seller selected Cosmic Black / 128GB / Standard Bundle. It displayed KRW 359,000 with KRW 449,000 beside its KRW 90,000 savings text, before checkout and without coupon or payment conditions. This is the seller’s own comparison, not an independently verified former price or MSRP."
+        }
       },
       "country_targeting": {
         "countries": [
@@ -103,7 +117,7 @@
         "checked_at": "2026-11-23"
       },
       "latest_offer_check": {
-        "checked_at": "2026-11-23T09:09:23+00:00",
+        "checked_at": "2026-11-23T09:36:50+00:00",
         "status": "seller_dom_observed",
         "price": 359000,
         "source_url": "https://store.insta360.com/kr/product/go-3s",
