@@ -1440,6 +1440,14 @@ Recorded price: 7700 KRW. Seller price observation dated 2026-11-18T02:28:37.655
 Delivery / activation countries with evidence: JP, KR.
 Discounts and historical-low claims are not established by this export.
 
+### Paste · Annual plan
+Seller: Paste
+Product URL: https://pasteapp.io/black-friday-2026
+Product-link review: 2026-11-23T11:01:40+00:00 (not a stock check)
+Recorded price: 29.99 USD. Seller price observation dated 2026-11-23T11:01:40+00:00.
+Delivery / activation countries with evidence: unverified.
+Discounts and historical-low claims are not established by this export.
+
 ### Dropshare 6 Personal
 Seller: Dropshare
 Product URL: https://new.dropshare.app/#pricing
