@@ -11,6 +11,7 @@ import build
 from site_seo import finalize_seo, language_groups, REPORT_META
 from tools.check_site import Page, check_site, schema_nodes
 from tools.product_links import publishable_link
+from tests.catalog_fixture_clock import CATALOG_AS_OF
 
 
 class SEOTests(unittest.TestCase):
@@ -56,7 +57,7 @@ class SEOTests(unittest.TestCase):
     def test_evidence_export_omits_held_links_and_distinguishes_price_checks(self):
         ko = build.load_deals()
         en = build.load_deals(build.DEALS_EN_DATA_PATH)
-        text = build.generate_llms_full_txt([], ko, en)
+        text = build.generate_llms_full_txt([], ko, en, now=CATALOG_AS_OF)
         for deal in ko['feed'] + en['feed']:
             if publishable_link(deal):
                 self.assertIn(deal['link']['url'], text)

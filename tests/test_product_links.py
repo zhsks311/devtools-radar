@@ -5,6 +5,7 @@ from pathlib import Path
 from tools.deal_prices import checked_price
 from tools.product_links import direct_product_url, publishable_link, validate_deal_links
 import site_i18n
+from tests.catalog_fixture_clock import CATALOG_AS_OF
 
 class ProductLinkTests(unittest.TestCase):
     def test_no_search_home_category_shortener_or_redirect(self):
@@ -53,7 +54,7 @@ class ProductLinkTests(unittest.TestCase):
         feeds=sum([json.loads((root/'data'/f).read_text())['feed'] for f in ['deals.json','deals_en.json']],[])
         tr=json.loads((root/'data/deal_localizations.json').read_text())
         for lang in site_i18n.LANGS:
-            page=site_i18n.catalogue(lang,feeds,tr)
+            page=site_i18n.catalogue(lang,feeds,tr,now=CATALOG_AS_OF)
             self.assertEqual(page.count('class="cta"'),sum(publishable_link(d) for d in feeds))
             held=sum(not publishable_link(d) and (d.get('availability_review') or {}).get('status') != 'expired' for d in feeds)
             self.assertEqual(page.count('class="notice link-held"'),held)

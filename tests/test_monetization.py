@@ -4,6 +4,7 @@ import unittest
 from tools.audit_monetization import audit
 from tools.product_links import publishable_link
 import site_i18n
+from tests.catalog_fixture_clock import CATALOG_AS_OF
 
 class MonetizationTests(unittest.TestCase):
     def setUp(self):
@@ -16,7 +17,7 @@ class MonetizationTests(unittest.TestCase):
         self.assertEqual(report['published_products'],len(report['ordinary_link_ids'])+len(report['published_commission_link_ids']))
     def test_product_links_are_stable_across_locales(self):
         for lang in site_i18n.LANGS:
-            page=site_i18n.catalogue(lang,self.rows,{})
+            page=site_i18n.catalogue(lang,self.rows,{},now=CATALOG_AS_OF)
             for d in self.rows:
                 if publishable_link(d):
                     self.assertIn('id="product-'+d['id']+'"',page)

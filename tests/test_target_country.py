@@ -4,6 +4,7 @@ from tools.deal_countries import target_countries,confirmed_countries
 from tools.product_links import publishable_link
 from tests.test_deal_countries import FilterParser
 import site_i18n
+from tests.catalog_fixture_clock import CATALOG_AS_OF
 class TargetCountryTest(unittest.TestCase):
  def test_domestic_audience_keeps_delivery_evidence_separate(self):
   rows=json.loads(Path('data/deals.json').read_text())['feed']
@@ -11,7 +12,7 @@ class TargetCountryTest(unittest.TestCase):
   self.assertEqual(sum(publishable_link(x) and 'KR' in target_countries(x) for x in rows),20)
   self.assertEqual(sum('KR' in confirmed_countries(x) for x in rows),19)
   for lang in site_i18n.LANGS:
-   p=FilterParser();p.feed(site_i18n.catalogue(lang,rows,{}))
+   p=FilterParser();p.feed(site_i18n.catalogue(lang,rows,{},now=CATALOG_AS_OF))
    self.assertEqual(sum(x['countries']=='KR' for x in p.cards),17)
    self.assertEqual(sum(x['countries']=='KR' for x in p.archived),17)
    for c in p.cards:

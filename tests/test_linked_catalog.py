@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import site_i18n
 from tools.product_links import publishable_link
+from tests.catalog_fixture_clock import CATALOG_AS_OF
 
 class CatalogParser(HTMLParser):
     def __init__(self):
@@ -22,7 +23,7 @@ class LinkedCatalogTests(unittest.TestCase):
         feed=sum([json.loads((root/'data'/n).read_text())['feed'] for n in ['deals.json','deals_en.json']],[])
         tr=json.loads((root/'data/deal_localizations.json').read_text())
         for lang in site_i18n.LANGS:
-            parser=CatalogParser();parser.feed(site_i18n.catalogue(lang,feed,tr))
+            parser=CatalogParser();parser.feed(site_i18n.catalogue(lang,feed,tr,now=CATALOG_AS_OF))
             self.assertEqual(parser.active,[d['id'] for d in feed if publishable_link(d)])
             self.assertEqual(parser.held,[d['id'] for d in feed if not publishable_link(d)])
             self.assertTrue(parser.archive_closed)

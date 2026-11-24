@@ -8,6 +8,7 @@ from pathlib import Path
 import site_i18n
 from tools.deal_countries import confirmed_countries, storefront_country, validate_deal_countries
 from tools.product_links import publishable_link
+from tests.catalog_fixture_clock import CATALOG_AS_OF
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -69,7 +70,7 @@ class CountryTests(unittest.TestCase):
                 self.assertTrue(validate_deal_countries([bad]))
     def test_categories_and_country_data_same_in_all_languages(self):
         for lang in site_i18n.LANGS:
-            p = FilterParser(); p.feed(site_i18n.catalogue(lang, self.feed, self.tr))
+            p = FilterParser(); p.feed(site_i18n.catalogue(lang, self.feed, self.tr, now=CATALOG_AS_OF))
             cards = {d['id']: d for d in p.cards + p.archived}
             self.assertEqual(cards['lenovo-gk10-rt60-cn']['category'], 'keyboard-mouse')
             self.assertEqual(cards['lenovo-loq-25-10-cn']['category'], 'monitor-desk')

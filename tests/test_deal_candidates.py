@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 from tools.deal_candidates import load_candidates, candidate_cards, TEXT
 from tools.product_links import publishable_link
+from tests.catalog_fixture_clock import CATALOG_AS_OF
 
 class CandidateTests(unittest.TestCase):
     def test_records_are_unverified_not_offers(self):
@@ -37,7 +38,7 @@ class CandidateTests(unittest.TestCase):
         feed=sum([json.loads((ROOT/'data'/name).read_text())['feed'] for name in ('deals.json','deals_en.json')],[])
         tr=json.loads((ROOT/'data/deal_localizations.json').read_text())
         for lang in TEXT:
-            page=site_i18n.catalogue(lang,feed,tr,discoveries=True)
+            page=site_i18n.catalogue(lang,feed,tr,discoveries=True,now=CATALOG_AS_OF)
             self.assertIn(str(sum(site_i18n.publishable_link(d) for d in feed))+' '+site_i18n.FILTER_TEXT[lang][7]+' · 5 '+site_i18n.DISCOVERY_LABEL[lang],page)
             self.assertNotIn(str(sum(site_i18n.publishable_link(d) for d in feed)+5)+' '+site_i18n.FILTER_TEXT[lang][7],page)
             self.assertIn(site_i18n.EMPTY_LABEL[lang],page)

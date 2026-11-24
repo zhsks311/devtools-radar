@@ -6,6 +6,7 @@ import site_i18n
 from tools.product_links import direct_product_url, publishable_link
 from tools.deal_prices import checked_price, discount_percent
 from tools.deal_countries import confirmed_countries
+from tests.catalog_fixture_clock import CATALOG_AS_OF
 
 ROOT = Path(__file__).resolve().parents[1]
 class KoreanRecoveryTests(unittest.TestCase):
@@ -33,7 +34,7 @@ class KoreanRecoveryTests(unittest.TestCase):
             self.assertFalse(publishable_link(mutated));self.assertFalse(checked_price(mutated))
         tr=json.loads((ROOT/'data/deal_localizations.json').read_text())
         for lang in site_i18n.LANGS:
-            page=site_i18n.catalogue(lang,data['feed'],tr)
+            page=site_i18n.catalogue(lang,data['feed'],tr,now=CATALOG_AS_OF)
             self.assertEqual(page.count('class="cta"'),len(restored))
             self.assertIn('data-countries="KR"',page)
             self.assertNotIn('65W+35W', tr['deal-artmu-100w-gb102'][lang]['summary'])
