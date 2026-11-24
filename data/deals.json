@@ -8,6 +8,169 @@
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
     {
+      "id": "logitech-g304-lightspeed-black-kr-gfesta",
+      "region": "kr",
+      "target": "ko",
+      "category": "keyboard-mouse",
+      "category_label": "Keyboards & mice",
+      "title_raw": "Logitech G304 LIGHTSPEED · Black",
+      "product": "Logitech G304 LIGHTSPEED · Black",
+      "store": "Logitech G Gaming Store Korea",
+      "storefront_country": "KR",
+      "price": 34900,
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-24",
+      "published_at": null,
+      "expires_at": null,
+      "campaign_end_date": "2026-12-01",
+      "price_source": "retailer_product_page",
+      "price_variant": "G304 LIGHTSPEED · Black · seller item 20",
+      "shipping": "Free domestic delivery per Logitech G Korea storefront. Exact address not tested.",
+      "briefing": [
+        "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested.",
+        "This exact item is linked from the official G FESTA category; seller lists Nov 11–Dec 1, 2026 without exact cutoff or timezone."
+      ],
+      "source": {
+        "url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+        "label": "Logitech G official Korean store, exact G304 item 20"
+      },
+      "disclosure": "Untracked official seller link; no affiliation. The comparison is not independent price history.",
+      "link": {
+        "url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+        "tracked": false,
+        "label": "View exact product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-24T09:50:55Z",
+        "url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+        "product_match": true,
+        "evidence": "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested."
+      },
+      "price_review": {
+        "id": "logitech-g304-lightspeed-black-kr-gfesta",
+        "product": "Logitech G304 LIGHTSPEED · Black",
+        "seller_url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+        "recorded_price": 34900,
+        "verified_price": 34900,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-24T09:50:55Z",
+        "evidence": [
+          {
+            "url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+            "observed_at": "2026-11-24T09:50:55Z",
+            "result": "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested."
+          },
+          {
+            "url": "https://www.logitech-gamingstore.com/shop/list/index?category=20261111416eebb307",
+            "observed_at": "2026-11-24T09:50:55Z",
+            "result": "This exact item is linked from the official G FESTA category; seller lists Nov 11–Dec 1, 2026 without exact cutoff or timezone."
+          },
+          {
+            "url": "https://www.logitech-gamingstore.com/board/event/read?no=39",
+            "observed_at": "2026-11-24T09:50:55Z",
+            "result": "This exact item is linked from the official G FESTA category; seller lists Nov 11–Dec 1, 2026 without exact cutoff or timezone."
+          }
+        ],
+        "limitations": [
+          "Retailer comparison is not an independent historical selling price, or the best current market price.",
+          "Actual stock, payment, delivery address and exact campaign cutoff unverified."
+        ],
+        "seller_reference": {
+          "kind": "seller_displayed_compare",
+          "product_id": "logitech-g304-lightspeed-black-kr-gfesta",
+          "variant": "G304 LIGHTSPEED · Black · seller item 20",
+          "currency": "KRW",
+          "source_url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+          "same_terms": true,
+          "unconditional": true,
+          "current_price": 34900,
+          "reference_price": 59900,
+          "current_checked_at": "2026-11-24T09:50:55Z",
+          "reference_observed_at": "2026-11-24T09:50:55Z",
+          "evidence": "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested."
+        }
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "checked_at": "2026-11-24T09:50:55Z",
+        "price": 34900,
+        "currency": "KRW",
+        "source_url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+        "evidence": "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested."
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-24T09:50:55Z"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Official Korea storefront displays free domestic shipping. Address-specific fulfilment has not been checked.",
+        "activation": "Wireless USB receiver; local model name G304.",
+        "payment": "Checkout and payment not tested.",
+        "tax": "Final checkout total not verified.",
+        "returns": "See the official seller’s purchase terms.",
+        "evidence_url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+        "checked_at": "2026-11-24"
+      },
+      "alternative_review": {
+        "checked_at": "2026-11-24T09:50:55Z",
+        "sources": [
+          {
+            "label": "Logitech G FESTA dates",
+            "url": "https://www.logitech-gamingstore.com/board/event/read?no=39"
+          },
+          {
+            "label": "G FESTA participating products",
+            "url": "https://www.logitech-gamingstore.com/shop/list/index?category=20261111416eebb307"
+          },
+          {
+            "label": "Logitech hardware model names by region",
+            "url": "https://www.youtube.com/watch?v=3cHgkimh284"
+          }
+        ]
+      },
+      "image": {
+        "path": "/assets/deals/logitech-g304-lightspeed-black.webp",
+        "alt": "Black Logitech G305 wireless mouse, the regional name of the G304",
+        "kind": "licensed_product_photo",
+        "credit": "Julien Sinan / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Une_souris_Logitech_G305..jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_basis": "Photographer’s own work; CC BY-SA 4.0. Derivative retains this licence, source and author credited, with no affiliation.",
+        "processing": "Proportionate resizing and WebP encoding. EXIF removed. No crop.",
+        "source_sha1": "30b502fa4258870e43363a7b4339ee56bcbe2bcc",
+        "source_sha256": "d59e20ac3c9cc445dc4e122c14a3129e025741688ee376b8f0ba88258637f15b",
+        "sha256": "6f9167bac2ecd934fb0a1a614c464aff1d2276059267222a2e3f2760e6e84d2b",
+        "width": 900,
+        "height": 675,
+        "checked_at": "2026-11-24T09:50:55Z",
+        "notes": {
+          "en": "Black G305 pictured: Logitech confirms it is the same mouse under a regional name. Korean packaging not shown.",
+          "ko": "사진 속 블랙 G305는 로지텍이 확인한 G304의 지역별 명칭입니다. 한국판 포장 사진은 아닙니다.",
+          "zh": "图中为黑色 G305：罗技确认它是同一款鼠标的地区名称。未展示韩国包装。",
+          "ja": "写真はブラックのG305です。メーカーが同じマウスの地域別名称と確認しています。韓国版パッケージは写っていません。",
+          "es": "La foto muestra un G305 negro; Logitech confirma que es el nombre regional del mismo ratón. No muestra el embalaje coreano.",
+          "fr": "La photo montre une G305 noire : Logitech confirme qu’il s’agit du nom régional de la même souris, pas du coffret coréen."
+        }
+      }
+    },
+    {
       "id": "insta360-ace-pro-kr-standard",
       "region": "kr",
       "target": "ko",
@@ -5191,6 +5354,169 @@
       "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
       "items": [
         {
+          "id": "logitech-g304-lightspeed-black-kr-gfesta",
+          "region": "kr",
+          "target": "ko",
+          "category": "keyboard-mouse",
+          "category_label": "Keyboards & mice",
+          "title_raw": "Logitech G304 LIGHTSPEED · Black",
+          "product": "Logitech G304 LIGHTSPEED · Black",
+          "store": "Logitech G Gaming Store Korea",
+          "storefront_country": "KR",
+          "price": 34900,
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-24",
+          "published_at": null,
+          "expires_at": null,
+          "campaign_end_date": "2026-12-01",
+          "price_source": "retailer_product_page",
+          "price_variant": "G304 LIGHTSPEED · Black · seller item 20",
+          "shipping": "Free domestic delivery per Logitech G Korea storefront. Exact address not tested.",
+          "briefing": [
+            "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested.",
+            "This exact item is linked from the official G FESTA category; seller lists Nov 11–Dec 1, 2026 without exact cutoff or timezone."
+          ],
+          "source": {
+            "url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+            "label": "Logitech G official Korean store, exact G304 item 20"
+          },
+          "disclosure": "Untracked official seller link; no affiliation. The comparison is not independent price history.",
+          "link": {
+            "url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+            "tracked": false,
+            "label": "View exact product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-24T09:50:55Z",
+            "url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+            "product_match": true,
+            "evidence": "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested."
+          },
+          "price_review": {
+            "id": "logitech-g304-lightspeed-black-kr-gfesta",
+            "product": "Logitech G304 LIGHTSPEED · Black",
+            "seller_url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+            "recorded_price": 34900,
+            "verified_price": 34900,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "review_completed_at": "2026-11-24T09:50:55Z",
+            "evidence": [
+              {
+                "url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+                "observed_at": "2026-11-24T09:50:55Z",
+                "result": "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested."
+              },
+              {
+                "url": "https://www.logitech-gamingstore.com/shop/list/index?category=20261111416eebb307",
+                "observed_at": "2026-11-24T09:50:55Z",
+                "result": "This exact item is linked from the official G FESTA category; seller lists Nov 11–Dec 1, 2026 without exact cutoff or timezone."
+              },
+              {
+                "url": "https://www.logitech-gamingstore.com/board/event/read?no=39",
+                "observed_at": "2026-11-24T09:50:55Z",
+                "result": "This exact item is linked from the official G FESTA category; seller lists Nov 11–Dec 1, 2026 without exact cutoff or timezone."
+              }
+            ],
+            "limitations": [
+              "Retailer comparison is not an independent historical selling price, or the best current market price.",
+              "Actual stock, payment, delivery address and exact campaign cutoff unverified."
+            ],
+            "seller_reference": {
+              "kind": "seller_displayed_compare",
+              "product_id": "logitech-g304-lightspeed-black-kr-gfesta",
+              "variant": "G304 LIGHTSPEED · Black · seller item 20",
+              "currency": "KRW",
+              "source_url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+              "same_terms": true,
+              "unconditional": true,
+              "current_price": 34900,
+              "reference_price": 59900,
+              "current_checked_at": "2026-11-24T09:50:55Z",
+              "reference_observed_at": "2026-11-24T09:50:55Z",
+              "evidence": "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested."
+            }
+          },
+          "latest_offer_check": {
+            "status": "seller_text_observed",
+            "checked_at": "2026-11-24T09:50:55Z",
+            "price": 34900,
+            "currency": "KRW",
+            "source_url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+            "evidence": "Official Korean Logitech G gaming store item 20 displays KRW 34,900 with a KRW 59,900 seller reference, free domestic shipping, Black option with no sold-out marker, and Add to Cart / Buy controls. No code, card, or membership price condition is displayed. Exact checkout, inventory and delivery address not tested."
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "physical",
+            "reviewed_at": "2026-11-24T09:50:55Z"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "KR"
+            ],
+            "status": "retailer_delivery_statement",
+            "delivery": "Official Korea storefront displays free domestic shipping. Address-specific fulfilment has not been checked.",
+            "activation": "Wireless USB receiver; local model name G304.",
+            "payment": "Checkout and payment not tested.",
+            "tax": "Final checkout total not verified.",
+            "returns": "See the official seller’s purchase terms.",
+            "evidence_url": "https://www.logitech-gamingstore.com/shop/list/item/index?no=20",
+            "checked_at": "2026-11-24"
+          },
+          "alternative_review": {
+            "checked_at": "2026-11-24T09:50:55Z",
+            "sources": [
+              {
+                "label": "Logitech G FESTA dates",
+                "url": "https://www.logitech-gamingstore.com/board/event/read?no=39"
+              },
+              {
+                "label": "G FESTA participating products",
+                "url": "https://www.logitech-gamingstore.com/shop/list/index?category=20261111416eebb307"
+              },
+              {
+                "label": "Logitech hardware model names by region",
+                "url": "https://www.youtube.com/watch?v=3cHgkimh284"
+              }
+            ]
+          },
+          "image": {
+            "path": "/assets/deals/logitech-g304-lightspeed-black.webp",
+            "alt": "Black Logitech G305 wireless mouse, the regional name of the G304",
+            "kind": "licensed_product_photo",
+            "credit": "Julien Sinan / Wikimedia Commons",
+            "credit_url": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+            "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Une_souris_Logitech_G305..jpg",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rights_basis": "Photographer’s own work; CC BY-SA 4.0. Derivative retains this licence, source and author credited, with no affiliation.",
+            "processing": "Proportionate resizing and WebP encoding. EXIF removed. No crop.",
+            "source_sha1": "30b502fa4258870e43363a7b4339ee56bcbe2bcc",
+            "source_sha256": "d59e20ac3c9cc445dc4e122c14a3129e025741688ee376b8f0ba88258637f15b",
+            "sha256": "6f9167bac2ecd934fb0a1a614c464aff1d2276059267222a2e3f2760e6e84d2b",
+            "width": 900,
+            "height": 675,
+            "checked_at": "2026-11-24T09:50:55Z",
+            "notes": {
+              "en": "Black G305 pictured: Logitech confirms it is the same mouse under a regional name. Korean packaging not shown.",
+              "ko": "사진 속 블랙 G305는 로지텍이 확인한 G304의 지역별 명칭입니다. 한국판 포장 사진은 아닙니다.",
+              "zh": "图中为黑色 G305：罗技确认它是同一款鼠标的地区名称。未展示韩国包装。",
+              "ja": "写真はブラックのG305です。メーカーが同じマウスの地域別名称と確認しています。韓国版パッケージは写っていません。",
+              "es": "La foto muestra un G305 negro; Logitech confirma que es el nombre regional del mismo ratón. No muestra el embalaje coreano.",
+              "fr": "La photo montre une G305 noire : Logitech confirme qu’il s’agit du nom régional de la même souris, pas du coffret coréen."
+            }
+          }
+        },
+        {
           "id": "deal-mx-master-3s",
           "region": "kr",
           "target": "ko",
@@ -6787,10 +7113,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 37,
+    "feed": 38,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 20,
+    "verified_product_links": 21,
     "held_product_links": 17,
     "historical_tracked_links": 14
   }

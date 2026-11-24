@@ -8,12 +8,12 @@ from tests.catalog_fixture_clock import CATALOG_AS_OF
 class TargetCountryTest(unittest.TestCase):
  def test_domestic_audience_keeps_delivery_evidence_separate(self):
   rows=json.loads(Path('data/deals.json').read_text())['feed']
-  self.assertEqual(sum('KR' in target_countries(x) for x in rows),37)
-  self.assertEqual(sum(publishable_link(x) and 'KR' in target_countries(x) for x in rows),20)
-  self.assertEqual(sum('KR' in confirmed_countries(x) for x in rows),19)
+  self.assertEqual(sum('KR' in target_countries(x) for x in rows),38)
+  self.assertEqual(sum(publishable_link(x) and 'KR' in target_countries(x) for x in rows),21)
+  self.assertEqual(sum('KR' in confirmed_countries(x) for x in rows),20)
   for lang in site_i18n.LANGS:
    p=FilterParser();p.feed(site_i18n.catalogue(lang,rows,{},now=CATALOG_AS_OF))
-   self.assertEqual(sum(x['countries']=='KR' for x in p.cards),17)
+   self.assertEqual(sum(x['countries']=='KR' for x in p.cards),18)
    self.assertEqual(sum(x['countries']=='KR' for x in p.archived),17)
    for c in p.cards:
     if '100w' in c['id']:self.assertEqual(c['category'],'hardware')

@@ -3011,5 +3011,43 @@
       "summary": "Retrouvez l’historique du presse-papiers et épinglez textes, liens et images à réutiliser sur Mac, iPhone et iPad.",
       "conditions": "Abonnement annuel affiché à 29,99 USD au tarif standard. 14,99 USD la première année sur le site si BLACKFRIDAY2026 est appliqué. Hors TVA, prix variable par région. Du 20 novembre au 1er décembre, sans heure exacte. Éligibilité, paiement en Corée et total non vérifiés."
     }
+  },
+  "logitech-g304-lightspeed-black-kr-gfesta": {
+    "en": {
+      "product": "Logitech G304 LIGHTSPEED · Black",
+      "summary": "A compact wireless mouse with a USB receiver and one AA battery, for gaming or everyday desktop use. This listing is for Black.",
+      "purpose": "A compact wireless mouse with a USB receiver and one AA battery, for gaming or everyday desktop use. This listing is for Black.",
+      "conditions": "Seller advertises free shipping within South Korea; address-specific service and orders not tested. G FESTA lists Dec 1 as the end date with no exact cutoff time. Black was not marked sold out, but stock and final checkout were not confirmed."
+    },
+    "ko": {
+      "product": "로지텍 G304 LIGHTSPEED · 블랙",
+      "summary": "USB 수신기와 AA 배터리 1개를 사용하는 작은 무선 마우스입니다. 게임과 일상 작업에 쓸 수 있으며, 이 딜은 블랙 옵션입니다.",
+      "purpose": "USB 수신기와 AA 배터리 1개를 사용하는 작은 무선 마우스입니다. 게임과 일상 작업에 쓸 수 있으며, 이 딜은 블랙 옵션입니다.",
+      "conditions": "국내 무료배송으로 표시됩니다. 블랙 옵션에 품절 표시가 없었지만 실제 재고와 최종 결제는 확인하지 않았습니다. G FESTA는 12월 1일 종료로 안내되며 정확한 시각은 미공개입니다."
+    },
+    "zh": {
+      "product": "罗技 G304 LIGHTSPEED · 黑色",
+      "summary": "采用 USB 接收器和一节 AA 电池的紧凑型无线鼠标，适合游戏和日常使用。本优惠为黑色版。",
+      "purpose": "采用 USB 接收器和一节 AA 电池的紧凑型无线鼠标，适合游戏和日常使用。本优惠为黑色版。",
+      "conditions": "卖家标注韩国境内免运费。黑色未标售罄，但未验证实时库存与结算。G FESTA 标注 12 月 1 日结束，未注明具体时间。"
+    },
+    "ja": {
+      "product": "ロジクール G304 LIGHTSPEED · ブラック",
+      "summary": "USBレシーバーと単3電池1本を使う小型無線マウス。ゲームにも普段使いにも向くブラックモデルです。",
+      "purpose": "USBレシーバーと単3電池1本を使う小型無線マウス。ゲームにも普段使いにも向くブラックモデルです。",
+      "conditions": "韓国内は送料無料と表示。ブラックに売り切れ表示はありませんでしたが、実在庫・決済は未確認です。G FESTAの終了日は12月1日で、時刻は非公表です。"
+    },
+    "es": {
+      "product": "Logitech G304 LIGHTSPEED · negro",
+      "summary": "Ratón inalámbrico compacto con receptor USB y una pila AA, para jugar o para el escritorio. La oferta corresponde al color negro.",
+      "purpose": "Ratón inalámbrico compacto con receptor USB y una pila AA, para jugar o para el escritorio. La oferta corresponde al color negro.",
+      "conditions": "El vendedor indica envío gratuito en Corea del Sur. El negro no figura como agotado; no se comprobó el inventario ni el pago. G FESTA indica el 1 de diciembre como cierre, sin hora exacta."
+    },
+    "fr": {
+      "product": "Logitech G304 LIGHTSPEED · noir",
+      "summary": "Souris sans fil compacte avec récepteur USB et une pile AA, pour jouer ou travailler. L’offre concerne la version noire.",
+      "purpose": "Souris sans fil compacte avec récepteur USB et une pile AA, pour jouer ou travailler. L’offre concerne la version noire.",
+      "conditions": "La livraison est annoncée gratuite en Corée du Sud. Le noir n’était pas signalé en rupture ; ni le stock réel ni le paiement n’ont été vérifiés. G FESTA indique le 1er décembre, sans heure de fin."
+    }
   }
 }

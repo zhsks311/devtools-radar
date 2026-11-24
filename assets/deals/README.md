@@ -46,3 +46,5 @@ Retrieved 2026-11-10. These assets are used only to illustrate the corresponding
 - `dropshare-6-personal-preferences.webp`: Dropshare’s original Preferences screen from the [official press kit](https://new.dropshare.app/press/), unchanged and credited, used only in independent editorial coverage.
 
 - `paste-annual-product-screens.webp`: Paste’s official cross-device product screenshot montage in the [editorial media kit](https://pasteapp.io/media-kit). Publisher-provided 1080 × 606 WebP rendition, bytes unchanged. © Paste; editorial coverage only, no affiliation or tracking.
+
+- `logitech-g304-lightspeed-black.webp`: [Une souris Logitech G305..jpg](https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg) by Julien Sinan, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); downloaded original SHA-1 `30b502fa4258870e43363a7b4339ee56bcbe2bcc`. Derivative under the same licence, proportional 900×675 resizing and WebP encoding with metadata removed, no crop. Logitech confirms [G304 and G305 are regional names for the same mouse](https://www.youtube.com/watch?v=3cHgkimh284); black G305 is pictured, not Korean packaging.

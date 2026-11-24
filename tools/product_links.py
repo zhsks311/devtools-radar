@@ -65,6 +65,9 @@ def direct_product_url(url):
     # These sellers identify a product in the query, never accept the generic page.
     query_routes = {'item.gmarket.co.kr': ('/item', 'goodscode'),
                     'artmu.co.kr': ('/product/detail.html', 'product_no')}
+    if u.hostname == 'www.logitech-gamingstore.com':
+        # Exact reviewed G304 product ID, never the catalogue, campaign, or search route.
+        return path == '/shop/list/item/index' and query_values == {'no': ['20']} and not u.fragment
     if u.hostname in query_routes:
         route, key = query_routes[u.hostname]
         values = query_values.get(key, [])
