@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T18:56:40+00:00",
+  "generated_at": "2026-11-27T19:06:16+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -7,6 +7,116 @@
   },
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
+    {
+      "id": "things-3-mac-kr-bf2026",
+      "region": "kr",
+      "target": "ko",
+      "category": "software",
+      "category_label": "Software",
+      "title_raw": "Things 3 · Mac",
+      "product": "Things 3 · Mac",
+      "store": "Apple App Store (Korea)",
+      "storefront_country": "KR",
+      "price": 53900,
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "price_variant": "Mac App Store · Korea · Things 3 · Apple ID 904280696 · one-time",
+      "price_source": "retailer_product_page",
+      "published_at": null,
+      "checked_date": "2026-11-27",
+      "expires_at": null,
+      "campaign_end_date": "2026-11-30",
+      "shipping": "Digital download via the Korean Mac App Store.",
+      "briefing": [
+        "The Apple South Korea App Store detail for app ID 904280696 shows Things 3 for Mac at KRW 53,900. Cultured Code says its Black Friday week offer is 30% off, already included in the App Store price, through November 30, 2026. Exact cutoff time and checkout were not verified. iPad, iPhone and Vision are different App Store purchases."
+      ],
+      "source": {
+        "url": "https://culturedcode.com/things/blog/",
+        "label": "Cultured Code’s Black Friday announcement"
+      },
+      "disclosure": "Untracked Korean Mac App Store link. App Store checkout was not tested.",
+      "link": {
+        "url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+        "tracked": false,
+        "label": "View the Mac app",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-27T19:06:16+00:00",
+        "url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+        "product_match": true,
+        "evidence": "The Apple South Korea App Store detail for app ID 904280696 shows Things 3 for Mac at KRW 53,900. Cultured Code says its Black Friday week offer is 30% off, already included in the App Store price, through November 30, 2026. Exact cutoff time and checkout were not verified. iPad, iPhone and Vision are different App Store purchases."
+      },
+      "price_review": {
+        "id": "things-3-mac-kr-bf2026",
+        "product": "Things 3 · Mac",
+        "seller_url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+        "recorded_price": 53900,
+        "verified_price": 53900,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-27T19:06:16+00:00",
+        "evidence": [
+          {
+            "url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+            "observed_at": "2026-11-27T19:06:16+00:00",
+            "result": "The Apple South Korea App Store detail for app ID 904280696 shows Things 3 for Mac at KRW 53,900. Cultured Code says its Black Friday week offer is 30% off, already included in the App Store price, through November 30, 2026. Exact cutoff time and checkout were not verified. iPad, iPhone and Vision are different App Store purchases."
+          },
+          {
+            "url": "https://culturedcode.com/things/blog/",
+            "observed_at": "2026-11-27T19:06:16+00:00",
+            "result": "Developer confirms the 30% Black Friday discount is built into the listed Store price; the exact end hour is not stated."
+          }
+        ],
+        "limitations": [
+          "No dated Korean prior price quote sufficient to publish a strike-through price.",
+          "Mac App Store SKU only; no checkout or cross-region redemption test."
+        ]
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "checked_at": "2026-11-27T19:06:16+00:00",
+        "price": 53900,
+        "currency": "KRW",
+        "source_url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+        "evidence": "The Apple South Korea App Store detail for app ID 904280696 shows Things 3 for Mac at KRW 53,900. Cultured Code says its Black Friday week offer is 30% off, already included in the App Store price, through November 30, 2026. Exact cutoff time and checkout were not verified. iPad, iPhone and Vision are different App Store purchases."
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "digital",
+        "reviewed_at": "2026-11-27T19:06:16+00:00"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [],
+        "status": "activation_unverified",
+        "delivery": "Listed on the Korean Mac App Store. Account-specific eligibility and checkout were not tested.",
+        "activation": "For Mac; other platform versions sold separately.",
+        "payment": "Apple ID storefront and checkout conditions apply.",
+        "tax": "Price shown on storefront; payment not attempted.",
+        "returns": "Apple App Store refund policy applies.",
+        "evidence_url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+        "checked_at": "2026-11-27"
+      },
+      "image": {
+        "path": "/assets/deals/things-3-mac-press.jpg",
+        "kind": "official_product_ui",
+        "alt": "Things 3 for Mac showing the Today view and an example project",
+        "credit": "Cultured Code",
+        "credit_url": "https://culturedcode.com/press/",
+        "source_page": "https://culturedcode.com/press/",
+        "source_url": "https://static.culturedcode.com/things/presskit/things-presskit-20251120.zip",
+        "rights_basis": "Vendor-provided press kit screenshot for editorial coverage of this exact Mac product; no redistribution of the kit or endorsement stated.",
+        "processing": "Unmodified official press JPEG, file things-mac-1.jpg.",
+        "sha256": "45fee330caf3a37ff94823186e887df0effb5156986cb96fd7dbda894b98d10b",
+        "checked_at": "2026-11-27T19:06:16+00:00"
+      }
+    },
     {
       "id": "logitech-g304-black-pouch-kream-kr",
       "region": "kr",
@@ -7370,6 +7480,122 @@
           }
         }
       ]
+    },
+    "software": {
+      "label": "Software",
+      "audience": "Korean storefront software offers",
+      "items": [
+        {
+          "id": "things-3-mac-kr-bf2026",
+          "region": "kr",
+          "target": "ko",
+          "category": "software",
+          "category_label": "Software",
+          "title_raw": "Things 3 · Mac",
+          "product": "Things 3 · Mac",
+          "store": "Apple App Store (Korea)",
+          "storefront_country": "KR",
+          "price": 53900,
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "price_variant": "Mac App Store · Korea · Things 3 · Apple ID 904280696 · one-time",
+          "price_source": "retailer_product_page",
+          "published_at": null,
+          "checked_date": "2026-11-27",
+          "expires_at": null,
+          "campaign_end_date": "2026-11-30",
+          "shipping": "Digital download via the Korean Mac App Store.",
+          "briefing": [
+            "The Apple South Korea App Store detail for app ID 904280696 shows Things 3 for Mac at KRW 53,900. Cultured Code says its Black Friday week offer is 30% off, already included in the App Store price, through November 30, 2026. Exact cutoff time and checkout were not verified. iPad, iPhone and Vision are different App Store purchases."
+          ],
+          "source": {
+            "url": "https://culturedcode.com/things/blog/",
+            "label": "Cultured Code’s Black Friday announcement"
+          },
+          "disclosure": "Untracked Korean Mac App Store link. App Store checkout was not tested.",
+          "link": {
+            "url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+            "tracked": false,
+            "label": "View the Mac app",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-27T19:06:16+00:00",
+            "url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+            "product_match": true,
+            "evidence": "The Apple South Korea App Store detail for app ID 904280696 shows Things 3 for Mac at KRW 53,900. Cultured Code says its Black Friday week offer is 30% off, already included in the App Store price, through November 30, 2026. Exact cutoff time and checkout were not verified. iPad, iPhone and Vision are different App Store purchases."
+          },
+          "price_review": {
+            "id": "things-3-mac-kr-bf2026",
+            "product": "Things 3 · Mac",
+            "seller_url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+            "recorded_price": 53900,
+            "verified_price": 53900,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "review_completed_at": "2026-11-27T19:06:16+00:00",
+            "evidence": [
+              {
+                "url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+                "observed_at": "2026-11-27T19:06:16+00:00",
+                "result": "The Apple South Korea App Store detail for app ID 904280696 shows Things 3 for Mac at KRW 53,900. Cultured Code says its Black Friday week offer is 30% off, already included in the App Store price, through November 30, 2026. Exact cutoff time and checkout were not verified. iPad, iPhone and Vision are different App Store purchases."
+              },
+              {
+                "url": "https://culturedcode.com/things/blog/",
+                "observed_at": "2026-11-27T19:06:16+00:00",
+                "result": "Developer confirms the 30% Black Friday discount is built into the listed Store price; the exact end hour is not stated."
+              }
+            ],
+            "limitations": [
+              "No dated Korean prior price quote sufficient to publish a strike-through price.",
+              "Mac App Store SKU only; no checkout or cross-region redemption test."
+            ]
+          },
+          "latest_offer_check": {
+            "status": "seller_text_observed",
+            "checked_at": "2026-11-27T19:06:16+00:00",
+            "price": 53900,
+            "currency": "KRW",
+            "source_url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+            "evidence": "The Apple South Korea App Store detail for app ID 904280696 shows Things 3 for Mac at KRW 53,900. Cultured Code says its Black Friday week offer is 30% off, already included in the App Store price, through November 30, 2026. Exact cutoff time and checkout were not verified. iPad, iPhone and Vision are different App Store purchases."
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "digital",
+            "reviewed_at": "2026-11-27T19:06:16+00:00"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [],
+            "status": "activation_unverified",
+            "delivery": "Listed on the Korean Mac App Store. Account-specific eligibility and checkout were not tested.",
+            "activation": "For Mac; other platform versions sold separately.",
+            "payment": "Apple ID storefront and checkout conditions apply.",
+            "tax": "Price shown on storefront; payment not attempted.",
+            "returns": "Apple App Store refund policy applies.",
+            "evidence_url": "https://apps.apple.com/kr/app/things-3/id904280696?mt=12",
+            "checked_at": "2026-11-27"
+          },
+          "image": {
+            "path": "/assets/deals/things-3-mac-press.jpg",
+            "kind": "official_product_ui",
+            "alt": "Things 3 for Mac showing the Today view and an example project",
+            "credit": "Cultured Code",
+            "credit_url": "https://culturedcode.com/press/",
+            "source_page": "https://culturedcode.com/press/",
+            "source_url": "https://static.culturedcode.com/things/presskit/things-presskit-20251120.zip",
+            "rights_basis": "Vendor-provided press kit screenshot for editorial coverage of this exact Mac product; no redistribution of the kit or endorsement stated.",
+            "processing": "Unmodified official press JPEG, file things-mac-1.jpg.",
+            "sha256": "45fee330caf3a37ff94823186e887df0effb5156986cb96fd7dbda894b98d10b",
+            "checked_at": "2026-11-27T19:06:16+00:00"
+          }
+        }
+      ]
     }
   },
   "picks": [
@@ -7419,10 +7645,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 39,
+    "feed": 40,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 22,
+    "verified_product_links": 23,
     "held_product_links": 17,
     "historical_tracked_links": 14
   }

@@ -3125,5 +3125,43 @@
       "purpose": "Minicaméra 4K pour filmer en gardant les mains libres. L’Action Pod permet de cadrer et de recharger.",
       "conditions": "B&H États-Unis : 299,99 $, en stock. Livraison gratuite pour l’adresse d’exemple ; envoi en Corée non vérifié."
     }
+  },
+  "things-3-mac-kr-bf2026": {
+    "en": {
+      "product": "Things 3 for Mac",
+      "summary": "Plan your day and break projects into smaller tasks. This is the Mac app, not the iPhone or iPad version.",
+      "purpose": "Plan your day and break projects into smaller tasks. This is the Mac app, not the iPhone or iPad version.",
+      "conditions": "The developer’s Black Friday discount is already applied in the Korean Mac App Store. Runs through Nov 30; exact cutoff not posted. One-time purchase; other versions cost extra."
+    },
+    "ko": {
+      "product": "Things 3 맥용",
+      "summary": "오늘 할 일을 모아 보고 큰 작업을 작은 단계로 나누는 맥용 할 일 앱이에요.",
+      "purpose": "오늘 할 일을 모아 보고 큰 작업을 작은 단계로 나누는 맥용 할 일 앱이에요.",
+      "conditions": "한국 Mac App Store 가격에 블랙프라이데이 할인이 이미 반영돼 있어요. 11월 30일까지이며 정확한 종료 시각은 미공개예요. 한 번 결제하는 맥용 앱이고, 아이폰·아이패드판은 별도입니다."
+    },
+    "zh": {
+      "product": "Things 3 Mac 版",
+      "summary": "安排每天的待办事项，并把大型项目拆成小任务。这是 Mac 版。",
+      "purpose": "安排每天的待办事项，并把大型项目拆成小任务。这是 Mac 版。",
+      "conditions": "韩国 Mac App Store 标价已包含黑五优惠，至 11 月 30 日，未公布具体结束时间。买断 Mac 版，其他版本另购。"
+    },
+    "ja": {
+      "product": "Things 3 Mac 版",
+      "summary": "今日のタスクを一覧にし、大きなプロジェクトを小さな手順に分けるMacアプリ。",
+      "purpose": "今日のタスクを一覧にし、大きなプロジェクトを小さな手順に分けるMacアプリ。",
+      "conditions": "韓国Mac App Storeの表示価格に割引適用済み。11月30日までで終了時刻は未公表。買い切りで他デバイス版は別売り。"
+    },
+    "es": {
+      "product": "Things 3 para Mac",
+      "summary": "Organiza tus tareas diarias y divide tus proyectos en pasos. Es la versión para Mac.",
+      "purpose": "Organiza tus tareas diarias y divide tus proyectos en pasos. Es la versión para Mac.",
+      "conditions": "La Mac App Store coreana ya aplica el descuento. Hasta el 30 de noviembre, sin hora de cierre publicada. Pago único; otras versiones se compran aparte."
+    },
+    "fr": {
+      "product": "Things 3 pour Mac",
+      "summary": "Planifiez vos tâches quotidiennes et découpez vos projets en petites étapes. Il s’agit de la version Mac.",
+      "purpose": "Planifiez vos tâches quotidiennes et découpez vos projets en petites étapes. Il s’agit de la version Mac.",
+      "conditions": "La réduction est déjà appliquée sur le Mac App Store coréen. Jusqu’au 30 novembre, sans heure de fin annoncée. Achat unique ; autres versions vendues séparément."
+    }
   }
 }
