@@ -3055,37 +3055,43 @@
       "product": "Logitech G304 LIGHTSPEED · black with pouch",
       "summary": "Wireless gaming mouse with a USB receiver. This listing includes a pouch.",
       "purpose": "Wireless gaming mouse with a USB receiver. This listing includes a pouch.",
-      "conditions": "Korea: ₩34,900 before coupon; ₩32,500 only with the Logitech coupon. Free standard brand shipping above the threshold; check your address."
+      "conditions": "Korea: ₩34,900 before coupon; ₩32,500 only with the Logitech coupon. Free standard brand shipping above the threshold; check your address.",
+      "shipping_summary": "Korean brand shipping · free from ₩30,000"
     },
     "ko": {
       "product": "로지텍 G304 LIGHTSPEED 블랙 · 파우치 포함",
       "summary": "USB 수신기로 연결하는 무선 게이밍 마우스예요. 이 구성에는 마우스 파우치가 들어 있어요.",
       "purpose": "USB 수신기로 연결하는 무선 게이밍 마우스예요. 이 구성에는 마우스 파우치가 들어 있어요.",
-      "conditions": "한국 판매가 34,900원. 로지텍 쿠폰을 적용하면 32,500원. 브랜드 배송은 3만 원 이상 무료이며 주소별 조건은 결제 전에 확인하세요."
+      "conditions": "한국 판매가 34,900원. 로지텍 쿠폰을 적용하면 32,500원. 브랜드 배송은 3만 원 이상 무료이며 주소별 조건은 결제 전에 확인하세요.",
+      "shipping_summary": "브랜드 배송 · 3만원 이상 무료"
     },
     "zh": {
       "product": "罗技 G304 LIGHTSPEED 黑色（附收纳袋）",
       "summary": "通过 USB 接收器连接的无线游戏鼠标，本款附鼠标收纳袋。",
       "purpose": "通过 USB 接收器连接的无线游戏鼠标，本款附鼠标收纳袋。",
-      "conditions": "韩国标价 ₩34,900，使用罗技券才是 ₩32,500。达到门槛免标准运费，具体以地址为准。"
+      "conditions": "韩国标价 ₩34,900，使用罗技券才是 ₩32,500。达到门槛免标准运费，具体以地址为准。",
+      "shipping_summary": "韩国品牌配送 · 满 ₩30,000 免运费"
     },
     "ja": {
       "product": "ロジクール G304 LIGHTSPEED ブラック（ポーチ付）",
       "summary": "USBレシーバーで接続するワイヤレスゲーミングマウス。ポーチが付きます。",
       "purpose": "USBレシーバーで接続するワイヤレスゲーミングマウス。ポーチが付きます。",
-      "conditions": "韓国の表示価格は₩34,900。対象クーポン適用時のみ₩32,500。送料は配送先をご確認ください。"
+      "conditions": "韓国の表示価格は₩34,900。対象クーポン適用時のみ₩32,500。送料は配送先をご確認ください。",
+      "shipping_summary": "韓国内のブランド配送・₩30,000以上で送料無料"
     },
     "es": {
       "product": "Logitech G304 LIGHTSPEED negro con funda",
       "summary": "Ratón inalámbrico para juegos con receptor USB; incluye una funda.",
       "purpose": "Ratón inalámbrico para juegos con receptor USB; incluye una funda.",
-      "conditions": "Corea: ₩34.900 sin cupón; ₩32.500 solo con el cupón Logitech. Comprueba el envío según la dirección."
+      "conditions": "Corea: ₩34.900 sin cupón; ₩32.500 solo con el cupón Logitech. Comprueba el envío según la dirección.",
+      "shipping_summary": "Envío de la marca en Corea · gratis desde ₩30.000"
     },
     "fr": {
       "product": "Logitech G304 LIGHTSPEED noir avec pochette",
       "summary": "Souris de jeu sans fil avec récepteur USB et pochette incluse.",
       "purpose": "Souris de jeu sans fil avec récepteur USB et pochette incluse.",
-      "conditions": "Corée : ₩34 900 sans coupon, ₩32 500 avec le coupon Logitech. Vérifiez les frais selon l’adresse."
+      "conditions": "Corée : ₩34 900 sans coupon, ₩32 500 avec le coupon Logitech. Vérifiez les frais selon l’adresse.",
+      "shipping_summary": "Livraison de la marque en Corée · offerte dès 30 000 ₩"
     }
   },
   "insta360-go-3s-us-128gb-midnight-bh": {
@@ -3093,37 +3099,43 @@
       "product": "Insta360 GO 3S · 128GB Midnight Black kit",
       "summary": "A tiny 4K camera for hands-free clips, with an Action Pod for framing and charging.",
       "purpose": "A tiny 4K camera for hands-free clips, with an Action Pod for framing and charging.",
-      "conditions": "US: $299.99, shown in stock at B&H. Free delivery for the sample address only; check your ZIP. Korean delivery not verified."
+      "conditions": "US: $299.99, shown in stock at B&H. Free delivery for the sample address only; check your ZIP. Korean delivery not verified.",
+      "shipping_summary": "Free shipping to the sample US address · Korean delivery unverified"
     },
     "ko": {
       "product": "인스타360 GO 3S 128GB 미드나이트 블랙 기본 세트",
       "summary": "옷이나 모자에 달아 손을 쓰지 않고 4K 영상을 찍는 소형 카메라예요. 액션팟으로 화면을 보고 충전할 수 있어요.",
       "purpose": "옷이나 모자에 달아 손을 쓰지 않고 4K 영상을 찍는 소형 카메라예요. 액션팟으로 화면을 보고 충전할 수 있어요.",
-      "conditions": "미국 B&H 판매가 $299.99. 재고 표시와 미국 예시 주소의 무료 배송을 확인했어요. 한국 배송은 미확인입니다."
+      "conditions": "미국 B&H 판매가 $299.99. 재고 표시와 미국 예시 주소의 무료 배송을 확인했어요. 한국 배송은 미확인입니다.",
+      "shipping_summary": "미국 예시 주소 무료 배송 · 한국 배송 미확인"
     },
     "zh": {
       "product": "Insta360 GO 3S 128GB 午夜黑标准套装",
       "summary": "小型 4K 相机可解放双手拍摄，Action Pod 用于取景和充电。",
       "purpose": "小型 4K 相机可解放双手拍摄，Action Pod 用于取景和充电。",
-      "conditions": "美国 B&H 标价 $299.99，页面显示有货。示例地址免邮，未确认韩国配送。"
+      "conditions": "美国 B&H 标价 $299.99，页面显示有货。示例地址免邮，未确认韩国配送。",
+      "shipping_summary": "美国示例地址免运费 · 未确认韩国配送"
     },
     "ja": {
       "product": "Insta360 GO 3S 128GB ミッドナイトブラック 標準キット",
       "summary": "ハンズフリーで撮影できる小型4Kカメラ。Action Podで画面確認と充電ができます。",
       "purpose": "ハンズフリーで撮影できる小型4Kカメラ。Action Podで画面確認と充電ができます。",
-      "conditions": "米B&Hで$299.99、在庫表示あり。送料無料は表示例。韓国への配送は未確認です。"
+      "conditions": "米B&Hで$299.99、在庫表示あり。送料無料は表示例。韓国への配送は未確認です。",
+      "shipping_summary": "米国の表示例では送料無料・韓国配送は未確認"
     },
     "es": {
       "product": "Insta360 GO 3S 128 GB negro medianoche, kit estándar",
       "summary": "Minicámara 4K para grabar con las manos libres. El Action Pod permite encuadrar y cargar.",
       "purpose": "Minicámara 4K para grabar con las manos libres. El Action Pod permite encuadrar y cargar.",
-      "conditions": "B&H EE. UU.: $299,99, en stock. Envío gratuito para la dirección de ejemplo; no se verificó el envío a Corea."
+      "conditions": "B&H EE. UU.: $299,99, en stock. Envío gratuito para la dirección de ejemplo; no se verificó el envío a Corea.",
+      "shipping_summary": "Envío gratis al domicilio de ejemplo en EE. UU. · envío a Corea sin verificar"
     },
     "fr": {
       "product": "Insta360 GO 3S 128 Go noir minuit, kit standard",
       "summary": "Minicaméra 4K pour filmer en gardant les mains libres. L’Action Pod permet de cadrer et de recharger.",
       "purpose": "Minicaméra 4K pour filmer en gardant les mains libres. L’Action Pod permet de cadrer et de recharger.",
-      "conditions": "B&H États-Unis : 299,99 $, en stock. Livraison gratuite pour l’adresse d’exemple ; envoi en Corée non vérifié."
+      "conditions": "B&H États-Unis : 299,99 $, en stock. Livraison gratuite pour l’adresse d’exemple ; envoi en Corée non vérifié.",
+      "shipping_summary": "Livraison offerte à l’adresse américaine de l’exemple · envoi en Corée non vérifié"
     }
   },
   "things-3-mac-kr-bf2026": {

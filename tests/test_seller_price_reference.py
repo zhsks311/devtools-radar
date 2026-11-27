@@ -74,11 +74,12 @@ class SellerPriceReferenceTest(unittest.TestCase):
         js = 'function expireObservedPrices() {'+fn+'''
 const assert = require('node:assert/strict');
 const crossedOutRow = {hidden:false};
-const node = {dataset:{observedAt:'2026-11-23T09:30:00Z',staleLabel:'last checked',priceState:'observed'},closest(){return {querySelectorAll(q){assert.equal(q,'.current-savings');return [crossedOutRow]}}}};
+const shippingRow = {hidden:false};
+const node = {dataset:{observedAt:'2026-11-23T09:30:00Z',staleLabel:'last checked',priceState:'observed'},closest(){return {querySelectorAll(q){assert.equal(q,'.current-savings, .current-shipping-summary');return [crossedOutRow,shippingRow]}}}};
 globalThis.document = {querySelectorAll(){return [node]}};
 Date.now = () => Date.parse('2026-11-24T09:30:00Z');
-expireObservedPrices(); assert.equal(crossedOutRow.hidden,false);
+expireObservedPrices(); assert.equal(crossedOutRow.hidden,false); assert.equal(shippingRow.hidden,false);
 Date.now = () => Date.parse('2026-11-24T09:30:01Z');
-expireObservedPrices(); assert.equal(crossedOutRow.hidden,true); assert.equal(node.textContent,'last checked');
+expireObservedPrices(); assert.equal(crossedOutRow.hidden,true); assert.equal(shippingRow.hidden,true); assert.equal(node.textContent,'last checked');
 '''
         subprocess.run(['node','-e',js],check=True,capture_output=True)

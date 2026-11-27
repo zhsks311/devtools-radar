@@ -44,7 +44,7 @@ class PriceCurrentness(unittest.TestCase):
   self.assertIn('USD 29.99',visible_price_context(self.d,'en'))
  def test_expiry_script_removes_savings_and_legacy_gate(self):
   import site_i18n,build
-  self.assertIn("querySelectorAll('.current-savings')",site_i18n.JS)
+  self.assertIn("querySelectorAll('.current-savings, .current-shipping-summary')",site_i18n.JS)
   self.d['price_review']['review_completed_at']=(self.now-timedelta(hours=25)).isoformat()
   self.assertNotIn('<s>',build._deal_card(self.d))
  def test_browser_expiry_executes(self):

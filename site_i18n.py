@@ -244,7 +244,7 @@ function expireObservedPrices() {
       node.dataset.priceState = 'historical';
       node.textContent = node.dataset.staleLabel;
       const card = node.closest('article');
-      if (card) for (const claim of card.querySelectorAll('.current-savings')) claim.hidden = true;
+      if (card) for (const claim of card.querySelectorAll('.current-savings, .current-shipping-summary')) claim.hidden = true;
     }
   }
 }
@@ -409,7 +409,9 @@ def catalogue(lang,feeds,translations,discoveries=False,*,now=None):
   setup=(terms.get('setup_urls') or {}).get(lang)
   if setup and safe(setup): evidence+=f'<p><a class="service-terms-source" href="{e(safe(setup))}" rel="noopener nofollow">{t[30]} · DualSense</a></p>'
   linked_title=f'<a class="product-title" href="{e(destination)}" rel="{link_rel}"{description}>{e(title)}</a>' if linked else e(title)
-  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}"{deadline_attrs}>{disclosure}{image}<div class="{category_class}">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}{visible_seller_price_reference(d,lang,now=now)}<div class="price">{e(price)}{billing_label(d,lang)}</div>{visible_price_context(d,lang,now=now)}{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
+  shipping_summary=loc.get('shipping_summary')
+  shipping_html=f'<p class="meta current-shipping-summary">{e(shipping_summary)}</p>' if isinstance(shipping_summary,str) and shipping_summary.strip() and current_price_state(d,now=now)=='observed' else ''
+  (cards if publishable_link(d) else held_cards).append(f'''<article class="card" id="product-{e(d['id'])}" data-id="{e(d['id'])}" data-search="{e(search_text)}" data-market="{market}" data-countries="{e(' '.join(targets))}" data-delivery-confirmed="{e(' '.join(countries))}" data-category="{e(cat)}"{deadline_attrs}>{disclosure}{image}<div class="{category_class}">{e(t[CATS.get(cat,29)])} · {e(d.get('store',''))}</div><h2>{linked_title}</h2><p class="product-summary">{e(summary)}</p>{availability_note}{visible_seller_price_reference(d,lang,now=now)}<div class="price">{e(price)}{billing_label(d,lang)}</div>{shipping_html}{visible_price_context(d,lang,now=now)}{cta}<details class="purchase-details"><summary>{t[12]}</summary><p>{e(conditions)}</p>{eligibility}{price_context}{evidence}</details><details class="price-evidence"><summary>{e(PRICE_DETAILS[lang])}</summary>{price_note}{src}</details><p class="meta"><a class="product-permalink" href="{PATHS[lang]}#product-{e(d['id'])}">{e(PRODUCT_PERMALINK[lang])}</a></p></article>''')
  options=lambda values:''.join(f'<option value="{key}">{e(label)}</option>' for key,label in values)
  storefronts=sorted({storefront_country(d) for d in feeds}-{"unknown"})
  destinations=list(COUNTRY_ORDER)+sorted({c for d in feeds for c in target_countries(d)}-set(COUNTRY_ORDER))
