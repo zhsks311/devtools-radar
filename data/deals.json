@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T23:37:11+00:00",
+  "generated_at": "2026-11-27T18:56:40+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -7,6 +7,159 @@
   },
   "disclosure": "제휴 여부는 각 상품 기록을 확인하세요. 복구한 한국 상품 3건은 제휴 추적 없는 판매자 직접 링크이며, 보류 기록은 현재 판매 조건을 검증하지 못했습니다.",
   "feed": [
+    {
+      "id": "logitech-g304-black-pouch-kream-kr",
+      "region": "kr",
+      "target": "ko",
+      "category": "keyboard-mouse",
+      "category_label": "Keyboards & mice",
+      "title_raw": "Logitech G304 LIGHTSPEED · Black + mouse pouch",
+      "product": "Logitech G304 LIGHTSPEED · Black + mouse pouch",
+      "store": "KREAM",
+      "storefront_country": "KR",
+      "price": 34900,
+      "currency": "KRW",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-27",
+      "published_at": null,
+      "expires_at": null,
+      "price_source": "retailer_product_page",
+      "price_variant": "G304 LIGHTSPEED · Black · mouse pouch included · KREAM #558472",
+      "shipping": "Korean brand shipping: ₩3,000, free at ₩30,000; both listed prices qualify before any location-based adjustment.",
+      "briefing": [
+        "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+      ],
+      "source": {
+        "url": "https://kream.co.kr/products/558472",
+        "label": "KREAM exact product detail"
+      },
+      "disclosure": "Untracked seller link. Seller comparison is not historical price or MSRP.",
+      "link": {
+        "url": "https://kream.co.kr/products/558472",
+        "tracked": false,
+        "label": "View exact product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-27T18:56:40+00:00",
+        "url": "https://kream.co.kr/products/558472",
+        "product_match": true,
+        "evidence": "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+      },
+      "price_review": {
+        "id": "logitech-g304-black-pouch-kream-kr",
+        "product": "Logitech G304 LIGHTSPEED · Black + mouse pouch",
+        "seller_url": "https://kream.co.kr/products/558472",
+        "recorded_price": 34900,
+        "verified_price": 34900,
+        "currency": "KRW",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-27T18:56:40+00:00",
+        "evidence": [
+          {
+            "url": "https://kream.co.kr/products/558472",
+            "observed_at": "2026-11-27T18:56:40+00:00",
+            "result": "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+          }
+        ],
+        "limitations": [
+          "Seller-shown comparison, not independent price history. Final checkout and address-specific delivery not tested."
+        ],
+        "seller_reference": {
+          "kind": "seller_displayed_compare",
+          "product_id": "logitech-g304-black-pouch-kream-kr",
+          "variant": "G304 LIGHTSPEED · Black · mouse pouch included · KREAM #558472",
+          "currency": "KRW",
+          "source_url": "https://kream.co.kr/products/558472",
+          "same_terms": true,
+          "unconditional": true,
+          "current_price": 34900,
+          "reference_price": 59900,
+          "current_checked_at": "2026-11-27T18:56:40+00:00",
+          "reference_observed_at": "2026-11-27T18:56:40+00:00",
+          "evidence": "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+        }
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "checked_at": "2026-11-27T18:56:40+00:00",
+        "price": 34900,
+        "currency": "KRW",
+        "source_url": "https://kream.co.kr/products/558472",
+        "evidence": "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+      },
+      "country_targeting": {
+        "countries": [
+          "KR"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-27T18:56:40+00:00"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "KR"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "Korean brand shipping: ₩3,000, free at ₩30,000; both listed prices qualify before any location-based adjustment.",
+        "activation": "Physical product; no country-specific activation verified.",
+        "payment": "Checkout not tested.",
+        "tax": "Final total not tested.",
+        "returns": "Check the exact seller return terms.",
+        "evidence_url": "https://kream.co.kr/products/558472",
+        "checked_at": "2026-11-27"
+      },
+      "image": {
+        "path": "/assets/deals/logitech-g304-lightspeed-black.webp",
+        "alt": "Black Logitech G305 wireless mouse, the regional name of the G304",
+        "kind": "licensed_product_photo",
+        "credit": "Julien Sinan / Wikimedia Commons",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Une_souris_Logitech_G305..jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_basis": "Photographer’s own work; CC BY-SA 4.0. Derivative retains this licence, source and author credited, with no affiliation.",
+        "processing": "Proportionate resizing and WebP encoding. EXIF removed. No crop.",
+        "source_sha1": "30b502fa4258870e43363a7b4339ee56bcbe2bcc",
+        "source_sha256": "d59e20ac3c9cc445dc4e122c14a3129e025741688ee376b8f0ba88258637f15b",
+        "sha256": "6f9167bac2ecd934fb0a1a614c464aff1d2276059267222a2e3f2760e6e84d2b",
+        "width": 900,
+        "height": 675,
+        "checked_at": "2026-11-24T09:50:55Z",
+        "notes": {
+          "en": "Black G305 pictured (regional equivalent); pouch and Korean packaging not shown.",
+          "ko": "사진은 같은 마우스의 해외명인 블랙 G305입니다. 파우치와 한국판 포장은 사진에 없습니다.",
+          "zh": "图中为该鼠标的地区型号黑色 G305，未展示收纳袋及韩国版包装。",
+          "ja": "写真は地域名が異なる同型のブラック G305。ポーチと韓国版パッケージは写っていません。",
+          "es": "La foto muestra el G305 negro, su equivalente regional; no incluye la funda ni el embalaje coreano.",
+          "fr": "La photo montre la G305 noire, variante régionale du même modèle, sans pochette ni emballage coréen."
+        }
+      },
+      "price_options": [
+        {
+          "kind": "coupon",
+          "product_id": "logitech-g304-black-pouch-kream-kr",
+          "variant": "G304 LIGHTSPEED · Black · mouse pouch included · KREAM #558472",
+          "currency": "KRW",
+          "price": 32500,
+          "source_url": "https://kream.co.kr/products/558472",
+          "checked_at": "2026-11-27T18:56:40+00:00",
+          "evidence": "KREAM lists Logitech 7%, actual savings ₩2,400. No claim of coupon eligibility or stacking.",
+          "conditions": {
+            "en": "Requires the displayed Logitech 7% coupon.",
+            "ko": "표시된 로지텍 7% 쿠폰을 적용해야 해요.",
+            "zh": "须使用页面显示的罗技 7% 优惠券。",
+            "ja": "表示されたロジクールの7%クーポンが必要です。",
+            "es": "Requiere el cupón Logitech del 7 % mostrado.",
+            "fr": "Nécessite le coupon Logitech de 7 % affiché."
+          }
+        }
+      ]
+    },
     {
       "id": "logitech-g304-lightspeed-black-kr-gfesta",
       "region": "kr",
@@ -5354,6 +5507,159 @@
       "audience": "하루 8시간 타이핑하는 개발자, 손목·소음이 고민인 분",
       "items": [
         {
+          "id": "logitech-g304-black-pouch-kream-kr",
+          "region": "kr",
+          "target": "ko",
+          "category": "keyboard-mouse",
+          "category_label": "Keyboards & mice",
+          "title_raw": "Logitech G304 LIGHTSPEED · Black + mouse pouch",
+          "product": "Logitech G304 LIGHTSPEED · Black + mouse pouch",
+          "store": "KREAM",
+          "storefront_country": "KR",
+          "price": 34900,
+          "currency": "KRW",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-27",
+          "published_at": null,
+          "expires_at": null,
+          "price_source": "retailer_product_page",
+          "price_variant": "G304 LIGHTSPEED · Black · mouse pouch included · KREAM #558472",
+          "shipping": "Korean brand shipping: ₩3,000, free at ₩30,000; both listed prices qualify before any location-based adjustment.",
+          "briefing": [
+            "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+          ],
+          "source": {
+            "url": "https://kream.co.kr/products/558472",
+            "label": "KREAM exact product detail"
+          },
+          "disclosure": "Untracked seller link. Seller comparison is not historical price or MSRP.",
+          "link": {
+            "url": "https://kream.co.kr/products/558472",
+            "tracked": false,
+            "label": "View exact product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-27T18:56:40+00:00",
+            "url": "https://kream.co.kr/products/558472",
+            "product_match": true,
+            "evidence": "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+          },
+          "price_review": {
+            "id": "logitech-g304-black-pouch-kream-kr",
+            "product": "Logitech G304 LIGHTSPEED · Black + mouse pouch",
+            "seller_url": "https://kream.co.kr/products/558472",
+            "recorded_price": 34900,
+            "verified_price": 34900,
+            "currency": "KRW",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "review_completed_at": "2026-11-27T18:56:40+00:00",
+            "evidence": [
+              {
+                "url": "https://kream.co.kr/products/558472",
+                "observed_at": "2026-11-27T18:56:40+00:00",
+                "result": "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+              }
+            ],
+            "limitations": [
+              "Seller-shown comparison, not independent price history. Final checkout and address-specific delivery not tested."
+            ],
+            "seller_reference": {
+              "kind": "seller_displayed_compare",
+              "product_id": "logitech-g304-black-pouch-kream-kr",
+              "variant": "G304 LIGHTSPEED · Black · mouse pouch included · KREAM #558472",
+              "currency": "KRW",
+              "source_url": "https://kream.co.kr/products/558472",
+              "same_terms": true,
+              "unconditional": true,
+              "current_price": 34900,
+              "reference_price": 59900,
+              "current_checked_at": "2026-11-27T18:56:40+00:00",
+              "reference_observed_at": "2026-11-27T18:56:40+00:00",
+              "evidence": "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+            }
+          },
+          "latest_offer_check": {
+            "status": "seller_text_observed",
+            "checked_at": "2026-11-27T18:56:40+00:00",
+            "price": 34900,
+            "currency": "KRW",
+            "source_url": "https://kream.co.kr/products/558472",
+            "evidence": "KREAM #558472 displays Black G304 with a mouse pouch, KRW 34,900 base and KRW 59,900 seller comparison. The separate Logitech 7% coupon saves KRW 2,400, for KRW 32,500 if available and applied. Buy control is present; inventory and checkout are not independently confirmed."
+          },
+          "country_targeting": {
+            "countries": [
+              "KR"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "physical",
+            "reviewed_at": "2026-11-27T18:56:40+00:00"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "KR"
+            ],
+            "status": "retailer_delivery_statement",
+            "delivery": "Korean brand shipping: ₩3,000, free at ₩30,000; both listed prices qualify before any location-based adjustment.",
+            "activation": "Physical product; no country-specific activation verified.",
+            "payment": "Checkout not tested.",
+            "tax": "Final total not tested.",
+            "returns": "Check the exact seller return terms.",
+            "evidence_url": "https://kream.co.kr/products/558472",
+            "checked_at": "2026-11-27"
+          },
+          "image": {
+            "path": "/assets/deals/logitech-g304-lightspeed-black.webp",
+            "alt": "Black Logitech G305 wireless mouse, the regional name of the G304",
+            "kind": "licensed_product_photo",
+            "credit": "Julien Sinan / Wikimedia Commons",
+            "credit_url": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+            "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Une_souris_Logitech_G305..jpg",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rights_basis": "Photographer’s own work; CC BY-SA 4.0. Derivative retains this licence, source and author credited, with no affiliation.",
+            "processing": "Proportionate resizing and WebP encoding. EXIF removed. No crop.",
+            "source_sha1": "30b502fa4258870e43363a7b4339ee56bcbe2bcc",
+            "source_sha256": "d59e20ac3c9cc445dc4e122c14a3129e025741688ee376b8f0ba88258637f15b",
+            "sha256": "6f9167bac2ecd934fb0a1a614c464aff1d2276059267222a2e3f2760e6e84d2b",
+            "width": 900,
+            "height": 675,
+            "checked_at": "2026-11-24T09:50:55Z",
+            "notes": {
+              "en": "Black G305 pictured (regional equivalent); pouch and Korean packaging not shown.",
+              "ko": "사진은 같은 마우스의 해외명인 블랙 G305입니다. 파우치와 한국판 포장은 사진에 없습니다.",
+              "zh": "图中为该鼠标的地区型号黑色 G305，未展示收纳袋及韩国版包装。",
+              "ja": "写真は地域名が異なる同型のブラック G305。ポーチと韓国版パッケージは写っていません。",
+              "es": "La foto muestra el G305 negro, su equivalente regional; no incluye la funda ni el embalaje coreano.",
+              "fr": "La photo montre la G305 noire, variante régionale du même modèle, sans pochette ni emballage coréen."
+            }
+          },
+          "price_options": [
+            {
+              "kind": "coupon",
+              "product_id": "logitech-g304-black-pouch-kream-kr",
+              "variant": "G304 LIGHTSPEED · Black · mouse pouch included · KREAM #558472",
+              "currency": "KRW",
+              "price": 32500,
+              "source_url": "https://kream.co.kr/products/558472",
+              "checked_at": "2026-11-27T18:56:40+00:00",
+              "evidence": "KREAM lists Logitech 7%, actual savings ₩2,400. No claim of coupon eligibility or stacking.",
+              "conditions": {
+                "en": "Requires the displayed Logitech 7% coupon.",
+                "ko": "표시된 로지텍 7% 쿠폰을 적용해야 해요.",
+                "zh": "须使用页面显示的罗技 7% 优惠券。",
+                "ja": "表示されたロジクールの7%クーポンが必要です。",
+                "es": "Requiere el cupón Logitech del 7 % mostrado.",
+                "fr": "Nécessite le coupon Logitech de 7 % affiché."
+              }
+            }
+          ]
+        },
+        {
           "id": "logitech-g304-lightspeed-black-kr-gfesta",
           "region": "kr",
           "target": "ko",
@@ -7113,10 +7419,10 @@
     "label": "쿠팡 골드박스 — 매일 오전 7시 특가"
   },
   "stats": {
-    "feed": 38,
+    "feed": 39,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 21,
+    "verified_product_links": 22,
     "held_product_links": 17,
     "historical_tracked_links": 14
   }

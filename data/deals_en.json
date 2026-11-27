@@ -1,11 +1,140 @@
 {
-  "generated_at": "2026-11-21T00:20:29+00:00",
+  "generated_at": "2026-11-27T18:56:40+00:00",
   "site": {
     "name": "DevTeardown Deals",
     "url": "https://devteardown.com/deals/",
     "lang": "en"
   },
   "feed": [
+    {
+      "id": "insta360-go-3s-us-128gb-midnight-bh",
+      "region": "global",
+      "target": "en",
+      "category": "hardware",
+      "category_label": "Hardware",
+      "title_raw": "Insta360 GO 3S · Midnight Black 128GB Standard Bundle",
+      "product": "Insta360 GO 3S · Midnight Black 128GB Standard Bundle",
+      "store": "B&H",
+      "storefront_country": "US",
+      "price": 299.99,
+      "currency": "USD",
+      "original_price": null,
+      "discount_pct": null,
+      "checked_date": "2026-11-27",
+      "published_at": null,
+      "expires_at": null,
+      "price_source": "retailer_product_page",
+      "price_variant": "CINSAATA_GO3S13 · 128GB · Midnight Black · Standard Bundle",
+      "shipping": "US seller showed free delivery for its sample US destination. Address-specific charges and delivery outside the US were not verified.",
+      "briefing": [
+        "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+      ],
+      "source": {
+        "url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+        "label": "B&H exact product detail"
+      },
+      "disclosure": "Untracked seller link. Seller comparison is not historical price or MSRP.",
+      "link": {
+        "url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+        "tracked": false,
+        "label": "View exact product",
+        "label_kind": "retailer"
+      },
+      "link_review": {
+        "status": "verified_detail",
+        "checked_at": "2026-11-27T18:56:40+00:00",
+        "url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+        "product_match": true,
+        "evidence": "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+      },
+      "price_review": {
+        "id": "insta360-go-3s-us-128gb-midnight-bh",
+        "product": "Insta360 GO 3S · Midnight Black 128GB Standard Bundle",
+        "seller_url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+        "recorded_price": 299.99,
+        "verified_price": 299.99,
+        "currency": "USD",
+        "price_status": "seller_page_display_confirmed",
+        "deal_status": "comparison_unverified",
+        "review_completed_at": "2026-11-27T18:56:40+00:00",
+        "evidence": [
+          {
+            "url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+            "observed_at": "2026-11-27T18:56:40+00:00",
+            "result": "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+          }
+        ],
+        "limitations": [
+          "Seller-shown comparison, not independent price history. Final checkout and address-specific delivery not tested."
+        ],
+        "seller_reference": {
+          "kind": "seller_displayed_compare",
+          "product_id": "insta360-go-3s-us-128gb-midnight-bh",
+          "variant": "CINSAATA_GO3S13 · 128GB · Midnight Black · Standard Bundle",
+          "currency": "USD",
+          "source_url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+          "same_terms": true,
+          "unconditional": true,
+          "current_price": 299.99,
+          "reference_price": 379.99,
+          "current_checked_at": "2026-11-27T18:56:40+00:00",
+          "reference_observed_at": "2026-11-27T18:56:40+00:00",
+          "evidence": "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+        }
+      },
+      "latest_offer_check": {
+        "status": "seller_text_observed",
+        "checked_at": "2026-11-27T18:56:40+00:00",
+        "price": 299.99,
+        "currency": "USD",
+        "source_url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+        "evidence": "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+      },
+      "country_targeting": {
+        "countries": [
+          "US"
+        ],
+        "basis": "reviewed_seller_audience",
+        "fulfilment": "physical",
+        "reviewed_at": "2026-11-27T18:56:40+00:00"
+      },
+      "purchase_eligibility": {
+        "countries_confirmed": [
+          "US"
+        ],
+        "status": "retailer_delivery_statement",
+        "delivery": "US seller showed free delivery for its sample US destination. Address-specific charges and delivery outside the US were not verified.",
+        "activation": "Physical product; no country-specific activation verified.",
+        "payment": "Checkout not tested.",
+        "tax": "Final total not tested.",
+        "returns": "Check the exact seller return terms.",
+        "evidence_url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+        "checked_at": "2026-11-27"
+      },
+      "image": {
+        "path": "/assets/deals/insta360-go-3s-black.webp",
+        "alt": "Black Insta360 GO 3S in its Action Pod with the display flipped up; not a photo of the full bundle",
+        "credit": "JettM9104",
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Insta360_GO_3S.jpg",
+        "kind": "licensed_product_photo",
+        "rights_basis": "JettM9104 own work on Wikimedia Commons, CC BY-SA 4.0; WebP derivative released under the same license. The photograph illustrates the camera and Action Pod, not capacity or complete bundle contents.",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Insta360_GO_3S.jpg",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Insta360_GO_3S.jpg",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "checked_at": "2026-11-23T09:09:23+00:00",
+        "sha256": "5ee04bf30c3e443f7b73718389e0954dcf3e3bbc9d7689c0d70e8800b7161874",
+        "processing": "Proportionally resized to 920 × 690 and WebP compressed. Metadata removed. No crop or content changes.",
+        "license": "CC BY-SA 4.0",
+        "notes": {
+          "en": "Camera and Action Pod only; not every bundle accessory",
+          "ko": "카메라와 액션팟만 표시 · 전체 구성품 사진 아님",
+          "zh": "仅展示相机和 Action Pod，并非完整套装",
+          "ja": "カメラと Action Pod のみ、付属品の全体ではありません",
+          "es": "Solo cámara y Action Pod; no todos los accesorios",
+          "fr": "Caméra et Action Pod uniquement, pas tous les accessoires"
+        }
+      }
+    },
     {
       "id": "paste-annual-first-year-bf2026",
       "region": "global",
@@ -8542,12 +8671,141 @@
           "service_terms": {
             "url": "https://store-usa.arduino.cc/pages/black-friday"
           }
+        },
+        {
+          "id": "insta360-go-3s-us-128gb-midnight-bh",
+          "region": "global",
+          "target": "en",
+          "category": "hardware",
+          "category_label": "Hardware",
+          "title_raw": "Insta360 GO 3S · Midnight Black 128GB Standard Bundle",
+          "product": "Insta360 GO 3S · Midnight Black 128GB Standard Bundle",
+          "store": "B&H",
+          "storefront_country": "US",
+          "price": 299.99,
+          "currency": "USD",
+          "original_price": null,
+          "discount_pct": null,
+          "checked_date": "2026-11-27",
+          "published_at": null,
+          "expires_at": null,
+          "price_source": "retailer_product_page",
+          "price_variant": "CINSAATA_GO3S13 · 128GB · Midnight Black · Standard Bundle",
+          "shipping": "US seller showed free delivery for its sample US destination. Address-specific charges and delivery outside the US were not verified.",
+          "briefing": [
+            "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+          ],
+          "source": {
+            "url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+            "label": "B&H exact product detail"
+          },
+          "disclosure": "Untracked seller link. Seller comparison is not historical price or MSRP.",
+          "link": {
+            "url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+            "tracked": false,
+            "label": "View exact product",
+            "label_kind": "retailer"
+          },
+          "link_review": {
+            "status": "verified_detail",
+            "checked_at": "2026-11-27T18:56:40+00:00",
+            "url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+            "product_match": true,
+            "evidence": "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+          },
+          "price_review": {
+            "id": "insta360-go-3s-us-128gb-midnight-bh",
+            "product": "Insta360 GO 3S · Midnight Black 128GB Standard Bundle",
+            "seller_url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+            "recorded_price": 299.99,
+            "verified_price": 299.99,
+            "currency": "USD",
+            "price_status": "seller_page_display_confirmed",
+            "deal_status": "comparison_unverified",
+            "review_completed_at": "2026-11-27T18:56:40+00:00",
+            "evidence": [
+              {
+                "url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+                "observed_at": "2026-11-27T18:56:40+00:00",
+                "result": "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+              }
+            ],
+            "limitations": [
+              "Seller-shown comparison, not independent price history. Final checkout and address-specific delivery not tested."
+            ],
+            "seller_reference": {
+              "kind": "seller_displayed_compare",
+              "product_id": "insta360-go-3s-us-128gb-midnight-bh",
+              "variant": "CINSAATA_GO3S13 · 128GB · Midnight Black · Standard Bundle",
+              "currency": "USD",
+              "source_url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+              "same_terms": true,
+              "unconditional": true,
+              "current_price": 299.99,
+              "reference_price": 379.99,
+              "current_checked_at": "2026-11-27T18:56:40+00:00",
+              "reference_observed_at": "2026-11-27T18:56:40+00:00",
+              "evidence": "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+            }
+          },
+          "latest_offer_check": {
+            "status": "seller_text_observed",
+            "checked_at": "2026-11-27T18:56:40+00:00",
+            "price": 299.99,
+            "currency": "USD",
+            "source_url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+            "evidence": "B&H item 1832561 / CINSAATA_GO3S13 is the 128GB Midnight Black Standard Bundle with Action Pod. USD 299.99, seller comparison USD 379.99, shown in stock with free delivery for the page’s US sample destination. Offer cutoff and final checkout unverified."
+          },
+          "country_targeting": {
+            "countries": [
+              "US"
+            ],
+            "basis": "reviewed_seller_audience",
+            "fulfilment": "physical",
+            "reviewed_at": "2026-11-27T18:56:40+00:00"
+          },
+          "purchase_eligibility": {
+            "countries_confirmed": [
+              "US"
+            ],
+            "status": "retailer_delivery_statement",
+            "delivery": "US seller showed free delivery for its sample US destination. Address-specific charges and delivery outside the US were not verified.",
+            "activation": "Physical product; no country-specific activation verified.",
+            "payment": "Checkout not tested.",
+            "tax": "Final total not tested.",
+            "returns": "Check the exact seller return terms.",
+            "evidence_url": "https://www.bhphotovideo.com/c/product/1832561-REG/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html",
+            "checked_at": "2026-11-27"
+          },
+          "image": {
+            "path": "/assets/deals/insta360-go-3s-black.webp",
+            "alt": "Black Insta360 GO 3S in its Action Pod with the display flipped up; not a photo of the full bundle",
+            "credit": "JettM9104",
+            "credit_url": "https://commons.wikimedia.org/wiki/File:Insta360_GO_3S.jpg",
+            "kind": "licensed_product_photo",
+            "rights_basis": "JettM9104 own work on Wikimedia Commons, CC BY-SA 4.0; WebP derivative released under the same license. The photograph illustrates the camera and Action Pod, not capacity or complete bundle contents.",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Insta360_GO_3S.jpg",
+            "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Insta360_GO_3S.jpg",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "checked_at": "2026-11-23T09:09:23+00:00",
+            "sha256": "5ee04bf30c3e443f7b73718389e0954dcf3e3bbc9d7689c0d70e8800b7161874",
+            "processing": "Proportionally resized to 920 × 690 and WebP compressed. Metadata removed. No crop or content changes.",
+            "license": "CC BY-SA 4.0",
+            "notes": {
+              "en": "Camera and Action Pod only; not every bundle accessory",
+              "ko": "카메라와 액션팟만 표시 · 전체 구성품 사진 아님",
+              "zh": "仅展示相机和 Action Pod，并非完整套装",
+              "ja": "カメラと Action Pod のみ、付属品の全体ではありません",
+              "es": "Solo cámara y Action Pod; no todos los accesorios",
+              "fr": "Caméra et Action Pod uniquement, pas tous les accessoires"
+            }
+          }
         }
       ]
     }
   },
   "stats": {
-    "feed": 42,
-    "sources": 12
+    "feed": 43,
+    "sources": 13
   }
 }

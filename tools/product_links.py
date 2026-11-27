@@ -65,6 +65,10 @@ def direct_product_url(url):
     # These sellers identify a product in the query, never accept the generic page.
     query_routes = {'item.gmarket.co.kr': ('/item', 'goodscode'),
                     'artmu.co.kr': ('/product/detail.html', 'product_no')}
+    if u.hostname == 'kream.co.kr':
+        return path == '/products/558472' and not query and not u.fragment
+    if u.hostname == 'www.bhphotovideo.com':
+        return path == '/c/product/1832561-reg/insta360_cinsaata_go3s13_go_3s_standard_editionmidnight.html' and not query and not u.fragment
     if u.hostname == 'www.logitech-gamingstore.com':
         # Exact reviewed G304 product ID, never the catalogue, campaign, or search route.
         return path == '/shop/list/item/index' and query_values == {'no': ['20']} and not u.fragment
