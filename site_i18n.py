@@ -417,6 +417,7 @@ def catalogue(lang,feeds,translations,discoveries=False,*,now=None):
  alternatives=''.join(f'<link rel="alternate" hreflang="{k}" href="https://devteardown.com{p}">' for k,p in PATHS.items())
  return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{t[2]} | DevTeardown</title><meta name="description" content="{e(f[9])}"><meta property="og:type" content="website"><meta property="og:title" content="{e(t[2])} | DevTeardown"><meta property="og:description" content="{e(f[9])}"><meta property="og:url" content="https://devteardown.com{PATHS[lang]}"><meta name="twitter:card" content="summary"><script type="application/ld+json">{schema}</script><link rel="canonical" href="https://devteardown.com{PATHS[lang]}">{alternatives}<link rel="alternate" hreflang="x-default" href="https://devteardown.com/deals/"><style>{CSS}</style></head><body>{nav(lang)}<main><h1>{t[2]}</h1><p class="intro">{e(f[9])}</p><p class="notice"><a href="https://devteardown.com/feeds/">{e(EXTERNAL_FEED_LABEL[lang])}</a></p><div class="filters"><label for="product-search">{e(SEARCH_LABEL[lang])}<input id="product-search" type="search" autocomplete="off" spellcheck="false"></label><label for="market">{e(f[0])}<select id="market">{options([('all',f[18])]+[(code,country_name(code,lang)) for code in storefronts]+[('unknown',f[2])])}</select></label><label for="country">{e(TARGET_LABEL[lang])}<select id="country" aria-describedby="country-help">{options([('all',f[19])]+[(code,country_name(code,lang)) for code in destinations]+[('unknown',f[3])])}</select></label><label for="category">{t[5]}<select id="category">{options([('all',f[17])]+[(key,t[idx]) for key,idx in CATS.items()])}</select></label></div><p id="country-help" class="notice">{e(TARGET_HELP[lang])}</p><button type="button" id="unknown-destinations">{e(UNKNOWN_SHORTCUT[lang])}</button> <button type="button" id="reset-filters" hidden>{e(f[6])}</button><p id="count" class="count" role="status" aria-live="polite" data-label="{e(f[7])}" data-discovery-label="{e(DISCOVERY_LABEL[lang])}">{len(cards)} {e(f[7])} · {discovery_count} {e(DISCOVERY_LABEL[lang])}</p><p id="empty" hidden>{e(EMPTY_LABEL[lang])}</p><div class="grid" id="active-products">{''.join(cards)}</div><details class="discovery-section"><summary>{e(CANDIDATE_SECTION[lang])} · <span id="discovery-count">{discovery_count}</span></summary><div class="grid" id="discovery-products">{''.join(discovery_cards)}</div></details><details class="held-archive"><summary>{ARCHIVE[lang]} · <span id="archive-count">{len(held_cards)}</span></summary><p class="notice">{ARCHIVE_NOTE[lang]}</p><div class="grid" id="held-products">{''.join(held_cards)}</div></details><footer><p class="notice">{e(t[14] if active_affiliates else NO_ACTIVE_AFFILIATES[lang])}</p></footer></main><script>{JS}</script></body></html>'''
 def write_unified(output,items,deals,en_deals):
+ from buying_guides import PATHS as GUIDE_PATHS, LABELS as GUIDE_LABELS, write_guides
  output=Path(output);trans=json.loads((Path(__file__).parent/'data/deal_localizations.json').read_text())
  feeds=list(deals.get('feed',[]))+list(en_deals.get('feed',[]))
  for lang,path in PATHS.items():
@@ -426,6 +427,8 @@ def write_unified(output,items,deals,en_deals):
   text=page.read_text();text=re.sub(r'<header>.*?</header>',nav('en',True),text,flags=re.S)
   text=re.sub(r'<link[^>]+hreflang="ko"[^>]*>','',text)
   text=text.replace('</head>',f'<style>{CSS.split("main{")[0]}</style></head>')
+  if page == output/'index.html':
+   text=text.replace('<h2 class="section-label">', f'<p class="evergreen-guide"><a lang="en" href="{GUIDE_PATHS["en"]}">{e(GUIDE_LABELS["en"])}</a></p><h2 class="section-label">', 1)
   page.write_text(text,encoding='utf-8')
  # Localized report navigation; article content remains explicitly marked English.
  report_text=(output/'index.html').read_text()
@@ -443,8 +446,9 @@ def write_unified(output,items,deals,en_deals):
   page=page.replace('Notes on choosing software',h[0]).replace('Before you pick<br>the next tool.',h[1]).replace('What it costs, where it fits, and what you give up. Comparisons of developer tools, with pricing examples you can check against your own workload.',h[2]).replace('The comparisons',h[3])
   page=re.sub(r'<link[^>]+rel="alternate"[^>]*>','',page)
   page=re.sub(r'<link rel="canonical"[^>]*>',f'<link rel="canonical" href="https://devteardown.com/reports/{lang}/">',page)
+  guide_lang='ko' if lang=='ko' else 'en'
+  page=page.replace(f'lang="en" href="{GUIDE_PATHS["en"]}">{e(GUIDE_LABELS["en"])}</a>', f'lang="{guide_lang}" href="{GUIDE_PATHS[guide_lang]}">{e(GUIDE_LABELS[lang])}</a>', 1)
   dest=output/'reports'/lang;dest.mkdir(parents=True,exist_ok=True);(dest/'index.html').write_text(page,encoding='utf-8')
- from buying_guides import write_guides
  guide_paths=write_guides(output,feeds)
  urls=guide_paths+['/']+['/reports/'+k+'/' for k in LANGS if k!='en']+list(PATHS.values())+[f'/compare/{x["slug"]}/' for x in items]
  records=[]
