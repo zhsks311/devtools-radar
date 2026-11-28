@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T19:06:16+00:00",
+  "generated_at": "2026-11-28T12:38:47+00:00",
   "site": {
     "name": "DevTeardown KR",
     "url": "https://devteardown.com/ko/",
@@ -3094,11 +3094,12 @@
         "label_kind": "retailer"
       },
       "link_review": {
-        "status": "verified_detail",
-        "checked_at": "2026-11-14T12:43:08.562400+00:00",
+        "status": "held",
+        "checked_at": "2026-11-28T07:26:58+00:00",
         "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
         "product_match": true,
-        "evidence": "Fresh seller HTML identifies GB102 black, 2 USB-C plus 1 USB-A ports, KRW35,700. Page states nationwide delivery and free shipping. White option is marked sold out; black stock not confirmed at checkout."
+        "reason": "Exact black variant showed sold out on seller page.",
+        "evidence": "Artmu exact product 2942, black option P0000EJE000A: public ProductGroup JSON-LD lists OutOfStock and KRW 35,700. The product action shows the sold-out control and hides cart/purchase. The firmware-update product 3360 is a different seller record and was not substituted. The old displayed price is not purchaseable on this listing."
       },
       "link_original": {
         "url": "https://link.coupang.com/a/iyItY3nD1U",
@@ -3113,7 +3114,7 @@
         "seller_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
         "recorded_price": 35700,
         "currency": "KRW",
-        "price_status": "seller_page_display_confirmed",
+        "price_status": "historical_only",
         "verified_price": 35700,
         "deal_status": "regular_price_or_discount_unproven",
         "evidence": [
@@ -3131,13 +3132,19 @@
             "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
             "observed_at": "2026-11-16T16:11:43.991970+00:00",
             "result": "Exact GB102 black detail page: KRW35700, free shipping. Optional accessories are separate paid purchases. No checkout or live inventory quantity checked; generic overseas shipping wording does not verify any particular country."
+          },
+          {
+            "url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+            "observed_at": "2026-11-28T07:26:58+00:00",
+            "result": "Artmu exact product 2942, black option P0000EJE000A: public ProductGroup JSON-LD lists OutOfStock and KRW 35,700. The product action shows the sold-out control and hides cart/purchase. The firmware-update product 3360 is a different seller record and was not substituted. The old displayed price is not purchaseable on this listing."
           }
         ],
         "limitations": [
           "No independently verified historical-low or previous-price comparison.",
           "Address-specific stock, checkout, billing eligibility and final total not verified."
         ],
-        "review_completed_at": "2026-11-16T16:11:43.991970+00:00"
+        "review_completed_at": "2026-11-16T16:11:43.991970+00:00",
+        "historical_price_status": "seller_page_display_confirmed"
       },
       "historical_claims": {
         "original_price": 44800,
@@ -3179,12 +3186,10 @@
         "note": "Korean buyer audience; does not verify address-specific delivery, activation, stock or checkout. Historical held records remain held."
       },
       "latest_offer_check": {
-        "status": "seller_text_observed",
-        "price": 35700,
-        "currency": "KRW",
-        "observed_at": "2026-11-16T16:11:43.991970+00:00",
+        "status": "sold_out",
+        "checked_at": "2026-11-28T07:26:58+00:00",
         "source_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
-        "evidence": "Exact GB102 black detail page: KRW35700, free shipping. Optional accessories are separate paid purchases. No checkout or live inventory quantity checked; generic overseas shipping wording does not verify any particular country."
+        "evidence": "Artmu exact product 2942, black option P0000EJE000A: public ProductGroup JSON-LD lists OutOfStock and KRW 35,700. The product action shows the sold-out control and hides cart/purchase. The firmware-update product 3360 is a different seller record and was not substituted. The old displayed price is not purchaseable on this listing."
       },
       "previous_offer_checks": [
         {
@@ -3196,7 +3201,24 @@
           "evidence": "Exact GB102 black variant P0000EJE000A: JSON-LD InStock, option selectable, seller price KRW35700. White option explicitly sold out. Free shipping displayed.",
           "limitations": "Structured seller signal and option text, not completed cart/checkout. No quantity claim; hidden generic soldout markup is not black variant status."
         }
-      ]
+      ],
+      "offer_check_history": [
+        {
+          "status": "seller_text_observed",
+          "price": 35700,
+          "currency": "KRW",
+          "observed_at": "2026-11-16T16:11:43.991970+00:00",
+          "source_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+          "evidence": "Exact GB102 black detail page: KRW35700, free shipping. Optional accessories are separate paid purchases. No checkout or live inventory quantity checked; generic overseas shipping wording does not verify any particular country."
+        }
+      ],
+      "availability_review": {
+        "status": "sold_out",
+        "basis": "seller_product_page",
+        "checked_at": "2026-11-28T07:26:58+00:00",
+        "source_url": "https://artmu.co.kr/product/detail.html?product_no=2942",
+        "evidence": "Artmu exact product 2942, black option P0000EJE000A: public ProductGroup JSON-LD lists OutOfStock and KRW 35,700. The product action shows the sold-out control and hides cart/purchase. The firmware-update product 3360 is a different seller record and was not substituted. The old displayed price is not purchaseable on this listing."
+      }
     },
     {
       "id": "deal-sony-mdr-3r",
@@ -7648,8 +7670,8 @@
     "feed": 40,
     "tracked_links": 0,
     "search_fallback": 0,
-    "verified_product_links": 23,
-    "held_product_links": 17,
+    "verified_product_links": 22,
+    "held_product_links": 18,
     "historical_tracked_links": 14
   }
 }

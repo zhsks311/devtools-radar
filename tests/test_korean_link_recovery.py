@@ -19,10 +19,10 @@ class KoreanRecoveryTests(unittest.TestCase):
                          '?'+key+'=123&redirect=https://example.com']:
                 self.assertFalse(direct_product_url(base+tail),base+tail)
             self.assertFalse(direct_product_url(base.replace('https://','https://evil.')+'?'+key+'=123'))
-    def test_three_restored_korean_offers_have_fresh_seller_and_country_evidence(self):
+    def test_restored_available_korean_offers_have_seller_and_country_evidence(self):
         data=json.loads((ROOT/'data/deals.json').read_text())
         restored={d['id']:d for d in data['feed'] if publishable_link(d)}
-        expected={'deal-belkin-100w-gan':39900, 'deal-ugreen-100w-gan':65100, 'deal-artmu-100w-gb102':35700}
+        expected={'deal-belkin-100w-gan':39900, 'deal-ugreen-100w-gan':65100}
         self.assertTrue(set(expected).issubset(restored))
         for ident,price in expected.items():
             d=restored[ident]
@@ -38,6 +38,20 @@ class KoreanRecoveryTests(unittest.TestCase):
             self.assertEqual(page.count('class="cta"'),len(restored))
             self.assertIn('data-countries="KR"',page)
             self.assertNotIn('65W+35W', tr['deal-artmu-100w-gb102'][lang]['summary'])
+    def test_sold_out_artmu_preserves_history_and_hides_purchase_cta(self):
+        data=json.loads((ROOT/'data/deals.json').read_text())
+        row,=(d for d in data['feed'] if d['id']=='deal-artmu-100w-gb102')
+        self.assertFalse(publishable_link(row))
+        self.assertFalse(checked_price(row))
+        self.assertEqual(row['price_review']['recorded_price'],35700)
+        self.assertEqual(row['availability_review']['status'],'sold_out')
+        self.assertIn('P0000EJE000A',row['availability_review']['evidence'])
+        tr=json.loads((ROOT/'data/deal_localizations.json').read_text())
+        for lang in site_i18n.LANGS:
+            page=site_i18n.catalogue(lang,[row],tr)
+            self.assertNotIn(row['link']['url'],page)
+            self.assertNotIn('class="cta"',page)
+
     def test_new_overseas_offers_keep_base_price_and_activation_limits(self):
         payload=json.loads((ROOT/'data/deals_en.json').read_text()); feed=payload['feed']
         self.assertEqual(payload['stats']['feed'],len(feed))
